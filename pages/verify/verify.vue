@@ -1,167 +1,313 @@
 <template>
-  <view class="page">
-    <!-- 标题栏 -->
-    <view class="header">
-      <view class="back-arrow" @click="goBack"></view>
-      <text class="header-title">实名认证</text>
-      <view class="header-camera-icon"></view>
-    </view>
-	
+	<view class="page">
+		<!-- 标题栏 -->
+		<view class="background-container">
 
+			<!-- 这里放置背景图片 -->
+			<image class="background-image" src="../../static/images/verify/sfbj.png"></image>
+			<!-- 这里放置标题内容 -->
+			<view class="header">
+				<view class="back-arrow" @click="goBack"></view>
+				<text class="header-title">实名认证</text>
+				<view class="header-camera-icon"></view>
+			</view>
+		</view>
+		<view style="background-color: rgb(255, 255, 255);
+					border-radius: 0.2rem;
+					position: absolute;
+					width: 100%;
+					top: 5rem;
+					padding: 1rem 1.5rem;">
+			<view class="top1">姓名</view>
+			<view class="top1"><u-input v-model="value" :type="type" :border="border" /></view>
+			<view class="top1">证件号码</view>
+			<view class="top1"><u-input v-model="value" :type="type" :border="border" /></view>
+			<view class="top1">上传身份证照片</view>
+			<view class="top1" style="display: flex;justify-content: space-around;">
+				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;">
+					<view>
+						<image style="width: 222rpx;height: 156rpx;" src="../../static/images/verify/sczm.png"></image>
+					</view>
+					<view style="color: #fff;" class="gradient-background" >上传正面</view>
+				</view>
+				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;">
+					<view>
+						<image style="width: 222rpx;height: 156rpx;"  src="../../static/images/verify/bm.png"></image>
+					</view>
+					<view style="color: #fff;" class="gradient-background">上传背面</view>
+				</view>
+			</view>
+			<view class="top1">拍摄须知</view>
+			<view class="top1" style="display: flex;
+						justify-content: space-around;
+						align-items: center;
+						text-align: center;">
+				<view>
+					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/1.png"></image>
+					<view>标准</view>
+				</view>
+				<view>
+					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/2.png"></image>
+					<view>边框缺失</view>
+				</view>
+				<view>
+					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/3.png"></image>
+					<view>照片模糊</view>
+				</view>
+				<view>
+					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/4.png"></image>
+					<view>闪光强烈</view>
+				</view>
+			</view>
+			<view style="margin-top: 3rem;">
+				<u-button  style="background-color: #35CBA5;color: #fff;">提交</u-button>
+			</view>
+			
+		</view>
+		
+		
+		
 	</view>
-  </view>
+
 </template>
 
 <script>
-export default {
-  data() {
-    return {
+	export default {
+		data() {
+			return {
 
-    };
-  },
-  methods: {
-    goBack() {
-      // 返回上一页
-      uni.navigateBack({
-        delta: 1,
-      });
-    },
+			};
+		},
+		methods: {
+			goBack() {
+				// 返回上一页
+				uni.navigateBack({
+					delta: 1,
+				});
+			},
 
-  }
-};
+		}
+	};
 </script>
 
 <style scoped>
-
-	
-
-.confirm-withdraw-button {
-  margin-top: 20px;
-  background-color: #35CBA5;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-}	
-.page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-/*  background-image: url('../../static/images/zbg.png'); */
-  background-size: cover;
-  background-position: center;
+/deep/.uni-input-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background: #F4F5F7;
+    border-radius: 0.5rem;
 }
+	.gradient-background {
+	  background: linear-gradient(to right, #24CCBC, #6BEEAB);
+	  /* 定义渐变的方向和颜色 */
+	}
+	.top1{
+		margin-top: .5rem;
+	}
+	.uni-input-input {
+	    position: relative;
+	    display: block;
+	    height: 100%;
+	    background: none;
+	    color: inherit;
+	    opacity: 1;
+	    font: inherit;
+	    line-height: inherit;
+	    letter-spacing: inherit;
+	    text-align: inherit;
+	    text-indent: inherit;
+	    text-transform: inherit;
+	    text-shadow: inherit;
+	    background: #F4F5F7;
+	    border-radius: 0.5rem;
+	}
+	.background-container {
+		position: relative;
+		/* 相对定位，以便内部元素可以相对于此容器定位 */
+		width: 100%;
+		height: 300px;
+		/* 根据你的需求设置高度 */
+	}
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-image: url('../../static/images/verify/sfbj.png');
-}
+	.background-image {
+		width: 100%;
+		height: 100%;
+		/* 图片铺满容器 */
+		object-fit: cover;
+		/* 图片等比例缩放以覆盖整个容器 */
+	}
 
-.back-arrow {
-  width: 30px;
-  height: 30px;
-  background-image: url('../../static/images/hfh.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+	.title-container {
+		position: absolute;
+		/* 绝对定位，相对于父容器定位 */
+		bottom: 0;
+		/* 标题悬浮在底部 */
+		left: 0;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		/* 可选的半透明背景色 */
+		padding: 10px;
+		box-sizing: border-box;
+		/* 内边距包含在宽度内 */
+	}
 
-.header-title {
-  flex: 1;
-  text-align: center;
-  font-size: 18px;
-  color: #333;
-}
- 
+	.title {
+		color: #fff;
+		/* 标题文本颜色 */
+		font-size: 20px;
+		/* 标题字体大小 */
+	}
 
 
-.withdraw-section {
-  padding: 10px;
-  background-color: #FFFFFF;
-  margin-top: 10px;
-}
+	.confirm-withdraw-button {
+		margin-top: 20px;
+		background-color: #35CBA5;
+		color: #FFFFFF;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+	}
 
-.withdraw-amount-label,
-.withdraw-network-label,
-.actual-amount-label {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
-}
+	.page {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		/*  background-image: url('../../static/images/zbg.png'); */
+		background-size: cover;
+		background-position: center;
+	}
 
-.withdraw-amount-input {
-  font-size: 14px;
-  color: #666;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+		position: absolute;
+		/* 绝对定位，相对于父容器定位 */
+		top: 0;
+		/* 标题悬浮在底部 */
+		left: 0;
+		width: 100%;
+		background-color: #ffffff00;
+		/* 可选的半透明背景色 */
+		padding: 10px;
+		box-sizing: border-box;
+		/* 内边距包含在宽度内 */
 
-.network-selector,
-.actual-amount-section {
-  font-size: 14px;
-  color: #666;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
+	}
 
-.selector-dropdown-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background-image: url('../../static/images/camera-icon.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+	.back-arrow {
+		width: 30px;
+		height: 30px;
+		background-image: url('../../static/images/bfh.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
 
-.actual-amount {
-  font-size: 14px;
-  color: #35CBA5;
-}
+	.header-title {
+		flex: 1;
+		text-align: center;
+		font-size: 18px;
+		color: #fff;
+	}
 
-.action-button2 {
-  background-color: #35CBA5;
-  color: #FFFFFF;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 20px;
-}
 
-.copy-icon {
-  width: 24px;
-  height: 24px;
-  background-image: url('../../static/images/copy-icon.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-left: 10px;
-}
 
-.address-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #FFFFFF;
-  margin-top: 10px;
-}
+	.withdraw-section {
+		padding: 10px;
+		background-color: #FFFFFF;
+		margin-top: 10px;
+	}
 
-.wallet-address {
-  font-size: 14px;
-  color: #666;
-  word-break: break-all;
-}
+	.withdraw-amount-label,
+	.withdraw-network-label,
+	.actual-amount-label {
+		font-size: 16px;
+		color: #333;
+		margin-bottom: 5px;
+	}
+
+	.withdraw-amount-input {
+		font-size: 14px;
+		color: #666;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+
+	.network-selector,
+	.actual-amount-section {
+		font-size: 14px;
+		color: #666;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		margin-bottom: 10px;
+	}
+
+	.selector-dropdown-icon {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 24px;
+		height: 24px;
+		background-image: url('../../static/images/camera-icon.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.actual-amount {
+		font-size: 14px;
+		color: #35CBA5;
+	}
+
+	.action-button2 {
+		background-color: #35CBA5;
+		color: #FFFFFF;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.copy-icon {
+		width: 24px;
+		height: 24px;
+		background-image: url('../../static/images/copy-icon.png');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin-left: 10px;
+	}
+
+	.address-section {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px;
+		background-color: #FFFFFF;
+		margin-top: 10px;
+	}
+
+	.wallet-address {
+		font-size: 14px;
+		color: #666;
+		word-break: break-all;
+	}
 </style>
-
