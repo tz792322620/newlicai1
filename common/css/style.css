@@ -1,0 +1,56 @@
+/* 头部 */
+.header_fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 9;
+}
+
+.header_fixed+view {
+	/* #ifdef H5 */
+	padding-top: 45px;
+	/* #endif */
+	/* #ifdef APP-PLUS */
+	padding-top: 70px;
+	/* #endif */
+}
+
+.header_bar {
+	/* #ifdef APP-PLUS */
+	padding-top: var(--status-bar-height);
+	/* height:var(--status-bar-height); */
+	/* #endif */
+	/* position: fixed;top: 0;left: 0;width: 100%;z-index: 9;margin-bottom: 45px; */
+}
+
+.header_bg {
+
+	background: #FFFFFF;
+}
+
+.header_bar--absolute {
+	position: absolute;
+	width: 100%;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	background: transparent;
+}
+
+.header_bar--absolute+view {
+	padding-top: 30px;
+}
+
+.header {
+	width: 100%;
+	position: relative;
+	padding: 3% 2%;
+	font-weight: 500;
+	box-sizing: border-box;
+	border: none;
+	height: 45px;
+	/*height:var(--status-bar-height);*/
+}
+
+

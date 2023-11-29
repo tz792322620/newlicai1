@@ -1,0 +1,243 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/static/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login_em",
+			"style": {
+				"navigationBarTitleText": "邮箱登录",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+            "path" : "pages/login/login_ph",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "手机登录",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+            "path" : "pages/login/register_em",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "邮箱注册",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+            "path" : "pages/login/register_ph",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "手机号注册",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+            "path" : "pages/login/password_ph",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "手机密码忘记",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+            "path" : "pages/login/password_em",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "邮箱密码忘记",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTextStyle": "black",
+				"navigationBarTitleText": "首页",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/product/product",
+			"style" : 
+			{
+				"navigationBarTitleText" : "产品",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/otc/otc",
+			"style" : 
+			{
+				"navigationBarTitleText" : "otc",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/yulibao/yulibao",
+			"style" : 
+			{
+				"navigationBarTitleText" : "yulibao",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/invite/invite",
+			"style" : 
+			{
+				"navigationBarTitleText" : "invite",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/verify/verify",
+			"style" : 
+			{
+				"navigationBarTitleText" : "verify",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/recharge/recharge",
+			"style" : 
+			{
+				"navigationBarTitleText" : "recharge",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},		{
+			"path" : "pages/withdraw/withdraw",
+			"style" : 
+			{
+				"navigationBarTitleText" : "withdraw",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/my/my",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+		{
+			"path" : "pages/product/bidding/bidding",
+			"style" : 
+			{
+				"navigationBarTitleText" : "立即投标",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/product/details/details",
+			"style" : 
+			{
+				"navigationBarTitleText" : "投资详情",
+				"enablePullDownRefresh" : false
+			}
+		}
+        ,{
+            "path" : "pages/otc/sell/sell",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "出售",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#FBFBFB"
+	},
+	"tabBar": {
+		"color": "#D8D8D8",
+		"selectedColor": "#51DDA8",
+		"backgroundColor": "#fff",
+		"list": [
+			{
+				"text": "首页",
+				"pagePath": "pages/home/home",
+				"iconPath": "static/images/home1.png",
+				"selectedIconPath": "static/images/home.png"
+			},
+			{
+				"text": "产品",
+				"pagePath": "pages/product/product",
+				"iconPath": "static/images/product1.png",
+				"selectedIconPath": "static/images/product.png"
+			},
+			{
+				"text": "OTC",
+				"pagePath": "pages/otc/otc",
+				"iconPath": "static/images/otc1.png",
+				"selectedIconPath": "static/images/otc.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/my/my",
+				"iconPath": "static/images/my1.png",
+				"selectedIconPath": "static/images/my.png"
+			
+			}
+		]
+	},
+	"uniIdRouter": {}
+}

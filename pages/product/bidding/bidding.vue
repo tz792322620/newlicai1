@@ -1,0 +1,78 @@
+<template>
+	<view
+		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;height: 100vh;">
+		<view style="padding:30rpx;">
+        <view style="background-image: url('../static/images/bidd_bg.png');background-repeat: no-repeat;background-size: 100%;height: 190rpx;color: #FFFFFF; padding: 40rpx 30rpx 40rpx 30rpx;">
+			<view class="u-flex">
+				<view style="width:280rpx;">账户可用余额(元)</view>
+				<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">项目可投金额(元)</view>
+			</view>
+			<view class="u-flex" style="margin-top: 30rpx;font-size: 34rpx;">
+				<view style="width:280rpx;">¥ 10400006.00</view>
+				<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">¥ 23279600</view>
+			</view>
+		</view>
+			<view style="background-color: #FFFFFF;border-radius: 12rpx;padding: 30rpx;margin-top: 30rpx;">
+				<view class="u-flex" style="margin-bottom:30rpx;">
+					<view style="width:200rpx;color: #666666;">起投金额</view>
+					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">¥<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">200</text>元</view>
+				</view>
+				<u-line color="#F3F3F3"></u-line>
+				<view class="u-flex" style="margin-bottom:30rpx;margin-top:30rpx;">
+					<view style="width:200rpx;color: #666666;">结息时间</view>
+					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">满<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">24小时</text>自动结息</view>
+				</view>
+				<u-line color="#F3F3F3"></u-line>
+				<view class="u-flex" style="margin-bottom:30rpx;margin-top: 30rpx;">
+					<view style="width:200rpx;color: #666666;">投资金额</view>
+					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;"><u-number-box color="#ffffff" bg-color="#35CBA5" v-model="value" @change="valChange"></u-number-box></view>
+				</view>
+				<u-line color="#F3F3F3"></u-line>
+				<view class="u-flex" style="margin-bottom:30rpx;margin-top:30rpx;">
+					
+					<view class="u-text-right" style="width:560rpx;margin-left:60rpx;color: #333333;">
+						最低起投<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">200</text> 元，加一次为 
+						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">100</text> 元
+						</view>
+				</view>
+				<u-line color="#F3F3F3"></u-line>
+				<view class="u-flex" style="margin-top:30rpx;">
+					<view style="width:200rpx;color: #666666;">支付密码</view>
+					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">默认为登录密码</view>
+				</view>
+			</view>
+			
+			<view style="margin-top: 80rpx;">
+				<u-button  ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
+				:custom-style="customStyle1" shape="circle" type="primary">立即投资</u-button>
+			</view>
+
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+			value: 1,
+			customStyle1: {
+				height: '90rpx',
+				margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
+				color: '#FFFFFF',
+				width: '670rpx',
+				background: 'linear-gradient(#69EEAB,#21CCBA)',
+			},
+			}
+		},
+		methods: {
+			valChange(e) {
+							console.log('当前值为: ' + e.value)
+						}
+		}
+	}
+</script>
+
+<style>
+
+</style>
