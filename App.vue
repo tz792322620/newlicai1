@@ -14,6 +14,6 @@
 
 <style lang="scss">
 	/*每个页面公共css */
-	@import "@/static/css/style.css";
 	@import "@/static/uview-ui/index.scss";
+	@import "@/static/css/style.css";
 </style>

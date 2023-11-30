@@ -1,26 +1,47 @@
 <template>
 	<view
 		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;height: 100vh;">
-		<view style="padding:30rpx;">
+		<view style="height: 88rpx;display: flex;align-items: center;justify-content: center;">
 
-			<view class="u-flex">
+			<view class="u-flex" style="">
 
-				<view style="font-size: 32rpx;">CNY</view>
-				<view>
-					<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left:10rpx;"
-						src="../../static/images/otc/1.png"></image>
+				<view class="u-flex_left">
+					<view style="display: flex;align-items: center; width: 100rpx;" @click="isAbP = !isAbP">
+						<view style="font-size: 32rpx;width: 60%;">{{ab}}</view>
+						<view>
+							<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left:20rpx;"
+								src="../../static/images/otc/1.png"></image>
+						</view>						
+					</view>
+					<view class="u-flex-popup" v-if="isAbP">
+						<view class="u-flex-popup-content">
+							<view class="u-flex-popup-content-item" v-for="(item,index) in currencyList" :key="index" 
+							:class="ab == item.ab ? 'active' : ''" @click="abClick(item)">
+								<image :src="item.url" mode=""></image>
+								<text>{{item.name}}</text>
+							</view>
+						</view>
+					</view>
 				</view>
 				<view style="margin-left:140rpx;font-size: 36rpx;font-weight: bold;">OTC交易</view>
-                <view>
+                <view class="u-flex_right">
 					<u-icon style="margin-left: 200rpx;" name="more-dot-fill"
-						color="#333333" size="36"></u-icon>
+						color="#333333" size="36" @click="isTool = !isTool"></u-icon>
+					<view class="u-flex-popup" v-if="isTool">
+						<view class="u-flex-popup-content">
+							<view class="u-flex-popup-content-item" v-for="(item,index) in toolsList" :key="index" @click="skip(item)">
+								<image :src="item.url" mode=""></image>
+								<text>{{item.name}}</text>
+							</view>
+						</view>
+					</view>
 				</view>
 			</view>
 
 		</view>
-		<view class="b_colfff" style="padding: 40rpx;">
+		<view class="b_colfff" style="padding: 40rpx;border-radius: 32rpx; 32rpx 0 0">
 			<view class="u-flex" style="color:#AFAFAF;font-size: 32rpx;font-weight: bold;">
-				<view :class="{'xuan2':but==0}" style="" @click="getbut(0)">买币</view>
+				<view :class="{'xuan1':but==0}" style="" @click="getbut(0)">买币</view>
 				<view :class="{'xuan2':but==1}" style="margin-left:20rpx;"@click="getbut(1)">卖币</view>
 			</view>
 			<view style="background-color:#E1F7F2;color:#35CBA5;
@@ -123,6 +144,41 @@
 	export default {
 		data() {
 			return {
+				isAbP: false, // 控制币种弹出隐藏
+				ab: 'HKD', // 币种缩写
+				// 币种集合
+				currencyList: [{
+					url: '../../static/images/otc/gangbi.png',
+					ab: 'HKD',
+					name: '港币'
+				},{
+					url: '../../static/images/otc/taibi.png',
+					ab: 'TWD',
+					name: '台币'
+				},{
+					url: '../../static/images/otc/renminbi.png',
+					ab: 'CNY',
+					name: '人民币'
+				}],
+				isTool: false, //是否显示操作弹窗
+				// 操作集合
+				toolsList: [{
+					url: '../../static/images/otc/fabu.png',
+					skipUrl: '/pages/otc/publish_ad/publish_ad',
+					name: '发布广告'
+				},{
+					url: '../../static/images/otc/wode.png',
+					skipUrl: '/pages/otc/my_ad/my_ad',
+					name: '我的广告'
+				},{
+					url: '../../static/images/otc/shoukuan.png',
+					skipUrl: '/pages/otc/payment/payment',
+					name: '收款方式'
+				},{
+					url: '../../static/images/otc/dingdan.png',
+					skipUrl: '/pages/otc/my_order/my_order',
+					name: '我的订单'
+				}],
 				list: [{
 						name: '全部'
 					},
@@ -151,6 +207,18 @@
 			}
 		},
 		methods: {
+			// 币种点击事件
+			abClick(item) {
+				this.ab = item.ab
+				this.isAbP = false
+			},
+			// 右侧操作台点击事件
+			skip(item) {
+				console.log(item)
+				uni.navigateTo({
+					url: item.skipUrl
+				})
+			},
 			getbut(e) {
 				this.but= e;
 			},
@@ -158,6 +226,67 @@
 	}
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+	.xuan1 {
+		color: #35CBA5;
+	}
+	.u-flex_left,.u-flex_right {
+		display: flex;
+		align-items: center;
+		position: relative;
+		.u-flex-popup {
+			position: absolute;
+			z-index: 10;
+			width: 250rpx;
+			top: 84rpx;
+			height: 316rpx;
+			background-color: #fff;
+			box-shadow: 0px 0px 20rpx 0px rgba(0,0,0,0.09);
+			border-radius: 20rpx;
+			&::before {
+				content: '';
+				position: absolute;
+				top: -20rpx;
+				left: 30rpx;
+				width: 0;
+				height: 0;
+				border-left: 20rpx solid transparent;
+				border-right: 20rpx solid transparent;
+				border-bottom: 20rpx solid #fff;
+			}
+			.u-flex-popup-content {
+				padding-top: 10rpx;
+				.u-flex-popup-content-item {
+					padding: 30rpx 0 30rpx 40rpx;
+					display: flex;
+					align-items: center;
+					&.active {
+						text {
+							color: #35CBA5 !important;
+						}
+					}
+					image {
+						width: 40rpx;
+						height: 40rpx;
+						margin-right: 18rpx;
+					}
+					text {
+						font-size: 28rpx;
+						font-weight: 500;
+						color: #333333;
+					}
+				}
+			}
+		}
+	}
+	.u-flex_right {
+		.u-flex-popup {
+			height: 416rpx;
+			right: -35rpx;
+			top: 70rpx;
+			&::before {
+				left: 180rpx;
+			}
+		}
+	}
 </style>
