@@ -6,15 +6,15 @@
                     <image style="width:188rpx;height:188rpx;border-radius: 50%;" :src="user.avatar"></image>
                     <view style="margin-top:60rpx;">
                         <view style="font-weight: bold;font-size: 32rpx;">{{ user.name }}</view>
-                        <view style="color: #999999;margin-top: 10rpx;">ID: {{ user.id }}</view>
+                        <view style="color: #999999;margin-top: 10rpx;">{{ $t('id') }}: {{ user.id }}</view>
                     </view>
                 </view>
                 <view style="margin-top: -50rpx;margin-bottom: 20rpx;">
                     <u-line color="#F3F3F3"></u-line>
                 </view>
                 <view class="u-flex">
-                    <view style="width:540rpx;color: #999999;">总资产(¥)</view>
-                    <view style="color: #FF7354;">签到</view>
+                    <view style="width:540rpx;color: #999999;">{{ $t('totalAssets') }}</view>
+                    <view style="color: #FF7354;">{{ $t('signIn') }}</view>
                 </view>
                 <view style="margin-top: 20rpx;font-size:50rpx;font-weight: bold;">
                     {{ user.totalAssets }}
@@ -22,8 +22,8 @@
                 <view style="margin-top: 30rpx;">
                     <u-row gutter="16">
                         <u-col v-for="(detail, index) in accountDetails" :key="index" span="4">
-                            <view class="u-text-center" @click="navigateTo(accountDetails.url)">
-                                <view style="color: #999999;margin-bottom: 10rpx;font-size: 24rpx;">{{ detail.title }}</view>
+                            <view class="u-text-center" @click="navigateTo(detail.url)">
+                                <view style="color: #999999;margin-bottom: 10rpx;font-size: 24rpx;">{{ $t(detail.title) }}</view>
                                 <view style="font-size: 34rpx;">{{ detail.value }}</view>
                             </view>
                         </u-col>
@@ -35,7 +35,7 @@
                     <u-col v-for="(feature, index) in features" :key="index" span="4">
                         <view class="u-text-center" @click="navigateTo(feature.url)">
                             <image :src="feature.image"></image>
-                            <view>{{ feature.title }}</view>
+                            <view>{{ $t(feature.title) }}</view>
                         </view>
                     </u-col>
                 </u-row>
@@ -45,7 +45,7 @@
                     <u-col v-for="(service, index) in services" :key="index" span="3">
                         <view class="u-text-center" @click="navigateTo(service.url)">
                             <image :src="service.image"></image>
-                            <view>{{ service.title }}</view>
+                            <view>{{ $t(service.title) }}</view>
                         </view>
                     </u-col>
                 </u-row>
@@ -53,13 +53,13 @@
             <view class="b_colfff" style="color: #333333; border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
                 <view v-for="(record, index) in records" :key="index" class="u-flex" :style="{ marginTop: index === 0 ? '0' : '30rpx' }" @click="navigateTo(record.url)">
                     <image :src="record.image"></image>
-                    <view style="width: 520rpx;">{{ record.title }}</view>
+                    <view style="width: 520rpx;">{{ $t(record.title) }}</view>
                     <u-icon name="arrow-right" color="#B2B2B2" size="34"></u-icon>
                 </view>
             </view>
             <view style="margin-top:30rpx;">
-                <u-button @click="reg()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
-                    安全退出</u-button>
+                <u-button @click="logout()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
+                    {{ $t('safeLogout') }}</u-button>
             </view>
         </view>
     </view>
