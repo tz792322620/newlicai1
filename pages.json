@@ -264,6 +264,103 @@
             }
             
         }
+        ,{
+            "path" : "pages/otc/order/order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/otc/order/pay/pay",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/otc/order/cancel/cancel",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "取消订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/otc/order/collect/collect",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/otc/order/appeal/appeal",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "提交申诉",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/product/security/security",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "安全验证",
+                "enablePullDownRefresh": false,
+				"disableScroll": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/info/info",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/team/team",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/sign/sign",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

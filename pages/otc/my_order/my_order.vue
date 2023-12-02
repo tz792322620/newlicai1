@@ -2,7 +2,8 @@
 	<view class="order">
 		<view class="tabs">
 			<view class="tabs_left">
-				<view class="tabs_left_item" :class="activeIndex === index ? 'active' : ''" v-for="(item,index) in tabsList" :key="index" @click="activeIndex = index">
+				<view class="tabs_left_item" :class="activeIndex === index ? 'active' : ''"
+					v-for="(item,index) in tabsList" :key="index" @click="activeIndex = index">
 					{{item}}
 				</view>
 			</view>
@@ -57,8 +58,8 @@
 						订单号
 					</view>
 					<view class="content_item_cell_right">
-						20230304123142154 
-						<image src="../../../static/images/copy-icon.png" mode=""></image>
+						20230304123142154
+						<image src="../../../static/images/copy-icon.png" mode="" @click="copy(item)"></image>
 					</view>
 				</view>
 				<view class="content_item_cell">
@@ -81,28 +82,26 @@
 						<view class="popup_body_item_title">
 							订单状态
 						</view>
-						<view class="popup_body_item_cell">
+						<view class="popup_body_item_cell" v-if="activeIndex === 0" v-for="(item,index) in unStatusList"
+							:key="index" @click="unStatusActiveIndex = index">
 							<view class="popup_body_item_cell_left">
-								待支付
+								{{item}}
 							</view>
 							<view class="popup_body_item_cell_right">
-								<image src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+								<image v-if="unStatusActiveIndex === index"
+									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
 							</view>
 						</view>
-						<view class="popup_body_item_cell">
+						<view class="popup_body_item_cell" v-if="activeIndex === 1" v-for="(item,index) in statusList"
+							:key="index" @click="statusActiveIndex = index">
 							<view class="popup_body_item_cell_left">
-								待放币
+								{{item}}
 							</view>
 							<view class="popup_body_item_cell_right">
-								<image src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
-							</view>
-						</view>
-						<view class="popup_body_item_cell">
-							<view class="popup_body_item_cell_left">
-								申诉中
-							</view>
-							<view class="popup_body_item_cell_right">
-								<image src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+								<image v-if="statusActiveIndex === index"
+									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
 							</view>
 						</view>
 					</view>
@@ -110,20 +109,31 @@
 						<view class="popup_body_item_title">
 							交易类型
 						</view>
-						<view class="popup_body_item_cell">
+						<view class="popup_body_item_cell" v-for="(item,index) in typeList" :key="index"
+							@click="typeActiveIndex = index">
 							<view class="popup_body_item_cell_left">
-								购买
+								{{item}}
 							</view>
 							<view class="popup_body_item_cell_right">
-								<image src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+								<image v-if="typeActiveIndex === index"
+									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
 							</view>
 						</view>
-						<view class="popup_body_item_cell">
-							<view class="popup_body_item_cell_left">
-								出售
-							</view>
-							<view class="popup_body_item_cell_right">
-								<image src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+					</view>
+					<view class="popup_body_item" v-if="activeIndex === 1">
+						<view class="popup_body_item_title">
+							下单日期
+						</view>
+						<view class="popup_body_item_time" @click="show = true">
+							<view class="popup_body_item_time_box">{{startDate}}</view>
+							至
+							<view class="popup_body_item_time_box">{{endDate}}</view>
+						</view>
+						<view class="popup_body_item_date">
+							<view class="popup_body_item_date_item" :class="dateRangeActiveIndex === index ? 'active' : ''" 
+								v-for="(item,index) in dateRangeList" :key="index" @click="dateRangeChange(index)">
+								{{item.desc}}
 							</view>
 						</view>
 					</view>
@@ -138,6 +148,13 @@
 				</view>
 			</view>
 		</u-popup>
+		<u-calendar v-model="show" :min-date="minDate" :mode="mode" @change="change" btn-type="success" active-bg-color="#35CBA5" range-color="#35CBA5" range-bg-color="rgba(53, 203, 165,0.13)">
+			<view slot="tooltip">
+				<view class="title" style="margin: 40rpx;">
+					*选择{{dateRangeActiveIndex === 0 ? '7天' : dateRangeActiveIndex === 1 ? '3个月' : dateRangeActiveIndex === 2 ? '6个月' : dateRangeActiveIndex === 3 ? '1年' : ''}}内的时间范围
+				</view>
+			</view>
+		</u-calendar>
 	</view>
 </template>
 
@@ -145,13 +162,76 @@
 	export default {
 		data() {
 			return {
+				startDate: '开始日期',
+				endDate: '结束日期',
+				show: false,
+				mode: 'range',
+				minDate: '',
+				dateRangeActiveIndex: 0,
+				dateRangeList: [{
+					time: 0,
+					desc: '近7天'
+				},{
+					time: 1,
+					desc: '近3个月'
+				},{
+					time: 2,
+					desc: '近6个月'
+				},{
+					time: 3,
+					desc: '近1年'
+				}],
 				activeIndex: 0,
 				tabsList: ['未完成', '已完成'],
 				unShow: false, // 未完成弹窗
+				unStatusActiveIndex: 0,
+				unStatusList: ['待支付', '待放币', '支付中'],
+				statusActiveIndex: 0,
+				statusList: ['交易完成', '交易取消'],
+				typeActiveIndex: 0,
+				typeList: ['购买', '出售']
 			}
 		},
+		onShow() {
+			var today = new Date() //当天
+			today.setDate(today.getDate()-7)//七天前，时间戳
+			this.minDate = today.toLocaleDateString().replaceAll('/','-')//格式化时间
+			console.log(this.minDate)
+		},
 		methods: {
-			
+			copy(item) {
+				uni.setClipboardData({
+					data: 'hello',
+					success: function () {
+						console.log('success');
+					}
+				})
+			},
+			dateRangeChange(index) {
+				this.dateRangeActiveIndex = index
+				var today = new Date() //当天
+				switch (index) {
+					case 0:
+						today.setDate(today.getDate()-7)//七天前，时间戳
+					break;
+					case 1:
+						today.setMonth(today.getMonth()-3)//三个月前，时间戳
+					break;
+					case 2:
+						today.setMonth(today.getMonth()-6)//六个月前，时间戳
+					break;
+					case 3:
+						today.setFullYear(today.getFullYear()-1)//一年前，时间戳
+					break;
+				}
+				this.minDate = today.toLocaleDateString().replaceAll('/','-')//格式化时间
+				console.log(this.minDate)
+			},
+			change(e) {
+				console.log(e);
+				this.startDate = e.startDate
+				this.endDate = e.endDate
+			}
 		}
 	}
 </script>
@@ -160,7 +240,15 @@
 	page {
 		background-color: #f5f5f5;
 	}
+
 	.order {
+		/deep/.u-icon__icon {
+			color: #999999 !important;
+		}
+		/deep/.u-btn--success {
+			border-color: #35CBA5;
+			background-color: #35CBA5;
+		}
 		.tabs {
 			margin-bottom: 20rpx;
 			background-color: #fff;
@@ -172,16 +260,20 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
 			&_left {
 				display: flex;
 				align-items: center;
+
 				&_item {
 					margin-right: 60rpx;
+
 					&.active {
 						font-size: 32rpx;
 						font-weight: 600;
 						color: #35CBA5;
 						position: relative;
+
 						&::before {
 							content: '';
 							position: absolute;
@@ -196,42 +288,51 @@
 					}
 				}
 			}
+
 			&_right {
 				width: 48rpx;
 				height: 48rpx;
+
 				image {
 					width: 100%;
 					height: 100%;
 				}
 			}
 		}
+
 		.content {
 			&_item {
 				background-color: #fff;
 				padding: 30rpx 40rpx;
 				margin-bottom: 20rpx;
+
 				&_top {
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
 					margin-bottom: 10rpx;
+
 					&_left {
 						display: flex;
 						align-items: center;
 						font-size: 32rpx;
 						font-weight: 600;
 						line-height: 44rpx;
+
 						.deal {
 							color: #35CBA5;
 							margin-right: 10rpx;
 						}
+
 						.unit {
 							color: #333333;
 						}
 					}
+
 					&_right {
 						display: flex;
 						align-items: center;
+
 						.status {
 							font-size: 32rpx;
 							font-weight: 500;
@@ -241,17 +342,20 @@
 						}
 					}
 				}
+
 				&_cell {
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
 					margin-top: 30rpx;
+
 					&_left {
 						font-size: 28rpx;
 						font-weight: 400;
 						color: #999999;
 						line-height: 40rpx;
 					}
+
 					&_right {
 						font-size: 28rpx;
 						font-weight: 400;
@@ -259,6 +363,7 @@
 						line-height: 40rpx;
 						display: flex;
 						align-items: center;
+
 						image {
 							width: 48rpx;
 							height: 48rpx;
@@ -268,6 +373,7 @@
 				}
 			}
 		}
+
 		.popup_content {
 			.title {
 				padding: 34rpx 0 20rpx 40rpx;
@@ -277,31 +383,80 @@
 				line-height: 40rpx;
 				border-bottom: 2rpx solid #F3F3F3;
 			}
+
 			.popup_body {
 				padding: 0 40rpx 20rpx 40rpx;
+
 				&_item {
 					padding: 30rpx 0;
 					border-bottom: 2rpx solid #F3F3F3;
+
 					&_title {
 						font-size: 28rpx;
 						font-weight: 600;
 						color: #333333;
 						line-height: 40rpx;
 					}
+					
+					&_time {
+						margin: 20rpx 0;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						font-size: 24rpx;
+						font-weight: 400;
+						color: #333333;
+						&_box {
+							width: 300rpx;
+							height: 60rpx;
+							background: #F4F5F7;
+							border-radius: 12rpx;
+							text-align: center;
+							line-height: 60rpx;
+							font-size: 28rpx;
+							font-weight: 400;
+							color: #999999;
+						}
+					}
+					
+					&_date {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						&_item {
+							width: 150rpx;
+							height: 60rpx;
+							background: #F4F5F7;
+							border-radius: 12rpx;
+							text-align: center;
+							line-height: 60rpx;
+							font-size: 24rpx;
+							font-weight: 400;
+							color: #333333;
+							&.active {
+								background: #E2F8F2;
+								color: #35CBA5;
+							}
+						}
+					}
+					
 					&_cell {
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
 						margin-top: 16rpx;
+
 						&_left {
 							font-size: 28rpx;
 							font-weight: 400;
 							color: #333333;
 							line-height: 40rpx;
 						}
+
 						&_right {
 							width: 36rpx;
 							height: 36rpx;
+
 							image {
 								width: 100%;
 								height: 100%;
@@ -309,12 +464,15 @@
 						}
 					}
 				}
+
 				.buttons {
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
 					margin-top: 52rpx;
-					&_left,&_right {
+
+					&_left,
+					&_right {
 						width: 320rpx;
 						height: 70rpx;
 						border-radius: 12rpx;
@@ -323,10 +481,12 @@
 						font-size: 32rpx;
 						font-weight: 600;
 					}
+
 					&_left {
 						border: 2rpx solid #35CBA5;
 						color: #35CBA5;
 					}
+
 					&_right {
 						background: #35CBA5;
 						color: #FFFFFF;
