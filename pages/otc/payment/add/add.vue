@@ -1,113 +1,78 @@
 <template>
-	<view class="add-payment">
-		<view class="payment">
-			<view class="desc">
-				添加收款方式
-			</view>
-			<view class="select">
-				<view class="select-c" @click="isShow = !isShow">
-					<view class="select-c_left">
-						{{activeName}}
-					</view>
-					<view class="select-c_right">
-						<uni-icons :type="isShow ? 'top' : 'bottom'"></uni-icons>
-					</view>
-				</view>
-				<view class="u-flex-popup" v-if="isShow">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in paymentList" :key="index"
-							:class="activeIndex == item.id ? 'active' : ''" @click="payClick(item)">
-							<text>{{item.name}}</text>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				姓名
-			</view>
-			<view class="input">
-				<u-input placeholder="请输入名字" v-model="name"></u-input>
-			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 0">
-			<view class="desc">
-				微信账号
-			</view>
-			<view class="input">
-				<u-input placeholder="请输入微信账号" v-model="name"></u-input>
-			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 1">
-			<view class="desc">
-				支付宝账号
-			</view>
-			<view class="input">
-				<u-input placeholder="请输入支付宝账号" v-model="name"></u-input>
-			</view>
-		</view>
-		<view class="item" v-if="activeIndex !== 2">
-			<view class="desc">
-				收款二维码（选填）
-			</view>
-			<u-upload :custom-btn="true">
-				<view slot="addBtn" class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
-					<image src="../../../../static/images/otc/payment/add/upload.png" mode=""></image>
-					<text>上传收款码</text>
-				</view>
-			</u-upload>
-		</view>
-		<view class="item" v-if="activeIndex === 2">
-			<view class="desc">
-				银行卡账号/卡号
-			</view>
-			<view class="input">
-				<u-input placeholder="请输入银行卡号" v-model="name"></u-input>
-			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 2">
-			<view class="desc">
-				银行名称
-			</view>
-			<view class="input">
-				<u-input placeholder="请输入银行名称" v-model="name"></u-input>
-			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 2">
-			<view class="desc">
-				开户支行（选填）
-			</view>
-			<view class="input">
-				<u-input placeholder="请输入开户支行" v-model="name"></u-input>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				备注
-			</view>
-			<view class="textarea">
-				<textarea name="" id="" cols="30" rows="10"></textarea>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				温馨提示
-			</view>
-			<view class="tips">
-				<view class="text">
-					1.请确保添加的账户为****实名人账户，非本人实名账户会导致订单失败且账号被冻结；
-				</view>
-				<view class="text">
-					2.交易过程中，买家可查看卖家选择的收款方式的详细信息以进行付款，卖家可查看买家真实姓名以便核对；
-				</view>
-			</view>
-		</view>
-		<view class="button">
-			保存
-		</view>
-	</view>
+    <view class="add-payment">
+        <view class="payment">
+            <view class="desc">{{ $t('addPaymentMethod') }}</view>
+            <view class="select">
+                <view class="select-c" @click="isShow = !isShow">
+                    <view class="select-c_left">{{ $t(activeName) }}</view>
+                    <view class="select-c_right">
+                        <uni-icons :type="isShow ? 'top' : 'bottom'"></uni-icons>
+                    </view>
+                </view>
+                <view class="u-flex-popup" v-if="isShow">
+                    <view class="u-flex-popup-content">
+                        <view class="u-flex-popup-content-item" v-for="(item,index) in paymentList" :key="index"
+                            :class="activeIndex == item.id ? 'active' : ''" @click="payClick(item)">
+                            <text>{{ $t(item.name) }}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="desc">{{ $t('name') }}</view>
+            <view class="input">
+                <u-input :placeholder="$t('enterName')" v-model="name"></u-input>
+            </view>
+        </view>
+        <view class="item" v-if="activeIndex === 0">
+            <view class="desc">{{ $t('WeChatAccount') }}</view>
+            <view class="input">
+                <u-input :placeholder="$t('enterWeChatAccount')" v-model="wechatAccount"></u-input>
+            </view>
+        </view>
+        <view class="item" v-if="activeIndex === 1">
+            <view class="desc">{{ $t('AlipayAccount') }}</view>
+            <view class="input">
+                <u-input :placeholder="$t('enterAlipayAccount')" v-model="alipayAccount"></u-input>
+            </view>
+        </view>
+        <view class="item" v-if="activeIndex === 2">
+            <view class="desc">{{ $t('BankCardAccount') }}</view>
+            <view class="input">
+                <u-input :placeholder="$t('enterBankCardAccount')" v-model="bankAccount"></u-input>
+            </view>
+        </view>
+        <view class="item" v-if="activeIndex === 2">
+            <view class="desc">{{ $t('BankName') }}</view>
+            <view class="input">
+                <u-input :placeholder="$t('enterBankName')" v-model="bankName"></u-input>
+            </view>
+        </view>
+        <view class="item" v-if="activeIndex === 2">
+            <view class="desc">{{ $t('BranchBank') }}</view>
+            <view class="input">
+                <u-input :placeholder="$t('enterBranchBank')" v-model="branchBank"></u-input>
+            </view>
+        </view>
+        <view class="item">
+            <view class="desc">{{ $t('remark') }}</view>
+            <view class="textarea">
+                <textarea :placeholder="$t('enterRemark')" v-model="remark" cols="30" rows="10"></textarea>
+            </view>
+        </view>
+        <view class="item">
+            <view class="desc">{{ $t('tips') }}</view>
+            <view class="tips">
+                <view class="text">{{ $t('tip1') }}</view>
+                <view class="text">{{ $t('tip2') }}</view>
+            </view>
+        </view>
+        <view class="button">{{ $t('save') }}</view>
+    </view>
 </template>
+
+
 
 <script>
 	export default {

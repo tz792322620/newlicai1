@@ -1,142 +1,118 @@
 <template>
-	<view class="publish_ad">
-		<view class="item1">
-			<view class="item">
-				<view class="desc">
-					币种
-				</view>
-				<view class="input">
-					USDT
-				</view>
-			</view>
-			<view class="item">
-				<view class="desc">
-					币种
-				</view>
-				<view class="input" @click="isAbP = !isAbP">
-					<text>{{abName}}</text>
-					<uni-icons type="bottom"></uni-icons>
-				</view>
-				<view class="u-flex-popup" v-if="isAbP">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in currencyList" :key="index" 
-						:class="ab == item.ab ? 'active' : ''" @click="abClick(item)">
-							<image :src="item.url" mode=""></image>
-							<text>{{item.name}}</text>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="item1">
-			<view class="item">
-				<view class="desc">
-					广告类型
-				</view>
-				<view class="input" @click="isType = !isType">
-					<text>{{activeType}}</text>
-					<uni-icons type="bottom"></uni-icons>
-				</view>
-				<view class="u-flex-popup" v-if="isType">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in typeList" :key="index" 
-						:class="activeTypeIndex == item.id ? 'active' : ''" @click="typeClick(item)" style="padding: 30rpx 0;">
-							<text style="width: 100%;text-align: center;">{{item.name}}</text>
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="item">
-				<view class="desc">
-					价格单位
-				</view>
-				<view class="input" @click="isPrice = !isPrice">
-					<text>{{activePrice}}</text>
-					<uni-icons type="bottom"></uni-icons>
-				</view>
-				<view class="u-flex-popup" v-if="isPrice">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in priceList" :key="index" 
-						:class="activePriceIndex == item.id ? 'active' : ''" @click="priceClick(item)" style="padding: 30rpx 0;">
-							<text style="width: 100%;text-align: center;">{{item.name}}</text>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				数量
-			</view>
-			<view class="input" style="width: 100%;">
-				<u-input placeholder="请输入交易数量"></u-input>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				最小金额
-			</view>
-			<view class="input" style="width: 100%;">
-				<u-input placeholder="请输入最小金额"></u-input>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				最大金额
-			</view>
-			<view class="input" style="width: 100%;">
-				<u-input placeholder="请输入最大金额"></u-input>
-			</view>
-		</view>
-		<view class="item1">
-			<view class="item">
-				<view class="desc">
-					收款方式
-				</view>
-				<view class="input" @click="isPay = !isPay">
-					<text>{{activePay}}</text>
-					<uni-icons type="bottom"></uni-icons>
-				</view>
-				<view class="u-flex-popup" v-if="isPay">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in payList" :key="index" 
-						:class="activePayIndex == item.id ? 'active' : ''" @click="payClick(item)">
-						<image :src="item.url" mode="" style="width: 40rpx; height: 42rpx;"></image>
-							<text>{{item.name}}</text>
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="item">
-				<view class="desc">
-					交易期限
-				</view>
-				<view class="input" @click="isTime = !isTime">
-					<text>{{activeTime}}</text>
-					<uni-icons type="bottom"></uni-icons>
-				</view>
-				<view class="u-flex-popup" v-if="isTime">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in timeList" :key="index" 
-						:class="activeTimeIndex == item.id ? 'active' : ''" @click="timeClick(item)" style="padding: 30rpx 0;">
-							<text style="width: 100%;text-align: center;">{{item.name}}</text>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				备注
-			</view>
-			<view class="input" style="width: 100%;height: 240rpx;align-items: flex-start;padding: 26rpx 20rpx">
-				<u-input type="textarea" placeholder="20字以内" maxlength="20"></u-input>
-			</view>
-		</view>
-		<view class="button">
-			发布
-		</view>
-	</view>
+    <view class="publish_ad">
+        <view class="item1">
+            <view class="item">
+                <view class="desc">{{ $t('currency') }}</view>
+                <view class="input">{{ $t('usdt') }}</view>
+            </view>
+            <view class="item">
+                <view class="desc">{{ $t('currency') }}</view>
+                <view class="input" @click="isAbP = !isAbP">
+                    <text>{{ abName }}</text>
+                    <uni-icons type="bottom"></uni-icons>
+                </view>
+                <view class="u-flex-popup" v-if="isAbP">
+                    <view class="u-flex-popup-content">
+                        <view class="u-flex-popup-content-item" v-for="(item, index) in currencyList" :key="index" 
+                        :class="ab == item.ab ? 'active' : ''" @click="abClick(item)">
+                            <image :src="item.url" mode=""></image>
+                            <text>{{ item.name }}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item1">
+            <view class="item">
+                <view class="desc">{{ $t('adType') }}</view>
+                <view class="input" @click="isType = !isType">
+                    <text>{{ activeType }}</text>
+                    <uni-icons type="bottom"></uni-icons>
+                </view>
+                <view class="u-flex-popup" v-if="isType">
+                    <view class="u-flex-popup-content">
+                        <view class="u-flex-popup-content-item" v-for="(item, index) in typeList" :key="index" 
+                        :class="activeTypeIndex == item.id ? 'active' : ''" @click="typeClick(item)" style="padding: 30rpx 0;">
+                            <text style="width: 100%; text-align: center;">{{ item.name }}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="desc">{{ $t('priceUnit') }}</view>
+                <view class="input" @click="isPrice = !isPrice">
+                    <text>{{ activePrice }}</text>
+                    <uni-icons type="bottom"></uni-icons>
+                </view>
+                <view class="u-flex-popup" v-if="isPrice">
+                    <view class="u-flex-popup-content">
+                        <view class="u-flex-popup-content-item" v-for="(item, index) in priceList" :key="index" 
+                        :class="activePriceIndex == item.id ? 'active' : ''" @click="priceClick(item)" style="padding: 30rpx 0;">
+                            <text style="width: 100%; text-align: center;">{{ item.name }}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="desc">{{ $t('quantity') }}</view>
+            <view class="input" style="width: 100%;">
+                <u-input :placeholder="$t('enterTransactionQuantity')"></u-input>
+            </view>
+        </view>
+        <view class="item">
+            <view class="desc">{{ $t('minAmount') }}</view>
+            <view class="input" style="width: 100%;">
+                <u-input :placeholder="$t('enterMinAmount')"></u-input>
+            </view>
+        </view>
+        <view class="item">
+            <view class="desc">{{ $t('maxAmount') }}</view>
+            <view class="input" style="width: 100%;">
+                <u-input :placeholder="$t('enterMaxAmount')"></u-input>
+            </view>
+        </view>
+        <view class="item1">
+            <view class="item">
+                <view class="desc">{{ $t('paymentMethod') }}</view>
+                <view class="input" @click="isPay = !isPay">
+                    <text>{{ activePay }}</text>
+                    <uni-icons type="bottom"></uni-icons>
+                </view>
+                <view class="u-flex-popup" v-if="isPay">
+                    <view class="u-flex-popup-content">
+                        <view class="u-flex-popup-content-item" v-for="(item, index) in payList" :key="index" 
+                        :class="activePayIndex == item.id ? 'active' : ''" @click="payClick(item)">
+                            <image :src="item.url" mode="" style="width: 40rpx; height: 42rpx;"></image>
+                            <text>{{ item.name }}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="item">
+                <view class="desc">{{ $t('transactionLimit') }}</view>
+                <view class="input" @click="isTime = !isTime">
+                    <text>{{ activeTime }}</text>
+                    <uni-icons type="bottom"></uni-icons> 
+                </view>
+                <view class="u-flex-popup" v-if="isTime">
+                    <view class="u-flex-popup-content">
+                        <view class="u-flex-popup-content-item" v-for="(item, index) in timeList" :key="index" 
+                        :class="activeTimeIndex == item.id ? 'active' : ''" @click="timeClick(item)" style="padding: 30rpx 0;">
+                            <text style="width: 100%; text-align: center;">{{ item.name }}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="desc">{{ $t('note') }}</view>
+            <view class="input" style="width: 100%; height: 240rpx; align-items: flex-start; padding: 26rpx 20rpx">
+                <u-input type="textarea" :placeholder="$t('enterNote')" maxlength="20"></u-input>
+            </view>
+        </view>
+        <view class="button">{{ $t('publish') }}</view>
+    </view>
 </template>
 
 <script>

@@ -1,19 +1,19 @@
 <template>
 	<view class="my_ad">
-		<uni-nav-bar left-icon="left" right-icon="plus" title="我的广告" :border="false" @clickLeft="back()" @clickRight="addAd"></uni-nav-bar>
+		<uni-nav-bar left-icon="left" right-icon="plus" :title="$t('myAds')" :border="false" @clickLeft="back()" @clickRight="addAd"></uni-nav-bar>
 		<view class="empty" v-if="list.length === 0">
 			<image src="../../../static/images/otc/my_ad/empty.png" mode=""></image>
-			<text>当前无进行中的广告</text>
-			<view class="button">
+			<text>{{ $t('noActiveAds') }}</text>
+			<view class="button" @click="addAd()">
 				<image src="../../../static/images/otc/my_ad/publish.png" mode=""></image>
-				<text>立即发布</text>
+				<text>{{ $t('publishNow') }}</text>
 			</view>
 		</view>
 		<view class="content" v-if="list.length !== 0">
-			<view class="item" v-for="(item, index) in 3" :key="index" @click="toDetails(item)">
+			<view class="item" v-for="(item, index) in list" :key="index" @click="toDetails(item)">
 				<view class="top">
 					<view class="top_left">
-						USDT/CNY
+						{{ $t('pair') }}
 					</view>
 					<view class="top_right">
 						<uni-icons type="right"></uni-icons>
@@ -21,23 +21,23 @@
 				</view>
 				<view class="cell">
 					<view class="cell_left">
-						广告类型
+						{{ $t('adType') }}
 					</view>
 					<view class="cell_right">
-						购买
+						{{ $t('buy') }}
 					</view>
 				</view>
 				<view class="cell">
 					<view class="cell_left">
-						价格单价
+						{{ $t('priceUnit') }}
 					</view>
 					<view class="cell_right">
-						实时价格
+						{{ $t('realTimePrice') }}
 					</view>
 				</view>
 				<view class="cell">
 					<view class="cell_left">
-						数量
+						{{ $t('quantity') }}
 					</view>
 					<view class="cell_right">
 						100 USDT
@@ -45,15 +45,15 @@
 				</view>
 				<view class="cell">
 					<view class="cell_left">
-						备注
+						{{ $t('note') }}
 					</view>
 					<view class="cell_right">
-						猜猜看
+						{{ $t('guess') }}
 					</view>
 				</view>
 				<view class="cell">
 					<view class="cell_left">
-						发布时间
+						{{ $t('publishTime') }}
 					</view>
 					<view class="cell_right">
 						2023-03-03 10:25:39
@@ -63,6 +63,7 @@
 		</view>
 	</view>
 </template>
+
 
 <script>
 	export default {

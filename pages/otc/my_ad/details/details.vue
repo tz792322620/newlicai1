@@ -3,12 +3,12 @@
 		<view class="content">
 			<view class="top">
 				<view class="top_left">
-					USDT/CNY
+					{{ $t('pair') }}
 				</view>
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					广告编号
+					{{ $t('adNumber') }}
 				</view>
 				<view class="cell_right">
 					1234567890098765
@@ -16,31 +16,31 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					广告类型
+					{{ $t('adType') }}
 				</view>
 				<view class="cell_right">
-					购买
+					{{ $t('buy') }}
 				</view>
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					展示位置
+					{{ $t('displayPosition') }}
 				</view>
 				<view class="cell_right">
-					网页
+					{{ $t('webpage') }}
 				</view>
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					价格单价
+					{{ $t('priceUnit') }}
 				</view>
 				<view class="cell_right">
-					实时价格
+					{{ $t('realTimePrice') }}
 				</view>
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					币种
+					{{ $t('currency') }}
 				</view>
 				<view class="cell_right">
 					USDT
@@ -48,7 +48,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					数量
+					{{ $t('quantity') }}
 				</view>
 				<view class="cell_right">
 					100 USDT
@@ -56,7 +56,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					最小金额
+					{{ $t('minAmount') }}
 				</view>
 				<view class="cell_right">
 					100 CNY
@@ -64,7 +64,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					最大金额
+					{{ $t('maxAmount') }}
 				</view>
 				<view class="cell_right">
 					5000 CNY
@@ -72,23 +72,23 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					交易期限
+					{{ $t('transactionLimit') }}
 				</view>
 				<view class="cell_right">
-					30分钟
+					{{ $t('30min') }}
 				</view>
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					备注
+					{{ $t('note') }}
 				</view>
 				<view class="cell_right">
-					诚信经营,收款秒放币
+					{{ $t('honestBusiness') }}
 				</view>
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					发布时间
+					{{ $t('publishTime') }}
 				</view>
 				<view class="cell_right">
 					2023-03-03 10:25:39
@@ -96,12 +96,13 @@
 			</view>
 			<view class="button">
 				<view class="button_c">
-					删除
+					{{ $t('delete') }}
 				</view>
 			</view>
 		</view>
 	</view>
 </template>
+
 
 <script>
 	export default {
