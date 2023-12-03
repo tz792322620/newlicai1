@@ -44,6 +44,7 @@
 
 
 <script>
+	import { userLogin } from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -65,7 +66,7 @@
 
 		},
 		methods: {
-			login(){
+			async login(){
 				if (this.account == '') {
 					return this.$tools.toast('请输入手机号码');
 				}else if (this.password == '') {
@@ -80,29 +81,44 @@
 					data['account'] = this.account;
 					data['password'] = this.password;
 					console.log(data);
-					this.$Ajax3(
-						'/user/login', {
-							data
-						},
-						res => {
-							if (res.code == 1) {
-								uni.setStorageSync('token', res.data.userinfo.token);
-								this.$tools.toastSwitchTab('登录成功', '../home/home');
-								setTimeout(() => {
-									this.lock = true
-								}, 1000);
-							} else {
-								this.$tools.toast(res.msg)
-								setTimeout(() => {
-									this.lock = true
-								}, 1000);
-							}
-						},
-						fail => {},
-						'POST',
-						'notoken',
-						false
-					);
+					const res = await userLogin(data)
+					console.log(res, '登录======>')
+					if (res.code == 1) {
+						uni.setStorageSync('token', res.data.userinfo.token);
+						this.$tools.toastSwitchTab('登录成功', '../home/home');
+						setTimeout(() => {
+							this.lock = true
+						}, 1000);
+					} else {
+						this.$tools.toast(res.msg)
+						setTimeout(() => {
+							this.lock = true
+						}, 1000);
+					}
+					// return
+					// this.$Ajax3(
+					// 	'/user/login', {
+					// 		data
+					// 	},
+					// 	res => {
+					// 		if (res.code == 1) {
+					// 			uni.setStorageSync('token', res.data.userinfo.token);
+					// 			this.$tools.toastSwitchTab('登录成功', '../home/home');
+					// 			setTimeout(() => {
+					// 				this.lock = true
+					// 			}, 1000);
+					// 		} else {
+					// 			this.$tools.toast(res.msg)
+					// 			setTimeout(() => {
+					// 				this.lock = true
+					// 			}, 1000);
+					// 		}
+					// 	},
+					// 	fail => {},
+					// 	'POST',
+					// 	'notoken',
+					// 	false
+					// );
 				}
 			}
 		}

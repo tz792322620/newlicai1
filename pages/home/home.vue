@@ -83,46 +83,13 @@
 			<view style="margin-top: 20rpx;">
 				<swiper class="orange-content" :display-multiple-items="config.multiple || 3"
 					:next-margin="config.nextMargin+'rpx'">
-					<swiper-item>
+					<swiper-item v-for="(item,index) in stockList" :key="index">
 						<view class="u-text-center"
 							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
-							<view>华夏创富股票<text style="font-size: 24rpx;color:#999999;">近1年</text></view>
-							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">+55.8%
+							<view>{{item.product_name_cn}}<text style="font-size: 24rpx;color:#999999;">{{item.investment_period}}</text></view>
+							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">{{item.interest_rate}}%
 							</view>
-							<view style="margin-top: 20rpx;">100.00元起投</view>
-						</view>
-
-					</swiper-item>
-					<swiper-item>
-
-						<view class="u-text-center"
-							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
-							<view>华夏创富股票<text style="font-size: 24rpx;color:#999999;">近1年</text></view>
-							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">+55.8%
-							</view>
-							<view style="margin-top: 20rpx;">100.00元起投</view>
-						</view>
-
-					</swiper-item>
-					<swiper-item>
-
-						<view class="u-text-center"
-							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
-							<view>华夏创富股票<text style="font-size: 24rpx;color:#999999;">近1年</text></view>
-							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">+55.8%
-							</view>
-							<view style="margin-top: 20rpx;">100.00元起投</view>
-						</view>
-
-					</swiper-item>
-					<swiper-item>
-
-						<view class="u-text-center"
-							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
-							<view>华夏创富股票<text style="font-size: 24rpx;color:#999999;">近1年</text></view>
-							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">+55.8%
-							</view>
-							<view style="margin-top: 20rpx;">100.00元起投</view>
+							<view style="margin-top: 20rpx;">{{item.amount_per_unit}}元起投</view>
 						</view>
 
 					</swiper-item>
@@ -137,7 +104,7 @@
 			<view style="margin-top: 20rpx;">
 				<u-row gutter="16">
 					<u-col span="3">
-						<view class="u-text-center" :class="{'xuan':xuan==0}" @click="getxuan(0)"
+						<view class="u-text-center" :class="{'xuan':xuan==0}" @click="getxuan(0,'')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
 							<view>全部专区</view>
 							<view
@@ -147,7 +114,7 @@
 						</view>
 					</u-col>
 					<u-col span="3">
-						<view class="u-text-center" :class="{'xuan':xuan==1}" @click="getxuan(1)"
+						<view class="u-text-center" :class="{'xuan':xuan==1}" @click="getxuan(1,'Newbie')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
 							<view>新手专区</view>
 							<view
@@ -157,7 +124,7 @@
 						</view>
 					</u-col>
 					<u-col span="3">
-						<view class="u-text-center" :class="{'xuan':xuan==2}" @click="getxuan(2)"
+						<view class="u-text-center" :class="{'xuan':xuan==2}" @click="getxuan(2,'Activity')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
 							<view>精英专区</view>
 							<view
@@ -167,7 +134,7 @@
 						</view>
 					</u-col>
 					<u-col span="3">
-						<view class="u-text-center" :class="{'xuan':xuan==3}" @click="getxuan(3)"
+						<view class="u-text-center" :class="{'xuan':xuan==3}" @click="getxuan(3,'VIP')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
 							<view>VIP专区</view>
 							<view
@@ -179,7 +146,7 @@
 				</u-row>
 			</view>
 
-			<view style="margin-bottom: 50rpx;">
+			<view style="margin-bottom: 50rpx;padding-bottom: 40rpx;">
 				<view class="" style="font-size: 24rpx;color:#999999;margin-top:20rpx;">
 					<u-row gutter="16">
 
@@ -205,14 +172,14 @@
 
 				</view>
 
-				<view style="color:#333333;margin-top: 10rpx;">
+				<view style="color:#333333;margin-top: 10rpx;" v-for="(item,index) in stockProductListTab" :key="index">
 					<u-row gutter="16">
 
 						<u-col span="5">
 							<view class="">
-								<view style="font-size: 30rpx;font-weight: bold;">PIPE:X战警:黑凤凰</view>
+								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_name_cn}}</view>
 								<view><u-line-progress active-color="#6BEEAB" height="18"
-										:percent="70"></u-line-progress></view>
+										:percent="Number(item.progress)"></u-line-progress></view>
 								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
 									<view style="width:50rpx;">0</view>
 									<view class="u-text-right" style="width: 220rpx;">2550万</view>
@@ -221,73 +188,14 @@
 						</u-col>
 						<u-col span="4">
 							<view class="u-text-center">
-								<view>1个自然日</view>
+								<view>{{item.investment_period}}个自然日</view>
 								<view style="margin-top: 10rpx;">满仓即止</view>
 							</view>
 						</u-col>
 						<u-col span="3">
 							<view class="u-text-right">
-								<view style="color: #F75F52;">3%</view>
-								<view style="margin-top: 10rpx;">起投:<text style="color: #F75F52;">200</text></view>
-							</view>
-						</u-col>
-					</u-row>
-					<view style="margin-top: 20rpx;"> <u-line color="#F3F3F3"></u-line></view>
-				</view>
-				
-				<view style="color:#333333;margin-top: 10rpx;">
-					<u-row gutter="16">
-				
-						<u-col span="5">
-							<view class="">
-								<view style="font-size: 30rpx;font-weight: bold;">PIPE:X战警:黑凤凰</view>
-								<view><u-line-progress active-color="#6BEEAB" height="18"
-										:percent="70"></u-line-progress></view>
-								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
-									<view style="width:50rpx;">0</view>
-									<view class="u-text-right" style="width: 220rpx;">2550万</view>
-								</view>
-							</view>
-						</u-col>
-						<u-col span="4">
-							<view class="u-text-center">
-								<view>1个自然日</view>
-								<view style="margin-top: 10rpx;">满仓即止</view>
-							</view>
-						</u-col>
-						<u-col span="3">
-							<view class="u-text-right">
-								<view style="color: #F75F52;">3%</view>
-								<view style="margin-top: 10rpx;">起投:<text style="color: #F75F52;">200</text></view>
-							</view>
-						</u-col>
-					</u-row>
-					<view style="margin-top: 20rpx;"> <u-line color="#F3F3F3"></u-line></view>
-				</view>
-				<view style="color:#333333;margin-top: 10rpx;">
-					<u-row gutter="16">
-				
-						<u-col span="5">
-							<view class="">
-								<view style="font-size: 30rpx;font-weight: bold;">PIPE:X战警:黑凤凰</view>
-								<view><u-line-progress active-color="#6BEEAB" height="18"
-										:percent="70"></u-line-progress></view>
-								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
-									<view style="width:50rpx;">0</view>
-									<view class="u-text-right" style="width: 220rpx;">2550万</view>
-								</view>
-							</view>
-						</u-col>
-						<u-col span="4">
-							<view class="u-text-center">
-								<view>1个自然日</view>
-								<view style="margin-top: 10rpx;">满仓即止</view>
-							</view>
-						</u-col>
-						<u-col span="3">
-							<view class="u-text-right">
-								<view style="color: #F75F52;">3%</view>
-								<view style="margin-top: 10rpx;">起投:<text style="color: #F75F52;">200</text></view>
+								<view style="color: #F75F52;">{{Number(item.appreciation_rate)}}%</view>
+								<view style="margin-top: 10rpx;">起投:<text style="color: #F75F52;">{{item.amount_per_unit}}</text></view>
 							</view>
 						</u-col>
 					</u-row>
@@ -300,6 +208,7 @@
 </template>
 
 <script>
+	import { getStockProductList,getStockProductAllList } from '@/api/api'
 	export default {
 		data() {
 			return {
@@ -316,11 +225,16 @@
 				},
 				xuan: 0,
 				but: 0,
-				ProductList:[]
+				ProductList:[],
+				stockList: [], // 精选股票
+				tabName: '', // 选项卡内容(查询参数)
+				stockProductListTab: []
 			}
 		},
 		onShow(){
 			this.stockProductList()
+			this.getStockProductListNewbie() // 精选股票
+			this.getStockProductListTab()
 		},
 		
 		methods: {
@@ -340,11 +254,33 @@
 					'notoken'
 				);
 			},
-			
-			
-			getxuan(e) {
-				this.xuan = e;
+			// 精选股票
+			async getStockProductListNewbie() {
+				const res = await getStockProductList('Newbie')
+				if (res.code === 1) {
+					this.stockList = res.data
+				}
 			},
+			getxuan(e,item) {
+				this.xuan = e;
+				this.tabName = item
+				this.getStockProductListTab()
+			},
+			// 选项卡切换查询
+			async getStockProductListTab() {
+				if (!this.tabName) {
+					const result = await getStockProductAllList()
+					if (result.code === 1) {
+						this.stockProductListTab = result.data
+					}					
+				} else {
+					const res = await getStockProductList(this.tabName)
+					if (res.code === 1) {
+						this.stockProductListTab = res.data
+					}					
+				}
+				console.log(this.stockProductListTab, '选项卡查询=======>')
+			}
 		}
 	}
 </script>
