@@ -48,90 +48,47 @@
 				border-radius:12rpx;padding-left:10rpx;width:98rpx;margin-top: 20rpx;">
 				USDT</view>
 				
-				<view style="color: #333333;margin-top: 20rpx;">
+				<view style="color: #333333;margin-top: 20rpx;" v-for="(item,index) in otcList" :key="index">
 					<view class="u-flex">
 						<view>
 							<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left:10rpx;"
-								src="../../static/images/otc/2.png"></image>
+								:src="$url + item.user_avatar"></image>
 						</view>
-						<view style="margin-left: 10rpx;width:300rpx;">江浙财阀</view>
-						<view style="width: 300rpx;color: #AFAFAF;font-size: 24rpx;" class="u-text-right">508订单｜94%</view>
+						<view style="margin-left: 10rpx;width:300rpx;">{{item.user_nickname}}</view>
+						<!-- <view style="width: 300rpx;color: #AFAFAF;font-size: 24rpx;" class="u-text-right">508订单｜94%</view> -->
 					</view>
 					<view class="u-flex" style="margin-top: 10rpx;">
-						<view style="font-size: 36rpx;color: #F75F52;width:500rpx;">¥6.87</view>
-					<view style="width:160rpx;color: #AFAFAF;" class="u-text-right">在线</view>
+						<view style="font-size: 36rpx;color: #F75F52;width:500rpx;">¥{{item.price}}</view>
+					<!-- <view style="width:160rpx;color: #AFAFAF;" class="u-text-right">在线</view> -->
 					</view>
 					<view class="u-flex" style="margin-top: 10rpx;">
 						<view style="color:#AFAFAF;margin-right: 20rpx;">数量</view>
-						<view>15896.0000 USDT</view>
+						<view>{{item.amount}} USDT</view>
 					</view>
 					<view class="u-flex" style="margin-top: 10rpx;">
 						<view style="color:#AFAFAF;margin-right: 20rpx;">限额</view>
-						<view>¥15,000.00-30,000.00 </view>
+						<view>¥{{item.min_amount}}-{{item.max_amount}} </view>
 					</view>
 					<view class="u-flex" style="margin-top: 10rpx;margin-bottom: 20rpx;">
 						<view class="u-flex"style="width: 520rpx;">
-							<view>
-								<image style="width:48rpx;height:48rpx;margin-left:10rpx;"
+							<view v-for="(item1,index1) in item.payment_list" :key="index1">
+								<image v-if="item1 == '银行卡'" style="width:48rpx;height:48rpx;margin-left:10rpx;"
 									src="../../static/images/otc/3.png"></image>
-							</view>
-							<view>
-								<image style="width:48rpx;height:48rpx;margin-left:10rpx;"
+								<image v-if="item1 == '支付宝'" style="width:48rpx;height:48rpx;margin-left:10rpx;"
 									src="../../static/images/otc/4.png"></image>
-							</view>
-							<view>
-								<image style="width:48rpx;height:48rpx;margin-left:10rpx;"
+								<image v-if="item1 == '微信'" style="width:48rpx;height:48rpx;margin-left:10rpx;"
 									src="../../static/images/otc/5.png"></image>
 							</view>
 						</view>
 					
-						<view><u-button  ripple-bg-color="#fff" :ripple="true"
-							style="font-size:28rpx;" :custom-style="customStyle1" shape="circle"
-							type="primary" @click="$tools.jump('sell/sell')">出售</u-button></view>
-					</view>
-					<u-line color="#F3F3F3"></u-line>
-				</view>
-				
-				<view style="color: #333333;margin-top: 20rpx;">
-					<view class="u-flex">
 						<view>
-							<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left:10rpx;"
-								src="../../static/images/otc/2.png"></image>
-						</view>
-						<view style="margin-left: 10rpx;width:300rpx;">江浙财阀</view>
-						<view style="width: 300rpx;color: #AFAFAF;font-size: 24rpx;" class="u-text-right">508订单｜94%</view>
-					</view>
-					<view class="u-flex" style="margin-top: 10rpx;">
-						<view style="font-size: 36rpx;color: #F75F52;width:500rpx;">¥6.87</view>
-					<view style="width:160rpx;color: #AFAFAF;" class="u-text-right">在线</view>
-					</view>
-					<view class="u-flex" style="margin-top: 10rpx;">
-						<view style="color:#AFAFAF;margin-right: 20rpx;">数量</view>
-						<view>15896.0000 USDT</view>
-					</view>
-					<view class="u-flex" style="margin-top: 10rpx;">
-						<view style="color:#AFAFAF;margin-right: 20rpx;">限额</view>
-						<view>¥15,000.00-30,000.00 </view>
-					</view>
-					<view class="u-flex" style="margin-top: 10rpx;margin-bottom: 20rpx;">
-						<view class="u-flex"style="width: 520rpx;">
-							<view>
-								<image style="width:48rpx;height:48rpx;margin-left:10rpx;"
-									src="../../static/images/otc/3.png"></image>
-							</view>
-							<view>
-								<image style="width:48rpx;height:48rpx;margin-left:10rpx;"
-									src="../../static/images/otc/4.png"></image>
-							</view>
-							<view>
-								<image style="width:48rpx;height:48rpx;margin-left:10rpx;"
-									src="../../static/images/otc/5.png"></image>
-							</view>
-						</view>
-					
-						<view><u-button  ripple-bg-color="#fff" :ripple="true"
+							<u-button v-if="but === 0" ripple-bg-color="#fff" :ripple="true"
+							style="font-size:28rpx;" :custom-style="customStyle2" shape="circle"
+							type="primary">购买</u-button>
+							<u-button v-if="but === 1" ripple-bg-color="#fff" :ripple="true"
 							style="font-size:28rpx;" :custom-style="customStyle1" shape="circle"
-							type="primary">出售</u-button></view>
+							type="primary">出售</u-button>
+						</view>
 					</view>
 					<u-line color="#F3F3F3"></u-line>
 				</view>
@@ -141,6 +98,7 @@
 </template>
 
 <script>
+	import { otcGetListing } from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -203,8 +161,21 @@
 					width: '140rpx',
 					background: 'linear-gradient(#F75F52,#F75F52)',
 				},
+				customStyle2: {
+					height: '56rpx',
+					margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
+					color: '#FFFFFF',
+					width: '140rpx',
+					background: '#35CBA5',
+				},
 				but:0,
+				type: 'Buy',
+				otcList: []
 			}
+		},
+		onLoad() {
+			console.log(this.isTrue('银行卡,微信,支付宝'))
+			this.getOtcList()
 		},
 		methods: {
 			// 币种点击事件
@@ -221,7 +192,28 @@
 			},
 			getbut(e) {
 				this.but= e;
+				if (e == 0) {
+					this.type = 'Buy'
+				} else if (e == 1) {
+					this.type = 'Sell'
+				}
+				this.getOtcList()
 			},
+			// 是否包含支付宝/微信/银行卡
+			isTrue(str) {
+				let text = '支付宝,银行卡,微信'
+				return text.indexOf(str)
+			},
+			async getOtcList() {
+				const res = await otcGetListing(this.type)
+				if (res.code === 1) {
+					this.otcList = res.data
+					this.otcList.forEach(item => {
+						item.payment_list = item.payment_method.split(',')
+					})
+					console.log(this.otcList)
+				}
+			}
 		}
 	}
 </script>

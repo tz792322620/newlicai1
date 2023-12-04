@@ -20,7 +20,7 @@
 				v-for="(item,index) in stockProductListTab" :key="index" @click="toDetails(item)">
 				<view>{{item.product_name_cn}}</view>
 				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
-					<view style="width: 300rpx;">收益率：<text style="color: #21BF90;">{{item.interest_rate}}%</text></view>
+					<view style="width: 300rpx;">收益率：<text style="color: #21BF90;">{{Number(item.interest_rate * 100)}}%</text></view>
 					<view style="width: 300rpx;" class="u-text-right">起购金额：：<text
 							style="color: #21BF90;">{{item.amount_per_unit}}U</text>
 					</view>
@@ -36,7 +36,7 @@
 						投资周期{{item.investment_period}}天
 					</view>
 					<view style="margin-left:200rpx;">
-						<u-button ripple-bg-color="#fff" :ripple="true" style="font-size:28rpx;"
+						<u-button ripple-bg-color="#fff" @click="reg(item)" :ripple="true" style="font-size:28rpx;"
 							:custom-style="customStyle1" shape="circle" type="primary">立即购买</u-button>
 					</view>
 				</view>
@@ -89,6 +89,11 @@
 			toDetails(item) {
 				uni.navigateTo({
 					url: `/pages/product/details/details?id=${item.product_id}`
+				})
+			},
+			reg(item) {
+				uni.navigateTo({
+					url: `/pages/product/bidding/bidding?id=${item.product_id}`
 				})
 			},
 			getxuan(e) {

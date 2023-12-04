@@ -11,7 +11,7 @@ function request(options = {}) {
 	// })
 	options.url = `${BASE_URL}${options.url}`;
 	options.header = {
-		Authorization: 'Bearer'+' '+uni.getStorageSync('token')
+		'token': uni.getStorageSync('token')
 	}
 	return new Promise((resolve, reject) => {
 		//成功
@@ -24,6 +24,19 @@ function request(options = {}) {
 				// 		icon: 'none'
 				// 	})
 				// }
+				if (res.data.code === 401) {
+					uni.showToast({
+						title: res.data.msg,
+						icon: 'error',
+						mask: true
+					})
+					uni.removeStorageSync('token')
+					setTimeout(() => {
+						uni.reLaunch({
+							url: '/pages/login/login_em'
+						})
+					}, 1000);
+				}
 				resolve(res.data)
 			},
 			//错误

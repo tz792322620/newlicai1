@@ -2,36 +2,36 @@
 	<view>
 		<uni-nav-bar left-icon="left" right-icon="plus" title="选择收款方式" :border="false" @clickLeft="back()" @clickRight="addPayment"></uni-nav-bar>
 		<view class="tabs">
-			<view class="tabs-item" v-for="(item,index) in tabsList" :key="index" @click="changeTabs(index)" :class="index === activeIndex ? 'active' : ''">
+			<view class="tabs-item" v-for="(item,index) in tabsList" :key="index" @click="changeTabs(item,index)" :class="index === activeIndex ? 'active' : ''">
 				{{item}}
 			</view>
 		</view>
 		<view class="content">
-			<view class="content-item">
+			<view class="content-item" v-for="(item,index) in paymentList" :key="index">
 				<view class="content-item_one">
-					<view class="content-item_one_left">
-						银行卡
+					<view class="content-item_one_left" :class="item.payment_type == '支付宝' ? 'zhifu' : item.payment_type == '微信' ? 'weixin' : ''">
+						{{item.payment_type}}
 					</view>
 					<view class="content-item_one_right">
 						编辑
 					</view>
 				</view>
 				<view class="content-item_two">
-					****
+					{{item.user_name}}
 				</view>
 				<view class="content-item_three">
-					**** *** **** **** ****
+					{{item.account_number}}
 				</view>
 				<view class="content-item_four">
-					<view class="content-item_four_left">
-						中信银行
+					<view class="content-item_four_left noBank">
+						<image :src="$url + item.qr_code_image" mode=""></image>
 					</view>
 					<view class="content-item_four_right">
 						<image src="../../../static/images/otc/payment/true.png" mode=""></image>
 					</view>
 				</view>
 			</view>
-			<view class="content-item">
+			<!-- <view class="content-item">
 				<view class="content-item_one">
 					<view class="content-item_one_left zhifu">
 						支付宝
@@ -78,23 +78,42 @@
 						<image src="../../../static/images/otc/payment/true.png" mode=""></image>
 					</view>
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>
 
 <script>
+	import { getPaymentInfo } from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				activeIndex: 0, // 当前选中下标
+				activeType: '',
 				 // 选项卡集合
-				tabsList: ['总览','银行卡','支付宝','微信']
+				tabsList: ['总览','银行卡','支付宝','微信'],
+				paymentList: []
 			}
 		},
+		onLoad() {
+			this.getPaymentList()
+		},
 		methods: {
-			changeTabs(index) {
+			async getPaymentList() {
+				const res = await getPaymentInfo(this.activeType)
+				if (res.code === 1) {
+					this.paymentList = res.data
+				} 
+				console.log(res)
+			},
+			changeTabs(item,index) {
+				if (index === 0) {
+					this.activeType = ''
+				} else {
+					this.activeType = item
+				}
 				this.activeIndex = index
+				this.getPaymentList()
 			},
 			back() {
 				uni.navigateBack()
@@ -207,7 +226,10 @@
 					&.noBank {
 						width: 60rpx;
 						height: 60rpx;
-						background-color: #35CBA5;
+						image {
+							width: 100%;
+							height: 100%;
+						}
 					}
 				}
 				&_right {

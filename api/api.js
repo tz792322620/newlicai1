@@ -25,3 +25,32 @@ export function getStockProductById(id) {
 		url: `/index/getStockProduct?product_id=${id}`
 	})
 }
+// 创建新股订单(投资)
+export function createStockOrder(data) {
+	return request({
+		url: '/user/createStockOrder',
+		method: 'POST',
+		data
+	})
+}
+// 上传图片
+export function uploadImage(data) {
+	return request({
+		url: '/image/upload',
+		method: 'POST',
+		data
+	})
+}
+// OTC获取所有买or卖挂单列表
+export function otcGetListing(type) {
+	return request({
+		url: `otc/getListing?type=${type}`
+	})
+}
+// 用户OTC收款信息列表查询
+export function getPaymentInfo(type) {
+	return request({
+		// url: `user/getPaymentInfo${type ? `?payment_type=${type}` : ''}`
+		url: `user/getPaymentInfo?payment_type=${type}`
+	})
+}

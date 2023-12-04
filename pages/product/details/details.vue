@@ -5,7 +5,7 @@
 		
 		<view class="u-text-center" style="background-color: #ffffff;padding: 30rpx; border-radius:12rpx;position: relative;margin-top: -300rpx;">
 		<view>日化回报率</view>	
-		<view style="color: #F75F52;font-size: 44rpx;font-weight: bold;margin-top: 20rpx;">{{productInfo.interest_rate}}%</view>
+		<view style="color: #F75F52;font-size: 44rpx;font-weight: bold;margin-top: 20rpx;">{{Number(productInfo.interest_rate) * 100}}%</view>
 		<view style="margin-top: 20rpx;">持仓期限<text style="color: #F75F52;margin-right: 40rpx;">满仓即止</text>
 		起投金额<text style="color: #F75F52;"> {{productInfo.amount_per_unit}}</text>元
 		<view style="margin-top: 20rpx;"><u-line-progress active-color="#6BEEAB" height="22"
@@ -13,11 +13,11 @@
 						<view class="u-flex" style="margin-top: 20rpx;">
 							<view style="width: 300rpx;">
 								<text style="margin-right: 10rpx;color: #AFAFAF;">总额</text>
-								{{productInfo.total_units}}万元
+								{{productInfo.total_units / 10000}}万元
 							</view>
 							<view style="width: 300rpx;margin-left:200rpx;" class="u-text-right">
 								<text style="margin-right: 10rpx;color: #AFAFAF;">剩余</text>
-								{{productInfo.total_units - productInfo.sold_units}}万元
+								{{(productInfo.total_units - productInfo.sold_units) / 10000}}万元
 							</view>
 						</view>
 		</view>
@@ -64,14 +64,14 @@
 				<text style="background-color: #52CABC;
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">日化回报率规则</text>
 			</view>
-			<view style="margin-top:20rpx;color: #666666;">按每日{{productInfo.interest_rate}}%的收益（保本保息）</view>
+			<view style="margin-top:20rpx;color: #666666;">按每日{{Number(productInfo.interest_rate) * 100}}%的收益（保本保息）</view>
 		</view>
 		<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
 			<view style="color:#ffffff;">
 				<text style="background-color: #52CABC;
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">限投次数</text>
 			</view>
-			<view style="margin-top:20rpx;color: #666666;">最大投资次数1次</view>
+			<view style="margin-top:20rpx;color: #666666;">无限次</view>
 		</view>
 		<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
 			<view style="color:#ffffff;">
@@ -85,7 +85,7 @@
 				<text style="background-color: #52CABC;
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">金额及计算收益规则</text>
 			</view>
-			<view style="margin-top:20rpx;color: #666666;">每日分红6元*1天=总收益6元</view>
+			<view style="margin-top:20rpx;color: #666666;">每日分红{{Number(productInfo.interest_rate) * Number(productInfo.amount_per_unit)}}元*{{productInfo.investment_period}}天=总收益{{Number(productInfo.interest_rate) * Number(productInfo.amount_per_unit) * productInfo.investment_period}}元</view>
 		</view>
 		<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
 			<view style="color:#ffffff;">
@@ -137,6 +137,11 @@
 			}
 		},
 		methods: {
+			reg() {
+				uni.navigateTo({
+					url: `/pages/product/bidding/bidding?id=${this.productId}`
+				})
+			},
 			async getStockProduct() {
 				const res = await getStockProductById(this.productId)
 				if (res.code === 1) {

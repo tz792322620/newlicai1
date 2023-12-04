@@ -27,6 +27,7 @@ const i18n = new VueI18n({
 Vue.config.productionTip = false
 Vue.prototype.$Ajax3=Ajax3
 Vue.prototype.$tools=tools
+Vue.prototype.$url = 'https://xingu.bianceok.info'
 App.mpType = 'app'
 const app = new Vue({
 	i18n,
