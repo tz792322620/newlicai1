@@ -17,7 +17,7 @@
 					</view>
 				</view>
 				<view class="content-item_two">
-					{{item.user_name}}
+					{{item.payment_type == '银行卡' ? item.bank_name + ' ' + item.branch_name : item.user_name}}
 				</view>
 				<view class="content-item_three">
 					{{item.account_number}}
