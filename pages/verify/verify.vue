@@ -13,29 +13,31 @@
 			</view>
 		</view>
 		<view style="background-color: rgb(255, 255, 255);
-					border-radius: 0.2rem;
+					border-radius: 40rpx 40rpx 0px 0px;
 					position: absolute;
 					width: 100%;
 					top: 5rem;
 					padding: 1rem 1.5rem;">
 			<view class="top1">姓名</view>
-			<view class="top1"><u-input v-model="value" :type="type" :border="border" /></view>
+			<view class="top2"><u-input :custom-style="customStyle" placeholder="请输入姓名" v-model="data.real_name" /></view>
 			<view class="top1">证件号码</view>
-			<view class="top1"><u-input v-model="value" :type="type" :border="border" /></view>
+			<view class="top2"><u-input :custom-style="customStyle" placeholder="请输入证件号码" v-model="data.identity_number" /></view>
 			<view class="top1">上传身份证照片</view>
 			<view class="top1" style="display: flex;justify-content: space-around;">
-				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;">
+				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.front_image" @click="uploadImage(0)">
 					<view>
 						<image style="width: 222rpx;height: 156rpx;" src="../../static/images/verify/sczm.png"></image>
 					</view>
-					<view style="color: #fff;" class="gradient-background" >上传正面</view>
+					<view style="color: #fff;" class="gradient-background">上传正面</view>
 				</view>
-				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;">
+				<image v-else :src="$url + data.front_image" style="width: 320rpx;height: 260rpx;" mode="" @click="uploadImage(0)"></image>
+				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.back_image" @click="uploadImage(1)">
 					<view>
 						<image style="width: 222rpx;height: 156rpx;"  src="../../static/images/verify/bm.png"></image>
 					</view>
 					<view style="color: #fff;" class="gradient-background">上传背面</view>
 				</view>
+				<image v-else :src="$url + data.back_image" style="width: 320rpx;height: 260rpx;" mode="" @click="uploadImage(1)"></image>
 			</view>
 			<view class="top1">拍摄须知</view>
 			<view class="top1" style="display: flex;
@@ -60,7 +62,7 @@
 				</view>
 			</view>
 			<view style="margin-top: 3rem;">
-				<u-button  style="background-color: #35CBA5;color: #fff;">提交</u-button>
+				<u-button  style="background-color: #35CBA5;color: #fff;" @click="submit">提交</u-button>
 			</view>
 			
 		</view>
@@ -72,10 +74,18 @@
 </template>
 
 <script>
+	import { submitVerification } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-
+				customStyle: {
+				},
+				data: {
+					real_name: '',
+					identity_number: '',
+					front_image: '',
+					back_image: ''
+				}
 			};
 		},
 		methods: {
@@ -85,13 +95,94 @@
 					delta: 1,
 				});
 			},
-
+			uploadImage(type) {
+				uni.chooseImage({
+					success: (chooseImageRes) => {
+						const tempFilePaths = chooseImageRes.tempFilePaths;
+						console.log(tempFilePaths[0])
+						uni.uploadFile({
+							url: this.$url + '/api/image/upload',
+							filePath: tempFilePaths[0],
+							name: 'image',
+							formData: {
+								'image': tempFilePaths[0]
+							},
+							success: (uploadFileRes) => {
+								const res = JSON.parse(uploadFileRes.data)
+								if (res.code === 1) {
+									if (type === 0) {
+										this.data.front_image= res.data.url
+									}else if(type === 1) {
+										this.data.back_image= res.data.url
+									}
+								}else {
+									uni.showToast({
+										title: res.msg,
+										icon: 'none'
+									})
+								}
+							}
+						});
+					}
+				})
+			},
+			async submit() {
+				if (this.data.real_name.trim() == '' ||this.data.real_name.length === 0) {
+					return uni.showToast({
+						title: '请填写姓名',
+						icon: 'none'
+					})
+				}
+				if (this.data.identity_number.trim() == '' ||this.data.identity_number.length === 0) {
+					return uni.showToast({
+						title: '请填写证件号码',
+						icon: 'none'
+					})
+				}
+				if (!this.$u.test.idCard(this.data.identity_number)) {
+					return uni.showToast({
+						title: '请填写正确的证件号码',
+						icon: 'none'
+					}) 
+				}
+				if (this.data.front_image.trim() == '' ||this.data.front_image.length === 0) {
+					return uni.showToast({
+						title: '请上传证件正面照',
+						icon: 'none'
+					})
+				}
+				if (this.data.back_image.trim() == '' ||this.data.back_image.length === 0) {
+					return uni.showToast({
+						title: '请上传证件背面照',
+						icon: 'none'
+					})
+				}
+				const res = await submitVerification(this.data)
+				if (res.code === 1) {
+					uni.navigateTo({
+						url: '/pages/verify/submitSuccessfully/submitSuccessfully'
+					})
+				} else if (res.code === 0) {
+					uni.navigateTo({
+						url: '/pages/verify/pending/pending'
+					})
+				}
+			}
 		}
 	};
 </script>
 
 <style scoped>
-/deep/.uni-input-wrapper {
+	/deep/.u-input {
+		padding-left: 20rpx;
+	}
+	.top2 {
+		margin-top: .5rem;
+		background: #F4F5F7;
+		padding: 0 20rpx;
+		border-radius: 0.5rem;
+	}
+/* /deep/.uni-input-wrapper {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -107,7 +198,7 @@
     justify-content: center;
     background: #F4F5F7;
     border-radius: 0.5rem;
-}
+} */
 	.gradient-background {
 	  background: linear-gradient(to right, #24CCBC, #6BEEAB);
 	  /* 定义渐变的方向和颜色 */

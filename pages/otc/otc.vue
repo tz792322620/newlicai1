@@ -29,7 +29,7 @@
 						color="#333333" size="36" @click="isTool = !isTool"></u-icon>
 					<view class="u-flex-popup" v-if="isTool">
 						<view class="u-flex-popup-content">
-							<view class="u-flex-popup-content-item" v-for="(item,index) in toolsList" :key="index" @click="skip(item)">
+							<view class="u-flex-popup-content-item" v-for="(item,index) in toolsList" :key="index" @click="skip(item,index)">
 								<image :src="item.url" mode=""></image>
 								<text>{{item.name}}</text>
 							</view>
@@ -92,16 +92,17 @@
 					</view>
 					<u-line color="#F3F3F3"></u-line>
 				</view>
-				
+				<u-modal v-model="modalShow" :zoom="false" confirm-color="#35CBA5" @confirm="confirm" show-cancel-button :title="'温馨提示'" :content="'请前往完成身份认证后，开启发布广告'"></u-modal>
 		</view>
 	</view>
 </template>
 
 <script>
-	import { otcGetListing } from '@/api/api.js'
+	import { otcGetListing,getVerificationStatus } from '@/api/api.js'
 	export default {
 		data() {
 			return {
+				modalShow: false,
 				isAbP: false, // 控制币种弹出隐藏
 				ab: 'HKD', // 币种缩写
 				// 币种集合
@@ -174,7 +175,6 @@
 			}
 		},
 		onLoad() {
-			console.log(this.isTrue('银行卡,微信,支付宝'))
 			this.getOtcList()
 		},
 		methods: {
@@ -184,10 +184,24 @@
 				this.isAbP = false
 			},
 			// 右侧操作台点击事件
-			skip(item) {
+			async skip(item,index) {
 				console.log(item)
+				if (index === 0) {
+					const res = await getVerificationStatus()
+					console.log(res)
+					if (!res.data || res.data.status != 'Verified') {
+						this.modalShow = true
+						return
+					}
+				}
 				uni.navigateTo({
 					url: item.skipUrl
+				})
+			},
+			// modal框确认按钮点击事件(跳转实名认证)
+			confirm() {
+				uni.navigateTo({
+					url: '/pages/verify/verify'
 				})
 			},
 			getbut(e) {
@@ -198,11 +212,6 @@
 					this.type = 'Sell'
 				}
 				this.getOtcList()
-			},
-			// 是否包含支付宝/微信/银行卡
-			isTrue(str) {
-				let text = '支付宝,银行卡,微信'
-				return text.indexOf(str)
 			},
 			async getOtcList() {
 				const res = await otcGetListing(this.type)

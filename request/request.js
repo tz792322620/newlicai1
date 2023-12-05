@@ -1,6 +1,6 @@
 // const BASE_URL = 'https://xingu.bianceok.info/api' // 测试
-// const BASE_URL = 'https://xingu.bianceok.info/api' // 正式
-const BASE_URL = '/api'
+const BASE_URL = 'https://xingu.bianceok.info/api' // 正式
+// const BASE_URL = '/api'
 import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
 

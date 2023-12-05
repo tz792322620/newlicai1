@@ -12,7 +12,7 @@
 					<view class="content-item_one_left" :class="item.payment_type == '支付宝' ? 'zhifu' : item.payment_type == '微信' ? 'weixin' : ''">
 						{{item.payment_type}}
 					</view>
-					<view class="content-item_one_right">
+					<view class="content-item_one_right" @click="toEdit(item)">
 						编辑
 					</view>
 				</view>
@@ -27,7 +27,7 @@
 						<image :src="$url + item.qr_code_image" mode=""></image>
 					</view>
 					<view class="content-item_four_right">
-						<image src="../../../static/images/otc/payment/true.png" mode=""></image>
+						<!-- <image src="../../../static/images/otc/payment/true.png" mode=""></image> -->
 					</view>
 				</view>
 			</view>
@@ -99,6 +99,11 @@
 			this.getPaymentList()
 		},
 		methods: {
+			toEdit(item) {
+				uni.navigateTo({
+					url: `/pages/otc/payment/add/add?id=${item.id}`
+				})
+			},
 			async getPaymentList() {
 				const res = await getPaymentInfo(this.activeType)
 				if (res.code === 1) {
