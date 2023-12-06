@@ -15,33 +15,47 @@ import Vue from 'vue'
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-  locale: 'zh-CN', // 设置默认语言
-  messages: {
-    en,
-    'zh-CN': zhCN,
-    'zh-TW': zhTW
-  }
+	locale: 'zh-CN', // 设置默认语言
+	messages: {
+		en,
+		'zh-CN': zhCN,
+		'zh-TW': zhTW
+	}
 });
 
 
 Vue.config.productionTip = false
-Vue.prototype.$Ajax3=Ajax3
-Vue.prototype.$tools=tools
+// 时间戳转日期
+Vue.filter('timestampFilter', (timestamp) => {
+	timestamp = timestamp ? timestamp : null;
+	let date = new Date(timestamp*1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+	let Y = date.getFullYear() + '-';
+	let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+	let D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
+	let h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+	let m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+	let s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+	return Y + M + D + h + m + s;
+})
+Vue.prototype.$Ajax3 = Ajax3
+Vue.prototype.$tools = tools
 Vue.prototype.$url = 'https://xingu.bianceok.info'
 App.mpType = 'app'
 const app = new Vue({
 	i18n,
-    ...App
+	...App
 })
 app.$mount()
 // #endif
 
 // #ifdef VUE3
-import { createSSRApp } from 'vue'
+import {
+	createSSRApp
+} from 'vue'
 export function createApp() {
-  const app = createSSRApp(App)
-  return {
-    app
-  }
+	const app = createSSRApp(App)
+	return {
+		app
+	}
 }
 // #endif

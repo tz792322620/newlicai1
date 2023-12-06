@@ -32,7 +32,7 @@
                 <view class="u-flex-popup" v-if="isType">
                     <view class="u-flex-popup-content">
                         <view class="u-flex-popup-content-item" v-for="(item, index) in typeList" :key="index" 
-                        :class="activeTypeIndex == item.id ? 'active' : ''" @click="typeClick(item)" style="padding: 30rpx 0;">
+                        :class="activeTypeIndex == index ? 'active' : ''" @click="typeClick(item,index)" style="padding: 30rpx 0;">
                             <text style="width: 100%; text-align: center;">{{ item.name }}</text>
                         </view>
                     </view>
@@ -40,7 +40,7 @@
             </view>
             <view class="item">
                 <view class="desc">{{ $t('priceUnit') }}</view>
-                <view class="input" @click="isPrice = !isPrice">
+                <!-- <view class="input" @click="isPrice = !isPrice">
                     <text>{{ activePrice }}</text>
                     <uni-icons type="bottom"></uni-icons>
                 </view>
@@ -51,45 +51,48 @@
                             <text style="width: 100%; text-align: center;">{{ item.name }}</text>
                         </view>
                     </view>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <view class="desc">{{ $t('quantity') }}</view>
-            <view class="input" style="width: 100%;">
-                <u-input :placeholder="$t('enterTransactionQuantity')"></u-input>
+                </view> -->
+				<view class="input">
+				    <u-input :placeholder="'请输入价格单价'" v-model="data.price"></u-input>
+				</view>
             </view>
         </view>
         <view class="item">
             <view class="desc">{{ $t('minAmount') }}</view>
             <view class="input" style="width: 100%;">
-                <u-input :placeholder="$t('enterMinAmount')"></u-input>
+                <u-input :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
             </view>
         </view>
         <view class="item">
             <view class="desc">{{ $t('maxAmount') }}</view>
             <view class="input" style="width: 100%;">
-                <u-input :placeholder="$t('enterMaxAmount')"></u-input>
+                <u-input :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
             </view>
         </view>
         <view class="item1">
             <view class="item">
                 <view class="desc">{{ $t('paymentMethod') }}</view>
                 <view class="input" @click="isPay = !isPay">
-                    <text>{{ activePay }}</text>
+                    <text>{{ data.payment_method }}</text>
                     <uni-icons type="bottom"></uni-icons>
                 </view>
                 <view class="u-flex-popup" v-if="isPay">
                     <view class="u-flex-popup-content">
                         <view class="u-flex-popup-content-item" v-for="(item, index) in payList" :key="index" 
-                        :class="activePayIndex == item.id ? 'active' : ''" @click="payClick(item)">
+                        :class="item.isTrue ? 'active' : ''" @click="payClick(item)">
                             <image :src="item.url" mode="" style="width: 40rpx; height: 42rpx;"></image>
                             <text>{{ item.name }}</text>
                         </view>
                     </view>
                 </view>
             </view>
-            <view class="item">
+			<view class="item">
+			    <view class="desc">{{ $t('quantity') }}</view>
+			    <view class="input">
+			        <u-input :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
+			    </view>
+			</view>
+            <!-- <view class="item">
                 <view class="desc">{{ $t('transactionLimit') }}</view>
                 <view class="input" @click="isTime = !isTime">
                     <text>{{ activeTime }}</text>
@@ -103,22 +106,33 @@
                         </view>
                     </view>
                 </view>
-            </view>
+            </view> -->
         </view>
         <view class="item">
             <view class="desc">{{ $t('note') }}</view>
             <view class="input" style="width: 100%; height: 240rpx; align-items: flex-start; padding: 26rpx 20rpx">
-                <u-input type="textarea" :placeholder="$t('enterNote')" maxlength="20"></u-input>
+                <u-input type="textarea" :placeholder="$t('enterNote')" v-model="data.remark" maxlength="20"></u-input>
             </view>
         </view>
-        <view class="button">{{ $t('publish') }}</view>
+        <view class="button" @click="submit">{{ $t('publish') }}</view>
     </view>
 </template>
 
 <script>
+	import { createListing } from '@/api/api.js'
 	export default {
 		data() {
 			return {
+				data: {
+					listing_type: 'Buy',
+					amount: '',
+					price: '',
+					currency: 'HKD',
+					min_amount: '',
+					max_amount: '',
+					payment_method: '微信',
+					remark: ''
+				},
 				isAbP: false, // 控制币种弹出隐藏
 				ab: 'HKD', // 币种缩写
 				abName: '港币',
@@ -133,17 +147,17 @@
 					name: '台币'
 				},{
 					url: '../../../static/images/otc/renminbi.png',
-					ab: 'CNY',
+					ab: 'RMB',
 					name: '人民币'
 				}],
 				isType: false, // 控制广告类型弹出隐藏
 				activeType: '购买',
 				activeTypeIndex: 0,
 				typeList: [{
-					id: 0,
+					id: 'Buy',
 					name: '购买'
 				},{
-					id: 1,
+					id: 'Sell',
 					name: '出售'
 				}],
 				isPrice: false, // 控制价格单位弹出隐藏
@@ -157,20 +171,23 @@
 					name: '固定价格'
 				}],
 				isPay: false, // 控制收款方式弹出隐藏
-				activePay: '微信',
+				activePay: ['微信'],
 				activePayIndex: 0,
 				payList: [{
 					url: '../../../static/images/otc/publish_ad/0.png',
 					id: 0,
-					name: '微信'
+					name: '微信',
+					isTrue: true
 				},{
 					url: '../../../static/images/otc/publish_ad/1.png',
 					id: 1,
-					name: '支付宝'
+					name: '支付宝',
+					isTrue: false
 				},{
 					url: '../../../static/images/otc/publish_ad/2.png',
 					id: 2,
-					name: '银行卡'
+					name: '银行卡',
+					isTrue: false
 				}],
 				isTime: false, // 控制交易期限弹出隐藏
 				activeTime: '5分钟',
@@ -191,12 +208,14 @@
 			// 币种点击事件
 			abClick(item) {
 				this.ab = item.ab
+				this.data.currency = item.ab
 				this.abName = item.name
 				this.isAbP = false
 			},
-			typeClick(item) {
+			typeClick(item,index) {
 				this.activeType = item.name
-				this.activeTypeIndex = item.id
+				this.activeTypeIndex = index
+				this.data.listing_type = item.id
 				this.isType = false
 			},
 			priceClick(item) {
@@ -205,14 +224,74 @@
 				this.isPrice = false
 			},
 			payClick(item) {
-				this.activePay = item.name
-				this.activePayIndex = item.id
+				item.isTrue = !item.isTrue
+				if(item.isTrue) {
+					this.activePay.push(item.name)
+				}else {
+					this.activePay = this.activePay.filter(item1 => item1 !== item.name)
+				}
+				console.log(this.activePay)
+				this.data.payment_method = this.activePay.join()
+				console.log(this.data.payment_method)
+				// this.activePayIndex = item.id
+				// this.data.payment_method = item.name
 				this.isPay = false
 			},
 			timeClick(item) {
 				this.activeTime = item.name
 				this.activeTimeIndex = item.id
 				this.isTime = false
+			},
+			async submit() {
+				console.log(this.data)
+				if(this.$u.test.isEmpty(this.data.price)) {
+					return uni.showToast({
+						title: '请输入价格单价',
+						icon: 'none'
+					})
+				}
+				if(this.$u.test.isEmpty(this.data.min_amount)) {
+					return uni.showToast({
+						title: this.$t('enterMinAmount'),
+						icon: 'none'
+					})
+				}
+				if(this.$u.test.isEmpty(this.data.max_amount)) {
+					return uni.showToast({
+						title: this.$t('enterMaxAmount'),
+						icon: 'none'
+					})
+				}
+				if(this.$u.test.isEmpty(this.data.payment_method)) {
+					return uni.showToast({
+						title: '请选择收款方式',
+						icon: 'none'
+					})
+				}
+				if(this.$u.test.isEmpty(this.data.amount)) {
+					return uni.showToast({
+						title: this.$t('enterTransactionQuantity'),
+						icon: 'none'
+					})
+				}
+				if(this.$u.test.isEmpty(this.data.remark)) {
+					return uni.showToast({
+						title: '请输入备注',
+						icon: 'none'
+					})
+				}
+				const res = await createListing(this.data)
+				if (res.code === 1) {
+					uni.showToast({
+						title: '发布成功',
+						duration: 2000,
+						success: () => {
+							uni.redirectTo ({
+								url: '/pages/otc/my_ad/my_ad'
+							})
+						}
+					})
+				}
 			}
 		}
 	}

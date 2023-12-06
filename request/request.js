@@ -37,6 +37,13 @@ function request(options = {}) {
 						})
 					}, 1000);
 				}
+				if (res.data.code !== 1) {
+					uni.showToast({
+						title: res.data.msg,
+						icon: 'error',
+						mask: true
+					})
+				}
 				resolve(res.data)
 			},
 			//错误

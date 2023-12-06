@@ -1,30 +1,42 @@
 <template>
 	<view class="order">
 		<view class="tabs">
-			<view class="tabs_left">
+			<!-- <view class="tabs_left">
 				<view class="tabs_left_item" :class="activeIndex === index ? 'active' : ''"
 					v-for="(item,index) in tabsList" :key="index" @click="activeIndex = index">
 					{{item}}
 				</view>
-			</view>
+			</view> -->
 			<view class="tabs_right" @click="unShow = true">
 				<image src="../../../static/images/otc/my_order/screen.png" mode=""></image>
 			</view>
 		</view>
 		<view class="content">
-			<view class="content_item" v-for="(item,index) in 3" :key="index">
+			<view class="content_item" v-for="(item,index) in orderList" :key="index">
 				<view class="content_item_top">
 					<view class="content_item_top_left">
-						<view class="deal">
+						<view class="deal" v-if="item.buyer_id === userInfo.user_id">
 							购买
+						</view>
+						<view class="sell" v-if="item.seller_id === userInfo.user_id">
+							出售
 						</view>
 						<view class="unit">
 							USDT
 						</view>
 					</view>
 					<view class="content_item_top_right">
-						<view class="status">
-							待支付
+						<view class="status" v-if="item.status == 'Pending'&&item.payment_proof_status == 'Pending'">
+							待上传付款截图
+						</view>
+						<view class="status" v-else-if="item.status == 'Pending'">
+							未完成
+						</view>
+						<view class="complete" v-if="item.status == 'Completed'">
+							已完成
+						</view>
+						<view class="status" v-if="item.status == 'Cancelled'">
+							取消
 						</view>
 						<uni-icons type="right"></uni-icons>
 					</view>
@@ -34,7 +46,7 @@
 						总额
 					</view>
 					<view class="content_item_cell_right">
-						1000 CNY
+						{{item.trade_price * item.trade_amount}} {{item.trade_currency}}
 					</view>
 				</view>
 				<view class="content_item_cell">
@@ -42,7 +54,7 @@
 						单价
 					</view>
 					<view class="content_item_cell_right">
-						7.20 CNY
+						{{item.trade_price}} {{item.trade_currency}}
 					</view>
 				</view>
 				<view class="content_item_cell">
@@ -50,10 +62,10 @@
 						数量
 					</view>
 					<view class="content_item_cell_right">
-						14.24 USDT
+						{{item.trade_amount}} USDT
 					</view>
 				</view>
-				<view class="content_item_cell">
+				<!-- <view class="content_item_cell">
 					<view class="content_item_cell_left">
 						订单号
 					</view>
@@ -61,13 +73,13 @@
 						20230304123142154
 						<image src="../../../static/images/copy-icon.png" mode="" @click="copy(item)"></image>
 					</view>
-				</view>
+				</view> -->
 				<view class="content_item_cell">
 					<view class="content_item_cell_left">
 						创建时间
 					</view>
 					<view class="content_item_cell_right">
-						2023-03-04 12:31:42
+						{{item.created_at}}
 					</view>
 				</view>
 			</view>
@@ -82,7 +94,18 @@
 						<view class="popup_body_item_title">
 							订单状态
 						</view>
-						<view class="popup_body_item_cell" v-if="activeIndex === 0" v-for="(item,index) in unStatusList"
+						<view class="popup_body_item_cell" v-for="(item,index) in orderStatusList"
+							:key="index" @click="orderStatusIndex = index,status = item.status">
+							<view class="popup_body_item_cell_left">
+								{{item.desc}}
+							</view>
+							<view class="popup_body_item_cell_right">
+								<image v-if="orderStatusIndex === index"
+									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+							</view>
+						</view>
+						<!-- <view class="popup_body_item_cell" v-if="activeIndex === 0" v-for="(item,index) in unStatusList"
 							:key="index" @click="unStatusActiveIndex = index">
 							<view class="popup_body_item_cell_left">
 								{{item}}
@@ -103,16 +126,16 @@
 									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
 								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
 							</view>
-						</view>
+						</view> -->
 					</view>
 					<view class="popup_body_item">
 						<view class="popup_body_item_title">
 							交易类型
 						</view>
 						<view class="popup_body_item_cell" v-for="(item,index) in typeList" :key="index"
-							@click="typeActiveIndex = index">
+							@click="typeActiveIndex = index,trade_type = item.type">
 							<view class="popup_body_item_cell_left">
-								{{item}}
+								{{item.desc}}
 							</view>
 							<view class="popup_body_item_cell_right">
 								<image v-if="typeActiveIndex === index"
@@ -121,7 +144,7 @@
 							</view>
 						</view>
 					</view>
-					<view class="popup_body_item" v-if="activeIndex === 1">
+					<view class="popup_body_item">
 						<view class="popup_body_item_title">
 							下单日期
 						</view>
@@ -141,7 +164,7 @@
 						<view class="buttons_left">
 							清除条件
 						</view>
-						<view class="buttons_right">
+						<view class="buttons_right" @click="complete">
 							完成
 						</view>
 					</view>
@@ -159,9 +182,16 @@
 </template>
 
 <script>
+	import { getUserTrades } from '@/api/api.js'
 	export default {
 		data() {
 			return {
+				userInfo: JSON.parse(uni.getStorageSync('userInfo')),
+				trade_type: 'Buy',
+				start_date: '',
+				end_date: '',
+				status: 'Pending',
+				orderList: [],
 				startDate: '开始日期',
 				endDate: '结束日期',
 				show: false,
@@ -181,6 +211,17 @@
 					time: 3,
 					desc: '近1年'
 				}],
+				orderStatusIndex: 0,
+				orderStatusList: [{
+					desc: '未完成',
+					status: 'Pending'
+				},{
+					desc: '已完成',
+					status: 'Completed'
+				},{
+					desc: '取消',
+					status: 'Cancelled'
+				}],
 				activeIndex: 0,
 				tabsList: ['未完成', '已完成'],
 				unShow: false, // 未完成弹窗
@@ -189,16 +230,36 @@
 				statusActiveIndex: 0,
 				statusList: ['交易完成', '交易取消'],
 				typeActiveIndex: 0,
-				typeList: ['购买', '出售']
+				typeList: [{
+					desc: '购买',
+					type: 'Buy'
+				},{
+					desc: '出售',
+					type: 'Sell'
+				}]
 			}
 		},
 		onShow() {
 			var today = new Date() //当天
-			today.setDate(today.getDate()-7)//七天前，时间戳
+			today.setDate(today.getDate()-6)//七天前，时间戳
 			this.minDate = today.toLocaleDateString().replaceAll('/','-')//格式化时间
 			console.log(this.minDate)
 		},
+		onLoad() {
+			this.getOrderList()
+		},
 		methods: {
+			async getOrderList() {
+				const res = await getUserTrades(this.trade_type,this.start_date,this.end_date,this.status)
+				if (res.code === 1) {
+					this.orderList = res.data
+				}
+				console.log(res, '订单======>')
+			},
+			complete() {
+				this.getOrderList()
+				this.unShow = false
+			},
 			copy(item) {
 				uni.setClipboardData({
 					data: 'hello',
@@ -212,7 +273,7 @@
 				var today = new Date() //当天
 				switch (index) {
 					case 0:
-						today.setDate(today.getDate()-7)//七天前，时间戳
+						today.setDate(today.getDate()-6)//七天前，时间戳
 					break;
 					case 1:
 						today.setMonth(today.getMonth()-3)//三个月前，时间戳
@@ -231,6 +292,8 @@
 				console.log(e);
 				this.startDate = e.startDate
 				this.endDate = e.endDate
+				this.start_date = e.startDate
+				this.end_date = e.endDate
 			}
 		}
 	}
@@ -323,7 +386,10 @@
 							color: #35CBA5;
 							margin-right: 10rpx;
 						}
-
+						.sell {
+							color: #F75F52;
+							margin-right: 10rpx;
+						}
 						.unit {
 							color: #333333;
 						}
@@ -337,6 +403,13 @@
 							font-size: 32rpx;
 							font-weight: 500;
 							color: #F75F52;
+							line-height: 44rpx;
+							margin-right: 10rpx;
+						}
+						.complete {
+							font-size: 32rpx;
+							font-weight: 500;
+							color: #35CBA5;
 							line-height: 44rpx;
 							margin-right: 10rpx;
 						}

@@ -3,39 +3,55 @@
 		<view class="content">
 			<view class="top">
 				<view class="top_left">
-					{{ $t('pair') }}
+					USDT/{{ data.currency }}
 				</view>
 			</view>
-			<view class="cell">
+			<!-- <view class="cell">
 				<view class="cell_left">
 					{{ $t('adNumber') }}
 				</view>
 				<view class="cell_right">
 					1234567890098765
 				</view>
-			</view>
+			</view> -->
 			<view class="cell">
 				<view class="cell_left">
 					{{ $t('adType') }}
 				</view>
 				<view class="cell_right">
-					{{ $t('buy') }}
+					{{ data.listing_type == 'Buy' ? $t('buy') : $t('sell') }}
 				</view>
 			</view>
 			<view class="cell">
+				<view class="cell_left">
+					收款方式
+				</view>
+				<view class="cell_right">
+					{{ data.payment_method }}
+				</view>
+			</view>
+			<view class="cell">
+				<view class="cell_left">
+					法币
+				</view>
+				<view class="cell_right">
+					{{ data.currency }}
+				</view>
+			</view>
+			<!-- <view class="cell">
 				<view class="cell_left">
 					{{ $t('displayPosition') }}
 				</view>
 				<view class="cell_right">
 					{{ $t('webpage') }}
 				</view>
-			</view>
+			</view> -->
 			<view class="cell">
 				<view class="cell_left">
 					{{ $t('priceUnit') }}
 				</view>
 				<view class="cell_right">
-					{{ $t('realTimePrice') }}
+					{{ data.price }}
 				</view>
 			</view>
 			<view class="cell">
@@ -51,7 +67,7 @@
 					{{ $t('quantity') }}
 				</view>
 				<view class="cell_right">
-					100 USDT
+					{{data.amount}} USDT
 				</view>
 			</view>
 			<view class="cell">
@@ -59,7 +75,7 @@
 					{{ $t('minAmount') }}
 				</view>
 				<view class="cell_right">
-					100 CNY
+					{{data.min_amount}} {{data.currency}}
 				</view>
 			</view>
 			<view class="cell">
@@ -67,23 +83,23 @@
 					{{ $t('maxAmount') }}
 				</view>
 				<view class="cell_right">
-					5000 CNY
+					{{data.max_amount}} {{data.currency}}
 				</view>
 			</view>
-			<view class="cell">
+			<!-- <view class="cell">
 				<view class="cell_left">
 					{{ $t('transactionLimit') }}
 				</view>
 				<view class="cell_right">
 					{{ $t('30min') }}
 				</view>
-			</view>
+			</view> -->
 			<view class="cell">
 				<view class="cell_left">
 					{{ $t('note') }}
 				</view>
 				<view class="cell_right">
-					{{ $t('honestBusiness') }}
+					{{ data.remark }}
 				</view>
 			</view>
 			<view class="cell">
@@ -91,28 +107,43 @@
 					{{ $t('publishTime') }}
 				</view>
 				<view class="cell_right">
-					2023-03-03 10:25:39
+					{{data.creation_date}}
 				</view>
 			</view>
-			<view class="button">
+			<!-- <view class="button">
 				<view class="button_c">
 					{{ $t('delete') }}
 				</view>
-			</view>
+			</view> -->
 		</view>
 	</view>
 </template>
 
 
 <script>
+	import { getListingById } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				
+				id: '',
+				data: ''
+			}
+		},
+		onLoad(params) {
+			console.log(params)
+			if(params.id) {
+				this.id = params.id
+				this.getInfoById()
 			}
 		},
 		methods: {
-			
+			async getInfoById() {
+				const res = await getListingById(this.id)
+				console.log(res)
+				if (res.code === 1) {
+					this.data = res.data
+				}
+			}
 		}
 	}
 </script>

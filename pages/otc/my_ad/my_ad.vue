@@ -13,7 +13,7 @@
 			<view class="item" v-for="(item, index) in list" :key="index" @click="toDetails(item)">
 				<view class="top">
 					<view class="top_left">
-						{{ $t('pair') }}
+						USDT/{{ item.currency }}
 					</view>
 					<view class="top_right">
 						<uni-icons type="right"></uni-icons>
@@ -24,7 +24,7 @@
 						{{ $t('adType') }}
 					</view>
 					<view class="cell_right">
-						{{ $t('buy') }}
+						{{item.listing_type === 'Buy' ? $t('buy') : $t('sell') }}
 					</view>
 				</view>
 				<view class="cell">
@@ -32,7 +32,7 @@
 						{{ $t('priceUnit') }}
 					</view>
 					<view class="cell_right">
-						{{ $t('realTimePrice') }}
+						{{ item.price }} USDT
 					</view>
 				</view>
 				<view class="cell">
@@ -40,7 +40,7 @@
 						{{ $t('quantity') }}
 					</view>
 					<view class="cell_right">
-						100 USDT
+						{{item.amount}} USDT
 					</view>
 				</view>
 				<view class="cell">
@@ -48,7 +48,7 @@
 						{{ $t('note') }}
 					</view>
 					<view class="cell_right">
-						{{ $t('guess') }}
+						{{ item.remark }}
 					</view>
 				</view>
 				<view class="cell">
@@ -56,7 +56,7 @@
 						{{ $t('publishTime') }}
 					</view>
 					<view class="cell_right">
-						2023-03-03 10:25:39
+						{{item.creation_date}}
 					</view>
 				</view>
 			</view>
@@ -66,13 +66,24 @@
 
 
 <script>
+	import { getUserListings } from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				list: [1]
 			}
 		},
+		onLoad() {
+			this.getData()
+		},
 		methods: {
+			async getData() {
+				const res = await getUserListings()
+				if (res.code === 1) {
+					this.list = res.data
+				}
+				console.log(res)
+			},
 			back () {
 				uni.navigateBack()
 			},
@@ -81,9 +92,9 @@
 					url: '/pages/otc/publish_ad/publish_ad'
 				})
 			},
-			toDetails() {
+			toDetails(item) {
 				uni.navigateTo({
-					url: '/pages/otc/my_ad/details/details'
+					url: `/pages/otc/my_ad/details/details?id=${item.listing_id}`
 				})
 			}
 		}

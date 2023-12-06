@@ -334,6 +334,18 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/otc/deposit/deposit",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+
 		}
 	],
 	"globalStyle": {

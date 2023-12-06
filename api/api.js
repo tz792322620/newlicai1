@@ -83,3 +83,57 @@ export function submitVerification(data) {
 		data
 	})
 }
+// OTC创建挂单(发布广告)
+export function createListing(data) {
+	return request({
+		url: '/otc/createListing',
+		method: 'POST',
+		data
+	})
+}
+// 获取用户创建的OTC订单记录(我的广告)
+export function getUserListings() {
+	return request({
+		url: '/otc/getUserListings'
+	})
+}
+// 查询OTC押金(押金管理)
+export function getOtcDeposit() {
+	return request({
+		url: '/user/getOtcDeposit'
+	})
+}
+// 获取用户的OTC押金流水记录(押金管理-押金流水)
+export function getOtcDepositRecords() {
+	return request({
+		url: '/user/getOtcDepositRecords'
+	})
+}
+// 充值押金(转入)
+export function depositOtc(data) {
+	return request({
+		url: '/user/depositOtc',
+		method: 'POST',
+		data
+	})
+}
+// 退出押金
+export function exitOtc(data) {
+	return request({
+		url: '/user/exitOtc',
+		method: 'POST',
+		data
+	})
+}
+// 根据OTC挂单ID查询(广告详情)
+export function getListingById(id) {
+	return request({
+		url: `/otc/getListingById?id=${id}`
+	})
+}
+// 获取当前用户创建的交易记录(订单)
+export function getUserTrades(trade_type,start_date,end_date,status) {
+	return request({
+		url: `/otc/getUserTrades?trade_type=${trade_type}&start_date=${start_date}&end_date=${end_date}&status=${status}`
+	})
+}

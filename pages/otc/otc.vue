@@ -1,6 +1,6 @@
 <template>
 	<view
-		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;height: 100vh;">
+		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;min-height: 100vh;">
 		<view style="height: 88rpx;display: flex;align-items: center;justify-content: center;">
 
 			<view class="u-flex" style="">
@@ -137,6 +137,10 @@
 					url: '../../static/images/otc/dingdan.png',
 					skipUrl: '/pages/otc/my_order/my_order',
 					name: '我的订单'
+				},{
+					url: '../../static/images/otc/dingdan.png',
+					skipUrl: '/pages/otc/deposit/deposit',
+					name: '押金管理'
 				}],
 				list: [{
 						name: '全部'
@@ -282,7 +286,7 @@
 	}
 	.u-flex_right {
 		.u-flex-popup {
-			height: 416rpx;
+			height: 516rpx;
 			right: -35rpx;
 			top: 70rpx;
 			&::before {
