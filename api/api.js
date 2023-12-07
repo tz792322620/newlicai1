@@ -137,3 +137,39 @@ export function getUserTrades(trade_type,start_date,end_date,status) {
 		url: `/otc/getUserTrades?trade_type=${trade_type}&start_date=${start_date}&end_date=${end_date}&status=${status}`
 	})
 }
+// 查询汇率
+export function getCurrencyRate(currency) {
+	return request({
+		url: `/user/getCurrencyRate?currency_code=${currency}`
+	})
+}
+// OTC根据挂单创建新的交易
+export function createTrade(data) {
+	return request({
+		url: '/otc/createTrade',
+		method: 'POST',
+		data
+	})
+}
+// 用户个人信息
+export function getUserInfo() {
+	return request({
+		url: '/user/getUserInfo'
+	})
+}
+// 用户昵称设置
+export function setNickname(data) {
+	return request({
+		url: '/user/setNickname',
+		method: 'POST',
+		data
+	})
+}
+// 用户支付密码设置
+export function setUserPayPassword(data) {
+	return request({
+		url: '/user/setUserPayPassword',
+		method: 'POST',
+		data
+	})
+}

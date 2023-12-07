@@ -84,7 +84,7 @@
 						<view>
 							<u-button v-if="but === 0" ripple-bg-color="#fff" :ripple="true"
 							style="font-size:28rpx;" :custom-style="customStyle2" shape="circle"
-							type="primary">购买</u-button>
+							type="primary" @click="toBuy(item)">购买</u-button>
 							<u-button v-if="but === 1" ripple-bg-color="#fff" :ripple="true"
 							style="font-size:28rpx;" :custom-style="customStyle1" shape="circle"
 							type="primary">出售</u-button>
@@ -182,6 +182,11 @@
 			this.getOtcList()
 		},
 		methods: {
+			toBuy(item) {
+				uni.navigateTo({
+					url: `/pages/otc/buy/buy?id=${item.listing_id}`
+				})
+			},
 			// 币种点击事件
 			abClick(item) {
 				this.ab = item.ab

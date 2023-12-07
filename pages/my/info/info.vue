@@ -7,7 +7,7 @@
 			</view>
 		</view>
 		<view class="avatar">
-			<image class="avatar_img" src="@/static/images/p6.png" mode=""></image>
+			<image class="avatar_img" :src="$url + userInfo.avatar" mode=""></image>
 			<image class="avatar_camera" src="@/static/images/my/info/camera.png" mode="" @click="show = true"></image>
 		</view>
 		<view class="cell-group">
@@ -16,7 +16,7 @@
 					用户名
 				</view>
 				<view class="cell_right">
-					<text>武大郎买烧饼</text>
+					<text>{{userInfo.nickname}}</text>
 					<uni-icons type="right"></uni-icons>
 				</view>
 			</view>
@@ -25,19 +25,19 @@
 					账号
 				</view>
 				<view class="cell_right">
-					<text>19811118888</text>
+					<text>{{userInfo.mobile}}</text>
 					<image src="@/static/images/otc/order/copy.png" mode="" @click="copy"></image>
 				</view>
 			</view>
-			<view class="cell">
+			<!-- <view class="cell">
 				<view class="cell_left">
 					密码管理
 				</view>
 				<view class="cell_right">
 					<uni-icons type="right"></uni-icons>
 				</view>
-			</view>
-			<view class="cell">
+			</view> -->
+			<view class="cell" @click="toPassword">
 				<view class="cell_left">
 					交易密码管理
 				</view>
@@ -53,7 +53,7 @@
 						编辑用户名
 					</view>
 					<view class="input">
-						<u-input placeholder="请输入用户名" v-model="name"></u-input>
+						<u-input placeholder="请输入用户名" v-model="userInfo.nickname"></u-input>
 					</view>
 					<view class="tips">
 						<view class="text">
@@ -66,7 +66,7 @@
 							*用户名的规则是纯字母或字母+数字
 						</view>
 					</view>
-					<view class="button">
+					<view class="button" @click="submit">
 						确定
 					</view>
 				</view>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+	import { getUserInfo,setNickname } from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -85,29 +86,75 @@
 					text: '相册'
 				}],
 				popupShow: false,
-				name: '武大郎买烧饼'
+				userInfo: ''
 			}
 		},
+		onLoad() {
+			this.getUser()
+		},
 		methods: {
+			toPassword() {
+				uni.navigateTo({
+					url: '/pages/my/info/transactionPin/transactionPin'
+				})
+			},
+			async getUser() {
+				const res = await getUserInfo()
+				if (res.code === 1) {
+					this.userInfo = res.data
+				}
+			},
 			back() {
 				uni.navigateBack()
 			},
+			// 设置昵称
+			async submit() {
+				const res = await setNickname({
+					nickname: this.userInfo.nickname
+				})
+				if (res.code === 1) {
+					this.getUser()
+					this.popupShow = false
+				}
+			},
 			actionClick(index) {
-				console.log(index)
+				console.log(index,this.$url)
+				let that = this
 				uni.chooseImage({
-					count: 1, //默认9
-					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
 					sourceType: index === 1 ? ['album'] : ['camera'], //从相册选择
-					success: function (res) {
-						console.log(JSON.stringify(res.tempFilePaths));
+					success: function (chooseImageRes) {
+						const tempFilePaths = chooseImageRes.tempFilePaths;
+						console.log(tempFilePaths[0])
+						uni.uploadFile({
+							url: that.$url + '/api/user/uploadAvatar',
+							filePath: tempFilePaths[0],
+							name: 'avatar',
+							header: {
+								token: uni.getStorageSync('token')
+							},
+							formData: {
+								'avatar': tempFilePaths[0]
+							},
+							success: (uploadFileRes) => {
+								const res = JSON.parse(uploadFileRes.data)
+								if (res.code === 1) {
+									that.getUser()
+								}else {
+									uni.showToast({
+										title: res.msg,
+										icon: 'none'
+									})
+								}
+							}
+						});
 					}
 				})
 			},
 			copy () {
 				uni.setClipboardData({
-					data: 'hello',
+					data: this.userInfo.mobile,
 					success: function () {
-						console.log('success');
+						// console.log('success');
 					}
 				})
 			}
