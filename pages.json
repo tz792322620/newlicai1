@@ -361,7 +361,42 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/recharge/records/records",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/recharge/records/details",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "充值详情",
+                "enablePullDownRefresh": false
+            }
+            
+        },{
+            "path" : "pages/withdraw/records/records",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "提现记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/withdraw/records/details",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "提现详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

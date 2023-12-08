@@ -10,21 +10,21 @@
 					<view class="desc">
 						团队余额(元)
 					</view>
-					<view class="date">
+					<view class="date" @click="show = true">
 						日期选择
 					</view>
 				</view>
 				<view class="balance_count">
-					9,888,666.9999
+					{{dataInfo.available_amount}}
 				</view>
 				<view class="balance_bottom">
 					<view class="balance_bottom_item">
 						<text>总充值</text>
-						<text class="bold">20000.23</text>
+						<text class="bold">{{dataInfo.recharge_amount}}</text>
 					</view>
 					<view class="balance_bottom_item">
 						<text>团队流水</text>
-						<text class="bold">20000.23</text>
+						<text class="bold">{{dataInfo.stock_order_amount}}</text>
 					</view>
 				</view>
 			</view>
@@ -36,7 +36,7 @@
 							提现总额
 						</view>
 						<view class="count">
-							23368.55
+							{{dataInfo.withdrawable_amount}}
 						</view>
 					</view>
 				</view>
@@ -44,10 +44,10 @@
 					<image src="../../../static/images/my/team/yongjin.png" mode=""></image>
 					<view class="price_item_right">
 						<view class="desc">
-							提现总额
+							订单佣金
 						</view>
 						<view class="count">
-							23368.55
+							{{dataInfo.withdrawal_amount}}
 						</view>
 					</view>
 				</view>
@@ -56,20 +56,20 @@
 				<view class="user-info_title">
 					人员信息
 				</view>
-				<view class="user-info_item">
+				<view class="user-info_item" v-for="(item,index) in list" :key="index">
 					<view class="info">
 						<view class="info_avatar">
-							
+							<image :src="item.referrer.avatar" mode=""></image>
 						</view>
 						<view class="info_text">
 							<view class="name">
-								张美妞
+								{{item.referrer.nickname}}
 							</view>
-							<view class="phone">
-								电话: 171****8032 <image src="../../../static/images/my/team/copy.png" mode=""></image>
+							<view class="phone" v-if="item.referrer.mobile">
+								电话: {{item.referrer.mobile}} <image @click="copy(item.referrer.mobile)" src="../../../static/images/my/team/copy.png" mode=""></image>
 							</view>
 							<view class="date">
-								注册日期:2023-03-14 20:20:00
+								注册日期:{{item.referrer.createtime | timestampFilter}}
 							</view>
 						</view>
 					</view>
@@ -79,7 +79,7 @@
 								充值(¥)
 							</view>
 							<view class="count">
-								0.000
+								{{item.team_stats.recharge_amount}}
 							</view>
 						</view>
 						<view class="data_item">
@@ -87,7 +87,7 @@
 								提现(¥)
 							</view>
 							<view class="count">
-								0.000
+								{{item.team_stats.withdrawable_amount}}
 							</view>
 						</view>
 						<view class="data_item">
@@ -95,26 +95,75 @@
 								推荐人数
 							</view>
 							<view class="count">
-								0.000
+								{{item.team_stats.stock_order_count}}
 							</view>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
+		<u-calendar v-model="show" :mode="mode" @change="change" btn-type="success" active-bg-color="#35CBA5" range-color="#35CBA5" range-bg-color="rgba(53, 203, 165,0.13)">
+			<view slot="tooltip">
+				<view class="title" style="margin: 40rpx;">
+					选择日期
+				</view>
+			</view>
+		</u-calendar>
 	</view>
 </template>
 
 <script>
+	import { getTeamStats,getDirectReferrals } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				
+				show: false,
+				mode: 'range',
+				data: {
+					start_date: '',
+					end_date: ''
+				},
+				dataInfo: '',
+				list: []
 			}
 		},
+		onLoad() {
+			this.getData()
+			this.getList()
+		},
 		methods: {
+			copy(phone) {
+				uni.setClipboardData({
+					data: phone,
+					success: function () {
+						console.log('success');
+					}
+				})
+			},
 			back() {
-				uni.navigateBack()
+				uni.navigateBack({
+					delta: 1
+				})
+			},
+			change(e) {
+				console.log(e);
+				this.data.start_date = e.startDate
+				this.data.end_date = e.endDate
+				this.getData()
+			},
+			async getData() {
+				const res = await getTeamStats(this.data)
+				 console.log(res)
+				 if (res.code === 1) {
+					 this.dataInfo = res.data
+				 }
+			},
+			async getList() {
+				const res = await getDirectReferrals()
+				if (res.code === 1) {
+					this.list = res.data.first_level
+				}
+				console.log(this.list)
 			}
 		}
 	}
@@ -126,6 +175,21 @@
 		background-size: 100% 100%;
 		padding-top: 88rpx;
 		min-height: 100vh;
+		/deep/.u-icon__icon {
+			color: #999999 !important;
+		}
+		/deep/.u-btn--success {
+			border-color: #35CBA5;
+			background-color: #35CBA5;
+		}
+		.title {
+			// padding: 34rpx 0 20rpx 40rpx;
+			font-size: 28rpx;
+			font-weight: 600;
+			color: #333333;
+			line-height: 40rpx;
+			// border-bottom: 2rpx solid #F3F3F3;
+		}
 		.navbar {
 			height: 88rpx;
 			display: flex;

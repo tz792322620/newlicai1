@@ -37,6 +37,17 @@ Vue.filter('timestampFilter', (timestamp) => {
 	let s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
 	return Y + M + D + h + m + s;
 })
+// 超出,中间显示省略号
+Vue.filter('ellipsis', (value) => {
+	if (value) {
+		let len = value.length;
+		if (!value) return ''
+		if (value.length > 20) {
+			return value.substring(0, 6) + '...' + value.substring(len - 6, len)
+		}
+		return value
+	}
+})
 Vue.prototype.$Ajax3 = Ajax3
 Vue.prototype.$tools = tools
 Vue.prototype.$url = 'https://xingu.bianceok.info'

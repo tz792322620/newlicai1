@@ -173,3 +173,110 @@ export function setUserPayPassword(data) {
 		data
 	})
 }
+// 获取用户连续签到天数
+export function getConsecutiveSigninDay() {
+	return request({
+		url: '/user/getConsecutiveSigninDay'
+	})
+}
+// 用户签到
+export function signIn() {
+	return request({
+		url: '/user/signIn',
+		method: 'POST'
+	})
+}
+// 用户签到记录
+export function currentUserSignin() {
+	return request({
+		url: '/user/currentUserSignin'
+	})
+}
+// 获取用户充值地址
+export function getOrAllocateWalletAddress(data){
+	return request({
+		url: '/user/getOrAllocateWalletAddress',
+		method: 'POST',
+		data
+	})
+}
+// 充值记录
+export function getUserRechargeRecords() {
+	return request({
+		url: '/user/getUserRechargeRecords?status=Pending'
+	})
+}
+// 根据充值ID查询充值记录
+export function getRechargeById(id) {
+	return request({
+		url: `/user/getRechargeById?id=${id}`
+	})
+}
+// 计算手续费
+export function calculateFee(data) {
+	return request({
+		url: '/user/calculateFee',
+		method: 'POST',
+		data
+	})
+}
+// 用户提现
+export function withdraw(data) {
+	return request({
+		url: '/user/withdraw',
+		method: 'POST',
+		data
+	})
+}
+// 查询用户提现记录
+export function getUserWithdrawals() {
+	return request({
+		url: '/user/getUserWithdrawals'
+	})
+}
+// 根据充值ID查询提现记录
+export function getWithdrawalById(id) {
+	return request({
+		url: `/user/getWithdrawalById?id=${id}`
+	})
+}
+// 获取用户的在投总数、累计收益和产品利率
+export function getYuebaoStats() {
+	return request({
+		url: '/user/getYuebaoStats'
+	})
+}
+// 从余额宝转出金额(转出到我的账户)
+export function withdrawFromYuebao(data) {
+	return request({
+		url: '/user/withdrawFromYuebao',
+		method: 'POST',
+		data
+	})
+}
+// 转入余额宝
+export function createYuebaoOrder(data) {
+	return request({
+		url: '/user/createYuebaoOrder',
+		method: 'POST',
+		data
+	})
+}
+// 获取用户的余额宝转入和转出资金记录
+export function getYuebaoTransactions() {
+	return request({
+		url: '/user/getYuebaoTransactions'
+	})
+}
+// 获取团队数据
+export function getTeamStats(data) {
+	return request({
+		url: `/team/getTeamStats?start_date=${data.start_date}&end_date=${data.end_date}`
+	})
+}
+// 获取团队三级列表
+export function getDirectReferrals() {
+	return request({
+		url: '/team/getDirectReferrals'
+	})
+}

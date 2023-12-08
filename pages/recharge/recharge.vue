@@ -1,187 +1,258 @@
 <template>
-  <view class="page">
-   
-    <view class="header">
-      <view class="back-arrow" @click="goBack"></view>
-      <text class="header-title">充值</text>
-      <view class="header-camera-icon"></view>
-    </view>
-
-    
-    <view class="qr-section">
-      <image class="qr-code" src="../../static/images/ewm.png" />
-      <view class="qr-code-overlay">
-        
-      </view>
-    </view>
-
-	<view class="address-section">充值地址</view>
-
-    <view class="address-section" style="display: flex;">T
-      <view class="wallet-address">TDbgkj2peu3CHHQywigBseGCUs6</view>
-      <view class="copy-icon" @click="copyAddress"></view>
-    </view>
-	<view class="address-section">充值网络</view>
-  
-	<view class="address-section">
-		<picker mode="selector" :range="currencyOptions" @change="onCurrencyChange">
-		  <view class="currency-selector">
-		    <text>{{ selectedCurrency }}</text>
-		    <view class="selector-dropdown-icon"></view>
-		  </view>
-		</picker>
+	<view class="recharge">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
+		<view class="tabbar">
+			<image src="../../static/images/hfh.png" mode="" @click="back"></image>
+			<text>充值</text>
+			<image src="../../static/images/camera-icon.png" mode="" @click="toRecords"></image>
+		</view>
+		<view class="content">
+			<view class="Q-code" v-if="address">
+				<uqrcode ref="uqrcode" canvas-id="qrcode" :value="address" size="160" :options="{ margin: 10 }"></uqrcode>
+			</view>
+			<view class="address" v-if="address">
+				<view class="desc">
+					充值地址
+				</view>
+				<view class="value">
+					{{address}}
+					<image src="../../static/images/copy-icon.png" mode="" @click="copy"></image>
+				</view>
+			</view>
+			<view class="network">
+				<view class="title">
+					充值网络
+				</view>
+				<view class="select" @click="show = true">
+					<view class="select_value">
+						<u-input type="text" placeholder="选择充值网络" disabled v-model="address_type" />
+					</view>
+					<uni-icons type="bottom"></uni-icons>
+				</view>
+			</view>
+			<u-popup v-model="show" mode="bottom" border-radius="30" closeable>
+				<view class="popup-content">
+					<view class="title">
+						选择网络
+					</view>
+					<view class="tabs">
+						<view class="tabs_item" v-for="(item,index) in networkList" :key="index"
+							:class="index === activeIndex ? 'active' : ''" @click="tabsClick(item,index)">
+							<view class="tabs_item_left">
+								{{item.name}}
+							</view>
+							<view class="tabs_item_right" v-if="activeIndex === index">
+								<image src="../../static/images/my/true.png" mode=""></image>
+							</view>
+						</view>
+					</view>
+				</view>
+			</u-popup>
+		</view>
 	</view>
-
-
-    <!-- Copy Address Button -->
-    <button class="action-button2" @click="copyAddress">复制地址</button>
-  </view>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      currencyOptions: ['USDT-ERC20','USDT-TRC20'], // Add your currency options here
-      selectedCurrency: 'USDT-ERC20', // Default selected currency
-    };
-  },
-  methods: {
-    goBack() {
-      uni.navigateBack({
-        delta: 1, // Go back by one level in the navigation stack
-      });
-    },
-    copyAddress() {
-      // Logic to copy the wallet address to the clipboard
-      uni.setClipboardData({
-        data: this.walletAddress,
-        success: () => {
-          uni.showToast({
-            title: '地址已复制',
-            icon: 'success',
-            duration: 2000,
-          });
-        },
-      });
-    },
-    onCurrencyChange(event) {
-      const { value } = event.detail;
-      this.selectedCurrency = this.currencyOptions[value];
-    },
-  }
-};
+	import {
+		getOrAllocateWalletAddress
+	} from '@/api/api.js'
+	export default {
+		data() {
+			return {
+				address_type: '',
+				address_value: '',
+				show: false,
+				activeIndex: -1,
+				address: '',
+				networkList: [{
+					name: 'USDT-ERC20',
+					value: 'ethereum'
+				}, {
+					name: 'USDT-TRC20',
+					value: 'tron'
+				}]
+			};
+		},
+		onLoad() {},
+		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
+			toRecords() {
+				uni.navigateTo({
+					url: '/pages/recharge/records/records'
+				})
+			},
+			copy () {
+				uni.setClipboardData({
+					data: this.address,
+					success: function () {
+						// console.log('success');
+					}
+				})
+			},
+			async getAdress() {
+				const res = await getOrAllocateWalletAddress({
+					address_type: this.address_value
+				})
+				if (res.code === 1) {
+					this.address = res.data.address
+				} else {
+					this.address = ''
+				}
+				console.log(res)
+			},
+			tabsClick(item, index) {
+				this.address_type = item.name
+				this.address_value = item.value
+				this.activeIndex = index
+				this.getAdress()
+				this.show = false
+			}
+		}
+	};
 </script>
 
-<style scoped>
-	.action-button2{
-	    background: #35CBA5;
-	    color: #fff;
-	    width: 9rem;
-	    height: 2.5rem;
-	    line-height: 2.5rem;
+<style scoped lang="scss">
+	.recharge {
+		/deep/.u-iconfont {
+			color: #9a9a9a !important;
+		}
+
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
+
+		.tabbar {
+			display: flex;
+			height: 88rpx;
+			padding: 20rpx 40rpx;
+			justify-content: space-between;
+
+			image {
+				width: 48rpx;
+				height: 48rpx;
+			}
+
+			text {
+				font-size: 36rpx;
+				font-weight: 600;
+				color: #333333;
+			}
+		}
+
+		.content {
+			padding: 40rpx;
+
+			.Q-code {
+				width: 320rpx;
+				height: 320rpx;
+				margin: 80rpx auto;
+				// background-color: #333333;
+			}
+
+			.address {
+				margin-bottom: 40rpx;
+
+				.desc {
+					font-size: 28rpx;
+					font-weight: 500;
+					color: #999999;
+					line-height: 40rpx;
+					margin-bottom: 24rpx;
+				}
+
+				.value {
+					display: flex;
+					align-items: center;
+					font-size: 28rpx;
+					font-weight: 500;
+					color: #333333;
+
+					image {
+						margin-left: 10rpx;
+						width: 48rpx;
+						height: 48rpx;
+					}
+				}
+			}
+
+			.network {
+				.title {
+					font-size: 24rpx;
+					font-weight: 500;
+					color: #333333;
+					line-height: 34rpx;
+					margin-bottom: 20rpx;
+				}
+
+				.select {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					height: 90rpx;
+					background: #F4F5F7;
+					border-radius: 10rpx;
+					padding: 0 20rpx;
+
+					&_value {
+						font-size: 28rpx;
+						font-weight: 400;
+						color: #333333;
+					}
+				}
+			}
+
+			.popup-content {
+				.title {
+					padding: 34rpx 40rpx;
+					border-bottom: 2rpx solid #F3F3F3;
+					font-size: 28rpx;
+					font-weight: 600;
+					color: #333333;
+				}
+
+				.tabs {
+					padding: 40rpx 40rpx 70rpx 40rpx;
+
+					&_item {
+						padding: 0 20rpx;
+						height: 90rpx;
+						background: #FFFFFF;
+						border-radius: 10rpx;
+						border: 2rpx solid #EEEEEE;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						margin-bottom: 40rpx;
+
+						&.active {
+							border-color: #35CBA5;
+						}
+
+						&_left {
+							font-size: 28rpx;
+							font-weight: 400;
+							color: #333333;
+						}
+
+						&_right {
+							width: 48rpx;
+							height: 48rpx;
+
+							image {
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
-.page {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-image: url('../../static/images/zbg.png');
-  background-size: cover;
-  background-position: center;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-
-}
-
-.back-arrow {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 30px;
-  height: 30px;
-  background-image: url('../../static/images/hfh.png'); /* Replace with your actual icon */
-  background-size: contain;
-}
-
-.header-title {
-  flex: 1;
-  text-align: center;
-  font-size: 18px;
-}
-
-
-
-.qr-section {
-  position: relative;
-  padding: 20px;
-  text-align: center;
-}
-
-.qr-code {
-  width: 200px; /* Set based on your design */
-  height: 200px; /* Set based on your design */
-  margin: 0 auto;
-}
-
-.qr-code-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px; /* Set based on your overlay icon size */
-  height: 50px; /* Set based on your overlay icon size */
-
-}
-
-.address-section {
-  padding: 10px;
-}
-
-.wallet-address-title {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.wallet-address {
-  font-size: 14px;
-  color: #666;
-  word-break: break-all; /* To ensure the address wraps */
-}
-
-.copy-icon {
-  background-image: url('../../static/images/copy-icon.png'); 
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center; 
-  width: 24px;
-  height: 24px; 
-  display: block;
-  cursor: pointer; 
-}
-
-
-.currency-selector {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-}
-
-
-
-.copy-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #00B26A;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-}
 </style>

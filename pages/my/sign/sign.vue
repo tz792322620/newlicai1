@@ -10,25 +10,25 @@
 			<view class="title">
 				20<text>积分</text>
 			</view>
-			<view class="sub-title">
+			<!-- <view class="sub-title">
 				明日签到可得30积分
-			</view>	
+			</view>	 -->
 			<view class="sign_box">
 				<view class="sign_box_title">
-					已连续签到 <text>1</text> 天
+					已连续签到 <text>{{signinDays}}</text> 天
 				</view>
 				<view class="sign_box_list">
-					<view class="sign_box_list_item" v-for="(item,index) in 7" :key="index">
+					<view class="sign_box_list_item" v-for="(item,index) in 7" :key="index" :class="{'expired' : index  < signinDays,'active' : index === activeIndex}" @click="tabClick(index)">
 						<view class="days">
 							第{{index + 1}}天
 						</view>
 						<image v-if="index < 6" src="../../../static/images/my/sign/unchecked.png" mode=""></image>
-						<view class="points">
+						<!-- <view class="points">
 							{{index + 1}}0积分
-						</view>
+						</view> -->
 					</view>
 				</view>
-				<view class="sign-in">
+				<view class="sign-in" @click="sign">
 					打卡签到
 				</view>
 			</view>
@@ -36,17 +36,17 @@
 				<view class="records_title">
 					签到记录
 				</view>
-				<view class="records_cell" v-for="(item,index) in 2" :key="index">
+				<view class="records_cell" v-for="(item,index) in signRecords" :key="index">
 					<view class="records_cell_left">
 						<view class="records_cell_left_desc">
 							签到成功
 						</view>
 						<view class="records_cell_left_date">
-							2023-03-14 20:20:00
+							{{item.signin_date}}
 						</view>
 					</view>
 					<view class="records_cell_right">
-						+10积分
+						+{{item.reward_points}}积分
 					</view>
 				</view>
 			</view>
@@ -55,13 +55,51 @@
 </template>
 
 <script>
+	import { getConsecutiveSigninDay,signIn,currentUserSignin } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				
+				activeIndex: 0,
+				signinDays: 0,
+				signRecords: []
 			}
 		},
+		onLoad() {
+			this.getSigninDays()
+			this.activeIndex = this.signinDays
+			this.getSignRecords()
+		},
 		methods: {
+			// 获取用户连续签到天数
+			async getSigninDays() {
+				const res = await getConsecutiveSigninDay()
+				if (res.code === 1) {
+					this.signinDays = res.data.days
+				}
+				console.log(res)
+			},
+			tabClick(index) {
+				if (index < this.signinDays) {
+					return
+				}
+				this.activeIndex = index
+			},
+			async sign() {
+				const res =await signIn()
+				if (res.code === 1) {
+					this.getSignRecords()
+					this.getSigninDays()
+				}
+				console.log(res)
+			},
+			// 获取签到记录
+			async getSignRecords() {
+				const res = await currentUserSignin()
+				if(res.code === 1) {
+					this.signRecords = res.data
+				}
+				console.log(res)
+			},
 			back() {
 				uni.navigateBack()
 			}
@@ -167,7 +205,7 @@
 							color: #999999;
 							line-height: 28rpx;
 						}
-						&:nth-child(1) {
+						&.expired {
 							background-color: #ffbaa1;
 							.days {
 								color: #fff;
@@ -189,18 +227,10 @@
 								z-index: 10;
 							}
 						}
-						&:nth-child(2) {
-							background: linear-gradient(230deg, #FF8D5A 0%, #FF5B2A 100%);
-							.days {
-								color: #fff;
-							}
-							.points {
-								color: #fff;
-							}
-						}
 						&:nth-child(4) {
 							margin-right: 0;
 						}
+						
 						&:nth-child(7) {
 							margin-right: 0;
 							width: 290rpx;
@@ -211,6 +241,27 @@
 							background-size: 100% 100%;
 							.days {
 								margin-bottom: 10rpx;
+							}
+							&.active {
+								background: url('../../../static/images/my/sign/seven_selected.png') center center no-repeat;
+								background-size: 100% 100%;
+								border: none;
+								.days {
+									color: #fff;
+								}
+								.points {
+									color: #fff;
+								}
+							}
+						}
+						&.active {
+							background: linear-gradient(230deg, #FFC5AB 0%, #FFAE96 100%);
+							border-color: #ffbda3;
+							.days {
+								color: #fff;
+							}
+							.points {
+								color: #fff;
 							}
 						}
 					}
