@@ -360,38 +360,73 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/recharge/records/records",
+			"style": {
+				"navigationBarTitleText": "充值记录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/recharge/records/details",
+			"style": {
+				"navigationBarTitleText": "充值详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/withdraw/records/records",
+			"style": {
+				"navigationBarTitleText": "提现记录",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/withdraw/records/details",
+			"style": {
+				"navigationBarTitleText": "提现详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/invite/details",
+			"style": {
+				"navigationBarTitleText": "邀请记录",
+				"enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+
+		}, {
+			"path": "pages/my/order/order",
+			"style": {
+				"navigationBarTitleText": "新股订单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/order/details",
+			"style": {
+				"navigationBarTitleText": "详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/my/funds/funds",
+			"style": {
+				"navigationBarTitleText": "资金明细",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	    ,{
-            "path" : "pages/recharge/records/records",
+            "path" : "pages/my/earnings/earnings",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "充值记录",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/recharge/records/details",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "充值详情",
-                "enablePullDownRefresh": false
-            }
-            
-        },{
-            "path" : "pages/withdraw/records/records",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "提现记录",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/withdraw/records/details",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "提现详情",
+                "navigationBarTitleText": "收益记录",
                 "enablePullDownRefresh": false
             }
             

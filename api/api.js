@@ -280,3 +280,27 @@ export function getDirectReferrals() {
 		url: '/team/getDirectReferrals'
 	})
 }
+// 邀请人数记录
+export function getDirectReferralsStats() {
+	return request({
+		url: '/user/getDirectReferralsStats'
+	})
+}
+// 查询当前用户的新股订单记录
+export function currentUserStockOrder() {
+	return request({
+		url: '/user/currentUserStockOrder'
+	})
+}
+// 根据新股订单ID获取该订单下的收益记录
+export function getEarningsByOrderId(id) {
+	return request({
+		url: `/user/getEarningsByOrderId?order_id=${id}`
+	})
+}
+// 查询用户的资金流水记录(资金明细)
+export function getUserFlow() {
+	return request({
+		url: '/user/getUserFlow'
+	})
+}

@@ -1,0 +1,75 @@
+<template>
+	<view class="funds">
+		<view class="cell" v-for="(item,index) in list" :key="index">
+			<view class="cell_left">
+				<view class="description">
+					{{item.description}}
+				</view>
+				<view class="date">
+					{{item.create_time | timestampFilter}}
+				</view>
+			</view>
+			<view class="cell_right" :class="Number(item.amount) < 0 ? 'red' : ''">
+				{{item.amount}}
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	import { getUserFlow } from '@/api/api.js'
+	export default {
+		data() {
+			return {
+				list: []
+			}
+		},
+		onLoad() {
+			this.getData()
+		},
+		methods: {
+			async getData() {
+				const res = await getUserFlow()
+				if (res.code === 1) {
+					this.list = res.data
+				}
+				console.log(res)
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.funds {
+		padding: 10rpx 40rpx;
+		.cell {
+			padding: 30rpx 0;
+			border-bottom: 2rpx solid #F3F3F3;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			&_left {
+				.description {
+					font-size: 32rpx;
+					font-weight: 600;
+					color: #333333;
+					margin-bottom: 10rpx;
+				}
+				.date {
+					font-size: 24rpx;
+					font-weight: 400;
+					color: #999999;
+					line-height: 34rpx;
+				}
+			}
+			&_right {
+				font-size: 32rpx;
+				font-weight: 500;
+				color: #F75F52;
+				.green {
+					color: #35CBA5;
+				}
+			}
+		}
+	}
+</style>

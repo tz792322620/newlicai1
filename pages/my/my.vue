@@ -88,15 +88,15 @@ export default {
 			services: [
 				{ image: '../../static/images/my/5.png', title: '团队管理', url: '/pages/my/team/team' },
 				{ image: '../../static/images/my/6.png', title: '实名认证', url: '/pages/verify/verify' },
-				{ image: '../../static/images/my/7.png', title: '收益记录', url: '/path/to/profit' },
+				{ image: '../../static/images/my/7.png', title: '收益记录', url: '/pages/my/earnings/earnings' },
 				{ image: '../../static/images/my/8.png', title: '邀请好友', url: '/pages/invite/invite' }
 			],
 			records: [
-				{ image: '../../static/images/my/d1.png', title: '新股订单', url: '/path/to/orders' },
-				{ image: '../../static/images/my/d2.png', title: '充值记录', url: '/path/to/rechargeHistory' },
-				{ image: '../../static/images/my/d3.png', title: '提现记录', url: '/path/to/withdrawHistory' },
-				{ image: '../../static/images/my/d4.png', title: '资金明细', url: '/path/to/fundsDetails' },
-				{ image: '../../static/images/my/d5.png', title: '收款信息', url: '/path/to/paymentInfo' }
+				{ image: '../../static/images/my/d1.png', title: '新股订单', url: '/pages/my/order/order' },
+				{ image: '../../static/images/my/d2.png', title: '充值记录', url: '/pages/recharge/records/records' },
+				{ image: '../../static/images/my/d3.png', title: '提现记录', url: '/pages/withdraw/records/records' },
+				{ image: '../../static/images/my/d4.png', title: '资金明细', url: '/pages/my/funds/funds' },
+				{ image: '../../static/images/my/d5.png', title: '收款信息', url: '/pages/otc/payment/payment' }
 			],
             customStyle1: {
                 height: '90rpx',
