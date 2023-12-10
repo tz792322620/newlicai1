@@ -11,7 +11,8 @@ function request(options = {}) {
 	// })
 	options.url = `${BASE_URL}${options.url}`;
 	options.header = {
-		'token': uni.getStorageSync('token')
+		'token': uni.getStorageSync('token'),
+		'Accept-Language': uni.getStorageSync('language') ? uni.getStorageSync('language') : 'zh-CN'
 	}
 	return new Promise((resolve, reject) => {
 		//成功

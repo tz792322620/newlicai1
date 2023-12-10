@@ -4,7 +4,7 @@
 			<image class="logo_bg" src="../../static/images/logo_bg.png"></image>
 		</view>
 		<view class="b_colfff logo_bk">
-			<view class="col33 f_s36 f_bod">{{ $t('login') }}</view>
+			<view class="col33 f_s36 f_bod" style="display: flex;justify-content: space-between;">{{ $t('login') }}<language></language></view>
 			<view class="u-flex" style="margin-top: 40rpx;">
 				<view class="col35" style="width:320rpx;">{{ $t('emailLogin') }}</view>
 				<view style="width: 320rpx;" class="u-text-right" @click="$tools.jump('../login/login_ph')">{{ $t('phoneLogin') }}</view>
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+	import { userLogin } from "@/api/api.js"
 	export default {
 		data() {
 			return {
@@ -57,7 +58,7 @@
 
 		},
 		methods: {
-			login(){
+			async login(){
 				if (this.account == '') {
 					return this.$tools.toast('请输入邮箱');
 				}else if (this.password == '') {
@@ -72,30 +73,45 @@
 					data['account'] = this.account;
 					data['password'] = this.password;
 					console.log(data);
-					this.$Ajax3(
-						'/user/login', {
-							data
-						},
-						res => {
-							if (res.code == 1) {
-								uni.setStorageSync('token', res.data.userinfo.token);
-								uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
-								this.$tools.toastSwitchTab('登录成功', '../home/home');
-								setTimeout(() => {
-									this.lock = true
-								}, 1000);
-							} else {
-								this.$tools.toast(res.msg)
-								setTimeout(() => {
-									this.lock = true
-								}, 1000);
-							}
-						},
-						fail => {},
-						'POST',
-						'notoken',
-						false
-					);
+					const res = await userLogin(data)
+					console.log(res, '登录======>')
+					if (res.code == 1) {
+						uni.setStorageSync('token', res.data.userinfo.token);
+						uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
+						this.$tools.toastSwitchTab('登录成功', '../home/home');
+						setTimeout(() => {
+							this.lock = true
+						}, 1000);
+					} else {
+						this.$tools.toast(res.msg)
+						setTimeout(() => {
+							this.lock = true
+						}, 1000);
+					}
+					// this.$Ajax3(
+					// 	'/user/login', {
+					// 		data
+					// 	},
+					// 	res => {
+					// 		if (res.code == 1) {
+					// 			uni.setStorageSync('token', res.data.userinfo.token);
+					// 			uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
+					// 			this.$tools.toastSwitchTab('登录成功', '../home/home');
+					// 			setTimeout(() => {
+					// 				this.lock = true
+					// 			}, 1000);
+					// 		} else {
+					// 			this.$tools.toast(res.msg)
+					// 			setTimeout(() => {
+					// 				this.lock = true
+					// 			}, 1000);
+					// 		}
+					// 	},
+					// 	fail => {},
+					// 	'POST',
+					// 	'notoken',
+					// 	false
+					// );
 				}
 			}
 

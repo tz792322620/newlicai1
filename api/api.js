@@ -7,6 +7,50 @@ export function userLogin (data) {
 		data
 	})
 }
+// 用户找回密码
+export function resetPassword(data) {
+	return request({
+		url: '/user/resetPassword',
+		method: 'POST',
+		data
+	})
+}
+// 找回密码邮箱验证码
+export function emsSend(data) {
+	return request({
+		url: '/ems/send',
+		method: 'POST',
+		data
+	})
+}
+// 找回密码手机验证码
+export function smsSend(data) {
+	return request({
+		url: '/sms/send',
+		method: 'POST',
+		data
+	})
+}
+// 注册
+export function register(data) {
+	return request({
+		url: '/user/register',
+		method: 'POST',
+		data
+	})
+}
+// 查询公告类型
+export function getGonggaoTypes() {
+	return request({
+		url: '/index/getGonggaoTypes'
+	})
+}
+// 查询公告列表
+export function GonggaoTypeList(type_name) {
+	return request({
+		url: `/index/GonggaoTypeList?type_name=${type_name}`
+	})
+}
 // 查询新股产品列表(按条件查询)
 export function getStockProductList(area) {
 	return request({
@@ -302,5 +346,11 @@ export function getEarningsByOrderId(id) {
 export function getUserFlow() {
 	return request({
 		url: '/user/getUserFlow'
+	})
+}
+// 获取用户所有的收益记录
+export function getAllEarnings() {
+	return request({
+		url: '/user/getAllEarnings'
 	})
 }

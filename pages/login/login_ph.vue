@@ -4,7 +4,7 @@
 			<image class="logo_bg" src="../../static/images/logo_bg.png"></image>
 		</view>
 		<view class="b_colfff logo_bk">
-			<view class="col33 f_s36 f_bod">{{ $t('login') }}</view>
+			<view class="col33 f_s36 f_bod" style="display: flex;justify-content: space-between;">{{ $t('login') }}<language></language></view>
 			<view class="u-flex" style="margin-top:40rpx;">
 				<view class="" style="width:320rpx;" @click="$tools.jump('../login/login_em')">{{ $t('emailLogin') }}</view>
 				<view style="width: 320rpx;" class="u-text-right col35">{{ $t('phoneLogin') }}</view>

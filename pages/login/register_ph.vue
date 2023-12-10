@@ -4,7 +4,7 @@
 			<image class="logo_bg" src="../../static/images/logo_bg.png"></image>
 		</view>
 		<view class="b_colfff logo_bk">
-			<view class="col33 f_s36 f_bod">{{ $t('register') }}</view>
+			<view class="col33 f_s36 f_bod" style="display: flex;justify-content: space-between;">{{ $t('register') }}<language></language></view>
 			<view class="u-flex" style="margin-top:40rpx;">
 				<view class="" style="width:320rpx;" @click="$tools.jump('../login/register_em')">{{ $t('emailRegister') }}</view>
 				<view style="width: 320rpx;" class="u-text-right col35">{{ $t('phoneRegister') }}</view>
@@ -61,6 +61,7 @@
 
 
 <script>
+	import { smsSend,register } from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -94,7 +95,7 @@
 
 		},
 		methods: {
-			reg(){
+			async reg(){
 				if (this.username == '') {
 					return this.$tools.toast('请输入手机号码');
 				}
@@ -123,32 +124,46 @@
 					data['password']=this.password
 					data['code']=this.code
 					data['referrerCode']=this.referrerCode
-					this.$Ajax3(
-						'/user/register', {
-							data
-						},
-						res => {
-							if (res.code == "1") {
-								this.$tools.toast('注册成功');
-								setTimeout(() => {
-									this.$tools.back(1);
-									this.lock = true
-								}, 1000);
+					const res = await register(data)
+					if (res.code == "1") {
+						this.$tools.toast('注册成功');
+						setTimeout(() => {
+							this.$tools.back(1);
+							this.lock = true
+						}, 1000);
+						
+					} else {
+						this.$tools.toast(res.msg)
+						setTimeout(() => {
+							this.lock = true
+						}, 1000);
+					}
+					// this.$Ajax3(
+					// 	'/user/register', {
+					// 		data
+					// 	},
+					// 	res => {
+					// 		if (res.code == "1") {
+					// 			this.$tools.toast('注册成功');
+					// 			setTimeout(() => {
+					// 				this.$tools.back(1);
+					// 				this.lock = true
+					// 			}, 1000);
 								
-							} else {
-								this.$tools.toast(res.msg)
-								setTimeout(() => {
-									this.lock = true
-								}, 1000);
-							}
-						},
-					);
+					// 		} else {
+					// 			this.$tools.toast(res.msg)
+					// 			setTimeout(() => {
+					// 				this.lock = true
+					// 			}, 1000);
+					// 		}
+					// 	},
+					// );
 				}
 				
 			},
 			
 			
-			sendCode() {
+			async sendCode() {
 				if (this.username == '') {
 					return this.$tools.toast('请输入邮箱');
 				}
@@ -158,34 +173,51 @@
 				});
 				var data = {};
 				data['mobile'] = this.username;
-				this.$Ajax3(
-					'/sms/send', {
-						data
-					},
-					res => {
-						if (res.code == '1') {
-							// 开始倒计时
-							this.$tools.toast('发送成功');
-							this.countdown = 60;
-							const timer = setInterval(() => {
-								if (this.countdown > 0) {
-									this.countdown--;
-								} else {
-									clearInterval(timer);
-								}
-							}, 1000);
+				const res = await smsSend(data)
+				if (res.code == '1') {
+					// 开始倒计时
+					this.$tools.toast('发送成功');
+					this.countdown = 60;
+					const timer = setInterval(() => {
+						if (this.countdown > 0) {
+							this.countdown--;
 						} else {
-							this.$tools.toast(res.msg)
-							// this.$tools.toastSwitchTab(res.msg, '../register/register');
+							clearInterval(timer);
 						}
-						console.log(res)
-					},
-					fail => {
+					}, 1000);
+				} else {
+					this.$tools.toast(res.msg)
+					// this.$tools.toastSwitchTab(res.msg, '../register/register');
+				}
+				console.log(res)
+			// 	this.$Ajax3(
+			// 		'/sms/send', {
+			// 			data
+			// 		},
+			// 		res => {
+			// 			if (res.code == '1') {
+			// 				// 开始倒计时
+			// 				this.$tools.toast('发送成功');
+			// 				this.countdown = 60;
+			// 				const timer = setInterval(() => {
+			// 					if (this.countdown > 0) {
+			// 						this.countdown--;
+			// 					} else {
+			// 						clearInterval(timer);
+			// 					}
+			// 				}, 1000);
+			// 			} else {
+			// 				this.$tools.toast(res.msg)
+			// 				// this.$tools.toastSwitchTab(res.msg, '../register/register');
+			// 			}
+			// 			console.log(res)
+			// 		},
+			// 		fail => {
 			
-					},
-					'POST',
-					'notoken'
-				);
+			// 		},
+			// 		'POST',
+			// 		'notoken'
+			// 	);
 				uni.hideLoading();
 			
 			},

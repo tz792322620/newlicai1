@@ -4,7 +4,7 @@
 		<view style="padding:30rpx;">
 			<view class="u-flex">
 				<view>
-					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" src="../../static/images/my.png">
+					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" :src="$url + userInfo.avatar">
 					</image>
 				</view>
 				<view style="margin-left: 10rpx;width:480rpx;">
@@ -15,31 +15,32 @@
 						src="../../static/images/hm1.png"></image>
 				</view>
 				<view>
-					<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left: 30rpx;"
-						src="../../static/images/hm2.png"></image>
+					<!-- <image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left: 30rpx;"
+						src="../../static/images/hm2.png"></image> -->
+					<language :margin="'10rpx 0 0 10rpx'"></language>
 				</view>
 			</view>
 			<view style="margin-top: 60rpx;color: #333333;font-size: 24rpx;">
 				<u-row gutter="16">
-					<u-col span="3">
+					<u-col span="3" @click="gotoPage('/pages/yulibao/yulibao')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm3.png"></image>
-							<view>我的钱包</view>
+							<view>{{$t('yulibao')}}</view>
 						</view>
 					</u-col>
-					<u-col span="3">
+					<u-col span="3" @click="gotoPage('/pages/my/order/order')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm4.png"></image>
-							<view>公募基金</view>
+							<view>{{$t('newStockOrders')}}</view>
 						</view>
 					</u-col>
-					<u-col span="3">
+					<u-col span="3" @click="gotoPage('/pages/recharge/recharge')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm5.png"></image>
 							<view>充值入口</view>
 						</view>
 					</u-col>
-					<u-col span="3">
+					<u-col span="3" @click="gotoPage('/pages/withdraw/withdraw')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm6.png"></image>
 							<view>提现入口</view>
@@ -49,9 +50,9 @@
 			</view>
 			<view
 				style="background-color: #FFFFFF;border-radius: 12rpx;padding: 13rpx 15rpx 13rpx 15rpx;margin-top:20rpx;"
-				class="u-flex">
+				class="u-flex" @click="gotoPage('/pages/home/notice/notice')">
 				<image style="width:28rpx;height:28rpx;margin-right: 20rpx;" src="../../static/images/hm7.png"></image>
-				<view class="f_bod" style="width:580rpx;color: #333333;">JIAYOUHHJJS！</view>
+				<view class="f_bod" style="width:580rpx;color: #333333;">{{notice}}</view>
 				<u-icon name="close-circle" color="#575B66" size="28"></u-icon>
 			</view>
 		</view>
@@ -60,9 +61,12 @@
 			<view class="col35 f_bod" style="font-size:36rpx;">热门专区</view>
 			<view style="margin-top: 30rpx;" v-for="(item,index) in ProductList" :key="index">
 				<view class="u-flex">
-					<image v-if="index==0" style="width:64rpx;height:64rpx;margin-right: 20rpx;" src="../../static/images/p1.png"></image>
-					<image v-if="index==1" style="width:64rpx;height:64rpx;margin-right: 20rpx;" src="../../static/images/p2.png"></image>
-					<image v-if="index==2" style="width:64rpx;height:64rpx;margin-right: 20rpx;" src="../../static/images/p3.png"></image>
+					<image v-if="index==0" style="width:64rpx;height:64rpx;margin-right: 20rpx;"
+						src="../../static/images/p1.png"></image>
+					<image v-if="index==1" style="width:64rpx;height:64rpx;margin-right: 20rpx;"
+						src="../../static/images/p2.png"></image>
+					<image v-if="index==2" style="width:64rpx;height:64rpx;margin-right: 20rpx;"
+						src="../../static/images/p3.png"></image>
 					<view style="width:220rpx;">
 						<view>{{item.product_name_cn}}</view>
 						<view style="color: #999999;font-size: 24rpx;">603809.sz</view>
@@ -86,8 +90,10 @@
 					<swiper-item v-for="(item,index) in stockList" :key="index">
 						<view class="u-text-center"
 							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
-							<view>{{item.product_name_cn}}<text style="font-size: 24rpx;color:#999999;">{{item.investment_period}}</text></view>
-							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">{{item.interest_rate}}%
+							<view>{{item.product_name_cn}}<text
+									style="font-size: 24rpx;color:#999999;">{{item.investment_period}}</text></view>
+							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
+								{{item.interest_rate}}%
 							</view>
 							<view style="margin-top: 20rpx;">{{item.amount_per_unit}}元起投</view>
 						</view>
@@ -178,8 +184,10 @@
 						<u-col span="5">
 							<view class="">
 								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_name_cn}}</view>
-								<view><u-line-progress active-color="#6BEEAB" height="18"
-										:percent="Number(item.progress)"></u-line-progress></view>
+								<view>
+									<u-line-progress active-color="#6BEEAB" height="18"
+										:percent="Number(item.progress)"></u-line-progress>
+								</view>
 								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
 									<view style="width:50rpx;">0</view>
 									<view class="u-text-right" style="width: 220rpx;">2550万</view>
@@ -195,11 +203,14 @@
 						<u-col span="3">
 							<view class="u-text-right">
 								<view style="color: #F75F52;">{{Number(item.appreciation_rate)}}%</view>
-								<view style="margin-top: 10rpx;">起投:<text style="color: #F75F52;">{{item.amount_per_unit}}</text></view>
+								<view style="margin-top: 10rpx;">起投:<text
+										style="color: #F75F52;">{{item.amount_per_unit}}</text></view>
 							</view>
 						</u-col>
 					</u-row>
-					<view style="margin-top: 20rpx;"> <u-line color="#F3F3F3"></u-line></view>
+					<view style="margin-top: 20rpx;">
+						<u-line color="#F3F3F3"></u-line>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -208,7 +219,11 @@
 </template>
 
 <script>
-	import { getStockProductList,getStockProductAllList } from '@/api/api'
+	import {
+		getStockProductList,
+		getStockProductAllList,
+		getGonggaoTypes
+	} from '@/api/api'
 	export default {
 		data() {
 			return {
@@ -223,36 +238,70 @@
 					nextMargin: -220,
 
 				},
+				userInfo: JSON.parse(uni.getStorageSync('userInfo')),
 				xuan: 0,
 				but: 0,
-				ProductList:[],
+				ProductList: [],
 				stockList: [], // 精选股票
 				tabName: '', // 选项卡内容(查询参数)
-				stockProductListTab: []
+				stockProductListTab: [],
+				notice: '' // 公告
 			}
 		},
-		onShow(){
-			this.stockProductList()
-			this.getStockProductListNewbie() // 精选股票
-			this.getStockProductListTab()
+		onShow() {
+			// this.stockProductList()
+			// this.getStockProductListNewbie() // 精选股票
+			// this.getStockProductListTab()
 		},
-		
+		computed: {
+			login() {
+				return this.$t('login')
+			}
+		},
+		watch: {
+			login: {
+				handler: function(value) {
+					console.log(value)
+					this.getNotice()
+					this.stockProductList()
+					this.getStockProductListNewbie() // 精选股票
+					this.getStockProductListTab()
+				},
+				immediate: true
+			}
+		},
 		methods: {
+			gotoPage(url) {
+				uni.navigateTo({
+					url: url
+				})
+			},
+			// 公告
+			async getNotice() {
+				const res = await getGonggaoTypes()
+				if (res.code === 1) {
+					this.notice = res.data[0].name
+				}
+			},
 			//热门专区
-			stockProductList() {
-				var data = {};
-				data['area'] = 'Hot'
-				this.$Ajax3(
-					'/index/stockProductList?area=' + data.area, {},
-					res => {
-						if (res.code == 1) {
-							this.ProductList = res.data
-						} else {}
-					},
-					fail => {},
-					'GET',
-					'notoken'
-				);
+			async stockProductList() {
+				const res = await getStockProductList('Hot')
+				if (res.code === 1) {
+					this.ProductList = res.data
+				}
+				// var data = {};
+				// data['area'] = 'Hot'
+				// this.$Ajax3(
+				// 	'/index/stockProductList?area=' + data.area, {},
+				// 	res => {
+				// 		if (res.code == 1) {
+				// 			this.ProductList = res.data
+				// 		} else {}
+				// 	},
+				// 	fail => {},
+				// 	'GET',
+				// 	'notoken'
+				// );
 			},
 			// 精选股票
 			async getStockProductListNewbie() {
@@ -261,7 +310,7 @@
 					this.stockList = res.data
 				}
 			},
-			getxuan(e,item) {
+			getxuan(e, item) {
 				this.xuan = e;
 				this.tabName = item
 				this.getStockProductListTab()
@@ -272,12 +321,12 @@
 					const result = await getStockProductAllList()
 					if (result.code === 1) {
 						this.stockProductListTab = result.data
-					}					
+					}
 				} else {
 					const res = await getStockProductList(this.tabName)
 					if (res.code === 1) {
 						this.stockProductListTab = res.data
-					}					
+					}
 				}
 				console.log(this.stockProductListTab, '选项卡查询=======>')
 			}

@@ -4,7 +4,7 @@
 			<image class="logo_bg" src="../../static/images/logo_bg.png"></image>
 		</view>
 		<view class="b_colfff logo_bk">
-			<view class="col33 f_s36 f_bod">{{ $t('resetPassword') }}</view>
+			<view class="col33 f_s36 f_bod" style="display: flex;justify-content: space-between;">{{ $t('resetPassword') }}<language></language></view>
 			<view class="u-flex" style="margin-top:40rpx;">
 				<view class="col35" style="width:320rpx;">{{ $t('phone') }}</view>
 			</view>
@@ -47,6 +47,7 @@
 
 
 <script>
+	import { resetPassword,smsSend } from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -79,7 +80,7 @@
 
 		},
 		methods: {
-			resetPassword(){
+			async resetPassword(){
 				if (this.account == '') {
 					return this.$tools.toast('请输入手机号码');
 				}else if (this.new_password == '') {
@@ -100,32 +101,46 @@
 					data['account']=this.account
 					data['new_password']=this.new_password
 					data['code']=this.code
-					this.$Ajax3(
-						'/user/resetPassword', {
-							data
-						},
-						res => {
-							if (res.code == "1") {
-								this.$tools.toast('修改成功');
-								setTimeout(() => {
-									this.$tools.back(1);
-									this.lock = true
-								}, 1000);
+					const res = await resetPassword(data)
+					if (res.code == "1") {
+						this.$tools.toast('修改成功');
+						setTimeout(() => {
+							this.$tools.back(1);
+							this.lock = true
+						}, 1000);
+						
+					} else {
+						this.$tools.toast(res.msg)
+						setTimeout(() => {
+							this.lock = true
+						}, 1000);
+					}
+					// this.$Ajax3(
+					// 	'/user/resetPassword', {
+					// 		data
+					// 	},
+					// 	res => {
+					// 		if (res.code == "1") {
+					// 			this.$tools.toast('修改成功');
+					// 			setTimeout(() => {
+					// 				this.$tools.back(1);
+					// 				this.lock = true
+					// 			}, 1000);
 								
-							} else {
-								this.$tools.toast(res.msg)
-								setTimeout(() => {
-									this.lock = true
-								}, 1000);
-							}
-						},
-					);
+					// 		} else {
+					// 			this.$tools.toast(res.msg)
+					// 			setTimeout(() => {
+					// 				this.lock = true
+					// 			}, 1000);
+					// 		}
+					// 	},
+					// );
 				}
 				
 			},
 			
 			
-			sendCode() {
+			async sendCode() {
 				if (this.account == '') {
 					return this.$tools.toast('请输入手机号码');
 				}
@@ -136,34 +151,50 @@
 				var data = {};
 				data['mobile'] = this.account;
 				data['event'] = 'resetPassword';
-				this.$Ajax3(
-					'/sms/send', {
-						data
-					},
-					res => {
-						if (res.code == '1') {
-							// 开始倒计时
-							this.$tools.toast('发送成功');
-							this.countdown = 60;
-							const timer = setInterval(() => {
-								if (this.countdown > 0) {
-									this.countdown--;
-								} else {
-									clearInterval(timer);
-								}
-							}, 1000);
+				const res = await smsSend(data)
+				if (res.code == '1') {
+					// 开始倒计时
+					this.$tools.toast('发送成功');
+					this.countdown = 60;
+					const timer = setInterval(() => {
+						if (this.countdown > 0) {
+							this.countdown--;
 						} else {
-							this.$tools.toast(res.msg)
-							// this.$tools.toastSwitchTab(res.msg, '../register/register');
+							clearInterval(timer);
 						}
-						console.log(res)
-					},
-					fail => {
+					}, 1000);
+				} else {
+					this.$tools.toast(res.msg)
+					// this.$tools.toastSwitchTab(res.msg, '../register/register');
+				}
+			// 	this.$Ajax3(
+			// 		'/sms/send', {
+			// 			data
+			// 		},
+			// 		res => {
+			// 			if (res.code == '1') {
+			// 				// 开始倒计时
+			// 				this.$tools.toast('发送成功');
+			// 				this.countdown = 60;
+			// 				const timer = setInterval(() => {
+			// 					if (this.countdown > 0) {
+			// 						this.countdown--;
+			// 					} else {
+			// 						clearInterval(timer);
+			// 					}
+			// 				}, 1000);
+			// 			} else {
+			// 				this.$tools.toast(res.msg)
+			// 				// this.$tools.toastSwitchTab(res.msg, '../register/register');
+			// 			}
+			// 			console.log(res)
+			// 		},
+			// 		fail => {
 			
-					},
-					'POST',
-					'notoken'
-				);
+			// 		},
+			// 		'POST',
+			// 		'notoken'
+			// 	);
 				uni.hideLoading();
 			
 			},

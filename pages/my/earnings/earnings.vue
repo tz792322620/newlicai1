@@ -1,23 +1,23 @@
 <template>
 	<view class="earnings">
-		<view class="earnings_item">
+		<view class="earnings_item" v-for="(item,index) in list" :key="index">
 			<view class="title">
-				第3期 跨越星空的爱
+				{{item.earnings_type}}
 			</view>
-			<view class="cell">
+			<!-- <view class="cell">
 				<view class="cell_left">
 					状态
 				</view>
 				<view class="cell_right green">
 					已完成
 				</view>
-			</view>
+			</view> -->
 			<view class="cell">
 				<view class="cell_left">
 					支付日
 				</view>
 				<view class="cell_right">
-					2023-03-14 20:20:00
+					{{item.earnings_date}}
 				</view>
 			</view>
 			<view class="cell">
@@ -25,7 +25,7 @@
 					支付金额
 				</view>
 				<view class="cell_right">
-					7108.65
+					{{item.earnings_amount}}
 				</view>
 			</view>
 		</view>
@@ -33,14 +33,24 @@
 </template>
 
 <script>
+	import { getAllEarnings } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				
+				list: []
 			}
 		},
+		onLoad() {
+			this.getData()
+		},
 		methods: {
-			
+			async getData() {
+				const res = await getAllEarnings()
+				if (res.code === 1) {
+					this.list = res.data
+				}
+				console.log(this.list)
+			}
 		}
 	}
 </script>
