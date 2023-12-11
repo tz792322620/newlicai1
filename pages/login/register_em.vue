@@ -107,6 +107,7 @@
 			},
 			// 如下配置仅作为示例，具体可参考'配置验证对象'小节
 			initYpRiddler() {
+				let that =this; 
 				new window.YpRiddler({
 				  appId: 'a11a6393cd914616bc54688ef9d2d5b6', 
 				  expired: 10,
@@ -116,9 +117,8 @@
 				  container: document.getElementById('cbox'),
 				  version: 'v1',
 				  onSuccess: function (validInfo, close, useDefaultSuccess) {
-
-					this.ypauthenticate = validInfo.authenticate
-					this.yptoken = validInfo.token
+					that.ypauthenticate = validInfo.authenticate
+					that.yptoken = validInfo.token
 					useDefaultSuccess.call(null, true)
 					close()
 				  },
@@ -158,6 +158,8 @@
 					data['password']=this.password
 					data['code']=this.code
 					data['referrerCode']=this.referrerCode
+					data['authenticate'] = this.ypauthenticate;
+					data['token'] = this.yptoken; 
 					const res = await register(data)
 					if (res.code == "1") {
 						this.$tools.toast('注册成功');

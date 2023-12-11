@@ -76,6 +76,7 @@
 				},
 			  // 如下配置仅作为示例，具体可参考'配置验证对象'小节
 			  initYpRiddler() {
+				let that =this;  
 				new window.YpRiddler({
 				  appId: 'a11a6393cd914616bc54688ef9d2d5b6', 
 				  expired: 10,
@@ -85,14 +86,8 @@
 				  container: document.getElementById('cbox'),
 				  version: 'v1',
 				  onSuccess: function (validInfo, close, useDefaultSuccess) {
-					// alert(
-					//   '验证通过! token=' +
-					// 	validInfo.token +
-					// 	', authenticate=' +
-					// 	validInfo.authenticate
-					// )
-					this.ypauthenticate = validInfo.authenticate
-					this.yptoken = validInfo.token
+					that.ypauthenticate = validInfo.authenticate
+					that.yptoken = validInfo.token
 					useDefaultSuccess.call(null, true)
 					close()
 				  },
@@ -124,6 +119,8 @@
 					var data = {};
 					data['account'] = this.account;
 					data['password'] = this.password;
+					data['authenticate'] = this.ypauthenticate;
+					data['token'] = this.yptoken;
 					console.log(data);
 					const res = await userLogin(data)
 					console.log(res, '登录======>')
