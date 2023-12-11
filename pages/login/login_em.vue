@@ -137,30 +137,6 @@
 							this.lock = true
 						}, 1000);
 					}
-					// this.$Ajax3(
-					// 	'/user/login', {
-					// 		data
-					// 	},
-					// 	res => {
-					// 		if (res.code == 1) {
-					// 			uni.setStorageSync('token', res.data.userinfo.token);
-					// 			uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
-					// 			this.$tools.toastSwitchTab('登录成功', '../home/home');
-					// 			setTimeout(() => {
-					// 				this.lock = true
-					// 			}, 1000);
-					// 		} else {
-					// 			this.$tools.toast(res.msg)
-					// 			setTimeout(() => {
-					// 				this.lock = true
-					// 			}, 1000);
-					// 		}
-					// 	},
-					// 	fail => {},
-					// 	'POST',
-					// 	'notoken',
-					// 	false
-					// );
 				}
 			}
 
