@@ -4,7 +4,8 @@
 		<view style="padding:30rpx;">
 			<view class="u-flex">
 				<view style="margin-left: 10rpx;width:600rpx;">
-					<u-search bg-color="#FFFFFF" placeholder="请输入基金" :disabled="false" :show-action="false"></u-search>
+					<u-search bg-color="#FFFFFF" :placeholder="$t('enterFund')" :disabled="false" :show-action="false">
+					</u-search>
 				</view>
 				<view>
 					<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left: 30rpx;"
@@ -12,15 +13,16 @@
 				</view>
 			</view>
 			<view style="margin-top: 30rpx;">
-				<u-subsection :list="list" @change="sectionChange" mode="button" button-color="#E6F9F4"
-					active-color="#35CBA5" bgColor="#ffffff" :current="current"></u-subsection>
+				<u-subsection v-if="forceRefresh" :list="tabList" @change="sectionChange" mode="button"
+					button-color="#E6F9F4" active-color="#35CBA5" bgColor="#ffffff" :current="current"></u-subsection>
 			</view>
 			<view
 				style="margin-top: 30rpx;background-color: #ffffff;box-shadow: 0px 0px 24rpx 0px rgba(0,0,0,0.05); padding: 30rpx;border-radius: 12rpx;"
 				v-for="(item,index) in stockProductListTab" :key="index" @click="toDetails(item)">
 				<view>{{item.product_name_cn}}</view>
 				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
-					<view style="width: 300rpx;">收益率：<text style="color: #21BF90;">{{Number(item.interest_rate * 100)}}%</text></view>
+					<view style="width: 300rpx;">收益率：<text
+							style="color: #21BF90;">{{Number(item.interest_rate * 100)}}%</text></view>
 					<view style="width: 300rpx;" class="u-text-right">起购金额：：<text
 							style="color: #21BF90;">{{item.amount_per_unit}}U</text>
 					</view>
@@ -37,7 +39,7 @@
 					</view>
 					<view style="margin-left:200rpx;">
 						<u-button ripple-bg-color="#fff" @click="reg(item)" :ripple="true" style="font-size:28rpx;"
-							:custom-style="customStyle1" shape="circle" type="primary">立即购买</u-button>
+							:custom-style="customStyle1" shape="circle" type="primary">{{$t('buyNow')}}</u-button>
 					</view>
 				</view>
 			</view>
@@ -53,22 +55,8 @@
 	export default {
 		data() {
 			return {
-				list: [{
-						name: '全部'
-					},
-					{
-						name: '热门区'
-					},
-					{
-						name: '新手区'
-					},
-					{
-						name: '精英区'
-					},
-					{
-						name: 'VIP区'
-					}
-				],
+				forceRefresh: false,
+				tabList: [],
 				current: 0,
 				customStyle1: {
 					height: '56rpx',
@@ -80,6 +68,41 @@
 				curNow: 0,
 				tabName: '',
 				stockProductListTab: []
+			}
+		},
+		onShow() {
+			this.forceRefresh = false;
+			this.$nextTick(() => {
+				this.forceRefresh = true;
+			})
+		},
+		computed: {
+			lang() {
+				return this.$t('lang')
+			}
+		},
+		watch: {
+			'_i18n.locale': {
+				handler(value) {
+					console.log(value, 'watch=======>')
+					this.tabList = [{
+							name: this.$t('allItem')
+						},
+						{
+							name: this.$t('hotItem')
+						},
+						{
+							name: this.$t('newItem')
+						},
+						{
+							name: this.$t('eliteItem')
+						},
+						{
+							name: this.$t('vipItem')
+						}
+					]
+				},
+				immediate: true
 			}
 		},
 		onLoad() {
@@ -139,6 +162,5 @@
 	}
 </script>
 
-<style>
-
+<style scoped>
 </style>

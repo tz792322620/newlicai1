@@ -5,8 +5,8 @@
 			<view
 				style="background-image: url('../static/images/bidd_bg.png');background-repeat: no-repeat;background-size: 100%;height: 190rpx;color: #FFFFFF; padding: 40rpx 30rpx 40rpx 30rpx;">
 				<view class="u-flex">
-					<view style="width:280rpx;">账户可用余额(元)</view>
-					<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">项目可投金额(元)</view>
+					<view style="width:280rpx;">{{$t('availableBalance')}}</view>
+					<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">{{$t('investableAmount')}}</view>
 				</view>
 				<view class="u-flex" style="margin-top: 30rpx;font-size: 34rpx;">
 					<view style="width:280rpx;">¥ {{productInfo.total_units - productInfo.sold_units}}</view>
@@ -15,29 +15,29 @@
 		</view>
 			<view style="background-color: #FFFFFF;border-radius: 12rpx;padding: 30rpx;margin-top: 30rpx;">
 				<view class="u-flex" style="margin-bottom:30rpx;">
-					<view style="width:200rpx;color: #666666;">起投金额</view>
+					<view style="width:200rpx;color: #666666;">{{$t('qtAmount')}}</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">¥<text
 							class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.amount_per_unit}}</text>元</view>
 				</view>
 				<u-line color="#F3F3F3"></u-line>
 				<view class="u-flex" style="margin-bottom:30rpx;margin-top:30rpx;">
-					<view style="width:200rpx;color: #666666;">结息时间</view>
+					<view style="width:200rpx;color: #666666;">{{$t('jxTime')}}</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;" v-if="productInfo.payment_method == 'Daily'">
-						满<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">24小时</text>自动结息
+						{{$t('full')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{$t('24Hours')}}</text>{{$t('zdInterest')}}
 					</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;" v-if="productInfo.payment_method == 'Weekly'">
-						满<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">一周</text>自动结息
+						{{$t('full')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{$t('week')}}</text>{{$t('zdInterest')}}
 					</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;" v-if="productInfo.payment_method == 'Monthly'">
-						满<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">一月</text>自动结息
+						{{$t('full')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{$t('month')}}</text>{{$t('zdInterest')}}
 					</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;" v-if="productInfo.payment_method == 'OnMaturity'">
-						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">及时</text>结息
+						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{$t('inTime')}}</text>{{$t('interest')}}
 					</view>
 				</view>
 				<u-line color="#F3F3F3"></u-line>
 				<view class="u-flex" style="margin-bottom:30rpx;margin-top: 30rpx;">
-					<view style="width:200rpx;color: #666666;">投资金额</view>
+					<view style="width:200rpx;color: #666666;">{{$t('tzAmount')}}</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">
 						<u-number-box color="#ffffff" :min="parseInt(Number(productInfo.amount_per_unit))" :step="parseInt(Number(productInfo.amount_per_unit))" bg-color="#35CBA5" v-model="value" @change="valChange">
 						</u-number-box>
@@ -47,20 +47,20 @@
 				<view class="u-flex" style="margin-bottom:30rpx;margin-top:30rpx;">
 
 					<view class="u-text-right" style="width:560rpx;margin-left:60rpx;color: #333333;">
-						最低起投<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.amount_per_unit}}</text> 元，加一次为
-						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.amount_per_unit}}</text> 元
+						{{$t('minInvest')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.amount_per_unit}}</text> {{$t('yuan')}}，{{$t('addOne')}}
+						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.amount_per_unit}}</text> {{$t('yuan')}}
 					</view>
 				</view>
 				<u-line color="#F3F3F3"></u-line>
 				<view class="u-flex" style="margin-top:30rpx;">
-					<view style="width:200rpx;color: #666666;">支付密码</view>
-					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">默认为登录密码</view>
+					<view style="width:200rpx;color: #666666;">{{$t('payPassword')}}</view>
+					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">{{$t('defaultLoginPassword')}}</view>
 				</view>
 			</view>
 
 			<view style="margin-top: 80rpx;">
 				<u-button ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1"
-					shape="circle" type="primary" @click="toInvest">立即投资</u-button>
+					shape="circle" type="primary" @click="toInvest">{{$t('immediateInvestment')}}</u-button>
 			</view>
 
 		</view>
@@ -85,10 +85,23 @@
 				investmentAmount: ''
 			}
 		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('bidNow')
+			})
+		},
 		onLoad(params) {
 			this.productId = params.id
 			if (this.productId) {
 				this.getStockProduct()
+			}
+		},
+		watch: {
+			'_i18n.locale': {
+				handler() {
+					
+				},
+				immediate: true
 			}
 		},
 		methods: {

@@ -253,13 +253,8 @@
 			// this.getStockProductListNewbie() // 精选股票
 			// this.getStockProductListTab()
 		},
-		computed: {
-			login() {
-				return this.$t('login')
-			}
-		},
 		watch: {
-			login: {
+			'_i18n.locale': {
 				handler: function(value) {
 					console.log(value)
 					this.getNotice()
