@@ -73,13 +73,62 @@
 				time: 60,
 				timer: null,
 				countdown: 0,
-				tongyi:0
+				tongyi:0,
+				yptoken:'',
+				ypauthenticate:''
 			}
 		},
 		onLoad() {
 
 		},
+		mounted() {
+			this.loadCaptchaScript(() => {
+				this.initYpRiddler();
+			});
+		},
 		methods: {
+			loadCaptchaScript(callback) {
+				const script = document.createElement('script');
+				script.src = "https://www.yunpian.com/static/official/js/libs/riddler-sdk-0.2.2.js";
+				script.onload = callback;
+				document.head.appendChild(script);
+			},
+			// 如下配置仅作为示例，具体可参考'配置验证对象'小节
+			initYpRiddler() {
+				let that =this; 
+				new window.YpRiddler({
+				  appId: 'a11a6393cd914616bc54688ef9d2d5b6', 
+				  expired: 10,
+				  mode: 'dialog',
+				  winWidth: 300,
+				  lang: 'zh-cn',
+				  container: document.getElementById('cbox'),
+				  version: 'v1',
+				  onSuccess: function (validInfo, close, useDefaultSuccess) {
+					// alert(
+					//   '验证通过! token=' +
+					// 	validInfo.token +
+					// 	', authenticate=' +
+					// 	validInfo.authenticate
+					// )
+					that.ypauthenticate = validInfo.authenticate
+					that.yptoken = validInfo.token
+					useDefaultSuccess.call(null, true)
+					close()
+				  },
+				  onFail: function (code, msg, retry) {
+					alert('出错啦：' + msg + ' code: ' + code)
+					retry()
+				  },
+				  beforeStart: function (next) {
+					console.log('验证马上开始')
+					next()
+				  },
+				  onExit: function () {
+					console.log('退出验证')
+				  }
+				})
+			},
 			async resetPassword(){
 				if (this.account == '') {
 					return this.$tools.toast('请输入手机号码');
@@ -101,6 +150,8 @@
 					data['account']=this.account
 					data['new_password']=this.new_password
 					data['code']=this.code
+					data['referrerCode']=this.referrerCode
+					data['authenticate'] = this.ypauthenticate;
 					const res = await resetPassword(data)
 					if (res.code == "1") {
 						this.$tools.toast('修改成功');

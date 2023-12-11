@@ -61,7 +61,7 @@
                 </view>
             </view>
             <view style="margin-top:80rpx;">
-                <u-button @click="reg()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
+                <u-button @click="logout()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
                     安全退出</u-button>
             </view>
         </view>
@@ -111,6 +111,22 @@ export default {
 		this.getUser()
 	},
 	methods: {
+		// 退出登录
+		logout() {
+			// 清除本地存储的用户信息和令牌
+			uni.removeStorageSync('token');
+			uni.removeStorageSync('userInfo');
+	
+			// 可选：执行任何其他清理操作，例如清除Vuex状态
+	
+			// 提示用户
+			this.$tools.toast('已退出登录');
+	
+			// 重定向到登录页面或首页
+			uni.reLaunch({
+				url: '/'
+			});
+		},
 		navigateTo(url) {
 			console.log(url)
 			// 使用uni-app的跳转方式
@@ -144,6 +160,6 @@ image {
 }
 page {
 	background-color: #f0f2f5;
-	padding-bottom: 500rpx;
+	padding-bottom: 200rpx;
 }
 </style>
