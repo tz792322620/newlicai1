@@ -1,7 +1,7 @@
 <template>
 	<view class="add-payment">
 		<view class="payment">
-			<view class="desc">{{ $t('addPaymentMethod') }}</view>
+			<view class="desc">{{ $t('choosePaymentMethod') }}</view>
 			<view class="select">
 				<view class="select-c" @click="isShow = !isShow">
 					<view class="select-c_left">{{ data.payment_type }}</view>
@@ -39,11 +39,11 @@
 		</view>
 		<view class="item" v-if="activeIndex !== 2">
 			<view class="desc">
-				收款二维码（选填）
+				{{$t('QCode')}}
 			</view>
 			<view class="slot-btn" @click="uploadImage" v-if="!data.qr_code_image">
 				<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
-				<text>上传收款码</text>
+				<text>{{$t('enterQCode')}}</text>
 			</view>
 			<view style="width: 280rpx;height: 280rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
 				<image :src="$url + data.qr_code_image" mode="" style="width: 100%;height: 100%;"></image>
@@ -87,7 +87,10 @@
 
 
 <script>
-import { addPaymentInfo,getPaymentInfoById } from '@/api/api';
+	import {
+		addPaymentInfo,
+		getPaymentInfoById
+	} from '@/api/api';
 	export default {
 		data() {
 			return {
@@ -101,16 +104,20 @@ import { addPaymentInfo,getPaymentInfoById } from '@/api/api';
 					remark: ''
 				},
 				activeIndex: 0,
-				isShow: false,
-				// 支付方式集合
-				paymentList: [{
-					name: '微信',
+				isShow: false
+			}
+		},
+		computed: {
+			// 支付方式集合
+			paymentList() {
+				return [{
+					name: this.$t('WeChat'),
 					id: 0
 				}, {
-					name: '支付宝',
+					name: this.$t('Alipay'),
 					id: 1
 				}, {
-					name: '银行卡',
+					name: this.$t('BankCard'),
 					id: 2
 				}]
 			}
@@ -119,6 +126,10 @@ import { addPaymentInfo,getPaymentInfoById } from '@/api/api';
 			console.log(params)
 			if (params.id) {
 				this.getPaymentInfo(params.id)
+			}else {
+				uni.setNavigationBarTitle({
+					title: this.$t('addPaymentMethod')
+				})
 			}
 		},
 		methods: {
@@ -129,7 +140,7 @@ import { addPaymentInfo,getPaymentInfoById } from '@/api/api';
 					this.data = res.data
 					this.activeIndex = res.data.payment_type === '微信' ? 0 : res.data.payment_type === '支付宝' ? 1 : 2
 					uni.setNavigationBarTitle({
-						title: '修改' + this.data.payment_type
+						title: this.$t('edit') + this.data.payment_type
 					})
 				}
 				console.log(res)
@@ -150,7 +161,7 @@ import { addPaymentInfo,getPaymentInfoById } from '@/api/api';
 								const res = JSON.parse(uploadFileRes.data)
 								if (res.code === 1) {
 									this.data.qr_code_image = res.data.url
-								}else {
+								} else {
 									uni.showToast({
 										title: res.msg,
 										icon: 'none'
@@ -167,35 +178,35 @@ import { addPaymentInfo,getPaymentInfoById } from '@/api/api';
 				this.isShow = false
 			},
 			async save() {
-				if (this.data.user_name.trim() == '' ||this.data.user_name.length === 0) {
+				if (this.data.user_name.trim() == '' || this.data.user_name.length === 0) {
 					return uni.showToast({
-						title: '请填写名字',
+						title: this.$t('enterName'),
 						icon: 'none'
 					})
 				}
-				if (this.data.account_number.trim() == '' ||this.data.account_number.length === 0) {
+				if (this.data.account_number.trim() == '' || this.data.account_number.length === 0) {
 					return uni.showToast({
-						title: `请填写${this.data.payment_type}账号`,
+						title: this.activeIndex == 0 ? this.$t('enterWeChatAccount') : this.activeIndex == 1 ? this.$t('enterAlipayAccount') : this.activeIndex == 2 ? this.$t('enterBankCardAccount') : '',
 						icon: 'none'
 					})
 				}
-				if (this.data.payment_type == '银行卡') {
-					if (this.data.bank_name.trim() == '' ||this.data.bank_name.length === 0) {
+				if (this.activeIndex == 2) {
+					if (this.data.bank_name.trim() == '' || this.data.bank_name.length === 0) {
 						return uni.showToast({
-							title: '请填写银行名称',
+							title: this.$t('enterBankName'),
 							icon: 'none'
 						})
 					}
-					if (this.data.branch_name.trim() == '' ||this.data.branch_name.length === 0) {
+					if (this.data.branch_name.trim() == '' || this.data.branch_name.length === 0) {
 						return uni.showToast({
-							title: '请填写开户支行',
+							title: this.$t('enterBranchBank'),
 							icon: 'none'
 						})
 					}
 				}
-				if (this.data.remark.trim() == '' ||this.data.remark.length === 0) {
+				if (this.data.remark.trim() == '' || this.data.remark.length === 0) {
 					return uni.showToast({
-						title: '请填写备注',
+						title: this.$t('enterRemark'),
 						icon: 'none'
 					})
 				}

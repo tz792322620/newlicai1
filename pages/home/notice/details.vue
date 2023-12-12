@@ -17,6 +17,11 @@
 				details: ''
 			}
 		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('noticeDetails')
+			})
+		},
 		onLoad(params) {
 			console.log(params)
 			if (params.name) {

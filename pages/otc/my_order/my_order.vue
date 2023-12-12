@@ -16,10 +16,10 @@
 				<view class="content_item_top">
 					<view class="content_item_top_left">
 						<view class="deal" v-if="item.buyer_id === userInfo.user_id">
-							购买
+							{{$t('buy')}}
 						</view>
 						<view class="sell" v-if="item.seller_id === userInfo.user_id">
-							出售
+							{{$t('sell')}}
 						</view>
 						<view class="unit">
 							USDT
@@ -27,23 +27,23 @@
 					</view>
 					<view class="content_item_top_right">
 						<view class="status" v-if="item.status == 'Pending'&&item.payment_proof_status == 'Pending'">
-							待上传付款截图
+							{{$t('paymentScreenshot')}}
 						</view>
 						<view class="status" v-else-if="item.status == 'Pending'">
-							未完成
+							{{$t('unfinished')}}
 						</view>
 						<view class="complete" v-if="item.status == 'Completed'">
-							已完成
+							{{$t('completed')}}
 						</view>
 						<view class="status" v-if="item.status == 'Cancelled'">
-							取消
+							{{$t('cancel')}}
 						</view>
 						<uni-icons type="right"></uni-icons>
 					</view>
 				</view>
 				<view class="content_item_cell">
 					<view class="content_item_cell_left">
-						总额
+						{{$t('totalAmount')}}
 					</view>
 					<view class="content_item_cell_right">
 						{{item.trade_price * item.trade_amount}} {{item.trade_currency}}
@@ -51,7 +51,7 @@
 				</view>
 				<view class="content_item_cell">
 					<view class="content_item_cell_left">
-						单价
+						{{$t('unitPrice')}}
 					</view>
 					<view class="content_item_cell_right">
 						{{item.trade_price}} {{item.trade_currency}}
@@ -59,7 +59,7 @@
 				</view>
 				<view class="content_item_cell">
 					<view class="content_item_cell_left">
-						数量
+						{{$t('quantity')}}
 					</view>
 					<view class="content_item_cell_right">
 						{{item.trade_amount}} USDT
@@ -76,7 +76,7 @@
 				</view> -->
 				<view class="content_item_cell">
 					<view class="content_item_cell_left">
-						创建时间
+						{{$t('creationTime')}}
 					</view>
 					<view class="content_item_cell_right">
 						{{item.created_at}}
@@ -87,15 +87,15 @@
 		<u-popup v-model="unShow" mode="bottom" border-radius="30" closeable close-icon-color="#999999">
 			<view class="popup_content">
 				<view class="title">
-					订单筛选
+					{{$t('orderFilter')}}
 				</view>
 				<view class="popup_body">
 					<view class="popup_body_item">
 						<view class="popup_body_item_title">
-							订单状态
+							{{$t('orderStatus')}}
 						</view>
-						<view class="popup_body_item_cell" v-for="(item,index) in orderStatusList"
-							:key="index" @click="orderStatusIndex = index,status = item.status">
+						<view class="popup_body_item_cell" v-for="(item,index) in orderStatusList" :key="index"
+							@click="orderStatusIndex = index,status = item.status">
 							<view class="popup_body_item_cell_left">
 								{{item.desc}}
 							</view>
@@ -130,7 +130,7 @@
 					</view>
 					<view class="popup_body_item">
 						<view class="popup_body_item_title">
-							交易类型
+							{{$t('transactionType')}}
 						</view>
 						<view class="popup_body_item_cell" v-for="(item,index) in typeList" :key="index"
 							@click="typeActiveIndex = index,trade_type = item.type">
@@ -146,15 +146,16 @@
 					</view>
 					<view class="popup_body_item">
 						<view class="popup_body_item_title">
-							下单日期
+							{{$t('orderDate')}}
 						</view>
 						<view class="popup_body_item_time" @click="show = true">
 							<view class="popup_body_item_time_box">{{startDate}}</view>
-							至
+							-
 							<view class="popup_body_item_time_box">{{endDate}}</view>
 						</view>
 						<view class="popup_body_item_date">
-							<view class="popup_body_item_date_item" :class="dateRangeActiveIndex === index ? 'active' : ''" 
+							<view class="popup_body_item_date_item"
+								:class="dateRangeActiveIndex === index ? 'active' : ''"
 								v-for="(item,index) in dateRangeList" :key="index" @click="dateRangeChange(index)">
 								{{item.desc}}
 							</view>
@@ -162,19 +163,20 @@
 					</view>
 					<view class="buttons">
 						<view class="buttons_left">
-							清除条件
+							{{$t('clearConditions')}}
 						</view>
 						<view class="buttons_right" @click="complete">
-							完成
+							{{$t('complete')}}
 						</view>
 					</view>
 				</view>
 			</view>
 		</u-popup>
-		<u-calendar v-model="show" :min-date="minDate" :mode="mode" @change="change" btn-type="success" active-bg-color="#35CBA5" range-color="#35CBA5" range-bg-color="rgba(53, 203, 165,0.13)">
+		<u-calendar v-model="show" :min-date="minDate" :mode="mode" @change="change" btn-type="success"
+			active-bg-color="#35CBA5" range-color="#35CBA5" range-bg-color="rgba(53, 203, 165,0.13)">
 			<view slot="tooltip">
 				<view class="title" style="margin: 40rpx;">
-					*选择{{dateRangeActiveIndex === 0 ? '7天' : dateRangeActiveIndex === 1 ? '3个月' : dateRangeActiveIndex === 2 ? '6个月' : dateRangeActiveIndex === 3 ? '1年' : ''}}内的时间范围
+					*{{$t('choose')}}{{dateRangeActiveIndex === 0 ? $t('sevenDays') : dateRangeActiveIndex === 1 ? $t('threeMonths') : dateRangeActiveIndex === 2 ? $t('sixMonths') : dateRangeActiveIndex === 3 ? $t('oneYears') : ''}}{{$t('timeFrame')}}
 				</view>
 			</view>
 		</u-calendar>
@@ -182,7 +184,9 @@
 </template>
 
 <script>
-	import { getUserTrades } from '@/api/api.js'
+	import {
+		getUserTrades
+	} from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -192,36 +196,11 @@
 				end_date: '',
 				status: 'Pending',
 				orderList: [],
-				startDate: '开始日期',
-				endDate: '结束日期',
 				show: false,
 				mode: 'range',
 				minDate: '',
 				dateRangeActiveIndex: 0,
-				dateRangeList: [{
-					time: 0,
-					desc: '近7天'
-				},{
-					time: 1,
-					desc: '近3个月'
-				},{
-					time: 2,
-					desc: '近6个月'
-				},{
-					time: 3,
-					desc: '近1年'
-				}],
 				orderStatusIndex: 0,
-				orderStatusList: [{
-					desc: '未完成',
-					status: 'Pending'
-				},{
-					desc: '已完成',
-					status: 'Completed'
-				},{
-					desc: '取消',
-					status: 'Cancelled'
-				}],
 				activeIndex: 0,
 				tabsList: ['未完成', '已完成'],
 				unShow: false, // 未完成弹窗
@@ -229,20 +208,60 @@
 				unStatusList: ['待支付', '待放币', '支付中'],
 				statusActiveIndex: 0,
 				statusList: ['交易完成', '交易取消'],
-				typeActiveIndex: 0,
-				typeList: [{
-					desc: '购买',
+				typeActiveIndex: 0
+			}
+		},
+		computed: {
+			startDate() {
+				return this.$t('startDate')
+			},
+			endDate() {
+				return this.$t('endDate')
+			},
+			orderStatusList() {
+				return [{
+					desc: this.$t('unfinished'),
+					status: 'Pending'
+				}, {
+					desc: this.$t('completed'),
+					status: 'Completed'
+				}, {
+					desc: this.$t('cancel'),
+					status: 'Cancelled'
+				}]
+			},
+			typeList() {
+				return [{
+					desc: this.$t('buy'),
 					type: 'Buy'
-				},{
-					desc: '出售',
+				}, {
+					desc: this.$t('sell'),
 					type: 'Sell'
+				}]
+			},
+			dateRangeList() {
+				return [{
+					time: 0,
+					desc: this.$t('sevenDays')
+				}, {
+					time: 1,
+					desc: this.$t('threeMonths')
+				}, {
+					time: 2,
+					desc: this.$t('sixMonths')
+				}, {
+					time: 3,
+					desc: this.$t('oneYears')
 				}]
 			}
 		},
 		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('order')
+			})
 			var today = new Date() //当天
-			today.setDate(today.getDate()-6)//七天前，时间戳
-			this.minDate = today.toLocaleDateString().replaceAll('/','-')//格式化时间
+			today.setDate(today.getDate() - 6) //七天前，时间戳
+			this.minDate = today.toLocaleDateString().replaceAll('/', '-') //格式化时间
 			console.log(this.minDate)
 		},
 		onLoad() {
@@ -250,7 +269,7 @@
 		},
 		methods: {
 			async getOrderList() {
-				const res = await getUserTrades(this.trade_type,this.start_date,this.end_date,this.status)
+				const res = await getUserTrades(this.trade_type, this.start_date, this.end_date, this.status)
 				if (res.code === 1) {
 					this.orderList = res.data
 				}
@@ -263,7 +282,7 @@
 			copy(item) {
 				uni.setClipboardData({
 					data: 'hello',
-					success: function () {
+					success: function() {
 						console.log('success');
 					}
 				})
@@ -273,19 +292,19 @@
 				var today = new Date() //当天
 				switch (index) {
 					case 0:
-						today.setDate(today.getDate()-6)//七天前，时间戳
-					break;
+						today.setDate(today.getDate() - 6) //七天前，时间戳
+						break;
 					case 1:
-						today.setMonth(today.getMonth()-3)//三个月前，时间戳
-					break;
+						today.setMonth(today.getMonth() - 3) //三个月前，时间戳
+						break;
 					case 2:
-						today.setMonth(today.getMonth()-6)//六个月前，时间戳
-					break;
+						today.setMonth(today.getMonth() - 6) //六个月前，时间戳
+						break;
 					case 3:
-						today.setFullYear(today.getFullYear()-1)//一年前，时间戳
-					break;
+						today.setFullYear(today.getFullYear() - 1) //一年前，时间戳
+						break;
 				}
-				this.minDate = today.toLocaleDateString().replaceAll('/','-')//格式化时间
+				this.minDate = today.toLocaleDateString().replaceAll('/', '-') //格式化时间
 				console.log(this.minDate)
 			},
 			change(e) {
@@ -308,10 +327,12 @@
 		/deep/.u-icon__icon {
 			color: #999999 !important;
 		}
+
 		/deep/.u-btn--success {
 			border-color: #35CBA5;
 			background-color: #35CBA5;
 		}
+
 		.tabs {
 			margin-bottom: 20rpx;
 			background-color: #fff;
@@ -386,10 +407,12 @@
 							color: #35CBA5;
 							margin-right: 10rpx;
 						}
+
 						.sell {
 							color: #F75F52;
 							margin-right: 10rpx;
 						}
+
 						.unit {
 							color: #333333;
 						}
@@ -406,6 +429,7 @@
 							line-height: 44rpx;
 							margin-right: 10rpx;
 						}
+
 						.complete {
 							font-size: 32rpx;
 							font-weight: 500;
@@ -470,7 +494,7 @@
 						color: #333333;
 						line-height: 40rpx;
 					}
-					
+
 					&_time {
 						margin: 20rpx 0;
 						display: flex;
@@ -479,6 +503,7 @@
 						font-size: 24rpx;
 						font-weight: 400;
 						color: #333333;
+
 						&_box {
 							width: 300rpx;
 							height: 60rpx;
@@ -491,11 +516,12 @@
 							color: #999999;
 						}
 					}
-					
+
 					&_date {
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
+
 						&_item {
 							width: 150rpx;
 							height: 60rpx;
@@ -506,13 +532,14 @@
 							font-size: 24rpx;
 							font-weight: 400;
 							color: #333333;
+
 							&.active {
 								background: #E2F8F2;
 								color: #35CBA5;
 							}
 						}
 					}
-					
+
 					&_cell {
 						display: flex;
 						align-items: center;

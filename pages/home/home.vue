@@ -8,7 +8,7 @@
 					</image>
 				</view>
 				<view style="margin-left: 10rpx;width:480rpx;">
-					<u-search bg-color="#FFFFFF" placeholder="搜索" :disabled="false" :show-action="false"></u-search>
+					<u-search bg-color="#FFFFFF" :placeholder="$t('search')" :disabled="false" :show-action="false"></u-search>
 				</view>
 				<view>
 					<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left: 30rpx;"

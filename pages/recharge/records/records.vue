@@ -12,7 +12,7 @@
 			</view>
 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
-					到账数量
+					{{$t('quantityReceived')}}
 				</view>
 				<view class="records_item_cell_right">
 					{{item.recharge_amount}}
@@ -36,7 +36,7 @@
 			</view>
 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
-					时间
+					{{$t('times')}}
 				</view>
 				<view class="records_item_cell_right">
 					{{item.recharge_date}}
@@ -53,6 +53,11 @@
 			return {
 				recordsList: []
 			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('rechargeRecords')
+			})
 		},
 		onLoad() {
 			this.getData()

@@ -3,28 +3,28 @@
 		<view class="box1">
 			<view class="box1_title">
 				<text class="box1_title_left">
-					购买
+					{{$t('buy')}}
 				</text>
 				<text class="box1_title_right">
 					USDT
 				</text>
 			</view>
 			<view class="box1_cell">
-				<text class="box1_cell_left">单价</text>
+				<text class="box1_cell_left">{{$t('unitPrice')}}</text>
 				<text class="box1_cell_right">¥{{dataInfo.price}}</text>
 			</view>
 			<view class="box1_cell">
-				<text class="box1_cell_left">数量</text>
+				<text class="box1_cell_left">{{$t('quantity')}}</text>
 				<text class="box1_cell_right">{{dataInfo.amount}} USDT</text>
 			</view>
 			<view class="box1_cell">
-				<text class="box1_cell_left">限额</text>
+				<text class="box1_cell_left">{{$t('quota')}}</text>
 				<text class="box1_cell_right">¥{{dataInfo.min_amount}}-¥{{dataInfo.max_amount}}</text>
 			</view>
 		</view>
 		<view class="box2">
 			<view class="box2_title">
-				按金额
+				{{$t('byAmount')}}
 			</view>
 			<view class="box2_input">
 				<input type="text" placeholder="0.00" @confirm="confirm" v-model="data.amount">
@@ -33,13 +33,13 @@
 						{{dataInfo.currency}}
 					</view>
 					<view class="box2_input_right_all">
-						全部
+						{{$t('allItem')}}
 					</view>
 				</view>
 			</view>
 			<view class="box2_cell">
 				<view class="box2_cell_left">
-					接受数量
+					{{$t('acceptedQuantity')}}
 				</view>
 				<view class="box2_cell_right">
 					{{usdtAmount ? usdtAmount : '--' }} USDT
@@ -47,7 +47,7 @@
 			</view>
 			<view class="box2_cell">
 				<view class="box2_cell_left">
-					法币金额
+					{{$t('fiatAmount')}}
 				</view>
 				<view class="box2_cell_right">
 					{{price}} {{dataInfo.currency}}
@@ -55,7 +55,7 @@
 			</view>
 			<view class="box2_payment">
 				<view class="box2_payment_title">
-					支付方式
+					{{$t('payMethod')}}
 				</view>
 				<view class="box2_payment_method">
 					{{dataInfo.payment_method}}
@@ -64,19 +64,19 @@
 		</view>
 		<view class="box3">
 			<view class="box3_title">
-				商家信息
+				{{$t('merchantInfo')}}
 			</view>
 			<view class="box3_cell">
-				<text class="box3_cell_left">付款时限</text>
-				<text class="box3_cell_left">20分钟</text>
+				<text class="box3_cell_left">{{$t('paymentTime')}}</text>
+				<text class="box3_cell_left">20{{$t('minutes')}}</text>
 			</view>
 			<view class="box3_cell">
-				<text class="box3_cell_left">商家昵称</text>
+				<text class="box3_cell_left">{{$t('businessNickname')}}</text>
 				<text class="box3_cell_left">{{dataInfo.user_nickname}}</text>
 			</view>
 		</view>
 		<view class="button" @click="buy">
-			买入USDT
+			{{$t('buyUSDT')}}
 		</view>
 	</view>
 </template>
@@ -95,6 +95,11 @@
 				price: '--'
 			}
 		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('buy')
+			})
+		},
 		onLoad(params) {
 			if (params.id) {
 				this.listing_id = params.id
@@ -105,7 +110,7 @@
 			async buy() {
 				if (this.$u.test.isEmpty(this.data.amount)) {
 					return uni.showToast({
-						title: '请输入金额',
+						title: this.$t('enterAmount'),
 						icon: "none"
 					})
 				}

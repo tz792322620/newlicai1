@@ -3,25 +3,25 @@
 
 		<view class="header">
 			<view class="back-arrow" @click="goBack"></view>
-			<text class="header-title">余利宝</text>
+			<text class="header-title">{{$t('yulibao')}}</text>
 		</view>
 
 
 		<view class="ylb1">
 			<view class="balance-display">
-				<view class="balance-label">总资产(¥)</view>
+				<view class="balance-label">{{$t('totalAssets')}}</view>
 				<view class="balance-amount">¥{{dataInfo.investmentTotal}}</view>
 				<view class="balance-details">
 					<view class="detail-item">
-						<view>日收益</view>
+						<view>{{$t('dailyYield')}}</view>
 						<view>{{(dataInfo.investmentTotal * dataInfo.interestRate).toFixed(2)}}</view>
 					</view>
 					<view class="detail-item">
-						<view>累计收益</view>
+						<view>{{$t('cumulativeIncome')}}</view>
 					 <view>{{dataInfo.earningsTotal}}</view>
 					</view>
 					<view class="detail-item">
-						<view>日利率</view>
+						<view>{{$t('dailyRate')}}</view>
 						<view>{{dataInfo.interestRate * 100}}%</view>
 
 					</view>
@@ -30,24 +30,24 @@
 
 			<view class="action-buttons">
 
-				<button class="action-button1 deposit" @click="btnClick(0)">转出</button>
-				<button class="action-button2 withdraw" @click="btnClick(1)">转入</button>
+				<button class="action-button1 deposit" @click="btnClick(0)">{{$t('roll-out')}}</button>
+				<button class="action-button2 withdraw" @click="btnClick(1)">{{$t('transfer')}}</button>
 			</view>
 		</view>
 		<u-popup v-model="popupShow" mode="bottom" border-radius="30" closeable>
 			<view class="popup-content">
 				<view class="title">
-					{{isTransfer ? '转出' : '转入'}}金额到{{isTransfer ? '我的账户' : '余利宝'}}
+					{{isTransfer ? $t('roll-out') : $t('transfer')}}{{$t('amountTo')}}{{isTransfer ? $t('myAccount') : $t('yulibao')}}
 				</view>
 				<view class="input">
 					<text>¥</text>
 					<input type="text" v-model="data.amount" placeholder="0.00">
 				</view>
 				<view class="description">
-					余利宝余额<text>¥{{dataInfo.investmentTotal}}</text>
+					{{$t('yulibaoBalance')}}<text>¥{{dataInfo.investmentTotal}}</text>
 				</view>
 				<view class="button" @click="submitBtn">
-					确认{{isTransfer ? '转出' : '转入'}}
+					{{$t('verify')}}{{isTransfer ? $t('roll-out') : $t('transfer')}}
 				</view>
 			</view>
 		</u-popup>
@@ -56,7 +56,7 @@
 
 		<view class="transaction-list ylb1">
 			<view class="transaction-title" style="font-size: 1rem;
-    font-weight: bold;">交易明细</view>
+    font-weight: bold;">{{$t('transactionDetail')}}</view>
 
 			<view class="transaction-item" v-for="(item,index) in list" :key="index">
 				<view>
@@ -108,7 +108,7 @@
 			async submitBtn() {
 				if (this.$u.test.isEmpty(this.data.amount)) {
 					return uni.showToast({
-						title: '请输入金额',
+						title: this.$t('enterAmount'),
 						icon: 'none'
 					})
 				}

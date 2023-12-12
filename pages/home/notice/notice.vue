@@ -22,6 +22,11 @@
 				list: []
 			}
 		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('notice')
+			})
+		},
 		onLoad() {
 			this.getNotice()
 		},

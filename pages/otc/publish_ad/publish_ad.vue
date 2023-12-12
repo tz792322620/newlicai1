@@ -1,46 +1,47 @@
 <template>
-    <view class="publish_ad">
-        <view class="item1">
-            <view class="item">
-                <view class="desc">{{ $t('currency') }}</view>
-                <view class="input">{{ $t('usdt') }}</view>
-            </view>
-            <view class="item">
-                <view class="desc">{{ $t('currency') }}</view>
-                <view class="input" @click="isAbP = !isAbP">
-                    <text>{{ abName }}</text>
-                    <uni-icons type="bottom"></uni-icons>
-                </view>
-                <view class="u-flex-popup" v-if="isAbP">
-                    <view class="u-flex-popup-content">
-                        <view class="u-flex-popup-content-item" v-for="(item, index) in currencyList" :key="index" 
-                        :class="ab == item.ab ? 'active' : ''" @click="abClick(item)">
-                            <image :src="item.url" mode=""></image>
-                            <text>{{ item.name }}</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
-        <view class="item1">
-            <view class="item">
-                <view class="desc">{{ $t('adType') }}</view>
-                <view class="input" @click="isType = !isType">
-                    <text>{{ activeType }}</text>
-                    <uni-icons type="bottom"></uni-icons>
-                </view>
-                <view class="u-flex-popup" v-if="isType">
-                    <view class="u-flex-popup-content">
-                        <view class="u-flex-popup-content-item" v-for="(item, index) in typeList" :key="index" 
-                        :class="activeTypeIndex == index ? 'active' : ''" @click="typeClick(item,index)" style="padding: 30rpx 0;">
-                            <text style="width: 100%; text-align: center;">{{ item.name }}</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="item">
-                <view class="desc">{{ $t('priceUnit') }}</view>
-                <!-- <view class="input" @click="isPrice = !isPrice">
+	<view class="publish_ad">
+		<view class="item1">
+			<view class="item">
+				<view class="desc">{{ $t('currency') }}</view>
+				<view class="input">{{ $t('usdt') }}</view>
+			</view>
+			<view class="item">
+				<view class="desc">{{ $t('currency') }}</view>
+				<view class="input" @click="isAbP = !isAbP">
+					<text>{{ abName }}</text>
+					<uni-icons type="bottom"></uni-icons>
+				</view>
+				<view class="u-flex-popup" v-if="isAbP">
+					<view class="u-flex-popup-content">
+						<view class="u-flex-popup-content-item" v-for="(item, index) in currencyList" :key="index"
+							:class="ab == item.ab ? 'active' : ''" @click="abClick(item)">
+							<image :src="item.url" mode=""></image>
+							<text>{{ item.name }}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="item1">
+			<view class="item">
+				<view class="desc">{{ $t('adType') }}</view>
+				<view class="input" @click="isType = !isType">
+					<text>{{ activeType }}</text>
+					<uni-icons type="bottom"></uni-icons>
+				</view>
+				<view class="u-flex-popup" v-if="isType">
+					<view class="u-flex-popup-content">
+						<view class="u-flex-popup-content-item" v-for="(item, index) in typeList" :key="index"
+							:class="activeTypeIndex == index ? 'active' : ''" @click="typeClick(item,index)"
+							style="padding: 30rpx 0;">
+							<text style="width: 100%; text-align: center;">{{ item.name }}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="item">
+				<view class="desc">{{ $t('priceUnit') }}</view>
+				<!-- <view class="input" @click="isPrice = !isPrice">
                     <text>{{ activePrice }}</text>
                     <uni-icons type="bottom"></uni-icons>
                 </view>
@@ -53,46 +54,46 @@
                     </view>
                 </view> -->
 				<view class="input">
-				    <u-input :placeholder="'请输入价格单价'" v-model="data.price"></u-input>
+					<u-input :placeholder="$t('enterPriceUnit')" v-model="data.price"></u-input>
 				</view>
-            </view>
-        </view>
-        <view class="item">
-            <view class="desc">{{ $t('minAmount') }}</view>
-            <view class="input" style="width: 100%;">
-                <u-input :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
-            </view>
-        </view>
-        <view class="item">
-            <view class="desc">{{ $t('maxAmount') }}</view>
-            <view class="input" style="width: 100%;">
-                <u-input :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
-            </view>
-        </view>
-        <view class="item1">
-            <view class="item">
-                <view class="desc">{{ $t('paymentMethod') }}</view>
-                <view class="input" @click="isPay = !isPay">
-                    <text>{{ data.payment_method }}</text>
-                    <uni-icons type="bottom"></uni-icons>
-                </view>
-                <view class="u-flex-popup" v-if="isPay">
-                    <view class="u-flex-popup-content">
-                        <view class="u-flex-popup-content-item" v-for="(item, index) in payList" :key="index" 
-                        :class="item.isTrue ? 'active' : ''" @click="payClick(item)">
-                            <image :src="item.url" mode="" style="width: 40rpx; height: 42rpx;"></image>
-                            <text>{{ item.name }}</text>
-                        </view>
-                    </view>
-                </view>
-            </view>
-			<view class="item">
-			    <view class="desc">{{ $t('quantity') }}</view>
-			    <view class="input">
-			        <u-input :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
-			    </view>
 			</view>
-            <!-- <view class="item">
+		</view>
+		<view class="item">
+			<view class="desc">{{ $t('minAmount') }}</view>
+			<view class="input" style="width: 100%;">
+				<u-input :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
+			</view>
+		</view>
+		<view class="item">
+			<view class="desc">{{ $t('maxAmount') }}</view>
+			<view class="input" style="width: 100%;">
+				<u-input :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
+			</view>
+		</view>
+		<view class="item1">
+			<view class="item">
+				<view class="desc">{{ $t('paymentMethod') }}</view>
+				<view class="input" @click="isPay = !isPay">
+					<text>{{ data.payment_method }}</text>
+					<uni-icons type="bottom"></uni-icons>
+				</view>
+				<view class="u-flex-popup" v-if="isPay">
+					<view class="u-flex-popup-content">
+						<view class="u-flex-popup-content-item" v-for="(item, index) in payList" :key="index"
+							:class="item.isTrue ? 'active' : ''" @click="payClick(item)">
+							<image :src="item.url" mode="" style="width: 40rpx; height: 42rpx;"></image>
+							<text>{{ item.name }}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="item">
+				<view class="desc">{{ $t('quantity') }}</view>
+				<view class="input">
+					<u-input :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
+				</view>
+			</view>
+			<!-- <view class="item">
                 <view class="desc">{{ $t('transactionLimit') }}</view>
                 <view class="input" @click="isTime = !isTime">
                     <text>{{ activeTime }}</text>
@@ -107,19 +108,21 @@
                     </view>
                 </view>
             </view> -->
-        </view>
-        <view class="item">
-            <view class="desc">{{ $t('note') }}</view>
-            <view class="input" style="width: 100%; height: 240rpx; align-items: flex-start; padding: 26rpx 20rpx">
-                <u-input type="textarea" :placeholder="$t('enterNote')" v-model="data.remark" maxlength="20"></u-input>
-            </view>
-        </view>
-        <view class="button" @click="submit">{{ $t('publish') }}</view>
-    </view>
+		</view>
+		<view class="item">
+			<view class="desc">{{ $t('note') }}</view>
+			<view class="input" style="width: 100%; height: 240rpx; align-items: flex-start; padding: 26rpx 20rpx">
+				<u-input type="textarea" :placeholder="$t('enterNote')" v-model="data.remark" maxlength="20"></u-input>
+			</view>
+		</view>
+		<view class="button" @click="submit">{{ $t('publish') }}</view>
+	</view>
 </template>
 
 <script>
-	import { createListing } from '@/api/api.js'
+	import {
+		createListing
+	} from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -135,74 +138,88 @@
 				},
 				isAbP: false, // 控制币种弹出隐藏
 				ab: 'HKD', // 币种缩写
-				abName: '港币',
-				// 币种集合
-				currencyList: [{
-					url: '../../../static/images/otc/gangbi.png',
-					ab: 'HKD',
-					name: '港币'
-				},{
-					url: '../../../static/images/otc/taibi.png',
-					ab: 'TWD',
-					name: '台币'
-				},{
-					url: '../../../static/images/otc/renminbi.png',
-					ab: 'RMB',
-					name: '人民币'
-				}],
 				isType: false, // 控制广告类型弹出隐藏
-				activeType: '购买',
 				activeTypeIndex: 0,
-				typeList: [{
-					id: 'Buy',
-					name: '购买'
-				},{
-					id: 'Sell',
-					name: '出售'
-				}],
 				isPrice: false, // 控制价格单位弹出隐藏
 				activePrice: '实时价格',
 				activePriceIndex: 0,
 				priceList: [{
 					id: 0,
 					name: '实时价格'
-				},{
+				}, {
 					id: 1,
 					name: '固定价格'
 				}],
 				isPay: false, // 控制收款方式弹出隐藏
-				activePay: ['微信'],
 				activePayIndex: 0,
-				payList: [{
-					url: '../../../static/images/otc/publish_ad/0.png',
-					id: 0,
-					name: '微信',
-					isTrue: true
-				},{
-					url: '../../../static/images/otc/publish_ad/1.png',
-					id: 1,
-					name: '支付宝',
-					isTrue: false
-				},{
-					url: '../../../static/images/otc/publish_ad/2.png',
-					id: 2,
-					name: '银行卡',
-					isTrue: false
-				}],
 				isTime: false, // 控制交易期限弹出隐藏
 				activeTime: '5分钟',
 				activeTimeIndex: 0,
 				timeList: [{
 					id: 0,
 					name: '5分钟'
-				},{
+				}, {
 					id: 1,
 					name: '15分钟'
-				},{
+				}, {
 					id: 2,
 					name: '30分钟'
 				}]
 			}
+		},
+		computed: {
+			abName() {
+				return this.$t('hkd')
+			},
+			// 币种集合
+			currencyList() {
+				return [{
+					url: '../../static/images/otc/gangbi.png',
+					ab: 'HKD',
+					name: this.$t('hkd')
+				}, {
+					url: '../../static/images/otc/taibi.png',
+					ab: 'TWD',
+					name: this.$t('twd')
+				}, {
+					url: '../../static/images/otc/renminbi.png',
+					ab: 'CNY',
+					name: this.$t('cny')
+				}]
+			},
+			activeType() {
+				return this.$t('buy')
+			},
+			typeList() {
+				return [{
+					id: 'Buy',
+					name: this.$t('buy')
+				}, {
+					id: 'Sell',
+					name: this.$t('sell')
+				}]
+			},
+			activePay(){
+				return [this.$t('wechat')]
+			},
+			payList() {
+				return [{
+					url: '../../../static/images/otc/publish_ad/0.png',
+					id: 0,
+					name: this.$t('wechat'),
+					isTrue: true
+				}, {
+					url: '../../../static/images/otc/publish_ad/1.png',
+					id: 1,
+					name: this.$t('alipay'),
+					isTrue: false
+				}, {
+					url: '../../../static/images/otc/publish_ad/2.png',
+					id: 2,
+					name: this.$t('bankCard'),
+					isTrue: false
+				}]
+			},
 		},
 		methods: {
 			// 币种点击事件
@@ -212,7 +229,7 @@
 				this.abName = item.name
 				this.isAbP = false
 			},
-			typeClick(item,index) {
+			typeClick(item, index) {
 				this.activeType = item.name
 				this.activeTypeIndex = index
 				this.data.listing_type = item.id
@@ -225,9 +242,9 @@
 			},
 			payClick(item) {
 				item.isTrue = !item.isTrue
-				if(item.isTrue) {
+				if (item.isTrue) {
 					this.activePay.push(item.name)
-				}else {
+				} else {
 					this.activePay = this.activePay.filter(item1 => item1 !== item.name)
 				}
 				console.log(this.activePay)
@@ -244,49 +261,49 @@
 			},
 			async submit() {
 				console.log(this.data)
-				if(this.$u.test.isEmpty(this.data.price)) {
+				if (this.$u.test.isEmpty(this.data.price)) {
 					return uni.showToast({
-						title: '请输入价格单价',
+						title: this.$t('enterPriceUnit'),
 						icon: 'none'
 					})
 				}
-				if(this.$u.test.isEmpty(this.data.min_amount)) {
+				if (this.$u.test.isEmpty(this.data.min_amount)) {
 					return uni.showToast({
 						title: this.$t('enterMinAmount'),
 						icon: 'none'
 					})
 				}
-				if(this.$u.test.isEmpty(this.data.max_amount)) {
+				if (this.$u.test.isEmpty(this.data.max_amount)) {
 					return uni.showToast({
 						title: this.$t('enterMaxAmount'),
 						icon: 'none'
 					})
 				}
-				if(this.$u.test.isEmpty(this.data.payment_method)) {
+				if (this.$u.test.isEmpty(this.data.payment_method)) {
 					return uni.showToast({
-						title: '请选择收款方式',
+						title: this.$t('enterChoosePayment'),
 						icon: 'none'
 					})
 				}
-				if(this.$u.test.isEmpty(this.data.amount)) {
+				if (this.$u.test.isEmpty(this.data.amount)) {
 					return uni.showToast({
 						title: this.$t('enterTransactionQuantity'),
 						icon: 'none'
 					})
 				}
-				if(this.$u.test.isEmpty(this.data.remark)) {
+				if (this.$u.test.isEmpty(this.data.remark)) {
 					return uni.showToast({
-						title: '请输入备注',
+						title: this.$t('enterRemark'),
 						icon: 'none'
 					})
 				}
 				const res = await createListing(this.data)
 				if (res.code === 1) {
 					uni.showToast({
-						title: '发布成功',
+						title: res.msg,
 						duration: 2000,
 						success: () => {
-							uni.redirectTo ({
+							uni.redirectTo({
 								url: '/pages/otc/my_ad/my_ad'
 							})
 						}
@@ -300,6 +317,7 @@
 <style lang="scss" scoped>
 	.publish_ad {
 		padding: 40rpx;
+
 		.button {
 			height: 90rpx;
 			background: #35CBA5;
@@ -312,14 +330,17 @@
 			color: #FFFFFF;
 			letter-spacing: 1rpx;
 		}
+
 		.item1 {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 		}
+
 		.item {
 			position: relative;
 			margin-bottom: 40rpx;
+
 			.u-flex-popup {
 				position: absolute;
 				z-index: 10;
@@ -328,8 +349,9 @@
 				right: -16rpx;
 				// height: 316rpx;
 				background-color: #fff;
-				box-shadow: 0px 0px 20rpx 0px rgba(0,0,0,0.09);
+				box-shadow: 0px 0px 20rpx 0px rgba(0, 0, 0, 0.09);
 				border-radius: 20rpx;
+
 				&::before {
 					content: '';
 					position: absolute;
@@ -341,22 +363,27 @@
 					border-right: 20rpx solid transparent;
 					border-bottom: 20rpx solid #fff;
 				}
+
 				.u-flex-popup-content {
 					padding-top: 10rpx;
+
 					.u-flex-popup-content-item {
 						padding: 30rpx 0 30rpx 40rpx;
 						display: flex;
 						align-items: center;
+
 						&.active {
 							text {
 								color: #35CBA5 !important;
 							}
 						}
+
 						image {
 							width: 40rpx;
 							height: 40rpx;
 							margin-right: 18rpx;
 						}
+
 						text {
 							font-size: 28rpx;
 							font-weight: 500;
@@ -365,6 +392,7 @@
 					}
 				}
 			}
+
 			.desc {
 				font-size: 24rpx;
 				font-weight: 500;
@@ -372,6 +400,7 @@
 				line-height: 34rpx;
 				margin-bottom: 20rpx;
 			}
+
 			.input {
 				width: 320rpx;
 				height: 90rpx;

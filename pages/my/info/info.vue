@@ -3,7 +3,7 @@
 		<view class="bgc-image">
 			<view class="navbar">
 				<image src="../../../static/images/hfh.png" mode="" @click="back"></image>
-				<text>信息编辑</text>
+				<text>{{$t('editInfo')}}</text>
 			</view>
 		</view>
 		<view class="avatar">
@@ -13,7 +13,7 @@
 		<view class="cell-group">
 			<view class="cell" @click="popupShow = true">
 				<view class="cell_left">
-					用户名
+					{{$t('username')}}
 				</view>
 				<view class="cell_right">
 					<text>{{userInfo.nickname}}</text>
@@ -22,7 +22,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					账号
+					{{$t('account')}}
 				</view>
 				<view class="cell_right">
 					<text>{{userInfo.mobile}}</text>
@@ -39,54 +39,62 @@
 			</view> -->
 			<view class="cell" @click="toPassword">
 				<view class="cell_left">
-					交易密码管理
+					{{$t('transactionPasswordManagement')}}
 				</view>
 				<view class="cell_right">
 					<uni-icons type="right"></uni-icons>
 				</view>
 			</view>
 		</view>
-		<u-action-sheet :list="list" v-model="show":cancel-btn="true" border-radius="30" @click="actionClick"></u-action-sheet>
+		<u-action-sheet :list="list" v-model="show" :cancel-btn="true" border-radius="30" @click="actionClick">
+		</u-action-sheet>
 		<u-popup v-model="popupShow" mode="bottom" border-radius="30" closeable>
-				<view class="popup-content">
-					<view class="title">
-						编辑用户名
+			<view class="popup-content">
+				<view class="title">
+					{{$t('editUsername')}}
+				</view>
+				<view class="input">
+					<u-input :placeholder="$t('enterUsername')" v-model="userInfo.nickname"></u-input>
+				</view>
+				<view class="tips">
+					<view class="text">
+						*{{$t('editUsernameTips1')}}
 					</view>
-					<view class="input">
-						<u-input placeholder="请输入用户名" v-model="userInfo.nickname"></u-input>
+					<view class="text">
+						*{{$t('editUsernameTips2')}}
 					</view>
-					<view class="tips">
-						<view class="text">
-							*最大长度为20个字符
-						</view>
-						<view class="text">
-							*每180天仅可变更一次，请谨慎操作
-						</view>
-						<view class="text">
-							*用户名的规则是纯字母或字母+数字
-						</view>
-					</view>
-					<view class="button" @click="submit">
-						确定
+					<view class="text">
+						*{{$t('editUsernameTips3')}}
 					</view>
 				</view>
-			</u-popup>
+				<view class="button" @click="submit">
+					{{$t('ok')}}
+				</view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
 <script>
-	import { getUserInfo,setNickname } from '@/api/api.js'
+	import {
+		getUserInfo,
+		setNickname
+	} from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				show: false,
-				list: [{
-					text: '相机'
-				},{
-					text: '相册'
-				}],
 				popupShow: false,
 				userInfo: ''
+			}
+		},
+		computed: {
+			list() {
+				return [{
+					text: this.$t('camera')
+				}, {
+					text: this.$t('photoAlbum')
+				}]
 			}
 		},
 		onLoad() {
@@ -118,11 +126,11 @@
 				}
 			},
 			actionClick(index) {
-				console.log(index,this.$url)
+				console.log(index, this.$url)
 				let that = this
 				uni.chooseImage({
 					sourceType: index === 1 ? ['album'] : ['camera'], //从相册选择
-					success: function (chooseImageRes) {
+					success: function(chooseImageRes) {
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						console.log(tempFilePaths[0])
 						uni.uploadFile({
@@ -139,7 +147,7 @@
 								const res = JSON.parse(uploadFileRes.data)
 								if (res.code === 1) {
 									that.getUser()
-								}else {
+								} else {
 									uni.showToast({
 										title: res.msg,
 										icon: 'none'
@@ -150,10 +158,16 @@
 					}
 				})
 			},
-			copy () {
+			copy() {
+				let that = this
 				uni.setClipboardData({
-					data: this.userInfo.mobile,
-					success: function () {
+					data: that.userInfo.mobile,
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							title: that.$t('contentCopied'),
+							icon: 'success'
+						})
 						// console.log('success');
 					}
 				})
@@ -170,14 +184,17 @@
 			background: url('@/static/images/my/info/bgc-image.png') center center no-repeat;
 			background-size: 100% 100%;
 			padding-top: 108rpx;
+
 			.navbar {
 				display: flex;
 				align-items: center;
+
 				image {
 					width: 48rpx;
 					height: 48rpx;
 					margin-left: 40rpx;
 				}
+
 				text {
 					margin-left: 218rpx;
 					font-size: 36rpx;
@@ -186,6 +203,7 @@
 				}
 			}
 		}
+
 		.avatar {
 			margin: 0 auto;
 			position: relative;
@@ -193,11 +211,13 @@
 			height: 200rpx;
 			border-radius: 50%;
 			background-color: #333333;
+
 			&_img {
 				width: 100%;
 				height: 100%;
 				border-radius: 50%;
 			}
+
 			&_camera {
 				position: absolute;
 				right: 0;
@@ -206,9 +226,11 @@
 				height: 56rpx;
 			}
 		}
+
 		.cell-group {
 			margin-top: 40rpx;
 			padding: 0 40rpx;
+
 			.cell {
 				padding: 44rpx 0;
 				border-bottom: 2rpx solid #F3F3F3;
@@ -218,13 +240,16 @@
 				font-size: 28rpx;
 				font-weight: 500;
 				color: #999999;
+
 				&_right {
 					display: flex;
 					align-items: center;
 					color: #333333;
+
 					text {
 						margin-right: 12rpx;
 					}
+
 					image {
 						width: 27rpx;
 						height: 28rpx;
@@ -232,17 +257,21 @@
 				}
 			}
 		}
+
 		/deep/.u-icon__icon {
 			color: #999999 !important;
 		}
+
 		.popup-content {
 			padding: 40rpx;
+
 			.title {
 				font-size: 28rpx;
 				font-weight: 600;
 				color: #333333;
 				line-height: 40rpx;
 			}
+
 			.input {
 				margin: 30rpx 0;
 				height: 90rpx;
@@ -251,6 +280,7 @@
 				padding: 0 20rpx;
 				padding-top: 10rpx;
 			}
+
 			.tips {
 				.text {
 					font-size: 24rpx;
@@ -259,6 +289,7 @@
 					line-height: 34rpx;
 				}
 			}
+
 			.button {
 				margin-top: 60rpx;
 				height: 70rpx;

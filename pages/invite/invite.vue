@@ -3,7 +3,7 @@
 		<!-- 标题栏 -->
 		<view class="header">
 			<view class="back-arrow" @click="goBack"></view>
-			<text class="header-title">邀请好友</text>
+			<text class="header-title">{{$t('inviteFriends')}}</text>
 			<view class="header-camera-icon"></view>
 		</view>
 		<view style="text-align: center;">
@@ -14,20 +14,20 @@
     margin: 1rem;
     padding: 1rem;">
 			<view style="display: flex;justify-content: space-between;">
-				<view style="font-weight: 600;color: #333333;">我的邀请</view>
-				<view style="color: #999999;" @click="toDetails">我的邀请概括 ></view>
+				<view style="font-weight: 600;color: #333333;">{{$t('myInvite')}}</view>
+				<view style="color: #999999;" @click="toDetails">{{$t('myInviteDetails')}} ></view>
 			</view>
 			<view style="display: flex;
 					text-align: center;
 					justify-content: space-between;text-align: center;padding: 1rem 1rem;">
 				<view>
-					<view>当日邀请</view>
-					<view>{{dataInfo.direct_referrals_today_count}}人</view>
+					<view>{{$t('todayInvite')}}</view>
+					<view>{{dataInfo.direct_referrals_today_count}}{{$t('people')}}</view>
 				</view>
 				<view style="border: 1px solid #F5F5F5;"></view>
 				<view>
-					<view>总邀请</view>
-					<view>{{dataInfo.direct_referrals_count}}人</view>
+					<view>{{$t('totalInvite')}}</view>
+					<view>{{dataInfo.direct_referrals_count}}{{$t('people')}}</view>
 				</view>
 			</view>
 		</view>
@@ -47,7 +47,7 @@
 					</template>
 					<template v-slot:content>
 						<view>
-							<view class="u-order-title">分享邀请链接、二维码或邀请码；</view>
+							<view class="u-order-title">{{$t('inviteTips1')}}</view>
 						</view>
 					</template>
 				</u-time-line-item>
@@ -60,7 +60,7 @@
 					</template>
 					<template v-slot:content>
 						<view>
-							<view class="u-order-title">邀请好友完成注册；</view>
+							<view class="u-order-title">{{$t('inviteTips2')}}</view>
 						</view>
 					</template>
 				</u-time-line-item>
@@ -73,7 +73,7 @@
 					</template>
 					<template v-slot:content>
 						<view>
-							<view class="u-order-title">与好友一起进行交易吧！</view>
+							<view class="u-order-title">{{$t('inviteTips3')}}</view>
 						</view>
 					</template>
 				</u-time-line-item>
@@ -82,7 +82,7 @@
 			<view style="background: #F4F5F7;    border-radius: 0.5rem;">
 				<view class="custom-field">
 					<!-- 文本内容 -->
-					<text class="custom-label">邀请码</text>
+					<text class="custom-label">{{$t('inviteCode')}}</text>
 					<text class="custom-label" style="text-align: end;">{{inviteCode}}</text>
 					<!-- 图片图标 -->
 					<image class="custom-icon" @click="copy(inviteCode)" src="../../static/images/invite/fz.png"></image>
@@ -91,7 +91,7 @@
 			<view style="background: #F4F5F7;border-radius: 0.5rem;margin-top: 1rem;">
 				<view class="custom-field">
 					<!-- 文本内容 -->
-					<text class="custom-label">邀请链接</text>
+					<text class="custom-label">{{$t('inviteLink')}}</text>
 					<text class="custom-label" style="text-align: end;">{{($url + `/#/pages/login/register_em?referral_code=${inviteCode}`) | ellipsis}}</text>
 					<!-- 图片图标 -->
 					<image class="custom-icon" @click="copy($url + `/#/pages/login/register_em?referral_code=${inviteCode}`)" src="../../static/images/invite/fz.png"></image>
@@ -104,7 +104,7 @@
 			<view style="display: flex;
     align-items: center;">
 				<view>
-					<u-button style="background-color: #35CBA5;color: #fff;">立即邀请好友</u-button>
+					<u-button style="background-color: #35CBA5;color: #fff;">{{$t('inviteNow')}}</u-button>
 				</view>
 				<!-- <view>
 					<image style="width: 24px;height: 24px;" src="../../static/images/invite/ewm.png"></image>
@@ -135,10 +135,16 @@
 		},
 		methods: {
 			copy(item) {
+				let that = this
 				uni.setClipboardData({
 					data: item,
-					success: function () {
-						console.log('success');
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							title: that.$t('contentCopied'),
+							icon: 'success'
+						})
+						// console.log('success');
 					}
 				})
 			},

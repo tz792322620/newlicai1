@@ -2,30 +2,30 @@
 	<view class="transaction-pin">
 		<view class="cell">
 			<view class="cell_title">
-				旧密码
+				{{$t('oldPwd')}}
 			</view>
 			<view class="cell_input">
-				<u-input type="password" placeholder="输入旧密码" v-model="data.old_pay_password"/>
+				<u-input type="password" :placeholder="$t('enterOldPwd')" v-model="data.old_pay_password"/>
 			</view>
 		</view>
 		<view class="cell">
 			<view class="cell_title">
-				新密码
+				{{$t('newPwd')}}
 			</view>
 			<view class="cell_input">
-				<u-input type="password" placeholder="输入新密码" v-model="data.new_pay_password"/>
+				<u-input type="password" :placeholder="$t('enterNewPwd')" v-model="data.new_pay_password"/>
 			</view>
 		</view>
 		<view class="cell">
 			<view class="cell_title">
-				确认密码
+				{{$t('confirmPwd')}}
 			</view>
 			<view class="cell_input">
-				<u-input type="password" placeholder="确认新密码" v-model="new_pay_password2"/>
+				<u-input type="password" :placeholder="$t('enterConfirmPwd')" v-model="new_pay_password2"/>
 			</view>
 		</view>
 		<view class="button" @click="submit">
-			提交
+			{{$t('submit')}}
 		</view>
 	</view>
 </template>
@@ -42,29 +42,34 @@
 				new_pay_password2: ''
 			}
 		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('transactionPasswordManagement')
+			})
+		},
 		methods: {
 			async submit() {
 				if(this.$u.test.isEmpty(this.data.old_pay_password)) {
 					return uni.showToast({
-						title: '请输入旧密码',
+						title: this.$t('enterOldPwd'),
 						icon: 'none'
 					})
 				}
 				if(this.$u.test.isEmpty(this.data.new_pay_password)) {
 					return uni.showToast({
-						title: '请输入新密码',
+						title: this.$t('enterNewPwd'),
 						icon: 'none'
 					})
 				}
 				if(this.$u.test.isEmpty(this.new_pay_password2)) {
 					return uni.showToast({
-						title: '请确认新密码',
+						title: this.$t('enterConfirmPwd'),
 						icon: 'none'
 					})
 				}
 				if(this.data.new_pay_password !== this.new_pay_password2) {
 					return uni.showToast({
-						title: '两次输入的密码不一致',
+						title: this.$t('pwdDifferent'),
 						icon: 'none'
 					})
 				}

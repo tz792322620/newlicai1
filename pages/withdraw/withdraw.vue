@@ -5,61 +5,61 @@
 		</view>
 		<view class="tabbar">
 			<image src="../../static/images/hfh.png" mode="" @click="goBack()"></image>
-			<text>提现</text>
+			<text>{{$t('withdraw')}}</text>
 			<image src="../../static/images/camera-icon.png" mode="" @click="toRecords"></image>
 		</view>
 		<view class="content">
 			<view class="network">
 				<view class="title">
-					充值网络
+					{{$t('withdrawalNetwork')}}
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value">
-						<u-input type="text" placeholder="选择充值网络" disabled v-model="address_value" />
+						<u-input type="text" :placeholder="$t('chooseNetwork')" disabled v-model="address_value" />
 					</view>
 					<uni-icons type="bottom"></uni-icons>
 				</view>
 			</view>
 			<view class="network">
 				<view class="title">
-					提现地址
+					{{$t('withdrawalAddress')}}
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="text" placeholder="请输入提币地址" v-model="data.withdrawal_address" />
+						<u-input type="text" :placeholder="$t('enterWithdrawalAddress')" v-model="data.withdrawal_address" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
 			</view>
 			<view class="network">
 				<view class="title">
-					提币数量
+					{{$t('withdrawalAmount')}}
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value">
-						<u-input type="text" placeholder="请输入提币数量" v-model="data.withdrawal_amount"
+						<u-input type="text" :placeholder="$t('enterWithdrawalAmount')" v-model="data.withdrawal_amount"
 							@confirm="confirm" />
 					</view>
 					<view class="right">
-						USDT <text>全部</text>
+						USDT <text>{{$t('allItem')}}</text>
 					</view>
 				</view>
 				<view class="description">
-					可用:{{withdrawable_amount}}USDT
+					{{$t('usable')}}:{{withdrawable_amount}}USDT
 				</view>
 			</view>
 			<view class="buttons">
 				<view class="description">
-					到账数量:<text>{{account_amount}}USDT</text>
+					{{$t('quantityReceived')}}:<text>{{account_amount}}USDT</text>
 				</view>
 				<view class="button" @click="submit">
-					提交
+					{{$t('submit')}}
 				</view>
 			</view>
 			<u-popup v-model="show" mode="bottom" border-radius="30" closeable>
 				<view class="popup-content">
 					<view class="title">
-						选择网络
+						{{$t('chooseNetwork')}}
 					</view>
 					<view class="tabs">
 						<view class="tabs_item" v-for="(item,index) in networkList" :key="index"
@@ -153,19 +153,19 @@
 			async submit() {
 				if (this.$u.test.isEmpty(this.data.network_type)) {
 					return uni.showToast({
-						title: '请选择充值网络',
+						title: this.$t('chooseNetwork'),
 						icon: "none"
 					})
 				}
 				if (this.$u.test.isEmpty(this.data.withdrawal_address)) {
 					return uni.showToast({
-						title: '请输入提币地址',
+						title: this.$t('enterWithdrawalAddress'),
 						icon: "none"
 					})
 				}
 				if (this.$u.test.isEmpty(this.data.withdrawal_amount)) {
 					return uni.showToast({
-						title: '请输入提币数量',
+						title: this.$t('enterWithdrawalAmount'),
 						icon: "none"
 					})
 				}

@@ -14,7 +14,7 @@
 			</view> -->
 			<view class="cell">
 				<view class="cell_left">
-					支付日
+					{{$t('payDays')}}
 				</view>
 				<view class="cell_right">
 					{{item.earnings_date}}
@@ -22,7 +22,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					支付金额
+					{{$t('payAmount')}}
 				</view>
 				<view class="cell_right">
 					{{item.earnings_amount}}
@@ -39,6 +39,11 @@
 			return {
 				list: []
 			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('profitRecord')
+			})
 		},
 		onLoad() {
 			this.getData()

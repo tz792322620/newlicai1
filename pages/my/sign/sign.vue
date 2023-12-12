@@ -3,24 +3,24 @@
 		<view class="bgc-image">
 			<view class="navbar">
 				<image src="../../../static/images/bfh.png" mode="" @click="back"></image>
-				<text>签到</text>
+				<text>{{$t('signIn')}}</text>
 			</view>
 		</view>
 		<view class="content">
 			<view class="title">
-				20<text>积分</text>
+				20<text>{{$t('points')}}</text>
 			</view>
 			<!-- <view class="sub-title">
 				明日签到可得30积分
 			</view>	 -->
 			<view class="sign_box">
 				<view class="sign_box_title">
-					已连续签到 <text>{{signinDays}}</text> 天
+					{{$t('check-in')}} <text>{{signinDays}}</text> {{$t('days')}}
 				</view>
 				<view class="sign_box_list">
 					<view class="sign_box_list_item" v-for="(item,index) in 7" :key="index" :class="{'expired' : index  < signinDays,'active' : index === activeIndex}" @click="tabClick(index)">
 						<view class="days">
-							第{{index + 1}}天
+							{{$t('the')}}{{index + 1}}{{$t('days')}}
 						</view>
 						<image v-if="index < 6" src="../../../static/images/my/sign/unchecked.png" mode=""></image>
 						<!-- <view class="points">
@@ -29,24 +29,24 @@
 					</view>
 				</view>
 				<view class="sign-in" @click="sign">
-					打卡签到
+					{{$t('punchIn')}}
 				</view>
 			</view>
 			<view class="records">
 				<view class="records_title">
-					签到记录
+					{{$t('signRecord')}}
 				</view>
 				<view class="records_cell" v-for="(item,index) in signRecords" :key="index">
 					<view class="records_cell_left">
 						<view class="records_cell_left_desc">
-							签到成功
+							{{$t('signSuccess')}}
 						</view>
 						<view class="records_cell_left_date">
 							{{item.signin_date}}
 						</view>
 					</view>
 					<view class="records_cell_right">
-						+{{item.reward_points}}积分
+						+{{item.reward_points}}{{$t('points')}}
 					</view>
 				</view>
 			</view>

@@ -1,8 +1,8 @@
 <template>
 	<view class="submit-successfully">
 		<image src="../../../static/images/verify/failed.png" mode=""></image>
-		<text class="title">您的认证信息提交成功</text>
-		<text class="sub-title">请耐心等待验证，1-3个工作日内处理</text>
+		<text class="title">{{$t('realNameTips1')}}</text>
+		<text class="sub-title">{{$t('realNameTips2')}}</text>
 	</view>
 </template>
 

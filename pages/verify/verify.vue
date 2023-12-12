@@ -8,7 +8,7 @@
 			<!-- 这里放置标题内容 -->
 			<view class="header">
 				<view class="back-arrow" @click="goBack"></view>
-				<text class="header-title">实名认证</text>
+				<text class="header-title">{{$t('realNameAuthentication')}}</text>
 				<view class="header-camera-icon"></view>
 			</view>
 		</view>
@@ -18,51 +18,51 @@
 					width: 100%;
 					top: 5rem;
 					padding: 1rem 1.5rem;">
-			<view class="top1">姓名</view>
-			<view class="top2"><u-input :custom-style="customStyle" placeholder="请输入姓名" v-model="data.real_name" /></view>
-			<view class="top1">证件号码</view>
-			<view class="top2"><u-input :custom-style="customStyle" placeholder="请输入证件号码" v-model="data.identity_number" /></view>
-			<view class="top1">上传身份证照片</view>
+			<view class="top1">{{$t('name')}}</view>
+			<view class="top2"><u-input :custom-style="customStyle" :placeholder="$t('enterName')" v-model="data.real_name" /></view>
+			<view class="top1">{{$t('IDNumber')}}</view>
+			<view class="top2"><u-input :custom-style="customStyle" :placeholder="$t('enterIDNumber')" v-model="data.identity_number" /></view>
+			<view class="top1">{{$t('uploadIDPhoto')}}</view>
 			<view class="top1" style="display: flex;justify-content: space-around;">
 				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.front_image" @click="uploadImage(0)">
 					<view>
 						<image style="width: 222rpx;height: 156rpx;" src="../../static/images/verify/sczm.png"></image>
 					</view>
-					<view style="color: #fff;" class="gradient-background">上传正面</view>
+					<view style="color: #fff;" class="gradient-background">{{$t('uploadFront')}}</view>
 				</view>
 				<image v-else :src="$url + data.front_image" style="width: 320rpx;height: 260rpx;" mode="" @click="uploadImage(0)"></image>
 				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.back_image" @click="uploadImage(1)">
 					<view>
 						<image style="width: 222rpx;height: 156rpx;"  src="../../static/images/verify/bm.png"></image>
 					</view>
-					<view style="color: #fff;" class="gradient-background">上传背面</view>
+					<view style="color: #fff;" class="gradient-background">{{$t('uploadBack')}}</view>
 				</view>
 				<image v-else :src="$url + data.back_image" style="width: 320rpx;height: 260rpx;" mode="" @click="uploadImage(1)"></image>
 			</view>
-			<view class="top1">拍摄须知</view>
+			<view class="top1">{{$t('tokenNotice')}}</view>
 			<view class="top1" style="display: flex;
 						justify-content: space-around;
 						align-items: center;
 						text-align: center;">
 				<view>
 					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/1.png"></image>
-					<view>标准</view>
+					<view>{{$t('norm')}}</view>
 				</view>
 				<view>
 					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/2.png"></image>
-					<view>边框缺失</view>
+					<view>{{$t('borderMissing')}}</view>
 				</view>
 				<view>
 					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/3.png"></image>
-					<view>照片模糊</view>
+					<view>{{$t('photoBlur')}}</view>
 				</view>
 				<view>
 					<image style="width: 140rpx;height: 100rpx;" src="../../static/images/verify/4.png"></image>
-					<view>闪光强烈</view>
+					<view>{{$t('flashIntensity')}}</view>
 				</view>
 			</view>
 			<view style="margin-top: 3rem;">
-				<u-button  style="background-color: #35CBA5;color: #fff;" @click="submit">提交</u-button>
+				<u-button  style="background-color: #35CBA5;color: #fff;" @click="submit">{{$t('submit')}}</u-button>
 			</view>
 			
 		</view>
@@ -129,31 +129,31 @@
 			async submit() {
 				if (this.data.real_name.trim() == '' ||this.data.real_name.length === 0) {
 					return uni.showToast({
-						title: '请填写姓名',
+						title: this.$t('enterName'),
 						icon: 'none'
 					})
 				}
 				if (this.data.identity_number.trim() == '' ||this.data.identity_number.length === 0) {
 					return uni.showToast({
-						title: '请填写证件号码',
+						title: this.$t('enterIDNumber'),
 						icon: 'none'
 					})
 				}
 				if (!this.$u.test.idCard(this.data.identity_number)) {
 					return uni.showToast({
-						title: '请填写正确的证件号码',
+						title: this.$t('enterTrueIDNumber'),
 						icon: 'none'
 					}) 
 				}
 				if (this.data.front_image.trim() == '' ||this.data.front_image.length === 0) {
 					return uni.showToast({
-						title: '请上传证件正面照',
+						title: this.$t('enterUploadFront'),
 						icon: 'none'
 					})
 				}
 				if (this.data.back_image.trim() == '' ||this.data.back_image.length === 0) {
 					return uni.showToast({
-						title: '请上传证件背面照',
+						title: this.$t('enterUploadBack'),
 						icon: 'none'
 					})
 				}

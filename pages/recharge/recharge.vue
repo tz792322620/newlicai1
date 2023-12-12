@@ -5,7 +5,7 @@
 		</view>
 		<view class="tabbar">
 			<image src="../../static/images/hfh.png" mode="" @click="back"></image>
-			<text>充值</text>
+			<text>{{$t('recharge')}}</text>
 			<image src="../../static/images/camera-icon.png" mode="" @click="toRecords"></image>
 		</view>
 		<view class="content">
@@ -14,7 +14,7 @@
 			</view>
 			<view class="address" v-if="address">
 				<view class="desc">
-					充值地址
+					{{$t('rechargeAddress')}}
 				</view>
 				<view class="value">
 					{{address}}
@@ -23,11 +23,11 @@
 			</view>
 			<view class="network">
 				<view class="title">
-					充值网络
+					{{$t('rechargeNetwork')}}
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value">
-						<u-input type="text" placeholder="选择充值网络" disabled v-model="address_type" />
+						<u-input type="text" :placeholder="$t('chooseRechargeNetwork')" disabled v-model="address_type" />
 					</view>
 					<uni-icons type="bottom"></uni-icons>
 				</view>
@@ -35,7 +35,7 @@
 			<u-popup v-model="show" mode="bottom" border-radius="30" closeable>
 				<view class="popup-content">
 					<view class="title">
-						选择网络
+						{{$t('chooseRechargeNetwork')}}
 					</view>
 					<view class="tabs">
 						<view class="tabs_item" v-for="(item,index) in networkList" :key="index"
@@ -88,9 +88,15 @@
 				})
 			},
 			copy () {
+				let that = this
 				uni.setClipboardData({
-					data: this.address,
-					success: function () {
+					data: that.address,
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							title: that.$t('contentCopied'),
+							icon: 'success'
+						})
 						// console.log('success');
 					}
 				})

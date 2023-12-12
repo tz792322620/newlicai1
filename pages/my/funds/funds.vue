@@ -24,6 +24,11 @@
 				list: []
 			}
 		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('fundsDetails')
+			})
+		},
 		onLoad() {
 			this.getData()
 		},

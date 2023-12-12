@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<uni-nav-bar left-icon="left" right-icon="plus" title="选择收款方式" :border="false" @clickLeft="back()" @clickRight="addPayment"></uni-nav-bar>
+		<uni-nav-bar left-icon="left" right-icon="plus" :title="$t('choosePaymentMethod')" :border="false" @clickLeft="back()" @clickRight="addPayment"></uni-nav-bar>
 		<view class="tabs">
 			<view class="tabs-item" v-for="(item,index) in tabsList" :key="index" @click="changeTabs(item,index)" :class="index === activeIndex ? 'active' : ''">
 				{{item}}
@@ -13,7 +13,7 @@
 						{{item.payment_type}}
 					</view>
 					<view class="content-item_one_right" @click="toEdit(item)">
-						编辑
+						{{$t('edit')}}
 					</view>
 				</view>
 				<view class="content-item_two">
@@ -90,9 +90,13 @@
 			return {
 				activeIndex: 0, // 当前选中下标
 				activeType: '',
-				 // 选项卡集合
-				tabsList: ['总览','银行卡','支付宝','微信'],
 				paymentList: []
+			}
+		},
+		computed: {
+			// 选项卡集合
+			tabsList(){
+				return [this.$t('overview'),this.$t('BankCard'),this.$t('Alipay'),this.$t('WeChat')]
 			}
 		},
 		onLoad() {

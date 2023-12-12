@@ -12,7 +12,7 @@
 			</view>
 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
-					到账数量
+					{{$t('quantityReceived')}}
 				</view>
 				<view class="records_item_cell_right">
 					{{item.withdrawal_amount}}
@@ -20,7 +20,7 @@
 			</view>
 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
-					地址
+					{{$t('address')}}
 				</view>
 				<view class="records_item_cell_right">
 					{{item.withdrawal_address | ellipsis}}
@@ -36,7 +36,7 @@
 			</view>
 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
-					时间
+					{{$t('times')}}
 				</view>
 				<view class="records_item_cell_right">
 					{{item.withdrawal_date}}
@@ -53,6 +53,11 @@
 			return {
 				recordsList: []
 			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('withdrawalRecord')
+			})
 		},
 		onLoad() {
 			this.getData()

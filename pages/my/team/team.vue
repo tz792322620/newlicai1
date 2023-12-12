@@ -2,16 +2,16 @@
 	<view class="team">
 		<view class="navbar">
 			<image src="../../../static/images/hfh.png" mode="" @click="back"></image>
-			<text>团队管理</text>
+			<text>{{$t('teamManagement')}}</text>
 		</view>
 		<view class="content">
 			<view class="balance">
 				<view class="balance_top">
 					<view class="desc">
-						团队余额(元)
+						{{$t('teamBalance')}}
 					</view>
 					<view class="date" @click="show = true">
-						日期选择
+						{{$t('chooseDate')}}
 					</view>
 				</view>
 				<view class="balance_count">
@@ -19,11 +19,11 @@
 				</view>
 				<view class="balance_bottom">
 					<view class="balance_bottom_item">
-						<text>总充值</text>
+						<text>{{$t('totalTopUp')}}</text>
 						<text class="bold">{{dataInfo.recharge_amount}}</text>
 					</view>
 					<view class="balance_bottom_item">
-						<text>团队流水</text>
+						<text>{{$t('teamFlow')}}</text>
 						<text class="bold">{{dataInfo.stock_order_amount}}</text>
 					</view>
 				</view>
@@ -33,7 +33,7 @@
 					<image src="../../../static/images/my/team/jine.png" mode=""></image>
 					<view class="price_item_right">
 						<view class="desc">
-							提现总额
+							{{$t('totalWithdrawal')}}
 						</view>
 						<view class="count">
 							{{dataInfo.withdrawable_amount}}
@@ -44,7 +44,7 @@
 					<image src="../../../static/images/my/team/yongjin.png" mode=""></image>
 					<view class="price_item_right">
 						<view class="desc">
-							订单佣金
+							{{$t('orderCommission')}}
 						</view>
 						<view class="count">
 							{{dataInfo.withdrawal_amount}}
@@ -54,7 +54,7 @@
 			</view>
 			<view class="user-info">
 				<view class="user-info_title">
-					人员信息
+					{{$t('personnelInfo')}}
 				</view>
 				<view class="user-info_item" v-for="(item,index) in list" :key="index">
 					<view class="info">
@@ -66,17 +66,17 @@
 								{{item.referrer.nickname}}
 							</view>
 							<view class="phone" v-if="item.referrer.mobile">
-								电话: {{item.referrer.mobile}} <image @click="copy(item.referrer.mobile)" src="../../../static/images/my/team/copy.png" mode=""></image>
+								{{$t('telephone')}}: {{item.referrer.mobile}} <image @click="copy(item.referrer.mobile)" src="../../../static/images/my/team/copy.png" mode=""></image>
 							</view>
 							<view class="date">
-								注册日期:{{item.referrer.createtime | timestampFilter}}
+								{{$t('registerDate')}}:{{item.referrer.createtime | timestampFilter}}
 							</view>
 						</view>
 					</view>
 					<view class="data">
 						<view class="data_item">
 							<view class="desc">
-								充值(¥)
+								{{$t('recharge')}}(¥)
 							</view>
 							<view class="count">
 								{{item.team_stats.recharge_amount}}
@@ -84,7 +84,7 @@
 						</view>
 						<view class="data_item">
 							<view class="desc">
-								提现(¥)
+								{{$t('withdraw')}}(¥)
 							</view>
 							<view class="count">
 								{{item.team_stats.withdrawable_amount}}
@@ -92,7 +92,7 @@
 						</view>
 						<view class="data_item">
 							<view class="desc">
-								推荐人数
+								{{$t('referrals')}}
 							</view>
 							<view class="count">
 								{{item.team_stats.stock_order_count}}
@@ -105,7 +105,7 @@
 		<u-calendar v-model="show" :mode="mode" @change="change" btn-type="success" active-bg-color="#35CBA5" range-color="#35CBA5" range-bg-color="rgba(53, 203, 165,0.13)">
 			<view slot="tooltip">
 				<view class="title" style="margin: 40rpx;">
-					选择日期
+					{{$t('chooseDate')}}
 				</view>
 			</view>
 		</u-calendar>
@@ -133,10 +133,16 @@
 		},
 		methods: {
 			copy(phone) {
+				let that = this
 				uni.setClipboardData({
 					data: phone,
-					success: function () {
-						console.log('success');
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							title: that.$t('contentCopied'),
+							icon: 'success'
+						})
+						// console.log('success');
 					}
 				})
 			},

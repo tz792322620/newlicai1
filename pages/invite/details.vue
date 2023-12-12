@@ -5,7 +5,7 @@
 		</view>
 		<view class="tabbar">
 			<image src="../../static/images/hfh.png" mode="" @click="goBack()"></image>
-			<text>邀请记录</text>
+			<text>{{$t('inviteRecords')}}</text>
 			<!-- <image src="../../static/images/camera-icon.png" mode="" @click="toRecords"></image> -->
 		</view>
 		<view class="content">
@@ -14,10 +14,10 @@
 					<image src="../../static/images/invite/total.png" mode=""></image>
 					<view class="count_item_right">
 						<view class="description">
-							总人数
+							{{$t('headcount')}}
 						</view>
 						<view class="count-unit">
-							{{dataInfo.direct_referrals_count}}人
+							{{dataInfo.direct_referrals_count}}{{$t('people')}}
 						</view>
 					</view>
 				</view>
@@ -25,10 +25,10 @@
 					<image src="../../static/images/invite/today.png" mode=""></image>
 					<view class="count_item_right">
 						<view class="description">
-							日邀请人数
+							{{$t('dailyInvitees')}}
 						</view>
 						<view class="count-unit">
-							{{dataInfo.direct_referrals_today_count}}人
+							{{dataInfo.direct_referrals_today_count}}{{$t('people')}}
 						</view>
 					</view>
 				</view>
@@ -36,16 +36,16 @@
 			<view class="list">
 				<view class="list_title">
 					<view class="list_title_item">
-						用户名
+						{{$t('username')}}
 					</view>
 					<view class="list_title_item">
-						新股投资
+						{{$t('newEquityInvestment')}}
 					</view>
 					<!-- <view class="list_title_item">
 						新股收益
 					</view> -->
 					<view class="list_title_item">
-						实名
+						{{$t('realName')}}
 					</view>
 				</view>
 				<view class="list_cell" v-for="(item,index) in dataInfo.direct_referrals_list">

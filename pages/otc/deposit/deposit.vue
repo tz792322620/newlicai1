@@ -3,13 +3,13 @@
 
 		<view class="header">
 			<view class="back-arrow" @click="goBack"></view>
-			<text class="header-title">押金管理</text>
+			<text class="header-title">{{$t('deposit')}}</text>
 		</view>
 
 
 		<view class="ylb1">
 			<view class="balance-display">
-				<view class="balance-label">总资产(¥)</view>
+				<view class="balance-label">{{$t('totalAssets')}}</view>
 				<view class="balance-amount" v-if="!dataInfo">¥0</view>
 				<view class="balance-amount" v-else>¥{{dataInfo.deposit_amount}}</view>
 				<!-- <view class="balance-details">
@@ -31,8 +31,8 @@
 
 			<view class="action-buttons">
 
-				<button class="action-button1 deposit" @click="btnClick(0)">转入</button>
-				<button class="action-button2 withdraw" @click="btnClick(1)">退出</button>
+				<button class="action-button1 deposit" @click="btnClick(0)">{{$t('transfer')}}</button>
+				<button class="action-button2 withdraw" @click="btnClick(1)">{{$t('quit')}}</button>
 			</view>
 		</view>
 
@@ -40,13 +40,13 @@
 
 
 		<view class="transaction-list ylb1">
-			<view class="transaction-title" style="font-size: 1rem;font-weight: bold;">押金流水</view>
+			<view class="transaction-title" style="font-size: 1rem;font-weight: bold;">{{$t('depositAccount')}}</view>
 
-			<u-empty v-if="list.length === 0" text="暂无流水记录" margin-top="100"></u-empty>
+			<u-empty v-if="list.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
 			<view v-if="list.length !== 0">
 				<view class="transaction-item" v-for="(item,index) in list" :key="index">
 					<view>
-						<view class="transaction-name">{{item.amount > 0 ? '转出' : item.amount < 0 ? '转入' : ''}}</view>
+						<view class="transaction-name">{{item.amount > 0 ? $t('roll-out') : item.amount < 0 ? $t('transfer') : ''}}</view>
 						<view class="transaction-date">{{item.create_time | timestampFilter}}</view>
 					</view>
 					<view>
@@ -61,14 +61,14 @@
 		<u-popup v-model="popupShow" mode="bottom" border-radius="30" closeable>
 			<view class="popup-content">
 				<view class="title">
-					{{isTransfer ? '转入' : '退出'}}押金
+					{{isTransfer ? $t('transfer') : $t('quit')}}{{$t('deposits')}}
 				</view>
 				<view class="input">
 					<text>¥</text>
 					<input type="text" v-model="data.deposit_amount" placeholder="0.00">
 				</view>
 				<view class="button" @click="submitBtn">
-					确认{{isTransfer ? '转入' : '退出'}}
+					{{$t('verify')}}{{isTransfer ? $t('transfer') : $t('quit')}}
 				</view>
 			</view>
 		</u-popup>
@@ -110,7 +110,7 @@
 			async submitBtn() {
 				if (this.$u.test.isEmpty(this.data.deposit_amount)) {
 					return uni.showToast({
-						title: '请输入押金',
+						title: this.$t('enterDeposit'),
 						icon: 'none'
 					})
 				}

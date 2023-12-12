@@ -24,7 +24,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					收款方式
+					{{$t('paymentMethod')}}
 				</view>
 				<view class="cell_right">
 					{{ data.payment_method }}
@@ -32,7 +32,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					法币
+					{{$t('legalTender')}}
 				</view>
 				<view class="cell_right">
 					{{ data.currency }}
@@ -135,6 +135,11 @@
 				this.id = params.id
 				this.getInfoById()
 			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('adDetails')
+			})
 		},
 		methods: {
 			async getInfoById() {

@@ -3,7 +3,7 @@
 		<view class="overview">
 			<view class="title" @click="isOverview = !isOverview">
 				<view class="title_left">
-					总览
+					{{$t('overview')}}
 				</view>
 				<view class="title_right">
 					<u-icon :name="isOverview ? 'arrow-up-fill' :'arrow-down-fill'" color="#666666" size="28"></u-icon>
@@ -22,7 +22,7 @@
 					<view class="item_cell">
 						<view class="item_cell_box">
 							<view class="item_cell_box_top">
-								投资金额
+								{{$t('tzAmount')}}
 							</view>
 							<view class="item_cell_box_bottom">
 								{{dataInfo.purchase_amount}}
@@ -30,7 +30,7 @@
 						</view>
 						<view class="item_cell_box" style="text-align: right;">
 							<view class="item_cell_box_top">
-								投资时间
+								{{$t('investmentTime')}}
 							</view>
 							<view class="item_cell_box_bottom">
 								{{dataInfo.purchase_date}}
@@ -57,8 +57,8 @@
 					</view> -->
 				</view>
 				<view class="box1">
-					<text>收益方式</text>
-					<text>每日返息，到期还本</text>
+					<text>{{$t('incomeMethod')}}</text>
+					<text>{{$t('incomeMethodTips')}}</text>
 				</view>
 			</view>
 			<view class="overview_box" v-if="isOverview">
@@ -67,7 +67,7 @@
 		</view>
 		<view class="details">
 			<view class="title">
-				明细
+				{{$t('detail')}}
 			</view>
 			<view class="item" v-for="(item,index) in list" :key="index">
 				<view class="item_title">
@@ -81,7 +81,7 @@
 				<view class="item_cell">
 					<view class="item_cell_box">
 						<view class="item_cell_box_top">
-							投资金额
+							{{$t('tzAmount')}}
 						</view>
 						<view class="item_cell_box_bottom">
 							{{item.earnings_amount}}
@@ -89,7 +89,7 @@
 					</view>
 					<view class="item_cell_box">
 						<view class="item_cell_box_top">
-							预期效益
+							{{$t('expectedBenefit')}}
 						</view>
 						<view class="item_cell_box_bottom">
 							{{item.accumulated_earnings}}
@@ -99,7 +99,7 @@
 				<view class="item_cell">
 					<view class="item_cell_box">
 						<view class="item_cell_box_top">
-							投资时间
+							{{$t('investmentTime')}}
 						</view>
 						<view class="item_cell_box_bottom">
 							{{item.earnings_date}}

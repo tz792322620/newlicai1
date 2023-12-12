@@ -11,7 +11,7 @@
 			</view>
 			<view class="order_item_cell">
 				<view class="order_item_cell_left">
-					状态
+					{{$t('status')}}
 				</view>
 				<view class="order_item_cell_right" :class="item.order_status == 'Failed' ? 'red' : 'green'">
 					{{item.order_status}}
@@ -19,7 +19,7 @@
 			</view>
 			<view class="order_item_cell">
 				<view class="order_item_cell_left">
-					投资金额
+					{{$t('tzAmount')}}
 				</view>
 				<view class="order_item_cell_right">
 					{{item.purchase_amount}}
@@ -27,10 +27,10 @@
 			</view>
 			<view class="order_item_cell">
 				<view class="order_item_cell_left">
-					投资时间 {{item.purchase_date}}
+					{{$t('investmentTime')}} {{item.purchase_date}}
 				</view>
 				<view class="order_item_cell_right">
-					合同详情
+					{{$t('contractDetails')}}
 				</view>
 			</view>
 		</view>
@@ -44,6 +44,11 @@
 			return {
 				list: []
 			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('newStockOrders')
+			})
 		},
 		onLoad() {
 			this.getData()

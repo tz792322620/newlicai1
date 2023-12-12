@@ -2,7 +2,7 @@
 	<view class="details">
 		<view class="details_top">
 			<view class="details_top_desc">
-				到账数量
+				{{$t('quantityReceived')}}
 			</view>
 			<view class="details_top_count">
 				+{{data.withdrawal_amount}}
@@ -12,7 +12,7 @@
 		<view class="details_content">
 			<view class="details_content_cell">
 				<view class="left">
-					当前状态
+					{{$t('nowStatus')}}
 				</view>
 				<view class="right">
 					{{data.withdrawal_status}}
@@ -20,7 +20,7 @@
 			</view>
 			<view class="details_content_cell">
 				<view class="left">
-					确认
+					{{$t('verify')}}
 				</view>
 				<view class="right">
 					{{data.audit_status}}
@@ -28,7 +28,7 @@
 			</view>
 			<view class="details_content_cell">
 				<view class="left">
-					交易哈希
+					{{$t('transferHash')}}
 				</view>
 				<view class="right">
 					{{data.transaction_hash}}
@@ -36,7 +36,7 @@
 			</view>
 			<view class="details_content_cell">
 				<view class="left">
-					日期
+					{{$t('date')}}
 				</view>
 				<view class="right">
 					{{data.withdrawal_date}}
@@ -53,6 +53,11 @@
 			return {
 				data: ''
 			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('withdrawalDetails')
+			})
 		},
 		onLoad(params) {
 			if(params.id) {
