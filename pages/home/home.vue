@@ -214,7 +214,7 @@
 				</view>
 			</view>
 		</view>
-
+	<floating-customer-service></floating-customer-service>
 	</view>
 </template>
 
@@ -224,7 +224,12 @@
 		getStockProductAllList,
 		getGonggaoTypes
 	} from '@/api/api'
+	import FloatingCustomerService from '@/components/FloatingCustomerService/FloatingCustomerService.vue';
+
 	export default {
+	  components: {
+		FloatingCustomerService
+	  },
 		data() {
 			return {
 				config: {
@@ -236,7 +241,7 @@
 					radius: 10,
 					height: 264,
 					nextMargin: -220,
-
+ 
 				},
 				userInfo: JSON.parse(uni.getStorageSync('userInfo')),
 				xuan: 0,
@@ -248,6 +253,7 @@
 				notice: '' // 公告
 			}
 		},
+		
 		onShow() {
 			// this.stockProductList()
 			// this.getStockProductListNewbie() // 精选股票
