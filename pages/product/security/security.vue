@@ -2,15 +2,15 @@
 	<view class="security">
 		<view class="item">
 			<view class="desc">
-				密码
+				{{$t('password')}}
 			</view>
 			<view class="input">
-				<u-input placeholder="输入密码" type="password" v-model="investData.pay_password"></u-input>
+				<u-input :placeholder="$t('enterPwd')" type="password" v-model="investData.pay_password"></u-input>
 			</view>
 		</view>
 		<view class="item">
 			<view class="desc">
-				签名
+				{{$t('sign')}}
 			</view>
 			<view class="sign">
 				<view class="sign_full">
@@ -21,19 +21,19 @@
 				</view>
 				<view class="sign_btns">
 					<view class="sign_btns_one" @click="clear">
-						重签
+						{{$t('aginSign')}}
 					</view>
 					<view class="sign_btns_two" @click="save">
-						完成
+						{{$t('complete')}}
 					</view>
 				</view>
 			</view>
 		</view>
 		<view class="buttons" @click="submit">
-			提交
+			{{$t('submit')}}
 		</view>
 		<view class="tips">
-			忘记密码?
+			{{$t('forgotPassword')}}
 		</view>
 	</view>
 </template>
@@ -53,6 +53,11 @@
 					pay_password:''
 				}
 			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('security')
+			})
 		},
 		onLoad(params) {
 			console.log(params)
@@ -87,7 +92,7 @@
 						console.log(res.isEmpty)
 						if (res.isEmpty) {
 							return uni.showToast({
-								title: '请签名',
+								title: this.$t('pleaseEnterPwd'),
 								icon: 'none'
 							})
 						}
@@ -95,7 +100,7 @@
 						// H5 生成的是base64
 						this.investData.signature_image_path = res.tempFilePath
 						uni.showToast({
-							title: '签名完成',
+							title: this.$t('sign') + this.$t('complete'),
 							icon: 'none'
 						})
 						// console.log(this.url)
@@ -136,13 +141,13 @@
 			async submit() {
 				if (this.investData.pay_password.trim() === '' || this.investData.pay_password.length === 0) {
 					return uni.showToast({
-						title: '请输入密码',
+						title: this.$t('pleaseEnterPwd'),
 						icon: 'none'
 					})
 				}
 				if (this.investData.signature_image_path.length === 0) {
 					return uni.showToast({
-						title: '请签名',
+						title: this.$t('pleaseSign'),
 						icon: 'none'
 					})
 				}

@@ -37,13 +37,13 @@
 					<u-col span="3" @click="gotoPage('/pages/recharge/recharge')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm5.png"></image>
-							<view>充值入口</view>
+							<view>{{$t('czrk')}}</view>
 						</view>
 					</u-col>
 					<u-col span="3" @click="gotoPage('/pages/withdraw/withdraw')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm6.png"></image>
-							<view>提现入口</view>
+							<view>{{$t('txrk')}}</view>
 						</view>
 					</u-col>
 				</u-row>
@@ -58,7 +58,7 @@
 		</view>
 		<view
 			style="padding:60rpx;background-image: url('../static/images/hm_bg2.png');background-repeat: no-repeat;background-size: 100%;height:540rpx;">
-			<view class="col35 f_bod" style="font-size:36rpx;">热门专区</view>
+			<view class="col35 f_bod" style="font-size:36rpx;">{{$t('hot')}}</view>
 			<view style="margin-top: 30rpx;" v-for="(item,index) in ProductList" :key="index">
 				<view class="u-flex">
 					<image v-if="index==0" style="width:64rpx;height:64rpx;margin-right: 20rpx;"
@@ -79,11 +79,11 @@
 				</view>
 			</view>
 
-			<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35 u-text-center">查看更多</view>
+			<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35 u-text-center">{{$t('more')}}</view>
 
 		</view>
 		<view style="padding: 30rpx;">
-			<view style="font-size: 32rpx;font-weight: bold;">精选股票</view>
+			<view style="font-size: 32rpx;font-weight: bold;">{{$t('selectStock')}}</view>
 			<view style="margin-top: 20rpx;">
 				<swiper class="orange-content" :display-multiple-items="config.multiple || 3"
 					:next-margin="config.nextMargin+'rpx'">
@@ -112,7 +112,7 @@
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==0}" @click="getxuan(0,'')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
-							<view>全部专区</view>
+							<view>{{$t('all')}}</view>
 							<view
 								style="width:120rpx;height:8rpx;margin-left: 20rpx; background:linear-gradient(#35CBA5,#FFFFFF)"
 								v-if="xuan==0">
@@ -122,7 +122,7 @@
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==1}" @click="getxuan(1,'Newbie')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
-							<view>新手专区</view>
+							<view>{{$t('new')}}</view>
 							<view
 								style="width:120rpx;height:8rpx;margin-left: 20rpx; background:linear-gradient(#35CBA5,#FFFFFF)"
 								v-if="xuan==1">
@@ -132,7 +132,7 @@
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==2}" @click="getxuan(2,'Activity')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
-							<view>精英专区</view>
+							<view>{{$t('elite')}}</view>
 							<view
 								style="width:120rpx;height:8rpx;margin-left: 20rpx; background:linear-gradient(#35CBA5,#FFFFFF)"
 								v-if="xuan==2">
@@ -142,7 +142,7 @@
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==3}" @click="getxuan(3,'VIP')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
-							<view>VIP专区</view>
+							<view>{{$t('vip')}}</view>
 							<view
 								style="width:120rpx;height:8rpx;margin-left: 20rpx; background:linear-gradient(#35CBA5,#FFFFFF)"
 								v-if="xuan==3">
@@ -259,24 +259,38 @@
 			// this.getStockProductListNewbie() // 精选股票
 			// this.getStockProductListTab()
 		},
-		computed: {
-			login() {
-				return this.$t('login')
-			}
-		},
 		watch: {
-			login: {
+			'_i18n.locale': {
 				handler: function(value) {
 					console.log(value)
 					this.getNotice()
 					this.stockProductList()
 					this.getStockProductListNewbie() // 精选股票
 					this.getStockProductListTab()
+					this.setTabbar()
 				},
 				immediate: true
 			}
 		},
 		methods: {
+			setTabbar() {
+				uni.setTabBarItem({
+					index: 0,
+					text: this.$t('tabbar.home')
+				});
+				uni.setTabBarItem({
+					index: 1,
+					text: this.$t('tabbar.product')
+				});
+				uni.setTabBarItem({
+					index: 2,
+					text: this.$t('tabbar.otc')
+				});
+				uni.setTabBarItem({
+					index: 3,
+					text: this.$t('tabbar.my')
+				});
+			},
 			gotoPage(url) {
 				uni.navigateTo({
 					url: url
