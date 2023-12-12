@@ -134,6 +134,7 @@
 					if (res.code == 1) {
 						uni.setStorageSync('token', res.data.userinfo.token);
 						uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
+						uni.setStorageSync('support_link', JSON.stringify(res.data.support_link))
 						this.$tools.toastSwitchTab('登录成功', '../home/home');
 						setTimeout(() => {
 							this.lock = true

@@ -1,5 +1,5 @@
 <template>
-  <a :href="userInfo.support_link" target="_blank" @mousedown="dragStart" @touchstart="dragStart">
+  <a :href="customerServiceUrl" target="_blank" @mousedown="dragStart" @touchstart="dragStart">
     <div 
       class="floating-button" 
       @mousedown="dragStart" 
@@ -23,21 +23,14 @@ export default {
       startX: 0,
       startY: 0,
       isDragging: false,
-      customerServiceUrl: 'https://example.com', // 替换为您的客服链接
+      customerServiceUrl: JSON.parse(uni.getStorageSync('support_link')), // 替换为您的客服链接  
     };
   },
-  onLoad() {
-  	this.getUser()
-  },
-methods: {
-	async getUser() {
-		const res = await getUserInfo()
-		if (res.code === 1) {
-			this.userInfo = res.data
-			console.log(this.userInfo)
-		}
-	},
+
+	methods: {
+
     dragStart(event) {
+	  // console.log(this.customerServiceUrl)
       this.isDragging = false;
       event = event.type === 'touchstart' ? event.touches[0] : event;
       this.startX = event.clientX;
