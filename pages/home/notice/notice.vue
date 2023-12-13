@@ -1,12 +1,12 @@
 <template>
 	<view class="notice">
-		<view class="item" v-for="(item,index) in list" :key="index" @click="toDetails(item)">
+		<view class="item" v-for="(item,index) in list" :key="index" >
 			<view>
 				<view class="item_title">
 					{{item.name}}
 				</view>
-				<view class="item_description">
-					{{item.description}}
+				<view class="item_description" v-for="(items,indexs) in item.gonggao_logs" :key="indexs" @click="toDetails(items)">
+					{{items.title}}
 				</view>
 			</view>
 			<uni-icons type="right"></uni-icons>
@@ -33,7 +33,7 @@
 		methods: {
 			toDetails(item) {
 				uni.navigateTo({
-					url: `/pages/home/notice/details?name=${item.name}`
+					url: `/pages/home/notice/details?id=${item.id}`
 				})
 			},
 			async getNotice() {

@@ -23,6 +23,8 @@ const i18n = new VueI18n({
 	}
 });
 
+// main.js
+Vue.prototype.$imgPrefix = 'https://xingu.bianceok.info/';
 
 Vue.config.productionTip = false
 // 时间戳转日期

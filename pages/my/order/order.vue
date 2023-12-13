@@ -29,7 +29,7 @@
 				<view class="order_item_cell_left">
 					{{$t('investmentTime')}} {{item.purchase_date}}
 				</view>
-				<view class="order_item_cell_right">
+				<view class="order_item_cell_right" @click="toDetail(item)">
 					{{$t('contractDetails')}}
 				</view>
 			</view>
@@ -64,6 +64,11 @@
 			toDetails(item) {
 				uni.navigateTo({
 					url: `/pages/my/order/details?dataInfo=${JSON.stringify(item)}`
+				})
+			},
+			toDetail(item) {
+				uni.navigateTo({
+					url: `/pages/my/order/contract?id=${item.order_id}`
 				})
 			}
 		}

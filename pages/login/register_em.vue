@@ -19,10 +19,10 @@
 					<view><image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em2.png"></image></view>
 					<u-input v-model="password" type="password" :placeholder="$t('setLoginPassword')" />
 				</view>
-				<view class="logo_input u-flex">
+<!-- 				<view class="logo_input u-flex">
 					<view><image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em3.png"></image></view>
 					<u-input type="text" :placeholder="$t('enterCaptcha')" />
-				</view>
+				</view> -->
 				<view class="logo_input u-flex">
 					<view><image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em3.png"></image></view>
 					<u-input v-model="code" type="text" :placeholder="$t('enterEmailCode')" />

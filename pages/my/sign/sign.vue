@@ -7,9 +7,9 @@
 			</view>
 		</view>
 		<view class="content">
-			<view class="title">
+<!-- 			<view class="title">
 				20<text>{{$t('points')}}</text>
-			</view>
+			</view> -->
 			<!-- <view class="sub-title">
 				明日签到可得30积分
 			</view>	 -->

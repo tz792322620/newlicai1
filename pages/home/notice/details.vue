@@ -10,7 +10,7 @@
 </template>
 
 <script>
-	import { GonggaoTypeList } from '@/api/api.js'
+	import { getGonggaoLogById } from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -24,15 +24,15 @@
 		},
 		onLoad(params) {
 			console.log(params)
-			if (params.name) {
-				this.getDetails(params.name)
-			}
+			if (params.id) {
+				this.getDetails(params.id)
+			} 
 		},
 		methods: {
 			async getDetails(name) {
-				const res = await GonggaoTypeList(name)
+				const res = await getGonggaoLogById(name)
 				if(res.code === 1) {
-					this.details = res.data[0]
+					this.details = res.data
 				}
 			}
 		}

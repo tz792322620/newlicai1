@@ -45,6 +45,19 @@ export function getGonggaoTypes() {
 		url: '/index/getGonggaoTypes'
 	})
 }
+// 根据id查询公告
+export function getGonggaoLogById(id) {
+	return request({
+		url: `/index/getGonggaoLogById?id=${id}`
+	}) 
+}
+
+// id 查询单个新股订单和对应的合同
+export function getStockOrderAndContractById(id) {
+	return request({
+		url: `/user/getStockOrderAndContractById?order_id=${id}`
+	}) 
+}
 // 查询公告列表
 export function GonggaoTypeList(type_name) {
 	return request({
