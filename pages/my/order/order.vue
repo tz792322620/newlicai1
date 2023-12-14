@@ -14,7 +14,7 @@
 					{{$t('status')}}
 				</view>
 				<view class="order_item_cell_right" :class="item.order_status == 'Failed' ? 'red' : 'green'">
-					{{item.order_status}}
+					{{ getStatusTranslation(item.order_status) }}
 				</view>
 			</view>
 			<view class="order_item_cell">
@@ -25,12 +25,21 @@
 					{{item.purchase_amount}}
 				</view>
 			</view>
+
 			<view class="order_item_cell">
 				<view class="order_item_cell_left">
 					{{$t('investmentTime')}} {{item.purchase_date}}
 				</view>
 				<view class="order_item_cell_right" @click="toDetail(item)">
 					{{$t('contractDetails')}}
+				</view>
+			</view>
+			<view class="order_item_cell">
+				<view class="order_item_cell_left">
+					 {{$t('investmentPeriod')}}
+				</view>
+				<view class="order_item_cell_right">
+					{{item.product.investment_period}}{{$t('days')}}
 				</view>
 			</view>
 		</view>
@@ -54,6 +63,10 @@
 			this.getData()
 		},
 		methods: {
+			  getStatusTranslation(status) {
+				// console.log(status)
+			    return this.$t(status);
+			  },
 			async getData() {
 				const res = await currentUserStockOrder()
 				console.log(res)

@@ -438,16 +438,20 @@
             }
             
         }
-        ,{
-            "path" : "pages/home/notice/notice",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "公告",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
+        ,
+		{
+			"path": "pages/home/notice/notice",
+			"style": {
+				"navigationBarTitleText": "资讯",
+				"navigationBarTextStyle": "black",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
+			}
+		},
+        {
             "path" : "pages/home/notice/details",
             "style" :                                                                                    
             {
@@ -480,11 +484,17 @@
 				"selectedIconPath": "static/images/product.png"
 			},
 			{
+				"text": "资讯",
+				"pagePath": "pages/home/notice/notice",
+				"iconPath": "static/images/notice1.png",
+				"selectedIconPath": "static/images/notice.png"
+			},
+			{
 				"text": "OTC",
 				"pagePath": "pages/otc/otc",
 				"iconPath": "static/images/otc1.png",
 				"selectedIconPath": "static/images/otc.png"
-			},
+			}, 
 			{
 				"text": "我的",
 				"pagePath": "pages/my/my",

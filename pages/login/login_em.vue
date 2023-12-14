@@ -23,8 +23,9 @@
 					</view>
 				</view>
 			</view>
-			<view style="display: flex;justify-content: center;margin-top: 20px;">
-				<view id="cbox" style="width: 250px"></view>
+			<view style="margin-top: 10px;">
+				<V5Dialog :lang="v5lang" :mournful="false" ref="v1" :trustLevel="5" :host="v5host" :token="v5token"/>
+				<V5Button  :trustLevel="5" :mournful="false" @success="onSuccess" :lang="v5lang" name="v5field" ref="v2" :host="v5host" :token="v5token"/>
 			</view>
 			
 			<view style="margin-top: 40rpx;">
@@ -39,7 +40,10 @@
 
 <script>
 	import { userLogin } from "@/api/api.js"
+	import V5Dialog from '@/components/verify5-ui/V5Dialog'
+	import V5Button from '@/components/verify5-ui/V5Button'
 	export default {
+
 		data() {
 			return {
 				customStyle1: {
@@ -56,54 +60,26 @@
 				password:'',
 				lock:true,
 				yptoken:'',
-				ypauthenticate:''
+				ypauthenticate:'',
+				v5lang:"zh-CN",//en
+				v5host:'accelerate.verify5.com',
+				v5token:'aaa949126c3e48d6a941a482921ed7cf'
 			}
+		},
+		components:{
+		    V5Dialog,
+		    V5Button
 		},
 		onLoad() {
 
 		},
 		mounted() {
-			this.loadCaptchaScript(() => {
-				this.initYpRiddler();
-			});
+
 		},
 		methods: {
-				loadCaptchaScript(callback) {
-					const script = document.createElement('script');
-					script.src = "https://www.yunpian.com/static/official/js/libs/riddler-sdk-0.2.2.js";
-					script.onload = callback;
-					document.head.appendChild(script);
-				},
-			  // 如下配置仅作为示例，具体可参考'配置验证对象'小节
-			  initYpRiddler() {
-				let that =this;  
-				new window.YpRiddler({
-				  appId: 'a11a6393cd914616bc54688ef9d2d5b6', 
-				  expired: 10,
-				  mode: 'dialog',
-				  winWidth: 300,
-				  lang: 'zh-cn',
-				  container: document.getElementById('cbox'),
-				  version: 'v1',
-				  onSuccess: function (validInfo, close, useDefaultSuccess) {
-					that.ypauthenticate = validInfo.authenticate
-					that.yptoken = validInfo.token
-					useDefaultSuccess.call(null, true)
-					close()
-				  },
-				  onFail: function (code, msg, retry) {
-					alert('出错啦：' + msg + ' code: ' + code)
-					retry()
-				  },
-				  beforeStart: function (next) {
-					console.log('验证马上开始')
-					next()
-				  },
-				  onExit: function () {
-					console.log('退出验证')
-				  }
-				})
-			  },
+			onSuccess:function(verifyId){
+				console.log(verifyId);
+			},
 			async login(){
 	
 				if (this.account == '') {

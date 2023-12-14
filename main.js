@@ -7,9 +7,14 @@ import VueI18n from 'vue-i18n';
 import en from './locales/en.json';
 import zhCN from './locales/zh-CN.json';
 import zhTW from './locales/zh-TW.json';
+// import '@/static/js/polyfill.min.js'
+// import '@/static/js/riddler-sdk-0.2.2.js'
 Vue.use(uView);
 // #ifndef VUE3
 import Vue from 'vue'
+
+// 引入你的自定义JS文件
+
 
 
 Vue.use(VueI18n);
@@ -24,7 +29,7 @@ const i18n = new VueI18n({
 });
 
 // main.js
-Vue.prototype.$imgPrefix = 'https://xingu.bianceok.info/';
+Vue.prototype.$imgPrefix = 'https://api.broadreachvip.top/';
 
 Vue.config.productionTip = false
 // 时间戳转日期
@@ -52,7 +57,7 @@ Vue.filter('ellipsis', (value) => {
 })
 Vue.prototype.$Ajax3 = Ajax3
 Vue.prototype.$tools = tools
-Vue.prototype.$url = 'https://xingu.bianceok.info'
+Vue.prototype.$url = 'https://api.broadreachvip.top'
 Vue.prototype._i18n = i18n
 App.mpType = 'app'
 const app = new Vue({

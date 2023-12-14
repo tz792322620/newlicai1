@@ -1,6 +1,6 @@
 {
     "name" : "新股理财",
-    "appid" : "__UNI__838AF85",
+    "appid" : "__UNI__G432CEDF",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -73,26 +73,26 @@
         "enable" : false
     },
     "vueVersion" : "2",
-	"h5" : {
-	    "devServer" : {
-	        "port" : 8080,
-	        "disableHostCheck" : true,
-	        "proxy" : {
-	            "/api" : {
-	                "target" : "https://xingu.bianceok.info/api", // 测试
-	                "changeOrigin" : true,
-	                "secure" : false,
-	                "pathRewrite" : {
-	                    "^/api" : ""
-	                }
-	            }
-	        },
-	        "https" : false
-	    },
-	    "router" : {
-	        "base" : "./"
-	    },
-	    "template" : "",
-	    "title" : ""
-	}
+    "h5" : {
+        "devServer" : {
+            "port" : 8080,
+            "disableHostCheck" : true,
+            "proxy" : {
+                "/api" : {
+                    "target" : "https://api.broadreachvip.top/api", // 测试
+                    "changeOrigin" : true,
+                    "secure" : false,
+                    "pathRewrite" : {
+                        "^/api" : ""
+                    }
+                }
+            },
+            "https" : false
+        },
+        "router" : {
+            "base" : "./"
+        },
+        "template" : "",
+        "title" : ""
+    }
 }

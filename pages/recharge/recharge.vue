@@ -9,18 +9,7 @@
 			<image src="../../static/images/camera-icon.png" mode="" @click="toRecords"></image>
 		</view>
 		<view class="content">
-			<view class="Q-code" v-if="address">
-				<uqrcode ref="uqrcode" canvas-id="qrcode" :value="address" size="160" :options="{ margin: 10 }"></uqrcode>
-			</view>
-			<view class="address" v-if="address">
-				<view class="desc">
-					{{$t('rechargeAddress')}}
-				</view>
-				<view class="value">
-					{{address}}
-					<image src="../../static/images/copy-icon.png" mode="" @click="copy"></image>
-				</view>
-			</view>
+
 			<view class="network">
 				<view class="title">
 					{{$t('rechargeNetwork')}}
@@ -30,6 +19,36 @@
 						<u-input type="text" :placeholder="$t('chooseRechargeNetwork')" disabled v-model="address_type" />
 					</view>
 					<uni-icons type="bottom"></uni-icons>
+				</view>
+			</view>
+			<view class="network" style="margin-top: .5rem;">
+				<view class="title">
+					转入地址
+				</view>
+				<view class="select" @click="show = true">
+					<view class="select_value" style="width: 100%;">
+						<u-input type="text" :placeholder="$t('转入地址')" v-model="recharge_address" />
+					</view>
+					<!-- <uni-icons type="bottom"></uni-icons> -->
+				</view>
+			</view>
+			<view class="network" style="margin-top: .5rem;">
+				<view class="title">
+					转入金额
+				</view>
+				<view class="select" @click="show = true">
+					<view class="select_value" style="width: 100%;">
+						<u-input type="text" :placeholder="$t('转入金额')"  v-model="recharge_amount" />
+					</view>
+					<!-- <uni-icons type="bottom"></uni-icons> -->
+				</view>
+			</view>
+			<view class="buttons">
+<!-- 				<view class="description">
+					{{$t('quantityReceived')}}:<text>{{account_amount}}USDT</text>
+				</view> -->
+				<view class="button" @click="submit">
+					{{$t('submit')}}
 				</view>
 			</view>
 			<u-popup v-model="show" mode="bottom" border-radius="30" closeable>
@@ -56,11 +75,16 @@
 
 <script>
 	import {
-		getOrAllocateWalletAddress
+		createRecharge
 	} from '@/api/api.js'
 	export default {
 		data() {
 			return {
+				data: {
+					recharge_amount: '',
+					recharge_address: '',
+					network_type: ''
+				},
 				address_type: '',
 				address_value: '',
 				show: false,
@@ -112,11 +136,41 @@
 				}
 				console.log(res)
 			},
+			async submit() {
+				if (this.$u.test.isEmpty(this.data.recharge_amount)) {
+					return uni.showToast({
+						title: this.$t('enterAmount'), // 修改为多语言引用
+						icon: "none"
+					});
+				}
+				if (this.$u.test.isEmpty(this.data.recharge_address)) {
+					return uni.showToast({
+						title: this.$t('enterAddress'), // 修改为多语言引用
+						icon: "none"
+					});
+				}
+				const res = await createRecharge(this.data);
+				if (res.code === 1) {
+					uni.showToast({
+						title: this.$t('rechargeSuccess'), // 修改为多语言引用
+						icon: 'none'
+					});
+					uni.navigateTo({
+						url: '/pages/recharge/records/records'
+					});
+				} else {
+					uni.showToast({
+						title: this.$t('rechargeFailed'), // 修改为多语言引用
+						icon: 'none'
+					});
+				}
+			},
+
 			tabsClick(item, index) {
 				this.address_type = item.name
 				this.address_value = item.value
 				this.activeIndex = index
-				this.getAdress()
+				// this.getAdress()
 				this.show = false
 			}
 		}
@@ -134,6 +188,32 @@
 			width: 100%;
 		}
 
+			.buttons {
+				margin-top: 100rpx;
+
+				.description {
+					font-size: 24rpx;
+					font-weight: 400;
+					color: #333333;
+					line-height: 34rpx;
+
+					text {
+						color: #35CBA5;
+					}
+				}
+
+				.button {
+					margin-top: 8rpx;
+					height: 90rpx;
+					background: #35CBA5;
+					border-radius: 12rpx;
+					text-align: center;
+					line-height: 90rpx;
+					font-size: 32rpx;
+					font-weight: 600;
+					color: #FFFFFF;
+				}
+			}
 		.tabbar {
 			display: flex;
 			height: 88rpx;

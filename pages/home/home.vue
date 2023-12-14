@@ -284,10 +284,14 @@
 				});
 				uni.setTabBarItem({
 					index: 2,
-					text: this.$t('tabbar.otc')
+					text: this.$t('tabbar.notice')
 				});
 				uni.setTabBarItem({
 					index: 3,
+					text: this.$t('tabbar.otc')
+				});
+				uni.setTabBarItem({
+					index: 4,
 					text: this.$t('tabbar.my')
 				});
 			},

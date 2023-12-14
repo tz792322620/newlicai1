@@ -1,4 +1,6 @@
+
 <script>
+	// import '@/static/js/riddler-sdk-0.2.2.js';
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')

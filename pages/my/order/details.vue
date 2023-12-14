@@ -16,7 +16,7 @@
 							{{dataInfo.product.product_name_cn}}
 						</view>
 						<view class="item_title_right" :class="dataInfo.order_status == 'Failed' ? 'red' : ''">
-							{{dataInfo.order_status}}
+							{{ getStatusTranslation(dataInfo.order_status) }}
 						</view>
 					</view>
 					<view class="item_cell">
@@ -137,6 +137,10 @@
 			}
 		},
 		methods: {
+			getStatusTranslation(status) {
+							// console.log(status)
+			  return this.$t(status);
+			},
 			async getData(id) {
 				const res = await getEarningsByOrderId(id)
 				if (res.code === 1) {

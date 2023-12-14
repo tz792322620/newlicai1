@@ -257,6 +257,15 @@ export function getOrAllocateWalletAddress(data){
 		data
 	})
 }
+
+// 新建充值申请
+export function createRecharge(data){
+	return request({
+		url: '/user/createRecharge',
+		method: 'POST',
+		data
+	})
+}
 // 充值记录
 export function getUserRechargeRecords() {
 	return request({

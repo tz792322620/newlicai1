@@ -3,8 +3,18 @@
 		"home": "Home",
 		"product": "Product",
 		"otc": "OTC",
-		"my": "My"
+		"my": "My",
+		"notice": "News"
 	},
+  "status": {
+	"Pending": "Pending",
+	"Completed": "Completed",
+	"Cancelled": "Cancelled"
+  },
+  "Pending": "Pending",
+  "Completed": "Completed",
+  "Cancelled": "Cancelled",
+  "Failed": "Failed",
 	"greeting": "Hello",
 	"login": "Login",
 	"emailLogin": "Email Login",
@@ -78,7 +88,7 @@
 	"tzAmount": "Investment Amount",
 	"minInvest": "Minimum Investment",
 	"yuan": "Yuan",
-	"addOne": "Add one for",
+	 "addOne": "Maximum limit per transaction",
 	"payPassword": "Payment Password",
 	"defaultLoginPassword": "Default is login password",
 	"immediateInvestment": "Invest Now",
@@ -378,5 +388,14 @@
 			"detail": "Detail",
 			"notice": "Notice",
 			"noticeDetails": "Notice Details",
-			"search": "Search"
+			"search": "Search",
+			  "recharge": "Recharge",
+			  "rechargeNetwork": "Recharge Network",
+			  "chooseRechargeNetwork": "Choose Recharge Network",
+			  "enterAmount": "Please enter recharge amount",
+			  "enterAddress": "Please enter recharge address",
+			  "rechargeSuccess": "Recharge Successful",
+			  "rechargeFailed": "Recharge Failed",
+			    "investmentPeriod": "Investment Period",
+			    "days": "days"
 }

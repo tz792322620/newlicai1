@@ -7,7 +7,8 @@
 				</view>
 				<view class="records_item_title_right" :class="item.withdrawal_status == 'Failed' ? 'fail' : ''">
 					<!-- {{item.recharge_status == 'Confirmed' ? '充值成功' : item.recharge_status == 'Failed' ? '充值失败' : item.recharge_status == 'Pending' ? '待确认' : ''}} -->
-					{{item.withdrawal_status}}
+			<!-- 		{{item.withdrawal_status}} -->
+					{{ getStatusTranslation(item.withdrawal_status) }}
 				</view>
 			</view>
 			<view class="records_item_cell">
@@ -63,6 +64,10 @@
 			this.getData()
 		},
 		methods: {
+			getStatusTranslation(status) {
+							// console.log(status)
+			  return this.$t(status);
+			},
 			async toDetails(item) {
 				uni.navigateTo({
 					url: `/pages/withdraw/records/details?id=${item.withdrawal_id}`

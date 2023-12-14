@@ -65,6 +65,7 @@
 		padding: 10rpx 40rpx;
 		&_item {
 			padding: 30rpx 0;
+			border-bottom: 1px solid #d1d1d1;
 			.title {
 				font-size: 28rpx;
 				font-weight: 600;

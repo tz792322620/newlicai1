@@ -39,16 +39,21 @@
 				<view class="u-flex" style="margin-bottom:30rpx;margin-top: 30rpx;">
 					<view style="width:200rpx;color: #666666;">{{$t('tzAmount')}}</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">
-						<u-number-box color="#ffffff" :min="parseInt(Number(productInfo.amount_per_unit))" :step="parseInt(Number(productInfo.amount_per_unit))" bg-color="#35CBA5" v-model="value" @change="valChange">
-						</u-number-box>
-					</view>
+<!-- 						<u-number-box color="#ffffff" :min="parseInt(Number(productInfo.amount_per_unit))" :step="parseInt(Number(productInfo.amount_per_unit))" bg-color="#35CBA5" v-model="value" @change="valChange">
+						</u-number-box> -->
+						<u-field
+							v-model="productInfo.amount_per_unit"
+							placeholder="购买金额"
+						>
+						</u-field>
+					</view>{{$t('yuan')}}
 				</view>
 				<u-line color="#F3F3F3"></u-line>
 				<view class="u-flex" style="margin-bottom:30rpx;margin-top:30rpx;">
 
 					<view class="u-text-right" style="width:560rpx;margin-left:60rpx;color: #333333;">
-						{{$t('minInvest')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.amount_per_unit}}</text> {{$t('yuan')}}，{{$t('addOne')}}
-						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.amount_per_unit}}</text> {{$t('yuan')}}
+						{{$t('minInvest')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.min_purchase_amount}}</text> {{$t('yuan')}}，{{$t('addOne')}}
+						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.max_purchase_amount}}</text> {{$t('yuan')}}
 					</view>
 				</view>
 				<u-line color="#F3F3F3"></u-line>

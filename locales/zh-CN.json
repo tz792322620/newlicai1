@@ -3,8 +3,18 @@
 		"home": "首页",
 		"product": "产品",
 		"otc": "OTC",
-		"my": "我的"
+		"my": "我的",
+		"notice": "资讯"
 	},
+	  "status": {
+		"Pending": "待处理",
+		"Completed": "已完成",
+		"Cancelled": "已取消"
+	  },
+	  "Pending": "待处理",
+	  "Completed": "已完成",
+	  "Cancelled": "已取消",
+	  "Failed": "失败",
 	"greeting": "你好",
 	"login": "登录",
 	"emailLogin": "邮箱登录",
@@ -78,7 +88,7 @@
 	"tzAmount": "投资金额",
 	"minInvest": "最低起投",
 	"yuan": "元",
-	"addOne": "加一次为",
+	"addOne": "最高限额单次",
 	"payPassword": "支付密码",
 	"defaultLoginPassword": "默认为登录密码",
 	"immediateInvestment": "立即投资",
@@ -382,5 +392,14 @@
 	"detail": "明细",
 	"notice": "公告",
 	"noticeDetails": "公告详情",
-	"search": "搜索"
+	"search": "搜索",
+	  "recharge": "充值",
+	  "rechargeNetwork": "充值网络",
+	  "chooseRechargeNetwork": "选择充值网络",
+	  "enterAmount": "请输入充值金额",
+	  "enterAddress": "请输入充值地址",
+	  "rechargeSuccess": "充值成功",
+	  "rechargeFailed": "充值失败",
+	    "investmentPeriod": "投资期限",
+	    "days": "天"
 }
