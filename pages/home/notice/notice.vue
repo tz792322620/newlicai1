@@ -1,5 +1,8 @@
 <template>
 	<view class="notice">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view class="item" v-for="(item,index) in list" :key="index" >
 			<view>
 				<view class="item_title">

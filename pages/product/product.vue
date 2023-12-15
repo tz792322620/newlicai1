@@ -1,8 +1,10 @@
 <template>
-	<view
-		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;height: 100vh;">
+	<view style="background-image: url('../../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100% 100%;min-height: 100vh;">
+		<view class="status_bar" style="position: fixed;width: 100%;background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view style="padding:30rpx;">
-			<view class="u-flex">
+			<view class="u-flex" style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 				<view style="margin-left: 10rpx;width:600rpx;">
 					<u-search bg-color="#FFFFFF" :placeholder="$t('enterFund')" :disabled="false" :show-action="false">
 					</u-search>
@@ -12,7 +14,7 @@
 						src="../../static/images/hm1.png"></image>
 				</view>
 			</view>
-			<view style="margin-top: 30rpx;">
+			<view :style="[{marginTop: `${statusBarHeight*2 + 88}rpx`}]">
 				<u-subsection v-if="forceRefresh" :list="tabList" @change="sectionChange" mode="button"
 					button-color="#E6F9F4" active-color="#35CBA5" bgColor="#ffffff" :current="current"></u-subsection>
 			</view>
@@ -81,10 +83,12 @@
 				},
 				curNow: 0,
 				tabName: '',
-				stockProductListTab: []
+				stockProductListTab: [],
+				statusBarHeight: 0 // 状态栏高度
 			}
 		},
 		onShow() {
+			this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
 			this.forceRefresh = false;
 			this.$nextTick(() => {
 				this.forceRefresh = true;

@@ -7,6 +7,12 @@
 		},
 		onShow: function() {
 			console.log('App Show')
+			
+			uni.getNetworkType({
+				success: function (res) {
+					console.log(res.networkType);
+				}
+			});
 		},
 		onHide: function() {
 			console.log('App Hide')
@@ -18,4 +24,8 @@
 	/*每个页面公共css */
 	@import "@/static/uview-ui/index.scss";
 	@import "@/static/css/style.css";
+	.status_bar {
+		height: var(--status-bar-height);
+		width: 100%;
+	}
 </style>

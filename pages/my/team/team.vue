@@ -1,9 +1,13 @@
 <template>
 	<view class="team">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view class="navbar">
 			<image src="../../../static/images/hfh.png" mode="" @click="back"></image>
 			<text>{{$t('teamManagement')}}</text>
 		</view>
+			<!-- <uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('teamManagement')" :border="false" @clickLeft="back"></uni-nav-bar> -->
 		<view class="content">
 			<view class="balance">
 				<view class="balance_top">
@@ -179,7 +183,6 @@
 	.team {
 		background: url('@/static/images/my/team/bgc-img.png') center center no-repeat;
 		background-size: 100% 100%;
-		padding-top: 88rpx;
 		min-height: 100vh;
 		/deep/.u-icon__icon {
 			color: #999999 !important;
@@ -187,6 +190,15 @@
 		/deep/.u-btn--success {
 			border-color: #35CBA5;
 			background-color: #35CBA5;
+		}
+		.status_bar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			height: var(--status-bar-height);
+			width: 100%;
+			background: linear-gradient(to right, #ecfaf6 0%, #f8f9f8 100%) !important;
 		}
 		.title {
 			// padding: 34rpx 0 20rpx 40rpx;
@@ -197,9 +209,15 @@
 			// border-bottom: 2rpx solid #F3F3F3;
 		}
 		.navbar {
+			position: fixed;
+			top: var(--status-bar-height);
+			left: 0;
 			height: 88rpx;
 			display: flex;
 			align-items: center;
+			background: linear-gradient(to right, #ecfaf6 0%, #f8f9f8 100%);
+			width: 100%;
+			z-index: 1000;
 			image {
 				width: 48rpx;
 				height: 48rpx;
@@ -213,7 +231,10 @@
 			}
 		}
 		.content {
-			padding: 30rpx 40rpx;
+			padding-top: 168rpx;
+			padding-left: 40rpx;
+			padding-right: 40rpx;
+			padding-bottom: 30rpx;
 			.balance {
 				height: 290rpx;
 				background: #FFFFFF;

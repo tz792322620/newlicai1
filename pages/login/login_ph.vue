@@ -86,6 +86,7 @@
 		},
 		methods: {
 			async logins(){
+				console.log('进入登录')
 				if (this.account == '') {
 					return this.$tools.toast('请输入手机号码');
 				}else if (this.password == '') {

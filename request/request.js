@@ -49,7 +49,7 @@ function request(options = {}) {
 			},
 			//错误
 			options.fail = (err) => {
-				console.log(123)
+				console.log(err)
 				uni.showToast({
 					title: '系统错误',
 					icon: 'none'

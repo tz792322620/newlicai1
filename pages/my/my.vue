@@ -1,7 +1,10 @@
 <template>
-	<view style="background-color:#F5F5F5 !important;height: 100vh;">
+	<view style="background-color: #f5f5f5;min-height: 100vh;">
 		<view
-			style="background-image: url('../static/images/my/1.png');background-repeat: no-repeat;background-size: 100%;height:560rpx;padding:40rpx;">
+			style="background-image: url('../../static/images/my/1.png');background-repeat: no-repeat;background-size: 100%;min-height:560rpx;padding:40rpx;">
+			<view class="status_bar">
+				<!-- 这里是状态栏 -->
+			</view>
 			<view style="border-radius: 12rpx;background-color: #fff;padding:30rpx;margin-top: 200rpx;">
 				<view class="u-flex" style="position: relative;top: -80rpx;">
 					<view class="avatar"
@@ -244,7 +247,7 @@
 	}
 
 	page {
-		background-color: #f0f2f5;
-		padding-bottom: 200rpx;
+		background-color: #f5f5f5;
+		// padding-bottom: 200rpx;
 	}
 </style>

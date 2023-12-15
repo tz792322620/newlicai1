@@ -1,11 +1,12 @@
 <template>
 	<view class="page container">
 		<!-- 标题栏 -->
-		<view class="header">
+		<!-- <view class="header">
 			<view class="back-arrow" @click="goBack"></view>
 			<text class="header-title">{{$t('inviteFriends')}}</text>
 			<view class="header-camera-icon"></view>
-		</view>
+		</view> -->
+		<uni-nav-bar statusBar fixed left-icon="left" backgroundColor="#f8fdfc" :title="$t('inviteFriends')" :border="false" @clickLeft="goBack"></uni-nav-bar>
 		<view style="text-align: center;">
 			<image src="../../static/images/invite/yqbanner.png"></image>
 		</view>

@@ -1,16 +1,16 @@
 <template>
 	<view class="page">
 		<!-- 标题栏 -->
-		<view class="background-container">
-
+		<view class="background-container" style="background: url('../../static/images/verify/sfbj.png') center center no-repeat;background-size: 100% 100%;">
 			<!-- 这里放置背景图片 -->
-			<image class="background-image" src="../../static/images/verify/sfbj.png"></image>
+			<!-- <image class="background-image" src="../../static/images/verify/sfbj.png"></image> -->
 			<!-- 这里放置标题内容 -->
-			<view class="header">
+			<!-- <view class="header">
 				<view class="back-arrow" @click="goBack"></view>
 				<text class="header-title">{{$t('realNameAuthentication')}}</text>
 				<view class="header-camera-icon"></view>
-			</view>
+			</view> -->
+			<uni-nav-bar statusBar fixed left-icon="left" color="#ffffff" backgroundColor="transparent" :title="$t('realNameAuthentication')" :border="false" @clickLeft="goBack"></uni-nav-bar>
 		</view>
 		<view style="background-color: rgb(255, 255, 255);
 					border-radius: 40rpx 40rpx 0px 0px;
