@@ -87,6 +87,9 @@
 <style lang="scss" scoped>
 	.transaction-pin {
 		padding: 40rpx;
+		background: url('../../../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		.cell {
 			margin-bottom: 40rpx;
 			&_title {
@@ -99,7 +102,7 @@
 			&_input {
 				padding: 10rpx 20rpx;
 				height: 90rpx;
-				background: #F4F5F7;
+				background: #FFFFFF;
 				border-radius: 10rpx;
 			}
 		}

@@ -114,9 +114,15 @@
 		}
 		.content {
 			padding: 30rpx;
+			background: #e6fcf6 url('../../../static/images/hm_bg.png') center center no-repeat;
+			background-size: 100% 100%;
+			min-height: 100vh;
 			.item {
-				padding: 30rpx 0;
-				border-bottom: 2rpx solid #F3F3F3;
+				padding: 30rpx;
+				// border-bottom: 2rpx solid #F3F3F3;
+				border-radius: 20rpx;
+				background-color: #fff;
+				margin-bottom: 30rpx;
 				.top {
 					display: flex;
 					justify-content: space-between;

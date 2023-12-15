@@ -139,9 +139,10 @@
 
 <style lang="scss" scoped>
 	page {
-		background-color: #f5f5f5;
 	}
 	.buy {
+		background-color: #f5f5f5;
+		min-height: 100vh;
 		padding: 40rpx;
 		.box1 {
 			height: 284rpx;

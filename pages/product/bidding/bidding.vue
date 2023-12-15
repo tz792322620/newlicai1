@@ -1,9 +1,9 @@
 <template>
 	<view
-		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;height: 100vh;">
+		style="background-image: url('../../../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100% 100%;min-height: 100vh;">
 		<view style="padding:30rpx;">
 			<view
-				style="background-image: url('../static/images/bidd_bg.png');background-repeat: no-repeat;background-size: 100%;height: 190rpx;color: #FFFFFF; padding: 40rpx 30rpx 40rpx 30rpx;">
+				style="background-image: url('../../../static/images/bidd_bg.png');background-repeat: no-repeat;background-size: 100%;height: 190rpx;color: #FFFFFF; padding: 40rpx 30rpx 40rpx 30rpx;">
 				<view class="u-flex">
 					<view style="width:280rpx;">{{$t('availableBalance')}}</view>
 					<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">{{$t('investableAmount')}}</view>

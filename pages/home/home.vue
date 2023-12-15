@@ -59,7 +59,7 @@
 			</view>
 		</view>
 		<view
-			style="padding:60rpx;background-image: url('../static/images/hm_bg2.png');background-repeat: no-repeat;background-size: 100%;height:540rpx;">
+			style="padding:60rpx;background-image: url('../../static/images/hm_bg2.png');background-repeat: no-repeat;background-size: 100%;height:540rpx;">
 			<view class="col35 f_bod" style="font-size:36rpx;">{{$t('hot')}}</view>
 			<view style="margin-top: 30rpx;" v-for="(item,index) in ProductList" :key="index">
 				<view class="u-flex">

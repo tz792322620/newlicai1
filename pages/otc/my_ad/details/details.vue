@@ -155,8 +155,14 @@
 
 <style lang="scss" scoped>
 	.details {
+		padding: 40rpx 30rpx;
+		background: url('../../../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		.content {
 			padding: 40rpx 30rpx;
+			background-color: #fff;
+			border-radius: 20rpx;
 			.button {
 				display: flex;
 				justify-content: flex-end;

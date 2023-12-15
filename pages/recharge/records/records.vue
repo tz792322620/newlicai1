@@ -82,9 +82,15 @@
 <style lang="scss" scoped>
 	.records {
 		padding: 30rpx 40rpx;
+		background: #e6fbf6 url('../../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		&_item {
-			padding: 30rpx 0;
-			border-bottom: 2rpx solid #F3F3F3;
+			padding: 30rpx 30rpx;
+			// border-bottom: 2rpx solid #333333;
+			border-radius: 20rpx;
+			background-color: #fff;
+			margin-bottom: 30rpx;
 			&_title,&_cell {
 				display: flex;
 				align-items: center;

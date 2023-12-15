@@ -317,7 +317,9 @@
 <style lang="scss" scoped>
 	.publish_ad {
 		padding: 40rpx;
-
+		background: #e6fcf6 url('../../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		.button {
 			height: 90rpx;
 			background: #35CBA5;
@@ -404,7 +406,7 @@
 			.input {
 				width: 320rpx;
 				height: 90rpx;
-				background: #F4F5F7;
+				background: #FFFFFF;
 				border-radius: 12rpx;
 				padding-left: 20rpx;
 				padding-right: 20rpx;

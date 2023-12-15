@@ -62,10 +62,16 @@
 
 <style lang="scss" scoped>
 	.earnings {
-		padding: 10rpx 40rpx;
+		padding: 40rpx;
+		background: #e6fbf6 url('../../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		&_item {
-			padding: 30rpx 0;
-			border-bottom: 1px solid #d1d1d1;
+			padding: 30rpx 30rpx;
+			// border-bottom: 1px solid #d1d1d1;
+			border-radius: 20rpx;
+			background-color: #fff;
+			margin-bottom: 30rpx;
 			.title {
 				font-size: 28rpx;
 				font-weight: 600;

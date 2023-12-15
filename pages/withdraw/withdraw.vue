@@ -189,7 +189,9 @@
 		/deep/.u-iconfont {
 			color: #9a9a9a !important;
 		}
-
+		background: url('../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		.status_bar {
 			height: var(--status-bar-height);
 			width: 100%;
@@ -232,7 +234,7 @@
 					align-items: center;
 					justify-content: space-between;
 					height: 90rpx;
-					background: #F4F5F7;
+					background: #FFFFFF;
 					border-radius: 10rpx;
 					padding: 0 20rpx;
 

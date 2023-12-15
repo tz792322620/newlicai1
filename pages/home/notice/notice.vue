@@ -51,10 +51,16 @@
 
 <style lang="scss" scoped>
 	.notice {
-		padding: 10rpx 40rpx;
+		padding: 40rpx;
+		background: #e6fbf6 url('../../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		.item {
-			padding: 20rpx 0;
-			border-bottom: 2rpx solid #F3F3F3;
+			padding: 30rpx;
+			// border-bottom: 2rpx solid #F3F3F3;
+			border-radius: 20rpx;
+			background-color: #fff;
+			margin-bottom: 30rpx;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
