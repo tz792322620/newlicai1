@@ -8711,7 +8711,7 @@ var render = function () {
                         attrs: { _i: "13-" + $30 },
                       },
                       [
-                        _vm._v("收益率："),
+                        _vm._v(_vm._$g("13-" + $30, "t0-0") + "："),
                         _c(
                           "v-uni-text",
                           {
@@ -8731,14 +8731,20 @@ var render = function () {
                         attrs: { _i: "15-" + $30 },
                       },
                       [
-                        _vm._v("限购次数："),
+                        _vm._v(_vm._$g("15-" + $30, "t0-0") + "："),
                         _c(
                           "v-uni-text",
                           {
                             staticStyle: { color: "#21BF90" },
                             attrs: { _i: "16-" + $30 },
                           },
-                          [_vm._v(_vm._$g("16-" + $30, "t0-0") + " 次")]
+                          [
+                            _vm._v(
+                              _vm._$g("16-" + $30, "t0-0") +
+                                " " +
+                                _vm._$g("16-" + $30, "t0-1")
+                            ),
+                          ]
                         ),
                       ],
                       1
@@ -8765,7 +8771,7 @@ var render = function () {
                         attrs: { _i: "18-" + $30 },
                       },
                       [
-                        _vm._v("最低购买限额："),
+                        _vm._v(_vm._$g("18-" + $30, "t0-0") + "："),
                         _c(
                           "v-uni-text",
                           {
@@ -8785,7 +8791,7 @@ var render = function () {
                         attrs: { _i: "20-" + $30 },
                       },
                       [
-                        _vm._v("最高购买限额："),
+                        _vm._v(_vm._$g("20-" + $30, "t0-0") + "："),
                         _c(
                           "v-uni-text",
                           {
@@ -8819,7 +8825,7 @@ var render = function () {
                         attrs: { _i: "23-" + $30 },
                       },
                       [
-                        _vm._v("已售出份额："),
+                        _vm._v(_vm._$g("23-" + $30, "t0-0") + "："),
                         _c(
                           "v-uni-text",
                           {
@@ -8839,7 +8845,7 @@ var render = function () {
                         attrs: { _i: "25-" + $30 },
                       },
                       [
-                        _vm._v("募资总额\t："),
+                        _vm._v(_vm._$g("25-" + $30, "t0-0") + "："),
                         _c(
                           "v-uni-text",
                           {
@@ -8890,7 +8896,9 @@ var render = function () {
                           attrs: { _i: "31-" + $30 },
                         }),
                         _vm._v(
-                          "投资周期" + _vm._$g("30-" + $30, "t1-0") + "天"
+                          _vm._$g("30-" + $30, "t1-0") +
+                            _vm._$g("30-" + $30, "t1-1") +
+                            _vm._$g("30-" + $30, "t1-2")
                         ),
                       ],
                       1
@@ -13472,6 +13480,7 @@ var render = function () {
         ],
         1
       ),
+      _c("floating-customer-service", { attrs: { _i: 33 } }),
     ],
     1
   )
@@ -13714,17 +13723,21 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 43);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _FloatingCustomerService = _interopRequireDefault(__webpack_require__(/*! @/components/FloatingCustomerService/FloatingCustomerService.vue */ 166));
 var _default = {
   data: function data() {
     return {
       wxsProps: {}
     };
   },
-  components: {}
+  components: {
+    'FloatingCustomerService': _FloatingCustomerService.default
+  }
 };
 exports.default = _default;
 

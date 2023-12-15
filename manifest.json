@@ -1,5 +1,5 @@
 {
-    "name" : "新股理财",
+    "name" : "broad",
     "appid" : "__UNI__G432CEDF",
     "description" : "",
     "versionName" : "1.0.0",
@@ -12,7 +12,7 @@
         "compilerVersion" : 3,
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
-            "waiting" : true,
+            "waiting" : false,
             "autoclose" : true,
             "delay" : 0
         },
@@ -47,6 +47,57 @@
             /* SDK配置 */
             "sdkConfigs" : {
                 "ad" : {}
+            },
+            "splashscreen" : {
+                "useOriginalMsgbox" : false,
+                "androidStyle" : "default",
+                "iosStyle" : "default",
+                "android" : {
+                    "hdpi" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/android/drawable-port-ldpi/screen.png",
+                    "xhdpi" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/android/drawable-port-ldpi/screen.png",
+                    "xxhdpi" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/android/drawable-port-ldpi/screen.png"
+                },
+                "ios" : {
+                    "iphone" : {
+                        "portrait-896h@3x" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/ios/LaunchImage.launchimage/Default-667h.png",
+                        "landscape-896h@3x" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/ios/LaunchImage.launchimage/Default-736h.png",
+                        "portrait-896h@2x" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/ios/LaunchImage.launchimage/Default-1792h.png",
+                        "landscape-896h@2x" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/ios/LaunchImage.launchimage/Default-2436h.png",
+                        "iphonex" : "C:/Users/Administrator/Downloads/LaunchImage/LaunchImage/ios/LaunchImage.launchimage/Default-1792h.png"
+                    }
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
             }
         }
     },
@@ -79,7 +130,7 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/api" : {
-                    "target" : "https://xingu.bianceok.info/api", // 测试
+                    "target" : "https://api.broadreachvip.top/api", // 测试
                     "changeOrigin" : true,
                     "secure" : false,
                     "pathRewrite" : {

@@ -3,7 +3,8 @@
 		<view class="cell" v-for="(item,index) in list" :key="index">
 			<view class="cell_left">
 				<view class="description">
-					{{item.description}}
+			<!-- 		{{item.description}} -->
+					{{ getStatusTranslation(item.description) }}
 				</view>
 				<view class="date">
 					{{item.create_time | timestampFilter}}
@@ -33,6 +34,10 @@
 			this.getData()
 		},
 		methods: {
+			getStatusTranslation(status) {
+							// console.log(status)
+			  return this.$t(status);
+			},
 			async getData() {
 				const res = await getUserFlow()
 				if (res.code === 1) {

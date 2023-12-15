@@ -70,14 +70,19 @@
 				</view>
 			</u-popup>
 		</view>
+		<floating-customer-service></floating-customer-service>
 	</view>
 </template>
 
 <script>
 	import {
 		createRecharge
-	} from '@/api/api.js'
+	} from '@/api/api.js';
+	import FloatingCustomerService from '@/components/FloatingCustomerService/FloatingCustomerService.vue';
 	export default {
+		components: {
+				FloatingCustomerService
+		},
 		data() {
 			return {
 				data: {
