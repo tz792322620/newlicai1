@@ -423,5 +423,6 @@
 	"createStockOrder": "创建股票订单",
 	"signIn": "签到",
 	"withdrawal": "提款",
-	"withdrawFromYuebao": "从余额宝提现"
+	"withdrawFromYuebao": "从余额宝提现",
+	"time": "时间"
 }

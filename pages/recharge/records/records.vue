@@ -7,7 +7,8 @@
 				</view>
 				<view class="records_item_title_right" :class="item.recharge_status == 'Failed' ? 'fail' : ''">
 					<!-- {{item.recharge_status == 'Confirmed' ? '充值成功' : item.recharge_status == 'Failed' ? '充值失败' : item.recharge_status == 'Pending' ? '待确认' : ''}} -->
-					{{item.recharge_status}}
+					<!-- {{item.recharge_status}} -->
+					{{ getStatusTranslation(item.recharge_status) }}
 				</view>
 			</view>
 			<view class="records_item_cell">
@@ -36,7 +37,7 @@
 			</view>
 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
-					{{$t('times')}}
+					{{$t('time')}}
 				</view>
 				<view class="records_item_cell_right">
 					{{item.recharge_date}}
@@ -63,6 +64,10 @@
 			this.getData()
 		},
 		methods: {
+			getStatusTranslation(status) {
+							// console.log(status)
+			  return this.$t(status);
+			},
 			async toDetails(item) {
 				uni.navigateTo({
 					url: `/pages/recharge/records/details?id=${item.recharge_id}`

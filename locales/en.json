@@ -419,5 +419,6 @@
 			"createStockOrder": "Create stock order",
 			"signIn": "Sign in",
 			"withdrawal": "Withdrawal",
-			"withdrawFromYuebao": "Withdraw from Yuebao"
+			"withdrawFromYuebao": "Withdraw from Yuebao",
+			 "time": "Time"
 }
