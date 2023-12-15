@@ -5997,28 +5997,30 @@ module.exports = exports;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.vue?vue&type=template&id=44021cb6&mpType=page */ 122);
+/* harmony import */ var _home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home.vue?vue&type=template&id=44021cb6&scoped=true&mpType=page */ 122);
 /* harmony import */ var _home_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.vue?vue&type=script&lang=js&mpType=page */ 164);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _home_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _home_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 16);
+/* harmony import */ var _home_vue_vue_type_style_index_0_id_44021cb6_scoped_true_lang_scss_mpType_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home.vue?vue&type=style&index=0&id=44021cb6&scoped=true&lang=scss&mpType=page */ 177);
+/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 16);
 
 var renderjs
 
 
 
 
+
 /* normalize component */
 
-var component = Object(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _home_vue_vue_type_script_lang_js_mpType_page__WEBPACK_IMPORTED_MODULE_1__["default"],
-  _home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"],
-  _home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"],
+  _home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "44021cb6",
   null,
   false,
-  _home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"],
+  _home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"],
   renderjs
 )
 
@@ -6027,30 +6029,30 @@ component.options.__file = "pages/home/home.vue"
 
 /***/ }),
 /* 122 */
-/*!******************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/home/home.vue?vue&type=template&id=44021cb6&mpType=page ***!
-  \******************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/home/home.vue?vue&type=template&id=44021cb6&scoped=true&mpType=page ***!
+  \******************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./home.vue?vue&type=template&id=44021cb6&mpType=page */ 123);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./home.vue?vue&type=template&id=44021cb6&scoped=true&mpType=page */ 123);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_template_id_44021cb6_scoped_true_mpType_page__WEBPACK_IMPORTED_MODULE_0__["components"]; });
 
 
 
 /***/ }),
 /* 123 */
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/home/home.vue?vue&type=template&id=44021cb6&mpType=page ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/home/home.vue?vue&type=template&id=44021cb6&scoped=true&mpType=page ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -6099,25 +6101,50 @@ var render = function () {
     "uni-view",
     {
       staticStyle: {
-        "background-image": "url('../static/images/hm_bg.png')",
-        "background-repeat": "no-repeat",
-        "background-size": "100%",
-        height: "100vh",
+        background:
+          "url('../../static/images/hm_bg.png') center center no-repeat",
+        "background-size": "100% 100%",
+        "min-height": "100vh",
       },
       attrs: { _i: 0 },
     },
     [
+      _c("uni-view", {
+        staticClass: _vm._$g(1, "sc"),
+        staticStyle: {
+          position: "fixed",
+          width: "100%",
+          background: "linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%)",
+          "z-index": "999",
+        },
+        attrs: { _i: 1 },
+      }),
       _c(
         "uni-view",
-        { staticStyle: { padding: "30rpx" }, attrs: { _i: 1 } },
+        { staticStyle: { padding: "30rpx" }, attrs: { _i: 2 } },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
+            {
+              staticClass: _vm._$g(3, "sc"),
+              staticStyle: {
+                position: "fixed",
+                width: "100%",
+                height: "88rpx",
+                "align-items": "center",
+                "justify-content": "center",
+                left: "0",
+                top: "var(--status-bar-height)",
+                background:
+                  "linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%)",
+                "z-index": "999",
+              },
+              attrs: { _i: 3 },
+            },
             [
               _c(
                 "uni-view",
-                { attrs: { _i: 3 } },
+                { attrs: { _i: 4 } },
                 [
                   _c("v-uni-image", {
                     staticStyle: {
@@ -6125,7 +6152,7 @@ var render = function () {
                       height: "60rpx",
                       "border-radius": "50%",
                     },
-                    attrs: { src: _vm._$g(4, "a-src"), _i: 4 },
+                    attrs: { src: _vm._$g(5, "a-src"), _i: 5 },
                   }),
                 ],
                 1
@@ -6134,14 +6161,14 @@ var render = function () {
                 "uni-view",
                 {
                   staticStyle: { "margin-left": "10rpx", width: "480rpx" },
-                  attrs: { _i: 5 },
+                  attrs: { _i: 6 },
                 },
-                [_c("u-search", { attrs: { _i: 6 } })],
+                [_c("u-search", { attrs: { _i: 7 } })],
                 1
               ),
               _c(
                 "uni-view",
-                { attrs: { _i: 7 } },
+                { attrs: { _i: 8 } },
                 [
                   _c("v-uni-image", {
                     staticStyle: {
@@ -6151,15 +6178,15 @@ var render = function () {
                       "margin-top": "10rpx",
                       "margin-left": "30rpx",
                     },
-                    attrs: { src: _vm._$g(8, "a-src"), _i: 8 },
+                    attrs: { src: _vm._$g(9, "a-src"), _i: 9 },
                   }),
                 ],
                 1
               ),
               _c(
                 "uni-view",
-                { attrs: { _i: 9 } },
-                [_c("language", { attrs: { _i: 10 } })],
+                { attrs: { _i: 10 } },
+                [_c("language", { attrs: { _i: 11 } })],
                 1
               ),
             ],
@@ -6167,23 +6194,16 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            {
-              staticStyle: {
-                "margin-top": "60rpx",
-                color: "#333333",
-                "font-size": "24rpx",
-              },
-              attrs: { _i: 11 },
-            },
+            { style: _vm._$g(12, "s"), attrs: { _i: 12 } },
             [
               _c(
                 "u-row",
-                { attrs: { _i: 12 } },
+                { attrs: { _i: 13 } },
                 [
                   _c(
                     "u-col",
                     {
-                      attrs: { _i: 13 },
+                      attrs: { _i: 14 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -6193,14 +6213,14 @@ var render = function () {
                     [
                       _c(
                         "uni-view",
-                        { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                        { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
                         [
                           _c("v-uni-image", {
                             staticStyle: { width: "92rpx", height: "92rpx" },
-                            attrs: { src: _vm._$g(15, "a-src"), _i: 15 },
+                            attrs: { src: _vm._$g(16, "a-src"), _i: 16 },
                           }),
-                          _c("uni-view", { attrs: { _i: 16 } }, [
-                            _vm._v(_vm._$g(16, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 17 } }, [
+                            _vm._v(_vm._$g(17, "t0-0")),
                           ]),
                         ],
                         1
@@ -6211,7 +6231,7 @@ var render = function () {
                   _c(
                     "u-col",
                     {
-                      attrs: { _i: 17 },
+                      attrs: { _i: 18 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -6221,14 +6241,14 @@ var render = function () {
                     [
                       _c(
                         "uni-view",
-                        { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+                        { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
                         [
                           _c("v-uni-image", {
                             staticStyle: { width: "92rpx", height: "92rpx" },
-                            attrs: { src: _vm._$g(19, "a-src"), _i: 19 },
+                            attrs: { src: _vm._$g(20, "a-src"), _i: 20 },
                           }),
-                          _c("uni-view", { attrs: { _i: 20 } }, [
-                            _vm._v(_vm._$g(20, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 21 } }, [
+                            _vm._v(_vm._$g(21, "t0-0")),
                           ]),
                         ],
                         1
@@ -6239,7 +6259,7 @@ var render = function () {
                   _c(
                     "u-col",
                     {
-                      attrs: { _i: 21 },
+                      attrs: { _i: 22 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -6249,14 +6269,14 @@ var render = function () {
                     [
                       _c(
                         "uni-view",
-                        { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+                        { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
                         [
                           _c("v-uni-image", {
                             staticStyle: { width: "92rpx", height: "92rpx" },
-                            attrs: { src: _vm._$g(23, "a-src"), _i: 23 },
+                            attrs: { src: _vm._$g(24, "a-src"), _i: 24 },
                           }),
-                          _c("uni-view", { attrs: { _i: 24 } }, [
-                            _vm._v(_vm._$g(24, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 25 } }, [
+                            _vm._v(_vm._$g(25, "t0-0")),
                           ]),
                         ],
                         1
@@ -6267,7 +6287,7 @@ var render = function () {
                   _c(
                     "u-col",
                     {
-                      attrs: { _i: 25 },
+                      attrs: { _i: 26 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -6277,14 +6297,14 @@ var render = function () {
                     [
                       _c(
                         "uni-view",
-                        { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
+                        { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
                         [
                           _c("v-uni-image", {
                             staticStyle: { width: "92rpx", height: "92rpx" },
-                            attrs: { src: _vm._$g(27, "a-src"), _i: 27 },
+                            attrs: { src: _vm._$g(28, "a-src"), _i: 28 },
                           }),
-                          _c("uni-view", { attrs: { _i: 28 } }, [
-                            _vm._v(_vm._$g(28, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 29 } }, [
+                            _vm._v(_vm._$g(29, "t0-0")),
                           ]),
                         ],
                         1
@@ -6301,14 +6321,14 @@ var render = function () {
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(29, "sc"),
+              staticClass: _vm._$g(30, "sc"),
               staticStyle: {
                 "background-color": "#FFFFFF",
                 "border-radius": "12rpx",
                 padding: "13rpx 15rpx 13rpx 15rpx",
                 "margin-top": "20rpx",
               },
-              attrs: { _i: 29 },
+              attrs: { _i: 30 },
               on: {
                 click: function ($event) {
                   return _vm.$handleViewEvent($event)
@@ -6322,18 +6342,18 @@ var render = function () {
                   height: "28rpx",
                   "margin-right": "20rpx",
                 },
-                attrs: { src: _vm._$g(30, "a-src"), _i: 30 },
+                attrs: { src: _vm._$g(31, "a-src"), _i: 31 },
               }),
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(31, "sc"),
+                  staticClass: _vm._$g(32, "sc"),
                   staticStyle: { width: "580rpx", color: "#333333" },
-                  attrs: { _i: 31 },
+                  attrs: { _i: 32 },
                 },
-                [_vm._v(_vm._$g(31, "t0-0"))]
+                [_vm._v(_vm._$g(32, "t0-0"))]
               ),
-              _c("u-icon", { attrs: { _i: 32 } }),
+              _c("u-icon", { attrs: { _i: 33 } }),
             ],
             1
           ),
@@ -6350,47 +6370,34 @@ var render = function () {
             "background-size": "100%",
             height: "540rpx",
           },
-          attrs: { _i: 33 },
+          attrs: { _i: 34 },
         },
         [
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(34, "sc"),
+              staticClass: _vm._$g(35, "sc"),
               staticStyle: { "font-size": "36rpx" },
-              attrs: { _i: 34 },
+              attrs: { _i: 35 },
             },
-            [_vm._v(_vm._$g(34, "t0-0"))]
+            [_vm._v(_vm._$g(35, "t0-0"))]
           ),
-          _vm._l(_vm._$g(35, "f"), function (item, index, $20, $30) {
+          _vm._l(_vm._$g(36, "f"), function (item, index, $20, $30) {
             return _c(
               "uni-view",
               {
                 key: item,
                 staticStyle: { "margin-top": "30rpx" },
-                attrs: { _i: "35-" + $30 },
+                attrs: { _i: "36-" + $30 },
               },
               [
                 _c(
                   "uni-view",
                   {
-                    staticClass: _vm._$g("36-" + $30, "sc"),
-                    attrs: { _i: "36-" + $30 },
+                    staticClass: _vm._$g("37-" + $30, "sc"),
+                    attrs: { _i: "37-" + $30 },
                   },
                   [
-                    _vm._$g("37-" + $30, "i")
-                      ? _c("v-uni-image", {
-                          staticStyle: {
-                            width: "64rpx",
-                            height: "64rpx",
-                            "margin-right": "20rpx",
-                          },
-                          attrs: {
-                            src: _vm._$g("37-" + $30, "a-src"),
-                            _i: "37-" + $30,
-                          },
-                        })
-                      : _vm._e(),
                     _vm._$g("38-" + $30, "i")
                       ? _c("v-uni-image", {
                           staticStyle: {
@@ -6417,15 +6424,28 @@ var render = function () {
                           },
                         })
                       : _vm._e(),
+                    _vm._$g("40-" + $30, "i")
+                      ? _c("v-uni-image", {
+                          staticStyle: {
+                            width: "64rpx",
+                            height: "64rpx",
+                            "margin-right": "20rpx",
+                          },
+                          attrs: {
+                            src: _vm._$g("40-" + $30, "a-src"),
+                            _i: "40-" + $30,
+                          },
+                        })
+                      : _vm._e(),
                     _c(
                       "uni-view",
                       {
                         staticStyle: { width: "220rpx" },
-                        attrs: { _i: "40-" + $30 },
+                        attrs: { _i: "41-" + $30 },
                       },
                       [
-                        _c("uni-view", { attrs: { _i: "41-" + $30 } }, [
-                          _vm._v(_vm._$g("41-" + $30, "t0-0")),
+                        _c("uni-view", { attrs: { _i: "42-" + $30 } }, [
+                          _vm._v(_vm._$g("42-" + $30, "t0-0")),
                         ]),
                         _c(
                           "uni-view",
@@ -6434,7 +6454,7 @@ var render = function () {
                               color: "#999999",
                               "font-size": "24rpx",
                             },
-                            attrs: { _i: "42-" + $30 },
+                            attrs: { _i: "43-" + $30 },
                           },
                           [_vm._v("603809.sz")]
                         ),
@@ -6444,21 +6464,21 @@ var render = function () {
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("43-" + $30, "sc"),
+                        staticClass: _vm._$g("44-" + $30, "sc"),
                         staticStyle: { "font-size": "32rpx" },
-                        attrs: { _i: "43-" + $30 },
+                        attrs: { _i: "44-" + $30 },
                       },
                       [_vm._v("+2.19%")]
                     ),
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("44-" + $30, "sc"),
+                        staticClass: _vm._$g("45-" + $30, "sc"),
                         staticStyle: {
                           "font-size": "32rpx",
                           "margin-left": "80rpx",
                         },
-                        attrs: { _i: "44-" + $30 },
+                        attrs: { _i: "45-" + $30 },
                       },
                       [_vm._v("¥12.06")]
                     ),
@@ -6469,9 +6489,9 @@ var render = function () {
                   "uni-view",
                   {
                     staticStyle: { "margin-top": "15rpx" },
-                    attrs: { _i: "45-" + $30 },
+                    attrs: { _i: "46-" + $30 },
                   },
-                  [_c("u-line", { attrs: { _i: "46-" + $30 } })],
+                  [_c("u-line", { attrs: { _i: "47-" + $30 } })],
                   1
                 ),
               ],
@@ -6481,58 +6501,58 @@ var render = function () {
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(47, "sc"),
+              staticClass: _vm._$g(48, "sc"),
               staticStyle: {
                 "font-weight": "bold",
                 "font-size": "32rpx",
                 "margin-top": "30rpx",
               },
-              attrs: { _i: 47 },
+              attrs: { _i: 48 },
             },
-            [_vm._v(_vm._$g(47, "t0-0"))]
+            [_vm._v(_vm._$g(48, "t0-0"))]
           ),
         ],
         2
       ),
       _c(
         "uni-view",
-        { staticStyle: { padding: "30rpx" }, attrs: { _i: 48 } },
+        { staticStyle: { padding: "30rpx" }, attrs: { _i: 49 } },
         [
           _c(
             "uni-view",
             {
               staticStyle: { "font-size": "32rpx", "font-weight": "bold" },
-              attrs: { _i: 49 },
+              attrs: { _i: 50 },
             },
-            [_vm._v(_vm._$g(49, "t0-0"))]
+            [_vm._v(_vm._$g(50, "t0-0"))]
           ),
           _c(
             "uni-view",
-            { staticStyle: { "margin-top": "20rpx" }, attrs: { _i: 50 } },
+            { staticStyle: { "margin-top": "20rpx" }, attrs: { _i: 51 } },
             [
               _c(
                 "v-uni-swiper",
                 {
-                  staticClass: _vm._$g(51, "sc"),
+                  staticClass: _vm._$g(52, "sc"),
                   attrs: {
                     "display-multiple-items": _vm._$g(
-                      51,
+                      52,
                       "a-display-multiple-items"
                     ),
-                    "next-margin": _vm._$g(51, "a-next-margin"),
-                    _i: 51,
+                    "next-margin": _vm._$g(52, "a-next-margin"),
+                    _i: 52,
                   },
                 },
                 [
-                  _vm._l(_vm._$g(52, "f"), function (item, index, $21, $31) {
+                  _vm._l(_vm._$g(53, "f"), function (item, index, $21, $31) {
                     return _c(
                       "v-uni-swiper-item",
-                      { key: item, attrs: { _i: "52-" + $31 } },
+                      { key: item, attrs: { _i: "53-" + $31 } },
                       [
                         _c(
                           "uni-view",
                           {
-                            staticClass: _vm._$g("53-" + $31, "sc"),
+                            staticClass: _vm._$g("54-" + $31, "sc"),
                             staticStyle: {
                               display: "inline-block",
                               "padding-top": "30rpx",
@@ -6544,14 +6564,14 @@ var render = function () {
                               "border-radius": "16rpx",
                               "margin-right": "20rpx",
                             },
-                            attrs: { _i: "53-" + $31 },
+                            attrs: { _i: "54-" + $31 },
                           },
                           [
                             _c(
                               "uni-view",
-                              { attrs: { _i: "54-" + $31 } },
+                              { attrs: { _i: "55-" + $31 } },
                               [
-                                _vm._v(_vm._$g("54-" + $31, "t0-0")),
+                                _vm._v(_vm._$g("55-" + $31, "t0-0")),
                                 _c(
                                   "v-uni-text",
                                   {
@@ -6559,9 +6579,9 @@ var render = function () {
                                       "font-size": "24rpx",
                                       color: "#999999",
                                     },
-                                    attrs: { _i: "55-" + $31 },
+                                    attrs: { _i: "56-" + $31 },
                                   },
-                                  [_vm._v(_vm._$g("55-" + $31, "t0-0"))]
+                                  [_vm._v(_vm._$g("56-" + $31, "t0-0"))]
                                 ),
                               ],
                               1
@@ -6569,23 +6589,23 @@ var render = function () {
                             _c(
                               "uni-view",
                               {
-                                staticClass: _vm._$g("56-" + $31, "sc"),
+                                staticClass: _vm._$g("57-" + $31, "sc"),
                                 staticStyle: {
                                   "font-weight": "bold",
                                   "font-size": "32rpx",
                                   "margin-top": "30rpx",
                                 },
-                                attrs: { _i: "56-" + $31 },
+                                attrs: { _i: "57-" + $31 },
                               },
-                              [_vm._v(_vm._$g("56-" + $31, "t0-0") + "%")]
+                              [_vm._v(_vm._$g("57-" + $31, "t0-0") + "%")]
                             ),
                             _c(
                               "uni-view",
                               {
                                 staticStyle: { "margin-top": "20rpx" },
-                                attrs: { _i: "57-" + $31 },
+                                attrs: { _i: "58-" + $31 },
                               },
-                              [_vm._v(_vm._$g("57-" + $31, "t0-0") + "元起投")]
+                              [_vm._v(_vm._$g("58-" + $31, "t0-0") + "元起投")]
                             ),
                           ],
                           1
@@ -6594,7 +6614,7 @@ var render = function () {
                       1
                     )
                   }),
-                  _c("v-uni-swiper-item", { attrs: { _i: 58 } }),
+                  _c("v-uni-swiper-item", { attrs: { _i: 59 } }),
                 ],
                 2
               ),
@@ -6603,27 +6623,27 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticStyle: { "margin-top": "20rpx" }, attrs: { _i: 59 } },
+            { staticStyle: { "margin-top": "20rpx" }, attrs: { _i: 60 } },
             [
               _c(
                 "u-row",
-                { attrs: { _i: 60 } },
+                { attrs: { _i: 61 } },
                 [
                   _c(
                     "u-col",
-                    { attrs: { _i: 61 } },
+                    { attrs: { _i: 62 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(62, "sc"),
-                          class: _vm._$g(62, "c"),
+                          staticClass: _vm._$g(63, "sc"),
+                          class: _vm._$g(63, "c"),
                           staticStyle: {
                             color: "#999999",
                             "font-size": "30rpx",
                             "font-weight": "bold",
                           },
-                          attrs: { _i: 62 },
+                          attrs: { _i: 63 },
                           on: {
                             click: function ($event) {
                               return _vm.$handleViewEvent($event)
@@ -6631,10 +6651,10 @@ var render = function () {
                           },
                         },
                         [
-                          _c("uni-view", { attrs: { _i: 63 } }, [
-                            _vm._v(_vm._$g(63, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 64 } }, [
+                            _vm._v(_vm._$g(64, "t0-0")),
                           ]),
-                          _vm._$g(64, "i")
+                          _vm._$g(65, "i")
                             ? _c("uni-view", {
                                 staticStyle: {
                                   width: "120rpx",
@@ -6643,7 +6663,7 @@ var render = function () {
                                   background:
                                     "linear-gradient(#35CBA5,#FFFFFF)",
                                 },
-                                attrs: { _i: 64 },
+                                attrs: { _i: 65 },
                               })
                             : _vm._e(),
                         ],
@@ -6654,19 +6674,19 @@ var render = function () {
                   ),
                   _c(
                     "u-col",
-                    { attrs: { _i: 65 } },
+                    { attrs: { _i: 66 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(66, "sc"),
-                          class: _vm._$g(66, "c"),
+                          staticClass: _vm._$g(67, "sc"),
+                          class: _vm._$g(67, "c"),
                           staticStyle: {
                             color: "#999999",
                             "font-size": "30rpx",
                             "font-weight": "bold",
                           },
-                          attrs: { _i: 66 },
+                          attrs: { _i: 67 },
                           on: {
                             click: function ($event) {
                               return _vm.$handleViewEvent($event)
@@ -6674,10 +6694,10 @@ var render = function () {
                           },
                         },
                         [
-                          _c("uni-view", { attrs: { _i: 67 } }, [
-                            _vm._v(_vm._$g(67, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 68 } }, [
+                            _vm._v(_vm._$g(68, "t0-0")),
                           ]),
-                          _vm._$g(68, "i")
+                          _vm._$g(69, "i")
                             ? _c("uni-view", {
                                 staticStyle: {
                                   width: "120rpx",
@@ -6686,7 +6706,7 @@ var render = function () {
                                   background:
                                     "linear-gradient(#35CBA5,#FFFFFF)",
                                 },
-                                attrs: { _i: 68 },
+                                attrs: { _i: 69 },
                               })
                             : _vm._e(),
                         ],
@@ -6697,19 +6717,19 @@ var render = function () {
                   ),
                   _c(
                     "u-col",
-                    { attrs: { _i: 69 } },
+                    { attrs: { _i: 70 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(70, "sc"),
-                          class: _vm._$g(70, "c"),
+                          staticClass: _vm._$g(71, "sc"),
+                          class: _vm._$g(71, "c"),
                           staticStyle: {
                             color: "#999999",
                             "font-size": "30rpx",
                             "font-weight": "bold",
                           },
-                          attrs: { _i: 70 },
+                          attrs: { _i: 71 },
                           on: {
                             click: function ($event) {
                               return _vm.$handleViewEvent($event)
@@ -6717,10 +6737,10 @@ var render = function () {
                           },
                         },
                         [
-                          _c("uni-view", { attrs: { _i: 71 } }, [
-                            _vm._v(_vm._$g(71, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 72 } }, [
+                            _vm._v(_vm._$g(72, "t0-0")),
                           ]),
-                          _vm._$g(72, "i")
+                          _vm._$g(73, "i")
                             ? _c("uni-view", {
                                 staticStyle: {
                                   width: "120rpx",
@@ -6729,7 +6749,7 @@ var render = function () {
                                   background:
                                     "linear-gradient(#35CBA5,#FFFFFF)",
                                 },
-                                attrs: { _i: 72 },
+                                attrs: { _i: 73 },
                               })
                             : _vm._e(),
                         ],
@@ -6740,19 +6760,19 @@ var render = function () {
                   ),
                   _c(
                     "u-col",
-                    { attrs: { _i: 73 } },
+                    { attrs: { _i: 74 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(74, "sc"),
-                          class: _vm._$g(74, "c"),
+                          staticClass: _vm._$g(75, "sc"),
+                          class: _vm._$g(75, "c"),
                           staticStyle: {
                             color: "#999999",
                             "font-size": "30rpx",
                             "font-weight": "bold",
                           },
-                          attrs: { _i: 74 },
+                          attrs: { _i: 75 },
                           on: {
                             click: function ($event) {
                               return _vm.$handleViewEvent($event)
@@ -6760,10 +6780,10 @@ var render = function () {
                           },
                         },
                         [
-                          _c("uni-view", { attrs: { _i: 75 } }, [
-                            _vm._v(_vm._$g(75, "t0-0")),
+                          _c("uni-view", { attrs: { _i: 76 } }, [
+                            _vm._v(_vm._$g(76, "t0-0")),
                           ]),
-                          _vm._$g(76, "i")
+                          _vm._$g(77, "i")
                             ? _c("uni-view", {
                                 staticStyle: {
                                   width: "120rpx",
@@ -6772,7 +6792,7 @@ var render = function () {
                                   background:
                                     "linear-gradient(#35CBA5,#FFFFFF)",
                                 },
-                                attrs: { _i: 76 },
+                                attrs: { _i: 77 },
                               })
                             : _vm._e(),
                         ],
@@ -6794,7 +6814,7 @@ var render = function () {
                 "margin-bottom": "50rpx",
                 "padding-bottom": "40rpx",
               },
-              attrs: { _i: 77 },
+              attrs: { _i: 78 },
             },
             [
               _c(
@@ -6805,22 +6825,22 @@ var render = function () {
                     color: "#999999",
                     "margin-top": "20rpx",
                   },
-                  attrs: { _i: 78 },
+                  attrs: { _i: 79 },
                 },
                 [
                   _c(
                     "u-row",
-                    { attrs: { _i: 79 } },
+                    { attrs: { _i: 80 } },
                     [
                       _c(
                         "u-col",
-                        { attrs: { _i: 80 } },
+                        { attrs: { _i: 81 } },
                         [
                           _c(
                             "uni-view",
                             {
                               staticStyle: { color: "#666666" },
-                              attrs: { _i: 81 },
+                              attrs: { _i: 82 },
                               on: {
                                 click: function ($event) {
                                   return _vm.$handleViewEvent($event)
@@ -6831,9 +6851,9 @@ var render = function () {
                               _c(
                                 "v-uni-text",
                                 {
-                                  staticClass: _vm._$g(82, "sc"),
-                                  class: _vm._$g(82, "c"),
-                                  attrs: { _i: 82 },
+                                  staticClass: _vm._$g(83, "sc"),
+                                  class: _vm._$g(83, "c"),
+                                  attrs: { _i: 83 },
                                 },
                                 [_vm._v("名称")]
                               ),
@@ -6845,14 +6865,14 @@ var render = function () {
                       ),
                       _c(
                         "u-col",
-                        { attrs: { _i: 83 } },
+                        { attrs: { _i: 84 } },
                         [
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g(84, "sc"),
+                              staticClass: _vm._$g(85, "sc"),
                               staticStyle: { color: "#666666" },
-                              attrs: { _i: 84 },
+                              attrs: { _i: 85 },
                               on: {
                                 click: function ($event) {
                                   return _vm.$handleViewEvent($event)
@@ -6863,9 +6883,9 @@ var render = function () {
                               _c(
                                 "v-uni-text",
                                 {
-                                  staticClass: _vm._$g(85, "sc"),
-                                  class: _vm._$g(85, "c"),
-                                  attrs: { _i: 85 },
+                                  staticClass: _vm._$g(86, "sc"),
+                                  class: _vm._$g(86, "c"),
+                                  attrs: { _i: 86 },
                                 },
                                 [_vm._v("持仓期限")]
                               ),
@@ -6877,14 +6897,14 @@ var render = function () {
                       ),
                       _c(
                         "u-col",
-                        { attrs: { _i: 86 } },
+                        { attrs: { _i: 87 } },
                         [
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g(87, "sc"),
+                              staticClass: _vm._$g(88, "sc"),
                               staticStyle: { color: "#666666" },
-                              attrs: { _i: 87 },
+                              attrs: { _i: 88 },
                               on: {
                                 click: function ($event) {
                                   return _vm.$handleViewEvent($event)
@@ -6895,9 +6915,9 @@ var render = function () {
                               _c(
                                 "v-uni-text",
                                 {
-                                  staticClass: _vm._$g(88, "sc"),
-                                  class: _vm._$g(88, "c"),
-                                  attrs: { _i: 88 },
+                                  staticClass: _vm._$g(89, "sc"),
+                                  class: _vm._$g(89, "c"),
+                                  attrs: { _i: 89 },
                                 },
                                 [_vm._v("日化回报率")]
                               ),
@@ -6913,26 +6933,26 @@ var render = function () {
                 ],
                 1
               ),
-              _vm._l(_vm._$g(89, "f"), function (item, index, $22, $32) {
+              _vm._l(_vm._$g(90, "f"), function (item, index, $22, $32) {
                 return _c(
                   "uni-view",
                   {
                     key: item,
                     staticStyle: { color: "#333333", "margin-top": "10rpx" },
-                    attrs: { _i: "89-" + $32 },
+                    attrs: { _i: "90-" + $32 },
                   },
                   [
                     _c(
                       "u-row",
-                      { attrs: { _i: "90-" + $32 } },
+                      { attrs: { _i: "91-" + $32 } },
                       [
                         _c(
                           "u-col",
-                          { attrs: { _i: "91-" + $32 } },
+                          { attrs: { _i: "92-" + $32 } },
                           [
                             _c(
                               "uni-view",
-                              { attrs: { _i: "92-" + $32 } },
+                              { attrs: { _i: "93-" + $32 } },
                               [
                                 _c(
                                   "uni-view",
@@ -6941,16 +6961,16 @@ var render = function () {
                                       "font-size": "30rpx",
                                       "font-weight": "bold",
                                     },
-                                    attrs: { _i: "93-" + $32 },
+                                    attrs: { _i: "94-" + $32 },
                                   },
-                                  [_vm._v(_vm._$g("93-" + $32, "t0-0"))]
+                                  [_vm._v(_vm._$g("94-" + $32, "t0-0"))]
                                 ),
                                 _c(
                                   "uni-view",
-                                  { attrs: { _i: "94-" + $32 } },
+                                  { attrs: { _i: "95-" + $32 } },
                                   [
                                     _c("u-line-progress", {
-                                      attrs: { _i: "95-" + $32 },
+                                      attrs: { _i: "96-" + $32 },
                                     }),
                                   ],
                                   1
@@ -6958,28 +6978,28 @@ var render = function () {
                                 _c(
                                   "uni-view",
                                   {
-                                    staticClass: _vm._$g("96-" + $32, "sc"),
+                                    staticClass: _vm._$g("97-" + $32, "sc"),
                                     staticStyle: {
                                       color: "#999999",
                                       "font-size": "20rpx",
                                     },
-                                    attrs: { _i: "96-" + $32 },
+                                    attrs: { _i: "97-" + $32 },
                                   },
                                   [
                                     _c(
                                       "uni-view",
                                       {
                                         staticStyle: { width: "50rpx" },
-                                        attrs: { _i: "97-" + $32 },
+                                        attrs: { _i: "98-" + $32 },
                                       },
                                       [_vm._v("0")]
                                     ),
                                     _c(
                                       "uni-view",
                                       {
-                                        staticClass: _vm._$g("98-" + $32, "sc"),
+                                        staticClass: _vm._$g("99-" + $32, "sc"),
                                         staticStyle: { width: "220rpx" },
-                                        attrs: { _i: "98-" + $32 },
+                                        attrs: { _i: "99-" + $32 },
                                       },
                                       [_vm._v("2550万")]
                                     ),
@@ -6994,21 +7014,21 @@ var render = function () {
                         ),
                         _c(
                           "u-col",
-                          { attrs: { _i: "99-" + $32 } },
+                          { attrs: { _i: "100-" + $32 } },
                           [
                             _c(
                               "uni-view",
                               {
-                                staticClass: _vm._$g("100-" + $32, "sc"),
-                                attrs: { _i: "100-" + $32 },
+                                staticClass: _vm._$g("101-" + $32, "sc"),
+                                attrs: { _i: "101-" + $32 },
                               },
                               [
                                 _c(
                                   "uni-view",
-                                  { attrs: { _i: "101-" + $32 } },
+                                  { attrs: { _i: "102-" + $32 } },
                                   [
                                     _vm._v(
-                                      _vm._$g("101-" + $32, "t0-0") + "个自然日"
+                                      _vm._$g("102-" + $32, "t0-0") + "个自然日"
                                     ),
                                   ]
                                 ),
@@ -7016,7 +7036,7 @@ var render = function () {
                                   "uni-view",
                                   {
                                     staticStyle: { "margin-top": "10rpx" },
-                                    attrs: { _i: "102-" + $32 },
+                                    attrs: { _i: "103-" + $32 },
                                   },
                                   [_vm._v("满仓即止")]
                                 ),
@@ -7028,28 +7048,28 @@ var render = function () {
                         ),
                         _c(
                           "u-col",
-                          { attrs: { _i: "103-" + $32 } },
+                          { attrs: { _i: "104-" + $32 } },
                           [
                             _c(
                               "uni-view",
                               {
-                                staticClass: _vm._$g("104-" + $32, "sc"),
-                                attrs: { _i: "104-" + $32 },
+                                staticClass: _vm._$g("105-" + $32, "sc"),
+                                attrs: { _i: "105-" + $32 },
                               },
                               [
                                 _c(
                                   "uni-view",
                                   {
                                     staticStyle: { color: "#F75F52" },
-                                    attrs: { _i: "105-" + $32 },
+                                    attrs: { _i: "106-" + $32 },
                                   },
-                                  [_vm._v(_vm._$g("105-" + $32, "t0-0") + "%")]
+                                  [_vm._v(_vm._$g("106-" + $32, "t0-0") + "%")]
                                 ),
                                 _c(
                                   "uni-view",
                                   {
                                     staticStyle: { "margin-top": "10rpx" },
-                                    attrs: { _i: "106-" + $32 },
+                                    attrs: { _i: "107-" + $32 },
                                   },
                                   [
                                     _vm._v("起投:"),
@@ -7057,9 +7077,9 @@ var render = function () {
                                       "v-uni-text",
                                       {
                                         staticStyle: { color: "#F75F52" },
-                                        attrs: { _i: "107-" + $32 },
+                                        attrs: { _i: "108-" + $32 },
                                       },
-                                      [_vm._v(_vm._$g("107-" + $32, "t0-0"))]
+                                      [_vm._v(_vm._$g("108-" + $32, "t0-0"))]
                                     ),
                                   ],
                                   1
@@ -7077,9 +7097,9 @@ var render = function () {
                       "uni-view",
                       {
                         staticStyle: { "margin-top": "20rpx" },
-                        attrs: { _i: "108-" + $32 },
+                        attrs: { _i: "109-" + $32 },
                       },
-                      [_c("u-line", { attrs: { _i: "109-" + $32 } })],
+                      [_c("u-line", { attrs: { _i: "110-" + $32 } })],
                       1
                     ),
                   ],
@@ -7092,7 +7112,7 @@ var render = function () {
         ],
         1
       ),
-      _c("floating-customer-service", { attrs: { _i: 110 } }),
+      _c("floating-customer-service", { attrs: { _i: 111 } }),
     ],
     1
   )
@@ -8530,609 +8550,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
-try {
-  components = {
-    uSearch: __webpack_require__(/*! @/static/uview-ui/components/u-search/u-search.vue */ 124)
-      .default,
-    uSubsection:
-      __webpack_require__(/*! @/static/uview-ui/components/u-subsection/u-subsection.vue */ 177)
-        .default,
-    uLineProgress:
-      __webpack_require__(/*! @/static/uview-ui/components/u-line-progress/u-line-progress.vue */ 156)
-        .default,
-    uIcon: __webpack_require__(/*! @/static/uview-ui/components/u-icon/u-icon.vue */ 20).default,
-    uButton: __webpack_require__(/*! @/static/uview-ui/components/u-button/u-button.vue */ 33)
-      .default,
-  }
-} catch (e) {
-  if (
-    e.message.indexOf("Cannot find module") !== -1 &&
-    e.message.indexOf(".vue") !== -1
-  ) {
-    console.error(e.message)
-    console.error("1. 排查组件名称拼写是否正确")
-    console.error(
-      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
-    )
-    console.error(
-      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
-    )
-  } else {
-    throw e
-  }
-}
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "uni-view",
-    {
-      staticStyle: {
-        "background-image": "url('../static/images/hm_bg.png')",
-        "background-repeat": "no-repeat",
-        "background-size": "100%",
-        height: "100vh",
-      },
-      attrs: { _i: 0 },
-    },
-    [
-      _c(
-        "uni-view",
-        { staticStyle: { padding: "30rpx" }, attrs: { _i: 1 } },
-        [
-          _c(
-            "uni-view",
-            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
-            [
-              _c(
-                "uni-view",
-                {
-                  staticStyle: { "margin-left": "10rpx", width: "600rpx" },
-                  attrs: { _i: 3 },
-                },
-                [_c("u-search", { attrs: { _i: 4 } })],
-                1
-              ),
-              _c(
-                "uni-view",
-                { attrs: { _i: 5 } },
-                [
-                  _c("v-uni-image", {
-                    staticStyle: {
-                      width: "48rpx",
-                      height: "48rpx",
-                      position: "relative",
-                      "margin-top": "10rpx",
-                      "margin-left": "30rpx",
-                    },
-                    attrs: { src: _vm._$g(6, "a-src"), _i: 6 },
-                  }),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-          _c(
-            "uni-view",
-            { staticStyle: { "margin-top": "30rpx" }, attrs: { _i: 7 } },
-            [
-              _vm._$g(8, "i")
-                ? _c("u-subsection", {
-                    attrs: { _i: 8 },
-                    on: {
-                      change: function ($event) {
-                        return _vm.$handleViewEvent($event)
-                      },
-                    },
-                  })
-                : _vm._e(),
-            ],
-            1
-          ),
-          _vm._l(_vm._$g(9, "f"), function (item, index, $20, $30) {
-            return _c(
-              "uni-view",
-              {
-                key: item,
-                staticStyle: {
-                  "margin-top": "30rpx",
-                  "background-color": "#ffffff",
-                  "box-shadow": "0px 0px 24rpx 0px rgba(0,0,0,0.05)",
-                  padding: "30rpx",
-                  "border-radius": "12rpx",
-                },
-                attrs: { _i: "9-" + $30 },
-                on: {
-                  click: function ($event) {
-                    return _vm.$handleViewEvent($event)
-                  },
-                },
-              },
-              [
-                _c("uni-view", { attrs: { _i: "10-" + $30 } }, [
-                  _vm._v(_vm._$g("10-" + $30, "t0-0")),
-                ]),
-                _c(
-                  "uni-view",
-                  {
-                    staticClass: _vm._$g("11-" + $30, "sc"),
-                    staticStyle: {
-                      "font-size": "24rpx",
-                      color: "#AFAFAF",
-                      "margin-top": "10rpx",
-                    },
-                    attrs: { _i: "11-" + $30 },
-                  },
-                  [
-                    _c(
-                      "uni-view",
-                      {
-                        staticStyle: { width: "300rpx" },
-                        attrs: { _i: "12-" + $30 },
-                      },
-                      [
-                        _vm._v(_vm._$g("12-" + $30, "t0-0") + "："),
-                        _c(
-                          "v-uni-text",
-                          {
-                            staticStyle: { color: "#21BF90" },
-                            attrs: { _i: "13-" + $30 },
-                          },
-                          [_vm._v(_vm._$g("13-" + $30, "t0-0") + "%")]
-                        ),
-                      ],
-                      1
-                    ),
-                    _c(
-                      "uni-view",
-                      {
-                        staticClass: _vm._$g("14-" + $30, "sc"),
-                        staticStyle: { width: "300rpx" },
-                        attrs: { _i: "14-" + $30 },
-                      },
-                      [
-                        _vm._v(_vm._$g("14-" + $30, "t0-0") + "："),
-                        _c(
-                          "v-uni-text",
-                          {
-                            staticStyle: { color: "#21BF90" },
-                            attrs: { _i: "15-" + $30 },
-                          },
-                          [
-                            _vm._v(
-                              _vm._$g("15-" + $30, "t0-0") +
-                                " " +
-                                _vm._$g("15-" + $30, "t0-1")
-                            ),
-                          ]
-                        ),
-                      ],
-                      1
-                    ),
-                  ],
-                  1
-                ),
-                _c(
-                  "uni-view",
-                  {
-                    staticClass: _vm._$g("16-" + $30, "sc"),
-                    staticStyle: {
-                      "font-size": "24rpx",
-                      color: "#AFAFAF",
-                      "margin-top": "10rpx",
-                    },
-                    attrs: { _i: "16-" + $30 },
-                  },
-                  [
-                    _c(
-                      "uni-view",
-                      {
-                        staticStyle: { width: "300rpx" },
-                        attrs: { _i: "17-" + $30 },
-                      },
-                      [
-                        _vm._v(_vm._$g("17-" + $30, "t0-0") + "："),
-                        _c(
-                          "v-uni-text",
-                          {
-                            staticStyle: { color: "#21BF90" },
-                            attrs: { _i: "18-" + $30 },
-                          },
-                          [_vm._v(_vm._$g("18-" + $30, "t0-0") + "U")]
-                        ),
-                      ],
-                      1
-                    ),
-                    _c(
-                      "uni-view",
-                      {
-                        staticClass: _vm._$g("19-" + $30, "sc"),
-                        staticStyle: { width: "300rpx" },
-                        attrs: { _i: "19-" + $30 },
-                      },
-                      [
-                        _vm._v(_vm._$g("19-" + $30, "t0-0") + "："),
-                        _c(
-                          "v-uni-text",
-                          {
-                            staticStyle: { color: "#21BF90" },
-                            attrs: { _i: "20-" + $30 },
-                          },
-                          [_vm._v(_vm._$g("20-" + $30, "t0-0") + "U")]
-                        ),
-                      ],
-                      1
-                    ),
-                  ],
-                  1
-                ),
-                _c(
-                  "uni-view",
-                  {
-                    staticClass: _vm._$g("21-" + $30, "sc"),
-                    staticStyle: {
-                      "font-size": "24rpx",
-                      color: "#AFAFAF",
-                      "margin-top": "10rpx",
-                    },
-                    attrs: { _i: "21-" + $30 },
-                  },
-                  [
-                    _c(
-                      "uni-view",
-                      {
-                        staticStyle: { width: "300rpx" },
-                        attrs: { _i: "22-" + $30 },
-                      },
-                      [
-                        _vm._v(_vm._$g("22-" + $30, "t0-0") + "："),
-                        _c(
-                          "v-uni-text",
-                          {
-                            staticStyle: { color: "#21BF90" },
-                            attrs: { _i: "23-" + $30 },
-                          },
-                          [_vm._v(_vm._$g("23-" + $30, "t0-0") + "U")]
-                        ),
-                      ],
-                      1
-                    ),
-                    _c(
-                      "uni-view",
-                      {
-                        staticClass: _vm._$g("24-" + $30, "sc"),
-                        staticStyle: { width: "300rpx" },
-                        attrs: { _i: "24-" + $30 },
-                      },
-                      [
-                        _vm._v(_vm._$g("24-" + $30, "t0-0") + "："),
-                        _c(
-                          "v-uni-text",
-                          {
-                            staticStyle: { color: "#21BF90" },
-                            attrs: { _i: "25-" + $30 },
-                          },
-                          [_vm._v(_vm._$g("25-" + $30, "t0-0") + "U")]
-                        ),
-                      ],
-                      1
-                    ),
-                  ],
-                  1
-                ),
-                _c(
-                  "uni-view",
-                  {
-                    staticStyle: { width: "540rpx", "margin-top": "6rpx" },
-                    attrs: { _i: "26-" + $30 },
-                  },
-                  [_c("u-line-progress", { attrs: { _i: "27-" + $30 } })],
-                  1
-                ),
-                _c(
-                  "uni-view",
-                  {
-                    staticClass: _vm._$g("28-" + $30, "sc"),
-                    staticStyle: { "margin-top": "20rpx" },
-                    attrs: { _i: "28-" + $30 },
-                  },
-                  [
-                    _c(
-                      "uni-view",
-                      {
-                        staticStyle: {
-                          "background-color": "#E1F7F2",
-                          color: "#666666",
-                          "font-size": "24rpx",
-                          "border-radius": "8rpx",
-                          "padding-left": "10rpx",
-                          "padding-right": "30rpx",
-                        },
-                        attrs: { _i: "29-" + $30 },
-                      },
-                      [
-                        _c("u-icon", {
-                          staticStyle: { "margin-right": "10rpx" },
-                          attrs: { _i: "30-" + $30 },
-                        }),
-                        _vm._v(
-                          _vm._$g("29-" + $30, "t1-0") +
-                            _vm._$g("29-" + $30, "t1-1") +
-                            _vm._$g("29-" + $30, "t1-2")
-                        ),
-                      ],
-                      1
-                    ),
-                    _c(
-                      "uni-view",
-                      {
-                        staticStyle: { "margin-left": "200rpx" },
-                        attrs: { _i: "31-" + $30 },
-                      },
-                      [
-                        _c(
-                          "u-button",
-                          {
-                            staticStyle: { "font-size": "28rpx" },
-                            attrs: { _i: "32-" + $30 },
-                            on: {
-                              click: function ($event) {
-                                return _vm.$handleViewEvent($event)
-                              },
-                            },
-                          },
-                          [_vm._v(_vm._$g("32-" + $30, "t0-0"))]
-                        ),
-                      ],
-                      1
-                    ),
-                  ],
-                  1
-                ),
-              ],
-              1
-            )
-          }),
-        ],
-        2
-      ),
-    ],
-    1
-  )
-}
-var recyclableRender = false
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
+var recyclableRender
+var components
 
 
 
 /***/ }),
 /* 177 */
-/*!*************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue ***!
-  \*************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************!*\
+  !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/home/home.vue?vue&type=style&index=0&id=44021cb6&scoped=true&lang=scss&mpType=page ***!
+  \*********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./u-subsection.vue?vue&type=template&id=763bb7ab&scoped=true& */ 178);
-/* harmony import */ var _u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./u-subsection.vue?vue&type=script&lang=js& */ 180);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _u_subsection_vue_vue_type_style_index_0_id_763bb7ab_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./u-subsection.vue?vue&type=style&index=0&id=763bb7ab&lang=scss&scoped=true& */ 182);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 16);
-
-var renderjs
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  "763bb7ab",
-  null,
-  false,
-  _u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__["components"],
-  renderjs
-)
-
-component.options.__file = "static/uview-ui/components/u-subsection/u-subsection.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_style_index_0_id_44021cb6_scoped_true_lang_scss_mpType_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader??ref--8-oneOf-1-0!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--8-oneOf-1-3!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./home.vue?vue&type=style&index=0&id=44021cb6&scoped=true&lang=scss&mpType=page */ 178);
+/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_style_index_0_id_44021cb6_scoped_true_lang_scss_mpType_page__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_style_index_0_id_44021cb6_scoped_true_lang_scss_mpType_page__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_style_index_0_id_44021cb6_scoped_true_lang_scss_mpType_page__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_style_index_0_id_44021cb6_scoped_true_lang_scss_mpType_page__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_home_vue_vue_type_style_index_0_id_44021cb6_scoped_true_lang_scss_mpType_page__WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 /* 178 */
-/*!********************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue?vue&type=template&id=763bb7ab&scoped=true& ***!
-  \********************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns, recyclableRender, components */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./u-subsection.vue?vue&type=template&id=763bb7ab&scoped=true& */ 179);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__["recyclableRender"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "components", function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_filter_modules_template_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_page_meta_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_template_id_763bb7ab_scoped_true___WEBPACK_IMPORTED_MODULE_0__["components"]; });
-
-
-
-/***/ }),
-/* 179 */
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/filter-modules-template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue?vue&type=template&id=763bb7ab&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns, recyclableRender, components */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "uni-view",
-    { staticClass: _vm._$g(0, "sc"), style: _vm._$g(0, "s"), attrs: { _i: 0 } },
-    [
-      _vm._l(_vm._$g(1, "f"), function (item, index, $20, $30) {
-        return _c(
-          "uni-view",
-          {
-            key: item,
-            staticClass: _vm._$g("1-" + $30, "sc"),
-            class: _vm._$g("1-" + $30, "c"),
-            style: _vm._$g("1-" + $30, "s"),
-            attrs: { _i: "1-" + $30 },
-            on: {
-              click: function ($event) {
-                return _vm.$handleViewEvent($event)
-              },
-            },
-          },
-          [
-            _c(
-              "uni-view",
-              {
-                staticClass: _vm._$g("2-" + $30, "sc"),
-                style: _vm._$g("2-" + $30, "s"),
-                attrs: { _i: "2-" + $30 },
-              },
-              [_vm._v(_vm._$g("2-" + $30, "t0-0"))]
-            ),
-          ],
-          1
-        )
-      }),
-      _c("uni-view", {
-        staticClass: _vm._$g(3, "sc"),
-        style: _vm._$g(3, "s"),
-        attrs: { _i: 3 },
-      }),
-    ],
-    2
-  )
-}
-var recyclableRender = false
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-/* 180 */
-/*!**************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/babel-loader/lib!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./u-subsection.vue?vue&type=script&lang=js& */ 181);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_13_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_script_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_using_components_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 181 */
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--13-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/using-components.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  name: "u-subsection",
-  props: ["list", "current", "activeColor", "inactiveColor", "mode", "fontSize", "animation", "height", "bold", "bgColor", "buttonColor", "vibrateShort"],
-  data: function data() {
-    return {
-      wxsProps: {}
-    };
-  },
-  components: {}
-};
-exports.default = _default;
-
-/***/ }),
-/* 182 */
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue?vue&type=style&index=0&id=763bb7ab&lang=scss&scoped=true& ***!
-  \***********************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_style_index_0_id_763bb7ab_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader??ref--8-oneOf-1-0!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--8-oneOf-1-3!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./u-subsection.vue?vue&type=style&index=0&id=763bb7ab&lang=scss&scoped=true& */ 183);
-/* harmony import */ var _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_style_index_0_id_763bb7ab_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_style_index_0_id_763bb7ab_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_style_index_0_id_763bb7ab_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_style_index_0_id_763bb7ab_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_app_vue_style_loader_index_js_ref_8_oneOf_1_0_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_2_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_Desktop_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_uni_app_loader_view_style_js_u_subsection_vue_vue_type_style_index_0_id_763bb7ab_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 183 */
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue?vue&type=style&index=0&id=763bb7ab&lang=scss&scoped=true& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/home/home.vue?vue&type=style&index=0&id=44021cb6&scoped=true&lang=scss&mpType=page ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--8-oneOf-1-3!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./u-subsection.vue?vue&type=style&index=0&id=763bb7ab&lang=scss&scoped=true& */ 184);
+var content = __webpack_require__(/*! !../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--8-oneOf-1-3!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!./home.vue?vue&type=style&index=0&id=44021cb6&scoped=true&lang=scss&mpType=page */ 179);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var add = __webpack_require__(/*! ../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader/lib/addStylesClient.js */ 14).default
-var update = add("382cc1ae", content, false, {"sourceMap":false,"shadowMode":false});
+var add = __webpack_require__(/*! ../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/app-vue-style-loader/lib/addStylesClient.js */ 14).default
+var update = add("97aebb6e", content, false, {"sourceMap":false,"shadowMode":false});
 // Hot Module Replacement
 if(false) {}
 
 /***/ }),
-/* 184 */
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/static/uview-ui/components/u-subsection/u-subsection.vue?vue&type=style&index=0&id=763bb7ab&lang=scss&scoped=true& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* 179 */
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/view/style.js!C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/home/home.vue?vue&type=style&index=0&id=44021cb6&scoped=true&lang=scss&mpType=page ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.u-subsection[data-v-763bb7ab] {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  overflow: hidden;\n  position: relative;\n}\n.u-item[data-v-763bb7ab] {\n  flex: 1;\n  text-align: center;\n  font-size: 26rpx;\n  height: 100%;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n  color: #303133;\n  padding: 0 6rpx;\n}\n.u-item-bg[data-v-763bb7ab] {\n  background-color: #2979ff;\n  position: absolute;\n  z-index: -1;\n}\n.u-none-border-right[data-v-763bb7ab] {\n  border-right: none !important;\n}\n.u-item-first[data-v-763bb7ab] {\n  border-top-left-radius: 8rpx;\n  border-bottom-left-radius: 8rpx;\n}\n.u-item-last[data-v-763bb7ab] {\n  border-top-right-radius: 8rpx;\n  border-bottom-right-radius: 8rpx;\n}\n.u-item-text[data-v-763bb7ab] {\n  transition: all 0.35s;\n  color: #303133;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  position: relative;\n  z-index: 3;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.status_bar[data-v-44021cb6] {\n  height: var(--status-bar-height);\n  width: 100%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
 /* 185 */
 /*!******************************************************************************************************************************************!*\
   !*** C:/Users/Administrator/Downloads/brother-gang-新股理财/brother-gang-新股理财/pages/product/product.vue?vue&type=script&lang=js&mpType=page ***!
@@ -9281,7 +8764,7 @@ var render = function () {
     "uni-view",
     {
       staticStyle: {
-        "background-image": "url('../static/images/hm_bg.png')",
+        "background-image": "url('../../static/images/hm_bg.png')",
         "background-repeat": "no-repeat",
         "background-size": "100%",
         "min-height": "100vh",
@@ -9289,6 +8772,16 @@ var render = function () {
       attrs: { _i: 0 },
     },
     [
+      _c("uni-view", {
+        staticClass: _vm._$g(1, "sc"),
+        staticStyle: {
+          position: "fixed",
+          width: "100%",
+          background: "linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%)",
+          "z-index": "999",
+        },
+        attrs: { _i: 1 },
+      }),
       _c(
         "uni-view",
         {
@@ -9298,16 +8791,31 @@ var render = function () {
             "align-items": "center",
             "justify-content": "center",
           },
-          attrs: { _i: 1 },
+          attrs: { _i: 2 },
         },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
+            {
+              staticClass: _vm._$g(3, "sc"),
+              staticStyle: {
+                position: "fixed",
+                width: "100%",
+                height: "88rpx",
+                "align-items": "center",
+                "justify-content": "center",
+                left: "0",
+                top: "var(--status-bar-height)",
+                background:
+                  "linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%)",
+                "z-index": "999",
+              },
+              attrs: { _i: 3 },
+            },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+                { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
                 [
                   _c(
                     "uni-view",
@@ -9317,7 +8825,7 @@ var render = function () {
                         "align-items": "center",
                         width: "100rpx",
                       },
-                      attrs: { _i: 4 },
+                      attrs: { _i: 5 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -9329,13 +8837,13 @@ var render = function () {
                         "uni-view",
                         {
                           staticStyle: { "font-size": "32rpx", width: "60%" },
-                          attrs: { _i: 5 },
+                          attrs: { _i: 6 },
                         },
-                        [_vm._v(_vm._$g(5, "t0-0"))]
+                        [_vm._v(_vm._$g(6, "t0-0"))]
                       ),
                       _c(
                         "uni-view",
-                        { attrs: { _i: 6 } },
+                        { attrs: { _i: 7 } },
                         [
                           _c("v-uni-image", {
                             staticStyle: {
@@ -9345,7 +8853,7 @@ var render = function () {
                               "margin-top": "10rpx",
                               "margin-left": "20rpx",
                             },
-                            attrs: { src: _vm._$g(7, "a-src"), _i: 7 },
+                            attrs: { src: _vm._$g(8, "a-src"), _i: 8 },
                           }),
                         ],
                         1
@@ -9353,24 +8861,27 @@ var render = function () {
                     ],
                     1
                   ),
-                  _vm._$g(8, "i")
+                  _vm._$g(9, "i")
                     ? _c(
                         "uni-view",
-                        { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+                        { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
                         [
                           _c(
                             "uni-view",
-                            { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+                            {
+                              staticClass: _vm._$g(10, "sc"),
+                              attrs: { _i: 10 },
+                            },
                             _vm._l(
-                              _vm._$g(10, "f"),
+                              _vm._$g(11, "f"),
                               function (item, index, $20, $30) {
                                 return _c(
                                   "uni-view",
                                   {
                                     key: item,
-                                    staticClass: _vm._$g("10-" + $30, "sc"),
-                                    class: _vm._$g("10-" + $30, "c"),
-                                    attrs: { _i: "10-" + $30 },
+                                    staticClass: _vm._$g("11-" + $30, "sc"),
+                                    class: _vm._$g("11-" + $30, "c"),
+                                    attrs: { _i: "11-" + $30 },
                                     on: {
                                       click: function ($event) {
                                         return _vm.$handleViewEvent($event)
@@ -9380,15 +8891,15 @@ var render = function () {
                                   [
                                     _c("v-uni-image", {
                                       attrs: {
-                                        src: _vm._$g("11-" + $30, "a-src"),
+                                        src: _vm._$g("12-" + $30, "a-src"),
                                         mode: "",
-                                        _i: "11-" + $30,
+                                        _i: "12-" + $30,
                                       },
                                     }),
                                     _c(
                                       "v-uni-text",
-                                      { attrs: { _i: "12-" + $30 } },
-                                      [_vm._v(_vm._$g("12-" + $30, "t0-0"))]
+                                      { attrs: { _i: "13-" + $30 } },
+                                      [_vm._v(_vm._$g("13-" + $30, "t0-0"))]
                                     ),
                                   ],
                                   1
@@ -9412,43 +8923,43 @@ var render = function () {
                     "font-size": "36rpx",
                     "font-weight": "bold",
                   },
-                  attrs: { _i: 13 },
+                  attrs: { _i: 14 },
                 },
-                [_vm._v("OTC" + _vm._$g(13, "t0-0"))]
+                [_vm._v("OTC" + _vm._$g(14, "t0-0"))]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
                 [
                   _c("u-icon", {
                     staticStyle: { "margin-left": "200rpx" },
-                    attrs: { _i: 15 },
+                    attrs: { _i: 16 },
                     on: {
                       click: function ($event) {
                         return _vm.$handleViewEvent($event)
                       },
                     },
                   }),
-                  _vm._$g(16, "i")
+                  _vm._$g(17, "i")
                     ? _c(
                         "uni-view",
-                        { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                        { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
                         [
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g(17, "sc"),
-                              attrs: { _i: 17 },
+                              staticClass: _vm._$g(18, "sc"),
+                              attrs: { _i: 18 },
                             },
                             _vm._l(
-                              _vm._$g(18, "f"),
+                              _vm._$g(19, "f"),
                               function (item, index, $21, $31) {
                                 return _c(
                                   "uni-view",
                                   {
                                     key: item,
-                                    staticClass: _vm._$g("18-" + $31, "sc"),
-                                    attrs: { _i: "18-" + $31 },
+                                    staticClass: _vm._$g("19-" + $31, "sc"),
+                                    attrs: { _i: "19-" + $31 },
                                     on: {
                                       click: function ($event) {
                                         return _vm.$handleViewEvent($event)
@@ -9458,15 +8969,15 @@ var render = function () {
                                   [
                                     _c("v-uni-image", {
                                       attrs: {
-                                        src: _vm._$g("19-" + $31, "a-src"),
+                                        src: _vm._$g("20-" + $31, "a-src"),
                                         mode: "",
-                                        _i: "19-" + $31,
+                                        _i: "20-" + $31,
                                       },
                                     }),
                                     _c(
                                       "v-uni-text",
-                                      { attrs: { _i: "20-" + $31 } },
-                                      [_vm._v(_vm._$g("20-" + $31, "t0-0"))]
+                                      { attrs: { _i: "21-" + $31 } },
+                                      [_vm._v(_vm._$g("21-" + $31, "t0-0"))]
                                     ),
                                   ],
                                   1
@@ -9491,41 +9002,28 @@ var render = function () {
       _c(
         "uni-view",
         {
-          staticClass: _vm._$g(21, "sc"),
-          staticStyle: { padding: "40rpx", "border-radius": "32rpx" },
-          attrs: { _i: 21 },
+          staticClass: _vm._$g(22, "sc"),
+          staticStyle: { "border-radius": "32rpx" },
+          style: _vm._$g(22, "s"),
+          attrs: { _i: 22 },
         },
         [
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(22, "sc"),
+              staticClass: _vm._$g(23, "sc"),
               staticStyle: {
                 color: "#AFAFAF",
                 "font-size": "32rpx",
                 "font-weight": "bold",
               },
-              attrs: { _i: 22 },
+              attrs: { _i: 23 },
             },
             [
               _c(
                 "uni-view",
                 {
-                  class: _vm._$g(23, "c"),
-                  attrs: { _i: 23 },
-                  on: {
-                    click: function ($event) {
-                      return _vm.$handleViewEvent($event)
-                    },
-                  },
-                },
-                [_vm._v(_vm._$g(23, "t0-0"))]
-              ),
-              _c(
-                "uni-view",
-                {
                   class: _vm._$g(24, "c"),
-                  staticStyle: { "margin-left": "20rpx" },
                   attrs: { _i: 24 },
                   on: {
                     click: function ($event) {
@@ -9534,6 +9032,20 @@ var render = function () {
                   },
                 },
                 [_vm._v(_vm._$g(24, "t0-0"))]
+              ),
+              _c(
+                "uni-view",
+                {
+                  class: _vm._$g(25, "c"),
+                  staticStyle: { "margin-left": "20rpx" },
+                  attrs: { _i: 25 },
+                  on: {
+                    click: function ($event) {
+                      return _vm.$handleViewEvent($event)
+                    },
+                  },
+                },
+                [_vm._v(_vm._$g(25, "t0-0"))]
               ),
             ],
             1
@@ -9549,29 +9061,29 @@ var render = function () {
                 width: "98rpx",
                 "margin-top": "20rpx",
               },
-              attrs: { _i: 25 },
+              attrs: { _i: 26 },
             },
             [_vm._v("USDT")]
           ),
-          _vm._l(_vm._$g(26, "f"), function (item, index, $22, $32) {
+          _vm._l(_vm._$g(27, "f"), function (item, index, $22, $32) {
             return _c(
               "uni-view",
               {
                 key: item,
                 staticStyle: { color: "#333333", "margin-top": "20rpx" },
-                attrs: { _i: "26-" + $32 },
+                attrs: { _i: "27-" + $32 },
               },
               [
                 _c(
                   "uni-view",
                   {
-                    staticClass: _vm._$g("27-" + $32, "sc"),
-                    attrs: { _i: "27-" + $32 },
+                    staticClass: _vm._$g("28-" + $32, "sc"),
+                    attrs: { _i: "28-" + $32 },
                   },
                   [
                     _c(
                       "uni-view",
-                      { attrs: { _i: "28-" + $32 } },
+                      { attrs: { _i: "29-" + $32 } },
                       [
                         _c("v-uni-image", {
                           staticStyle: {
@@ -9582,8 +9094,8 @@ var render = function () {
                             "margin-left": "10rpx",
                           },
                           attrs: {
-                            src: _vm._$g("29-" + $32, "a-src"),
-                            _i: "29-" + $32,
+                            src: _vm._$g("30-" + $32, "a-src"),
+                            _i: "30-" + $32,
                           },
                         }),
                       ],
@@ -9596,9 +9108,9 @@ var render = function () {
                           "margin-left": "10rpx",
                           width: "300rpx",
                         },
-                        attrs: { _i: "30-" + $32 },
+                        attrs: { _i: "31-" + $32 },
                       },
-                      [_vm._v(_vm._$g("30-" + $32, "t0-0"))]
+                      [_vm._v(_vm._$g("31-" + $32, "t0-0"))]
                     ),
                   ],
                   1
@@ -9606,9 +9118,9 @@ var render = function () {
                 _c(
                   "uni-view",
                   {
-                    staticClass: _vm._$g("31-" + $32, "sc"),
+                    staticClass: _vm._$g("32-" + $32, "sc"),
                     staticStyle: { "margin-top": "10rpx" },
-                    attrs: { _i: "31-" + $32 },
+                    attrs: { _i: "32-" + $32 },
                   },
                   [
                     _c(
@@ -9619,9 +9131,9 @@ var render = function () {
                           color: "#F75F52",
                           width: "500rpx",
                         },
-                        attrs: { _i: "32-" + $32 },
+                        attrs: { _i: "33-" + $32 },
                       },
-                      [_vm._v("¥" + _vm._$g("32-" + $32, "t0-0"))]
+                      [_vm._v("¥" + _vm._$g("33-" + $32, "t0-0"))]
                     ),
                   ],
                   1
@@ -9629,9 +9141,9 @@ var render = function () {
                 _c(
                   "uni-view",
                   {
-                    staticClass: _vm._$g("33-" + $32, "sc"),
+                    staticClass: _vm._$g("34-" + $32, "sc"),
                     staticStyle: { "margin-top": "10rpx" },
-                    attrs: { _i: "33-" + $32 },
+                    attrs: { _i: "34-" + $32 },
                   },
                   [
                     _c(
@@ -9641,12 +9153,12 @@ var render = function () {
                           color: "#AFAFAF",
                           "margin-right": "20rpx",
                         },
-                        attrs: { _i: "34-" + $32 },
+                        attrs: { _i: "35-" + $32 },
                       },
-                      [_vm._v(_vm._$g("34-" + $32, "t0-0"))]
+                      [_vm._v(_vm._$g("35-" + $32, "t0-0"))]
                     ),
-                    _c("uni-view", { attrs: { _i: "35-" + $32 } }, [
-                      _vm._v(_vm._$g("35-" + $32, "t0-0") + " USDT"),
+                    _c("uni-view", { attrs: { _i: "36-" + $32 } }, [
+                      _vm._v(_vm._$g("36-" + $32, "t0-0") + " USDT"),
                     ]),
                   ],
                   1
@@ -9654,9 +9166,9 @@ var render = function () {
                 _c(
                   "uni-view",
                   {
-                    staticClass: _vm._$g("36-" + $32, "sc"),
+                    staticClass: _vm._$g("37-" + $32, "sc"),
                     staticStyle: { "margin-top": "10rpx" },
-                    attrs: { _i: "36-" + $32 },
+                    attrs: { _i: "37-" + $32 },
                   },
                   [
                     _c(
@@ -9666,16 +9178,16 @@ var render = function () {
                           color: "#AFAFAF",
                           "margin-right": "20rpx",
                         },
-                        attrs: { _i: "37-" + $32 },
+                        attrs: { _i: "38-" + $32 },
                       },
-                      [_vm._v(_vm._$g("37-" + $32, "t0-0"))]
+                      [_vm._v(_vm._$g("38-" + $32, "t0-0"))]
                     ),
-                    _c("uni-view", { attrs: { _i: "38-" + $32 } }, [
+                    _c("uni-view", { attrs: { _i: "39-" + $32 } }, [
                       _vm._v(
                         "¥" +
-                          _vm._$g("38-" + $32, "t0-0") +
+                          _vm._$g("39-" + $32, "t0-0") +
                           "-" +
-                          _vm._$g("38-" + $32, "t0-1")
+                          _vm._$g("39-" + $32, "t0-1")
                       ),
                     ]),
                   ],
@@ -9684,47 +9196,31 @@ var render = function () {
                 _c(
                   "uni-view",
                   {
-                    staticClass: _vm._$g("39-" + $32, "sc"),
+                    staticClass: _vm._$g("40-" + $32, "sc"),
                     staticStyle: {
                       "margin-top": "10rpx",
                       "margin-bottom": "20rpx",
                     },
-                    attrs: { _i: "39-" + $32 },
+                    attrs: { _i: "40-" + $32 },
                   },
                   [
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("40-" + $32, "sc"),
+                        staticClass: _vm._$g("41-" + $32, "sc"),
                         staticStyle: { width: "520rpx" },
-                        attrs: { _i: "40-" + $32 },
+                        attrs: { _i: "41-" + $32 },
                       },
                       _vm._l(
-                        _vm._$g(41 + "-" + $32, "f"),
+                        _vm._$g(42 + "-" + $32, "f"),
                         function (item1, index1, $23, $33) {
                           return _c(
                             "uni-view",
                             {
                               key: item1,
-                              attrs: { _i: "41-" + $32 + "-" + $33 },
+                              attrs: { _i: "42-" + $32 + "-" + $33 },
                             },
                             [
-                              _vm._$g("42-" + $32 + "-" + $33, "i")
-                                ? _c("v-uni-image", {
-                                    staticStyle: {
-                                      width: "48rpx",
-                                      height: "48rpx",
-                                      "margin-left": "10rpx",
-                                    },
-                                    attrs: {
-                                      src: _vm._$g(
-                                        "42-" + $32 + "-" + $33,
-                                        "a-src"
-                                      ),
-                                      _i: "42-" + $32 + "-" + $33,
-                                    },
-                                  })
-                                : _vm._e(),
                               _vm._$g("43-" + $32 + "-" + $33, "i")
                                 ? _c("v-uni-image", {
                                     staticStyle: {
@@ -9757,6 +9253,22 @@ var render = function () {
                                     },
                                   })
                                 : _vm._e(),
+                              _vm._$g("45-" + $32 + "-" + $33, "i")
+                                ? _c("v-uni-image", {
+                                    staticStyle: {
+                                      width: "48rpx",
+                                      height: "48rpx",
+                                      "margin-left": "10rpx",
+                                    },
+                                    attrs: {
+                                      src: _vm._$g(
+                                        "45-" + $32 + "-" + $33,
+                                        "a-src"
+                                      ),
+                                      _i: "45-" + $32 + "-" + $33,
+                                    },
+                                  })
+                                : _vm._e(),
                             ],
                             1
                           )
@@ -9766,31 +9278,31 @@ var render = function () {
                     ),
                     _c(
                       "uni-view",
-                      { attrs: { _i: "45-" + $32 } },
+                      { attrs: { _i: "46-" + $32 } },
                       [
-                        _vm._$g("46-" + $32, "i")
-                          ? _c(
-                              "u-button",
-                              {
-                                staticStyle: { "font-size": "28rpx" },
-                                attrs: { _i: "46-" + $32 },
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.$handleViewEvent($event)
-                                  },
-                                },
-                              },
-                              [_vm._v(_vm._$g("46-" + $32, "t0-0"))]
-                            )
-                          : _vm._e(),
                         _vm._$g("47-" + $32, "i")
                           ? _c(
                               "u-button",
                               {
                                 staticStyle: { "font-size": "28rpx" },
                                 attrs: { _i: "47-" + $32 },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.$handleViewEvent($event)
+                                  },
+                                },
                               },
                               [_vm._v(_vm._$g("47-" + $32, "t0-0"))]
+                            )
+                          : _vm._e(),
+                        _vm._$g("48-" + $32, "i")
+                          ? _c(
+                              "u-button",
+                              {
+                                staticStyle: { "font-size": "28rpx" },
+                                attrs: { _i: "48-" + $32 },
+                              },
+                              [_vm._v(_vm._$g("48-" + $32, "t0-0"))]
                             )
                           : _vm._e(),
                       ],
@@ -9799,20 +9311,20 @@ var render = function () {
                   ],
                   1
                 ),
-                _c("u-line", { attrs: { _i: "48-" + $32 } }),
+                _c("u-line", { attrs: { _i: "49-" + $32 } }),
               ],
               1
             )
           }),
           _c("u-modal", {
-            attrs: { _i: 49 },
+            attrs: { _i: 50 },
             on: {
               confirm: function ($event) {
                 return _vm.$handleViewEvent($event)
               },
             },
             model: {
-              value: _vm._$g(49, "v-model"),
+              value: _vm._$g(50, "v-model"),
               callback: function () {},
               expression: "modalShow",
             },
@@ -11048,6 +10560,9 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uniNavBar:
+      __webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 335)
+        .default,
     uPopup: __webpack_require__(/*! @/static/uview-ui/components/u-popup/u-popup.vue */ 193).default,
   }
 } catch (e) {
@@ -11075,84 +10590,71 @@ var render = function () {
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("uni-nav-bar", {
+        attrs: { _i: 1 },
+        on: {
+          clickLeft: function ($event) {
+            return _vm.$handleViewEvent($event)
+          },
+        },
+      }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
-        [
-          _c("uni-view", {
-            staticClass: _vm._$g(2, "sc"),
-            attrs: { _i: 2 },
-            on: {
-              click: function ($event) {
-                return _vm.$handleViewEvent($event)
-              },
-            },
-          }),
-          _c(
-            "v-uni-text",
-            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-            [_vm._v(_vm._$g(3, "t0-0"))]
-          ),
-        ],
-        1
-      ),
-      _c(
-        "uni-view",
-        { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
             [
               _c(
                 "uni-view",
+                { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
+                [_vm._v(_vm._$g(4, "t0-0"))]
+              ),
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+                [_vm._v("¥" + _vm._$g(5, "t0-0"))]
+              ),
+              _c(
+                "uni-view",
                 { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                [_vm._v(_vm._$g(6, "t0-0"))]
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
-                [_vm._v("¥" + _vm._$g(7, "t0-0"))]
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
                 [
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+                    { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
                     [
-                      _c("uni-view", { attrs: { _i: 10 } }, [
-                        _vm._v(_vm._$g(10, "t0-0")),
+                      _c("uni-view", { attrs: { _i: 8 } }, [
+                        _vm._v(_vm._$g(8, "t0-0")),
                       ]),
+                      _c("uni-view", { attrs: { _i: 9 } }, [
+                        _vm._v(_vm._$g(9, "t0-0")),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _c(
+                    "uni-view",
+                    { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+                    [
                       _c("uni-view", { attrs: { _i: 11 } }, [
                         _vm._v(_vm._$g(11, "t0-0")),
                       ]),
+                      _c("uni-view", { attrs: { _i: 12 } }, [
+                        _vm._v(_vm._$g(12, "t0-0")),
+                      ]),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+                    { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
                     [
-                      _c("uni-view", { attrs: { _i: 13 } }, [
-                        _vm._v(_vm._$g(13, "t0-0")),
-                      ]),
                       _c("uni-view", { attrs: { _i: 14 } }, [
                         _vm._v(_vm._$g(14, "t0-0")),
                       ]),
-                    ],
-                    1
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
-                    [
-                      _c("uni-view", { attrs: { _i: 16 } }, [
-                        _vm._v(_vm._$g(16, "t0-0")),
-                      ]),
-                      _c("uni-view", { attrs: { _i: 17 } }, [
-                        _vm._v(_vm._$g(17, "t0-0") + "%"),
+                      _c("uni-view", { attrs: { _i: 15 } }, [
+                        _vm._v(_vm._$g(15, "t0-0") + "%"),
                       ]),
                     ],
                     1
@@ -11165,33 +10667,33 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+            { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
             [
               _c(
                 "v-uni-button",
                 {
-                  staticClass: _vm._$g(19, "sc"),
-                  attrs: { _i: 19 },
+                  staticClass: _vm._$g(17, "sc"),
+                  attrs: { _i: 17 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(19, "t0-0"))]
+                [_vm._v(_vm._$g(17, "t0-0"))]
               ),
               _c(
                 "v-uni-button",
                 {
-                  staticClass: _vm._$g(20, "sc"),
-                  attrs: { _i: 20 },
+                  staticClass: _vm._$g(18, "sc"),
+                  attrs: { _i: 18 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(20, "t0-0"))]
+                [_vm._v(_vm._$g(18, "t0-0"))]
               ),
             ],
             1
@@ -11202,9 +10704,9 @@ var render = function () {
       _c(
         "u-popup",
         {
-          attrs: { _i: 21 },
+          attrs: { _i: 19 },
           model: {
-            value: _vm._$g(21, "v-model"),
+            value: _vm._$g(19, "v-model"),
             callback: function () {},
             expression: "popupShow",
           },
@@ -11212,30 +10714,30 @@ var render = function () {
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+            { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
                 [
                   _vm._v(
-                    _vm._$g(23, "t0-0") +
-                      _vm._$g(23, "t0-1") +
-                      _vm._$g(23, "t0-2")
+                    _vm._$g(21, "t0-0") +
+                      _vm._$g(21, "t0-1") +
+                      _vm._$g(21, "t0-2")
                   ),
                 ]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
+                { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
                 [
-                  _c("v-uni-text", { attrs: { _i: 25 } }, [_vm._v("¥")]),
+                  _c("v-uni-text", { attrs: { _i: 23 } }, [_vm._v("¥")]),
                   _c("v-uni-input", {
-                    attrs: { type: "text", placeholder: "0.00", _i: 26 },
+                    attrs: { type: "text", placeholder: "0.00", _i: 24 },
                     model: {
-                      value: _vm._$g(26, "v-model"),
+                      value: _vm._$g(24, "v-model"),
                       callback: function ($$v) {
-                        _vm.$handleVModelEvent(26, $$v)
+                        _vm.$handleVModelEvent(24, $$v)
                       },
                       expression: "data.amount",
                     },
@@ -11245,11 +10747,11 @@ var render = function () {
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
+                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
                 [
-                  _vm._v(_vm._$g(27, "t0-0")),
-                  _c("v-uni-text", { attrs: { _i: 28 } }, [
-                    _vm._v("¥" + _vm._$g(28, "t0-0")),
+                  _vm._v(_vm._$g(25, "t0-0")),
+                  _c("v-uni-text", { attrs: { _i: 26 } }, [
+                    _vm._v("¥" + _vm._$g(26, "t0-0")),
                   ]),
                 ],
                 1
@@ -11257,15 +10759,15 @@ var render = function () {
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(29, "sc"),
-                  attrs: { _i: 29 },
+                  staticClass: _vm._$g(27, "sc"),
+                  attrs: { _i: 27 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(29, "t0-0") + _vm._$g(29, "t0-1"))]
+                [_vm._v(_vm._$g(27, "t0-0") + _vm._$g(27, "t0-1"))]
               ),
             ],
             1
@@ -11275,38 +10777,53 @@ var render = function () {
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+        { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
         [
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(31, "sc"),
+              staticClass: _vm._$g(29, "sc"),
               staticStyle: { "font-size": "1rem", "font-weight": "bold" },
-              attrs: { _i: 31 },
+              attrs: { _i: 29 },
             },
-            [_vm._v(_vm._$g(31, "t0-0"))]
+            [_vm._v(_vm._$g(29, "t0-0"))]
           ),
-          _vm._l(_vm._$g(32, "f"), function (item, index, $20, $30) {
+          _vm._l(_vm._$g(30, "f"), function (item, index, $20, $30) {
             return _c(
               "uni-view",
               {
                 key: item,
-                staticClass: _vm._$g("32-" + $30, "sc"),
-                attrs: { _i: "32-" + $30 },
+                staticClass: _vm._$g("30-" + $30, "sc"),
+                attrs: { _i: "30-" + $30 },
               },
               [
                 _c(
                   "uni-view",
-                  { attrs: { _i: "33-" + $30 } },
+                  { attrs: { _i: "31-" + $30 } },
                   [
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("34-" + $30, "sc"),
-                        attrs: { _i: "34-" + $30 },
+                        staticClass: _vm._$g("32-" + $30, "sc"),
+                        attrs: { _i: "32-" + $30 },
                       },
-                      [_vm._v(_vm._$g("34-" + $30, "t0-0"))]
+                      [_vm._v(_vm._$g("32-" + $30, "t0-0"))]
                     ),
+                    _c(
+                      "uni-view",
+                      {
+                        staticClass: _vm._$g("33-" + $30, "sc"),
+                        attrs: { _i: "33-" + $30 },
+                      },
+                      [_vm._v(_vm._$g("33-" + $30, "t0-0"))]
+                    ),
+                  ],
+                  1
+                ),
+                _c(
+                  "uni-view",
+                  { attrs: { _i: "34-" + $30 } },
+                  [
                     _c(
                       "uni-view",
                       {
@@ -11314,21 +10831,6 @@ var render = function () {
                         attrs: { _i: "35-" + $30 },
                       },
                       [_vm._v(_vm._$g("35-" + $30, "t0-0"))]
-                    ),
-                  ],
-                  1
-                ),
-                _c(
-                  "uni-view",
-                  { attrs: { _i: "36-" + $30 } },
-                  [
-                    _c(
-                      "uni-view",
-                      {
-                        staticClass: _vm._$g("37-" + $30, "sc"),
-                        attrs: { _i: "37-" + $30 },
-                      },
-                      [_vm._v(_vm._$g("37-" + $30, "t0-0"))]
                     ),
                   ],
                   1
@@ -11546,6 +11048,9 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uniNavBar:
+      __webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 335)
+        .default,
     uTimeLine:
       __webpack_require__(/*! @/static/uview-ui/components/u-time-line/u-time-line.vue */ 240)
         .default,
@@ -11580,32 +11085,18 @@ var render = function () {
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("uni-nav-bar", {
+        attrs: { _i: 1 },
+        on: {
+          clickLeft: function ($event) {
+            return _vm.$handleViewEvent($event)
+          },
+        },
+      }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
-        [
-          _c("uni-view", {
-            staticClass: _vm._$g(2, "sc"),
-            attrs: { _i: 2 },
-            on: {
-              click: function ($event) {
-                return _vm.$handleViewEvent($event)
-              },
-            },
-          }),
-          _c(
-            "v-uni-text",
-            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-            [_vm._v(_vm._$g(3, "t0-0"))]
-          ),
-          _c("uni-view", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } }),
-        ],
-        1
-      ),
-      _c(
-        "uni-view",
-        { staticStyle: { "text-align": "center" }, attrs: { _i: 5 } },
-        [_c("v-uni-image", { attrs: { src: _vm._$g(6, "a-src"), _i: 6 } })],
+        { staticStyle: { "text-align": "center" }, attrs: { _i: 2 } },
+        [_c("v-uni-image", { attrs: { src: _vm._$g(3, "a-src"), _i: 3 } })],
         1
       ),
       _c(
@@ -11617,7 +11108,7 @@ var render = function () {
             margin: "1rem",
             padding: "1rem",
           },
-          attrs: { _i: 7 },
+          attrs: { _i: 4 },
         },
         [
           _c(
@@ -11627,29 +11118,29 @@ var render = function () {
                 display: "flex",
                 "justify-content": "space-between",
               },
-              attrs: { _i: 8 },
+              attrs: { _i: 5 },
             },
             [
               _c(
                 "uni-view",
                 {
                   staticStyle: { "font-weight": "600", color: "#333333" },
-                  attrs: { _i: 9 },
+                  attrs: { _i: 6 },
                 },
-                [_vm._v(_vm._$g(9, "t0-0"))]
+                [_vm._v(_vm._$g(6, "t0-0"))]
               ),
               _c(
                 "uni-view",
                 {
                   staticStyle: { color: "#999999" },
-                  attrs: { _i: 10 },
+                  attrs: { _i: 7 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(10, "t0-0") + " >")]
+                [_vm._v(_vm._$g(7, "t0-0") + " >")]
               ),
             ],
             1
@@ -11663,35 +11154,35 @@ var render = function () {
                 "justify-content": "space-between",
                 padding: "1rem 1rem",
               },
-              attrs: { _i: 11 },
+              attrs: { _i: 8 },
             },
             [
               _c(
                 "uni-view",
-                { attrs: { _i: 12 } },
+                { attrs: { _i: 9 } },
                 [
-                  _c("uni-view", { attrs: { _i: 13 } }, [
-                    _vm._v(_vm._$g(13, "t0-0")),
+                  _c("uni-view", { attrs: { _i: 10 } }, [
+                    _vm._v(_vm._$g(10, "t0-0")),
                   ]),
-                  _c("uni-view", { attrs: { _i: 14 } }, [
-                    _vm._v(_vm._$g(14, "t0-0") + _vm._$g(14, "t0-1")),
+                  _c("uni-view", { attrs: { _i: 11 } }, [
+                    _vm._v(_vm._$g(11, "t0-0") + _vm._$g(11, "t0-1")),
                   ]),
                 ],
                 1
               ),
               _c("uni-view", {
                 staticStyle: { border: "1px solid #F5F5F5" },
-                attrs: { _i: 15 },
+                attrs: { _i: 12 },
               }),
               _c(
                 "uni-view",
-                { attrs: { _i: 16 } },
+                { attrs: { _i: 13 } },
                 [
-                  _c("uni-view", { attrs: { _i: 17 } }, [
-                    _vm._v(_vm._$g(17, "t0-0")),
+                  _c("uni-view", { attrs: { _i: 14 } }, [
+                    _vm._v(_vm._$g(14, "t0-0")),
                   ]),
-                  _c("uni-view", { attrs: { _i: 18 } }, [
-                    _vm._v(_vm._$g(18, "t0-0") + _vm._$g(18, "t0-1")),
+                  _c("uni-view", { attrs: { _i: 15 } }, [
+                    _vm._v(_vm._$g(15, "t0-0") + _vm._$g(15, "t0-1")),
                   ]),
                 ],
                 1
@@ -11705,22 +11196,22 @@ var render = function () {
       _c(
         "uni-view",
         {
-          staticClass: _vm._$g(19, "sc"),
+          staticClass: _vm._$g(16, "sc"),
           staticStyle: {
             "background-color": "rgb(255, 255, 255)",
             "border-radius": "5px",
             margin: "1rem",
             padding: "1rem 2rem",
           },
-          attrs: { _i: 19 },
+          attrs: { _i: 16 },
         },
         [
           _c(
             "u-time-line",
-            { attrs: { _i: 20 } },
+            { attrs: { _i: 17 } },
             [
               _c("u-time-line-item", {
-                attrs: { _i: 21 },
+                attrs: { _i: 18 },
                 scopedSlots: _vm._u([
                   {
                     key: "node",
@@ -11729,14 +11220,14 @@ var render = function () {
                         _c(
                           "uni-view",
                           {
-                            staticClass: _svm._$g("23-" + _si, "sc"),
-                            attrs: { _i: "23-" + _si },
+                            staticClass: _svm._$g("20-" + _si, "sc"),
+                            attrs: { _i: "20-" + _si },
                           },
                           [
                             _c("v-uni-image", {
                               attrs: {
-                                src: _svm._$g("24-" + _si, "a-src"),
-                                _i: "24-" + _si,
+                                src: _svm._$g("21-" + _si, "a-src"),
+                                _i: "21-" + _si,
                               },
                             }),
                           ],
@@ -11751,15 +11242,15 @@ var render = function () {
                       return [
                         _c(
                           "uni-view",
-                          { attrs: { _i: "26-" + _si } },
+                          { attrs: { _i: "23-" + _si } },
                           [
                             _c(
                               "uni-view",
                               {
-                                staticClass: _svm._$g("27-" + _si, "sc"),
-                                attrs: { _i: "27-" + _si },
+                                staticClass: _svm._$g("24-" + _si, "sc"),
+                                attrs: { _i: "24-" + _si },
                               },
-                              [_vm._v(_svm._$g("27-" + _si, "t0-0"))]
+                              [_vm._v(_svm._$g("24-" + _si, "t0-0"))]
                             ),
                           ],
                           1
@@ -11770,7 +11261,7 @@ var render = function () {
                 ]),
               }),
               _c("u-time-line-item", {
-                attrs: { _i: 28 },
+                attrs: { _i: 25 },
                 scopedSlots: _vm._u([
                   {
                     key: "node",
@@ -11779,14 +11270,14 @@ var render = function () {
                         _c(
                           "uni-view",
                           {
-                            staticClass: _svm._$g("30-" + _si, "sc"),
-                            attrs: { _i: "30-" + _si },
+                            staticClass: _svm._$g("27-" + _si, "sc"),
+                            attrs: { _i: "27-" + _si },
                           },
                           [
                             _c("v-uni-image", {
                               attrs: {
-                                src: _svm._$g("31-" + _si, "a-src"),
-                                _i: "31-" + _si,
+                                src: _svm._$g("28-" + _si, "a-src"),
+                                _i: "28-" + _si,
                               },
                             }),
                           ],
@@ -11801,15 +11292,15 @@ var render = function () {
                       return [
                         _c(
                           "uni-view",
-                          { attrs: { _i: "33-" + _si } },
+                          { attrs: { _i: "30-" + _si } },
                           [
                             _c(
                               "uni-view",
                               {
-                                staticClass: _svm._$g("34-" + _si, "sc"),
-                                attrs: { _i: "34-" + _si },
+                                staticClass: _svm._$g("31-" + _si, "sc"),
+                                attrs: { _i: "31-" + _si },
                               },
-                              [_vm._v(_svm._$g("34-" + _si, "t0-0"))]
+                              [_vm._v(_svm._$g("31-" + _si, "t0-0"))]
                             ),
                           ],
                           1
@@ -11820,7 +11311,7 @@ var render = function () {
                 ]),
               }),
               _c("u-time-line-item", {
-                attrs: { _i: 35 },
+                attrs: { _i: 32 },
                 scopedSlots: _vm._u([
                   {
                     key: "node",
@@ -11829,14 +11320,14 @@ var render = function () {
                         _c(
                           "uni-view",
                           {
-                            staticClass: _svm._$g("37-" + _si, "sc"),
-                            attrs: { _i: "37-" + _si },
+                            staticClass: _svm._$g("34-" + _si, "sc"),
+                            attrs: { _i: "34-" + _si },
                           },
                           [
                             _c("v-uni-image", {
                               attrs: {
-                                src: _svm._$g("38-" + _si, "a-src"),
-                                _i: "38-" + _si,
+                                src: _svm._$g("35-" + _si, "a-src"),
+                                _i: "35-" + _si,
                               },
                             }),
                           ],
@@ -11851,15 +11342,15 @@ var render = function () {
                       return [
                         _c(
                           "uni-view",
-                          { attrs: { _i: "40-" + _si } },
+                          { attrs: { _i: "37-" + _si } },
                           [
                             _c(
                               "uni-view",
                               {
-                                staticClass: _svm._$g("41-" + _si, "sc"),
-                                attrs: { _i: "41-" + _si },
+                                staticClass: _svm._$g("38-" + _si, "sc"),
+                                attrs: { _i: "38-" + _si },
                               },
-                              [_vm._v(_svm._$g("41-" + _si, "t0-0"))]
+                              [_vm._v(_svm._$g("38-" + _si, "t0-0"))]
                             ),
                           ],
                           1
@@ -11876,30 +11367,30 @@ var render = function () {
             "uni-view",
             {
               staticStyle: { background: "#F4F5F7", "border-radius": "0.5rem" },
-              attrs: { _i: 42 },
+              attrs: { _i: 39 },
             },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(43, "sc"), attrs: { _i: 43 } },
+                { staticClass: _vm._$g(40, "sc"), attrs: { _i: 40 } },
                 [
                   _c(
                     "v-uni-text",
-                    { staticClass: _vm._$g(44, "sc"), attrs: { _i: 44 } },
-                    [_vm._v(_vm._$g(44, "t0-0"))]
+                    { staticClass: _vm._$g(41, "sc"), attrs: { _i: 41 } },
+                    [_vm._v(_vm._$g(41, "t0-0"))]
                   ),
                   _c(
                     "v-uni-text",
                     {
-                      staticClass: _vm._$g(45, "sc"),
+                      staticClass: _vm._$g(42, "sc"),
                       staticStyle: { "text-align": "end" },
-                      attrs: { _i: 45 },
+                      attrs: { _i: 42 },
                     },
-                    [_vm._v(_vm._$g(45, "t0-0"))]
+                    [_vm._v(_vm._$g(42, "t0-0"))]
                   ),
                   _c("v-uni-image", {
-                    staticClass: _vm._$g(46, "sc"),
-                    attrs: { src: _vm._$g(46, "a-src"), _i: 46 },
+                    staticClass: _vm._$g(43, "sc"),
+                    attrs: { src: _vm._$g(43, "a-src"), _i: 43 },
                     on: {
                       click: function ($event) {
                         return _vm.$handleViewEvent($event)
@@ -11920,30 +11411,30 @@ var render = function () {
                 "border-radius": "0.5rem",
                 "margin-top": "1rem",
               },
-              attrs: { _i: 47 },
+              attrs: { _i: 44 },
             },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(48, "sc"), attrs: { _i: 48 } },
+                { staticClass: _vm._$g(45, "sc"), attrs: { _i: 45 } },
                 [
                   _c(
                     "v-uni-text",
-                    { staticClass: _vm._$g(49, "sc"), attrs: { _i: 49 } },
-                    [_vm._v(_vm._$g(49, "t0-0"))]
+                    { staticClass: _vm._$g(46, "sc"), attrs: { _i: 46 } },
+                    [_vm._v(_vm._$g(46, "t0-0"))]
                   ),
                   _c(
                     "v-uni-text",
                     {
-                      staticClass: _vm._$g(50, "sc"),
+                      staticClass: _vm._$g(47, "sc"),
                       staticStyle: { "text-align": "end" },
-                      attrs: { _i: 50 },
+                      attrs: { _i: 47 },
                     },
-                    [_vm._v(_vm._$g(50, "t0-0"))]
+                    [_vm._v(_vm._$g(47, "t0-0"))]
                   ),
                   _c("v-uni-image", {
-                    staticClass: _vm._$g(51, "sc"),
-                    attrs: { src: _vm._$g(51, "a-src"), _i: 51 },
+                    staticClass: _vm._$g(48, "sc"),
+                    attrs: { src: _vm._$g(48, "a-src"), _i: 48 },
                     on: {
                       click: function ($event) {
                         return _vm.$handleViewEvent($event)
@@ -11961,18 +11452,18 @@ var render = function () {
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(52, "sc"), attrs: { _i: 52 } },
+        { staticClass: _vm._$g(49, "sc"), attrs: { _i: 49 } },
         [
           _c(
             "uni-view",
             {
               staticStyle: { display: "flex", "align-items": "center" },
-              attrs: { _i: 53 },
+              attrs: { _i: 50 },
             },
             [
               _c(
                 "uni-view",
-                { attrs: { _i: 54 } },
+                { attrs: { _i: 51 } },
                 [
                   _c(
                     "u-button",
@@ -11981,9 +11472,9 @@ var render = function () {
                         "background-color": "#35CBA5",
                         color: "#fff",
                       },
-                      attrs: { _i: 55 },
+                      attrs: { _i: 52 },
                     },
-                    [_vm._v(_vm._$g(55, "t0-0"))]
+                    [_vm._v(_vm._$g(52, "t0-0"))]
                   ),
                 ],
                 1
@@ -12499,7 +11990,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);
 var ___CSS_LOADER_URL_REPLACEMENT_3___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_3___);
 // Module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 样式可以根据你的需求自定义 */\n.container[data-v-2ff435f6] {\n\tposition: relative;\n\theight: 100%;\n}\n.bottom-float[data-v-2ff435f6] {\n\tposition: fixed;\n\tbottom: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 100000;\n\tbackground-color: #fff;\n\t/* 背景颜色可以根据需求设置 */\n\tbox-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);\n\t/* 添加阴影效果，可根据需求调整 */\n\tpadding: 10px;\n\t/* 也可以根据需求调整内边距 */\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n}\n/* 样式可以根据你的需求自定义 */\n.custom-field[data-v-2ff435f6] {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 10px;\n}\n.custom-label[data-v-2ff435f6] {\n\tflex: 1;\n\tmargin-right: 10px;\n}\n.custom-icon[data-v-2ff435f6] {\n\twidth: 20px;\n\theight: 20px;\n\t/* 其他样式属性可以根据需要自定义 */\n}\n.u-field[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tpadding: 10px 14px;\n\ttext-align: left;\n\tposition: relative;\n\tcolor: #303133;\n\tbackground: #F4F5F7;\n\tborder-radius: 0.5rem;\n}\n.u-time-axis-item[data-v-2ff435f6] {\n\tdisplay: flex;\n\tflex-direction: row;\n\tflex-direction: column;\n\twidth: 100%;\n\tposition: relative;\n\tmargin-bottom: 40px;\n}\n.xxx uni-image[data-v-2ff435f6] {\n\twidth: 24px;\n\theight: 24px;\n\tdisplay: inline-block;\n\toverflow: hidden;\n\tposition: relative;\n}\n.confirm-withdraw-button[data-v-2ff435f6] {\n\tmargin-top: 20px;\n\tbackground-color: #35CBA5;\n\tcolor: #FFFFFF;\n\tborder: none;\n\tborder-radius: 5px;\n\ttext-align: center;\n}\n.page[data-v-2ff435f6] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmin-height: 100vh;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n\tbackground-size: cover;\n\tbackground-position: center;\n\tpadding-bottom: 200rpx;\n}\n.header[data-v-2ff435f6] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: center;\n\tpadding: 10px;\n}\n.back-arrow[data-v-2ff435f6] {\n\twidth: 30px;\n\theight: 30px;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n\tbackground-position: center;\n}\n.header-title[data-v-2ff435f6] {\n\tflex: 1;\n\ttext-align: center;\n\tfont-size: 18px;\n\tcolor: #333;\n}\n.withdraw-section[data-v-2ff435f6] {\n\tpadding: 10px;\n\tbackground-color: #FFFFFF;\n\tmargin-top: 10px;\n}\n.withdraw-amount-label[data-v-2ff435f6],\n.withdraw-network-label[data-v-2ff435f6],\n.actual-amount-label[data-v-2ff435f6] {\n\tfont-size: 16px;\n\tcolor: #333;\n\tmargin-bottom: 5px;\n}\n.withdraw-amount-input[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #666;\n\tborder: 1px solid #ddd;\n\tborder-radius: 4px;\n\tpadding: 10px;\n\tmargin-bottom: 10px;\n}\n.network-selector[data-v-2ff435f6],\n.actual-amount-section[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #666;\n\tpadding: 10px;\n\tborder: 1px solid #ddd;\n\tborder-radius: 4px;\n\tmargin-bottom: 10px;\n}\n.selector-dropdown-icon[data-v-2ff435f6] {\n\tposition: absolute;\n\tright: 10px;\n\ttop: 50%;\n\t-webkit-transform: translateY(-50%);\n\t        transform: translateY(-50%);\n\twidth: 24px;\n\theight: 24px;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n\tbackground-position: center;\n}\n.actual-amount[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #35CBA5;\n}\n.action-button2[data-v-2ff435f6] {\n\tbackground-color: #35CBA5;\n\tcolor: #FFFFFF;\n\tpadding: 10px 20px;\n\tborder: none;\n\tborder-radius: 5px;\n\ttext-align: center;\n\tmargin-top: 20px;\n}\n.copy-icon[data-v-2ff435f6] {\n\twidth: 24px;\n\theight: 24px;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n\tbackground-position: center;\n\tmargin-left: 10px;\n}\n.address-section[data-v-2ff435f6] {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 10px;\n\tbackground-color: #FFFFFF;\n\tmargin-top: 10px;\n}\n.wallet-address[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #666;\n\tword-break: break-all;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* 样式可以根据你的需求自定义 */\n.container[data-v-2ff435f6] {\n\tposition: relative;\n\theight: 100%;\n}\n.bottom-float[data-v-2ff435f6] {\n\tposition: fixed;\n\tbottom: 0;\n\tleft: 0;\n\twidth: 100%;\n\tz-index: 100000;\n\tbackground-color: #fff;\n\t/* 背景颜色可以根据需求设置 */\n\tbox-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);\n\t/* 添加阴影效果，可根据需求调整 */\n\tpadding: 10px;\n\t/* 也可以根据需求调整内边距 */\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n}\n/* 样式可以根据你的需求自定义 */\n.custom-field[data-v-2ff435f6] {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 10px;\n}\n.custom-label[data-v-2ff435f6] {\n\tflex: 1;\n\tmargin-right: 10px;\n}\n.custom-icon[data-v-2ff435f6] {\n\twidth: 20px;\n\theight: 20px;\n\t/* 其他样式属性可以根据需要自定义 */\n}\n.u-field[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tpadding: 10px 14px;\n\ttext-align: left;\n\tposition: relative;\n\tcolor: #303133;\n\tbackground: #F4F5F7;\n\tborder-radius: 0.5rem;\n}\n.u-time-axis-item[data-v-2ff435f6] {\n\tdisplay: flex;\n\tflex-direction: row;\n\tflex-direction: column;\n\twidth: 100%;\n\tposition: relative;\n\tmargin-bottom: 40px;\n}\n.xxx uni-image[data-v-2ff435f6] {\n\twidth: 24px;\n\theight: 24px;\n\tdisplay: inline-block;\n\toverflow: hidden;\n\tposition: relative;\n}\n.confirm-withdraw-button[data-v-2ff435f6] {\n\tmargin-top: 20px;\n\tbackground-color: #35CBA5;\n\tcolor: #FFFFFF;\n\tborder: none;\n\tborder-radius: 5px;\n\ttext-align: center;\n}\n.page[data-v-2ff435f6] {\n\tdisplay: flex;\n\tflex-direction: column;\n\tmin-height: 100vh;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n\tbackground-size: cover;\n\tbackground-position: center;\n\tpadding-bottom: 200rpx;\n}\n.header[data-v-2ff435f6] {\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: center;\n\tpadding: 10px;\n}\n.back-arrow[data-v-2ff435f6] {\n\twidth: 30px;\n\theight: 30px;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n\tbackground-position: center;\n}\n.header-title[data-v-2ff435f6] {\n\tflex: 1;\n\ttext-align: center;\n\tfont-size: 18px;\n\tcolor: #333;\n}\n.withdraw-section[data-v-2ff435f6] {\n\tpadding: 10px;\n\tbackground-color: #FFFFFF;\n\tmargin-top: 10px;\n}\n.withdraw-amount-label[data-v-2ff435f6],\n.withdraw-network-label[data-v-2ff435f6],\n.actual-amount-label[data-v-2ff435f6] {\n\tfont-size: 16px;\n\tcolor: #333;\n\tmargin-bottom: 5px;\n}\n.withdraw-amount-input[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #666;\n\tborder: 1px solid #ddd;\n\tborder-radius: 4px;\n\tpadding: 10px;\n\tmargin-bottom: 10px;\n}\n.network-selector[data-v-2ff435f6],\n.actual-amount-section[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #666;\n\tpadding: 10px;\n\tborder: 1px solid #ddd;\n\tborder-radius: 4px;\n\tmargin-bottom: 10px;\n}\n.selector-dropdown-icon[data-v-2ff435f6] {\n\tposition: absolute;\n\tright: 10px;\n\ttop: 50%;\n\t-webkit-transform: translateY(-50%);\n\t        transform: translateY(-50%);\n\twidth: 24px;\n\theight: 24px;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n\tbackground-position: center;\n}\n.actual-amount[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #35CBA5;\n}\n.action-button2[data-v-2ff435f6] {\n\tbackground-color: #35CBA5;\n\tcolor: #FFFFFF;\n\tpadding: 10px 20px;\n\tborder: none;\n\tborder-radius: 5px;\n\ttext-align: center;\n\tmargin-top: 20px;\n}\n.copy-icon[data-v-2ff435f6] {\n\twidth: 24px;\n\theight: 24px;\n\tbackground-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ");\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n\tbackground-position: center;\n\tmargin-left: 10px;\n}\n.address-section[data-v-2ff435f6] {\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 10px;\n\tbackground-color: #FFFFFF;\n\tmargin-top: 10px;\n}\n.wallet-address[data-v-2ff435f6] {\n\tfont-size: 14px;\n\tcolor: #666;\n\tword-break: break-all;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -12612,6 +12103,9 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uniNavBar:
+      __webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 335)
+        .default,
     uInput: __webpack_require__(/*! @/static/uview-ui/components/u-input/u-input.vue */ 17).default,
     uButton: __webpack_require__(/*! @/static/uview-ui/components/u-button/u-button.vue */ 33)
       .default,
@@ -12643,37 +12137,24 @@ var render = function () {
     [
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        {
+          staticClass: _vm._$g(1, "sc"),
+          staticStyle: {
+            background:
+              "url('../../static/images/verify/sfbj.png') center center no-repeat",
+            "background-size": "100% 100%",
+          },
+          attrs: { _i: 1 },
+        },
         [
-          _c("v-uni-image", {
-            staticClass: _vm._$g(2, "sc"),
-            attrs: { src: _vm._$g(2, "a-src"), _i: 2 },
+          _c("uni-nav-bar", {
+            attrs: { _i: 2 },
+            on: {
+              clickLeft: function ($event) {
+                return _vm.$handleViewEvent($event)
+              },
+            },
           }),
-          _c(
-            "uni-view",
-            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-            [
-              _c("uni-view", {
-                staticClass: _vm._$g(4, "sc"),
-                attrs: { _i: 4 },
-                on: {
-                  click: function ($event) {
-                    return _vm.$handleViewEvent($event)
-                  },
-                },
-              }),
-              _c(
-                "v-uni-text",
-                { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
-                [_vm._v(_vm._$g(5, "t0-0"))]
-              ),
-              _c("uni-view", {
-                staticClass: _vm._$g(6, "sc"),
-                attrs: { _i: 6 },
-              }),
-            ],
-            1
-          ),
         ],
         1
       ),
@@ -12688,20 +12169,20 @@ var render = function () {
             top: "5rem",
             padding: "1rem 1.5rem",
           },
-          attrs: { _i: 7 },
+          attrs: { _i: 3 },
         },
         [
-          _c("uni-view", { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } }, [
-            _vm._v(_vm._$g(8, "t0-0")),
+          _c("uni-view", { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } }, [
+            _vm._v(_vm._$g(4, "t0-0")),
           ]),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
             [
               _c("u-input", {
-                attrs: { _i: 10 },
+                attrs: { _i: 6 },
                 model: {
-                  value: _vm._$g(10, "v-model"),
+                  value: _vm._$g(6, "v-model"),
                   callback: function () {},
                   expression: "data.real_name",
                 },
@@ -12709,19 +12190,17 @@ var render = function () {
             ],
             1
           ),
+          _c("uni-view", { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } }, [
+            _vm._v(_vm._$g(7, "t0-0")),
+          ]),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
-            [_vm._v(_vm._$g(11, "t0-0"))]
-          ),
-          _c(
-            "uni-view",
-            { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+            { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
             [
               _c("u-input", {
-                attrs: { _i: 13 },
+                attrs: { _i: 9 },
                 model: {
-                  value: _vm._$g(13, "v-model"),
+                  value: _vm._$g(9, "v-model"),
                   callback: function () {},
                   expression: "data.identity_number",
                 },
@@ -12731,21 +12210,21 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
-            [_vm._v(_vm._$g(14, "t0-0"))]
+            { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+            [_vm._v(_vm._$g(10, "t0-0"))]
           ),
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(15, "sc"),
+              staticClass: _vm._$g(11, "sc"),
               staticStyle: {
                 display: "flex",
                 "justify-content": "space-around",
               },
-              attrs: { _i: 15 },
+              attrs: { _i: 11 },
             },
             [
-              _vm._$g(16, "i")
+              _vm._$g(12, "i")
                 ? _c(
                     "uni-view",
                     {
@@ -12754,7 +12233,7 @@ var render = function () {
                         padding: "1rem",
                         "text-align": "center",
                       },
-                      attrs: { _i: 16 },
+                      attrs: { _i: 12 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -12764,11 +12243,11 @@ var render = function () {
                     [
                       _c(
                         "uni-view",
-                        { attrs: { _i: 17 } },
+                        { attrs: { _i: 13 } },
                         [
                           _c("v-uni-image", {
                             staticStyle: { width: "222rpx", height: "156rpx" },
-                            attrs: { src: _vm._$g(18, "a-src"), _i: 18 },
+                            attrs: { src: _vm._$g(14, "a-src"), _i: 14 },
                           }),
                         ],
                         1
@@ -12776,25 +12255,25 @@ var render = function () {
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(19, "sc"),
+                          staticClass: _vm._$g(15, "sc"),
                           staticStyle: { color: "#fff" },
-                          attrs: { _i: 19 },
+                          attrs: { _i: 15 },
                         },
-                        [_vm._v(_vm._$g(19, "t0-0"))]
+                        [_vm._v(_vm._$g(15, "t0-0"))]
                       ),
                     ],
                     1
                   )
                 : _c("v-uni-image", {
                     staticStyle: { width: "320rpx", height: "260rpx" },
-                    attrs: { src: _vm._$g(20, "a-src"), mode: "", _i: 20 },
+                    attrs: { src: _vm._$g(16, "a-src"), mode: "", _i: 16 },
                     on: {
                       click: function ($event) {
                         return _vm.$handleViewEvent($event)
                       },
                     },
                   }),
-              _vm._$g(21, "i")
+              _vm._$g(17, "i")
                 ? _c(
                     "uni-view",
                     {
@@ -12803,7 +12282,7 @@ var render = function () {
                         padding: "1rem",
                         "text-align": "center",
                       },
-                      attrs: { _i: 21 },
+                      attrs: { _i: 17 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -12813,11 +12292,11 @@ var render = function () {
                     [
                       _c(
                         "uni-view",
-                        { attrs: { _i: 22 } },
+                        { attrs: { _i: 18 } },
                         [
                           _c("v-uni-image", {
                             staticStyle: { width: "222rpx", height: "156rpx" },
-                            attrs: { src: _vm._$g(23, "a-src"), _i: 23 },
+                            attrs: { src: _vm._$g(19, "a-src"), _i: 19 },
                           }),
                         ],
                         1
@@ -12825,18 +12304,18 @@ var render = function () {
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g(24, "sc"),
+                          staticClass: _vm._$g(20, "sc"),
                           staticStyle: { color: "#fff" },
-                          attrs: { _i: 24 },
+                          attrs: { _i: 20 },
                         },
-                        [_vm._v(_vm._$g(24, "t0-0"))]
+                        [_vm._v(_vm._$g(20, "t0-0"))]
                       ),
                     ],
                     1
                   )
                 : _c("v-uni-image", {
                     staticStyle: { width: "320rpx", height: "260rpx" },
-                    attrs: { src: _vm._$g(25, "a-src"), mode: "", _i: 25 },
+                    attrs: { src: _vm._$g(21, "a-src"), mode: "", _i: 21 },
                     on: {
                       click: function ($event) {
                         return _vm.$handleViewEvent($event)
@@ -12848,74 +12327,74 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
-            [_vm._v(_vm._$g(26, "t0-0"))]
+            { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+            [_vm._v(_vm._$g(22, "t0-0"))]
           ),
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(27, "sc"),
+              staticClass: _vm._$g(23, "sc"),
               staticStyle: {
                 display: "flex",
                 "justify-content": "space-around",
                 "align-items": "center",
                 "text-align": "center",
               },
-              attrs: { _i: 27 },
+              attrs: { _i: 23 },
             },
             [
               _c(
                 "uni-view",
-                { attrs: { _i: 28 } },
+                { attrs: { _i: 24 } },
                 [
                   _c("v-uni-image", {
                     staticStyle: { width: "140rpx", height: "100rpx" },
-                    attrs: { src: _vm._$g(29, "a-src"), _i: 29 },
+                    attrs: { src: _vm._$g(25, "a-src"), _i: 25 },
                   }),
-                  _c("uni-view", { attrs: { _i: 30 } }, [
-                    _vm._v(_vm._$g(30, "t0-0")),
+                  _c("uni-view", { attrs: { _i: 26 } }, [
+                    _vm._v(_vm._$g(26, "t0-0")),
                   ]),
                 ],
                 1
               ),
               _c(
                 "uni-view",
-                { attrs: { _i: 31 } },
+                { attrs: { _i: 27 } },
                 [
                   _c("v-uni-image", {
                     staticStyle: { width: "140rpx", height: "100rpx" },
-                    attrs: { src: _vm._$g(32, "a-src"), _i: 32 },
+                    attrs: { src: _vm._$g(28, "a-src"), _i: 28 },
                   }),
-                  _c("uni-view", { attrs: { _i: 33 } }, [
-                    _vm._v(_vm._$g(33, "t0-0")),
+                  _c("uni-view", { attrs: { _i: 29 } }, [
+                    _vm._v(_vm._$g(29, "t0-0")),
                   ]),
                 ],
                 1
               ),
               _c(
                 "uni-view",
-                { attrs: { _i: 34 } },
+                { attrs: { _i: 30 } },
                 [
                   _c("v-uni-image", {
                     staticStyle: { width: "140rpx", height: "100rpx" },
-                    attrs: { src: _vm._$g(35, "a-src"), _i: 35 },
+                    attrs: { src: _vm._$g(31, "a-src"), _i: 31 },
                   }),
-                  _c("uni-view", { attrs: { _i: 36 } }, [
-                    _vm._v(_vm._$g(36, "t0-0")),
+                  _c("uni-view", { attrs: { _i: 32 } }, [
+                    _vm._v(_vm._$g(32, "t0-0")),
                   ]),
                 ],
                 1
               ),
               _c(
                 "uni-view",
-                { attrs: { _i: 37 } },
+                { attrs: { _i: 33 } },
                 [
                   _c("v-uni-image", {
                     staticStyle: { width: "140rpx", height: "100rpx" },
-                    attrs: { src: _vm._$g(38, "a-src"), _i: 38 },
+                    attrs: { src: _vm._$g(34, "a-src"), _i: 34 },
                   }),
-                  _c("uni-view", { attrs: { _i: 39 } }, [
-                    _vm._v(_vm._$g(39, "t0-0")),
+                  _c("uni-view", { attrs: { _i: 35 } }, [
+                    _vm._v(_vm._$g(35, "t0-0")),
                   ]),
                 ],
                 1
@@ -12925,20 +12404,20 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticStyle: { "margin-top": "3rem" }, attrs: { _i: 40 } },
+            { staticStyle: { "margin-top": "3rem" }, attrs: { _i: 36 } },
             [
               _c(
                 "u-button",
                 {
                   staticStyle: { "background-color": "#35CBA5", color: "#fff" },
-                  attrs: { _i: 41 },
+                  attrs: { _i: 37 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(41, "t0-0"))]
+                [_vm._v(_vm._$g(37, "t0-0"))]
               ),
             ],
             1
@@ -14373,10 +13852,7 @@ var render = function () {
   return _c(
     "uni-view",
     {
-      staticStyle: {
-        "background-color": "#F5F5F5 !important",
-        height: "100vh",
-      },
+      staticStyle: { "background-color": "#f5f5f5", "min-height": "100vh" },
       attrs: { _i: 0 },
     },
     [
@@ -14384,15 +13860,16 @@ var render = function () {
         "uni-view",
         {
           staticStyle: {
-            "background-image": "url('../static/images/my/1.png')",
+            "background-image": "url('../../static/images/my/1.png')",
             "background-repeat": "no-repeat",
             "background-size": "100%",
-            height: "560rpx",
+            "min-height": "560rpx",
             padding: "40rpx",
           },
           attrs: { _i: 1 },
         },
         [
+          _c("uni-view", { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } }),
           _c(
             "uni-view",
             {
@@ -14402,23 +13879,23 @@ var render = function () {
                 padding: "30rpx",
                 "margin-top": "200rpx",
               },
-              attrs: { _i: 2 },
+              attrs: { _i: 3 },
             },
             [
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(3, "sc"),
+                  staticClass: _vm._$g(4, "sc"),
                   staticStyle: { position: "relative", top: "-80rpx" },
-                  attrs: { _i: 3 },
+                  attrs: { _i: 4 },
                 },
                 [
                   _c(
                     "uni-view",
                     {
-                      staticClass: _vm._$g(4, "sc"),
-                      style: _vm._$g(4, "s"),
-                      attrs: { _i: 4 },
+                      staticClass: _vm._$g(5, "sc"),
+                      style: _vm._$g(5, "s"),
+                      attrs: { _i: 5 },
                     },
                     [
                       _c("v-uni-image", {
@@ -14429,7 +13906,7 @@ var render = function () {
                           width: "48rpx",
                           height: "48rpx",
                         },
-                        attrs: { src: _vm._$g(5, "a-src"), mode: "", _i: 5 },
+                        attrs: { src: _vm._$g(6, "a-src"), mode: "", _i: 6 },
                         on: {
                           click: function ($event) {
                             return _vm.$handleViewEvent($event)
@@ -14443,7 +13920,7 @@ var render = function () {
                     "uni-view",
                     {
                       staticStyle: { "margin-top": "60rpx" },
-                      attrs: { _i: 6 },
+                      attrs: { _i: 7 },
                     },
                     [
                       _c(
@@ -14455,11 +13932,11 @@ var render = function () {
                             display: "flex",
                             "align-items": "center",
                           },
-                          attrs: { _i: 7 },
+                          attrs: { _i: 8 },
                         },
                         [
-                          _vm._v(_vm._$g(7, "t0-0")),
-                          _vm._$g(8, "i")
+                          _vm._v(_vm._$g(8, "t0-0")),
+                          _vm._$g(9, "i")
                             ? _c("v-uni-image", {
                                 staticStyle: {
                                   width: "36rpx",
@@ -14467,9 +13944,9 @@ var render = function () {
                                   "margin-left": "10rpx",
                                 },
                                 attrs: {
-                                  src: _vm._$g(8, "a-src"),
+                                  src: _vm._$g(9, "a-src"),
                                   mode: "",
-                                  _i: 8,
+                                  _i: 9,
                                 },
                               })
                             : _vm._e(),
@@ -14489,23 +13966,23 @@ var render = function () {
                     "margin-top": "-50rpx",
                     "margin-bottom": "20rpx",
                   },
-                  attrs: { _i: 9 },
+                  attrs: { _i: 10 },
                 },
-                [_c("u-line", { attrs: { _i: 10 } })],
+                [_c("u-line", { attrs: { _i: 11 } })],
                 1
               ),
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(11, "sc"),
+                  staticClass: _vm._$g(12, "sc"),
                   staticStyle: { "justify-content": "space-between" },
-                  attrs: { _i: 11 },
+                  attrs: { _i: 12 },
                 },
                 [
                   _c(
                     "uni-view",
-                    { staticStyle: { color: "#999999" }, attrs: { _i: 12 } },
-                    [_vm._v(_vm._$g(12, "t0-0"))]
+                    { staticStyle: { color: "#999999" }, attrs: { _i: 13 } },
+                    [_vm._v(_vm._$g(13, "t0-0"))]
                   ),
                   _c(
                     "uni-view",
@@ -14515,7 +13992,7 @@ var render = function () {
                         display: "flex",
                         "align-items": "center",
                       },
-                      attrs: { _i: 13 },
+                      attrs: { _i: 14 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -14529,9 +14006,9 @@ var render = function () {
                           height: "36rpx",
                           "margin-right": "10rpx",
                         },
-                        attrs: { src: _vm._$g(14, "a-src"), mode: "", _i: 14 },
+                        attrs: { src: _vm._$g(15, "a-src"), mode: "", _i: 15 },
                       }),
-                      _vm._v(_vm._$g(13, "t1-0")),
+                      _vm._v(_vm._$g(14, "t1-0")),
                     ],
                     1
                   ),
@@ -14546,29 +14023,29 @@ var render = function () {
                     "font-size": "50rpx",
                     "font-weight": "bold",
                   },
-                  attrs: { _i: 15 },
+                  attrs: { _i: 16 },
                 },
-                [_vm._v(_vm._$g(15, "t0-0"))]
+                [_vm._v(_vm._$g(16, "t0-0"))]
               ),
               _c(
                 "uni-view",
-                { staticStyle: { "margin-top": "30rpx" }, attrs: { _i: 16 } },
+                { staticStyle: { "margin-top": "30rpx" }, attrs: { _i: 17 } },
                 [
                   _c(
                     "u-row",
-                    { attrs: { _i: 17 } },
+                    { attrs: { _i: 18 } },
                     _vm._l(
-                      _vm._$g(18, "f"),
+                      _vm._$g(19, "f"),
                       function (detail, index, $20, $30) {
                         return _c(
                           "u-col",
-                          { key: detail, attrs: { _i: "18-" + $30 } },
+                          { key: detail, attrs: { _i: "19-" + $30 } },
                           [
                             _c(
                               "uni-view",
                               {
-                                staticClass: _vm._$g("19-" + $30, "sc"),
-                                attrs: { _i: "19-" + $30 },
+                                staticClass: _vm._$g("20-" + $30, "sc"),
+                                attrs: { _i: "20-" + $30 },
                                 on: {
                                   click: function ($event) {
                                     return _vm.$handleViewEvent($event)
@@ -14584,17 +14061,17 @@ var render = function () {
                                       "margin-bottom": "10rpx",
                                       "font-size": "24rpx",
                                     },
-                                    attrs: { _i: "20-" + $30 },
+                                    attrs: { _i: "21-" + $30 },
                                   },
-                                  [_vm._v(_vm._$g("20-" + $30, "t0-0"))]
+                                  [_vm._v(_vm._$g("21-" + $30, "t0-0"))]
                                 ),
                                 _c(
                                   "uni-view",
                                   {
                                     staticStyle: { "font-size": "34rpx" },
-                                    attrs: { _i: "21-" + $30 },
+                                    attrs: { _i: "22-" + $30 },
                                   },
-                                  [_vm._v(_vm._$g("21-" + $30, "t0-0"))]
+                                  [_vm._v(_vm._$g("22-" + $30, "t0-0"))]
                                 ),
                               ],
                               1
@@ -14615,28 +14092,28 @@ var render = function () {
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(22, "sc"),
+              staticClass: _vm._$g(23, "sc"),
               staticStyle: {
                 "border-radius": "12rpx",
                 "margin-top": "20rpx",
                 padding: "30rpx",
               },
-              attrs: { _i: 22 },
+              attrs: { _i: 23 },
             },
             [
               _c(
                 "u-row",
-                { attrs: { _i: 23 } },
-                _vm._l(_vm._$g(24, "f"), function (feature, index, $21, $31) {
+                { attrs: { _i: 24 } },
+                _vm._l(_vm._$g(25, "f"), function (feature, index, $21, $31) {
                   return _c(
                     "u-col",
-                    { key: feature, attrs: { _i: "24-" + $31 } },
+                    { key: feature, attrs: { _i: "25-" + $31 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g("25-" + $31, "sc"),
-                          attrs: { _i: "25-" + $31 },
+                          staticClass: _vm._$g("26-" + $31, "sc"),
+                          attrs: { _i: "26-" + $31 },
                           on: {
                             click: function ($event) {
                               return _vm.$handleViewEvent($event)
@@ -14646,12 +14123,12 @@ var render = function () {
                         [
                           _c("v-uni-image", {
                             attrs: {
-                              src: _vm._$g("26-" + $31, "a-src"),
-                              _i: "26-" + $31,
+                              src: _vm._$g("27-" + $31, "a-src"),
+                              _i: "27-" + $31,
                             },
                           }),
-                          _c("uni-view", { attrs: { _i: "27-" + $31 } }, [
-                            _vm._v(_vm._$g("27-" + $31, "t0-0")),
+                          _c("uni-view", { attrs: { _i: "28-" + $31 } }, [
+                            _vm._v(_vm._$g("28-" + $31, "t0-0")),
                           ]),
                         ],
                         1
@@ -14668,29 +14145,29 @@ var render = function () {
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(28, "sc"),
+              staticClass: _vm._$g(29, "sc"),
               staticStyle: {
                 "font-size": "24rpx",
                 "border-radius": "12rpx",
                 "margin-top": "20rpx",
                 padding: "30rpx",
               },
-              attrs: { _i: 28 },
+              attrs: { _i: 29 },
             },
             [
               _c(
                 "u-row",
-                { attrs: { _i: 29 } },
-                _vm._l(_vm._$g(30, "f"), function (service, index, $22, $32) {
+                { attrs: { _i: 30 } },
+                _vm._l(_vm._$g(31, "f"), function (service, index, $22, $32) {
                   return _c(
                     "u-col",
-                    { key: service, attrs: { _i: "30-" + $32 } },
+                    { key: service, attrs: { _i: "31-" + $32 } },
                     [
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g("31-" + $32, "sc"),
-                          attrs: { _i: "31-" + $32 },
+                          staticClass: _vm._$g("32-" + $32, "sc"),
+                          attrs: { _i: "32-" + $32 },
                           on: {
                             click: function ($event) {
                               return _vm.$handleViewEvent($event)
@@ -14700,12 +14177,12 @@ var render = function () {
                         [
                           _c("v-uni-image", {
                             attrs: {
-                              src: _vm._$g("32-" + $32, "a-src"),
-                              _i: "32-" + $32,
+                              src: _vm._$g("33-" + $32, "a-src"),
+                              _i: "33-" + $32,
                             },
                           }),
-                          _c("uni-view", { attrs: { _i: "33-" + $32 } }, [
-                            _vm._v(_vm._$g("33-" + $32, "t0-0")),
+                          _c("uni-view", { attrs: { _i: "34-" + $32 } }, [
+                            _vm._v(_vm._$g("34-" + $32, "t0-0")),
                           ]),
                         ],
                         1
@@ -14722,23 +14199,23 @@ var render = function () {
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(34, "sc"),
+              staticClass: _vm._$g(35, "sc"),
               staticStyle: {
                 color: "#333333",
                 "border-radius": "12rpx",
                 "margin-top": "20rpx",
                 padding: "30rpx",
               },
-              attrs: { _i: 34 },
+              attrs: { _i: 35 },
             },
-            _vm._l(_vm._$g(35, "f"), function (record, index, $23, $33) {
+            _vm._l(_vm._$g(36, "f"), function (record, index, $23, $33) {
               return _c(
                 "uni-view",
                 {
                   key: record,
-                  staticClass: _vm._$g("35-" + $33, "sc"),
-                  style: _vm._$g("35-" + $33, "s"),
-                  attrs: { _i: "35-" + $33 },
+                  staticClass: _vm._$g("36-" + $33, "sc"),
+                  style: _vm._$g("36-" + $33, "s"),
+                  attrs: { _i: "36-" + $33 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
@@ -14749,19 +14226,19 @@ var render = function () {
                   _c("v-uni-image", {
                     staticStyle: { "margin-right": "20rpx" },
                     attrs: {
-                      src: _vm._$g("36-" + $33, "a-src"),
-                      _i: "36-" + $33,
+                      src: _vm._$g("37-" + $33, "a-src"),
+                      _i: "37-" + $33,
                     },
                   }),
                   _c(
                     "uni-view",
                     {
                       staticStyle: { width: "520rpx" },
-                      attrs: { _i: "37-" + $33 },
+                      attrs: { _i: "38-" + $33 },
                     },
-                    [_vm._v(_vm._$g("37-" + $33, "t0-0"))]
+                    [_vm._v(_vm._$g("38-" + $33, "t0-0"))]
                   ),
-                  _c("u-icon", { attrs: { _i: "38-" + $33 } }),
+                  _c("u-icon", { attrs: { _i: "39-" + $33 } }),
                 ],
                 1
               )
@@ -14770,20 +14247,20 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticStyle: { "margin-top": "80rpx" }, attrs: { _i: 39 } },
+            { staticStyle: { "margin-top": "80rpx" }, attrs: { _i: 40 } },
             [
               _c(
                 "u-button",
                 {
                   staticStyle: { "font-size": "34rpx" },
-                  attrs: { _i: 40 },
+                  attrs: { _i: 41 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(40, "t0-0"))]
+                [_vm._v(_vm._$g(41, "t0-0"))]
               ),
             ],
             1
@@ -14889,7 +14366,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.avatar[data-v-1cc45dd4] {\n  background-size: 100% 100% !important;\n}\nuni-image[data-v-1cc45dd4] {\n  width: 50rpx;\n  /* 自定义宽度 */\n  height: 50rpx;\n  /* 自定义高度 */\n}\nbody[data-v-1cc45dd4] {\n  background-color: #f0f2f5;\n  padding-bottom: 200rpx;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.avatar[data-v-1cc45dd4] {\n  background-size: 100% 100% !important;\n}\nuni-image[data-v-1cc45dd4] {\n  width: 50rpx;\n  /* 自定义宽度 */\n  height: 50rpx;\n  /* 自定义高度 */\n}\nbody[data-v-1cc45dd4] {\n  background-color: #f5f5f5;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -26961,90 +26438,91 @@ var render = function () {
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
           _c("v-uni-image", {
-            attrs: { src: _vm._$g(2, "a-src"), mode: "", _i: 2 },
+            attrs: { src: _vm._$g(3, "a-src"), mode: "", _i: 3 },
             on: {
               click: function ($event) {
                 return _vm.$handleViewEvent($event)
               },
             },
           }),
-          _c("v-uni-text", { attrs: { _i: 3 } }, [_vm._v(_vm._$g(3, "t0-0"))]),
+          _c("v-uni-text", { attrs: { _i: 4 } }, [_vm._v(_vm._$g(4, "t0-0"))]),
         ],
         1
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
+        { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+            { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+                { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
                 [
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
-                    [_vm._v(_vm._$g(7, "t0-0"))]
+                    { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
+                    [_vm._v(_vm._$g(8, "t0-0"))]
                   ),
                   _c(
                     "uni-view",
                     {
-                      staticClass: _vm._$g(8, "sc"),
-                      attrs: { _i: 8 },
+                      staticClass: _vm._$g(9, "sc"),
+                      attrs: { _i: 9 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
                         },
                       },
                     },
-                    [_vm._v(_vm._$g(8, "t0-0"))]
+                    [_vm._v(_vm._$g(9, "t0-0"))]
                   ),
                 ],
                 1
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
-                [_vm._v(_vm._$g(9, "t0-0"))]
+                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+                [_vm._v(_vm._$g(10, "t0-0"))]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+                { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
                 [
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+                    { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
                     [
-                      _c("v-uni-text", { attrs: { _i: 12 } }, [
-                        _vm._v(_vm._$g(12, "t0-0")),
+                      _c("v-uni-text", { attrs: { _i: 13 } }, [
+                        _vm._v(_vm._$g(13, "t0-0")),
                       ]),
                       _c(
                         "v-uni-text",
-                        { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
-                        [_vm._v(_vm._$g(13, "t0-0"))]
+                        { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                        [_vm._v(_vm._$g(14, "t0-0"))]
                       ),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                    { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
                     [
-                      _c("v-uni-text", { attrs: { _i: 15 } }, [
-                        _vm._v(_vm._$g(15, "t0-0")),
+                      _c("v-uni-text", { attrs: { _i: 16 } }, [
+                        _vm._v(_vm._$g(16, "t0-0")),
                       ]),
                       _c(
                         "v-uni-text",
-                        { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
-                        [_vm._v(_vm._$g(16, "t0-0"))]
+                        { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                        [_vm._v(_vm._$g(17, "t0-0"))]
                       ),
                     ],
                     1
@@ -27057,29 +26535,29 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+            { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+                { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: _vm._$g(19, "a-src"), mode: "", _i: 19 },
+                    attrs: { src: _vm._$g(20, "a-src"), mode: "", _i: 20 },
                   }),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
+                    { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
                     [
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
-                        [_vm._v(_vm._$g(21, "t0-0"))]
-                      ),
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
                         [_vm._v(_vm._$g(22, "t0-0"))]
                       ),
+                      _c(
+                        "uni-view",
+                        { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                        [_vm._v(_vm._$g(23, "t0-0"))]
+                      ),
                     ],
                     1
                   ),
@@ -27088,24 +26566,24 @@ var render = function () {
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+                { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
                 [
                   _c("v-uni-image", {
-                    attrs: { src: _vm._$g(24, "a-src"), mode: "", _i: 24 },
+                    attrs: { src: _vm._$g(25, "a-src"), mode: "", _i: 25 },
                   }),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                    { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
                     [
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
-                        [_vm._v(_vm._$g(26, "t0-0"))]
-                      ),
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
                         [_vm._v(_vm._$g(27, "t0-0"))]
+                      ),
+                      _c(
+                        "uni-view",
+                        { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
+                        [_vm._v(_vm._$g(28, "t0-0"))]
                       ),
                     ],
                     1
@@ -27118,41 +26596,41 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
+            { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                [_vm._v(_vm._$g(29, "t0-0"))]
+                { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
+                [_vm._v(_vm._$g(30, "t0-0"))]
               ),
-              _vm._l(_vm._$g(30, "f"), function (item, index, $20, $30) {
+              _vm._l(_vm._$g(31, "f"), function (item, index, $20, $30) {
                 return _c(
                   "uni-view",
                   {
                     key: item,
-                    staticClass: _vm._$g("30-" + $30, "sc"),
-                    attrs: { _i: "30-" + $30 },
+                    staticClass: _vm._$g("31-" + $30, "sc"),
+                    attrs: { _i: "31-" + $30 },
                   },
                   [
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("31-" + $30, "sc"),
-                        attrs: { _i: "31-" + $30 },
+                        staticClass: _vm._$g("32-" + $30, "sc"),
+                        attrs: { _i: "32-" + $30 },
                       },
                       [
                         _c(
                           "uni-view",
                           {
-                            staticClass: _vm._$g("32-" + $30, "sc"),
-                            attrs: { _i: "32-" + $30 },
+                            staticClass: _vm._$g("33-" + $30, "sc"),
+                            attrs: { _i: "33-" + $30 },
                           },
                           [
                             _c("v-uni-image", {
                               attrs: {
-                                src: _vm._$g("33-" + $30, "a-src"),
+                                src: _vm._$g("34-" + $30, "a-src"),
                                 mode: "",
-                                _i: "33-" + $30,
+                                _i: "34-" + $30,
                               },
                             }),
                           ],
@@ -27161,36 +26639,36 @@ var render = function () {
                         _c(
                           "uni-view",
                           {
-                            staticClass: _vm._$g("34-" + $30, "sc"),
-                            attrs: { _i: "34-" + $30 },
+                            staticClass: _vm._$g("35-" + $30, "sc"),
+                            attrs: { _i: "35-" + $30 },
                           },
                           [
                             _c(
                               "uni-view",
                               {
-                                staticClass: _vm._$g("35-" + $30, "sc"),
-                                attrs: { _i: "35-" + $30 },
+                                staticClass: _vm._$g("36-" + $30, "sc"),
+                                attrs: { _i: "36-" + $30 },
                               },
-                              [_vm._v(_vm._$g("35-" + $30, "t0-0"))]
+                              [_vm._v(_vm._$g("36-" + $30, "t0-0"))]
                             ),
-                            _vm._$g("36-" + $30, "i")
+                            _vm._$g("37-" + $30, "i")
                               ? _c(
                                   "uni-view",
                                   {
-                                    staticClass: _vm._$g("36-" + $30, "sc"),
-                                    attrs: { _i: "36-" + $30 },
+                                    staticClass: _vm._$g("37-" + $30, "sc"),
+                                    attrs: { _i: "37-" + $30 },
                                   },
                                   [
                                     _vm._v(
-                                      _vm._$g("36-" + $30, "t0-0") +
+                                      _vm._$g("37-" + $30, "t0-0") +
                                         ": " +
-                                        _vm._$g("36-" + $30, "t0-1")
+                                        _vm._$g("37-" + $30, "t0-1")
                                     ),
                                     _c("v-uni-image", {
                                       attrs: {
-                                        src: _vm._$g("37-" + $30, "a-src"),
+                                        src: _vm._$g("38-" + $30, "a-src"),
                                         mode: "",
-                                        _i: "37-" + $30,
+                                        _i: "38-" + $30,
                                       },
                                       on: {
                                         click: function ($event) {
@@ -27205,14 +26683,14 @@ var render = function () {
                             _c(
                               "uni-view",
                               {
-                                staticClass: _vm._$g("38-" + $30, "sc"),
-                                attrs: { _i: "38-" + $30 },
+                                staticClass: _vm._$g("39-" + $30, "sc"),
+                                attrs: { _i: "39-" + $30 },
                               },
                               [
                                 _vm._v(
-                                  _vm._$g("38-" + $30, "t0-0") +
+                                  _vm._$g("39-" + $30, "t0-0") +
                                     ":" +
-                                    _vm._$g("38-" + $30, "t0-1")
+                                    _vm._$g("39-" + $30, "t0-1")
                                 ),
                               ]
                             ),
@@ -27225,32 +26703,32 @@ var render = function () {
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("39-" + $30, "sc"),
-                        attrs: { _i: "39-" + $30 },
+                        staticClass: _vm._$g("40-" + $30, "sc"),
+                        attrs: { _i: "40-" + $30 },
                       },
                       [
                         _c(
                           "uni-view",
                           {
-                            staticClass: _vm._$g("40-" + $30, "sc"),
-                            attrs: { _i: "40-" + $30 },
+                            staticClass: _vm._$g("41-" + $30, "sc"),
+                            attrs: { _i: "41-" + $30 },
                           },
                           [
-                            _c(
-                              "uni-view",
-                              {
-                                staticClass: _vm._$g("41-" + $30, "sc"),
-                                attrs: { _i: "41-" + $30 },
-                              },
-                              [_vm._v(_vm._$g("41-" + $30, "t0-0") + "(¥)")]
-                            ),
                             _c(
                               "uni-view",
                               {
                                 staticClass: _vm._$g("42-" + $30, "sc"),
                                 attrs: { _i: "42-" + $30 },
                               },
-                              [_vm._v(_vm._$g("42-" + $30, "t0-0"))]
+                              [_vm._v(_vm._$g("42-" + $30, "t0-0") + "(¥)")]
+                            ),
+                            _c(
+                              "uni-view",
+                              {
+                                staticClass: _vm._$g("43-" + $30, "sc"),
+                                attrs: { _i: "43-" + $30 },
+                              },
+                              [_vm._v(_vm._$g("43-" + $30, "t0-0"))]
                             ),
                           ],
                           1
@@ -27258,25 +26736,25 @@ var render = function () {
                         _c(
                           "uni-view",
                           {
-                            staticClass: _vm._$g("43-" + $30, "sc"),
-                            attrs: { _i: "43-" + $30 },
+                            staticClass: _vm._$g("44-" + $30, "sc"),
+                            attrs: { _i: "44-" + $30 },
                           },
                           [
-                            _c(
-                              "uni-view",
-                              {
-                                staticClass: _vm._$g("44-" + $30, "sc"),
-                                attrs: { _i: "44-" + $30 },
-                              },
-                              [_vm._v(_vm._$g("44-" + $30, "t0-0") + "(¥)")]
-                            ),
                             _c(
                               "uni-view",
                               {
                                 staticClass: _vm._$g("45-" + $30, "sc"),
                                 attrs: { _i: "45-" + $30 },
                               },
-                              [_vm._v(_vm._$g("45-" + $30, "t0-0"))]
+                              [_vm._v(_vm._$g("45-" + $30, "t0-0") + "(¥)")]
+                            ),
+                            _c(
+                              "uni-view",
+                              {
+                                staticClass: _vm._$g("46-" + $30, "sc"),
+                                attrs: { _i: "46-" + $30 },
+                              },
+                              [_vm._v(_vm._$g("46-" + $30, "t0-0"))]
                             ),
                           ],
                           1
@@ -27284,18 +26762,10 @@ var render = function () {
                         _c(
                           "uni-view",
                           {
-                            staticClass: _vm._$g("46-" + $30, "sc"),
-                            attrs: { _i: "46-" + $30 },
+                            staticClass: _vm._$g("47-" + $30, "sc"),
+                            attrs: { _i: "47-" + $30 },
                           },
                           [
-                            _c(
-                              "uni-view",
-                              {
-                                staticClass: _vm._$g("47-" + $30, "sc"),
-                                attrs: { _i: "47-" + $30 },
-                              },
-                              [_vm._v(_vm._$g("47-" + $30, "t0-0"))]
-                            ),
                             _c(
                               "uni-view",
                               {
@@ -27303,6 +26773,14 @@ var render = function () {
                                 attrs: { _i: "48-" + $30 },
                               },
                               [_vm._v(_vm._$g("48-" + $30, "t0-0"))]
+                            ),
+                            _c(
+                              "uni-view",
+                              {
+                                staticClass: _vm._$g("49-" + $30, "sc"),
+                                attrs: { _i: "49-" + $30 },
+                              },
+                              [_vm._v(_vm._$g("49-" + $30, "t0-0"))]
                             ),
                           ],
                           1
@@ -27323,14 +26801,14 @@ var render = function () {
       _c(
         "u-calendar",
         {
-          attrs: { _i: 49 },
+          attrs: { _i: 50 },
           on: {
             change: function ($event) {
               return _vm.$handleViewEvent($event)
             },
           },
           model: {
-            value: _vm._$g(49, "v-model"),
+            value: _vm._$g(50, "v-model"),
             callback: function () {},
             expression: "show",
           },
@@ -27338,16 +26816,16 @@ var render = function () {
         [
           _c(
             "uni-view",
-            { attrs: { slot: "tooltip", _i: 50 }, slot: "tooltip" },
+            { attrs: { slot: "tooltip", _i: 51 }, slot: "tooltip" },
             [
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(51, "sc"),
+                  staticClass: _vm._$g(52, "sc"),
                   staticStyle: { margin: "40rpx" },
-                  attrs: { _i: 51 },
+                  attrs: { _i: 52 },
                 },
-                [_vm._v(_vm._$g(51, "t0-0"))]
+                [_vm._v(_vm._$g(52, "t0-0"))]
               ),
             ],
             1
@@ -27456,7 +26934,7 @@ var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! @/static/images/my/t
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.team[data-v-2283caf5] {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  padding-top: 88rpx;\n  min-height: 100vh;\n}\n.team[data-v-2283caf5] .u-icon__icon {\n  color: #999999 !important;\n}\n.team[data-v-2283caf5] .u-btn--success {\n  border-color: #35CBA5;\n  background-color: #35CBA5;\n}\n.team .title[data-v-2283caf5] {\n  font-size: 28rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 40rpx;\n}\n.team .navbar[data-v-2283caf5] {\n  height: 88rpx;\n  display: flex;\n  align-items: center;\n}\n.team .navbar uni-image[data-v-2283caf5] {\n  width: 48rpx;\n  height: 48rpx;\n  margin-left: 40rpx;\n}\n.team .navbar uni-text[data-v-2283caf5] {\n  margin-left: 218rpx;\n  font-size: 36rpx;\n  font-weight: 600;\n  color: #333333;\n}\n.team .content[data-v-2283caf5] {\n  padding: 30rpx 40rpx;\n}\n.team .content .balance[data-v-2283caf5] {\n  height: 290rpx;\n  background: #FFFFFF;\n  border-radius: 24rpx;\n  padding: 30rpx;\n}\n.team .content .balance_top[data-v-2283caf5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.team .content .balance_top .desc[data-v-2283caf5] {\n  font-size: 28rpx;\n  font-weight: 500;\n  color: #999999;\n  line-height: 40rpx;\n}\n.team .content .balance_top .date[data-v-2283caf5] {\n  width: 144rpx;\n  height: 50rpx;\n  background: #E2F8F2;\n  border-radius: 26rpx;\n  text-align: center;\n  line-height: 50rpx;\n  font-size: 24rpx;\n  font-weight: 500;\n  color: #35CBA5;\n}\n.team .content .balance_count[data-v-2283caf5] {\n  font-size: 60rpx;\n  font-weight: normal;\n  color: #333333;\n  line-height: 60rpx;\n  margin: 24rpx 0 62rpx;\n}\n.team .content .balance_bottom[data-v-2283caf5] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-right: 24rpx;\n}\n.team .content .balance_bottom_item[data-v-2283caf5] {\n  font-size: 28rpx;\n  font-weight: 400;\n  color: #999999;\n  line-height: 40rpx;\n}\n.team .content .balance_bottom_item .bold[data-v-2283caf5] {\n  font-weight: bold;\n  margin-left: 20rpx;\n  color: #000;\n}\n.team .content .price[data-v-2283caf5] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin: 30rpx 0 60rpx;\n}\n.team .content .price_item[data-v-2283caf5] {\n  width: 324rpx;\n  height: 180rpx;\n  background: #FFFFFF;\n  border-radius: 16rpx;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.team .content .price_item uni-image[data-v-2283caf5] {\n  width: 80rpx;\n  height: 80rpx;\n  margin-right: 20rpx;\n}\n.team .content .price_item_right .desc[data-v-2283caf5] {\n  font-size: 24rpx;\n  font-weight: 400;\n  color: #333333;\n  line-height: 34rpx;\n  margin-bottom: 10rpx;\n}\n.team .content .price_item_right .count[data-v-2283caf5] {\n  font-size: 36rpx;\n  color: #333333;\n  line-height: 44rpx;\n}\n.team .content .user-info_title[data-v-2283caf5] {\n  font-size: 32rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 44rpx;\n  margin-bottom: 30rpx;\n}\n.team .content .user-info_item[data-v-2283caf5] {\n  margin-bottom: 20rpx;\n  padding: 30rpx;\n  background: #FFFFFF;\n  border-radius: 12rpx;\n}\n.team .content .user-info_item .info[data-v-2283caf5] {\n  padding-bottom: 38rpx;\n  display: flex;\n  align-items: center;\n  border-bottom: 2rpx solid #F3F3F3;\n}\n.team .content .user-info_item .info_avatar[data-v-2283caf5] {\n  width: 130rpx;\n  height: 130rpx;\n  border-radius: 50%;\n  margin-right: 20rpx;\n  background-color: #35CBA5;\n}\n.team .content .user-info_item .info_avatar uni-image[data-v-2283caf5] {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n}\n.team .content .user-info_item .info_text .name[data-v-2283caf5] {\n  font-size: 32rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 44rpx;\n}\n.team .content .user-info_item .info_text .phone[data-v-2283caf5] {\n  font-size: 24rpx;\n  font-weight: 600;\n  color: #999999;\n  line-height: 34rpx;\n  margin: 10rpx 0;\n}\n.team .content .user-info_item .info_text .phone uni-image[data-v-2283caf5] {\n  width: 24rpx;\n  height: 24rpx;\n  margin-left: 10rpx;\n}\n.team .content .user-info_item .info_text .date[data-v-2283caf5] {\n  font-size: 20rpx;\n  font-weight: 400;\n  color: #999999;\n  line-height: 28rpx;\n}\n.team .content .user-info_item .data[data-v-2283caf5] {\n  padding-top: 30rpx;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.team .content .user-info_item .data_item[data-v-2283caf5] {\n  flex: 1;\n  text-align: center;\n  line-height: 40rpx;\n}\n.team .content .user-info_item .data_item[data-v-2283caf5]:first-child {\n  text-align: left;\n}\n.team .content .user-info_item .data_item[data-v-2283caf5]:last-child {\n  text-align: right;\n}\n.team .content .user-info_item .data_item .desc[data-v-2283caf5] {\n  font-size: 24rpx;\n  color: #999999;\n}\n.team .content .user-info_item .data_item .count[data-v-2283caf5] {\n  font-size: 32rpx;\n  color: #333333;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.team[data-v-2283caf5] {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  min-height: 100vh;\n}\n.team[data-v-2283caf5] .u-icon__icon {\n  color: #999999 !important;\n}\n.team[data-v-2283caf5] .u-btn--success {\n  border-color: #35CBA5;\n  background-color: #35CBA5;\n}\n.team .status_bar[data-v-2283caf5] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 9999;\n  height: var(--status-bar-height);\n  width: 100%;\n  background: linear-gradient(to right, #ecfaf6 0%, #f8f9f8 100%) !important;\n}\n.team .title[data-v-2283caf5] {\n  font-size: 28rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 40rpx;\n}\n.team .navbar[data-v-2283caf5] {\n  position: fixed;\n  top: var(--status-bar-height);\n  left: 0;\n  height: 88rpx;\n  display: flex;\n  align-items: center;\n  background: linear-gradient(to right, #ecfaf6 0%, #f8f9f8 100%);\n  width: 100%;\n  z-index: 1000;\n}\n.team .navbar uni-image[data-v-2283caf5] {\n  width: 48rpx;\n  height: 48rpx;\n  margin-left: 40rpx;\n}\n.team .navbar uni-text[data-v-2283caf5] {\n  margin-left: 218rpx;\n  font-size: 36rpx;\n  font-weight: 600;\n  color: #333333;\n}\n.team .content[data-v-2283caf5] {\n  padding-top: 168rpx;\n  padding-left: 40rpx;\n  padding-right: 40rpx;\n  padding-bottom: 30rpx;\n}\n.team .content .balance[data-v-2283caf5] {\n  height: 290rpx;\n  background: #FFFFFF;\n  border-radius: 24rpx;\n  padding: 30rpx;\n}\n.team .content .balance_top[data-v-2283caf5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.team .content .balance_top .desc[data-v-2283caf5] {\n  font-size: 28rpx;\n  font-weight: 500;\n  color: #999999;\n  line-height: 40rpx;\n}\n.team .content .balance_top .date[data-v-2283caf5] {\n  width: 144rpx;\n  height: 50rpx;\n  background: #E2F8F2;\n  border-radius: 26rpx;\n  text-align: center;\n  line-height: 50rpx;\n  font-size: 24rpx;\n  font-weight: 500;\n  color: #35CBA5;\n}\n.team .content .balance_count[data-v-2283caf5] {\n  font-size: 60rpx;\n  font-weight: normal;\n  color: #333333;\n  line-height: 60rpx;\n  margin: 24rpx 0 62rpx;\n}\n.team .content .balance_bottom[data-v-2283caf5] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-right: 24rpx;\n}\n.team .content .balance_bottom_item[data-v-2283caf5] {\n  font-size: 28rpx;\n  font-weight: 400;\n  color: #999999;\n  line-height: 40rpx;\n}\n.team .content .balance_bottom_item .bold[data-v-2283caf5] {\n  font-weight: bold;\n  margin-left: 20rpx;\n  color: #000;\n}\n.team .content .price[data-v-2283caf5] {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin: 30rpx 0 60rpx;\n}\n.team .content .price_item[data-v-2283caf5] {\n  width: 324rpx;\n  height: 180rpx;\n  background: #FFFFFF;\n  border-radius: 16rpx;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.team .content .price_item uni-image[data-v-2283caf5] {\n  width: 80rpx;\n  height: 80rpx;\n  margin-right: 20rpx;\n}\n.team .content .price_item_right .desc[data-v-2283caf5] {\n  font-size: 24rpx;\n  font-weight: 400;\n  color: #333333;\n  line-height: 34rpx;\n  margin-bottom: 10rpx;\n}\n.team .content .price_item_right .count[data-v-2283caf5] {\n  font-size: 36rpx;\n  color: #333333;\n  line-height: 44rpx;\n}\n.team .content .user-info_title[data-v-2283caf5] {\n  font-size: 32rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 44rpx;\n  margin-bottom: 30rpx;\n}\n.team .content .user-info_item[data-v-2283caf5] {\n  margin-bottom: 20rpx;\n  padding: 30rpx;\n  background: #FFFFFF;\n  border-radius: 12rpx;\n}\n.team .content .user-info_item .info[data-v-2283caf5] {\n  padding-bottom: 38rpx;\n  display: flex;\n  align-items: center;\n  border-bottom: 2rpx solid #F3F3F3;\n}\n.team .content .user-info_item .info_avatar[data-v-2283caf5] {\n  width: 130rpx;\n  height: 130rpx;\n  border-radius: 50%;\n  margin-right: 20rpx;\n  background-color: #35CBA5;\n}\n.team .content .user-info_item .info_avatar uni-image[data-v-2283caf5] {\n  width: 100%;\n  height: 100%;\n  border-radius: 50%;\n}\n.team .content .user-info_item .info_text .name[data-v-2283caf5] {\n  font-size: 32rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 44rpx;\n}\n.team .content .user-info_item .info_text .phone[data-v-2283caf5] {\n  font-size: 24rpx;\n  font-weight: 600;\n  color: #999999;\n  line-height: 34rpx;\n  margin: 10rpx 0;\n}\n.team .content .user-info_item .info_text .phone uni-image[data-v-2283caf5] {\n  width: 24rpx;\n  height: 24rpx;\n  margin-left: 10rpx;\n}\n.team .content .user-info_item .info_text .date[data-v-2283caf5] {\n  font-size: 20rpx;\n  font-weight: 400;\n  color: #999999;\n  line-height: 28rpx;\n}\n.team .content .user-info_item .data[data-v-2283caf5] {\n  padding-top: 30rpx;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.team .content .user-info_item .data_item[data-v-2283caf5] {\n  flex: 1;\n  text-align: center;\n  line-height: 40rpx;\n}\n.team .content .user-info_item .data_item[data-v-2283caf5]:first-child {\n  text-align: left;\n}\n.team .content .user-info_item .data_item[data-v-2283caf5]:last-child {\n  text-align: right;\n}\n.team .content .user-info_item .data_item .desc[data-v-2283caf5] {\n  font-size: 24rpx;\n  color: #999999;\n}\n.team .content .user-info_item .data_item .count[data-v-2283caf5] {\n  font-size: 32rpx;\n  color: #333333;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -27559,20 +27037,25 @@ var render = function () {
         "uni-view",
         { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
         [
+          _c("uni-view", { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } }),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
+            {
+              staticClass: _vm._$g(3, "sc"),
+              class: _vm._$g(3, "c"),
+              attrs: { _i: 3 },
+            },
             [
               _c("v-uni-image", {
-                attrs: { src: _vm._$g(3, "a-src"), mode: "", _i: 3 },
+                attrs: { src: _vm._$g(4, "a-src"), mode: "", _i: 4 },
                 on: {
                   click: function ($event) {
                     return _vm.$handleViewEvent($event)
                   },
                 },
               }),
-              _c("v-uni-text", { attrs: { _i: 4 } }, [
-                _vm._v(_vm._$g(4, "t0-0")),
+              _c("v-uni-text", { attrs: { _i: 5 } }, [
+                _vm._v(_vm._$g(5, "t0-0")),
               ]),
             ],
             1
@@ -27582,35 +27065,35 @@ var render = function () {
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+        { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+            { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
+                { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
                 [
-                  _vm._v(_vm._$g(7, "t0-0")),
-                  _c("v-uni-text", { attrs: { _i: 8 } }, [
-                    _vm._v(_vm._$g(8, "t0-0")),
+                  _vm._v(_vm._$g(8, "t0-0")),
+                  _c("v-uni-text", { attrs: { _i: 9 } }, [
+                    _vm._v(_vm._$g(9, "t0-0")),
                   ]),
-                  _vm._v(_vm._$g(7, "t2-0")),
+                  _vm._v(_vm._$g(8, "t2-0")),
                 ],
                 1
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
                 _vm._l(7, function (item, index, $20, $30) {
                   return _c(
                     "uni-view",
                     {
                       key: index,
-                      staticClass: _vm._$g("10-" + $30, "sc"),
-                      class: _vm._$g("10-" + $30, "c"),
-                      attrs: { _i: "10-" + $30 },
+                      staticClass: _vm._$g("11-" + $30, "sc"),
+                      class: _vm._$g("11-" + $30, "c"),
+                      attrs: { _i: "11-" + $30 },
                       on: {
                         click: function ($event) {
                           return _vm.$handleViewEvent($event)
@@ -27621,23 +27104,23 @@ var render = function () {
                       _c(
                         "uni-view",
                         {
-                          staticClass: _vm._$g("11-" + $30, "sc"),
-                          attrs: { _i: "11-" + $30 },
+                          staticClass: _vm._$g("12-" + $30, "sc"),
+                          attrs: { _i: "12-" + $30 },
                         },
                         [
                           _vm._v(
-                            _vm._$g("11-" + $30, "t0-0") +
-                              _vm._$g("11-" + $30, "t0-1") +
-                              _vm._$g("11-" + $30, "t0-2")
+                            _vm._$g("12-" + $30, "t0-0") +
+                              _vm._$g("12-" + $30, "t0-1") +
+                              _vm._$g("12-" + $30, "t0-2")
                           ),
                         ]
                       ),
-                      _vm._$g("12-" + $30, "i")
+                      _vm._$g("13-" + $30, "i")
                         ? _c("v-uni-image", {
                             attrs: {
-                              src: _vm._$g("12-" + $30, "a-src"),
+                              src: _vm._$g("13-" + $30, "a-src"),
                               mode: "",
-                              _i: "12-" + $30,
+                              _i: "13-" + $30,
                             },
                           })
                         : _vm._e(),
@@ -27650,52 +27133,44 @@ var render = function () {
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(13, "sc"),
-                  attrs: { _i: 13 },
+                  staticClass: _vm._$g(14, "sc"),
+                  attrs: { _i: 14 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(13, "t0-0"))]
+                [_vm._v(_vm._$g(14, "t0-0"))]
               ),
             ],
             1
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+            { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
-                [_vm._v(_vm._$g(15, "t0-0"))]
+                { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
+                [_vm._v(_vm._$g(16, "t0-0"))]
               ),
-              _vm._l(_vm._$g(16, "f"), function (item, index, $21, $31) {
+              _vm._l(_vm._$g(17, "f"), function (item, index, $21, $31) {
                 return _c(
                   "uni-view",
                   {
                     key: item,
-                    staticClass: _vm._$g("16-" + $31, "sc"),
-                    attrs: { _i: "16-" + $31 },
+                    staticClass: _vm._$g("17-" + $31, "sc"),
+                    attrs: { _i: "17-" + $31 },
                   },
                   [
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("17-" + $31, "sc"),
-                        attrs: { _i: "17-" + $31 },
+                        staticClass: _vm._$g("18-" + $31, "sc"),
+                        attrs: { _i: "18-" + $31 },
                       },
                       [
-                        _c(
-                          "uni-view",
-                          {
-                            staticClass: _vm._$g("18-" + $31, "sc"),
-                            attrs: { _i: "18-" + $31 },
-                          },
-                          [_vm._v(_vm._$g("18-" + $31, "t0-0"))]
-                        ),
                         _c(
                           "uni-view",
                           {
@@ -27704,20 +27179,28 @@ var render = function () {
                           },
                           [_vm._v(_vm._$g("19-" + $31, "t0-0"))]
                         ),
+                        _c(
+                          "uni-view",
+                          {
+                            staticClass: _vm._$g("20-" + $31, "sc"),
+                            attrs: { _i: "20-" + $31 },
+                          },
+                          [_vm._v(_vm._$g("20-" + $31, "t0-0"))]
+                        ),
                       ],
                       1
                     ),
                     _c(
                       "uni-view",
                       {
-                        staticClass: _vm._$g("20-" + $31, "sc"),
-                        attrs: { _i: "20-" + $31 },
+                        staticClass: _vm._$g("21-" + $31, "sc"),
+                        attrs: { _i: "21-" + $31 },
                       },
                       [
                         _vm._v(
                           "+" +
-                            _vm._$g("20-" + $31, "t0-0") +
-                            _vm._$g("20-" + $31, "t0-1")
+                            _vm._$g("21-" + $31, "t0-0") +
+                            _vm._$g("21-" + $31, "t0-1")
                         ),
                       ]
                     ),
@@ -27838,7 +27321,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_
 var ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);
 var ___CSS_LOADER_URL_REPLACEMENT_3___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_3___);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.sign .bgc-image[data-v-0d25e6f5] {\n  width: 100%;\n  height: 314rpx;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  padding-top: 562rpx;\n  position: absolute;\n}\n.sign .bgc-image .navbar[data-v-0d25e6f5] {\n  position: absolute;\n  top: 88rpx;\n  left: 0;\n  display: flex;\n  align-items: center;\n  height: 88rpx;\n}\n.sign .bgc-image .navbar uni-image[data-v-0d25e6f5] {\n  width: 48rpx;\n  height: 48rpx;\n  margin-left: 40rpx;\n}\n.sign .bgc-image .navbar uni-text[data-v-0d25e6f5] {\n  margin-left: 278rpx;\n  font-size: 36rpx;\n  font-weight: 600;\n  color: #fff;\n}\n.sign .content[data-v-0d25e6f5] {\n  padding: 0 40rpx;\n  position: absolute;\n  top: 206rpx;\n}\n.sign .content .title[data-v-0d25e6f5] {\n  font-size: 84rpx;\n  font-weight: bold;\n  color: #FFFFFF;\n  line-height: 76rpx;\n}\n.sign .content .title uni-text[data-v-0d25e6f5] {\n  font-size: 26rpx;\n}\n.sign .content .sub-title[data-v-0d25e6f5] {\n  font-size: 24rpx;\n  font-weight: 600;\n  color: #FFFFFF;\n  line-height: 34rpx;\n}\n.sign .content .sign_box[data-v-0d25e6f5] {\n  margin-top: 50rpx;\n  width: 670rpx;\n  height: 684rpx;\n  background: #FFFFFF;\n  box-shadow: 0px 4rpx 12rpx 0px rgba(0, 0, 0, 0.05);\n  border-radius: 24rpx;\n  padding: 52rpx 30rpx 58rpx;\n}\n.sign .content .sign_box_title[data-v-0d25e6f5] {\n  font-size: 32rpx;\n  font-weight: 500;\n  color: #333333;\n  line-height: 44rpx;\n  margin-bottom: 40rpx;\n}\n.sign .content .sign_box_title uni-text[data-v-0d25e6f5] {\n  color: #FB6D45;\n}\n.sign .content .sign_box_list[data-v-0d25e6f5] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.sign .content .sign_box_list_item[data-v-0d25e6f5] {\n  width: 130rpx;\n  height: 160rpx;\n  border-radius: 12rpx;\n  background-color: #FAFAFA;\n  margin-right: 30rpx;\n  margin-bottom: 20rpx;\n  border: 2rpx solid #ECECEC;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.sign .content .sign_box_list_item .days[data-v-0d25e6f5] {\n  font-size: 20rpx;\n  font-weight: 800;\n  color: #333333;\n  line-height: 28rpx;\n}\n.sign .content .sign_box_list_item uni-image[data-v-0d25e6f5] {\n  width: 48rpx;\n  height: 48rpx;\n  margin: 10rpx 0;\n}\n.sign .content .sign_box_list_item .points[data-v-0d25e6f5] {\n  font-size: 20rpx;\n  font-weight: 800;\n  color: #999999;\n  line-height: 28rpx;\n}\n.sign .content .sign_box_list_item.expired[data-v-0d25e6f5] {\n  background-color: #ffbaa1;\n  position: relative;\n}\n.sign .content .sign_box_list_item.expired .days[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.expired .points[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.expired[data-v-0d25e6f5]::before {\n  content: '';\n  width: 80rpx;\n  height: 50rpx;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  z-index: 10;\n}\n.sign .content .sign_box_list_item[data-v-0d25e6f5]:nth-child(4) {\n  margin-right: 0;\n}\n.sign .content .sign_box_list_item[data-v-0d25e6f5]:nth-child(7) {\n  margin-right: 0;\n  width: 290rpx;\n  justify-content: flex-start;\n  align-items: flex-start;\n  padding: 22rpx 0 0 32rpx;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") center center no-repeat;\n  background-size: 100% 100%;\n}\n.sign .content .sign_box_list_item:nth-child(7) .days[data-v-0d25e6f5] {\n  margin-bottom: 10rpx;\n}\n.sign .content .sign_box_list_item:nth-child(7).active[data-v-0d25e6f5] {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  border: none;\n}\n.sign .content .sign_box_list_item:nth-child(7).active .days[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item:nth-child(7).active .points[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.active[data-v-0d25e6f5] {\n  background: linear-gradient(230deg, #FFC5AB 0%, #FFAE96 100%);\n  border-color: #ffbda3;\n}\n.sign .content .sign_box_list_item.active .days[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.active .points[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box .sign-in[data-v-0d25e6f5] {\n  margin-top: 60rpx;\n  height: 90rpx;\n  background: linear-gradient(230deg, #FF8D5A 0%, #F5422A 100%);\n  border-radius: 16rpx;\n  text-align: center;\n  line-height: 90rpx;\n  font-size: 32rpx;\n  font-weight: 500;\n  color: #FFFFFF;\n}\n.sign .content .records[data-v-0d25e6f5] {\n  margin-top: 60rpx;\n  padding-bottom: 100rpx;\n}\n.sign .content .records_title[data-v-0d25e6f5] {\n  font-size: 28rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 40rpx;\n}\n.sign .content .records_cell[data-v-0d25e6f5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 30rpx 0;\n  border-bottom: 2rpx solid #F3F3F3;\n}\n.sign .content .records_cell_left_desc[data-v-0d25e6f5] {\n  font-size: 28rpx;\n  font-weight: 400;\n  color: #333333;\n  line-height: 40rpx;\n  margin-bottom: 4rpx;\n}\n.sign .content .records_cell_left_date[data-v-0d25e6f5] {\n  font-size: 24rpx;\n  font-weight: 400;\n  color: #999999;\n  line-height: 34rpx;\n}\n.sign .content .records_cell_right[data-v-0d25e6f5] {\n  font-size: 28rpx;\n  font-weight: 500;\n  color: #F75F52;\n  line-height: 40rpx;\n}\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n.sign .bgc-image[data-v-0d25e6f5] {\n  width: 100%;\n  height: 562rpx;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  position: absolute;\n}\n.sign .bgc-image .navbar[data-v-0d25e6f5] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  display: flex;\n  padding-bottom: 20rpx;\n  align-items: flex-end;\n  height: 176rpx;\n  z-index: 999;\n  width: 100%;\n}\n.sign .bgc-image .navbar.active[data-v-0d25e6f5] {\n  background-color: #f96440;\n}\n.sign .bgc-image .navbar uni-image[data-v-0d25e6f5] {\n  width: 48rpx;\n  height: 48rpx;\n  margin-left: 40rpx;\n}\n.sign .bgc-image .navbar uni-text[data-v-0d25e6f5] {\n  margin-left: 278rpx;\n  font-size: 36rpx;\n  font-weight: 600;\n  color: #fff;\n}\n.sign .content[data-v-0d25e6f5] {\n  padding: 0 40rpx;\n  position: absolute;\n  top: 206rpx;\n}\n.sign .content .title[data-v-0d25e6f5] {\n  font-size: 84rpx;\n  font-weight: bold;\n  color: #FFFFFF;\n  line-height: 76rpx;\n}\n.sign .content .title uni-text[data-v-0d25e6f5] {\n  font-size: 26rpx;\n}\n.sign .content .sub-title[data-v-0d25e6f5] {\n  font-size: 24rpx;\n  font-weight: 600;\n  color: #FFFFFF;\n  line-height: 34rpx;\n}\n.sign .content .sign_box[data-v-0d25e6f5] {\n  margin-top: 50rpx;\n  width: 670rpx;\n  height: 684rpx;\n  background: #FFFFFF;\n  box-shadow: 0px 4rpx 12rpx 0px rgba(0, 0, 0, 0.05);\n  border-radius: 24rpx;\n  padding: 52rpx 30rpx 58rpx;\n}\n.sign .content .sign_box_title[data-v-0d25e6f5] {\n  font-size: 32rpx;\n  font-weight: 500;\n  color: #333333;\n  line-height: 44rpx;\n  margin-bottom: 40rpx;\n}\n.sign .content .sign_box_title uni-text[data-v-0d25e6f5] {\n  color: #FB6D45;\n}\n.sign .content .sign_box_list[data-v-0d25e6f5] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.sign .content .sign_box_list_item[data-v-0d25e6f5] {\n  width: 130rpx;\n  height: 160rpx;\n  border-radius: 12rpx;\n  background-color: #FAFAFA;\n  margin-right: 30rpx;\n  margin-bottom: 20rpx;\n  border: 2rpx solid #ECECEC;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n.sign .content .sign_box_list_item .days[data-v-0d25e6f5] {\n  font-size: 20rpx;\n  font-weight: 800;\n  color: #333333;\n  line-height: 28rpx;\n}\n.sign .content .sign_box_list_item uni-image[data-v-0d25e6f5] {\n  width: 48rpx;\n  height: 48rpx;\n  margin: 10rpx 0;\n}\n.sign .content .sign_box_list_item .points[data-v-0d25e6f5] {\n  font-size: 20rpx;\n  font-weight: 800;\n  color: #999999;\n  line-height: 28rpx;\n}\n.sign .content .sign_box_list_item.expired[data-v-0d25e6f5] {\n  background-color: #ffbaa1;\n  position: relative;\n}\n.sign .content .sign_box_list_item.expired .days[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.expired .points[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.expired[data-v-0d25e6f5]::before {\n  content: '';\n  width: 80rpx;\n  height: 50rpx;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  z-index: 10;\n}\n.sign .content .sign_box_list_item[data-v-0d25e6f5]:nth-child(4) {\n  margin-right: 0;\n}\n.sign .content .sign_box_list_item[data-v-0d25e6f5]:nth-child(7) {\n  margin-right: 0;\n  width: 290rpx;\n  justify-content: flex-start;\n  align-items: flex-start;\n  padding: 22rpx 0 0 32rpx;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") center center no-repeat;\n  background-size: 100% 100%;\n}\n.sign .content .sign_box_list_item:nth-child(7) .days[data-v-0d25e6f5] {\n  margin-bottom: 10rpx;\n}\n.sign .content .sign_box_list_item:nth-child(7).active[data-v-0d25e6f5] {\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") center center no-repeat;\n  background-size: 100% 100%;\n  border: none;\n}\n.sign .content .sign_box_list_item:nth-child(7).active .days[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item:nth-child(7).active .points[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.active[data-v-0d25e6f5] {\n  background: linear-gradient(230deg, #FFC5AB 0%, #FFAE96 100%);\n  border-color: #ffbda3;\n}\n.sign .content .sign_box_list_item.active .days[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box_list_item.active .points[data-v-0d25e6f5] {\n  color: #fff;\n}\n.sign .content .sign_box .sign-in[data-v-0d25e6f5] {\n  margin-top: 60rpx;\n  height: 90rpx;\n  background: linear-gradient(230deg, #FF8D5A 0%, #F5422A 100%);\n  border-radius: 16rpx;\n  text-align: center;\n  line-height: 90rpx;\n  font-size: 32rpx;\n  font-weight: 500;\n  color: #FFFFFF;\n}\n.sign .content .records[data-v-0d25e6f5] {\n  margin-top: 60rpx;\n  padding-bottom: 100rpx;\n}\n.sign .content .records_title[data-v-0d25e6f5] {\n  font-size: 28rpx;\n  font-weight: 600;\n  color: #333333;\n  line-height: 40rpx;\n}\n.sign .content .records_cell[data-v-0d25e6f5] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 30rpx 0;\n  border-bottom: 2rpx solid #F3F3F3;\n}\n.sign .content .records_cell_left_desc[data-v-0d25e6f5] {\n  font-size: 28rpx;\n  font-weight: 400;\n  color: #333333;\n  line-height: 40rpx;\n  margin-bottom: 4rpx;\n}\n.sign .content .records_cell_left_date[data-v-0d25e6f5] {\n  font-size: 24rpx;\n  font-weight: 400;\n  color: #999999;\n  line-height: 34rpx;\n}\n.sign .content .records_cell_right[data-v-0d25e6f5] {\n  font-size: 28rpx;\n  font-weight: 500;\n  color: #F75F52;\n  line-height: 40rpx;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -28621,6 +28104,9 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uniNavBar:
+      __webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 335)
+        .default,
     uEmpty: __webpack_require__(/*! @/static/uview-ui/components/u-empty/u-empty.vue */ 556).default,
     uPopup: __webpack_require__(/*! @/static/uview-ui/components/u-popup/u-popup.vue */ 193).default,
   }
@@ -28649,83 +28135,70 @@ var render = function () {
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("uni-nav-bar", {
+        attrs: { _i: 1 },
+        on: {
+          clickLeft: function ($event) {
+            return _vm.$handleViewEvent($event)
+          },
+        },
+      }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
-        [
-          _c("uni-view", {
-            staticClass: _vm._$g(2, "sc"),
-            attrs: { _i: 2 },
-            on: {
-              click: function ($event) {
-                return _vm.$handleViewEvent($event)
-              },
-            },
-          }),
-          _c(
-            "v-uni-text",
-            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
-            [_vm._v(_vm._$g(3, "t0-0"))]
-          ),
-        ],
-        1
-      ),
-      _c(
-        "uni-view",
-        { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
+        { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
+            { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                [_vm._v(_vm._$g(6, "t0-0"))]
+                { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
+                [_vm._v(_vm._$g(4, "t0-0"))]
               ),
-              _vm._$g(7, "i")
+              _vm._$g(5, "i")
                 ? _c(
                     "uni-view",
-                    { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
+                    { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
                     [_vm._v("¥0")]
                   )
                 : _c(
                     "uni-view",
-                    { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
-                    [_vm._v("¥" + _vm._$g(8, "t0-0"))]
+                    { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
+                    [_vm._v("¥" + _vm._$g(6, "t0-0"))]
                   ),
             ],
             1
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+            { staticClass: _vm._$g(7, "sc"), attrs: { _i: 7 } },
             [
               _c(
                 "v-uni-button",
                 {
-                  staticClass: _vm._$g(10, "sc"),
-                  attrs: { _i: 10 },
+                  staticClass: _vm._$g(8, "sc"),
+                  attrs: { _i: 8 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(10, "t0-0"))]
+                [_vm._v(_vm._$g(8, "t0-0"))]
               ),
               _c(
                 "v-uni-button",
                 {
-                  staticClass: _vm._$g(11, "sc"),
-                  attrs: { _i: 11 },
+                  staticClass: _vm._$g(9, "sc"),
+                  attrs: { _i: 9 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(11, "t0-0"))]
+                [_vm._v(_vm._$g(9, "t0-0"))]
               ),
             ],
             1
@@ -28735,66 +28208,66 @@ var render = function () {
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+        { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
         [
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(13, "sc"),
+              staticClass: _vm._$g(11, "sc"),
               staticStyle: { "font-size": "1rem", "font-weight": "bold" },
-              attrs: { _i: 13 },
+              attrs: { _i: 11 },
             },
-            [_vm._v(_vm._$g(13, "t0-0"))]
+            [_vm._v(_vm._$g(11, "t0-0"))]
           ),
-          _vm._$g(14, "i") ? _c("u-empty", { attrs: { _i: 14 } }) : _vm._e(),
-          _vm._$g(15, "i")
+          _vm._$g(12, "i") ? _c("u-empty", { attrs: { _i: 12 } }) : _vm._e(),
+          _vm._$g(13, "i")
             ? _c(
                 "uni-view",
-                { attrs: { _i: 15 } },
-                _vm._l(_vm._$g(16, "f"), function (item, index, $20, $30) {
+                { attrs: { _i: 13 } },
+                _vm._l(_vm._$g(14, "f"), function (item, index, $20, $30) {
                   return _c(
                     "uni-view",
                     {
                       key: item,
-                      staticClass: _vm._$g("16-" + $30, "sc"),
-                      attrs: { _i: "16-" + $30 },
+                      staticClass: _vm._$g("14-" + $30, "sc"),
+                      attrs: { _i: "14-" + $30 },
                     },
                     [
                       _c(
                         "uni-view",
-                        { attrs: { _i: "17-" + $30 } },
+                        { attrs: { _i: "15-" + $30 } },
                         [
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g("18-" + $30, "sc"),
-                              attrs: { _i: "18-" + $30 },
+                              staticClass: _vm._$g("16-" + $30, "sc"),
+                              attrs: { _i: "16-" + $30 },
                             },
-                            [_vm._v(_vm._$g("18-" + $30, "t0-0"))]
+                            [_vm._v(_vm._$g("16-" + $30, "t0-0"))]
                           ),
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g("19-" + $30, "sc"),
-                              attrs: { _i: "19-" + $30 },
+                              staticClass: _vm._$g("17-" + $30, "sc"),
+                              attrs: { _i: "17-" + $30 },
                             },
-                            [_vm._v(_vm._$g("19-" + $30, "t0-0"))]
+                            [_vm._v(_vm._$g("17-" + $30, "t0-0"))]
                           ),
                         ],
                         1
                       ),
                       _c(
                         "uni-view",
-                        { attrs: { _i: "20-" + $30 } },
+                        { attrs: { _i: "18-" + $30 } },
                         [
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g("21-" + $30, "sc"),
-                              class: _vm._$g("21-" + $30, "c"),
-                              attrs: { _i: "21-" + $30 },
+                              staticClass: _vm._$g("19-" + $30, "sc"),
+                              class: _vm._$g("19-" + $30, "c"),
+                              attrs: { _i: "19-" + $30 },
                             },
-                            [_vm._v(_vm._$g("21-" + $30, "t0-0"))]
+                            [_vm._v(_vm._$g("19-" + $30, "t0-0"))]
                           ),
                         ],
                         1
@@ -28812,9 +28285,9 @@ var render = function () {
       _c(
         "u-popup",
         {
-          attrs: { _i: 22 },
+          attrs: { _i: 20 },
           model: {
-            value: _vm._$g(22, "v-model"),
+            value: _vm._$g(20, "v-model"),
             callback: function () {},
             expression: "popupShow",
           },
@@ -28822,24 +28295,24 @@ var render = function () {
         [
           _c(
             "uni-view",
-            { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+            { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
-                [_vm._v(_vm._$g(24, "t0-0") + _vm._$g(24, "t0-1"))]
+                { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
+                [_vm._v(_vm._$g(22, "t0-0") + _vm._$g(22, "t0-1"))]
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
                 [
-                  _c("v-uni-text", { attrs: { _i: 26 } }, [_vm._v("¥")]),
+                  _c("v-uni-text", { attrs: { _i: 24 } }, [_vm._v("¥")]),
                   _c("v-uni-input", {
-                    attrs: { type: "text", placeholder: "0.00", _i: 27 },
+                    attrs: { type: "text", placeholder: "0.00", _i: 25 },
                     model: {
-                      value: _vm._$g(27, "v-model"),
+                      value: _vm._$g(25, "v-model"),
                       callback: function ($$v) {
-                        _vm.$handleVModelEvent(27, $$v)
+                        _vm.$handleVModelEvent(25, $$v)
                       },
                       expression: "data.deposit_amount",
                     },
@@ -28850,15 +28323,15 @@ var render = function () {
               _c(
                 "uni-view",
                 {
-                  staticClass: _vm._$g(28, "sc"),
-                  attrs: { _i: 28 },
+                  staticClass: _vm._$g(26, "sc"),
+                  attrs: { _i: 26 },
                   on: {
                     click: function ($event) {
                       return _vm.$handleViewEvent($event)
                     },
                   },
                 },
-                [_vm._v(_vm._$g(28, "t0-0") + _vm._$g(28, "t0-1"))]
+                [_vm._v(_vm._$g(26, "t0-0") + _vm._$g(26, "t0-1"))]
               ),
             ],
             1
@@ -34257,55 +33730,58 @@ var render = function () {
   return _c(
     "uni-view",
     { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
-    _vm._l(_vm._$g(1, "f"), function (item, index, $20, $30) {
-      return _c(
-        "uni-view",
-        {
-          key: item,
-          staticClass: _vm._$g("1-" + $30, "sc"),
-          attrs: { _i: "1-" + $30 },
-        },
-        [
-          _c(
-            "uni-view",
-            { attrs: { _i: "2-" + $30 } },
-            [
-              _c(
-                "uni-view",
-                {
-                  staticClass: _vm._$g("3-" + $30, "sc"),
-                  attrs: { _i: "3-" + $30 },
-                },
-                [_vm._v(_vm._$g("3-" + $30, "t0-0"))]
-              ),
-              _vm._l(
-                _vm._$g(4 + "-" + $30, "f"),
-                function (items, indexs, $21, $31) {
-                  return _c(
-                    "uni-view",
-                    {
-                      key: items,
-                      staticClass: _vm._$g("4-" + $30 + "-" + $31, "sc"),
-                      attrs: { _i: "4-" + $30 + "-" + $31 },
-                      on: {
-                        click: function ($event) {
-                          return _vm.$handleViewEvent($event)
+    [
+      _c("uni-view", { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } }),
+      _vm._l(_vm._$g(2, "f"), function (item, index, $20, $30) {
+        return _c(
+          "uni-view",
+          {
+            key: item,
+            staticClass: _vm._$g("2-" + $30, "sc"),
+            attrs: { _i: "2-" + $30 },
+          },
+          [
+            _c(
+              "uni-view",
+              { attrs: { _i: "3-" + $30 } },
+              [
+                _c(
+                  "uni-view",
+                  {
+                    staticClass: _vm._$g("4-" + $30, "sc"),
+                    attrs: { _i: "4-" + $30 },
+                  },
+                  [_vm._v(_vm._$g("4-" + $30, "t0-0"))]
+                ),
+                _vm._l(
+                  _vm._$g(5 + "-" + $30, "f"),
+                  function (items, indexs, $21, $31) {
+                    return _c(
+                      "uni-view",
+                      {
+                        key: items,
+                        staticClass: _vm._$g("5-" + $30 + "-" + $31, "sc"),
+                        attrs: { _i: "5-" + $30 + "-" + $31 },
+                        on: {
+                          click: function ($event) {
+                            return _vm.$handleViewEvent($event)
+                          },
                         },
                       },
-                    },
-                    [_vm._v(_vm._$g("4-" + $30 + "-" + $31, "t0-0"))]
-                  )
-                }
-              ),
-            ],
-            2
-          ),
-          _c("uni-icons", { attrs: { _i: "5-" + $30 } }),
-        ],
-        1
-      )
-    }),
-    1
+                      [_vm._v(_vm._$g("5-" + $30 + "-" + $31, "t0-0"))]
+                    )
+                  }
+                ),
+              ],
+              2
+            ),
+            _c("uni-icons", { attrs: { _i: "6-" + $30 } }),
+          ],
+          1
+        )
+      }),
+    ],
+    2
   )
 }
 var recyclableRender = false
@@ -34650,7 +34126,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../Desktop/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 13);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n/*每个页面公共css */\n.logo_bg{\n\twidth: 750rpx;\n\theight: 526rpx;\n}\n.b_colfff{\n\tbackground-color:#ffffff;\n}\n.logo_bk{\n\tborder-top-left-radius: 60rpx;\n\twidth: 100%;\n\theight:60vh;\n\tposition: relative;\n\tmargin-top: -80rpx;\n\tpadding:40rpx;\n}\n.col33{\n\tcolor:#333333;\n}\n.f_s36{\n\tfont-size: 36rpx;\n}\n.f_bod{\n\tfont-weight: bold;\n}\n.col35{\n\tcolor: #35CBA5;\n}\n.logo_input{\n\tbackground-color: #F3F3F3;padding:10rpx 20rpx 10rpx 20rpx;margin-top:30rpx;border-radius: 12rpx;\n}\n.xuan{\n\tcolor:#333333 !important;\n}\n.xuan2{\n\tcolor: #F75F52 !important;\n}\n.xuan3{\n\tcolor:#35CBA5;\n\tborder-bottom: 4rpx solid #35CBA5;\n}\n.u-relative,\n.u-rela {\n  position: relative;\n}\n.u-absolute,\n.u-abso {\n  position: absolute;\n}\nuni-image {\n  display: inline-block;\n}\nuni-view,\nuni-text {\n  box-sizing: border-box;\n}\n.u-font-xs {\n  font-size: 22rpx;\n}\n.u-font-sm {\n  font-size: 26rpx;\n}\n.u-font-md {\n  font-size: 28rpx;\n}\n.u-font-lg {\n  font-size: 30rpx;\n}\n.u-font-xl {\n  font-size: 34rpx;\n}\n.u-flex {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.u-flex-wrap {\n  flex-wrap: wrap;\n}\n.u-flex-nowrap {\n  flex-wrap: nowrap;\n}\n.u-col-center {\n  align-items: center;\n}\n.u-col-top {\n  align-items: flex-start;\n}\n.u-col-bottom {\n  align-items: flex-end;\n}\n.u-row-center {\n  justify-content: center;\n}\n.u-row-left {\n  justify-content: flex-start;\n}\n.u-row-right {\n  justify-content: flex-end;\n}\n.u-row-between {\n  justify-content: space-between;\n}\n.u-row-around {\n  justify-content: space-around;\n}\n.u-text-left {\n  text-align: left;\n}\n.u-text-center {\n  text-align: center;\n}\n.u-text-right {\n  text-align: right;\n}\n.u-flex-col {\n  display: flex;\n  flex-direction: column;\n}\n.u-flex-0 {\n  flex: 0;\n}\n.u-flex-1 {\n  flex: 1;\n}\n.u-flex-2 {\n  flex: 2;\n}\n.u-flex-3 {\n  flex: 3;\n}\n.u-flex-4 {\n  flex: 4;\n}\n.u-flex-5 {\n  flex: 5;\n}\n.u-flex-6 {\n  flex: 6;\n}\n.u-flex-7 {\n  flex: 7;\n}\n.u-flex-8 {\n  flex: 8;\n}\n.u-flex-9 {\n  flex: 9;\n}\n.u-flex-10 {\n  flex: 10;\n}\n.u-flex-11 {\n  flex: 11;\n}\n.u-flex-12 {\n  flex: 12;\n}\n.u-font-9 {\n  font-size: 9px;\n}\n.u-font-10 {\n  font-size: 10px;\n}\n.u-font-11 {\n  font-size: 11px;\n}\n.u-font-12 {\n  font-size: 12px;\n}\n.u-font-13 {\n  font-size: 13px;\n}\n.u-font-14 {\n  font-size: 14px;\n}\n.u-font-15 {\n  font-size: 15px;\n}\n.u-font-16 {\n  font-size: 16px;\n}\n.u-font-17 {\n  font-size: 17px;\n}\n.u-font-18 {\n  font-size: 18px;\n}\n.u-font-19 {\n  font-size: 19px;\n}\n.u-font-20 {\n  font-size: 20rpx;\n}\n.u-font-21 {\n  font-size: 21rpx;\n}\n.u-font-22 {\n  font-size: 22rpx;\n}\n.u-font-23 {\n  font-size: 23rpx;\n}\n.u-font-24 {\n  font-size: 24rpx;\n}\n.u-font-25 {\n  font-size: 25rpx;\n}\n.u-font-26 {\n  font-size: 26rpx;\n}\n.u-font-27 {\n  font-size: 27rpx;\n}\n.u-font-28 {\n  font-size: 28rpx;\n}\n.u-font-29 {\n  font-size: 29rpx;\n}\n.u-font-30 {\n  font-size: 30rpx;\n}\n.u-font-31 {\n  font-size: 31rpx;\n}\n.u-font-32 {\n  font-size: 32rpx;\n}\n.u-font-33 {\n  font-size: 33rpx;\n}\n.u-font-34 {\n  font-size: 34rpx;\n}\n.u-font-35 {\n  font-size: 35rpx;\n}\n.u-font-36 {\n  font-size: 36rpx;\n}\n.u-font-37 {\n  font-size: 37rpx;\n}\n.u-font-38 {\n  font-size: 38rpx;\n}\n.u-font-39 {\n  font-size: 39rpx;\n}\n.u-font-40 {\n  font-size: 40rpx;\n}\n.u-margin-0, .u-m-0 {\n  margin: 0rpx !important;\n}\n.u-padding-0, .u-p-0 {\n  padding: 0rpx !important;\n}\n.u-m-l-0 {\n  margin-left: 0rpx !important;\n}\n.u-p-l-0 {\n  padding-left: 0rpx !important;\n}\n.u-margin-left-0 {\n  margin-left: 0rpx !important;\n}\n.u-padding-left-0 {\n  padding-left: 0rpx !important;\n}\n.u-m-t-0 {\n  margin-top: 0rpx !important;\n}\n.u-p-t-0 {\n  padding-top: 0rpx !important;\n}\n.u-margin-top-0 {\n  margin-top: 0rpx !important;\n}\n.u-padding-top-0 {\n  padding-top: 0rpx !important;\n}\n.u-m-r-0 {\n  margin-right: 0rpx !important;\n}\n.u-p-r-0 {\n  padding-right: 0rpx !important;\n}\n.u-margin-right-0 {\n  margin-right: 0rpx !important;\n}\n.u-padding-right-0 {\n  padding-right: 0rpx !important;\n}\n.u-m-b-0 {\n  margin-bottom: 0rpx !important;\n}\n.u-p-b-0 {\n  padding-bottom: 0rpx !important;\n}\n.u-margin-bottom-0 {\n  margin-bottom: 0rpx !important;\n}\n.u-padding-bottom-0 {\n  padding-bottom: 0rpx !important;\n}\n.u-margin-2, .u-m-2 {\n  margin: 2rpx !important;\n}\n.u-padding-2, .u-p-2 {\n  padding: 2rpx !important;\n}\n.u-m-l-2 {\n  margin-left: 2rpx !important;\n}\n.u-p-l-2 {\n  padding-left: 2rpx !important;\n}\n.u-margin-left-2 {\n  margin-left: 2rpx !important;\n}\n.u-padding-left-2 {\n  padding-left: 2rpx !important;\n}\n.u-m-t-2 {\n  margin-top: 2rpx !important;\n}\n.u-p-t-2 {\n  padding-top: 2rpx !important;\n}\n.u-margin-top-2 {\n  margin-top: 2rpx !important;\n}\n.u-padding-top-2 {\n  padding-top: 2rpx !important;\n}\n.u-m-r-2 {\n  margin-right: 2rpx !important;\n}\n.u-p-r-2 {\n  padding-right: 2rpx !important;\n}\n.u-margin-right-2 {\n  margin-right: 2rpx !important;\n}\n.u-padding-right-2 {\n  padding-right: 2rpx !important;\n}\n.u-m-b-2 {\n  margin-bottom: 2rpx !important;\n}\n.u-p-b-2 {\n  padding-bottom: 2rpx !important;\n}\n.u-margin-bottom-2 {\n  margin-bottom: 2rpx !important;\n}\n.u-padding-bottom-2 {\n  padding-bottom: 2rpx !important;\n}\n.u-margin-4, .u-m-4 {\n  margin: 4rpx !important;\n}\n.u-padding-4, .u-p-4 {\n  padding: 4rpx !important;\n}\n.u-m-l-4 {\n  margin-left: 4rpx !important;\n}\n.u-p-l-4 {\n  padding-left: 4rpx !important;\n}\n.u-margin-left-4 {\n  margin-left: 4rpx !important;\n}\n.u-padding-left-4 {\n  padding-left: 4rpx !important;\n}\n.u-m-t-4 {\n  margin-top: 4rpx !important;\n}\n.u-p-t-4 {\n  padding-top: 4rpx !important;\n}\n.u-margin-top-4 {\n  margin-top: 4rpx !important;\n}\n.u-padding-top-4 {\n  padding-top: 4rpx !important;\n}\n.u-m-r-4 {\n  margin-right: 4rpx !important;\n}\n.u-p-r-4 {\n  padding-right: 4rpx !important;\n}\n.u-margin-right-4 {\n  margin-right: 4rpx !important;\n}\n.u-padding-right-4 {\n  padding-right: 4rpx !important;\n}\n.u-m-b-4 {\n  margin-bottom: 4rpx !important;\n}\n.u-p-b-4 {\n  padding-bottom: 4rpx !important;\n}\n.u-margin-bottom-4 {\n  margin-bottom: 4rpx !important;\n}\n.u-padding-bottom-4 {\n  padding-bottom: 4rpx !important;\n}\n.u-margin-5, .u-m-5 {\n  margin: 5rpx !important;\n}\n.u-padding-5, .u-p-5 {\n  padding: 5rpx !important;\n}\n.u-m-l-5 {\n  margin-left: 5rpx !important;\n}\n.u-p-l-5 {\n  padding-left: 5rpx !important;\n}\n.u-margin-left-5 {\n  margin-left: 5rpx !important;\n}\n.u-padding-left-5 {\n  padding-left: 5rpx !important;\n}\n.u-m-t-5 {\n  margin-top: 5rpx !important;\n}\n.u-p-t-5 {\n  padding-top: 5rpx !important;\n}\n.u-margin-top-5 {\n  margin-top: 5rpx !important;\n}\n.u-padding-top-5 {\n  padding-top: 5rpx !important;\n}\n.u-m-r-5 {\n  margin-right: 5rpx !important;\n}\n.u-p-r-5 {\n  padding-right: 5rpx !important;\n}\n.u-margin-right-5 {\n  margin-right: 5rpx !important;\n}\n.u-padding-right-5 {\n  padding-right: 5rpx !important;\n}\n.u-m-b-5 {\n  margin-bottom: 5rpx !important;\n}\n.u-p-b-5 {\n  padding-bottom: 5rpx !important;\n}\n.u-margin-bottom-5 {\n  margin-bottom: 5rpx !important;\n}\n.u-padding-bottom-5 {\n  padding-bottom: 5rpx !important;\n}\n.u-margin-6, .u-m-6 {\n  margin: 6rpx !important;\n}\n.u-padding-6, .u-p-6 {\n  padding: 6rpx !important;\n}\n.u-m-l-6 {\n  margin-left: 6rpx !important;\n}\n.u-p-l-6 {\n  padding-left: 6rpx !important;\n}\n.u-margin-left-6 {\n  margin-left: 6rpx !important;\n}\n.u-padding-left-6 {\n  padding-left: 6rpx !important;\n}\n.u-m-t-6 {\n  margin-top: 6rpx !important;\n}\n.u-p-t-6 {\n  padding-top: 6rpx !important;\n}\n.u-margin-top-6 {\n  margin-top: 6rpx !important;\n}\n.u-padding-top-6 {\n  padding-top: 6rpx !important;\n}\n.u-m-r-6 {\n  margin-right: 6rpx !important;\n}\n.u-p-r-6 {\n  padding-right: 6rpx !important;\n}\n.u-margin-right-6 {\n  margin-right: 6rpx !important;\n}\n.u-padding-right-6 {\n  padding-right: 6rpx !important;\n}\n.u-m-b-6 {\n  margin-bottom: 6rpx !important;\n}\n.u-p-b-6 {\n  padding-bottom: 6rpx !important;\n}\n.u-margin-bottom-6 {\n  margin-bottom: 6rpx !important;\n}\n.u-padding-bottom-6 {\n  padding-bottom: 6rpx !important;\n}\n.u-margin-8, .u-m-8 {\n  margin: 8rpx !important;\n}\n.u-padding-8, .u-p-8 {\n  padding: 8rpx !important;\n}\n.u-m-l-8 {\n  margin-left: 8rpx !important;\n}\n.u-p-l-8 {\n  padding-left: 8rpx !important;\n}\n.u-margin-left-8 {\n  margin-left: 8rpx !important;\n}\n.u-padding-left-8 {\n  padding-left: 8rpx !important;\n}\n.u-m-t-8 {\n  margin-top: 8rpx !important;\n}\n.u-p-t-8 {\n  padding-top: 8rpx !important;\n}\n.u-margin-top-8 {\n  margin-top: 8rpx !important;\n}\n.u-padding-top-8 {\n  padding-top: 8rpx !important;\n}\n.u-m-r-8 {\n  margin-right: 8rpx !important;\n}\n.u-p-r-8 {\n  padding-right: 8rpx !important;\n}\n.u-margin-right-8 {\n  margin-right: 8rpx !important;\n}\n.u-padding-right-8 {\n  padding-right: 8rpx !important;\n}\n.u-m-b-8 {\n  margin-bottom: 8rpx !important;\n}\n.u-p-b-8 {\n  padding-bottom: 8rpx !important;\n}\n.u-margin-bottom-8 {\n  margin-bottom: 8rpx !important;\n}\n.u-padding-bottom-8 {\n  padding-bottom: 8rpx !important;\n}\n.u-margin-10, .u-m-10 {\n  margin: 10rpx !important;\n}\n.u-padding-10, .u-p-10 {\n  padding: 10rpx !important;\n}\n.u-m-l-10 {\n  margin-left: 10rpx !important;\n}\n.u-p-l-10 {\n  padding-left: 10rpx !important;\n}\n.u-margin-left-10 {\n  margin-left: 10rpx !important;\n}\n.u-padding-left-10 {\n  padding-left: 10rpx !important;\n}\n.u-m-t-10 {\n  margin-top: 10rpx !important;\n}\n.u-p-t-10 {\n  padding-top: 10rpx !important;\n}\n.u-margin-top-10 {\n  margin-top: 10rpx !important;\n}\n.u-padding-top-10 {\n  padding-top: 10rpx !important;\n}\n.u-m-r-10 {\n  margin-right: 10rpx !important;\n}\n.u-p-r-10 {\n  padding-right: 10rpx !important;\n}\n.u-margin-right-10 {\n  margin-right: 10rpx !important;\n}\n.u-padding-right-10 {\n  padding-right: 10rpx !important;\n}\n.u-m-b-10 {\n  margin-bottom: 10rpx !important;\n}\n.u-p-b-10 {\n  padding-bottom: 10rpx !important;\n}\n.u-margin-bottom-10 {\n  margin-bottom: 10rpx !important;\n}\n.u-padding-bottom-10 {\n  padding-bottom: 10rpx !important;\n}\n.u-margin-12, .u-m-12 {\n  margin: 12rpx !important;\n}\n.u-padding-12, .u-p-12 {\n  padding: 12rpx !important;\n}\n.u-m-l-12 {\n  margin-left: 12rpx !important;\n}\n.u-p-l-12 {\n  padding-left: 12rpx !important;\n}\n.u-margin-left-12 {\n  margin-left: 12rpx !important;\n}\n.u-padding-left-12 {\n  padding-left: 12rpx !important;\n}\n.u-m-t-12 {\n  margin-top: 12rpx !important;\n}\n.u-p-t-12 {\n  padding-top: 12rpx !important;\n}\n.u-margin-top-12 {\n  margin-top: 12rpx !important;\n}\n.u-padding-top-12 {\n  padding-top: 12rpx !important;\n}\n.u-m-r-12 {\n  margin-right: 12rpx !important;\n}\n.u-p-r-12 {\n  padding-right: 12rpx !important;\n}\n.u-margin-right-12 {\n  margin-right: 12rpx !important;\n}\n.u-padding-right-12 {\n  padding-right: 12rpx !important;\n}\n.u-m-b-12 {\n  margin-bottom: 12rpx !important;\n}\n.u-p-b-12 {\n  padding-bottom: 12rpx !important;\n}\n.u-margin-bottom-12 {\n  margin-bottom: 12rpx !important;\n}\n.u-padding-bottom-12 {\n  padding-bottom: 12rpx !important;\n}\n.u-margin-14, .u-m-14 {\n  margin: 14rpx !important;\n}\n.u-padding-14, .u-p-14 {\n  padding: 14rpx !important;\n}\n.u-m-l-14 {\n  margin-left: 14rpx !important;\n}\n.u-p-l-14 {\n  padding-left: 14rpx !important;\n}\n.u-margin-left-14 {\n  margin-left: 14rpx !important;\n}\n.u-padding-left-14 {\n  padding-left: 14rpx !important;\n}\n.u-m-t-14 {\n  margin-top: 14rpx !important;\n}\n.u-p-t-14 {\n  padding-top: 14rpx !important;\n}\n.u-margin-top-14 {\n  margin-top: 14rpx !important;\n}\n.u-padding-top-14 {\n  padding-top: 14rpx !important;\n}\n.u-m-r-14 {\n  margin-right: 14rpx !important;\n}\n.u-p-r-14 {\n  padding-right: 14rpx !important;\n}\n.u-margin-right-14 {\n  margin-right: 14rpx !important;\n}\n.u-padding-right-14 {\n  padding-right: 14rpx !important;\n}\n.u-m-b-14 {\n  margin-bottom: 14rpx !important;\n}\n.u-p-b-14 {\n  padding-bottom: 14rpx !important;\n}\n.u-margin-bottom-14 {\n  margin-bottom: 14rpx !important;\n}\n.u-padding-bottom-14 {\n  padding-bottom: 14rpx !important;\n}\n.u-margin-15, .u-m-15 {\n  margin: 15rpx !important;\n}\n.u-padding-15, .u-p-15 {\n  padding: 15rpx !important;\n}\n.u-m-l-15 {\n  margin-left: 15rpx !important;\n}\n.u-p-l-15 {\n  padding-left: 15rpx !important;\n}\n.u-margin-left-15 {\n  margin-left: 15rpx !important;\n}\n.u-padding-left-15 {\n  padding-left: 15rpx !important;\n}\n.u-m-t-15 {\n  margin-top: 15rpx !important;\n}\n.u-p-t-15 {\n  padding-top: 15rpx !important;\n}\n.u-margin-top-15 {\n  margin-top: 15rpx !important;\n}\n.u-padding-top-15 {\n  padding-top: 15rpx !important;\n}\n.u-m-r-15 {\n  margin-right: 15rpx !important;\n}\n.u-p-r-15 {\n  padding-right: 15rpx !important;\n}\n.u-margin-right-15 {\n  margin-right: 15rpx !important;\n}\n.u-padding-right-15 {\n  padding-right: 15rpx !important;\n}\n.u-m-b-15 {\n  margin-bottom: 15rpx !important;\n}\n.u-p-b-15 {\n  padding-bottom: 15rpx !important;\n}\n.u-margin-bottom-15 {\n  margin-bottom: 15rpx !important;\n}\n.u-padding-bottom-15 {\n  padding-bottom: 15rpx !important;\n}\n.u-margin-16, .u-m-16 {\n  margin: 16rpx !important;\n}\n.u-padding-16, .u-p-16 {\n  padding: 16rpx !important;\n}\n.u-m-l-16 {\n  margin-left: 16rpx !important;\n}\n.u-p-l-16 {\n  padding-left: 16rpx !important;\n}\n.u-margin-left-16 {\n  margin-left: 16rpx !important;\n}\n.u-padding-left-16 {\n  padding-left: 16rpx !important;\n}\n.u-m-t-16 {\n  margin-top: 16rpx !important;\n}\n.u-p-t-16 {\n  padding-top: 16rpx !important;\n}\n.u-margin-top-16 {\n  margin-top: 16rpx !important;\n}\n.u-padding-top-16 {\n  padding-top: 16rpx !important;\n}\n.u-m-r-16 {\n  margin-right: 16rpx !important;\n}\n.u-p-r-16 {\n  padding-right: 16rpx !important;\n}\n.u-margin-right-16 {\n  margin-right: 16rpx !important;\n}\n.u-padding-right-16 {\n  padding-right: 16rpx !important;\n}\n.u-m-b-16 {\n  margin-bottom: 16rpx !important;\n}\n.u-p-b-16 {\n  padding-bottom: 16rpx !important;\n}\n.u-margin-bottom-16 {\n  margin-bottom: 16rpx !important;\n}\n.u-padding-bottom-16 {\n  padding-bottom: 16rpx !important;\n}\n.u-margin-18, .u-m-18 {\n  margin: 18rpx !important;\n}\n.u-padding-18, .u-p-18 {\n  padding: 18rpx !important;\n}\n.u-m-l-18 {\n  margin-left: 18rpx !important;\n}\n.u-p-l-18 {\n  padding-left: 18rpx !important;\n}\n.u-margin-left-18 {\n  margin-left: 18rpx !important;\n}\n.u-padding-left-18 {\n  padding-left: 18rpx !important;\n}\n.u-m-t-18 {\n  margin-top: 18rpx !important;\n}\n.u-p-t-18 {\n  padding-top: 18rpx !important;\n}\n.u-margin-top-18 {\n  margin-top: 18rpx !important;\n}\n.u-padding-top-18 {\n  padding-top: 18rpx !important;\n}\n.u-m-r-18 {\n  margin-right: 18rpx !important;\n}\n.u-p-r-18 {\n  padding-right: 18rpx !important;\n}\n.u-margin-right-18 {\n  margin-right: 18rpx !important;\n}\n.u-padding-right-18 {\n  padding-right: 18rpx !important;\n}\n.u-m-b-18 {\n  margin-bottom: 18rpx !important;\n}\n.u-p-b-18 {\n  padding-bottom: 18rpx !important;\n}\n.u-margin-bottom-18 {\n  margin-bottom: 18rpx !important;\n}\n.u-padding-bottom-18 {\n  padding-bottom: 18rpx !important;\n}\n.u-margin-20, .u-m-20 {\n  margin: 20rpx !important;\n}\n.u-padding-20, .u-p-20 {\n  padding: 20rpx !important;\n}\n.u-m-l-20 {\n  margin-left: 20rpx !important;\n}\n.u-p-l-20 {\n  padding-left: 20rpx !important;\n}\n.u-margin-left-20 {\n  margin-left: 20rpx !important;\n}\n.u-padding-left-20 {\n  padding-left: 20rpx !important;\n}\n.u-m-t-20 {\n  margin-top: 20rpx !important;\n}\n.u-p-t-20 {\n  padding-top: 20rpx !important;\n}\n.u-margin-top-20 {\n  margin-top: 20rpx !important;\n}\n.u-padding-top-20 {\n  padding-top: 20rpx !important;\n}\n.u-m-r-20 {\n  margin-right: 20rpx !important;\n}\n.u-p-r-20 {\n  padding-right: 20rpx !important;\n}\n.u-margin-right-20 {\n  margin-right: 20rpx !important;\n}\n.u-padding-right-20 {\n  padding-right: 20rpx !important;\n}\n.u-m-b-20 {\n  margin-bottom: 20rpx !important;\n}\n.u-p-b-20 {\n  padding-bottom: 20rpx !important;\n}\n.u-margin-bottom-20 {\n  margin-bottom: 20rpx !important;\n}\n.u-padding-bottom-20 {\n  padding-bottom: 20rpx !important;\n}\n.u-margin-22, .u-m-22 {\n  margin: 22rpx !important;\n}\n.u-padding-22, .u-p-22 {\n  padding: 22rpx !important;\n}\n.u-m-l-22 {\n  margin-left: 22rpx !important;\n}\n.u-p-l-22 {\n  padding-left: 22rpx !important;\n}\n.u-margin-left-22 {\n  margin-left: 22rpx !important;\n}\n.u-padding-left-22 {\n  padding-left: 22rpx !important;\n}\n.u-m-t-22 {\n  margin-top: 22rpx !important;\n}\n.u-p-t-22 {\n  padding-top: 22rpx !important;\n}\n.u-margin-top-22 {\n  margin-top: 22rpx !important;\n}\n.u-padding-top-22 {\n  padding-top: 22rpx !important;\n}\n.u-m-r-22 {\n  margin-right: 22rpx !important;\n}\n.u-p-r-22 {\n  padding-right: 22rpx !important;\n}\n.u-margin-right-22 {\n  margin-right: 22rpx !important;\n}\n.u-padding-right-22 {\n  padding-right: 22rpx !important;\n}\n.u-m-b-22 {\n  margin-bottom: 22rpx !important;\n}\n.u-p-b-22 {\n  padding-bottom: 22rpx !important;\n}\n.u-margin-bottom-22 {\n  margin-bottom: 22rpx !important;\n}\n.u-padding-bottom-22 {\n  padding-bottom: 22rpx !important;\n}\n.u-margin-24, .u-m-24 {\n  margin: 24rpx !important;\n}\n.u-padding-24, .u-p-24 {\n  padding: 24rpx !important;\n}\n.u-m-l-24 {\n  margin-left: 24rpx !important;\n}\n.u-p-l-24 {\n  padding-left: 24rpx !important;\n}\n.u-margin-left-24 {\n  margin-left: 24rpx !important;\n}\n.u-padding-left-24 {\n  padding-left: 24rpx !important;\n}\n.u-m-t-24 {\n  margin-top: 24rpx !important;\n}\n.u-p-t-24 {\n  padding-top: 24rpx !important;\n}\n.u-margin-top-24 {\n  margin-top: 24rpx !important;\n}\n.u-padding-top-24 {\n  padding-top: 24rpx !important;\n}\n.u-m-r-24 {\n  margin-right: 24rpx !important;\n}\n.u-p-r-24 {\n  padding-right: 24rpx !important;\n}\n.u-margin-right-24 {\n  margin-right: 24rpx !important;\n}\n.u-padding-right-24 {\n  padding-right: 24rpx !important;\n}\n.u-m-b-24 {\n  margin-bottom: 24rpx !important;\n}\n.u-p-b-24 {\n  padding-bottom: 24rpx !important;\n}\n.u-margin-bottom-24 {\n  margin-bottom: 24rpx !important;\n}\n.u-padding-bottom-24 {\n  padding-bottom: 24rpx !important;\n}\n.u-margin-25, .u-m-25 {\n  margin: 25rpx !important;\n}\n.u-padding-25, .u-p-25 {\n  padding: 25rpx !important;\n}\n.u-m-l-25 {\n  margin-left: 25rpx !important;\n}\n.u-p-l-25 {\n  padding-left: 25rpx !important;\n}\n.u-margin-left-25 {\n  margin-left: 25rpx !important;\n}\n.u-padding-left-25 {\n  padding-left: 25rpx !important;\n}\n.u-m-t-25 {\n  margin-top: 25rpx !important;\n}\n.u-p-t-25 {\n  padding-top: 25rpx !important;\n}\n.u-margin-top-25 {\n  margin-top: 25rpx !important;\n}\n.u-padding-top-25 {\n  padding-top: 25rpx !important;\n}\n.u-m-r-25 {\n  margin-right: 25rpx !important;\n}\n.u-p-r-25 {\n  padding-right: 25rpx !important;\n}\n.u-margin-right-25 {\n  margin-right: 25rpx !important;\n}\n.u-padding-right-25 {\n  padding-right: 25rpx !important;\n}\n.u-m-b-25 {\n  margin-bottom: 25rpx !important;\n}\n.u-p-b-25 {\n  padding-bottom: 25rpx !important;\n}\n.u-margin-bottom-25 {\n  margin-bottom: 25rpx !important;\n}\n.u-padding-bottom-25 {\n  padding-bottom: 25rpx !important;\n}\n.u-margin-26, .u-m-26 {\n  margin: 26rpx !important;\n}\n.u-padding-26, .u-p-26 {\n  padding: 26rpx !important;\n}\n.u-m-l-26 {\n  margin-left: 26rpx !important;\n}\n.u-p-l-26 {\n  padding-left: 26rpx !important;\n}\n.u-margin-left-26 {\n  margin-left: 26rpx !important;\n}\n.u-padding-left-26 {\n  padding-left: 26rpx !important;\n}\n.u-m-t-26 {\n  margin-top: 26rpx !important;\n}\n.u-p-t-26 {\n  padding-top: 26rpx !important;\n}\n.u-margin-top-26 {\n  margin-top: 26rpx !important;\n}\n.u-padding-top-26 {\n  padding-top: 26rpx !important;\n}\n.u-m-r-26 {\n  margin-right: 26rpx !important;\n}\n.u-p-r-26 {\n  padding-right: 26rpx !important;\n}\n.u-margin-right-26 {\n  margin-right: 26rpx !important;\n}\n.u-padding-right-26 {\n  padding-right: 26rpx !important;\n}\n.u-m-b-26 {\n  margin-bottom: 26rpx !important;\n}\n.u-p-b-26 {\n  padding-bottom: 26rpx !important;\n}\n.u-margin-bottom-26 {\n  margin-bottom: 26rpx !important;\n}\n.u-padding-bottom-26 {\n  padding-bottom: 26rpx !important;\n}\n.u-margin-28, .u-m-28 {\n  margin: 28rpx !important;\n}\n.u-padding-28, .u-p-28 {\n  padding: 28rpx !important;\n}\n.u-m-l-28 {\n  margin-left: 28rpx !important;\n}\n.u-p-l-28 {\n  padding-left: 28rpx !important;\n}\n.u-margin-left-28 {\n  margin-left: 28rpx !important;\n}\n.u-padding-left-28 {\n  padding-left: 28rpx !important;\n}\n.u-m-t-28 {\n  margin-top: 28rpx !important;\n}\n.u-p-t-28 {\n  padding-top: 28rpx !important;\n}\n.u-margin-top-28 {\n  margin-top: 28rpx !important;\n}\n.u-padding-top-28 {\n  padding-top: 28rpx !important;\n}\n.u-m-r-28 {\n  margin-right: 28rpx !important;\n}\n.u-p-r-28 {\n  padding-right: 28rpx !important;\n}\n.u-margin-right-28 {\n  margin-right: 28rpx !important;\n}\n.u-padding-right-28 {\n  padding-right: 28rpx !important;\n}\n.u-m-b-28 {\n  margin-bottom: 28rpx !important;\n}\n.u-p-b-28 {\n  padding-bottom: 28rpx !important;\n}\n.u-margin-bottom-28 {\n  margin-bottom: 28rpx !important;\n}\n.u-padding-bottom-28 {\n  padding-bottom: 28rpx !important;\n}\n.u-margin-30, .u-m-30 {\n  margin: 30rpx !important;\n}\n.u-padding-30, .u-p-30 {\n  padding: 30rpx !important;\n}\n.u-m-l-30 {\n  margin-left: 30rpx !important;\n}\n.u-p-l-30 {\n  padding-left: 30rpx !important;\n}\n.u-margin-left-30 {\n  margin-left: 30rpx !important;\n}\n.u-padding-left-30 {\n  padding-left: 30rpx !important;\n}\n.u-m-t-30 {\n  margin-top: 30rpx !important;\n}\n.u-p-t-30 {\n  padding-top: 30rpx !important;\n}\n.u-margin-top-30 {\n  margin-top: 30rpx !important;\n}\n.u-padding-top-30 {\n  padding-top: 30rpx !important;\n}\n.u-m-r-30 {\n  margin-right: 30rpx !important;\n}\n.u-p-r-30 {\n  padding-right: 30rpx !important;\n}\n.u-margin-right-30 {\n  margin-right: 30rpx !important;\n}\n.u-padding-right-30 {\n  padding-right: 30rpx !important;\n}\n.u-m-b-30 {\n  margin-bottom: 30rpx !important;\n}\n.u-p-b-30 {\n  padding-bottom: 30rpx !important;\n}\n.u-margin-bottom-30 {\n  margin-bottom: 30rpx !important;\n}\n.u-padding-bottom-30 {\n  padding-bottom: 30rpx !important;\n}\n.u-margin-32, .u-m-32 {\n  margin: 32rpx !important;\n}\n.u-padding-32, .u-p-32 {\n  padding: 32rpx !important;\n}\n.u-m-l-32 {\n  margin-left: 32rpx !important;\n}\n.u-p-l-32 {\n  padding-left: 32rpx !important;\n}\n.u-margin-left-32 {\n  margin-left: 32rpx !important;\n}\n.u-padding-left-32 {\n  padding-left: 32rpx !important;\n}\n.u-m-t-32 {\n  margin-top: 32rpx !important;\n}\n.u-p-t-32 {\n  padding-top: 32rpx !important;\n}\n.u-margin-top-32 {\n  margin-top: 32rpx !important;\n}\n.u-padding-top-32 {\n  padding-top: 32rpx !important;\n}\n.u-m-r-32 {\n  margin-right: 32rpx !important;\n}\n.u-p-r-32 {\n  padding-right: 32rpx !important;\n}\n.u-margin-right-32 {\n  margin-right: 32rpx !important;\n}\n.u-padding-right-32 {\n  padding-right: 32rpx !important;\n}\n.u-m-b-32 {\n  margin-bottom: 32rpx !important;\n}\n.u-p-b-32 {\n  padding-bottom: 32rpx !important;\n}\n.u-margin-bottom-32 {\n  margin-bottom: 32rpx !important;\n}\n.u-padding-bottom-32 {\n  padding-bottom: 32rpx !important;\n}\n.u-margin-34, .u-m-34 {\n  margin: 34rpx !important;\n}\n.u-padding-34, .u-p-34 {\n  padding: 34rpx !important;\n}\n.u-m-l-34 {\n  margin-left: 34rpx !important;\n}\n.u-p-l-34 {\n  padding-left: 34rpx !important;\n}\n.u-margin-left-34 {\n  margin-left: 34rpx !important;\n}\n.u-padding-left-34 {\n  padding-left: 34rpx !important;\n}\n.u-m-t-34 {\n  margin-top: 34rpx !important;\n}\n.u-p-t-34 {\n  padding-top: 34rpx !important;\n}\n.u-margin-top-34 {\n  margin-top: 34rpx !important;\n}\n.u-padding-top-34 {\n  padding-top: 34rpx !important;\n}\n.u-m-r-34 {\n  margin-right: 34rpx !important;\n}\n.u-p-r-34 {\n  padding-right: 34rpx !important;\n}\n.u-margin-right-34 {\n  margin-right: 34rpx !important;\n}\n.u-padding-right-34 {\n  padding-right: 34rpx !important;\n}\n.u-m-b-34 {\n  margin-bottom: 34rpx !important;\n}\n.u-p-b-34 {\n  padding-bottom: 34rpx !important;\n}\n.u-margin-bottom-34 {\n  margin-bottom: 34rpx !important;\n}\n.u-padding-bottom-34 {\n  padding-bottom: 34rpx !important;\n}\n.u-margin-35, .u-m-35 {\n  margin: 35rpx !important;\n}\n.u-padding-35, .u-p-35 {\n  padding: 35rpx !important;\n}\n.u-m-l-35 {\n  margin-left: 35rpx !important;\n}\n.u-p-l-35 {\n  padding-left: 35rpx !important;\n}\n.u-margin-left-35 {\n  margin-left: 35rpx !important;\n}\n.u-padding-left-35 {\n  padding-left: 35rpx !important;\n}\n.u-m-t-35 {\n  margin-top: 35rpx !important;\n}\n.u-p-t-35 {\n  padding-top: 35rpx !important;\n}\n.u-margin-top-35 {\n  margin-top: 35rpx !important;\n}\n.u-padding-top-35 {\n  padding-top: 35rpx !important;\n}\n.u-m-r-35 {\n  margin-right: 35rpx !important;\n}\n.u-p-r-35 {\n  padding-right: 35rpx !important;\n}\n.u-margin-right-35 {\n  margin-right: 35rpx !important;\n}\n.u-padding-right-35 {\n  padding-right: 35rpx !important;\n}\n.u-m-b-35 {\n  margin-bottom: 35rpx !important;\n}\n.u-p-b-35 {\n  padding-bottom: 35rpx !important;\n}\n.u-margin-bottom-35 {\n  margin-bottom: 35rpx !important;\n}\n.u-padding-bottom-35 {\n  padding-bottom: 35rpx !important;\n}\n.u-margin-36, .u-m-36 {\n  margin: 36rpx !important;\n}\n.u-padding-36, .u-p-36 {\n  padding: 36rpx !important;\n}\n.u-m-l-36 {\n  margin-left: 36rpx !important;\n}\n.u-p-l-36 {\n  padding-left: 36rpx !important;\n}\n.u-margin-left-36 {\n  margin-left: 36rpx !important;\n}\n.u-padding-left-36 {\n  padding-left: 36rpx !important;\n}\n.u-m-t-36 {\n  margin-top: 36rpx !important;\n}\n.u-p-t-36 {\n  padding-top: 36rpx !important;\n}\n.u-margin-top-36 {\n  margin-top: 36rpx !important;\n}\n.u-padding-top-36 {\n  padding-top: 36rpx !important;\n}\n.u-m-r-36 {\n  margin-right: 36rpx !important;\n}\n.u-p-r-36 {\n  padding-right: 36rpx !important;\n}\n.u-margin-right-36 {\n  margin-right: 36rpx !important;\n}\n.u-padding-right-36 {\n  padding-right: 36rpx !important;\n}\n.u-m-b-36 {\n  margin-bottom: 36rpx !important;\n}\n.u-p-b-36 {\n  padding-bottom: 36rpx !important;\n}\n.u-margin-bottom-36 {\n  margin-bottom: 36rpx !important;\n}\n.u-padding-bottom-36 {\n  padding-bottom: 36rpx !important;\n}\n.u-margin-38, .u-m-38 {\n  margin: 38rpx !important;\n}\n.u-padding-38, .u-p-38 {\n  padding: 38rpx !important;\n}\n.u-m-l-38 {\n  margin-left: 38rpx !important;\n}\n.u-p-l-38 {\n  padding-left: 38rpx !important;\n}\n.u-margin-left-38 {\n  margin-left: 38rpx !important;\n}\n.u-padding-left-38 {\n  padding-left: 38rpx !important;\n}\n.u-m-t-38 {\n  margin-top: 38rpx !important;\n}\n.u-p-t-38 {\n  padding-top: 38rpx !important;\n}\n.u-margin-top-38 {\n  margin-top: 38rpx !important;\n}\n.u-padding-top-38 {\n  padding-top: 38rpx !important;\n}\n.u-m-r-38 {\n  margin-right: 38rpx !important;\n}\n.u-p-r-38 {\n  padding-right: 38rpx !important;\n}\n.u-margin-right-38 {\n  margin-right: 38rpx !important;\n}\n.u-padding-right-38 {\n  padding-right: 38rpx !important;\n}\n.u-m-b-38 {\n  margin-bottom: 38rpx !important;\n}\n.u-p-b-38 {\n  padding-bottom: 38rpx !important;\n}\n.u-margin-bottom-38 {\n  margin-bottom: 38rpx !important;\n}\n.u-padding-bottom-38 {\n  padding-bottom: 38rpx !important;\n}\n.u-margin-40, .u-m-40 {\n  margin: 40rpx !important;\n}\n.u-padding-40, .u-p-40 {\n  padding: 40rpx !important;\n}\n.u-m-l-40 {\n  margin-left: 40rpx !important;\n}\n.u-p-l-40 {\n  padding-left: 40rpx !important;\n}\n.u-margin-left-40 {\n  margin-left: 40rpx !important;\n}\n.u-padding-left-40 {\n  padding-left: 40rpx !important;\n}\n.u-m-t-40 {\n  margin-top: 40rpx !important;\n}\n.u-p-t-40 {\n  padding-top: 40rpx !important;\n}\n.u-margin-top-40 {\n  margin-top: 40rpx !important;\n}\n.u-padding-top-40 {\n  padding-top: 40rpx !important;\n}\n.u-m-r-40 {\n  margin-right: 40rpx !important;\n}\n.u-p-r-40 {\n  padding-right: 40rpx !important;\n}\n.u-margin-right-40 {\n  margin-right: 40rpx !important;\n}\n.u-padding-right-40 {\n  padding-right: 40rpx !important;\n}\n.u-m-b-40 {\n  margin-bottom: 40rpx !important;\n}\n.u-p-b-40 {\n  padding-bottom: 40rpx !important;\n}\n.u-margin-bottom-40 {\n  margin-bottom: 40rpx !important;\n}\n.u-padding-bottom-40 {\n  padding-bottom: 40rpx !important;\n}\n.u-margin-42, .u-m-42 {\n  margin: 42rpx !important;\n}\n.u-padding-42, .u-p-42 {\n  padding: 42rpx !important;\n}\n.u-m-l-42 {\n  margin-left: 42rpx !important;\n}\n.u-p-l-42 {\n  padding-left: 42rpx !important;\n}\n.u-margin-left-42 {\n  margin-left: 42rpx !important;\n}\n.u-padding-left-42 {\n  padding-left: 42rpx !important;\n}\n.u-m-t-42 {\n  margin-top: 42rpx !important;\n}\n.u-p-t-42 {\n  padding-top: 42rpx !important;\n}\n.u-margin-top-42 {\n  margin-top: 42rpx !important;\n}\n.u-padding-top-42 {\n  padding-top: 42rpx !important;\n}\n.u-m-r-42 {\n  margin-right: 42rpx !important;\n}\n.u-p-r-42 {\n  padding-right: 42rpx !important;\n}\n.u-margin-right-42 {\n  margin-right: 42rpx !important;\n}\n.u-padding-right-42 {\n  padding-right: 42rpx !important;\n}\n.u-m-b-42 {\n  margin-bottom: 42rpx !important;\n}\n.u-p-b-42 {\n  padding-bottom: 42rpx !important;\n}\n.u-margin-bottom-42 {\n  margin-bottom: 42rpx !important;\n}\n.u-padding-bottom-42 {\n  padding-bottom: 42rpx !important;\n}\n.u-margin-44, .u-m-44 {\n  margin: 44rpx !important;\n}\n.u-padding-44, .u-p-44 {\n  padding: 44rpx !important;\n}\n.u-m-l-44 {\n  margin-left: 44rpx !important;\n}\n.u-p-l-44 {\n  padding-left: 44rpx !important;\n}\n.u-margin-left-44 {\n  margin-left: 44rpx !important;\n}\n.u-padding-left-44 {\n  padding-left: 44rpx !important;\n}\n.u-m-t-44 {\n  margin-top: 44rpx !important;\n}\n.u-p-t-44 {\n  padding-top: 44rpx !important;\n}\n.u-margin-top-44 {\n  margin-top: 44rpx !important;\n}\n.u-padding-top-44 {\n  padding-top: 44rpx !important;\n}\n.u-m-r-44 {\n  margin-right: 44rpx !important;\n}\n.u-p-r-44 {\n  padding-right: 44rpx !important;\n}\n.u-margin-right-44 {\n  margin-right: 44rpx !important;\n}\n.u-padding-right-44 {\n  padding-right: 44rpx !important;\n}\n.u-m-b-44 {\n  margin-bottom: 44rpx !important;\n}\n.u-p-b-44 {\n  padding-bottom: 44rpx !important;\n}\n.u-margin-bottom-44 {\n  margin-bottom: 44rpx !important;\n}\n.u-padding-bottom-44 {\n  padding-bottom: 44rpx !important;\n}\n.u-margin-45, .u-m-45 {\n  margin: 45rpx !important;\n}\n.u-padding-45, .u-p-45 {\n  padding: 45rpx !important;\n}\n.u-m-l-45 {\n  margin-left: 45rpx !important;\n}\n.u-p-l-45 {\n  padding-left: 45rpx !important;\n}\n.u-margin-left-45 {\n  margin-left: 45rpx !important;\n}\n.u-padding-left-45 {\n  padding-left: 45rpx !important;\n}\n.u-m-t-45 {\n  margin-top: 45rpx !important;\n}\n.u-p-t-45 {\n  padding-top: 45rpx !important;\n}\n.u-margin-top-45 {\n  margin-top: 45rpx !important;\n}\n.u-padding-top-45 {\n  padding-top: 45rpx !important;\n}\n.u-m-r-45 {\n  margin-right: 45rpx !important;\n}\n.u-p-r-45 {\n  padding-right: 45rpx !important;\n}\n.u-margin-right-45 {\n  margin-right: 45rpx !important;\n}\n.u-padding-right-45 {\n  padding-right: 45rpx !important;\n}\n.u-m-b-45 {\n  margin-bottom: 45rpx !important;\n}\n.u-p-b-45 {\n  padding-bottom: 45rpx !important;\n}\n.u-margin-bottom-45 {\n  margin-bottom: 45rpx !important;\n}\n.u-padding-bottom-45 {\n  padding-bottom: 45rpx !important;\n}\n.u-margin-46, .u-m-46 {\n  margin: 46rpx !important;\n}\n.u-padding-46, .u-p-46 {\n  padding: 46rpx !important;\n}\n.u-m-l-46 {\n  margin-left: 46rpx !important;\n}\n.u-p-l-46 {\n  padding-left: 46rpx !important;\n}\n.u-margin-left-46 {\n  margin-left: 46rpx !important;\n}\n.u-padding-left-46 {\n  padding-left: 46rpx !important;\n}\n.u-m-t-46 {\n  margin-top: 46rpx !important;\n}\n.u-p-t-46 {\n  padding-top: 46rpx !important;\n}\n.u-margin-top-46 {\n  margin-top: 46rpx !important;\n}\n.u-padding-top-46 {\n  padding-top: 46rpx !important;\n}\n.u-m-r-46 {\n  margin-right: 46rpx !important;\n}\n.u-p-r-46 {\n  padding-right: 46rpx !important;\n}\n.u-margin-right-46 {\n  margin-right: 46rpx !important;\n}\n.u-padding-right-46 {\n  padding-right: 46rpx !important;\n}\n.u-m-b-46 {\n  margin-bottom: 46rpx !important;\n}\n.u-p-b-46 {\n  padding-bottom: 46rpx !important;\n}\n.u-margin-bottom-46 {\n  margin-bottom: 46rpx !important;\n}\n.u-padding-bottom-46 {\n  padding-bottom: 46rpx !important;\n}\n.u-margin-48, .u-m-48 {\n  margin: 48rpx !important;\n}\n.u-padding-48, .u-p-48 {\n  padding: 48rpx !important;\n}\n.u-m-l-48 {\n  margin-left: 48rpx !important;\n}\n.u-p-l-48 {\n  padding-left: 48rpx !important;\n}\n.u-margin-left-48 {\n  margin-left: 48rpx !important;\n}\n.u-padding-left-48 {\n  padding-left: 48rpx !important;\n}\n.u-m-t-48 {\n  margin-top: 48rpx !important;\n}\n.u-p-t-48 {\n  padding-top: 48rpx !important;\n}\n.u-margin-top-48 {\n  margin-top: 48rpx !important;\n}\n.u-padding-top-48 {\n  padding-top: 48rpx !important;\n}\n.u-m-r-48 {\n  margin-right: 48rpx !important;\n}\n.u-p-r-48 {\n  padding-right: 48rpx !important;\n}\n.u-margin-right-48 {\n  margin-right: 48rpx !important;\n}\n.u-padding-right-48 {\n  padding-right: 48rpx !important;\n}\n.u-m-b-48 {\n  margin-bottom: 48rpx !important;\n}\n.u-p-b-48 {\n  padding-bottom: 48rpx !important;\n}\n.u-margin-bottom-48 {\n  margin-bottom: 48rpx !important;\n}\n.u-padding-bottom-48 {\n  padding-bottom: 48rpx !important;\n}\n.u-margin-50, .u-m-50 {\n  margin: 50rpx !important;\n}\n.u-padding-50, .u-p-50 {\n  padding: 50rpx !important;\n}\n.u-m-l-50 {\n  margin-left: 50rpx !important;\n}\n.u-p-l-50 {\n  padding-left: 50rpx !important;\n}\n.u-margin-left-50 {\n  margin-left: 50rpx !important;\n}\n.u-padding-left-50 {\n  padding-left: 50rpx !important;\n}\n.u-m-t-50 {\n  margin-top: 50rpx !important;\n}\n.u-p-t-50 {\n  padding-top: 50rpx !important;\n}\n.u-margin-top-50 {\n  margin-top: 50rpx !important;\n}\n.u-padding-top-50 {\n  padding-top: 50rpx !important;\n}\n.u-m-r-50 {\n  margin-right: 50rpx !important;\n}\n.u-p-r-50 {\n  padding-right: 50rpx !important;\n}\n.u-margin-right-50 {\n  margin-right: 50rpx !important;\n}\n.u-padding-right-50 {\n  padding-right: 50rpx !important;\n}\n.u-m-b-50 {\n  margin-bottom: 50rpx !important;\n}\n.u-p-b-50 {\n  padding-bottom: 50rpx !important;\n}\n.u-margin-bottom-50 {\n  margin-bottom: 50rpx !important;\n}\n.u-padding-bottom-50 {\n  padding-bottom: 50rpx !important;\n}\n.u-margin-52, .u-m-52 {\n  margin: 52rpx !important;\n}\n.u-padding-52, .u-p-52 {\n  padding: 52rpx !important;\n}\n.u-m-l-52 {\n  margin-left: 52rpx !important;\n}\n.u-p-l-52 {\n  padding-left: 52rpx !important;\n}\n.u-margin-left-52 {\n  margin-left: 52rpx !important;\n}\n.u-padding-left-52 {\n  padding-left: 52rpx !important;\n}\n.u-m-t-52 {\n  margin-top: 52rpx !important;\n}\n.u-p-t-52 {\n  padding-top: 52rpx !important;\n}\n.u-margin-top-52 {\n  margin-top: 52rpx !important;\n}\n.u-padding-top-52 {\n  padding-top: 52rpx !important;\n}\n.u-m-r-52 {\n  margin-right: 52rpx !important;\n}\n.u-p-r-52 {\n  padding-right: 52rpx !important;\n}\n.u-margin-right-52 {\n  margin-right: 52rpx !important;\n}\n.u-padding-right-52 {\n  padding-right: 52rpx !important;\n}\n.u-m-b-52 {\n  margin-bottom: 52rpx !important;\n}\n.u-p-b-52 {\n  padding-bottom: 52rpx !important;\n}\n.u-margin-bottom-52 {\n  margin-bottom: 52rpx !important;\n}\n.u-padding-bottom-52 {\n  padding-bottom: 52rpx !important;\n}\n.u-margin-54, .u-m-54 {\n  margin: 54rpx !important;\n}\n.u-padding-54, .u-p-54 {\n  padding: 54rpx !important;\n}\n.u-m-l-54 {\n  margin-left: 54rpx !important;\n}\n.u-p-l-54 {\n  padding-left: 54rpx !important;\n}\n.u-margin-left-54 {\n  margin-left: 54rpx !important;\n}\n.u-padding-left-54 {\n  padding-left: 54rpx !important;\n}\n.u-m-t-54 {\n  margin-top: 54rpx !important;\n}\n.u-p-t-54 {\n  padding-top: 54rpx !important;\n}\n.u-margin-top-54 {\n  margin-top: 54rpx !important;\n}\n.u-padding-top-54 {\n  padding-top: 54rpx !important;\n}\n.u-m-r-54 {\n  margin-right: 54rpx !important;\n}\n.u-p-r-54 {\n  padding-right: 54rpx !important;\n}\n.u-margin-right-54 {\n  margin-right: 54rpx !important;\n}\n.u-padding-right-54 {\n  padding-right: 54rpx !important;\n}\n.u-m-b-54 {\n  margin-bottom: 54rpx !important;\n}\n.u-p-b-54 {\n  padding-bottom: 54rpx !important;\n}\n.u-margin-bottom-54 {\n  margin-bottom: 54rpx !important;\n}\n.u-padding-bottom-54 {\n  padding-bottom: 54rpx !important;\n}\n.u-margin-55, .u-m-55 {\n  margin: 55rpx !important;\n}\n.u-padding-55, .u-p-55 {\n  padding: 55rpx !important;\n}\n.u-m-l-55 {\n  margin-left: 55rpx !important;\n}\n.u-p-l-55 {\n  padding-left: 55rpx !important;\n}\n.u-margin-left-55 {\n  margin-left: 55rpx !important;\n}\n.u-padding-left-55 {\n  padding-left: 55rpx !important;\n}\n.u-m-t-55 {\n  margin-top: 55rpx !important;\n}\n.u-p-t-55 {\n  padding-top: 55rpx !important;\n}\n.u-margin-top-55 {\n  margin-top: 55rpx !important;\n}\n.u-padding-top-55 {\n  padding-top: 55rpx !important;\n}\n.u-m-r-55 {\n  margin-right: 55rpx !important;\n}\n.u-p-r-55 {\n  padding-right: 55rpx !important;\n}\n.u-margin-right-55 {\n  margin-right: 55rpx !important;\n}\n.u-padding-right-55 {\n  padding-right: 55rpx !important;\n}\n.u-m-b-55 {\n  margin-bottom: 55rpx !important;\n}\n.u-p-b-55 {\n  padding-bottom: 55rpx !important;\n}\n.u-margin-bottom-55 {\n  margin-bottom: 55rpx !important;\n}\n.u-padding-bottom-55 {\n  padding-bottom: 55rpx !important;\n}\n.u-margin-56, .u-m-56 {\n  margin: 56rpx !important;\n}\n.u-padding-56, .u-p-56 {\n  padding: 56rpx !important;\n}\n.u-m-l-56 {\n  margin-left: 56rpx !important;\n}\n.u-p-l-56 {\n  padding-left: 56rpx !important;\n}\n.u-margin-left-56 {\n  margin-left: 56rpx !important;\n}\n.u-padding-left-56 {\n  padding-left: 56rpx !important;\n}\n.u-m-t-56 {\n  margin-top: 56rpx !important;\n}\n.u-p-t-56 {\n  padding-top: 56rpx !important;\n}\n.u-margin-top-56 {\n  margin-top: 56rpx !important;\n}\n.u-padding-top-56 {\n  padding-top: 56rpx !important;\n}\n.u-m-r-56 {\n  margin-right: 56rpx !important;\n}\n.u-p-r-56 {\n  padding-right: 56rpx !important;\n}\n.u-margin-right-56 {\n  margin-right: 56rpx !important;\n}\n.u-padding-right-56 {\n  padding-right: 56rpx !important;\n}\n.u-m-b-56 {\n  margin-bottom: 56rpx !important;\n}\n.u-p-b-56 {\n  padding-bottom: 56rpx !important;\n}\n.u-margin-bottom-56 {\n  margin-bottom: 56rpx !important;\n}\n.u-padding-bottom-56 {\n  padding-bottom: 56rpx !important;\n}\n.u-margin-58, .u-m-58 {\n  margin: 58rpx !important;\n}\n.u-padding-58, .u-p-58 {\n  padding: 58rpx !important;\n}\n.u-m-l-58 {\n  margin-left: 58rpx !important;\n}\n.u-p-l-58 {\n  padding-left: 58rpx !important;\n}\n.u-margin-left-58 {\n  margin-left: 58rpx !important;\n}\n.u-padding-left-58 {\n  padding-left: 58rpx !important;\n}\n.u-m-t-58 {\n  margin-top: 58rpx !important;\n}\n.u-p-t-58 {\n  padding-top: 58rpx !important;\n}\n.u-margin-top-58 {\n  margin-top: 58rpx !important;\n}\n.u-padding-top-58 {\n  padding-top: 58rpx !important;\n}\n.u-m-r-58 {\n  margin-right: 58rpx !important;\n}\n.u-p-r-58 {\n  padding-right: 58rpx !important;\n}\n.u-margin-right-58 {\n  margin-right: 58rpx !important;\n}\n.u-padding-right-58 {\n  padding-right: 58rpx !important;\n}\n.u-m-b-58 {\n  margin-bottom: 58rpx !important;\n}\n.u-p-b-58 {\n  padding-bottom: 58rpx !important;\n}\n.u-margin-bottom-58 {\n  margin-bottom: 58rpx !important;\n}\n.u-padding-bottom-58 {\n  padding-bottom: 58rpx !important;\n}\n.u-margin-60, .u-m-60 {\n  margin: 60rpx !important;\n}\n.u-padding-60, .u-p-60 {\n  padding: 60rpx !important;\n}\n.u-m-l-60 {\n  margin-left: 60rpx !important;\n}\n.u-p-l-60 {\n  padding-left: 60rpx !important;\n}\n.u-margin-left-60 {\n  margin-left: 60rpx !important;\n}\n.u-padding-left-60 {\n  padding-left: 60rpx !important;\n}\n.u-m-t-60 {\n  margin-top: 60rpx !important;\n}\n.u-p-t-60 {\n  padding-top: 60rpx !important;\n}\n.u-margin-top-60 {\n  margin-top: 60rpx !important;\n}\n.u-padding-top-60 {\n  padding-top: 60rpx !important;\n}\n.u-m-r-60 {\n  margin-right: 60rpx !important;\n}\n.u-p-r-60 {\n  padding-right: 60rpx !important;\n}\n.u-margin-right-60 {\n  margin-right: 60rpx !important;\n}\n.u-padding-right-60 {\n  padding-right: 60rpx !important;\n}\n.u-m-b-60 {\n  margin-bottom: 60rpx !important;\n}\n.u-p-b-60 {\n  padding-bottom: 60rpx !important;\n}\n.u-margin-bottom-60 {\n  margin-bottom: 60rpx !important;\n}\n.u-padding-bottom-60 {\n  padding-bottom: 60rpx !important;\n}\n.u-margin-62, .u-m-62 {\n  margin: 62rpx !important;\n}\n.u-padding-62, .u-p-62 {\n  padding: 62rpx !important;\n}\n.u-m-l-62 {\n  margin-left: 62rpx !important;\n}\n.u-p-l-62 {\n  padding-left: 62rpx !important;\n}\n.u-margin-left-62 {\n  margin-left: 62rpx !important;\n}\n.u-padding-left-62 {\n  padding-left: 62rpx !important;\n}\n.u-m-t-62 {\n  margin-top: 62rpx !important;\n}\n.u-p-t-62 {\n  padding-top: 62rpx !important;\n}\n.u-margin-top-62 {\n  margin-top: 62rpx !important;\n}\n.u-padding-top-62 {\n  padding-top: 62rpx !important;\n}\n.u-m-r-62 {\n  margin-right: 62rpx !important;\n}\n.u-p-r-62 {\n  padding-right: 62rpx !important;\n}\n.u-margin-right-62 {\n  margin-right: 62rpx !important;\n}\n.u-padding-right-62 {\n  padding-right: 62rpx !important;\n}\n.u-m-b-62 {\n  margin-bottom: 62rpx !important;\n}\n.u-p-b-62 {\n  padding-bottom: 62rpx !important;\n}\n.u-margin-bottom-62 {\n  margin-bottom: 62rpx !important;\n}\n.u-padding-bottom-62 {\n  padding-bottom: 62rpx !important;\n}\n.u-margin-64, .u-m-64 {\n  margin: 64rpx !important;\n}\n.u-padding-64, .u-p-64 {\n  padding: 64rpx !important;\n}\n.u-m-l-64 {\n  margin-left: 64rpx !important;\n}\n.u-p-l-64 {\n  padding-left: 64rpx !important;\n}\n.u-margin-left-64 {\n  margin-left: 64rpx !important;\n}\n.u-padding-left-64 {\n  padding-left: 64rpx !important;\n}\n.u-m-t-64 {\n  margin-top: 64rpx !important;\n}\n.u-p-t-64 {\n  padding-top: 64rpx !important;\n}\n.u-margin-top-64 {\n  margin-top: 64rpx !important;\n}\n.u-padding-top-64 {\n  padding-top: 64rpx !important;\n}\n.u-m-r-64 {\n  margin-right: 64rpx !important;\n}\n.u-p-r-64 {\n  padding-right: 64rpx !important;\n}\n.u-margin-right-64 {\n  margin-right: 64rpx !important;\n}\n.u-padding-right-64 {\n  padding-right: 64rpx !important;\n}\n.u-m-b-64 {\n  margin-bottom: 64rpx !important;\n}\n.u-p-b-64 {\n  padding-bottom: 64rpx !important;\n}\n.u-margin-bottom-64 {\n  margin-bottom: 64rpx !important;\n}\n.u-padding-bottom-64 {\n  padding-bottom: 64rpx !important;\n}\n.u-margin-65, .u-m-65 {\n  margin: 65rpx !important;\n}\n.u-padding-65, .u-p-65 {\n  padding: 65rpx !important;\n}\n.u-m-l-65 {\n  margin-left: 65rpx !important;\n}\n.u-p-l-65 {\n  padding-left: 65rpx !important;\n}\n.u-margin-left-65 {\n  margin-left: 65rpx !important;\n}\n.u-padding-left-65 {\n  padding-left: 65rpx !important;\n}\n.u-m-t-65 {\n  margin-top: 65rpx !important;\n}\n.u-p-t-65 {\n  padding-top: 65rpx !important;\n}\n.u-margin-top-65 {\n  margin-top: 65rpx !important;\n}\n.u-padding-top-65 {\n  padding-top: 65rpx !important;\n}\n.u-m-r-65 {\n  margin-right: 65rpx !important;\n}\n.u-p-r-65 {\n  padding-right: 65rpx !important;\n}\n.u-margin-right-65 {\n  margin-right: 65rpx !important;\n}\n.u-padding-right-65 {\n  padding-right: 65rpx !important;\n}\n.u-m-b-65 {\n  margin-bottom: 65rpx !important;\n}\n.u-p-b-65 {\n  padding-bottom: 65rpx !important;\n}\n.u-margin-bottom-65 {\n  margin-bottom: 65rpx !important;\n}\n.u-padding-bottom-65 {\n  padding-bottom: 65rpx !important;\n}\n.u-margin-66, .u-m-66 {\n  margin: 66rpx !important;\n}\n.u-padding-66, .u-p-66 {\n  padding: 66rpx !important;\n}\n.u-m-l-66 {\n  margin-left: 66rpx !important;\n}\n.u-p-l-66 {\n  padding-left: 66rpx !important;\n}\n.u-margin-left-66 {\n  margin-left: 66rpx !important;\n}\n.u-padding-left-66 {\n  padding-left: 66rpx !important;\n}\n.u-m-t-66 {\n  margin-top: 66rpx !important;\n}\n.u-p-t-66 {\n  padding-top: 66rpx !important;\n}\n.u-margin-top-66 {\n  margin-top: 66rpx !important;\n}\n.u-padding-top-66 {\n  padding-top: 66rpx !important;\n}\n.u-m-r-66 {\n  margin-right: 66rpx !important;\n}\n.u-p-r-66 {\n  padding-right: 66rpx !important;\n}\n.u-margin-right-66 {\n  margin-right: 66rpx !important;\n}\n.u-padding-right-66 {\n  padding-right: 66rpx !important;\n}\n.u-m-b-66 {\n  margin-bottom: 66rpx !important;\n}\n.u-p-b-66 {\n  padding-bottom: 66rpx !important;\n}\n.u-margin-bottom-66 {\n  margin-bottom: 66rpx !important;\n}\n.u-padding-bottom-66 {\n  padding-bottom: 66rpx !important;\n}\n.u-margin-68, .u-m-68 {\n  margin: 68rpx !important;\n}\n.u-padding-68, .u-p-68 {\n  padding: 68rpx !important;\n}\n.u-m-l-68 {\n  margin-left: 68rpx !important;\n}\n.u-p-l-68 {\n  padding-left: 68rpx !important;\n}\n.u-margin-left-68 {\n  margin-left: 68rpx !important;\n}\n.u-padding-left-68 {\n  padding-left: 68rpx !important;\n}\n.u-m-t-68 {\n  margin-top: 68rpx !important;\n}\n.u-p-t-68 {\n  padding-top: 68rpx !important;\n}\n.u-margin-top-68 {\n  margin-top: 68rpx !important;\n}\n.u-padding-top-68 {\n  padding-top: 68rpx !important;\n}\n.u-m-r-68 {\n  margin-right: 68rpx !important;\n}\n.u-p-r-68 {\n  padding-right: 68rpx !important;\n}\n.u-margin-right-68 {\n  margin-right: 68rpx !important;\n}\n.u-padding-right-68 {\n  padding-right: 68rpx !important;\n}\n.u-m-b-68 {\n  margin-bottom: 68rpx !important;\n}\n.u-p-b-68 {\n  padding-bottom: 68rpx !important;\n}\n.u-margin-bottom-68 {\n  margin-bottom: 68rpx !important;\n}\n.u-padding-bottom-68 {\n  padding-bottom: 68rpx !important;\n}\n.u-margin-70, .u-m-70 {\n  margin: 70rpx !important;\n}\n.u-padding-70, .u-p-70 {\n  padding: 70rpx !important;\n}\n.u-m-l-70 {\n  margin-left: 70rpx !important;\n}\n.u-p-l-70 {\n  padding-left: 70rpx !important;\n}\n.u-margin-left-70 {\n  margin-left: 70rpx !important;\n}\n.u-padding-left-70 {\n  padding-left: 70rpx !important;\n}\n.u-m-t-70 {\n  margin-top: 70rpx !important;\n}\n.u-p-t-70 {\n  padding-top: 70rpx !important;\n}\n.u-margin-top-70 {\n  margin-top: 70rpx !important;\n}\n.u-padding-top-70 {\n  padding-top: 70rpx !important;\n}\n.u-m-r-70 {\n  margin-right: 70rpx !important;\n}\n.u-p-r-70 {\n  padding-right: 70rpx !important;\n}\n.u-margin-right-70 {\n  margin-right: 70rpx !important;\n}\n.u-padding-right-70 {\n  padding-right: 70rpx !important;\n}\n.u-m-b-70 {\n  margin-bottom: 70rpx !important;\n}\n.u-p-b-70 {\n  padding-bottom: 70rpx !important;\n}\n.u-margin-bottom-70 {\n  margin-bottom: 70rpx !important;\n}\n.u-padding-bottom-70 {\n  padding-bottom: 70rpx !important;\n}\n.u-margin-72, .u-m-72 {\n  margin: 72rpx !important;\n}\n.u-padding-72, .u-p-72 {\n  padding: 72rpx !important;\n}\n.u-m-l-72 {\n  margin-left: 72rpx !important;\n}\n.u-p-l-72 {\n  padding-left: 72rpx !important;\n}\n.u-margin-left-72 {\n  margin-left: 72rpx !important;\n}\n.u-padding-left-72 {\n  padding-left: 72rpx !important;\n}\n.u-m-t-72 {\n  margin-top: 72rpx !important;\n}\n.u-p-t-72 {\n  padding-top: 72rpx !important;\n}\n.u-margin-top-72 {\n  margin-top: 72rpx !important;\n}\n.u-padding-top-72 {\n  padding-top: 72rpx !important;\n}\n.u-m-r-72 {\n  margin-right: 72rpx !important;\n}\n.u-p-r-72 {\n  padding-right: 72rpx !important;\n}\n.u-margin-right-72 {\n  margin-right: 72rpx !important;\n}\n.u-padding-right-72 {\n  padding-right: 72rpx !important;\n}\n.u-m-b-72 {\n  margin-bottom: 72rpx !important;\n}\n.u-p-b-72 {\n  padding-bottom: 72rpx !important;\n}\n.u-margin-bottom-72 {\n  margin-bottom: 72rpx !important;\n}\n.u-padding-bottom-72 {\n  padding-bottom: 72rpx !important;\n}\n.u-margin-74, .u-m-74 {\n  margin: 74rpx !important;\n}\n.u-padding-74, .u-p-74 {\n  padding: 74rpx !important;\n}\n.u-m-l-74 {\n  margin-left: 74rpx !important;\n}\n.u-p-l-74 {\n  padding-left: 74rpx !important;\n}\n.u-margin-left-74 {\n  margin-left: 74rpx !important;\n}\n.u-padding-left-74 {\n  padding-left: 74rpx !important;\n}\n.u-m-t-74 {\n  margin-top: 74rpx !important;\n}\n.u-p-t-74 {\n  padding-top: 74rpx !important;\n}\n.u-margin-top-74 {\n  margin-top: 74rpx !important;\n}\n.u-padding-top-74 {\n  padding-top: 74rpx !important;\n}\n.u-m-r-74 {\n  margin-right: 74rpx !important;\n}\n.u-p-r-74 {\n  padding-right: 74rpx !important;\n}\n.u-margin-right-74 {\n  margin-right: 74rpx !important;\n}\n.u-padding-right-74 {\n  padding-right: 74rpx !important;\n}\n.u-m-b-74 {\n  margin-bottom: 74rpx !important;\n}\n.u-p-b-74 {\n  padding-bottom: 74rpx !important;\n}\n.u-margin-bottom-74 {\n  margin-bottom: 74rpx !important;\n}\n.u-padding-bottom-74 {\n  padding-bottom: 74rpx !important;\n}\n.u-margin-75, .u-m-75 {\n  margin: 75rpx !important;\n}\n.u-padding-75, .u-p-75 {\n  padding: 75rpx !important;\n}\n.u-m-l-75 {\n  margin-left: 75rpx !important;\n}\n.u-p-l-75 {\n  padding-left: 75rpx !important;\n}\n.u-margin-left-75 {\n  margin-left: 75rpx !important;\n}\n.u-padding-left-75 {\n  padding-left: 75rpx !important;\n}\n.u-m-t-75 {\n  margin-top: 75rpx !important;\n}\n.u-p-t-75 {\n  padding-top: 75rpx !important;\n}\n.u-margin-top-75 {\n  margin-top: 75rpx !important;\n}\n.u-padding-top-75 {\n  padding-top: 75rpx !important;\n}\n.u-m-r-75 {\n  margin-right: 75rpx !important;\n}\n.u-p-r-75 {\n  padding-right: 75rpx !important;\n}\n.u-margin-right-75 {\n  margin-right: 75rpx !important;\n}\n.u-padding-right-75 {\n  padding-right: 75rpx !important;\n}\n.u-m-b-75 {\n  margin-bottom: 75rpx !important;\n}\n.u-p-b-75 {\n  padding-bottom: 75rpx !important;\n}\n.u-margin-bottom-75 {\n  margin-bottom: 75rpx !important;\n}\n.u-padding-bottom-75 {\n  padding-bottom: 75rpx !important;\n}\n.u-margin-76, .u-m-76 {\n  margin: 76rpx !important;\n}\n.u-padding-76, .u-p-76 {\n  padding: 76rpx !important;\n}\n.u-m-l-76 {\n  margin-left: 76rpx !important;\n}\n.u-p-l-76 {\n  padding-left: 76rpx !important;\n}\n.u-margin-left-76 {\n  margin-left: 76rpx !important;\n}\n.u-padding-left-76 {\n  padding-left: 76rpx !important;\n}\n.u-m-t-76 {\n  margin-top: 76rpx !important;\n}\n.u-p-t-76 {\n  padding-top: 76rpx !important;\n}\n.u-margin-top-76 {\n  margin-top: 76rpx !important;\n}\n.u-padding-top-76 {\n  padding-top: 76rpx !important;\n}\n.u-m-r-76 {\n  margin-right: 76rpx !important;\n}\n.u-p-r-76 {\n  padding-right: 76rpx !important;\n}\n.u-margin-right-76 {\n  margin-right: 76rpx !important;\n}\n.u-padding-right-76 {\n  padding-right: 76rpx !important;\n}\n.u-m-b-76 {\n  margin-bottom: 76rpx !important;\n}\n.u-p-b-76 {\n  padding-bottom: 76rpx !important;\n}\n.u-margin-bottom-76 {\n  margin-bottom: 76rpx !important;\n}\n.u-padding-bottom-76 {\n  padding-bottom: 76rpx !important;\n}\n.u-margin-78, .u-m-78 {\n  margin: 78rpx !important;\n}\n.u-padding-78, .u-p-78 {\n  padding: 78rpx !important;\n}\n.u-m-l-78 {\n  margin-left: 78rpx !important;\n}\n.u-p-l-78 {\n  padding-left: 78rpx !important;\n}\n.u-margin-left-78 {\n  margin-left: 78rpx !important;\n}\n.u-padding-left-78 {\n  padding-left: 78rpx !important;\n}\n.u-m-t-78 {\n  margin-top: 78rpx !important;\n}\n.u-p-t-78 {\n  padding-top: 78rpx !important;\n}\n.u-margin-top-78 {\n  margin-top: 78rpx !important;\n}\n.u-padding-top-78 {\n  padding-top: 78rpx !important;\n}\n.u-m-r-78 {\n  margin-right: 78rpx !important;\n}\n.u-p-r-78 {\n  padding-right: 78rpx !important;\n}\n.u-margin-right-78 {\n  margin-right: 78rpx !important;\n}\n.u-padding-right-78 {\n  padding-right: 78rpx !important;\n}\n.u-m-b-78 {\n  margin-bottom: 78rpx !important;\n}\n.u-p-b-78 {\n  padding-bottom: 78rpx !important;\n}\n.u-margin-bottom-78 {\n  margin-bottom: 78rpx !important;\n}\n.u-padding-bottom-78 {\n  padding-bottom: 78rpx !important;\n}\n.u-margin-80, .u-m-80 {\n  margin: 80rpx !important;\n}\n.u-padding-80, .u-p-80 {\n  padding: 80rpx !important;\n}\n.u-m-l-80 {\n  margin-left: 80rpx !important;\n}\n.u-p-l-80 {\n  padding-left: 80rpx !important;\n}\n.u-margin-left-80 {\n  margin-left: 80rpx !important;\n}\n.u-padding-left-80 {\n  padding-left: 80rpx !important;\n}\n.u-m-t-80 {\n  margin-top: 80rpx !important;\n}\n.u-p-t-80 {\n  padding-top: 80rpx !important;\n}\n.u-margin-top-80 {\n  margin-top: 80rpx !important;\n}\n.u-padding-top-80 {\n  padding-top: 80rpx !important;\n}\n.u-m-r-80 {\n  margin-right: 80rpx !important;\n}\n.u-p-r-80 {\n  padding-right: 80rpx !important;\n}\n.u-margin-right-80 {\n  margin-right: 80rpx !important;\n}\n.u-padding-right-80 {\n  padding-right: 80rpx !important;\n}\n.u-m-b-80 {\n  margin-bottom: 80rpx !important;\n}\n.u-p-b-80 {\n  padding-bottom: 80rpx !important;\n}\n.u-margin-bottom-80 {\n  margin-bottom: 80rpx !important;\n}\n.u-padding-bottom-80 {\n  padding-bottom: 80rpx !important;\n}\n.u-reset-nvue {\n  flex-direction: row;\n  align-items: center;\n}\n.u-type-primary-light {\n  color: #ecf5ff;\n}\n.u-type-warning-light {\n  color: #fdf6ec;\n}\n.u-type-success-light {\n  color: #dbf1e1;\n}\n.u-type-error-light {\n  color: #fef0f0;\n}\n.u-type-info-light {\n  color: #f4f4f5;\n}\n.u-type-primary-light-bg {\n  background-color: #ecf5ff;\n}\n.u-type-warning-light-bg {\n  background-color: #fdf6ec;\n}\n.u-type-success-light-bg {\n  background-color: #dbf1e1;\n}\n.u-type-error-light-bg {\n  background-color: #fef0f0;\n}\n.u-type-info-light-bg {\n  background-color: #f4f4f5;\n}\n.u-type-primary-dark {\n  color: #2b85e4;\n}\n.u-type-warning-dark {\n  color: #f29100;\n}\n.u-type-success-dark {\n  color: #18b566;\n}\n.u-type-error-dark {\n  color: #dd6161;\n}\n.u-type-info-dark {\n  color: #82848a;\n}\n.u-type-primary-dark-bg {\n  background-color: #2b85e4;\n}\n.u-type-warning-dark-bg {\n  background-color: #f29100;\n}\n.u-type-success-dark-bg {\n  background-color: #18b566;\n}\n.u-type-error-dark-bg {\n  background-color: #dd6161;\n}\n.u-type-info-dark-bg {\n  background-color: #82848a;\n}\n.u-type-primary-disabled {\n  color: #a0cfff;\n}\n.u-type-warning-disabled {\n  color: #fcbd71;\n}\n.u-type-success-disabled {\n  color: #71d5a1;\n}\n.u-type-error-disabled {\n  color: #fab6b6;\n}\n.u-type-info-disabled {\n  color: #c8c9cc;\n}\n.u-type-primary {\n  color: #2979ff;\n}\n.u-type-warning {\n  color: #ff9900;\n}\n.u-type-success {\n  color: #19be6b;\n}\n.u-type-error {\n  color: #fa3534;\n}\n.u-type-info {\n  color: #909399;\n}\n.u-type-primary-bg {\n  background-color: #2979ff;\n}\n.u-type-warning-bg {\n  background-color: #ff9900;\n}\n.u-type-success-bg {\n  background-color: #19be6b;\n}\n.u-type-error-bg {\n  background-color: #fa3534;\n}\n.u-type-info-bg {\n  background-color: #909399;\n}\n.u-main-color {\n  color: #303133;\n}\n.u-content-color {\n  color: #606266;\n}\n.u-tips-color {\n  color: #909399;\n}\n.u-light-color {\n  color: #c0c4cc;\n}\nbody {\n  color: #303133;\n  font-size: 28rpx;\n}\n/* start--去除webkit的默认样式--start */\n.u-fix-ios-appearance {\n  -webkit-appearance: none;\n}\n/* end--去除webkit的默认样式--end */\n/* start--icon图标外层套一个view，让其达到更好的垂直居中的效果--start */\n.u-icon-wrap {\n  display: flex;\n  align-items: center;\n}\n/* end-icon图标外层套一个view，让其达到更好的垂直居中的效果--end */\n/* start--iPhoneX底部安全区定义--start */\n.safe-area-inset-bottom {\n  padding-bottom: 0;\n  padding-bottom: constant(safe-area-inset-bottom);\n  padding-bottom: env(safe-area-inset-bottom);\n}\n/* end-iPhoneX底部安全区定义--end */\n/* start--各种hover点击反馈相关的类名-start */\n.u-hover-class {\n  opacity: 0.6;\n}\n.u-cell-hover {\n  background-color: #f7f8f9 !important;\n}\n/* end--各种hover点击反馈相关的类名--end */\n/* start--文本行数限制--start */\n.u-line-1 {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.u-line-2 {\n  -webkit-line-clamp: 2;\n}\n.u-line-3 {\n  -webkit-line-clamp: 3;\n}\n.u-line-4 {\n  -webkit-line-clamp: 4;\n}\n.u-line-5 {\n  -webkit-line-clamp: 5;\n}\n.u-line-2, .u-line-3, .u-line-4, .u-line-5 {\n  overflow: hidden;\n  word-break: break-all;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n}\n/* end--文本行数限制--end */\n/* start--Retina 屏幕下的 1px 边框--start */\n.u-border,\n.u-border-bottom,\n.u-border-left,\n.u-border-right,\n.u-border-top,\n.u-border-top-bottom {\n  position: relative;\n}\n.u-border-bottom:after,\n.u-border-left:after,\n.u-border-right:after,\n.u-border-top-bottom:after,\n.u-border-top:after,\n.u-border:after {\n  content: ' ';\n  position: absolute;\n  left: 0;\n  top: 0;\n  pointer-events: none;\n  box-sizing: border-box;\n  -webkit-transform-origin: 0 0;\n  transform-origin: 0 0;\n  width: 199.8%;\n  height: 199.7%;\n  -webkit-transform: scale(0.5, 0.5);\n          transform: scale(0.5, 0.5);\n  border: 0 solid #e4e7ed;\n  z-index: 2;\n}\n.u-border-top:after {\n  border-top-width: 1px;\n}\n.u-border-left:after {\n  border-left-width: 1px;\n}\n.u-border-right:after {\n  border-right-width: 1px;\n}\n.u-border-bottom:after {\n  border-bottom-width: 1px;\n}\n.u-border-top-bottom:after {\n  border-width: 1px 0;\n}\n.u-border:after {\n  border-width: 1px;\n}\n/* end--Retina 屏幕下的 1px 边框--end */\n/* start--clearfix--start */\n.u-clearfix:after,\n.clearfix:after {\n  content: '';\n  display: table;\n  clear: both;\n}\n/* end--clearfix--end */\n/* start--高斯模糊tabbar底部处理--start */\n.u-blur-effect-inset {\n  width: 750rpx;\n  height: var(--window-bottom);\n  background-color: #FFFFFF;\n}\n/* end--高斯模糊tabbar底部处理--end */\n/* start--提升H5端uni.toast()的层级，避免被uView的modal等遮盖--start */\n/* end--提升H5端uni.toast()的层级，避免被uView的modal等遮盖--end */\n/* start--去除button的所有默认样式--start */\n.u-reset-button {\n  padding: 0;\n  font-size: inherit;\n  line-height: inherit;\n  background-color: transparent;\n  color: inherit;\n}\n.u-reset-button::after {\n  border: none;\n}\n/* end--去除button的所有默认样式--end */\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/**\n * 这里是uni-app内置的常用样式变量\n *\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\n *\n */\n/**\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\n *\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\n */\n/* 颜色变量 */\n/* 行为相关颜色 */\n/* 文字基本颜色 */\n/* 背景颜色 */\n/* 边框颜色 */\n/* 尺寸变量 */\n/* 文字尺寸 */\n/* 图片尺寸 */\n/* Border Radius */\n/* 水平间距 */\n/* 垂直间距 */\n/* 透明度 */\n/* 文章场景相关 */\n/*每个页面公共css */\n.logo_bg{\n\twidth: 750rpx;\n\theight: 526rpx;\n}\n.b_colfff{\n\tbackground-color:#ffffff;\n}\n.logo_bk{\n\tborder-top-left-radius: 60rpx;\n\twidth: 100%;\n\theight:60vh;\n\tposition: relative;\n\tmargin-top: -80rpx;\n\tpadding:40rpx;\n}\n.col33{\n\tcolor:#333333;\n}\n.f_s36{\n\tfont-size: 36rpx;\n}\n.f_bod{\n\tfont-weight: bold;\n}\n.col35{\n\tcolor: #35CBA5;\n}\n.logo_input{\n\tbackground-color: #F3F3F3;padding:10rpx 20rpx 10rpx 20rpx;margin-top:30rpx;border-radius: 12rpx;\n}\n.xuan{\n\tcolor:#333333 !important;\n}\n.xuan2{\n\tcolor: #F75F52 !important;\n}\n.xuan3{\n\tcolor:#35CBA5;\n\tborder-bottom: 4rpx solid #35CBA5;\n}\n.u-relative,\n.u-rela {\n  position: relative;\n}\n.u-absolute,\n.u-abso {\n  position: absolute;\n}\nuni-image {\n  display: inline-block;\n}\nuni-view,\nuni-text {\n  box-sizing: border-box;\n}\n.u-font-xs {\n  font-size: 22rpx;\n}\n.u-font-sm {\n  font-size: 26rpx;\n}\n.u-font-md {\n  font-size: 28rpx;\n}\n.u-font-lg {\n  font-size: 30rpx;\n}\n.u-font-xl {\n  font-size: 34rpx;\n}\n.u-flex {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n}\n.u-flex-wrap {\n  flex-wrap: wrap;\n}\n.u-flex-nowrap {\n  flex-wrap: nowrap;\n}\n.u-col-center {\n  align-items: center;\n}\n.u-col-top {\n  align-items: flex-start;\n}\n.u-col-bottom {\n  align-items: flex-end;\n}\n.u-row-center {\n  justify-content: center;\n}\n.u-row-left {\n  justify-content: flex-start;\n}\n.u-row-right {\n  justify-content: flex-end;\n}\n.u-row-between {\n  justify-content: space-between;\n}\n.u-row-around {\n  justify-content: space-around;\n}\n.u-text-left {\n  text-align: left;\n}\n.u-text-center {\n  text-align: center;\n}\n.u-text-right {\n  text-align: right;\n}\n.u-flex-col {\n  display: flex;\n  flex-direction: column;\n}\n.u-flex-0 {\n  flex: 0;\n}\n.u-flex-1 {\n  flex: 1;\n}\n.u-flex-2 {\n  flex: 2;\n}\n.u-flex-3 {\n  flex: 3;\n}\n.u-flex-4 {\n  flex: 4;\n}\n.u-flex-5 {\n  flex: 5;\n}\n.u-flex-6 {\n  flex: 6;\n}\n.u-flex-7 {\n  flex: 7;\n}\n.u-flex-8 {\n  flex: 8;\n}\n.u-flex-9 {\n  flex: 9;\n}\n.u-flex-10 {\n  flex: 10;\n}\n.u-flex-11 {\n  flex: 11;\n}\n.u-flex-12 {\n  flex: 12;\n}\n.u-font-9 {\n  font-size: 9px;\n}\n.u-font-10 {\n  font-size: 10px;\n}\n.u-font-11 {\n  font-size: 11px;\n}\n.u-font-12 {\n  font-size: 12px;\n}\n.u-font-13 {\n  font-size: 13px;\n}\n.u-font-14 {\n  font-size: 14px;\n}\n.u-font-15 {\n  font-size: 15px;\n}\n.u-font-16 {\n  font-size: 16px;\n}\n.u-font-17 {\n  font-size: 17px;\n}\n.u-font-18 {\n  font-size: 18px;\n}\n.u-font-19 {\n  font-size: 19px;\n}\n.u-font-20 {\n  font-size: 20rpx;\n}\n.u-font-21 {\n  font-size: 21rpx;\n}\n.u-font-22 {\n  font-size: 22rpx;\n}\n.u-font-23 {\n  font-size: 23rpx;\n}\n.u-font-24 {\n  font-size: 24rpx;\n}\n.u-font-25 {\n  font-size: 25rpx;\n}\n.u-font-26 {\n  font-size: 26rpx;\n}\n.u-font-27 {\n  font-size: 27rpx;\n}\n.u-font-28 {\n  font-size: 28rpx;\n}\n.u-font-29 {\n  font-size: 29rpx;\n}\n.u-font-30 {\n  font-size: 30rpx;\n}\n.u-font-31 {\n  font-size: 31rpx;\n}\n.u-font-32 {\n  font-size: 32rpx;\n}\n.u-font-33 {\n  font-size: 33rpx;\n}\n.u-font-34 {\n  font-size: 34rpx;\n}\n.u-font-35 {\n  font-size: 35rpx;\n}\n.u-font-36 {\n  font-size: 36rpx;\n}\n.u-font-37 {\n  font-size: 37rpx;\n}\n.u-font-38 {\n  font-size: 38rpx;\n}\n.u-font-39 {\n  font-size: 39rpx;\n}\n.u-font-40 {\n  font-size: 40rpx;\n}\n.u-margin-0, .u-m-0 {\n  margin: 0rpx !important;\n}\n.u-padding-0, .u-p-0 {\n  padding: 0rpx !important;\n}\n.u-m-l-0 {\n  margin-left: 0rpx !important;\n}\n.u-p-l-0 {\n  padding-left: 0rpx !important;\n}\n.u-margin-left-0 {\n  margin-left: 0rpx !important;\n}\n.u-padding-left-0 {\n  padding-left: 0rpx !important;\n}\n.u-m-t-0 {\n  margin-top: 0rpx !important;\n}\n.u-p-t-0 {\n  padding-top: 0rpx !important;\n}\n.u-margin-top-0 {\n  margin-top: 0rpx !important;\n}\n.u-padding-top-0 {\n  padding-top: 0rpx !important;\n}\n.u-m-r-0 {\n  margin-right: 0rpx !important;\n}\n.u-p-r-0 {\n  padding-right: 0rpx !important;\n}\n.u-margin-right-0 {\n  margin-right: 0rpx !important;\n}\n.u-padding-right-0 {\n  padding-right: 0rpx !important;\n}\n.u-m-b-0 {\n  margin-bottom: 0rpx !important;\n}\n.u-p-b-0 {\n  padding-bottom: 0rpx !important;\n}\n.u-margin-bottom-0 {\n  margin-bottom: 0rpx !important;\n}\n.u-padding-bottom-0 {\n  padding-bottom: 0rpx !important;\n}\n.u-margin-2, .u-m-2 {\n  margin: 2rpx !important;\n}\n.u-padding-2, .u-p-2 {\n  padding: 2rpx !important;\n}\n.u-m-l-2 {\n  margin-left: 2rpx !important;\n}\n.u-p-l-2 {\n  padding-left: 2rpx !important;\n}\n.u-margin-left-2 {\n  margin-left: 2rpx !important;\n}\n.u-padding-left-2 {\n  padding-left: 2rpx !important;\n}\n.u-m-t-2 {\n  margin-top: 2rpx !important;\n}\n.u-p-t-2 {\n  padding-top: 2rpx !important;\n}\n.u-margin-top-2 {\n  margin-top: 2rpx !important;\n}\n.u-padding-top-2 {\n  padding-top: 2rpx !important;\n}\n.u-m-r-2 {\n  margin-right: 2rpx !important;\n}\n.u-p-r-2 {\n  padding-right: 2rpx !important;\n}\n.u-margin-right-2 {\n  margin-right: 2rpx !important;\n}\n.u-padding-right-2 {\n  padding-right: 2rpx !important;\n}\n.u-m-b-2 {\n  margin-bottom: 2rpx !important;\n}\n.u-p-b-2 {\n  padding-bottom: 2rpx !important;\n}\n.u-margin-bottom-2 {\n  margin-bottom: 2rpx !important;\n}\n.u-padding-bottom-2 {\n  padding-bottom: 2rpx !important;\n}\n.u-margin-4, .u-m-4 {\n  margin: 4rpx !important;\n}\n.u-padding-4, .u-p-4 {\n  padding: 4rpx !important;\n}\n.u-m-l-4 {\n  margin-left: 4rpx !important;\n}\n.u-p-l-4 {\n  padding-left: 4rpx !important;\n}\n.u-margin-left-4 {\n  margin-left: 4rpx !important;\n}\n.u-padding-left-4 {\n  padding-left: 4rpx !important;\n}\n.u-m-t-4 {\n  margin-top: 4rpx !important;\n}\n.u-p-t-4 {\n  padding-top: 4rpx !important;\n}\n.u-margin-top-4 {\n  margin-top: 4rpx !important;\n}\n.u-padding-top-4 {\n  padding-top: 4rpx !important;\n}\n.u-m-r-4 {\n  margin-right: 4rpx !important;\n}\n.u-p-r-4 {\n  padding-right: 4rpx !important;\n}\n.u-margin-right-4 {\n  margin-right: 4rpx !important;\n}\n.u-padding-right-4 {\n  padding-right: 4rpx !important;\n}\n.u-m-b-4 {\n  margin-bottom: 4rpx !important;\n}\n.u-p-b-4 {\n  padding-bottom: 4rpx !important;\n}\n.u-margin-bottom-4 {\n  margin-bottom: 4rpx !important;\n}\n.u-padding-bottom-4 {\n  padding-bottom: 4rpx !important;\n}\n.u-margin-5, .u-m-5 {\n  margin: 5rpx !important;\n}\n.u-padding-5, .u-p-5 {\n  padding: 5rpx !important;\n}\n.u-m-l-5 {\n  margin-left: 5rpx !important;\n}\n.u-p-l-5 {\n  padding-left: 5rpx !important;\n}\n.u-margin-left-5 {\n  margin-left: 5rpx !important;\n}\n.u-padding-left-5 {\n  padding-left: 5rpx !important;\n}\n.u-m-t-5 {\n  margin-top: 5rpx !important;\n}\n.u-p-t-5 {\n  padding-top: 5rpx !important;\n}\n.u-margin-top-5 {\n  margin-top: 5rpx !important;\n}\n.u-padding-top-5 {\n  padding-top: 5rpx !important;\n}\n.u-m-r-5 {\n  margin-right: 5rpx !important;\n}\n.u-p-r-5 {\n  padding-right: 5rpx !important;\n}\n.u-margin-right-5 {\n  margin-right: 5rpx !important;\n}\n.u-padding-right-5 {\n  padding-right: 5rpx !important;\n}\n.u-m-b-5 {\n  margin-bottom: 5rpx !important;\n}\n.u-p-b-5 {\n  padding-bottom: 5rpx !important;\n}\n.u-margin-bottom-5 {\n  margin-bottom: 5rpx !important;\n}\n.u-padding-bottom-5 {\n  padding-bottom: 5rpx !important;\n}\n.u-margin-6, .u-m-6 {\n  margin: 6rpx !important;\n}\n.u-padding-6, .u-p-6 {\n  padding: 6rpx !important;\n}\n.u-m-l-6 {\n  margin-left: 6rpx !important;\n}\n.u-p-l-6 {\n  padding-left: 6rpx !important;\n}\n.u-margin-left-6 {\n  margin-left: 6rpx !important;\n}\n.u-padding-left-6 {\n  padding-left: 6rpx !important;\n}\n.u-m-t-6 {\n  margin-top: 6rpx !important;\n}\n.u-p-t-6 {\n  padding-top: 6rpx !important;\n}\n.u-margin-top-6 {\n  margin-top: 6rpx !important;\n}\n.u-padding-top-6 {\n  padding-top: 6rpx !important;\n}\n.u-m-r-6 {\n  margin-right: 6rpx !important;\n}\n.u-p-r-6 {\n  padding-right: 6rpx !important;\n}\n.u-margin-right-6 {\n  margin-right: 6rpx !important;\n}\n.u-padding-right-6 {\n  padding-right: 6rpx !important;\n}\n.u-m-b-6 {\n  margin-bottom: 6rpx !important;\n}\n.u-p-b-6 {\n  padding-bottom: 6rpx !important;\n}\n.u-margin-bottom-6 {\n  margin-bottom: 6rpx !important;\n}\n.u-padding-bottom-6 {\n  padding-bottom: 6rpx !important;\n}\n.u-margin-8, .u-m-8 {\n  margin: 8rpx !important;\n}\n.u-padding-8, .u-p-8 {\n  padding: 8rpx !important;\n}\n.u-m-l-8 {\n  margin-left: 8rpx !important;\n}\n.u-p-l-8 {\n  padding-left: 8rpx !important;\n}\n.u-margin-left-8 {\n  margin-left: 8rpx !important;\n}\n.u-padding-left-8 {\n  padding-left: 8rpx !important;\n}\n.u-m-t-8 {\n  margin-top: 8rpx !important;\n}\n.u-p-t-8 {\n  padding-top: 8rpx !important;\n}\n.u-margin-top-8 {\n  margin-top: 8rpx !important;\n}\n.u-padding-top-8 {\n  padding-top: 8rpx !important;\n}\n.u-m-r-8 {\n  margin-right: 8rpx !important;\n}\n.u-p-r-8 {\n  padding-right: 8rpx !important;\n}\n.u-margin-right-8 {\n  margin-right: 8rpx !important;\n}\n.u-padding-right-8 {\n  padding-right: 8rpx !important;\n}\n.u-m-b-8 {\n  margin-bottom: 8rpx !important;\n}\n.u-p-b-8 {\n  padding-bottom: 8rpx !important;\n}\n.u-margin-bottom-8 {\n  margin-bottom: 8rpx !important;\n}\n.u-padding-bottom-8 {\n  padding-bottom: 8rpx !important;\n}\n.u-margin-10, .u-m-10 {\n  margin: 10rpx !important;\n}\n.u-padding-10, .u-p-10 {\n  padding: 10rpx !important;\n}\n.u-m-l-10 {\n  margin-left: 10rpx !important;\n}\n.u-p-l-10 {\n  padding-left: 10rpx !important;\n}\n.u-margin-left-10 {\n  margin-left: 10rpx !important;\n}\n.u-padding-left-10 {\n  padding-left: 10rpx !important;\n}\n.u-m-t-10 {\n  margin-top: 10rpx !important;\n}\n.u-p-t-10 {\n  padding-top: 10rpx !important;\n}\n.u-margin-top-10 {\n  margin-top: 10rpx !important;\n}\n.u-padding-top-10 {\n  padding-top: 10rpx !important;\n}\n.u-m-r-10 {\n  margin-right: 10rpx !important;\n}\n.u-p-r-10 {\n  padding-right: 10rpx !important;\n}\n.u-margin-right-10 {\n  margin-right: 10rpx !important;\n}\n.u-padding-right-10 {\n  padding-right: 10rpx !important;\n}\n.u-m-b-10 {\n  margin-bottom: 10rpx !important;\n}\n.u-p-b-10 {\n  padding-bottom: 10rpx !important;\n}\n.u-margin-bottom-10 {\n  margin-bottom: 10rpx !important;\n}\n.u-padding-bottom-10 {\n  padding-bottom: 10rpx !important;\n}\n.u-margin-12, .u-m-12 {\n  margin: 12rpx !important;\n}\n.u-padding-12, .u-p-12 {\n  padding: 12rpx !important;\n}\n.u-m-l-12 {\n  margin-left: 12rpx !important;\n}\n.u-p-l-12 {\n  padding-left: 12rpx !important;\n}\n.u-margin-left-12 {\n  margin-left: 12rpx !important;\n}\n.u-padding-left-12 {\n  padding-left: 12rpx !important;\n}\n.u-m-t-12 {\n  margin-top: 12rpx !important;\n}\n.u-p-t-12 {\n  padding-top: 12rpx !important;\n}\n.u-margin-top-12 {\n  margin-top: 12rpx !important;\n}\n.u-padding-top-12 {\n  padding-top: 12rpx !important;\n}\n.u-m-r-12 {\n  margin-right: 12rpx !important;\n}\n.u-p-r-12 {\n  padding-right: 12rpx !important;\n}\n.u-margin-right-12 {\n  margin-right: 12rpx !important;\n}\n.u-padding-right-12 {\n  padding-right: 12rpx !important;\n}\n.u-m-b-12 {\n  margin-bottom: 12rpx !important;\n}\n.u-p-b-12 {\n  padding-bottom: 12rpx !important;\n}\n.u-margin-bottom-12 {\n  margin-bottom: 12rpx !important;\n}\n.u-padding-bottom-12 {\n  padding-bottom: 12rpx !important;\n}\n.u-margin-14, .u-m-14 {\n  margin: 14rpx !important;\n}\n.u-padding-14, .u-p-14 {\n  padding: 14rpx !important;\n}\n.u-m-l-14 {\n  margin-left: 14rpx !important;\n}\n.u-p-l-14 {\n  padding-left: 14rpx !important;\n}\n.u-margin-left-14 {\n  margin-left: 14rpx !important;\n}\n.u-padding-left-14 {\n  padding-left: 14rpx !important;\n}\n.u-m-t-14 {\n  margin-top: 14rpx !important;\n}\n.u-p-t-14 {\n  padding-top: 14rpx !important;\n}\n.u-margin-top-14 {\n  margin-top: 14rpx !important;\n}\n.u-padding-top-14 {\n  padding-top: 14rpx !important;\n}\n.u-m-r-14 {\n  margin-right: 14rpx !important;\n}\n.u-p-r-14 {\n  padding-right: 14rpx !important;\n}\n.u-margin-right-14 {\n  margin-right: 14rpx !important;\n}\n.u-padding-right-14 {\n  padding-right: 14rpx !important;\n}\n.u-m-b-14 {\n  margin-bottom: 14rpx !important;\n}\n.u-p-b-14 {\n  padding-bottom: 14rpx !important;\n}\n.u-margin-bottom-14 {\n  margin-bottom: 14rpx !important;\n}\n.u-padding-bottom-14 {\n  padding-bottom: 14rpx !important;\n}\n.u-margin-15, .u-m-15 {\n  margin: 15rpx !important;\n}\n.u-padding-15, .u-p-15 {\n  padding: 15rpx !important;\n}\n.u-m-l-15 {\n  margin-left: 15rpx !important;\n}\n.u-p-l-15 {\n  padding-left: 15rpx !important;\n}\n.u-margin-left-15 {\n  margin-left: 15rpx !important;\n}\n.u-padding-left-15 {\n  padding-left: 15rpx !important;\n}\n.u-m-t-15 {\n  margin-top: 15rpx !important;\n}\n.u-p-t-15 {\n  padding-top: 15rpx !important;\n}\n.u-margin-top-15 {\n  margin-top: 15rpx !important;\n}\n.u-padding-top-15 {\n  padding-top: 15rpx !important;\n}\n.u-m-r-15 {\n  margin-right: 15rpx !important;\n}\n.u-p-r-15 {\n  padding-right: 15rpx !important;\n}\n.u-margin-right-15 {\n  margin-right: 15rpx !important;\n}\n.u-padding-right-15 {\n  padding-right: 15rpx !important;\n}\n.u-m-b-15 {\n  margin-bottom: 15rpx !important;\n}\n.u-p-b-15 {\n  padding-bottom: 15rpx !important;\n}\n.u-margin-bottom-15 {\n  margin-bottom: 15rpx !important;\n}\n.u-padding-bottom-15 {\n  padding-bottom: 15rpx !important;\n}\n.u-margin-16, .u-m-16 {\n  margin: 16rpx !important;\n}\n.u-padding-16, .u-p-16 {\n  padding: 16rpx !important;\n}\n.u-m-l-16 {\n  margin-left: 16rpx !important;\n}\n.u-p-l-16 {\n  padding-left: 16rpx !important;\n}\n.u-margin-left-16 {\n  margin-left: 16rpx !important;\n}\n.u-padding-left-16 {\n  padding-left: 16rpx !important;\n}\n.u-m-t-16 {\n  margin-top: 16rpx !important;\n}\n.u-p-t-16 {\n  padding-top: 16rpx !important;\n}\n.u-margin-top-16 {\n  margin-top: 16rpx !important;\n}\n.u-padding-top-16 {\n  padding-top: 16rpx !important;\n}\n.u-m-r-16 {\n  margin-right: 16rpx !important;\n}\n.u-p-r-16 {\n  padding-right: 16rpx !important;\n}\n.u-margin-right-16 {\n  margin-right: 16rpx !important;\n}\n.u-padding-right-16 {\n  padding-right: 16rpx !important;\n}\n.u-m-b-16 {\n  margin-bottom: 16rpx !important;\n}\n.u-p-b-16 {\n  padding-bottom: 16rpx !important;\n}\n.u-margin-bottom-16 {\n  margin-bottom: 16rpx !important;\n}\n.u-padding-bottom-16 {\n  padding-bottom: 16rpx !important;\n}\n.u-margin-18, .u-m-18 {\n  margin: 18rpx !important;\n}\n.u-padding-18, .u-p-18 {\n  padding: 18rpx !important;\n}\n.u-m-l-18 {\n  margin-left: 18rpx !important;\n}\n.u-p-l-18 {\n  padding-left: 18rpx !important;\n}\n.u-margin-left-18 {\n  margin-left: 18rpx !important;\n}\n.u-padding-left-18 {\n  padding-left: 18rpx !important;\n}\n.u-m-t-18 {\n  margin-top: 18rpx !important;\n}\n.u-p-t-18 {\n  padding-top: 18rpx !important;\n}\n.u-margin-top-18 {\n  margin-top: 18rpx !important;\n}\n.u-padding-top-18 {\n  padding-top: 18rpx !important;\n}\n.u-m-r-18 {\n  margin-right: 18rpx !important;\n}\n.u-p-r-18 {\n  padding-right: 18rpx !important;\n}\n.u-margin-right-18 {\n  margin-right: 18rpx !important;\n}\n.u-padding-right-18 {\n  padding-right: 18rpx !important;\n}\n.u-m-b-18 {\n  margin-bottom: 18rpx !important;\n}\n.u-p-b-18 {\n  padding-bottom: 18rpx !important;\n}\n.u-margin-bottom-18 {\n  margin-bottom: 18rpx !important;\n}\n.u-padding-bottom-18 {\n  padding-bottom: 18rpx !important;\n}\n.u-margin-20, .u-m-20 {\n  margin: 20rpx !important;\n}\n.u-padding-20, .u-p-20 {\n  padding: 20rpx !important;\n}\n.u-m-l-20 {\n  margin-left: 20rpx !important;\n}\n.u-p-l-20 {\n  padding-left: 20rpx !important;\n}\n.u-margin-left-20 {\n  margin-left: 20rpx !important;\n}\n.u-padding-left-20 {\n  padding-left: 20rpx !important;\n}\n.u-m-t-20 {\n  margin-top: 20rpx !important;\n}\n.u-p-t-20 {\n  padding-top: 20rpx !important;\n}\n.u-margin-top-20 {\n  margin-top: 20rpx !important;\n}\n.u-padding-top-20 {\n  padding-top: 20rpx !important;\n}\n.u-m-r-20 {\n  margin-right: 20rpx !important;\n}\n.u-p-r-20 {\n  padding-right: 20rpx !important;\n}\n.u-margin-right-20 {\n  margin-right: 20rpx !important;\n}\n.u-padding-right-20 {\n  padding-right: 20rpx !important;\n}\n.u-m-b-20 {\n  margin-bottom: 20rpx !important;\n}\n.u-p-b-20 {\n  padding-bottom: 20rpx !important;\n}\n.u-margin-bottom-20 {\n  margin-bottom: 20rpx !important;\n}\n.u-padding-bottom-20 {\n  padding-bottom: 20rpx !important;\n}\n.u-margin-22, .u-m-22 {\n  margin: 22rpx !important;\n}\n.u-padding-22, .u-p-22 {\n  padding: 22rpx !important;\n}\n.u-m-l-22 {\n  margin-left: 22rpx !important;\n}\n.u-p-l-22 {\n  padding-left: 22rpx !important;\n}\n.u-margin-left-22 {\n  margin-left: 22rpx !important;\n}\n.u-padding-left-22 {\n  padding-left: 22rpx !important;\n}\n.u-m-t-22 {\n  margin-top: 22rpx !important;\n}\n.u-p-t-22 {\n  padding-top: 22rpx !important;\n}\n.u-margin-top-22 {\n  margin-top: 22rpx !important;\n}\n.u-padding-top-22 {\n  padding-top: 22rpx !important;\n}\n.u-m-r-22 {\n  margin-right: 22rpx !important;\n}\n.u-p-r-22 {\n  padding-right: 22rpx !important;\n}\n.u-margin-right-22 {\n  margin-right: 22rpx !important;\n}\n.u-padding-right-22 {\n  padding-right: 22rpx !important;\n}\n.u-m-b-22 {\n  margin-bottom: 22rpx !important;\n}\n.u-p-b-22 {\n  padding-bottom: 22rpx !important;\n}\n.u-margin-bottom-22 {\n  margin-bottom: 22rpx !important;\n}\n.u-padding-bottom-22 {\n  padding-bottom: 22rpx !important;\n}\n.u-margin-24, .u-m-24 {\n  margin: 24rpx !important;\n}\n.u-padding-24, .u-p-24 {\n  padding: 24rpx !important;\n}\n.u-m-l-24 {\n  margin-left: 24rpx !important;\n}\n.u-p-l-24 {\n  padding-left: 24rpx !important;\n}\n.u-margin-left-24 {\n  margin-left: 24rpx !important;\n}\n.u-padding-left-24 {\n  padding-left: 24rpx !important;\n}\n.u-m-t-24 {\n  margin-top: 24rpx !important;\n}\n.u-p-t-24 {\n  padding-top: 24rpx !important;\n}\n.u-margin-top-24 {\n  margin-top: 24rpx !important;\n}\n.u-padding-top-24 {\n  padding-top: 24rpx !important;\n}\n.u-m-r-24 {\n  margin-right: 24rpx !important;\n}\n.u-p-r-24 {\n  padding-right: 24rpx !important;\n}\n.u-margin-right-24 {\n  margin-right: 24rpx !important;\n}\n.u-padding-right-24 {\n  padding-right: 24rpx !important;\n}\n.u-m-b-24 {\n  margin-bottom: 24rpx !important;\n}\n.u-p-b-24 {\n  padding-bottom: 24rpx !important;\n}\n.u-margin-bottom-24 {\n  margin-bottom: 24rpx !important;\n}\n.u-padding-bottom-24 {\n  padding-bottom: 24rpx !important;\n}\n.u-margin-25, .u-m-25 {\n  margin: 25rpx !important;\n}\n.u-padding-25, .u-p-25 {\n  padding: 25rpx !important;\n}\n.u-m-l-25 {\n  margin-left: 25rpx !important;\n}\n.u-p-l-25 {\n  padding-left: 25rpx !important;\n}\n.u-margin-left-25 {\n  margin-left: 25rpx !important;\n}\n.u-padding-left-25 {\n  padding-left: 25rpx !important;\n}\n.u-m-t-25 {\n  margin-top: 25rpx !important;\n}\n.u-p-t-25 {\n  padding-top: 25rpx !important;\n}\n.u-margin-top-25 {\n  margin-top: 25rpx !important;\n}\n.u-padding-top-25 {\n  padding-top: 25rpx !important;\n}\n.u-m-r-25 {\n  margin-right: 25rpx !important;\n}\n.u-p-r-25 {\n  padding-right: 25rpx !important;\n}\n.u-margin-right-25 {\n  margin-right: 25rpx !important;\n}\n.u-padding-right-25 {\n  padding-right: 25rpx !important;\n}\n.u-m-b-25 {\n  margin-bottom: 25rpx !important;\n}\n.u-p-b-25 {\n  padding-bottom: 25rpx !important;\n}\n.u-margin-bottom-25 {\n  margin-bottom: 25rpx !important;\n}\n.u-padding-bottom-25 {\n  padding-bottom: 25rpx !important;\n}\n.u-margin-26, .u-m-26 {\n  margin: 26rpx !important;\n}\n.u-padding-26, .u-p-26 {\n  padding: 26rpx !important;\n}\n.u-m-l-26 {\n  margin-left: 26rpx !important;\n}\n.u-p-l-26 {\n  padding-left: 26rpx !important;\n}\n.u-margin-left-26 {\n  margin-left: 26rpx !important;\n}\n.u-padding-left-26 {\n  padding-left: 26rpx !important;\n}\n.u-m-t-26 {\n  margin-top: 26rpx !important;\n}\n.u-p-t-26 {\n  padding-top: 26rpx !important;\n}\n.u-margin-top-26 {\n  margin-top: 26rpx !important;\n}\n.u-padding-top-26 {\n  padding-top: 26rpx !important;\n}\n.u-m-r-26 {\n  margin-right: 26rpx !important;\n}\n.u-p-r-26 {\n  padding-right: 26rpx !important;\n}\n.u-margin-right-26 {\n  margin-right: 26rpx !important;\n}\n.u-padding-right-26 {\n  padding-right: 26rpx !important;\n}\n.u-m-b-26 {\n  margin-bottom: 26rpx !important;\n}\n.u-p-b-26 {\n  padding-bottom: 26rpx !important;\n}\n.u-margin-bottom-26 {\n  margin-bottom: 26rpx !important;\n}\n.u-padding-bottom-26 {\n  padding-bottom: 26rpx !important;\n}\n.u-margin-28, .u-m-28 {\n  margin: 28rpx !important;\n}\n.u-padding-28, .u-p-28 {\n  padding: 28rpx !important;\n}\n.u-m-l-28 {\n  margin-left: 28rpx !important;\n}\n.u-p-l-28 {\n  padding-left: 28rpx !important;\n}\n.u-margin-left-28 {\n  margin-left: 28rpx !important;\n}\n.u-padding-left-28 {\n  padding-left: 28rpx !important;\n}\n.u-m-t-28 {\n  margin-top: 28rpx !important;\n}\n.u-p-t-28 {\n  padding-top: 28rpx !important;\n}\n.u-margin-top-28 {\n  margin-top: 28rpx !important;\n}\n.u-padding-top-28 {\n  padding-top: 28rpx !important;\n}\n.u-m-r-28 {\n  margin-right: 28rpx !important;\n}\n.u-p-r-28 {\n  padding-right: 28rpx !important;\n}\n.u-margin-right-28 {\n  margin-right: 28rpx !important;\n}\n.u-padding-right-28 {\n  padding-right: 28rpx !important;\n}\n.u-m-b-28 {\n  margin-bottom: 28rpx !important;\n}\n.u-p-b-28 {\n  padding-bottom: 28rpx !important;\n}\n.u-margin-bottom-28 {\n  margin-bottom: 28rpx !important;\n}\n.u-padding-bottom-28 {\n  padding-bottom: 28rpx !important;\n}\n.u-margin-30, .u-m-30 {\n  margin: 30rpx !important;\n}\n.u-padding-30, .u-p-30 {\n  padding: 30rpx !important;\n}\n.u-m-l-30 {\n  margin-left: 30rpx !important;\n}\n.u-p-l-30 {\n  padding-left: 30rpx !important;\n}\n.u-margin-left-30 {\n  margin-left: 30rpx !important;\n}\n.u-padding-left-30 {\n  padding-left: 30rpx !important;\n}\n.u-m-t-30 {\n  margin-top: 30rpx !important;\n}\n.u-p-t-30 {\n  padding-top: 30rpx !important;\n}\n.u-margin-top-30 {\n  margin-top: 30rpx !important;\n}\n.u-padding-top-30 {\n  padding-top: 30rpx !important;\n}\n.u-m-r-30 {\n  margin-right: 30rpx !important;\n}\n.u-p-r-30 {\n  padding-right: 30rpx !important;\n}\n.u-margin-right-30 {\n  margin-right: 30rpx !important;\n}\n.u-padding-right-30 {\n  padding-right: 30rpx !important;\n}\n.u-m-b-30 {\n  margin-bottom: 30rpx !important;\n}\n.u-p-b-30 {\n  padding-bottom: 30rpx !important;\n}\n.u-margin-bottom-30 {\n  margin-bottom: 30rpx !important;\n}\n.u-padding-bottom-30 {\n  padding-bottom: 30rpx !important;\n}\n.u-margin-32, .u-m-32 {\n  margin: 32rpx !important;\n}\n.u-padding-32, .u-p-32 {\n  padding: 32rpx !important;\n}\n.u-m-l-32 {\n  margin-left: 32rpx !important;\n}\n.u-p-l-32 {\n  padding-left: 32rpx !important;\n}\n.u-margin-left-32 {\n  margin-left: 32rpx !important;\n}\n.u-padding-left-32 {\n  padding-left: 32rpx !important;\n}\n.u-m-t-32 {\n  margin-top: 32rpx !important;\n}\n.u-p-t-32 {\n  padding-top: 32rpx !important;\n}\n.u-margin-top-32 {\n  margin-top: 32rpx !important;\n}\n.u-padding-top-32 {\n  padding-top: 32rpx !important;\n}\n.u-m-r-32 {\n  margin-right: 32rpx !important;\n}\n.u-p-r-32 {\n  padding-right: 32rpx !important;\n}\n.u-margin-right-32 {\n  margin-right: 32rpx !important;\n}\n.u-padding-right-32 {\n  padding-right: 32rpx !important;\n}\n.u-m-b-32 {\n  margin-bottom: 32rpx !important;\n}\n.u-p-b-32 {\n  padding-bottom: 32rpx !important;\n}\n.u-margin-bottom-32 {\n  margin-bottom: 32rpx !important;\n}\n.u-padding-bottom-32 {\n  padding-bottom: 32rpx !important;\n}\n.u-margin-34, .u-m-34 {\n  margin: 34rpx !important;\n}\n.u-padding-34, .u-p-34 {\n  padding: 34rpx !important;\n}\n.u-m-l-34 {\n  margin-left: 34rpx !important;\n}\n.u-p-l-34 {\n  padding-left: 34rpx !important;\n}\n.u-margin-left-34 {\n  margin-left: 34rpx !important;\n}\n.u-padding-left-34 {\n  padding-left: 34rpx !important;\n}\n.u-m-t-34 {\n  margin-top: 34rpx !important;\n}\n.u-p-t-34 {\n  padding-top: 34rpx !important;\n}\n.u-margin-top-34 {\n  margin-top: 34rpx !important;\n}\n.u-padding-top-34 {\n  padding-top: 34rpx !important;\n}\n.u-m-r-34 {\n  margin-right: 34rpx !important;\n}\n.u-p-r-34 {\n  padding-right: 34rpx !important;\n}\n.u-margin-right-34 {\n  margin-right: 34rpx !important;\n}\n.u-padding-right-34 {\n  padding-right: 34rpx !important;\n}\n.u-m-b-34 {\n  margin-bottom: 34rpx !important;\n}\n.u-p-b-34 {\n  padding-bottom: 34rpx !important;\n}\n.u-margin-bottom-34 {\n  margin-bottom: 34rpx !important;\n}\n.u-padding-bottom-34 {\n  padding-bottom: 34rpx !important;\n}\n.u-margin-35, .u-m-35 {\n  margin: 35rpx !important;\n}\n.u-padding-35, .u-p-35 {\n  padding: 35rpx !important;\n}\n.u-m-l-35 {\n  margin-left: 35rpx !important;\n}\n.u-p-l-35 {\n  padding-left: 35rpx !important;\n}\n.u-margin-left-35 {\n  margin-left: 35rpx !important;\n}\n.u-padding-left-35 {\n  padding-left: 35rpx !important;\n}\n.u-m-t-35 {\n  margin-top: 35rpx !important;\n}\n.u-p-t-35 {\n  padding-top: 35rpx !important;\n}\n.u-margin-top-35 {\n  margin-top: 35rpx !important;\n}\n.u-padding-top-35 {\n  padding-top: 35rpx !important;\n}\n.u-m-r-35 {\n  margin-right: 35rpx !important;\n}\n.u-p-r-35 {\n  padding-right: 35rpx !important;\n}\n.u-margin-right-35 {\n  margin-right: 35rpx !important;\n}\n.u-padding-right-35 {\n  padding-right: 35rpx !important;\n}\n.u-m-b-35 {\n  margin-bottom: 35rpx !important;\n}\n.u-p-b-35 {\n  padding-bottom: 35rpx !important;\n}\n.u-margin-bottom-35 {\n  margin-bottom: 35rpx !important;\n}\n.u-padding-bottom-35 {\n  padding-bottom: 35rpx !important;\n}\n.u-margin-36, .u-m-36 {\n  margin: 36rpx !important;\n}\n.u-padding-36, .u-p-36 {\n  padding: 36rpx !important;\n}\n.u-m-l-36 {\n  margin-left: 36rpx !important;\n}\n.u-p-l-36 {\n  padding-left: 36rpx !important;\n}\n.u-margin-left-36 {\n  margin-left: 36rpx !important;\n}\n.u-padding-left-36 {\n  padding-left: 36rpx !important;\n}\n.u-m-t-36 {\n  margin-top: 36rpx !important;\n}\n.u-p-t-36 {\n  padding-top: 36rpx !important;\n}\n.u-margin-top-36 {\n  margin-top: 36rpx !important;\n}\n.u-padding-top-36 {\n  padding-top: 36rpx !important;\n}\n.u-m-r-36 {\n  margin-right: 36rpx !important;\n}\n.u-p-r-36 {\n  padding-right: 36rpx !important;\n}\n.u-margin-right-36 {\n  margin-right: 36rpx !important;\n}\n.u-padding-right-36 {\n  padding-right: 36rpx !important;\n}\n.u-m-b-36 {\n  margin-bottom: 36rpx !important;\n}\n.u-p-b-36 {\n  padding-bottom: 36rpx !important;\n}\n.u-margin-bottom-36 {\n  margin-bottom: 36rpx !important;\n}\n.u-padding-bottom-36 {\n  padding-bottom: 36rpx !important;\n}\n.u-margin-38, .u-m-38 {\n  margin: 38rpx !important;\n}\n.u-padding-38, .u-p-38 {\n  padding: 38rpx !important;\n}\n.u-m-l-38 {\n  margin-left: 38rpx !important;\n}\n.u-p-l-38 {\n  padding-left: 38rpx !important;\n}\n.u-margin-left-38 {\n  margin-left: 38rpx !important;\n}\n.u-padding-left-38 {\n  padding-left: 38rpx !important;\n}\n.u-m-t-38 {\n  margin-top: 38rpx !important;\n}\n.u-p-t-38 {\n  padding-top: 38rpx !important;\n}\n.u-margin-top-38 {\n  margin-top: 38rpx !important;\n}\n.u-padding-top-38 {\n  padding-top: 38rpx !important;\n}\n.u-m-r-38 {\n  margin-right: 38rpx !important;\n}\n.u-p-r-38 {\n  padding-right: 38rpx !important;\n}\n.u-margin-right-38 {\n  margin-right: 38rpx !important;\n}\n.u-padding-right-38 {\n  padding-right: 38rpx !important;\n}\n.u-m-b-38 {\n  margin-bottom: 38rpx !important;\n}\n.u-p-b-38 {\n  padding-bottom: 38rpx !important;\n}\n.u-margin-bottom-38 {\n  margin-bottom: 38rpx !important;\n}\n.u-padding-bottom-38 {\n  padding-bottom: 38rpx !important;\n}\n.u-margin-40, .u-m-40 {\n  margin: 40rpx !important;\n}\n.u-padding-40, .u-p-40 {\n  padding: 40rpx !important;\n}\n.u-m-l-40 {\n  margin-left: 40rpx !important;\n}\n.u-p-l-40 {\n  padding-left: 40rpx !important;\n}\n.u-margin-left-40 {\n  margin-left: 40rpx !important;\n}\n.u-padding-left-40 {\n  padding-left: 40rpx !important;\n}\n.u-m-t-40 {\n  margin-top: 40rpx !important;\n}\n.u-p-t-40 {\n  padding-top: 40rpx !important;\n}\n.u-margin-top-40 {\n  margin-top: 40rpx !important;\n}\n.u-padding-top-40 {\n  padding-top: 40rpx !important;\n}\n.u-m-r-40 {\n  margin-right: 40rpx !important;\n}\n.u-p-r-40 {\n  padding-right: 40rpx !important;\n}\n.u-margin-right-40 {\n  margin-right: 40rpx !important;\n}\n.u-padding-right-40 {\n  padding-right: 40rpx !important;\n}\n.u-m-b-40 {\n  margin-bottom: 40rpx !important;\n}\n.u-p-b-40 {\n  padding-bottom: 40rpx !important;\n}\n.u-margin-bottom-40 {\n  margin-bottom: 40rpx !important;\n}\n.u-padding-bottom-40 {\n  padding-bottom: 40rpx !important;\n}\n.u-margin-42, .u-m-42 {\n  margin: 42rpx !important;\n}\n.u-padding-42, .u-p-42 {\n  padding: 42rpx !important;\n}\n.u-m-l-42 {\n  margin-left: 42rpx !important;\n}\n.u-p-l-42 {\n  padding-left: 42rpx !important;\n}\n.u-margin-left-42 {\n  margin-left: 42rpx !important;\n}\n.u-padding-left-42 {\n  padding-left: 42rpx !important;\n}\n.u-m-t-42 {\n  margin-top: 42rpx !important;\n}\n.u-p-t-42 {\n  padding-top: 42rpx !important;\n}\n.u-margin-top-42 {\n  margin-top: 42rpx !important;\n}\n.u-padding-top-42 {\n  padding-top: 42rpx !important;\n}\n.u-m-r-42 {\n  margin-right: 42rpx !important;\n}\n.u-p-r-42 {\n  padding-right: 42rpx !important;\n}\n.u-margin-right-42 {\n  margin-right: 42rpx !important;\n}\n.u-padding-right-42 {\n  padding-right: 42rpx !important;\n}\n.u-m-b-42 {\n  margin-bottom: 42rpx !important;\n}\n.u-p-b-42 {\n  padding-bottom: 42rpx !important;\n}\n.u-margin-bottom-42 {\n  margin-bottom: 42rpx !important;\n}\n.u-padding-bottom-42 {\n  padding-bottom: 42rpx !important;\n}\n.u-margin-44, .u-m-44 {\n  margin: 44rpx !important;\n}\n.u-padding-44, .u-p-44 {\n  padding: 44rpx !important;\n}\n.u-m-l-44 {\n  margin-left: 44rpx !important;\n}\n.u-p-l-44 {\n  padding-left: 44rpx !important;\n}\n.u-margin-left-44 {\n  margin-left: 44rpx !important;\n}\n.u-padding-left-44 {\n  padding-left: 44rpx !important;\n}\n.u-m-t-44 {\n  margin-top: 44rpx !important;\n}\n.u-p-t-44 {\n  padding-top: 44rpx !important;\n}\n.u-margin-top-44 {\n  margin-top: 44rpx !important;\n}\n.u-padding-top-44 {\n  padding-top: 44rpx !important;\n}\n.u-m-r-44 {\n  margin-right: 44rpx !important;\n}\n.u-p-r-44 {\n  padding-right: 44rpx !important;\n}\n.u-margin-right-44 {\n  margin-right: 44rpx !important;\n}\n.u-padding-right-44 {\n  padding-right: 44rpx !important;\n}\n.u-m-b-44 {\n  margin-bottom: 44rpx !important;\n}\n.u-p-b-44 {\n  padding-bottom: 44rpx !important;\n}\n.u-margin-bottom-44 {\n  margin-bottom: 44rpx !important;\n}\n.u-padding-bottom-44 {\n  padding-bottom: 44rpx !important;\n}\n.u-margin-45, .u-m-45 {\n  margin: 45rpx !important;\n}\n.u-padding-45, .u-p-45 {\n  padding: 45rpx !important;\n}\n.u-m-l-45 {\n  margin-left: 45rpx !important;\n}\n.u-p-l-45 {\n  padding-left: 45rpx !important;\n}\n.u-margin-left-45 {\n  margin-left: 45rpx !important;\n}\n.u-padding-left-45 {\n  padding-left: 45rpx !important;\n}\n.u-m-t-45 {\n  margin-top: 45rpx !important;\n}\n.u-p-t-45 {\n  padding-top: 45rpx !important;\n}\n.u-margin-top-45 {\n  margin-top: 45rpx !important;\n}\n.u-padding-top-45 {\n  padding-top: 45rpx !important;\n}\n.u-m-r-45 {\n  margin-right: 45rpx !important;\n}\n.u-p-r-45 {\n  padding-right: 45rpx !important;\n}\n.u-margin-right-45 {\n  margin-right: 45rpx !important;\n}\n.u-padding-right-45 {\n  padding-right: 45rpx !important;\n}\n.u-m-b-45 {\n  margin-bottom: 45rpx !important;\n}\n.u-p-b-45 {\n  padding-bottom: 45rpx !important;\n}\n.u-margin-bottom-45 {\n  margin-bottom: 45rpx !important;\n}\n.u-padding-bottom-45 {\n  padding-bottom: 45rpx !important;\n}\n.u-margin-46, .u-m-46 {\n  margin: 46rpx !important;\n}\n.u-padding-46, .u-p-46 {\n  padding: 46rpx !important;\n}\n.u-m-l-46 {\n  margin-left: 46rpx !important;\n}\n.u-p-l-46 {\n  padding-left: 46rpx !important;\n}\n.u-margin-left-46 {\n  margin-left: 46rpx !important;\n}\n.u-padding-left-46 {\n  padding-left: 46rpx !important;\n}\n.u-m-t-46 {\n  margin-top: 46rpx !important;\n}\n.u-p-t-46 {\n  padding-top: 46rpx !important;\n}\n.u-margin-top-46 {\n  margin-top: 46rpx !important;\n}\n.u-padding-top-46 {\n  padding-top: 46rpx !important;\n}\n.u-m-r-46 {\n  margin-right: 46rpx !important;\n}\n.u-p-r-46 {\n  padding-right: 46rpx !important;\n}\n.u-margin-right-46 {\n  margin-right: 46rpx !important;\n}\n.u-padding-right-46 {\n  padding-right: 46rpx !important;\n}\n.u-m-b-46 {\n  margin-bottom: 46rpx !important;\n}\n.u-p-b-46 {\n  padding-bottom: 46rpx !important;\n}\n.u-margin-bottom-46 {\n  margin-bottom: 46rpx !important;\n}\n.u-padding-bottom-46 {\n  padding-bottom: 46rpx !important;\n}\n.u-margin-48, .u-m-48 {\n  margin: 48rpx !important;\n}\n.u-padding-48, .u-p-48 {\n  padding: 48rpx !important;\n}\n.u-m-l-48 {\n  margin-left: 48rpx !important;\n}\n.u-p-l-48 {\n  padding-left: 48rpx !important;\n}\n.u-margin-left-48 {\n  margin-left: 48rpx !important;\n}\n.u-padding-left-48 {\n  padding-left: 48rpx !important;\n}\n.u-m-t-48 {\n  margin-top: 48rpx !important;\n}\n.u-p-t-48 {\n  padding-top: 48rpx !important;\n}\n.u-margin-top-48 {\n  margin-top: 48rpx !important;\n}\n.u-padding-top-48 {\n  padding-top: 48rpx !important;\n}\n.u-m-r-48 {\n  margin-right: 48rpx !important;\n}\n.u-p-r-48 {\n  padding-right: 48rpx !important;\n}\n.u-margin-right-48 {\n  margin-right: 48rpx !important;\n}\n.u-padding-right-48 {\n  padding-right: 48rpx !important;\n}\n.u-m-b-48 {\n  margin-bottom: 48rpx !important;\n}\n.u-p-b-48 {\n  padding-bottom: 48rpx !important;\n}\n.u-margin-bottom-48 {\n  margin-bottom: 48rpx !important;\n}\n.u-padding-bottom-48 {\n  padding-bottom: 48rpx !important;\n}\n.u-margin-50, .u-m-50 {\n  margin: 50rpx !important;\n}\n.u-padding-50, .u-p-50 {\n  padding: 50rpx !important;\n}\n.u-m-l-50 {\n  margin-left: 50rpx !important;\n}\n.u-p-l-50 {\n  padding-left: 50rpx !important;\n}\n.u-margin-left-50 {\n  margin-left: 50rpx !important;\n}\n.u-padding-left-50 {\n  padding-left: 50rpx !important;\n}\n.u-m-t-50 {\n  margin-top: 50rpx !important;\n}\n.u-p-t-50 {\n  padding-top: 50rpx !important;\n}\n.u-margin-top-50 {\n  margin-top: 50rpx !important;\n}\n.u-padding-top-50 {\n  padding-top: 50rpx !important;\n}\n.u-m-r-50 {\n  margin-right: 50rpx !important;\n}\n.u-p-r-50 {\n  padding-right: 50rpx !important;\n}\n.u-margin-right-50 {\n  margin-right: 50rpx !important;\n}\n.u-padding-right-50 {\n  padding-right: 50rpx !important;\n}\n.u-m-b-50 {\n  margin-bottom: 50rpx !important;\n}\n.u-p-b-50 {\n  padding-bottom: 50rpx !important;\n}\n.u-margin-bottom-50 {\n  margin-bottom: 50rpx !important;\n}\n.u-padding-bottom-50 {\n  padding-bottom: 50rpx !important;\n}\n.u-margin-52, .u-m-52 {\n  margin: 52rpx !important;\n}\n.u-padding-52, .u-p-52 {\n  padding: 52rpx !important;\n}\n.u-m-l-52 {\n  margin-left: 52rpx !important;\n}\n.u-p-l-52 {\n  padding-left: 52rpx !important;\n}\n.u-margin-left-52 {\n  margin-left: 52rpx !important;\n}\n.u-padding-left-52 {\n  padding-left: 52rpx !important;\n}\n.u-m-t-52 {\n  margin-top: 52rpx !important;\n}\n.u-p-t-52 {\n  padding-top: 52rpx !important;\n}\n.u-margin-top-52 {\n  margin-top: 52rpx !important;\n}\n.u-padding-top-52 {\n  padding-top: 52rpx !important;\n}\n.u-m-r-52 {\n  margin-right: 52rpx !important;\n}\n.u-p-r-52 {\n  padding-right: 52rpx !important;\n}\n.u-margin-right-52 {\n  margin-right: 52rpx !important;\n}\n.u-padding-right-52 {\n  padding-right: 52rpx !important;\n}\n.u-m-b-52 {\n  margin-bottom: 52rpx !important;\n}\n.u-p-b-52 {\n  padding-bottom: 52rpx !important;\n}\n.u-margin-bottom-52 {\n  margin-bottom: 52rpx !important;\n}\n.u-padding-bottom-52 {\n  padding-bottom: 52rpx !important;\n}\n.u-margin-54, .u-m-54 {\n  margin: 54rpx !important;\n}\n.u-padding-54, .u-p-54 {\n  padding: 54rpx !important;\n}\n.u-m-l-54 {\n  margin-left: 54rpx !important;\n}\n.u-p-l-54 {\n  padding-left: 54rpx !important;\n}\n.u-margin-left-54 {\n  margin-left: 54rpx !important;\n}\n.u-padding-left-54 {\n  padding-left: 54rpx !important;\n}\n.u-m-t-54 {\n  margin-top: 54rpx !important;\n}\n.u-p-t-54 {\n  padding-top: 54rpx !important;\n}\n.u-margin-top-54 {\n  margin-top: 54rpx !important;\n}\n.u-padding-top-54 {\n  padding-top: 54rpx !important;\n}\n.u-m-r-54 {\n  margin-right: 54rpx !important;\n}\n.u-p-r-54 {\n  padding-right: 54rpx !important;\n}\n.u-margin-right-54 {\n  margin-right: 54rpx !important;\n}\n.u-padding-right-54 {\n  padding-right: 54rpx !important;\n}\n.u-m-b-54 {\n  margin-bottom: 54rpx !important;\n}\n.u-p-b-54 {\n  padding-bottom: 54rpx !important;\n}\n.u-margin-bottom-54 {\n  margin-bottom: 54rpx !important;\n}\n.u-padding-bottom-54 {\n  padding-bottom: 54rpx !important;\n}\n.u-margin-55, .u-m-55 {\n  margin: 55rpx !important;\n}\n.u-padding-55, .u-p-55 {\n  padding: 55rpx !important;\n}\n.u-m-l-55 {\n  margin-left: 55rpx !important;\n}\n.u-p-l-55 {\n  padding-left: 55rpx !important;\n}\n.u-margin-left-55 {\n  margin-left: 55rpx !important;\n}\n.u-padding-left-55 {\n  padding-left: 55rpx !important;\n}\n.u-m-t-55 {\n  margin-top: 55rpx !important;\n}\n.u-p-t-55 {\n  padding-top: 55rpx !important;\n}\n.u-margin-top-55 {\n  margin-top: 55rpx !important;\n}\n.u-padding-top-55 {\n  padding-top: 55rpx !important;\n}\n.u-m-r-55 {\n  margin-right: 55rpx !important;\n}\n.u-p-r-55 {\n  padding-right: 55rpx !important;\n}\n.u-margin-right-55 {\n  margin-right: 55rpx !important;\n}\n.u-padding-right-55 {\n  padding-right: 55rpx !important;\n}\n.u-m-b-55 {\n  margin-bottom: 55rpx !important;\n}\n.u-p-b-55 {\n  padding-bottom: 55rpx !important;\n}\n.u-margin-bottom-55 {\n  margin-bottom: 55rpx !important;\n}\n.u-padding-bottom-55 {\n  padding-bottom: 55rpx !important;\n}\n.u-margin-56, .u-m-56 {\n  margin: 56rpx !important;\n}\n.u-padding-56, .u-p-56 {\n  padding: 56rpx !important;\n}\n.u-m-l-56 {\n  margin-left: 56rpx !important;\n}\n.u-p-l-56 {\n  padding-left: 56rpx !important;\n}\n.u-margin-left-56 {\n  margin-left: 56rpx !important;\n}\n.u-padding-left-56 {\n  padding-left: 56rpx !important;\n}\n.u-m-t-56 {\n  margin-top: 56rpx !important;\n}\n.u-p-t-56 {\n  padding-top: 56rpx !important;\n}\n.u-margin-top-56 {\n  margin-top: 56rpx !important;\n}\n.u-padding-top-56 {\n  padding-top: 56rpx !important;\n}\n.u-m-r-56 {\n  margin-right: 56rpx !important;\n}\n.u-p-r-56 {\n  padding-right: 56rpx !important;\n}\n.u-margin-right-56 {\n  margin-right: 56rpx !important;\n}\n.u-padding-right-56 {\n  padding-right: 56rpx !important;\n}\n.u-m-b-56 {\n  margin-bottom: 56rpx !important;\n}\n.u-p-b-56 {\n  padding-bottom: 56rpx !important;\n}\n.u-margin-bottom-56 {\n  margin-bottom: 56rpx !important;\n}\n.u-padding-bottom-56 {\n  padding-bottom: 56rpx !important;\n}\n.u-margin-58, .u-m-58 {\n  margin: 58rpx !important;\n}\n.u-padding-58, .u-p-58 {\n  padding: 58rpx !important;\n}\n.u-m-l-58 {\n  margin-left: 58rpx !important;\n}\n.u-p-l-58 {\n  padding-left: 58rpx !important;\n}\n.u-margin-left-58 {\n  margin-left: 58rpx !important;\n}\n.u-padding-left-58 {\n  padding-left: 58rpx !important;\n}\n.u-m-t-58 {\n  margin-top: 58rpx !important;\n}\n.u-p-t-58 {\n  padding-top: 58rpx !important;\n}\n.u-margin-top-58 {\n  margin-top: 58rpx !important;\n}\n.u-padding-top-58 {\n  padding-top: 58rpx !important;\n}\n.u-m-r-58 {\n  margin-right: 58rpx !important;\n}\n.u-p-r-58 {\n  padding-right: 58rpx !important;\n}\n.u-margin-right-58 {\n  margin-right: 58rpx !important;\n}\n.u-padding-right-58 {\n  padding-right: 58rpx !important;\n}\n.u-m-b-58 {\n  margin-bottom: 58rpx !important;\n}\n.u-p-b-58 {\n  padding-bottom: 58rpx !important;\n}\n.u-margin-bottom-58 {\n  margin-bottom: 58rpx !important;\n}\n.u-padding-bottom-58 {\n  padding-bottom: 58rpx !important;\n}\n.u-margin-60, .u-m-60 {\n  margin: 60rpx !important;\n}\n.u-padding-60, .u-p-60 {\n  padding: 60rpx !important;\n}\n.u-m-l-60 {\n  margin-left: 60rpx !important;\n}\n.u-p-l-60 {\n  padding-left: 60rpx !important;\n}\n.u-margin-left-60 {\n  margin-left: 60rpx !important;\n}\n.u-padding-left-60 {\n  padding-left: 60rpx !important;\n}\n.u-m-t-60 {\n  margin-top: 60rpx !important;\n}\n.u-p-t-60 {\n  padding-top: 60rpx !important;\n}\n.u-margin-top-60 {\n  margin-top: 60rpx !important;\n}\n.u-padding-top-60 {\n  padding-top: 60rpx !important;\n}\n.u-m-r-60 {\n  margin-right: 60rpx !important;\n}\n.u-p-r-60 {\n  padding-right: 60rpx !important;\n}\n.u-margin-right-60 {\n  margin-right: 60rpx !important;\n}\n.u-padding-right-60 {\n  padding-right: 60rpx !important;\n}\n.u-m-b-60 {\n  margin-bottom: 60rpx !important;\n}\n.u-p-b-60 {\n  padding-bottom: 60rpx !important;\n}\n.u-margin-bottom-60 {\n  margin-bottom: 60rpx !important;\n}\n.u-padding-bottom-60 {\n  padding-bottom: 60rpx !important;\n}\n.u-margin-62, .u-m-62 {\n  margin: 62rpx !important;\n}\n.u-padding-62, .u-p-62 {\n  padding: 62rpx !important;\n}\n.u-m-l-62 {\n  margin-left: 62rpx !important;\n}\n.u-p-l-62 {\n  padding-left: 62rpx !important;\n}\n.u-margin-left-62 {\n  margin-left: 62rpx !important;\n}\n.u-padding-left-62 {\n  padding-left: 62rpx !important;\n}\n.u-m-t-62 {\n  margin-top: 62rpx !important;\n}\n.u-p-t-62 {\n  padding-top: 62rpx !important;\n}\n.u-margin-top-62 {\n  margin-top: 62rpx !important;\n}\n.u-padding-top-62 {\n  padding-top: 62rpx !important;\n}\n.u-m-r-62 {\n  margin-right: 62rpx !important;\n}\n.u-p-r-62 {\n  padding-right: 62rpx !important;\n}\n.u-margin-right-62 {\n  margin-right: 62rpx !important;\n}\n.u-padding-right-62 {\n  padding-right: 62rpx !important;\n}\n.u-m-b-62 {\n  margin-bottom: 62rpx !important;\n}\n.u-p-b-62 {\n  padding-bottom: 62rpx !important;\n}\n.u-margin-bottom-62 {\n  margin-bottom: 62rpx !important;\n}\n.u-padding-bottom-62 {\n  padding-bottom: 62rpx !important;\n}\n.u-margin-64, .u-m-64 {\n  margin: 64rpx !important;\n}\n.u-padding-64, .u-p-64 {\n  padding: 64rpx !important;\n}\n.u-m-l-64 {\n  margin-left: 64rpx !important;\n}\n.u-p-l-64 {\n  padding-left: 64rpx !important;\n}\n.u-margin-left-64 {\n  margin-left: 64rpx !important;\n}\n.u-padding-left-64 {\n  padding-left: 64rpx !important;\n}\n.u-m-t-64 {\n  margin-top: 64rpx !important;\n}\n.u-p-t-64 {\n  padding-top: 64rpx !important;\n}\n.u-margin-top-64 {\n  margin-top: 64rpx !important;\n}\n.u-padding-top-64 {\n  padding-top: 64rpx !important;\n}\n.u-m-r-64 {\n  margin-right: 64rpx !important;\n}\n.u-p-r-64 {\n  padding-right: 64rpx !important;\n}\n.u-margin-right-64 {\n  margin-right: 64rpx !important;\n}\n.u-padding-right-64 {\n  padding-right: 64rpx !important;\n}\n.u-m-b-64 {\n  margin-bottom: 64rpx !important;\n}\n.u-p-b-64 {\n  padding-bottom: 64rpx !important;\n}\n.u-margin-bottom-64 {\n  margin-bottom: 64rpx !important;\n}\n.u-padding-bottom-64 {\n  padding-bottom: 64rpx !important;\n}\n.u-margin-65, .u-m-65 {\n  margin: 65rpx !important;\n}\n.u-padding-65, .u-p-65 {\n  padding: 65rpx !important;\n}\n.u-m-l-65 {\n  margin-left: 65rpx !important;\n}\n.u-p-l-65 {\n  padding-left: 65rpx !important;\n}\n.u-margin-left-65 {\n  margin-left: 65rpx !important;\n}\n.u-padding-left-65 {\n  padding-left: 65rpx !important;\n}\n.u-m-t-65 {\n  margin-top: 65rpx !important;\n}\n.u-p-t-65 {\n  padding-top: 65rpx !important;\n}\n.u-margin-top-65 {\n  margin-top: 65rpx !important;\n}\n.u-padding-top-65 {\n  padding-top: 65rpx !important;\n}\n.u-m-r-65 {\n  margin-right: 65rpx !important;\n}\n.u-p-r-65 {\n  padding-right: 65rpx !important;\n}\n.u-margin-right-65 {\n  margin-right: 65rpx !important;\n}\n.u-padding-right-65 {\n  padding-right: 65rpx !important;\n}\n.u-m-b-65 {\n  margin-bottom: 65rpx !important;\n}\n.u-p-b-65 {\n  padding-bottom: 65rpx !important;\n}\n.u-margin-bottom-65 {\n  margin-bottom: 65rpx !important;\n}\n.u-padding-bottom-65 {\n  padding-bottom: 65rpx !important;\n}\n.u-margin-66, .u-m-66 {\n  margin: 66rpx !important;\n}\n.u-padding-66, .u-p-66 {\n  padding: 66rpx !important;\n}\n.u-m-l-66 {\n  margin-left: 66rpx !important;\n}\n.u-p-l-66 {\n  padding-left: 66rpx !important;\n}\n.u-margin-left-66 {\n  margin-left: 66rpx !important;\n}\n.u-padding-left-66 {\n  padding-left: 66rpx !important;\n}\n.u-m-t-66 {\n  margin-top: 66rpx !important;\n}\n.u-p-t-66 {\n  padding-top: 66rpx !important;\n}\n.u-margin-top-66 {\n  margin-top: 66rpx !important;\n}\n.u-padding-top-66 {\n  padding-top: 66rpx !important;\n}\n.u-m-r-66 {\n  margin-right: 66rpx !important;\n}\n.u-p-r-66 {\n  padding-right: 66rpx !important;\n}\n.u-margin-right-66 {\n  margin-right: 66rpx !important;\n}\n.u-padding-right-66 {\n  padding-right: 66rpx !important;\n}\n.u-m-b-66 {\n  margin-bottom: 66rpx !important;\n}\n.u-p-b-66 {\n  padding-bottom: 66rpx !important;\n}\n.u-margin-bottom-66 {\n  margin-bottom: 66rpx !important;\n}\n.u-padding-bottom-66 {\n  padding-bottom: 66rpx !important;\n}\n.u-margin-68, .u-m-68 {\n  margin: 68rpx !important;\n}\n.u-padding-68, .u-p-68 {\n  padding: 68rpx !important;\n}\n.u-m-l-68 {\n  margin-left: 68rpx !important;\n}\n.u-p-l-68 {\n  padding-left: 68rpx !important;\n}\n.u-margin-left-68 {\n  margin-left: 68rpx !important;\n}\n.u-padding-left-68 {\n  padding-left: 68rpx !important;\n}\n.u-m-t-68 {\n  margin-top: 68rpx !important;\n}\n.u-p-t-68 {\n  padding-top: 68rpx !important;\n}\n.u-margin-top-68 {\n  margin-top: 68rpx !important;\n}\n.u-padding-top-68 {\n  padding-top: 68rpx !important;\n}\n.u-m-r-68 {\n  margin-right: 68rpx !important;\n}\n.u-p-r-68 {\n  padding-right: 68rpx !important;\n}\n.u-margin-right-68 {\n  margin-right: 68rpx !important;\n}\n.u-padding-right-68 {\n  padding-right: 68rpx !important;\n}\n.u-m-b-68 {\n  margin-bottom: 68rpx !important;\n}\n.u-p-b-68 {\n  padding-bottom: 68rpx !important;\n}\n.u-margin-bottom-68 {\n  margin-bottom: 68rpx !important;\n}\n.u-padding-bottom-68 {\n  padding-bottom: 68rpx !important;\n}\n.u-margin-70, .u-m-70 {\n  margin: 70rpx !important;\n}\n.u-padding-70, .u-p-70 {\n  padding: 70rpx !important;\n}\n.u-m-l-70 {\n  margin-left: 70rpx !important;\n}\n.u-p-l-70 {\n  padding-left: 70rpx !important;\n}\n.u-margin-left-70 {\n  margin-left: 70rpx !important;\n}\n.u-padding-left-70 {\n  padding-left: 70rpx !important;\n}\n.u-m-t-70 {\n  margin-top: 70rpx !important;\n}\n.u-p-t-70 {\n  padding-top: 70rpx !important;\n}\n.u-margin-top-70 {\n  margin-top: 70rpx !important;\n}\n.u-padding-top-70 {\n  padding-top: 70rpx !important;\n}\n.u-m-r-70 {\n  margin-right: 70rpx !important;\n}\n.u-p-r-70 {\n  padding-right: 70rpx !important;\n}\n.u-margin-right-70 {\n  margin-right: 70rpx !important;\n}\n.u-padding-right-70 {\n  padding-right: 70rpx !important;\n}\n.u-m-b-70 {\n  margin-bottom: 70rpx !important;\n}\n.u-p-b-70 {\n  padding-bottom: 70rpx !important;\n}\n.u-margin-bottom-70 {\n  margin-bottom: 70rpx !important;\n}\n.u-padding-bottom-70 {\n  padding-bottom: 70rpx !important;\n}\n.u-margin-72, .u-m-72 {\n  margin: 72rpx !important;\n}\n.u-padding-72, .u-p-72 {\n  padding: 72rpx !important;\n}\n.u-m-l-72 {\n  margin-left: 72rpx !important;\n}\n.u-p-l-72 {\n  padding-left: 72rpx !important;\n}\n.u-margin-left-72 {\n  margin-left: 72rpx !important;\n}\n.u-padding-left-72 {\n  padding-left: 72rpx !important;\n}\n.u-m-t-72 {\n  margin-top: 72rpx !important;\n}\n.u-p-t-72 {\n  padding-top: 72rpx !important;\n}\n.u-margin-top-72 {\n  margin-top: 72rpx !important;\n}\n.u-padding-top-72 {\n  padding-top: 72rpx !important;\n}\n.u-m-r-72 {\n  margin-right: 72rpx !important;\n}\n.u-p-r-72 {\n  padding-right: 72rpx !important;\n}\n.u-margin-right-72 {\n  margin-right: 72rpx !important;\n}\n.u-padding-right-72 {\n  padding-right: 72rpx !important;\n}\n.u-m-b-72 {\n  margin-bottom: 72rpx !important;\n}\n.u-p-b-72 {\n  padding-bottom: 72rpx !important;\n}\n.u-margin-bottom-72 {\n  margin-bottom: 72rpx !important;\n}\n.u-padding-bottom-72 {\n  padding-bottom: 72rpx !important;\n}\n.u-margin-74, .u-m-74 {\n  margin: 74rpx !important;\n}\n.u-padding-74, .u-p-74 {\n  padding: 74rpx !important;\n}\n.u-m-l-74 {\n  margin-left: 74rpx !important;\n}\n.u-p-l-74 {\n  padding-left: 74rpx !important;\n}\n.u-margin-left-74 {\n  margin-left: 74rpx !important;\n}\n.u-padding-left-74 {\n  padding-left: 74rpx !important;\n}\n.u-m-t-74 {\n  margin-top: 74rpx !important;\n}\n.u-p-t-74 {\n  padding-top: 74rpx !important;\n}\n.u-margin-top-74 {\n  margin-top: 74rpx !important;\n}\n.u-padding-top-74 {\n  padding-top: 74rpx !important;\n}\n.u-m-r-74 {\n  margin-right: 74rpx !important;\n}\n.u-p-r-74 {\n  padding-right: 74rpx !important;\n}\n.u-margin-right-74 {\n  margin-right: 74rpx !important;\n}\n.u-padding-right-74 {\n  padding-right: 74rpx !important;\n}\n.u-m-b-74 {\n  margin-bottom: 74rpx !important;\n}\n.u-p-b-74 {\n  padding-bottom: 74rpx !important;\n}\n.u-margin-bottom-74 {\n  margin-bottom: 74rpx !important;\n}\n.u-padding-bottom-74 {\n  padding-bottom: 74rpx !important;\n}\n.u-margin-75, .u-m-75 {\n  margin: 75rpx !important;\n}\n.u-padding-75, .u-p-75 {\n  padding: 75rpx !important;\n}\n.u-m-l-75 {\n  margin-left: 75rpx !important;\n}\n.u-p-l-75 {\n  padding-left: 75rpx !important;\n}\n.u-margin-left-75 {\n  margin-left: 75rpx !important;\n}\n.u-padding-left-75 {\n  padding-left: 75rpx !important;\n}\n.u-m-t-75 {\n  margin-top: 75rpx !important;\n}\n.u-p-t-75 {\n  padding-top: 75rpx !important;\n}\n.u-margin-top-75 {\n  margin-top: 75rpx !important;\n}\n.u-padding-top-75 {\n  padding-top: 75rpx !important;\n}\n.u-m-r-75 {\n  margin-right: 75rpx !important;\n}\n.u-p-r-75 {\n  padding-right: 75rpx !important;\n}\n.u-margin-right-75 {\n  margin-right: 75rpx !important;\n}\n.u-padding-right-75 {\n  padding-right: 75rpx !important;\n}\n.u-m-b-75 {\n  margin-bottom: 75rpx !important;\n}\n.u-p-b-75 {\n  padding-bottom: 75rpx !important;\n}\n.u-margin-bottom-75 {\n  margin-bottom: 75rpx !important;\n}\n.u-padding-bottom-75 {\n  padding-bottom: 75rpx !important;\n}\n.u-margin-76, .u-m-76 {\n  margin: 76rpx !important;\n}\n.u-padding-76, .u-p-76 {\n  padding: 76rpx !important;\n}\n.u-m-l-76 {\n  margin-left: 76rpx !important;\n}\n.u-p-l-76 {\n  padding-left: 76rpx !important;\n}\n.u-margin-left-76 {\n  margin-left: 76rpx !important;\n}\n.u-padding-left-76 {\n  padding-left: 76rpx !important;\n}\n.u-m-t-76 {\n  margin-top: 76rpx !important;\n}\n.u-p-t-76 {\n  padding-top: 76rpx !important;\n}\n.u-margin-top-76 {\n  margin-top: 76rpx !important;\n}\n.u-padding-top-76 {\n  padding-top: 76rpx !important;\n}\n.u-m-r-76 {\n  margin-right: 76rpx !important;\n}\n.u-p-r-76 {\n  padding-right: 76rpx !important;\n}\n.u-margin-right-76 {\n  margin-right: 76rpx !important;\n}\n.u-padding-right-76 {\n  padding-right: 76rpx !important;\n}\n.u-m-b-76 {\n  margin-bottom: 76rpx !important;\n}\n.u-p-b-76 {\n  padding-bottom: 76rpx !important;\n}\n.u-margin-bottom-76 {\n  margin-bottom: 76rpx !important;\n}\n.u-padding-bottom-76 {\n  padding-bottom: 76rpx !important;\n}\n.u-margin-78, .u-m-78 {\n  margin: 78rpx !important;\n}\n.u-padding-78, .u-p-78 {\n  padding: 78rpx !important;\n}\n.u-m-l-78 {\n  margin-left: 78rpx !important;\n}\n.u-p-l-78 {\n  padding-left: 78rpx !important;\n}\n.u-margin-left-78 {\n  margin-left: 78rpx !important;\n}\n.u-padding-left-78 {\n  padding-left: 78rpx !important;\n}\n.u-m-t-78 {\n  margin-top: 78rpx !important;\n}\n.u-p-t-78 {\n  padding-top: 78rpx !important;\n}\n.u-margin-top-78 {\n  margin-top: 78rpx !important;\n}\n.u-padding-top-78 {\n  padding-top: 78rpx !important;\n}\n.u-m-r-78 {\n  margin-right: 78rpx !important;\n}\n.u-p-r-78 {\n  padding-right: 78rpx !important;\n}\n.u-margin-right-78 {\n  margin-right: 78rpx !important;\n}\n.u-padding-right-78 {\n  padding-right: 78rpx !important;\n}\n.u-m-b-78 {\n  margin-bottom: 78rpx !important;\n}\n.u-p-b-78 {\n  padding-bottom: 78rpx !important;\n}\n.u-margin-bottom-78 {\n  margin-bottom: 78rpx !important;\n}\n.u-padding-bottom-78 {\n  padding-bottom: 78rpx !important;\n}\n.u-margin-80, .u-m-80 {\n  margin: 80rpx !important;\n}\n.u-padding-80, .u-p-80 {\n  padding: 80rpx !important;\n}\n.u-m-l-80 {\n  margin-left: 80rpx !important;\n}\n.u-p-l-80 {\n  padding-left: 80rpx !important;\n}\n.u-margin-left-80 {\n  margin-left: 80rpx !important;\n}\n.u-padding-left-80 {\n  padding-left: 80rpx !important;\n}\n.u-m-t-80 {\n  margin-top: 80rpx !important;\n}\n.u-p-t-80 {\n  padding-top: 80rpx !important;\n}\n.u-margin-top-80 {\n  margin-top: 80rpx !important;\n}\n.u-padding-top-80 {\n  padding-top: 80rpx !important;\n}\n.u-m-r-80 {\n  margin-right: 80rpx !important;\n}\n.u-p-r-80 {\n  padding-right: 80rpx !important;\n}\n.u-margin-right-80 {\n  margin-right: 80rpx !important;\n}\n.u-padding-right-80 {\n  padding-right: 80rpx !important;\n}\n.u-m-b-80 {\n  margin-bottom: 80rpx !important;\n}\n.u-p-b-80 {\n  padding-bottom: 80rpx !important;\n}\n.u-margin-bottom-80 {\n  margin-bottom: 80rpx !important;\n}\n.u-padding-bottom-80 {\n  padding-bottom: 80rpx !important;\n}\n.u-reset-nvue {\n  flex-direction: row;\n  align-items: center;\n}\n.u-type-primary-light {\n  color: #ecf5ff;\n}\n.u-type-warning-light {\n  color: #fdf6ec;\n}\n.u-type-success-light {\n  color: #dbf1e1;\n}\n.u-type-error-light {\n  color: #fef0f0;\n}\n.u-type-info-light {\n  color: #f4f4f5;\n}\n.u-type-primary-light-bg {\n  background-color: #ecf5ff;\n}\n.u-type-warning-light-bg {\n  background-color: #fdf6ec;\n}\n.u-type-success-light-bg {\n  background-color: #dbf1e1;\n}\n.u-type-error-light-bg {\n  background-color: #fef0f0;\n}\n.u-type-info-light-bg {\n  background-color: #f4f4f5;\n}\n.u-type-primary-dark {\n  color: #2b85e4;\n}\n.u-type-warning-dark {\n  color: #f29100;\n}\n.u-type-success-dark {\n  color: #18b566;\n}\n.u-type-error-dark {\n  color: #dd6161;\n}\n.u-type-info-dark {\n  color: #82848a;\n}\n.u-type-primary-dark-bg {\n  background-color: #2b85e4;\n}\n.u-type-warning-dark-bg {\n  background-color: #f29100;\n}\n.u-type-success-dark-bg {\n  background-color: #18b566;\n}\n.u-type-error-dark-bg {\n  background-color: #dd6161;\n}\n.u-type-info-dark-bg {\n  background-color: #82848a;\n}\n.u-type-primary-disabled {\n  color: #a0cfff;\n}\n.u-type-warning-disabled {\n  color: #fcbd71;\n}\n.u-type-success-disabled {\n  color: #71d5a1;\n}\n.u-type-error-disabled {\n  color: #fab6b6;\n}\n.u-type-info-disabled {\n  color: #c8c9cc;\n}\n.u-type-primary {\n  color: #2979ff;\n}\n.u-type-warning {\n  color: #ff9900;\n}\n.u-type-success {\n  color: #19be6b;\n}\n.u-type-error {\n  color: #fa3534;\n}\n.u-type-info {\n  color: #909399;\n}\n.u-type-primary-bg {\n  background-color: #2979ff;\n}\n.u-type-warning-bg {\n  background-color: #ff9900;\n}\n.u-type-success-bg {\n  background-color: #19be6b;\n}\n.u-type-error-bg {\n  background-color: #fa3534;\n}\n.u-type-info-bg {\n  background-color: #909399;\n}\n.u-main-color {\n  color: #303133;\n}\n.u-content-color {\n  color: #606266;\n}\n.u-tips-color {\n  color: #909399;\n}\n.u-light-color {\n  color: #c0c4cc;\n}\nbody {\n  color: #303133;\n  font-size: 28rpx;\n}\n/* start--去除webkit的默认样式--start */\n.u-fix-ios-appearance {\n  -webkit-appearance: none;\n}\n/* end--去除webkit的默认样式--end */\n/* start--icon图标外层套一个view，让其达到更好的垂直居中的效果--start */\n.u-icon-wrap {\n  display: flex;\n  align-items: center;\n}\n/* end-icon图标外层套一个view，让其达到更好的垂直居中的效果--end */\n/* start--iPhoneX底部安全区定义--start */\n.safe-area-inset-bottom {\n  padding-bottom: 0;\n  padding-bottom: constant(safe-area-inset-bottom);\n  padding-bottom: env(safe-area-inset-bottom);\n}\n/* end-iPhoneX底部安全区定义--end */\n/* start--各种hover点击反馈相关的类名-start */\n.u-hover-class {\n  opacity: 0.6;\n}\n.u-cell-hover {\n  background-color: #f7f8f9 !important;\n}\n/* end--各种hover点击反馈相关的类名--end */\n/* start--文本行数限制--start */\n.u-line-1 {\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n.u-line-2 {\n  -webkit-line-clamp: 2;\n}\n.u-line-3 {\n  -webkit-line-clamp: 3;\n}\n.u-line-4 {\n  -webkit-line-clamp: 4;\n}\n.u-line-5 {\n  -webkit-line-clamp: 5;\n}\n.u-line-2, .u-line-3, .u-line-4, .u-line-5 {\n  overflow: hidden;\n  word-break: break-all;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n}\n/* end--文本行数限制--end */\n/* start--Retina 屏幕下的 1px 边框--start */\n.u-border,\n.u-border-bottom,\n.u-border-left,\n.u-border-right,\n.u-border-top,\n.u-border-top-bottom {\n  position: relative;\n}\n.u-border-bottom:after,\n.u-border-left:after,\n.u-border-right:after,\n.u-border-top-bottom:after,\n.u-border-top:after,\n.u-border:after {\n  content: ' ';\n  position: absolute;\n  left: 0;\n  top: 0;\n  pointer-events: none;\n  box-sizing: border-box;\n  -webkit-transform-origin: 0 0;\n  transform-origin: 0 0;\n  width: 199.8%;\n  height: 199.7%;\n  -webkit-transform: scale(0.5, 0.5);\n          transform: scale(0.5, 0.5);\n  border: 0 solid #e4e7ed;\n  z-index: 2;\n}\n.u-border-top:after {\n  border-top-width: 1px;\n}\n.u-border-left:after {\n  border-left-width: 1px;\n}\n.u-border-right:after {\n  border-right-width: 1px;\n}\n.u-border-bottom:after {\n  border-bottom-width: 1px;\n}\n.u-border-top-bottom:after {\n  border-width: 1px 0;\n}\n.u-border:after {\n  border-width: 1px;\n}\n/* end--Retina 屏幕下的 1px 边框--end */\n/* start--clearfix--start */\n.u-clearfix:after,\n.clearfix:after {\n  content: '';\n  display: table;\n  clear: both;\n}\n/* end--clearfix--end */\n/* start--高斯模糊tabbar底部处理--start */\n.u-blur-effect-inset {\n  width: 750rpx;\n  height: var(--window-bottom);\n  background-color: #FFFFFF;\n}\n/* end--高斯模糊tabbar底部处理--end */\n/* start--提升H5端uni.toast()的层级，避免被uView的modal等遮盖--start */\n/* end--提升H5端uni.toast()的层级，避免被uView的modal等遮盖--end */\n/* start--去除button的所有默认样式--start */\n.u-reset-button {\n  padding: 0;\n  font-size: inherit;\n  line-height: inherit;\n  background-color: transparent;\n  color: inherit;\n}\n.u-reset-button::after {\n  border: none;\n}\n/* end--去除button的所有默认样式--end */\n.status_bar {\n  height: var(--status-bar-height);\n  width: 100%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

@@ -1,6 +1,6 @@
 <template>
 	<view class="my_ad">
-		<uni-nav-bar left-icon="left" right-icon="plus" :title="$t('myAds')" :border="false" @clickLeft="back()" @clickRight="addAd"></uni-nav-bar>
+		<uni-nav-bar statusBar fixed left-icon="left" right-icon="plus" :title="$t('myAds')" :border="false" @clickLeft="back()" @clickRight="addAd"></uni-nav-bar>
 		<view class="empty" v-if="list.length === 0">
 			<image src="../../../static/images/otc/my_ad/empty.png" mode=""></image>
 			<text>{{ $t('noActiveAds') }}</text>
@@ -85,7 +85,9 @@
 				console.log(res)
 			},
 			back () {
-				uni.navigateBack()
+				uni.navigateBack({
+					delta: 1
+				})
 			},
 			addAd() {
 				uni.navigateTo({

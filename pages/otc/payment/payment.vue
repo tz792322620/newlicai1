@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<uni-nav-bar left-icon="left" right-icon="plus" :title="$t('choosePaymentMethod')" :border="false" @clickLeft="back()" @clickRight="addPayment"></uni-nav-bar>
+		<uni-nav-bar statusBar fixed left-icon="left" right-icon="plus" :title="$t('choosePaymentMethod')" :border="false" @clickLeft="back()" @clickRight="addPayment"></uni-nav-bar>
 		<view class="tabs">
 			<view class="tabs-item" v-for="(item,index) in tabsList" :key="index" @click="changeTabs(item,index)" :class="index === activeIndex ? 'active' : ''">
 				{{item}}
@@ -125,7 +125,9 @@
 				this.getPaymentList()
 			},
 			back() {
-				uni.navigateBack()
+				uni.navigateBack({
+					delta: 1
+				})
 			},
 			addPayment() {
 				uni.navigateTo({

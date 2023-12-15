@@ -1,11 +1,11 @@
 <template>
 	<view class="page">
 
-		<view class="header">
+		<!-- <view class="header">
 			<view class="back-arrow" @click="goBack"></view>
 			<text class="header-title">{{$t('yulibao')}}</text>
-		</view>
-
+		</view> -->
+		<uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('yulibao')" :border="false" @clickLeft="goBack"></uni-nav-bar>
 
 		<view class="ylb1">
 			<view class="balance-display">

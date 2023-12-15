@@ -1,9 +1,11 @@
 <template>
-	<view
-		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;min-height: 100vh;">
+	<view style="background-image: url('../../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;min-height: 100vh;">
+		<view class="status_bar" style="position: fixed;width: 100%;background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view style="height: 88rpx;display: flex;align-items: center;justify-content: center;">
 
-			<view class="u-flex" style="">
+			<view class="u-flex" style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 
 				<view class="u-flex_left">
 					<view style="display: flex;align-items: center; width: 100rpx;" @click="isAbP = !isAbP">
@@ -41,7 +43,7 @@
 			</view>
 
 		</view>
-		<view class="b_colfff" style="padding: 40rpx;border-radius: 32rpx; 32rpx 0 0">
+		<view class="b_colfff" style="border-radius: 32rpx; 32rpx 0 0;" :style="[{padding: `40rpx 40rpx 40rpx 40rpx`},{marginTop: `${statusBarHeight*2 + 10}rpx`}]">
 			<view class="u-flex" style="color:#AFAFAF;font-size: 32rpx;font-weight: bold;">
 				<view :class="{'xuan1':but==0}" style="" @click="getbut(0)">{{$t('buyCurrency')}}</view>
 				<view :class="{'xuan2':but==1}" style="margin-left:20rpx;" @click="getbut(1)">{{$t('sellCurrency')}}</view>
@@ -144,8 +146,12 @@
 				},
 				but: 0,
 				type: 'Buy',
-				otcList: []
+				otcList: [],
+				statusBarHeight: 0 // 状态栏高度
 			}
+		},
+		onShow() {
+			this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
 		},
 		computed: {
 			// 币种集合

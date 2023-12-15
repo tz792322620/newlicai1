@@ -1,8 +1,10 @@
 <template>
-	<view
-		style="background-image: url('../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100%;height: 100vh;">
+	<view style="background: url('../../static/images/hm_bg.png') center center no-repeat;background-size: 100% 100%;min-height: 100vh;">
+		<view class="status_bar" style="position: fixed;width: 100%;background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view style="padding:30rpx;">
-			<view class="u-flex">
+			<view class="u-flex" style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 				<view>
 					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" :src="$url + userInfo.avatar">
 					</image>
@@ -20,7 +22,7 @@
 					<language :margin="'10rpx 0 0 10rpx'"></language>
 				</view>
 			</view>
-			<view style="margin-top: 60rpx;color: #333333;font-size: 24rpx;">
+			<view :style="[{marginTop: `${statusBarHeight*2 + 88}rpx`},{color: '#333333'},{fontSize: '24rpx'}]">
 				<u-row gutter="16">
 					<u-col span="3" @click="gotoPage('/pages/yulibao/yulibao')">
 						<view class="u-text-center">
@@ -250,11 +252,14 @@
 				stockList: [], // 精选股票
 				tabName: '', // 选项卡内容(查询参数)
 				stockProductListTab: [],
-				notice: '' // 公告
+				notice: '', // 公告
+				statusBarHeight: 0 // 状态栏高度
 			}
 		},
 		
 		onShow() {
+			console.log('状态栏高度', uni.getSystemInfoSync().statusBarHeight)
+			this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
 			// this.stockProductList()
 			// this.getStockProductListNewbie() // 精选股票
 			// this.getStockProductListTab()
@@ -358,6 +363,9 @@
 	}
 </script>
 
-<style>
-
+<style scoped lang="scss">
+	.status_bar {
+		height: var(--status-bar-height);
+		width: 100%;
+	}
 </style>
