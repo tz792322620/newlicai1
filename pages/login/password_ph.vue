@@ -32,8 +32,8 @@
 			</view>
 			
 			<view style="margin-top: 10px;">
-				<V5Dialog :lang="v5lang" :mournful="false" ref="v1" :trustLevel="5" :host="v5host" :token="v5token"/>
-				<V5Button  :trustLevel="5" :mournful="false" @success="onSuccess" :lang="v5lang" name="v5field" ref="v2" :host="v5host" :token="v5token"/>
+				<V5Dialog :lang="v5lang" :mournful="false" ref="v5dialog" :trustLevel="5" :host="v5host" :token="v5token"/>
+			<!-- 	<V5Button  :trustLevel="5" :mournful="false" @success="onSuccess" :lang="v5lang" name="v5field" ref="v2" :host="v5host" :token="v5token"/> -->
 			</view>
 			
 			<view style="margin-top: 40rpx;">	
@@ -137,26 +137,7 @@
 							this.lock = true
 						}, 1000);
 					}
-					// this.$Ajax3(
-					// 	'/user/resetPassword', {
-					// 		data
-					// 	},
-					// 	res => {
-					// 		if (res.code == "1") {
-					// 			this.$tools.toast('修改成功');
-					// 			setTimeout(() => {
-					// 				this.$tools.back(1);
-					// 				this.lock = true
-					// 			}, 1000);
-								
-					// 		} else {
-					// 			this.$tools.toast(res.msg)
-					// 			setTimeout(() => {
-					// 				this.lock = true
-					// 			}, 1000);
-					// 		}
-					// 	},
-					// );
+
 				}
 				
 			},

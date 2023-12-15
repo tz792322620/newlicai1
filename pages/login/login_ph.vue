@@ -29,8 +29,9 @@
 				</view>
 			</view>
 			<view style="margin-top: 10px;">
-				<V5Dialog :lang="v5lang" :mournful="false" ref="v1" :trustLevel="5" :host="v5host" :token="v5token"/>
-				<V5Button  :trustLevel="5" :mournful="false" @success="onSuccess" :lang="v5lang" name="v5field" ref="v2" :host="v5host" :token="v5token"/>
+				<V5Dialog :lang="v5lang" :mournful="false" ref="v5dialog" :trustLevel="5" :host="v5host" :token="v5token"/>
+<!-- 				<V5Dialog :lang="v5lang" :mournful="false" ref="v1" :trustLevel="5" :host="v5host" :token="v5token"/>
+				<V5Button  :trustLevel="5" :mournful="false" @success="onSuccess" :lang="v5lang" name="v5field" ref="v2" :host="v5host" :token="v5token"/> -->
 			</view>
 			
 			<view style="margin-top: 40rpx;">
@@ -84,8 +85,7 @@
 		
 		},
 		methods: {
-	
-			async login(){
+			async logins(){
 				if (this.account == '') {
 					return this.$tools.toast('请输入手机号码');
 				}else if (this.password == '') {
@@ -118,31 +118,20 @@
 							this.lock = true
 						}, 1000);
 					}
-					// return
-					// this.$Ajax3(
-					// 	'/user/login', {
-					// 		data
-					// 	},
-					// 	res => {
-					// 		if (res.code == 1) {
-					// 			uni.setStorageSync('token', res.data.userinfo.token);
-					// 			this.$tools.toastSwitchTab('登录成功', '../home/home');
-					// 			setTimeout(() => {
-					// 				this.lock = true
-					// 			}, 1000);
-					// 		} else {
-					// 			this.$tools.toast(res.msg)
-					// 			setTimeout(() => {
-					// 				this.lock = true
-					// 			}, 1000);
-					// 		}
-					// 	},
-					// 	fail => {},
-					// 	'POST',
-					// 	'notoken',
-					// 	false
-					// );
+							
 				}
+			},
+			async login(){
+				let that=this
+				this.$refs.v5dialog.verify(function(result){
+					
+					if(result.success){
+						var verifyId=result.verifyId;
+						// bar(verifyId);
+						that.logins();
+					}
+				});
+
 			}
 		}
 	}
