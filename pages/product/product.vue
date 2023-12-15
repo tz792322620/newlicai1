@@ -23,8 +23,22 @@
 				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
 					<view style="width: 300rpx;">收益率：<text
 							style="color: #21BF90;">{{Number(item.interest_rate * 100)}}%</text></view>
-					<view style="width: 300rpx;" class="u-text-right">起购金额：：<text
-							style="color: #21BF90;">{{item.amount_per_unit}}U</text>
+					<view style="width: 300rpx;" class="u-text-right">限购次数：<text
+							style="color: #21BF90;">{{item.limit_purchase_times}} 次</text>
+					</view>
+				</view>
+				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
+					<view style="width: 300rpx;">最低购买限额：<text
+							style="color: #21BF90;">{{item.min_purchase_amount}}U</text></view>
+					<view style="width: 300rpx;" class="u-text-right">最高购买限额：<text
+							style="color: #21BF90;">{{item.max_purchase_amount}}U</text>
+					</view>
+				</view>
+				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
+					<view style="width: 300rpx;">已售出份额：<text
+							style="color: #21BF90;">{{item.sold_units}}U</text></view>
+					<view style="width: 300rpx;" class="u-text-right">募资总额	：<text
+							style="color: #21BF90;">{{item.total_fundraising}}U</text>
 					</view>
 				</view>
 				<view style="width:540rpx;margin-top: 6rpx;">
