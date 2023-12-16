@@ -103,6 +103,12 @@
 				}, {
 					name: 'USDT-TRC20',
 					value: 'tron'
+				}, {
+					name: 'BTC',
+					value: 'btc'
+				}, {
+					name: 'ETH',
+					value: 'eth'
 				}]
 			};
 		},

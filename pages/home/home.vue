@@ -1,16 +1,20 @@
 <template>
-	<view style="background: url('../../static/images/hm_bg.png') center center no-repeat;background-size: 100% 100%;min-height: 100vh;">
-		<view class="status_bar" style="position: fixed;width: 100%;background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
+	<view
+		style="background: url('../../static/images/hm_bg.png') center center no-repeat;background-size: 100% 100%;min-height: 100vh;">
+		<view class="status_bar"
+			style="position: fixed;width: 100%;background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 			<!-- 这里是状态栏 -->
 		</view>
 		<view style="padding:30rpx;">
-			<view class="u-flex" style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
+			<view class="u-flex"
+				style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 				<view>
 					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" :src="$url + userInfo.avatar">
 					</image>
 				</view>
 				<view style="margin-left: 10rpx;width:480rpx;">
-					<u-search bg-color="#FFFFFF" :placeholder="$t('search')" :disabled="false" :show-action="false"></u-search>
+					<u-search bg-color="#FFFFFF" :placeholder="$t('search')" :disabled="false" :show-action="false">
+					</u-search>
 				</view>
 				<view>
 					<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left: 30rpx;"
@@ -59,7 +63,7 @@
 			</view>
 		</view>
 		<view
-			style="padding:60rpx;background-image: url('../../static/images/hm_bg2.png');background-repeat: no-repeat;background-size: 100%;height:540rpx;">
+			style="padding:60rpx 60rpx 40rpx 60rpx;background-image: url('../../static/images/hm_bg2.png');background-repeat: no-repeat;background-size: 100%;">
 			<view class="col35 f_bod" style="font-size:36rpx;">{{$t('hot')}}</view>
 			<view style="margin-top: 30rpx;" v-for="(item,index) in ProductList" :key="index" @click="toDetails(item)">
 				<view class="u-flex">
@@ -81,7 +85,9 @@
 				</view>
 			</view>
 
-			<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35 u-text-center">{{$t('more')}}</view>
+			<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35 u-text-center" @click="toProduct">
+				{{$t('more')}}
+			</view>
 
 		</view>
 		<view style="padding: 30rpx;">
@@ -97,7 +103,7 @@
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
 								{{item.interest_rate}}%
 							</view>
-							<view style="margin-top: 20rpx;">{{item.amount_per_unit}}元起投</view>
+							<view style="margin-top: 20rpx;">{{item.amount_per_unit}}{{$t('yuan')}}{{$t('qitou')}}</view>
 						</view>
 
 					</swiper-item>
@@ -111,7 +117,7 @@
 
 			<view style="margin-top: 20rpx;">
 				<u-row gutter="16">
-<!-- 					<u-col span="3">
+					<!-- 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==0}" @click="getxuan(0,'')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
 							<view>{{$t('all')}}</view>
@@ -160,19 +166,19 @@
 
 						<u-col span="5">
 							<view class="" style="color: #666666;" @click="getbut(0)">
-								<text class="black" :class="{ shop_xuan: but === 0 }">名称</text>
+								<text class="black" :class="{ shop_xuan: but === 0 }">{{$t('productName')}}</text>
 								<!-- <image style="width: 12rpx;height: 16rpx;margin-left: 6rpx;" src="../../static/images/x1.png"></image> -->
 							</view>
 						</u-col>
 						<u-col span="4">
 							<view class="u-text-center" style="color: #666666;" @click="getbut(0)">
-								<text class="black" :class="{ shop_xuan: but === 0 }">持仓期限</text>
+								<text class="black" :class="{ shop_xuan: but === 0 }">{{$t('holdingPeriod')}}</text>
 								<!-- <image style="width: 12rpx;height: 16rpx;margin-left: 6rpx;" src="../../static/images/x1.png"></image> -->
 							</view>
 						</u-col>
 						<u-col span="3">
 							<view class="u-text-right" style="color: #666666;" @click="getbut(0)">
-								<text class="black" :class="{ shop_xuan: but === 0 }">日化回报率</text>
+								<text class="black" :class="{ shop_xuan: but === 0 }">{{$t('dailyRate')}}</text>
 								<!-- <image style="width: 12rpx;height: 16rpx;margin-left: 6rpx;" src="../../static/images/x1.png"></image> -->
 							</view>
 						</u-col>
@@ -180,7 +186,8 @@
 
 				</view>
 
-				<view style="color:#333333;margin-top: 10rpx;" v-for="(item,index) in stockProductListTab" :key="index" @click="toDetails(item)"> 
+				<view style="color:#333333;margin-top: 10rpx;" v-for="(item,index) in stockProductListTab" :key="index"
+					@click="toDetails(item)">
 					<u-row gutter="16">
 
 						<u-col span="5">
@@ -192,20 +199,20 @@
 								</view>
 								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
 									<view style="width:50rpx;">0</view>
-									<view class="u-text-right" style="width: 220rpx;">2550万</view>
+									<view class="u-text-right" style="width: 220rpx;">2550{{$t('wanyuan')}}</view>
 								</view>
 							</view>
 						</u-col>
 						<u-col span="4">
 							<view class="u-text-center">
-								<view>{{item.investment_period}}个自然日</view>
-								<view style="margin-top: 10rpx;">满仓即止</view>
+								<view>{{item.investment_period}}{{$t('days')}}</view>
+								<view style="margin-top: 10rpx;">{{$t('whenFull')}}</view>
 							</view>
 						</u-col>
 						<u-col span="3">
 							<view class="u-text-right">
 								<view style="color: #F75F52;">{{Number(item.appreciation_rate)}}%</view>
-								<view style="margin-top: 10rpx;">起投:<text
+								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
 										style="color: #F75F52;">{{item.amount_per_unit}}</text></view>
 							</view>
 						</u-col>
@@ -216,7 +223,8 @@
 				</view>
 			</view>
 		</view>
-	<floating-customer-service></floating-customer-service>
+		<!-- <floating-customer-service></floating-customer-service> -->
+		<liu-drag-button @clickBtn="clickBtn">{{$t('customerService')}}</liu-drag-button>
 	</view>
 </template>
 
@@ -229,9 +237,9 @@
 	import FloatingCustomerService from '@/components/FloatingCustomerService/FloatingCustomerService.vue';
 
 	export default {
-	  components: {
-		FloatingCustomerService
-	  },
+		components: {
+			FloatingCustomerService
+		},
 		data() {
 			return {
 				config: {
@@ -243,7 +251,7 @@
 					radius: 10,
 					height: 264,
 					nextMargin: -220,
- 
+
 				},
 				userInfo: JSON.parse(uni.getStorageSync('userInfo')),
 				xuan: 1,
@@ -253,10 +261,11 @@
 				tabName: '', // 选项卡内容(查询参数)
 				stockProductListTab: [],
 				notice: '', // 公告
-				statusBarHeight: 0 // 状态栏高度
+				statusBarHeight: 0, // 状态栏高度
+				customerServiceUrl: JSON.parse(uni.getStorageSync('support_link')) // 您的客服链接
 			}
 		},
-		
+
 		onShow() {
 			console.log('状态栏高度', uni.getSystemInfoSync().statusBarHeight)
 			this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
@@ -278,6 +287,26 @@
 			}
 		},
 		methods: {
+			//点击按钮
+			clickBtn() {
+				console.log('按钮被点击了')
+				// #ifdef H5
+				// window.location.href = this.customerServiceUrl;
+				window.open(this.customerServiceUrl)
+				// #endif
+				// #ifdef APP-PLUS
+				plus.runtime.openURL(this.customerServiceUrl);
+				// #endif
+				// APP内部打开客服链接(页面已写,打开注释即可)
+				// uni.navigateTo({
+				// 	url: `/pages/home/webview/webview?url=${this.customerServiceUrl}`
+				// })
+			},
+			toProduct() {
+				uni.switchTab({
+					url: '/pages/product/product'
+				})
+			},
 			toDetails(item) {
 				uni.navigateTo({
 					url: `/pages/product/details/details?id=${item.product_id}`

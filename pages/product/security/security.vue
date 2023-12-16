@@ -33,7 +33,12 @@
 			{{$t('agreeAndSubmit')}}
 		</view>
 		<view class="tips">
-			{{$t('forgotPassword')}}
+			<view class="tip">
+				{{$t('forgotPassword')}}
+			</view>
+			<view class="tip" @click="toContractDetail(item)">
+				{{$t('contractDetails')}}
+			</view>
 		</view>
 	</view>
 </template>
@@ -67,6 +72,11 @@
 			}
 		},
 		methods: {
+			toContractDetail() {
+				uni.navigateTo({
+					url: '/pages/product/security/contract/contract'
+				})
+			},
 			save() {
 				// uni.chooseImage({
 				// 	success: (chooseImageRes) => {
@@ -248,10 +258,15 @@
 		}
 
 		.tips {
-			font-size: 24rpx;
-			font-weight: 400;
-			color: #35CBA5;
-			line-height: 34rpx;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.tip {
+				font-size: 24rpx;
+				font-weight: 400;
+				color: #35CBA5;
+				line-height: 34rpx;	
+			}
 		}
 	}
 </style>

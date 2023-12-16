@@ -84,7 +84,7 @@
 					background: 'linear-gradient(#69EEAB,#21CCBA)',
 				},
 				curNow: 0,
-				tabName: '',
+				tabName: 'Hot',
 				stockProductListTab: [],
 				statusBarHeight: 0 // 状态栏高度
 			}
@@ -105,20 +105,24 @@
 			'_i18n.locale': {
 				handler(value) {
 					console.log(value, 'watch=======>')
-					this.tabList = [{
-							name: this.$t('allItem')
+					this.tabList = [
+						// {
+						// 	name: this.$t('allItem')
+						// },
+						{
+							name: this.$t('hotItem1')
 						},
 						{
-							name: this.$t('hotItem')
+							name: this.$t('newItem1')
 						},
 						{
-							name: this.$t('newItem')
+							name: this.$t('eliteItem1')
 						},
 						{
-							name: this.$t('eliteItem')
+							name: this.$t('vipItem1')
 						},
 						{
-							name: this.$t('vipItem')
+							name: this.$t('activityItem1')
 						}
 					]
 				},
@@ -145,21 +149,24 @@
 			sectionChange(index) {
 				this.curNow = index;
 				switch (index) {
+					// case 0:
+					// 	this.tabName = ''
+					// 	break;
 					case 0:
-						this.tabName = ''
-						break;
-					case 1:
 						this.tabName = 'Hot'
 						break;
-					case 2:
+					case 1:
 						this.tabName = 'Newbie'
 						break;
-					case 3:
-						this.tabName = 'Activity'
+					case 2:
+						this.tabName = 'Selected'
 						break;
-					case 4:
+					case 3:
 						this.tabName = 'VIP'
 						break;
+						case 4:
+							this.tabName = 'Activity'
+							break;
 				}
 				this.getStockProductListTab()
 			},

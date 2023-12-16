@@ -1,5 +1,7 @@
 <template>
-  <a :href="customerServiceUrl" target="_blank" @mousedown="dragStart" @touchstart="dragStart">
+  <a :href="customerServiceUrl" target="_blank" @mousedown="dragStart" @touchstart="dragStart" 
+	:style="{ right: right + 'px', bottom: bottom + 'px' }"
+	style="width: 60px;height: 60px;display: inline-block;">
     <div 
       class="floating-button" 
       @mousedown="dragStart" 
