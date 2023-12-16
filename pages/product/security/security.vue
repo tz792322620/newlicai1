@@ -30,7 +30,7 @@
 			</view>
 		</view>
 		<view class="buttons" @click="submit">
-			{{$t('submit')}}
+			{{$t('agreeAndSubmit')}}
 		</view>
 		<view class="tips">
 			{{$t('forgotPassword')}}

@@ -9,7 +9,6 @@
 			<image src="../../static/images/camera-icon.png" mode="" @click="toRecords"></image>
 		</view>
 		<view class="content">
-
 			<view class="network">
 				<view class="title">
 					{{$t('rechargeNetwork')}}
@@ -23,30 +22,32 @@
 			</view>
 			<view class="network" style="margin-top: .5rem;">
 				<view class="title">
-					转入地址
+					{{$t('rechargeAddress')}}
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="text" :placeholder="$t('转入地址')" v-model="recharge_address" />
+						<u-input type="text" :placeholder="$t('enterAddress')" v-model="recharge_address" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
 			</view>
 			<view class="network" style="margin-top: .5rem;">
 				<view class="title">
-					转入金额
+					{{$t('rechargeAmount')}}
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="text" :placeholder="$t('转入金额')"  v-model="recharge_amount" />
+						<u-input type="text" :placeholder="$t('enterAmount')"  v-model="recharge_amount" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
 			</view>
+			<view class="network" style="margin-top: .5rem;">
+				<view class="title">
+					{{$t('rechargeTip')}}
+				</view>
+			</view>
 			<view class="buttons">
-<!-- 				<view class="description">
-					{{$t('quantityReceived')}}:<text>{{account_amount}}USDT</text>
-				</view> -->
 				<view class="button" @click="submit">
 					{{$t('submit')}}
 				</view>
@@ -73,6 +74,7 @@
 		<floating-customer-service></floating-customer-service>
 	</view>
 </template>
+
 
 <script>
 	import {

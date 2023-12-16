@@ -2,7 +2,8 @@
 	<view class="earnings">
 		<view class="earnings_item" v-for="(item,index) in list" :key="index">
 			<view class="title">
-				{{item.earnings_type}}
+		<!-- 		{{item.earnings_type}} -->
+				{{ getStatusTranslation(item.earnings_type) }}
 			</view>
 			<!-- <view class="cell">
 				<view class="cell_left">
@@ -49,6 +50,10 @@
 			this.getData()
 		},
 		methods: {
+			getStatusTranslation(status) {
+							// console.log(status)
+			  return this.$t(status);
+			},
 			async getData() {
 				const res = await getAllEarnings()
 				if (res.code === 1) {

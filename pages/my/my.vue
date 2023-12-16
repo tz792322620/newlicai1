@@ -208,7 +208,7 @@
 
 				// 重定向到登录页面或首页
 				uni.reLaunch({
-					url: '/'
+					url: '/pages/login/login_em'
 				});
 			},
 			navigateTo(url) {

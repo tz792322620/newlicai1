@@ -56,11 +56,11 @@
 						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.max_purchase_amount}}</text> {{$t('yuan')}}
 					</view>
 				</view>
-				<u-line color="#F3F3F3"></u-line>
+<!-- 				<u-line color="#F3F3F3"></u-line>
 				<view class="u-flex" style="margin-top:30rpx;">
 					<view style="width:200rpx;color: #666666;">{{$t('payPassword')}}</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">{{$t('defaultLoginPassword')}}</view>
-				</view>
+				</view> -->
 			</view>
 
 			<view style="margin-top: 80rpx;">

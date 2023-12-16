@@ -61,7 +61,7 @@
 		<view
 			style="padding:60rpx;background-image: url('../../static/images/hm_bg2.png');background-repeat: no-repeat;background-size: 100%;height:540rpx;">
 			<view class="col35 f_bod" style="font-size:36rpx;">{{$t('hot')}}</view>
-			<view style="margin-top: 30rpx;" v-for="(item,index) in ProductList" :key="index">
+			<view style="margin-top: 30rpx;" v-for="(item,index) in ProductList" :key="index" @click="toDetails(item)">
 				<view class="u-flex">
 					<image v-if="index==0" style="width:64rpx;height:64rpx;margin-right: 20rpx;"
 						src="../../static/images/p1.png"></image>
@@ -89,7 +89,7 @@
 			<view style="margin-top: 20rpx;">
 				<swiper class="orange-content" :display-multiple-items="config.multiple || 3"
 					:next-margin="config.nextMargin+'rpx'">
-					<swiper-item v-for="(item,index) in stockList" :key="index">
+					<swiper-item v-for="(item,index) in stockList" :key="index" @click="toDetails(item)">
 						<view class="u-text-center"
 							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
 							<view>{{item.product_name_cn}}<text
@@ -111,7 +111,7 @@
 
 			<view style="margin-top: 20rpx;">
 				<u-row gutter="16">
-					<u-col span="3">
+<!-- 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==0}" @click="getxuan(0,'')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
 							<view>{{$t('all')}}</view>
@@ -120,7 +120,7 @@
 								v-if="xuan==0">
 							</view>
 						</view>
-					</u-col>
+					</u-col> -->
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==1}" @click="getxuan(1,'Newbie')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
@@ -180,7 +180,7 @@
 
 				</view>
 
-				<view style="color:#333333;margin-top: 10rpx;" v-for="(item,index) in stockProductListTab" :key="index">
+				<view style="color:#333333;margin-top: 10rpx;" v-for="(item,index) in stockProductListTab" :key="index" @click="toDetails(item)"> 
 					<u-row gutter="16">
 
 						<u-col span="5">
@@ -246,7 +246,7 @@
  
 				},
 				userInfo: JSON.parse(uni.getStorageSync('userInfo')),
-				xuan: 0,
+				xuan: 1,
 				but: 0,
 				ProductList: [],
 				stockList: [], // 精选股票
@@ -278,6 +278,11 @@
 			}
 		},
 		methods: {
+			toDetails(item) {
+				uni.navigateTo({
+					url: `/pages/product/details/details?id=${item.product_id}`
+				})
+			},
 			setTabbar() {
 				uni.setTabBarItem({
 					index: 0,
