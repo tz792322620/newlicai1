@@ -90,7 +90,8 @@
 
 <script>
 	import {
-		getUserInfo
+		getUserInfo,
+		getVerificationStatus
 	} from '@/api/api.js'
 	export default {
 		data() {
@@ -193,6 +194,7 @@
 		},
 		onLoad() {
 			this.getUser()
+			this.getUserVerificationStatus()
 		},
 		methods: {
 			// 退出登录
@@ -229,6 +231,11 @@
 					this.accountDetails[2].value = res.data.gift_points // 积分
 				}
 				console.log(this.userInfo)
+			},
+			// 获取用户实名认证状态
+			async getUserVerificationStatus() {
+				const res = await getVerificationStatus()
+				console.log(res)			
 			}
 		}
 	}

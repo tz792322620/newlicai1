@@ -2,8 +2,8 @@
 	<view class="buy">
 		<view class="box1">
 			<view class="box1_title">
-				<text class="box1_title_left">
-					{{$t('buy')}}
+				<text class="box1_title_left" :class="dataInfo.listing_type == 'Buy' ? '' : 'red'">
+					{{dataInfo.listing_type == 'Buy' ? $t('buy') : dataInfo.listing_type == 'Sell' ? $t('sell') : ''}}
 				</text>
 				<text class="box1_title_right">
 					USDT
@@ -75,8 +75,8 @@
 				<text class="box3_cell_left">{{dataInfo.user_nickname}}</text>
 			</view>
 		</view>
-		<view class="button" @click="buy">
-			{{$t('buyUSDT')}}
+		<view class="button" @click="buy" :class="dataInfo.listing_type == 'Buy' ? '' : 'red'">
+			{{dataInfo.listing_type == 'Buy' ? $t('buyUSDT') : dataInfo.listing_type == 'Sell' ? $t('sellUSDT') : ''}}
 		</view>
 	</view>
 </template>
@@ -95,15 +95,13 @@
 				price: '--'
 			}
 		},
-		onShow() {
-			uni.setNavigationBarTitle({
-				title: this.$t('buy')
-			})
-		},
 		onLoad(params) {
 			if (params.id) {
-				this.listing_id = params.id
+				this.data.listing_id = params.id
 				this.getData(params.id)
+				uni.setNavigationBarTitle({
+					title: this.dataInfo.listing_type == 'Buy' ? this.$t('buy') : this.$t('sell')
+				})
 			}
 		},
 		methods: {
@@ -115,6 +113,18 @@
 					})
 				}
 				const res = await createTrade(this.data)
+				if(res.code === 1) {
+					this.data.amount = ''
+					if (this.dataInfo.listing_type == 'Buy') {
+						uni.navigateTo({
+							url: `/pages/otc/order/order?id=${res.data.trade_id}`
+						})						
+					} else {
+						uni.navigateTo({
+							url: `/pages/otc/order/collect/collect_sell?id=${res.data.trade_id}`
+						})
+					}
+				}
 				console.log(res)
 			},
 			async confirm(e) {
@@ -156,6 +166,9 @@
 				&_left {
 					color: #35CBA5;
 					margin-right: 10rpx;
+					&.red {
+						color: #F75F52;
+					}
 				}
 				&_right {
 					color: #333333;
@@ -289,6 +302,9 @@
 			font-size: 32rpx;
 			font-weight: 600;
 			color: #FFFFFF;
+			&.red {
+				background: #f75e52;
+			}
 		}
 	}
 </style>

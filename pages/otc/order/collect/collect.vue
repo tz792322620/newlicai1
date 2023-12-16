@@ -3,116 +3,183 @@
 		<view class="collect_top">
 			<view class="collect_top_left">
 				<view class="title">
-					等待卖家确认收款
+					{{$t('waitingSeller')}}
 				</view>
 				<view class="sub-title">
-					此卖家95%的订单会在<text>05</text>分钟内完成
+					{{$t('collectTips1')}}<text>05</text>{{$t('collectTips2')}}
 				</view>
 			</view>
 			<view class="collect_top_right">
-				<u-count-down :timestamp="timestamp" font-size="44" color="#21BF90" separator-color="#21BF90"></u-count-down>
+				<u-count-down :show-hours="false" :timestamp="timestamp" font-size="44" color="#21BF90" separator-color="#21BF90"></u-count-down>
 			</view>
 		</view>
 		<view class="deal">
 			<view class="deal_title">
-				购买
+				{{$t('buy')}}
 				<text class="unit">USDT</text>
 			</view>
 			<view class="deal_cell">
 				<view class="deal_cell_left">
-					总额
+					{{$t('totalAmount')}}
 				</view>
 				<view class="deal_cell_right">
-					¥100.00
+					¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
 				</view>
 			</view>
 			<view class="deal_cell">
 				<view class="deal_cell_left">
-					单价
+					{{$t('unitPrice')}}
 				</view>
 				<view class="deal_cell_right">
-					¥7.04
+					¥{{tradeInfo.trade_price}}
 				</view>
 			</view>
 			<view class="deal_cell">
 				<view class="deal_cell_left">
-					数量
+					{{$t('quantity')}}
 				</view>
 				<view class="deal_cell_right">
-					14.20 USDT
+					{{tradeInfo.trade_amount}} USDT
 				</view>
 			</view>
-			<u-line color="#EDEDED" style="margin-top: 30rpx;"/>
-			<view class="deal_cell" style="margin-bottom: 30rpx;margin-top: 30rpx;">
+			<u-line color="#EDEDED" style="margin-top: 30rpx;" />
+			<!-- <view class="deal_cell" style="margin-bottom: 30rpx;margin-top: 30rpx;">
 				<view class="deal_cell_left">
 					订单号
 				</view>
 				<view class="deal_cell_right" style="display: flex;align-items: center;">
 					20230304123142154
-					<image src="@/static/images/otc/order/copy.png" mode="" style="width: 24rpx;height: 24rpx;margin-left: 20rpx;"></image>
+					<image src="../../../static/images/otc/order/copy.png" mode="" style="width: 24rpx;height: 24rpx;margin-left: 20rpx;"></image>
 				</view>
-			</view>
-			<view class="deal_cell">
+			</view> -->
+			<view class="deal_cell" style="margin-top: 30rpx;">
 				<view class="deal_cell_left">
-					创建时间
+					{{$t('creationTime')}}
 				</view>
 				<view class="deal_cell_right">
-					2023-03-04 12:31:20
+					{{tradeInfo.trade_date}}
 				</view>
 			</view>
 		</view>
-		<view class="one_item">
-			<view class="one_item_title">
-				银行卡
-			</view>
-			<view class="one_item_cell">
-				<view class="one_item_cell_left">
-					账户名
+		<swiper class="swiper" circular :indicator-dots="false" :autoplay="false">
+			<swiper-item v-for="(item,index) in tradeInfo.payment_infos" :key="index">
+				<view class="one_item">
+					<view class="one_item_title">
+						{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
+					</view>
+					<view class="one_item_cell">
+						<view class="one_item_cell_left">
+							{{$t('accountName')}}
+						</view>
+						<view class="one_item_cell_right">
+							{{item.user_name}}
+							<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.user_name)"></image>
+						</view>
+					</view>
+					<view class="one_item_cell">
+						<view class="one_item_cell_left" v-if="item.payment_type == '银行卡'">
+							{{$t('BankCardAccount')}}
+						</view>
+						<view class="one_item_cell_left" v-if="item.payment_type == '微信'">
+							{{$t('WeChatAccount')}}
+						</view>
+						<view class="one_item_cell_left" v-if="item.payment_type == '支付宝'">
+							{{$t('AlipayAccount')}}
+						</view>
+						<view class="one_item_cell_right">
+							{{item.account_number}}
+							<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.account_number)"></image>
+						</view>
+					</view>
+					<view class="one_item_cell" v-if="item.payment_type == '银行卡'">
+						<view class="one_item_cell_left">
+							{{$t('BankName')}}
+						</view>
+						<view class="one_item_cell_right">
+							{{item.bank_name}}
+							<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.bank_name)"></image>
+						</view>
+					</view>
+					<view class="one_item_cell" style="margin-top: 20rpx;padding-right: 10rpx;"
+						v-if="item.payment_type != '银行卡'">
+						<view class="one_item_cell_left">
+							{{$t('PaymentQRcode')}}
+						</view>
+						<view class="one_item_cell_right">
+							<image @click="clickImage(item.qr_code_image)" style="width: 60rpx;height: 60rpx;"
+								:src="$url + item.qr_code_image" mode=""></image>
+						</view>
+					</view>
 				</view>
-				<view class="one_item_cell_right">
-					李少华
-					<image src="../../../../static/images/otc/order/copy.png" mode=""></image>
-				</view>
-			</view>
-			<view class="one_item_cell">
-				<view class="one_item_cell_left">
-					银行卡号
-				</view>
-				<view class="one_item_cell_right">
-					6222  *** **** **** 2222
-					<image src="../../../../static/images/otc/order/copy.png" mode=""></image>
-				</view>
-			</view>
-			<view class="one_item_cell">
-				<view class="one_item_cell_left">
-					银行名称
-				</view>
-				<view class="one_item_cell_right">
-					工商银行
-					<image src="../../../../static/images/otc/order/copy.png" mode=""></image>
-				</view>
-			</view>
-		</view>
+			</swiper-item>
+		</swiper>
 		<view class="buttons">
-			<view class="buttons_cancel">
-				取消订单
+			<view class="buttons_cancel" @click="cancelOrder">
+				{{$t('cancelOrder')}}
 			</view>
 			<view class="buttons_appeal">
-				申诉
+				{{$t('appeal')}}
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import { cancelTrade } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				timestamp: 86400
+				timestamp: 300,
+				tradeInfo: ''
+			}
+		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('order')
+			})
+		},
+		onLoad(params) {
+			if (params) {
+				this.tradeInfo = JSON.parse(params.item)
 			}
 		},
 		methods: {
-			
+			// 取消订单
+			async cancelOrder() {
+				const res = await cancelTrade({
+					trade_id: this.tradeInfo.trade_id
+				})
+				if (res.code === 1) {
+					uni.showToast({
+						title: res.msg,
+						success: () => {
+							setTimeout(() => {
+							  uni.switchTab({
+							  	url: '/pages/otc/otc'
+							  })
+							}, 1000);
+						}
+					})
+				}
+			},
+			clickImage(url) {
+				uni.previewImage({
+					urls: [this.$url + url]
+				});
+			},
+			copy(item) {
+				let that = this
+				uni.setClipboardData({
+					data: item,
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							title: that.$t('contentCopied'),
+							icon: 'success'
+						})
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -170,9 +237,14 @@
 				margin-bottom: 20rpx;
 			}
 		}
-		.one_item {
-			margin-top: 22rpx;
+		.swiper {
+			background: #f6f9f8;
+			box-shadow: 0px 0px 24rpx 0px rgba(0, 0, 0, 0.06);
+			border-radius: 24rpx;
+			margin-top: 40rpx;
 			height: 316rpx;
+		}
+		.one_item {
 			background: #f6f9f8;
 			border-radius: 24rpx;
 			padding: 20rpx 30rpx 30rpx;
