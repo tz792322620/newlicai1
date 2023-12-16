@@ -60,7 +60,7 @@
 
 			<view class="transaction-item" v-for="(item,index) in list" :key="index">
 				<view>
-					<view class="transaction-name">{{item.description}}</view>
+					<view class="transaction-name">{{ getStatusTranslation(item.description) }}</view>
 					<view class="transaction-date">{{item.create_time | timestampFilter}}</view>
 				</view>
 				<view>
@@ -97,6 +97,10 @@
 			this.getList()
 		},
 		methods: {
+			getStatusTranslation(status) {
+							// console.log(status)
+			  return this.$t(status);
+			},
 			btnClick(item) {
 				if (item === 0) {
 					this.isTransfer = true

@@ -72,7 +72,8 @@
 			<view class="item" v-for="(item,index) in list" :key="index">
 				<view class="item_title">
 					<view class="item_title_left">
-						{{item.earnings_type}}
+				<!-- 		{{item.earnings_type}} -->
+						{{ getStatusTranslation(item.earnings_type) }}
 					</view>
 					<!-- <view class="item_title_right">
 						已完成

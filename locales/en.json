@@ -420,5 +420,14 @@
 			"signIn": "Sign in",
 			"withdrawal": "Withdrawal",
 			"withdrawFromYuebao": "Withdraw from Yuebao",
-			 "time": "Time"
+			 "time": "Time",
+			 "Interest": "Interest",
+			 "CapitalGain": "Capital Gain",
+			 "OTC Deposit": "OTC Deposit",
+			 "Create stock order": "Create stock order",
+			 "Sign in": "Sign in",
+			 "Withdrawal": "Withdrawal",
+			 "Withdraw from Yuebao": "Withdraw from Yuebao",
+			 "Backend recharge": "Backend recharge",
+			 "Create yuebao order": "Create Yuebao order"
 }
