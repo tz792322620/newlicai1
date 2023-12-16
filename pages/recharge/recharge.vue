@@ -15,7 +15,7 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value">
-						<u-input type="text" :placeholder="$t('chooseRechargeNetwork')" disabled v-model="address_type" />
+						<u-input type="text" :placeholder="$t('chooseRechargeNetwork')" disabled v-model="data.address_type" />
 					</view>
 					<uni-icons type="bottom"></uni-icons>
 				</view>
@@ -26,7 +26,7 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="text" :placeholder="$t('enterAddress')" v-model="recharge_address" />
+						<u-input type="text" :placeholder="$t('enterAddress')" v-model="data.recharge_address" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
@@ -37,7 +37,7 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="text" :placeholder="$t('enterAmount')"  v-model="recharge_amount" />
+						<u-input type="text" :placeholder="$t('enterAmount')"  v-model="data.recharge_amount" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
@@ -71,7 +71,8 @@
 				</view>
 			</u-popup>
 		</view>
-		<floating-customer-service></floating-customer-service>
+	<!-- 	<floating-customer-service></floating-customer-service> -->
+	<liu-drag-button @clickBtn="clickBtn">{{$t('customerService')}}</liu-drag-button>
 	</view>
 </template>
 
@@ -109,11 +110,27 @@
 				}, {
 					name: 'ETH',
 					value: 'eth'
-				}]
+				}], // 状态栏高度
+				customerServiceUrl: JSON.parse(uni.getStorageSync('support_link')) // 您的客服链接
 			};
 		},
 		onLoad() {},
 		methods: {
+			//点击按钮
+			clickBtn() {
+				console.log('按钮被点击了')
+				// #ifdef H5
+				// window.location.href = this.customerServiceUrl;
+				window.open(this.customerServiceUrl)
+				// #endif
+				// #ifdef APP-PLUS
+				plus.runtime.openURL(this.customerServiceUrl);
+				// #endif
+				// APP内部打开客服链接(页面已写,打开注释即可)
+				// uni.navigateTo({
+				// 	url: `/pages/home/webview/webview?url=${this.customerServiceUrl}`
+				// })
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1

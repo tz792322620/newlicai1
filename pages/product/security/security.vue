@@ -36,7 +36,7 @@
 			<view class="tip">
 				{{$t('forgotPassword')}}
 			</view>
-			<view class="tip" @click="toContractDetail(item)">
+			<view class="tip" @click="toContractDetail()">
 				{{$t('contractDetails')}}
 			</view>
 		</view>
