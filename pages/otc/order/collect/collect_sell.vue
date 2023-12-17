@@ -3,10 +3,10 @@
 		<view class="collect_top">
 			<view class="collect_top_left">
 				<view class="title">
-					{{$t('waitingSeller')}}
+					{{$t('waitingBuyers')}}
 				</view>
 				<view class="sub-title">
-					{{$t('collectTips1')}}<text>05</text>{{$t('collectTips2')}}
+					{{$t('waiting30')}}
 				</view>
 			</view>
 			<view class="collect_top_right">
@@ -15,7 +15,7 @@
 		</view>
 		<view class="deal">
 			<view class="deal_title">
-				{{$t('buy')}}
+				{{$t('sell')}}
 				<text class="unit">USDT</text>
 			</view>
 			<view class="deal_cell">
@@ -61,75 +61,33 @@
 				</view>
 			</view>
 		</view>
-		<swiper class="swiper" circular :indicator-dots="false" :autoplay="false">
-			<swiper-item v-for="(item,index) in tradeInfo.payment_infos" :key="index">
-				<view class="one_item">
-					<view class="one_item_title">
-						{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
-					</view>
-					<view class="one_item_cell">
-						<view class="one_item_cell_left">
-							{{$t('accountName')}}
-						</view>
-						<view class="one_item_cell_right">
-							{{item.user_name}}
-							<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.user_name)"></image>
-						</view>
-					</view>
-					<view class="one_item_cell">
-						<view class="one_item_cell_left" v-if="item.payment_type == '银行卡'">
-							{{$t('BankCardAccount')}}
-						</view>
-						<view class="one_item_cell_left" v-if="item.payment_type == '微信'">
-							{{$t('WeChatAccount')}}
-						</view>
-						<view class="one_item_cell_left" v-if="item.payment_type == '支付宝'">
-							{{$t('AlipayAccount')}}
-						</view>
-						<view class="one_item_cell_right">
-							{{item.account_number}}
-							<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.account_number)"></image>
-						</view>
-					</view>
-					<view class="one_item_cell" v-if="item.payment_type == '银行卡'">
-						<view class="one_item_cell_left">
-							{{$t('BankName')}}
-						</view>
-						<view class="one_item_cell_right">
-							{{item.bank_name}}
-							<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.bank_name)"></image>
-						</view>
-					</view>
-					<view class="one_item_cell" style="margin-top: 20rpx;padding-right: 10rpx;"
-						v-if="item.payment_type != '银行卡'">
-						<view class="one_item_cell_left">
-							{{$t('PaymentQRcode')}}
-						</view>
-						<view class="one_item_cell_right">
-							<image @click="clickImage(item.qr_code_image)" style="width: 60rpx;height: 60rpx;"
-								:src="$url + item.qr_code_image" mode=""></image>
-						</view>
-					</view>
-				</view>
-			</swiper-item>
-		</swiper>
-		<view class="buttons">
-			<view class="buttons_cancel" @click="cancelOrder">
-				{{$t('cancelOrder')}}
+		<view class="payment">
+			<view class="payment_title">
+				{{$t('tradeMethod')}}
 			</view>
+			<view class="payment_desc">
+				<text v-for="(item,index) in tradeInfo.payment_infos" :key="index">
+					{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
+				</text>
+			</view>
+		</view>
+		<view class="buttons">
 			<view class="buttons_appeal">
 				{{$t('appeal')}}
+			</view>
+			<view class="buttons_cancel" @click="confirm">
+				{{$t('confirmPayment')}}
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import { cancelTrade } from '@/api/api.js'
+	import { getTradeById,confirmPayment } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				timestamp: 300,
+				timestamp: 1800,
 				tradeInfo: ''
 			}
 		},
@@ -139,14 +97,20 @@
 			})
 		},
 		onLoad(params) {
-			if (params) {
-				this.tradeInfo = JSON.parse(params.item)
+			if (params.id) {
+				this.getTradeInfo(params.id)
 			}
 		},
 		methods: {
-			// 取消订单
-			async cancelOrder() {
-				const res = await cancelTrade({
+			async getTradeInfo(id) {
+				const res = await getTradeById(id)
+				console.log(res)
+				if (res.code === 1) {
+					this.tradeInfo = res.data
+				}
+			},
+			async confirm() {
+				const res = await confirmPayment({
 					trade_id: this.tradeInfo.trade_id
 				})
 				if (res.code === 1) {
@@ -161,24 +125,6 @@
 						}
 					})
 				}
-			},
-			clickImage(url) {
-				uni.previewImage({
-					urls: [this.$url + url]
-				});
-			},
-			copy(item) {
-				let that = this
-				uni.setClipboardData({
-					data: item,
-					showToast: false,
-					success: function() {
-						uni.showToast({
-							title: that.$t('contentCopied'),
-							icon: 'success'
-						})
-					}
-				})
 			}
 		}
 	}
@@ -218,7 +164,7 @@
 			&_title {
 				font-size: 32rpx;
 				font-weight: 600;
-				color: #21BF90;
+				color: #F75F52;
 				line-height: 44rpx;
 				margin-bottom: 38rpx;
 				.unit {
@@ -281,6 +227,40 @@
 				font-weight: 400;
 				color: #333333;
 				line-height: 40rpx;
+			}
+		}
+		.payment {
+			margin-top: 22rpx;
+			padding: 20rpx 30rpx;
+			background-color: #F7F9F9;
+			border-radius: 12rpx;
+		
+			&_title {
+				font-size: 28rpx;
+				font-weight: 600;
+				color: #333333;
+				line-height: 40rpx;
+				margin-bottom: 20rpx;
+			}
+		
+			&_desc {
+				font-size: 28rpx;
+				font-weight: 400;
+				color: #333333;
+				line-height: 40rpx;
+				padding-left: 14rpx;
+				position: relative;
+		
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 4rpx;
+					height: 20rpx;
+					background: #FFAC00;
+				}
 			}
 		}
 		.buttons {

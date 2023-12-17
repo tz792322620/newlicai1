@@ -90,7 +90,7 @@
 							:custom-style="customStyle2" shape="circle" type="primary" @click="toBuy(item)">{{$t('buy')}}
 						</u-button>
 						<u-button v-if="but === 1" ripple-bg-color="#fff" :ripple="true" style="font-size:28rpx;"
-							:custom-style="customStyle1" shape="circle" type="primary">{{$t('sell')}}</u-button>
+							:custom-style="customStyle1" shape="circle" type="primary" @click="toBuy(item)">{{$t('sell')}}</u-button>
 					</view>
 				</view>
 				<u-line color="#F3F3F3"></u-line>

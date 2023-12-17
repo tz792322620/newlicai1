@@ -264,6 +264,13 @@
 			}
 
 		}, {
+			"path": "pages/otc/order/collect/collect_sell",
+			"style": {
+				"navigationBarTitleText": "订单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
 			"path": "pages/otc/order/appeal/appeal",
 			"style": {
 				"navigationBarTitleText": "提交申诉",

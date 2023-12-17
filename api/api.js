@@ -208,6 +208,36 @@ export function createTrade(data) {
 		data
 	})
 }
+// 根据trade_id查询交易记录
+export function getTradeById(id) {
+	return request({
+		url: `/otc/getTradeById?trade_id=${id}`
+	})
+}
+// 取消交易由买方执行，取消交易并退款
+export function cancelTrade(data) {
+	return request({
+		url: '/otc/cancelTrade',
+		method: 'POST',
+		data
+	})
+}
+// OTC买方上传付款后的凭证截图
+export function uploadPaymentImage(data) {
+	return request({
+		url: '/otc/uploadPaymentImage',
+		method: 'POST',
+		data
+	})
+}
+// OTC卖方确认收款并完成交易
+export function confirmPayment(data) {
+	return request({
+		url: '/otc/confirmPayment',
+		method: 'POST',
+		data
+	})
+}
 // 用户个人信息
 export function getUserInfo() {
 	return request({
