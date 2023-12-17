@@ -89,7 +89,7 @@
 			};
 		},
 		onLoad() {
-			this.getData()
+			// this.getData()
 		
 		},
 		methods: {

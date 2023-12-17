@@ -539,5 +539,22 @@
 		"cancelItem3": "卖家要额外收取费用",
 		"cancelItem4": "卖家收款方式有问题，无法成功打款",
 		"cancelItem5": "卖家无法放行，卖家已退款给我",
-		"cancelItem6": "其他"
+		"cancelItem6": "其他",
+		"successfullyUSDT": "您已成功购买USDT",
+		"buyAgain": "再次购买",
+		"buyerAppeal": "买家申诉中",
+		"sellerAppeal": "卖家申诉中",
+		"appealWillBeAt": "申诉会在",
+		"completedWithin": "内完成",
+		"cancelAppeal": "取消申诉",
+		"appealProcessed": "申诉已处理",
+		"watingAppealResult": "等待申诉结果",
+		"appealReasons": "申诉理由",
+		"appealVoucher": "申诉凭证",
+		"uploadVoucher": "上传凭证",
+		"appealPlaceholder": "请描述您的申诉理由",
+		"uploadVoucherPlaceholder": "请上传申诉凭证",
+		"appealTips1": "1.提交的内容对双方和客服可见，避免包含任何隐私或敏感信息；",
+		"appealTips2": "2.恶意申诉属于扰乱平台正常运营秩序行为，情节严重将冻结账户",
+		"appealTips3": "3.客服介入需要几个小时，如没有提交证明，客服将通知双方上传更多证明，请耐心等待。"
 }

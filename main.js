@@ -20,7 +20,7 @@ import Vue from 'vue'
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-	locale: 'zh-CN', // 设置默认语言
+	locale: uni.getStorageSync('language') ? uni.getStorageSync('language') : 'zh-CN', // 设置默认语言
 	messages: {
 		en,
 		'zh-CN': zhCN,

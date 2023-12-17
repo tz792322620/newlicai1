@@ -72,7 +72,7 @@
 			</view>
 		</view>
 		<view class="buttons">
-			<view class="buttons_appeal">
+			<view class="buttons_appeal" @click="toAppeal">
 				{{$t('appeal')}}
 			</view>
 			<view class="buttons_cancel" @click="confirm">
@@ -87,8 +87,10 @@
 	export default {
 		data() {
 			return {
+				userId: JSON.parse(uni.getStorageSync('userInfo')).user_id,
 				timestamp: 1800,
-				tradeInfo: ''
+				tradeInfo: '',
+				identity: ''
 			}
 		},
 		onShow() {
@@ -102,11 +104,18 @@
 			}
 		},
 		methods: {
+			toAppeal() {
+				uni.navigateTo({
+					url: `/pages/otc/order/appeal/appeal?identity=${this.identity}&id=${this.tradeInfo.trade_id}`
+				})
+			},
 			async getTradeInfo(id) {
 				const res = await getTradeById(id)
 				console.log(res)
 				if (res.code === 1) {
 					this.tradeInfo = res.data
+					const userId = JSON.parse(uni.getStorageSync('userInfo')).user_id
+					this.identity = userId == res.data.seller_id ? 'seller' : userId == res.data.buyer_id ? 'buyer' : ''
 				}
 			},
 			async confirm() {

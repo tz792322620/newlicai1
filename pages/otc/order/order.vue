@@ -107,7 +107,7 @@
 	export default {
 		data() {
 			return {
-				timestamp: 900,
+				timestamp: 1200,
 				tradeInfo: '',
 				tradeId: '',
 				currentTimestamp: 0
@@ -158,7 +158,7 @@
 			},
 			toPay() {
 				uni.navigateTo({
-					url: `/pages/otc/order/pay/pay?timestamp=${this.currentTimestamp}&item=${JSON.stringify(this.tradeInfo)}`
+					url: `/pages/otc/order/pay/pay?timestamp=${this.currentTimestamp}&id=${this.tradeId}`
 				})
 			}
 		}

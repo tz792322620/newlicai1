@@ -13,6 +13,11 @@
 				
 			}
 		},
+		onShow() {
+			uni.setNavigationBarTitle({
+				title: this.$t('realNameAuthentication')
+			})
+		},
 		methods: {
 			
 		}

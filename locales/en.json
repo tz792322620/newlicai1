@@ -535,5 +535,22 @@
 				  "cancelItem3": "Sellers charge additional fees",
 				  "cancelItem4": "There is a problem with the seller's payment method and the payment cannot be made successfully.",
 				  "cancelItem5": "The seller was unable to release the goods and the seller has refunded me the money.",
-				  "cancelItem6": "other"
+				  "cancelItem6": "other",
+				  "successfullyUSDT": "You have successfully purchased USDT",
+				  "buyAgain": "buy again",
+				  "buyerAppeal": "Buyer is complaining",
+				  "sellerAppeal": "The seller is appealing",
+				  "appealWillBeAt": "The appeal will be at",
+				  "completedWithin": "completed within",
+				  "cancelAppeal": "Cancel appeal",
+				  "appealProcessed": "Appeal has been processed",
+				  "watingAppealResult": "Waiting for appeal result",
+				  "appealReasons": "Reasons for appeal",
+				  "appealVoucher": "Appeal voucher",
+				  "uploadVoucher": "upload certificate",
+				  "appealPlaceholder": "Please describe the reason for your appeal",
+				  "uploadVoucherPlaceholder": "Please upload the appeal voucher",
+				  "appealTips1": "1. The submitted content is visible to both parties and customer service, and avoid containing any private or sensitive information;",
+				  "appealTips2": "2. Malicious complaints are behaviors that disrupt the normal operation order of the platform. If the circumstances are serious, the account will be frozen.",
+				  "appealTips3": "3. It will take several hours for customer service to intervene. If no proof is submitted, customer service will notify both parties to upload more proofs. Please wait patiently."
 }

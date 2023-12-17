@@ -25,7 +25,7 @@
 							USDT
 						</view>
 					</view>
-					<view class="content_item_top_right">
+					<view class="content_item_top_right" @click="toOrderStatus(item)">
 						<view class="status" v-if="item.status == 'Pending'&&item.payment_proof_status == 'Pending'">
 							{{$t('paymentScreenshot')}}
 						</view>
@@ -191,10 +191,10 @@
 		data() {
 			return {
 				userInfo: JSON.parse(uni.getStorageSync('userInfo')),
-				trade_type: 'Buy',
+				trade_type: '',
 				start_date: '',
 				end_date: '',
-				status: 'Pending',
+				status: '',
 				orderList: [],
 				show: false,
 				mode: 'range',
@@ -268,6 +268,28 @@
 			this.getOrderList()
 		},
 		methods: {
+			toOrderStatus(item) {
+				const dateTime = Date.parse(new Date())/1000 // 获取当前时间戳秒级
+				const currentTimestamp = 1200 - (dateTime - item.create_time)
+				console.log(currentTimestamp)
+				if (item.status == 'Pending'&&item.payment_proof_status == 'Pending') {
+					uni.navigateTo({
+						url: `/pages/otc/order/pay/pay?timestamp=${currentTimestamp}&id=${item.trade_id})}`
+					})
+					return
+				}
+				if (item.status == 'Pending'&&item.payment_proof_status != 'Pending') {
+					return uni.navigateTo({
+						url: `/pages/otc/order/collect/collect?timestamp=${currentTimestamp}&id=${item.trade_id}`
+					})
+					return
+				}
+				if (item.status!= 'Pending') {
+					uni.navigateTo({
+						url: `/pages/otc/order/status/status?id=${item.trade_id}`
+					})
+				}
+			},
 			async getOrderList() {
 				const res = await getUserTrades(this.trade_type, this.start_date, this.end_date, this.status)
 				if (res.code === 1) {

@@ -117,7 +117,7 @@
 			<view class="buttons_cancel" @click="cancelOrder">
 				{{$t('cancelOrder')}}
 			</view>
-			<view class="buttons_appeal">
+			<view class="buttons_appeal" @click="toAppeal">
 				{{$t('appeal')}}
 			</view>
 		</view>
@@ -125,12 +125,13 @@
 </template>
 
 <script>
-	import { cancelTrade } from '@/api/api.js'
+	import { cancelTrade,getTradeById } from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				timestamp: 300,
-				tradeInfo: ''
+				tradeInfo: '',
+				identity: ''
 			}
 		},
 		onShow() {
@@ -140,10 +141,21 @@
 		},
 		onLoad(params) {
 			if (params) {
-				this.tradeInfo = JSON.parse(params.item)
+				// this.tradeInfo = JSON.parse(params.item)
+				this.timestamp = params.timestamp
+				this.getTradeInfo(params.id)
 			}
 		},
 		methods: {
+			async getTradeInfo(id) {
+				const res = await getTradeById(id)
+				console.log(res)
+				if (res.code === 1) {
+					this.tradeInfo = res.data
+					const userId = JSON.parse(uni.getStorageSync('userInfo')).user_id
+					this.identity = userId == res.data.seller_id ? 'seller' : userId == res.data.buyer_id ? 'buyer' : ''
+				}
+			},
 			// 取消订单
 			async cancelOrder() {
 				const res = await cancelTrade({
@@ -178,6 +190,11 @@
 							icon: 'success'
 						})
 					}
+				})
+			},
+			toAppeal() {
+				uni.navigateTo({
+					url: `/pages/otc/order/appeal/appeal?identity=${this.identity}&id=${this.tradeInfo.trade_id}`
 				})
 			}
 		}

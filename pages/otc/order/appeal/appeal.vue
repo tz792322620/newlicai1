@@ -1,6 +1,6 @@
 <template>
 	<view class="appeal">
-		<view class="item">
+		<!-- <view class="item">
 			<view class="desc">
 				联系姓名
 			</view>
@@ -15,60 +15,122 @@
 			<view class="input">
 				<u-input placeholder="请输入联系电话" v-model="name"></u-input>
 			</view>
-		</view>
+		</view> -->
 		<view style="margin-bottom: 12rpx;">
 			<view class="item" style="margin-bottom: 0;">
 				<view class="desc">
-					申诉理由
+					{{$t('appealReasons')}}
 				</view>
 				<view class="textarea">
-					<textarea name="" id="" cols="30" rows="10" placeholder="请描述您的申诉理由"></textarea>
+					<textarea style="height: 180rpx;"  :maxlength="500" v-model="data.complaint_content"  :placeholder="$t('appealPlaceholder')"></textarea>
 				</view>
 			</view>
 			<view class="text" style="font-size: 20rpx;font-weight: 400;color: #333333;line-height: 28rpx;text-align: right;">
-				0/500
+				{{data.complaint_content.length}}/500
 			</view>
 		</view>
 		<view class="item">
 			<view class="desc">
-				申诉凭证
+				{{$t('appealVoucher')}}
 			</view>
-			<u-upload :custom-btn="true">
-				<view slot="addBtn" class="slot-btn" hover-class="slot-btn__hover" hover-stay-time="150">
-					<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
-					<text>上传凭证</text>
-				</view>
-			</u-upload>
+			<view class="slot-btn" @click="uploadImage" v-if="!data.appeal_proof">
+				<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
+				<text>{{$t('uploadVoucher')}}</text>
+			</view>
+			<view style="width: 280rpx;height: 200rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
+				<image :src="$url + data.appeal_proof" mode="" style="width: 100%;height: 100%;"></image>
+			</view>
 		</view>
 		<view class="tips">
 			<view class="tips_title">
-				温馨提示
+				{{$t('tips')}}
 			</view>
 			<view class="tips_text">
-				1.提交的内容对双方和客服可见，避免包含任何隐私或敏感信息；
+				{{$t('appealTips1')}}
 			</view>
 			<view class="tips_text">
-				2.恶意申诉属于扰乱平台正常运营秩序行为，情节严重将冻结账户；
+				{{$t('appealTips2')}}
 			</view>
 			<view class="tips_text">
-				3.客服介入需要几个小时，如没有提交证明，客服将通知双方上传更多证明，请耐心等待。
+				{{$t('appealTips3')}}
 			</view>
 		</view>
-		<view class="button">
-			提交
+		<view class="button" @click="confirm">
+			{{$t('submit')}}
 		</view>
 	</view>
 </template>
 
 <script>
+	import { createComplaint } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				name: ''
+				data: {
+					trade_id: '',
+					complaint_content: '',
+					appeal_proof: '',
+					complainant: ''
+				}
+			}
+		},
+		onLoad(params) {
+			console.log(params, 'params')
+			if(params) {
+				this.data.trade_id = params.id
+				this.data.complainant = params.identity
 			}
 		},
 		methods: {
-			
+			async confirm() {
+				if (this.$u.test.isEmpty(this.data.complaint_content)) {
+					return uni.showToast({
+						title: this.$t('appealPlaceholder'),
+						icon: "none"
+					})
+				}
+				if (this.$u.test.isEmpty(this.data.appeal_proof)) {
+					return uni.showToast({
+						title: this.$t('uploadVoucherPlaceholder'),
+						icon: "none"
+					})
+				}
+				console.log(this.data)
+				const res = await createComplaint(this.data)
+				if (res.code === 1) {
+					uni.navigateTo({
+						url: `/pages/otc/order/appeal/appealResult?id=${this.data.trade_id}`
+					})
+				}
+			},
+			uploadImage() {
+				uni.chooseImage({
+					success: (chooseImageRes) => {
+						const tempFilePaths = chooseImageRes.tempFilePaths;
+						console.log(tempFilePaths[0])
+						uni.uploadFile({
+							url: this.$url + '/api/image/upload',
+							filePath: tempFilePaths[0],
+							name: 'image',
+							formData: {
+								'image': tempFilePaths[0]
+							},
+							success: (uploadFileRes) => {
+								const res = JSON.parse(uploadFileRes.data)
+								if (res.code === 1) {
+									this.data.appeal_proof = res.data.url
+									console.log(this.data.appeal_proof)
+								} else {
+									uni.showToast({
+										title: res.msg,
+										icon: 'none'
+									})
+								}
+							}
+						});
+					}
+				})
+			}
 		}
 	}
 </script>
@@ -84,6 +146,28 @@
 				color: #333333;
 				line-height: 34rpx;
 				margin-bottom: 20rpx;
+			}
+			.slot-btn {
+				border: 1rpx dashed #35CBA5;
+				width: 280rpx;
+				height: 200rpx;
+				border-radius: 12rpx;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #F4F5F7;
+				image {
+					width: 48rpx;
+					height: 48rpx;
+				}
+					
+				text {
+					font-size: 28rpx;
+					font-weight: 500;
+					color: #35CBA5;
+					line-height: 40rpx;
+					letter-spacing: 1rpx;
+				}
 			}
 			.input {
 				height: 90rpx;

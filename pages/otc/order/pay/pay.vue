@@ -4,7 +4,7 @@
 			{{$t('paySeller')}}
 		</view>
 		<view class="sub-title">
-			{{$t('orderWill')}}<u-count-down :timestamp="timestamp" font-size="32" color="#21BF90" separator-color="#21BF90">
+			{{$t('orderWill')}}<u-count-down :timestamp="timestamp" font-size="32" color="#21BF90" separator-color="#21BF90"  @change="change">
 			</u-count-down>{{$t('cancelAfter')}}
 		</view>
 		<view class="price">
@@ -97,13 +97,14 @@
 </template>
 
 <script>
-	import { uploadPaymentImage } from '@/api/api.js'
+	import { uploadPaymentImage,getTradeById } from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				timestamp: 0,
 				tradeInfo: '',
-				payment_image: ''
+				payment_image: '',
+				currentTimestamp: 0
 			}
 		},
 		onShow() {
@@ -114,10 +115,17 @@
 		onLoad(params) {
 			if (params) {
 				this.timestamp = params.timestamp
-				this.tradeInfo = JSON.parse(params.item)
+				this.getTradeInfo(params.id)
 			}
 		},
 		methods: {
+			async getTradeInfo(id) {
+				const res = await getTradeById(id)
+				console.log(res)
+				if (res.code === 1) {
+					this.tradeInfo = res.data
+				}
+			},
 			uploadImage() {
 				uni.chooseImage({
 					success: (chooseImageRes) => {
@@ -146,7 +154,17 @@
 					}
 				})
 			},
+			// 事件触发，每秒一次
+			change(timestamp) {
+				this.currentTimestamp = timestamp
+			},
 			async toCollect() {
+				if (this.$u.test.isEmpty(this.payment_image)) {
+					return uni.showToast({
+						title: this.$t('uploadPaymentVoucher'),
+						icon: "none"
+					})
+				}
 				const res = await uploadPaymentImage({
 					trade_id: this.tradeInfo.trade_id,
 					payment_image: this.payment_image
@@ -157,7 +175,7 @@
 						success: () => {
 							setTimeout(() => {
 								uni.navigateTo({
-									url: `/pages/otc/order/collect/collect?item=${JSON.stringify(this.tradeInfo)}`
+									url: `/pages/otc/order/collect/collect?timestamp=${this.currentTimestamp}&id=${this.tradeInfo.trade_id}`
 								})
 							}, 1000);
 						}

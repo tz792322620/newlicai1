@@ -194,7 +194,6 @@
 		},
 		onLoad() {
 			this.getUser()
-			this.getUserVerificationStatus()
 		},
 		methods: {
 			// 退出登录
@@ -215,6 +214,10 @@
 			},
 			navigateTo(url) {
 				console.log(url)
+				if (url == '/pages/verify/verify') {
+					this.getUserVerificationStatus()
+					return
+				}
 				// 使用uni-app的跳转方式
 				uni.navigateTo({
 					url: url
@@ -235,7 +238,15 @@
 			// 获取用户实名认证状态
 			async getUserVerificationStatus() {
 				const res = await getVerificationStatus()
-				console.log(res)			
+				if (res.code === 1) {
+					uni.navigateTo({
+						url: '/pages/verify/successfully/successfully'
+					})
+				} else if (res.code === 0) {
+					uni.navigateTo({
+						url: '/pages/verify/pending/pending'
+					})
+				}		
 			}
 		}
 	}

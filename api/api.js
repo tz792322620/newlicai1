@@ -238,6 +238,22 @@ export function confirmPayment(data) {
 		data
 	})
 }
+// otc投诉(买家上传图片后卖家未收到)
+export function createComplaint(data) {
+	return request({
+		url: '/otc/createComplaint',
+		method: 'POST',
+		data
+	})
+}
+// 申诉方取消申诉
+export function cancelComplaint(data) {
+	return request({
+		url: '/otc/cancelComplaint',
+		method: 'POST',
+		data
+	})
+}
 // 用户个人信息
 export function getUserInfo() {
 	return request({
