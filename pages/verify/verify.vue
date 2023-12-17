@@ -74,7 +74,7 @@
 </template>
 
 <script>
-	import { submitVerification } from '@/api/api.js'
+	import { submitVerification,getVerificationStatus } from '@/api/api.js'
 	export default {
 		data() {
 			return {
@@ -88,13 +88,30 @@
 				}
 			};
 		},
+		onLoad() {
+			this.getData()
+		
+		},
 		methods: {
+			async getData(){
+				const res = await getVerificationStatus(this.data)
+				if (res.code === 1) {
+					uni.navigateTo({
+						url: '/pages/verify/successfully/successfully'
+					})
+				} else if (res.code === 0) {
+					uni.navigateTo({
+						url: '/pages/verify/pending/pending'
+					})
+				}
+			},
 			goBack() {
 				// 返回上一页
 				uni.navigateBack({
 					delta: 1,
 				});
 			},
+
 			uploadImage(type) {
 				uni.chooseImage({
 					success: (chooseImageRes) => {

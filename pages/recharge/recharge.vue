@@ -91,10 +91,11 @@
 				data: {
 					recharge_amount: '',
 					recharge_address: '',
-					network_type: ''
+					network_type: '',
+					address_type: '',
+					address_value: '',
 				},
-				address_type: '',
-				address_value: '',
+
 				show: false,
 				activeIndex: -1,
 				address: '',
@@ -197,8 +198,8 @@
 			},
 
 			tabsClick(item, index) {
-				this.address_type = item.name
-				this.address_value = item.value
+				this.data.address_type = item.name
+				this.data.address_value = item.value
 				this.activeIndex = index
 				// this.getAdress()
 				this.show = false

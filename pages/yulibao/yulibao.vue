@@ -129,6 +129,7 @@
 							this.popupShow = false
 							this.data.amount = ''
 							this.getData()
+							this.getList()
 							// this.getRecords()
 						}
 					})
