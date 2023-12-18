@@ -40,7 +40,10 @@
     <p style="line-height: 16pt;">{{$t('endOfMainContent')}}</p>
     <p style="line-height: 16pt;">{{$t('partyASignature')}}:
       <div class="seal-container">
-        <image class="seal-image" :src="fullImagePath(details.product.manager_seal_image)"></image>
+      <!-- <image class="seal-image" :src="details.contract.signature_image_path"></image> -->
+	   <image class="seal-image" :src='details.contract.signature_image_path.replace(/[\r\n]/g, "")'></image>
+ 
+ 
       </div>
     </p>
     <p style="line-height: 16pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
@@ -52,7 +55,7 @@
     <p style="line-height: 16pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
     <p style="line-height: 16pt;">{{$t('partyCSignature')}}:
       <div class="seal-container">
-        <image class="seal-image" :src="fullImagePath(details.product.manager_seal_image)"></image>
+        <image class="seal-image" :src="fullImagePath(details.product.guarantor_seal_image)"></image>
       </div>
     </p>
     <p style="line-height: 16pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>

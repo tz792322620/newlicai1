@@ -93,9 +93,9 @@
 				<view class="custom-field">
 					<!-- 文本内容 -->
 					<text class="custom-label">{{$t('inviteLink')}}</text>
-					<text class="custom-label" style="text-align: end;">{{($url + `/#/pages/login/register_em?referral_code=${inviteCode}`) | ellipsis}}</text>
+					<text class="custom-label" style="text-align: end;">{{(dataInfo.url + `/#/pages/login/register_em?referral_code=${inviteCode}`) | ellipsis}}</text>
 					<!-- 图片图标 -->
-					<image class="custom-icon" @click="copy($url + `/#/pages/login/register_em?referral_code=${inviteCode}`)" src="../../static/images/invite/fz.png"></image>
+					<image class="custom-icon" @click="copy(dataInfo.url + `/#/pages/login/register_em?referral_code=${inviteCode}`)" src="../../static/images/invite/fz.png"></image>
 				</view>
 			</view>
 		</view>

@@ -219,7 +219,7 @@
 			&_content {
 				padding: 0 40rpx;
 				.box1 {
-					height: 56rpx;
+					// height: 56rpx;
 					background: rgba(53, 203, 165, .16);
 					border-radius: 8rpx;
 					display: flex;
