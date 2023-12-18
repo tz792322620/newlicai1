@@ -16,7 +16,7 @@
     <p style="line-height: 16pt;"><span >{{$t('maturityDateLabel')}}</span><span style="text-decoration: underline;">：{{details.order.purchase_date}}</span></p>
     <p style="line-height: 16pt;"><span >{{$t('totalReceivableLabel')}}</span><span style="text-decoration: underline;">：{{details.order.purchase_amount}}</span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('sectionTwo')}}</span></b></p>
-    <p style="line-height: 16pt;"><span >{{$t('clause2.1')}}</span></p>
+    <p style="line-height: 16pt;"><span >{{$t('clause2.1')}}</span></p> 
     <p style="line-height: 16pt;"><span >{{$t('clause2.2')}}</span></p>
     <p style="line-height: 16pt;"><span >{{$t('clause2.3')}}</span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('sectionThree')}}</span></b></p>
@@ -41,7 +41,8 @@
     <p style="line-height: 16pt;">{{$t('partyASignature')}}:
       <div class="seal-container">
       <!-- <image class="seal-image" :src="details.contract.signature_image_path"></image> -->
-	   <image class="seal-image" :src='details.contract.signature_image_path.replace(/[\r\n]/g, "")'></image>
+	  
+	   <image class="seal-image" v-if="details.contract.signature_image_path" :src='details.contract.signature_image_path.replace(/[\r\n]/g, "")'></image>
  
  
       </div>
@@ -60,7 +61,7 @@
     </p>
     <p style="line-height: 16pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
   </view>
-</template>
+</template> 
 
 <script>
 	import { getStockOrderAndContractById } from '@/api/api.js'
