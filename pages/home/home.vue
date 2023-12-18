@@ -258,7 +258,7 @@
 				but: 0,
 				ProductList: [],
 				stockList: [], // 精选股票
-				tabName: '', // 选项卡内容(查询参数)
+				tabName: 'Newbie', // 选项卡内容(查询参数)
 				stockProductListTab: [],
 				notice: '', // 公告
 				statusBarHeight: 0, // 状态栏高度

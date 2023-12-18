@@ -4,6 +4,12 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			console.log(uni.getStorageSync('token'))
+			if (uni.getStorageSync('token')) {
+				uni.switchTab({
+					url: '/pages/home/home'
+				})
+			}
 		},
 		onShow: function() {
 			console.log('App Show')
