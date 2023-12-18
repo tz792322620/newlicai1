@@ -176,7 +176,7 @@
 					},
 					{
 						image: '../../static/images/my/d3.png',
-						title: this.$t('withdrawalRecord'),
+						title: this.$t('withdrawalRecord'), 
 						url: '/pages/withdraw/records/records'
 					},
 					{
