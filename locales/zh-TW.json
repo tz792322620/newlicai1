@@ -557,5 +557,11 @@
 		  "uploadVoucherPlaceholder": "請上傳申訴憑證",
 		  "appealTips1": "1.提交的內容對雙方和客服可見，避免包含任何隱私或敏感信息；",
 		  "appealTips2": "2.惡意申訴屬于擾亂平台正常運營秩序行爲，情節嚴重將凍結賬戶",
-		  "appealTips3": "3.客服介入需要幾個小時，如沒有提交證明，客服將通知雙方上傳更多證明，請耐心等待。"
+		  "appealTips3": "3.客服介入需要幾個小時，如沒有提交證明，客服將通知雙方上傳更多證明，請耐心等待。",
+		    "congratulations": "恭喜您認證成功！",
+		    "verificationComplete": "您已完成身份認證，快去開啟您的交易吧！",
+		    "identityInfo": "身份信息",
+		    "authenticatedName": "認證姓名",
+		    "documentNumber": "證件號",
+		    "authenticationTime": "認證時間"
 }

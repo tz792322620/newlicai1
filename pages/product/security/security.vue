@@ -162,10 +162,10 @@
 					})
 				}
 				const res = await createStockOrder(this.investData)
-				console.log(res)
+				console.log(res) 
 				if (res.code === 1) {
-					uni.switchTab({
-						url: '/pages/product/product'
+					uni.navigateTo({
+						url: '/pages/my/order/order'
 					})
 				}
 			}

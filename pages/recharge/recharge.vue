@@ -183,7 +183,7 @@
 				const res = await createRecharge(this.data);
 				if (res.code === 1) {
 					uni.showToast({
-						title: this.$t('rechargeSuccess'), // 修改为多语言引用
+						title: res.msg, // 修改为多语言引用
 						icon: 'none'
 					});
 					uni.navigateTo({
@@ -191,7 +191,7 @@
 					});
 				} else {
 					uni.showToast({
-						title: this.$t('rechargeFailed'), // 修改为多语言引用
+						title: res.msg, // 修改为多语言引用
 						icon: 'none'
 					});
 				}

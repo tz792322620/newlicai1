@@ -29,10 +29,12 @@
 			uni.setNavigationBarTitle({
 				title: this.$t('notice')
 			})
+			this.getNotice()
 		},
 		onLoad() {
 			this.getNotice()
 		},
+		
 		methods: {
 			toDetails(item) {
 				uni.navigateTo({

@@ -556,5 +556,11 @@
 		"uploadVoucherPlaceholder": "请上传申诉凭证",
 		"appealTips1": "1.提交的内容对双方和客服可见，避免包含任何隐私或敏感信息；",
 		"appealTips2": "2.恶意申诉属于扰乱平台正常运营秩序行为，情节严重将冻结账户",
-		"appealTips3": "3.客服介入需要几个小时，如没有提交证明，客服将通知双方上传更多证明，请耐心等待。"
+		"appealTips3": "3.客服介入需要几个小时，如没有提交证明，客服将通知双方上传更多证明，请耐心等待。",
+		  "congratulations": "恭喜您认证成功！",
+		  "verificationComplete": "您已完成身份认证，快去开启您的交易吧！",
+		  "identityInfo": "身份信息",
+		  "authenticatedName": "认证姓名",
+		  "documentNumber": "证件号",
+		  "authenticationTime": "认证时间"
 }

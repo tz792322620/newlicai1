@@ -2,16 +2,16 @@
 	<view class="successfully">
 		<view class="tips">
 			<image src="../../../static/images/verify/successfully.png" mode=""></image>
-			<text class="title">恭喜您认证成功！</text>
-			<text class="sub-title">您已完成身份认证，快去开启您的交易吧！</text>
+			<text class="title">{{$t('congratulations')}}</text>
+			<text class="sub-title">{{$t('verificationComplete')}}</text>
 		</view>
-		<view class="info">
+<!-- 		<view class="info">
 			<view class="info_title">
-				身份信息
+				{{$t('identityInfo')}}
 			</view>
 			<view class="info_cell">
 				<view class="info_cell_left">
-					认证姓名
+					{{$t('authenticatedName')}}
 				</view>
 				<view class="info_cell_right">
 					张美女
@@ -19,7 +19,7 @@
 			</view>
 			<view class="info_cell">
 				<view class="info_cell_left">
-					证件号
+					{{$t('documentNumber')}}
 				</view>
 				<view class="info_cell_right">
 					4111**********0000
@@ -27,15 +27,16 @@
 			</view>
 			<view class="info_cell">
 				<view class="info_cell_left">
-					认证时间
+					{{$t('authenticationTime')}}
 				</view>
 				<view class="info_cell_right">
 					2023-03-14 20:20:00
 				</view>
 			</view>
-		</view>
+		</view> -->
 	</view>
 </template>
+
 
 <script>
 	export default {
@@ -75,6 +76,7 @@
 				color: #333333;
 				font-weight: 600;
 				margin-bottom: 12rpx;
+				text-align: center;
 			}
 			.sub-title {
 				font-size: 24rpx;

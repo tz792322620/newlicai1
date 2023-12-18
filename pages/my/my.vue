@@ -195,6 +195,9 @@
 		onLoad() {
 			this.getUser()
 		},
+		onShow(){
+			this.getUser()
+		},
 		methods: {
 			// 退出登录
 			logout() {
