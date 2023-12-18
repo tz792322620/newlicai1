@@ -76,8 +76,8 @@
 	"activityItem1": "Activity",
 	"buyNow": "Buy Now",
 	"bidNow": "Bid Now",
-	"availableBalance": "Available Balance (Yuan)",
-	"investableAmount": "Investable Amount (Yuan)",
+	"availableBalance": "Available Balance (USDT)",
+	"investableAmount": "Investable Amount (USDT)",
 	"qtAmount": "Starting Amount",
 	"jxTime": "Interest Time",
 	"full": "Full",
@@ -89,7 +89,7 @@
 	"interest": "Interest",
 	"tzAmount": "Investment Amount",
 	"minInvest": "Minimum Investment",
-	"yuan": "Yuan",
+	"yuan": "USDT",
 	 "addOne": "Maximum limit per transaction",
 	"payPassword": "Payment Password",
 	"defaultLoginPassword": "Default is login password",
@@ -108,7 +108,7 @@
 	"holdingPeriod": "Holding Period",
 	"whenFull": "Until Full",
 	"residue": "Residue",
-	"wanyuan": "Ten Thousand Yuan",
+	"wanyuan": "Ten Thousand USDT",
 	"riskControl": "Professional Risk Control",
 	"fundGuarantee": "Fund Guarantee",
 	"productName": "Product Name",
@@ -558,5 +558,8 @@
 				    "identityInfo": "Identity Information",
 				    "authenticatedName": "Authenticated Name",
 				    "documentNumber": "Document Number",
-				    "authenticationTime": "Authentication Time"
+				    "authenticationTime": "Authentication Time",
+					"remainingPurchaseTimes": "Remaining Purchase Times",
+					  "times": "times",
+					  "yuan": "USDT"
 }
