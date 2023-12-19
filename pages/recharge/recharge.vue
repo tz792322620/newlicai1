@@ -48,7 +48,7 @@
 				</view>
 			</view>
 			<view class="buttons">
-				<view class="button" @click="submit">
+				<view class="button" @click="$noMultipleClicks(submit)">
 					{{$t('submit')}}
 				</view>
 			</view>
@@ -88,6 +88,7 @@
 		},
 		data() {
 			return {
+				noClick: true,
 				data: {
 					recharge_amount: '',
 					recharge_address: '',

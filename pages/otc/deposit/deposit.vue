@@ -67,7 +67,7 @@
 					<text>¥</text>
 					<input type="text" v-model="data.deposit_amount" placeholder="0.00">
 				</view>
-				<view class="button" @click="submitBtn">
+				<view class="button" @click="$noMultipleClicks(submitBtn)">
 					{{$t('verify')}}{{isTransfer ? $t('transfer') : $t('quit')}}
 				</view>
 			</view>
@@ -85,6 +85,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				popupShow: false,
 				dataInfo: '',
 				list: [],

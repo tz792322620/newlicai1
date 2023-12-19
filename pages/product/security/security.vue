@@ -20,16 +20,16 @@
 					<jp-signature ref="signatureRef"></jp-signature>
 				</view>
 				<view class="sign_btns">
-					<view class="sign_btns_one" @click="clear">
+					<view class="sign_btns_one" @click="$noMultipleClicks(clear)">
 						{{$t('aginSign')}}
 					</view>
-					<view class="sign_btns_two" @click="save">
+					<view class="sign_btns_two" @click="$noMultipleClicks(save)">
 						{{$t('complete')}}
 					</view>
 				</view>
 			</view>
 		</view>
-		<view class="buttons" @click="submit">
+		<view class="buttons" @click="$noMultipleClicks(submit)">
 			{{$t('agreeAndSubmit')}}
 		</view>
 		<view class="tips">
@@ -51,6 +51,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				investData: {
 					product_id: '',
 					investment_amount: '',
@@ -162,7 +163,7 @@
 					})
 				}
 				const res = await createStockOrder(this.investData)
-				console.log(res) 
+				uni.hideLoading()
 				if (res.code === 1) {
 					uni.navigateTo({
 						url: '/pages/my/order/order'

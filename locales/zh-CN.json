@@ -565,5 +565,8 @@
 		  "authenticationTime": "认证时间",
 		   "remainingPurchaseTimes": "剩余购买次数",
 		     "times": "次",
-		     "yuan": "USDT"
+		     "yuan": "USDT",
+			 "AuthenticationFailed": "身份认证失败",
+			 "AuthenticationFailedTips": "抱歉！您的身份信息验证失败，请重新提交信息。",
+			 "AuthenticationFailedButton": "重新提交资料"
 }

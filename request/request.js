@@ -5,10 +5,12 @@ import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
 
 function request(options = {}) {
-	// uni.showLoading({
-	// 	title: '',
-	// 	mask: true
-	// })
+	console.log(options)
+	if (options.method == 'POST') {
+		uni.showLoading({
+			mask: true
+		})
+	}
 	options.url = `${BASE_URL}${options.url}`;
 	options.header = {
 		'token': uni.getStorageSync('token'),

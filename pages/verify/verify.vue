@@ -62,13 +62,15 @@
 				</view>
 			</view>
 			<view style="margin-top: 3rem;">
-				<u-button  style="background-color: #35CBA5;color: #fff;" @click="submit">{{$t('submit')}}</u-button>
+				<u-button  style="background-color: #35CBA5;color: #fff;" @click="$noMultipleClicks(submit)">{{$t('submit')}}</u-button>
 			</view>
 			
 		</view>
-		
-		
-		
+		<!-- <u-mask :show="show" duration="30000" z-index="1000" :custom-style="{background: 'rgba(0, 0, 0, .8)'}">
+			<view class="" style="height: 100%;display: flex;justify-content: center;align-items: center;">
+				<u-loading mode="flower" size="48" :show="show"></u-loading>
+			</view>
+		</u-mask> -->
 	</view>
 
 </template>
@@ -78,6 +80,8 @@
 	export default {
 		data() {
 			return {
+				show: false,
+				noClick: true,
 				customStyle: {
 				},
 				data: {
@@ -90,26 +94,42 @@
 		},
 		onLoad() {
 			// this.getData()
-		
 		},
 		methods: {
 			async getData(){
-				const res = await getVerificationStatus(this.data)
+				this.show = true
+				this.show = false
+				const res = await getVerificationStatus()
+				console.log(res)
 				if (res.code === 1) {
+					if (res.data.verification_status == 'Verified') {
+						uni.navigateTo({
+							url: '/pages/verify/successfully/successfully'
+						})						
+					} else if (res.data.verification_status == 'Pending') {
+						uni.navigateTo({
+							url: '/pages/verify/pending/pending'
+						})						
+					} else if (res.data.verification_status == 'Rejected') {
+						uni.navigateTo({
+							url: '/pages/verify/fail/fail'
+						})					
+					} else if (res.data.verification_status == '') {
+						uni.navigateTo({
+							url: '/pages/verify/fail/fail'
+						})				
+					}
+				} else if(res.code === 0) {
 					uni.navigateTo({
-						url: '/pages/verify/successfully/successfully'
-					})
-				} else if (res.code === 0) {
-					uni.navigateTo({
-						url: '/pages/verify/pending/pending'
-					})
+						url: '/pages/verify/fail/fail'
+					})	
 				}
 			},
 			goBack() {
 				// 返回上一页
-				uni.navigateBack({
-					delta: 1,
-				});
+				uni.switchTab({
+					url: '/pages/my/my'
+				})
 			},
 
 			uploadImage(type) {

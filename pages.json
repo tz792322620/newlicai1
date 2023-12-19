@@ -509,6 +509,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/verify/fail/fail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

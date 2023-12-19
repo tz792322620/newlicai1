@@ -34,7 +34,6 @@
 		onLoad() {
 			this.getNotice()
 		},
-		
 		methods: {
 			toDetails(item) {
 				uni.navigateTo({
@@ -42,7 +41,11 @@
 				})
 			},
 			async getNotice() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getGonggaoTypes()
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.list = res.data
 				}

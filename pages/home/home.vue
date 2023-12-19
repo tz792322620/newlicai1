@@ -348,7 +348,11 @@
 			},
 			//热门专区
 			async stockProductList() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getStockProductList('Hot')
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.ProductList = res.data
 				}

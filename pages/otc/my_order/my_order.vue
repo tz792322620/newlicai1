@@ -200,7 +200,7 @@
 				mode: 'range',
 				minDate: '',
 				dateRangeActiveIndex: 0,
-				orderStatusIndex: 0,
+				orderStatusIndex: -1,
 				activeIndex: 0,
 				tabsList: ['未完成', '已完成'],
 				unShow: false, // 未完成弹窗
@@ -208,7 +208,7 @@
 				unStatusList: ['待支付', '待放币', '支付中'],
 				statusActiveIndex: 0,
 				statusList: ['交易完成', '交易取消'],
-				typeActiveIndex: 0
+				typeActiveIndex: -1
 			}
 		},
 		computed: {
@@ -291,7 +291,11 @@
 				}
 			},
 			async getOrderList() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getUserTrades(this.trade_type, this.start_date, this.end_date, this.status)
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.orderList = res.data
 				}

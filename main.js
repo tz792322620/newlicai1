@@ -9,6 +9,9 @@ import zhCN from './locales/zh-CN.json';
 import zhTW from './locales/zh-TW.json';
 // import '@/static/js/polyfill.min.js'
 // import '@/static/js/riddler-sdk-0.2.2.js'
+// 配置防止重复点击公共方法
+import common from './common/common.js'
+Vue.prototype.$noMultipleClicks = common.noMultipleClicks;
 Vue.use(uView);
 // #ifndef VUE3
 import Vue from 'vue'

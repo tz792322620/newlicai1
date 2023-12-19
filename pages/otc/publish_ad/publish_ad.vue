@@ -115,7 +115,7 @@
 				<u-input type="textarea" :placeholder="$t('enterNote')" v-model="data.remark" maxlength="20"></u-input>
 			</view>
 		</view>
-		<view class="button" @click="submit">{{ $t('publish') }}</view>
+		<view class="button" @click="$noMultipleClicks(submit)">{{ $t('publish') }}</view>
 	</view>
 </template>
 
@@ -126,6 +126,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				data: {
 					listing_type: 'Buy',
 					amount: '',

@@ -189,7 +189,7 @@
 					skipUrl: '/pages/otc/my_order/my_order',
 					name: this.$t('myOrder')
 				},{
-					url: '../../static/images/otc/dingdan.png',
+					url: '../../static/images/otc/deposit.png',
 					skipUrl: '/pages/otc/deposit/deposit',
 					name: this.$t('deposit')
 				}]
@@ -215,9 +215,22 @@
 				if (index === 0) {
 					const res = await getVerificationStatus()
 					console.log(res)
-					if (!res.data || res.data.status != 'Verified') {
+					if (res.code === 1) {
+						if (res.data.verification_status == 'Pending') {
+							return uni.navigateTo({
+								url: '/pages/verify/pending/pending'
+							})
+						} else if (res.data.verification_status == 'Rejected') {
+							return uni.navigateTo({
+								url: '/pages/verify/fail/fail'
+							})					
+						} else if (res.data.verification_status == '') {
+							return uni.navigateTo({
+								url: '/pages/verify/fail/fail'
+							})				
+						}
+					} else if(res.code === 0) {
 						this.modalShow = true
-						return
 					}
 				}
 				uni.navigateTo({

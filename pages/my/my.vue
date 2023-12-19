@@ -17,8 +17,9 @@
 					<view style="margin-top:60rpx;">
 						<view style="font-weight: bold;font-size: 32rpx;display: flex;align-items: center;">
 							{{ userInfo.username }}
-							<image v-if="userInfo.level !== 0" style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
-								:src="`@/static/images/my/v${userInfo.level}.png`" mode=""></image>
+							<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
+								:src="`../../static/images/my/v${userInfo.level}.png`" mode=""></image>
+								<!-- <text v-if="userInfo.level === 0" style="color: #999999;margin-left: 10rpx;font-size: 20rpx;">普通会员</text> -->
 						</view>
 						<!-- <view style="color: #999999;margin-top: 10rpx;">ID: {{ user.id }} <image style="width: 24rpx;height: 24rpx;margin-left: 10rpx;" src="../../static/images/my/copy.png" mode=""></image> </view> -->
 					</view>
@@ -241,14 +242,29 @@
 			// 获取用户实名认证状态
 			async getUserVerificationStatus() {
 				const res = await getVerificationStatus()
+				console.log(res)
 				if (res.code === 1) {
+					if (res.data.verification_status == 'Verified') {
+						uni.navigateTo({
+							url: '/pages/verify/successfully/successfully'
+						})						
+					} else if (res.data.verification_status == 'Pending') {
+						uni.navigateTo({
+							url: '/pages/verify/pending/pending'
+						})						
+					} else if (res.data.verification_status == 'Rejected') {
+						uni.navigateTo({
+							url: '/pages/verify/fail/fail'
+						})					
+					} else if (res.data.verification_status == '') {
+						uni.navigateTo({
+							url: '/pages/verify/fail/fail'
+						})				
+					}
+				} else if(res.code === 0) {
 					uni.navigateTo({
-						url: '/pages/verify/successfully/successfully'
-					})
-				} else if (res.code === 0) {
-					uni.navigateTo({
-						url: '/pages/verify/pending/pending'
-					})
+						url: '/pages/verify/verify'
+					})	
 				}		
 			}
 		}

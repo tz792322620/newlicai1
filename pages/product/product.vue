@@ -172,6 +172,9 @@
 			},
 			// 选项卡切换查询
 			async getStockProductListTab() {
+				uni.showLoading({
+					mask: true
+				})
 				if (!this.tabName) {
 					const result = await getStockProductAllList()
 					if (result.code === 1) {
@@ -183,6 +186,7 @@
 						this.stockProductListTab = res.data
 					}
 				}
+				uni.hideLoading()
 				console.log(this.stockProductListTab, '选项卡查询=======>')
 			}
 		}

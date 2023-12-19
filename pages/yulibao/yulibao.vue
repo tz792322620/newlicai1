@@ -46,7 +46,7 @@
 				<view class="description">
 					{{$t('yulibaoBalance')}}<text>¥{{dataInfo.investmentTotal}}</text>
 				</view>
-				<view class="button" @click="submitBtn">
+				<view class="button" @click="$noMultipleClicks(submitBtn)">
 					{{$t('verify')}}{{isTransfer ? $t('roll-out') : $t('transfer')}}
 				</view>
 			</view>
@@ -83,6 +83,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				data: {
 					amount: ''
 				},

@@ -45,6 +45,12 @@
 				
 			}
 		},
+		onBackPress(event) {
+			uni.switchTab({
+				url: '/pages/my/my'
+			})
+			return true
+		},
 		onShow() {
 			uni.setNavigationBarTitle({
 				title: this.$t('realNameAuthentication')

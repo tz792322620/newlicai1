@@ -80,7 +80,7 @@
 				<view class="text">{{ $t('tip2') }}</view>
 			</view>
 		</view>
-		<view class="button" @click="save">{{ $t('save') }}</view>
+		<view class="button" @click="$noMultipleClicks(save)">{{ $t('save') }}</view>
 	</view>
 </template>
 
@@ -94,6 +94,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				data: {
 					user_name: '',
 					payment_type: '微信',

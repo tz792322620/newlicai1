@@ -3,7 +3,7 @@
 		<uni-nav-bar statusBar fixed left-icon="left" right-icon="plus" :title="$t('choosePaymentMethod')" :border="false" @clickLeft="back()" @clickRight="addPayment"></uni-nav-bar>
 		<view class="tabs">
 			<view class="tabs-item" v-for="(item,index) in tabsList" :key="index" @click="changeTabs(item,index)" :class="index === activeIndex ? 'active' : ''">
-				{{item}}
+				{{item.name}}
 			</view>
 		</view>
 		<view class="content">
@@ -96,7 +96,19 @@
 		computed: {
 			// 选项卡集合
 			tabsList(){
-				return [this.$t('overview'),this.$t('BankCard'),this.$t('Alipay'),this.$t('WeChat')]
+				return [{
+					name: this.$t('overview'),
+					value: ''
+				},{
+					name: this.$t('BankCard'),
+					value: '银行卡'
+				},{
+					name: this.$t('Alipay'),
+					value: '支付宝'
+				},{
+					name: this.$t('WeChat'),
+					value: '微信'
+				},]
 			}
 		},
 		onLoad() {
@@ -109,18 +121,18 @@
 				})
 			},
 			async getPaymentList() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getPaymentInfo(this.activeType)
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.paymentList = res.data
 				} 
 				console.log(res)
 			},
 			changeTabs(item,index) {
-				if (index === 0) {
-					this.activeType = ''
-				} else {
-					this.activeType = item
-				}
+				this.activeType = item.value
 				this.activeIndex = index
 				this.getPaymentList()
 			},

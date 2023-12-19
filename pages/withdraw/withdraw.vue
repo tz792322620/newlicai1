@@ -52,7 +52,7 @@
 				<view class="description">
 					{{$t('quantityReceived')}}:<text>{{account_amount}}USDT</text>
 				</view>
-				<view class="button" @click="submit">
+				<view class="button" @click="$noMultipleClicks(submit)">
 					{{$t('submit')}}
 				</view>
 			</view>
@@ -87,6 +87,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				withdrawable_amount: 0, // 可用数量
 				account_amount: 0, // 到账数量
 				data: {

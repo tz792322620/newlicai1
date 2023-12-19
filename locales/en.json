@@ -561,5 +561,8 @@
 				    "authenticationTime": "Authentication Time",
 					"remainingPurchaseTimes": "Remaining Purchase Times",
 					  "times": "times",
-					  "yuan": "USDT"
+					  "yuan": "USDT",
+					  "AuthenticationFailed": "Authentication failed",
+					  "AuthenticationFailedTips": "Feel sorry! Your identity information verification failed, please resubmit the information.",
+			 "AuthenticationFailedButton": "Resubmit information"
 }

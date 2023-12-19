@@ -75,7 +75,7 @@
 				<text class="box3_cell_left">{{dataInfo.user_nickname}}</text>
 			</view>
 		</view>
-		<view class="button" @click="buy" :class="dataInfo.listing_type == 'Buy' ? '' : 'red'">
+		<view class="button" @click="$noMultipleClicks(buy)" :class="dataInfo.listing_type == 'Buy' ? '' : 'red'">
 			{{dataInfo.listing_type == 'Buy' ? $t('buyUSDT') : dataInfo.listing_type == 'Sell' ? $t('sellUSDT') : ''}}
 		</view>
 	</view>
@@ -86,6 +86,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				data: {
 					listing_id: '',
 					amount: ''
