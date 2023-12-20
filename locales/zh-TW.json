@@ -569,5 +569,6 @@
 			  "yuan": "USDT",
 			  "AuthenticationFailed": "身份認證失敗",
 			  "AuthenticationFailedTips": "抱歉！您的身份信息驗證失敗，請重新提交信息。",
-			 "AuthenticationFailedButton": "重新提交資料"
+			 "AuthenticationFailedButton": "重新提交資料",
+			 "Points for stock order": "新股訂單積分"
 }

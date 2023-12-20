@@ -95,6 +95,7 @@
 			this.$nextTick(() => {
 				this.forceRefresh = true;
 			})
+			this.getStockProductListTab()
 		},
 		computed: {
 			lang() {

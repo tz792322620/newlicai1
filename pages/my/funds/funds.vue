@@ -11,7 +11,8 @@
 				</view>
 			</view>
 			<view class="cell_right" :class="Number(item.amount) < 0 ? 'red' : ''">
-				{{item.amount}}
+				<view>{{item.amount}}</view> 
+				<view>{{ getStatusTranslation(item.change_type) }}</view>
 			</view>
 		</view>
 	</view>
@@ -82,6 +83,7 @@
 				font-size: 32rpx;
 				font-weight: 500;
 				color: #F75F52;
+				text-align: end;
 				.green {
 					color: #35CBA5;
 				}
