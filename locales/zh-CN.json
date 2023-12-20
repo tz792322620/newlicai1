@@ -570,5 +570,9 @@
 			 "AuthenticationFailedTips": "抱歉！您的身份信息验证失败，请重新提交信息。",
 			 "AuthenticationFailedButton": "重新提交资料",
 			 "Points for stock order": "新股订单积分",
-			 "integralTitle": "积分明细"
+			 "integralTitle": "积分明细",
+			  "withdrawable_amount": "可提取金額",
+			   "buildable_amount": "可建倉金額",
+			   "gift_points": "禮品積分",
+			   "Trade cancelled": "交易已取消"
 }

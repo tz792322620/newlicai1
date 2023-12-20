@@ -566,5 +566,9 @@
 					  "AuthenticationFailedTips": "Feel sorry! Your identity information verification failed, please resubmit the information.",
 			 "AuthenticationFailedButton": "Resubmit information",
 			  "Points for stock order": "Points for Stock Order",
-			  "integralTitle": "Points details"
+			  "integralTitle": "Points details",
+			    "withdrawable_amount": "Withdrawable Amount",
+			    "buildable_amount": "Buildable Amount",
+			    "gift_points": "Gift Points",
+				"Trade cancelled": "Trade cancelled"
 }
