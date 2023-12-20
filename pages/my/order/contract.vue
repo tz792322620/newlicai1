@@ -1,5 +1,5 @@
 <template>
-  <view style="margin: .8rem;">
+  <view style="margin: .8rem;" v-if="details && details.product">
     <p style="text-align: center;
     font-size: 20px;"><b><span >{{$t('contractTitle')}}</span></b></p>
     <p><span >{{$t('contractNumberLabel')}}</span><span style="text-decoration: underline;">{{details.contract.contract_number}}</span></p>
