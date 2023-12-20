@@ -1,20 +1,21 @@
 <template>
   <view style="margin: .8rem;">
-    <p><b><span >{{$t('contractTitle')}}</span></b></p>
+    <p style="text-align: center;
+    font-size: 20px;"><b><span >{{$t('contractTitle')}}</span></b></p>
     <p><span >{{$t('contractNumberLabel')}}</span><span style="text-decoration: underline;"></span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('partyA')}}：</span></b><span style="text-decoration: underline;"></span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('partyB')}}：</span></b><span style="text-decoration: underline;"></span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('partyCLabel')}}</span></b><b><span >：</span></b><span >{{$t('insuranceCompany')}}</span></p>
     <p style="line-height: 16pt;"><span >{{$t('contractAgreement')}}</span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('investmentDetails')}}</span></b><b></b></p>
-    <p style="line-height: 16pt;"><span >{{$t('productNameLabel')}}</span><span style="text-decoration: underline;">：</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('investorNameLabel')}}</span><span style="text-decoration: underline;">：</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('investorIDLabel')}}</span><span style="text-decoration: underline;">：</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('investmentAmountLabel')}}</span><span style="text-decoration: underline;">：</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('earningCycleLabel')}}</span><span style="text-decoration: underline;">：</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('interestRateLabel')}}</span><span style="text-decoration: underline;">：</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('maturityDateLabel')}}</span><span style="text-decoration: underline;">：</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('totalReceivableLabel')}}</span><span style="text-decoration: underline;">：</span></p>
+    <p style="line-height: 16pt;"><span >{{$t('productNameLabel')}}</span><span style="text-decoration: underline;"></span></p>
+    <p style="line-height: 16pt;"><span >{{$t('investorNameLabel')}}</span><span style="text-decoration: underline;"></span></p>
+    <p style="line-height: 16pt;"><span >{{$t('investorIDLabel')}}</span><span style="text-decoration: underline;"></span></p>
+    <p style="line-height: 16pt;"><span >{{$t('investmentAmountLabel')}}</span><span style="text-decoration: underline;"></span></p>
+    <p style="line-height: 16pt;"><span >{{$t('earningCycleLabel')}}</span><span style="text-decoration: underline;"></span></p>
+    <p style="line-height: 16pt;"><span >{{$t('interestRateLabel')}}</span><span style="text-decoration: underline;"></span></p>
+    <p style="line-height: 16pt;"><span >{{$t('maturityDateLabel')}}</span><span style="text-decoration: underline;"></span></p>
+    <p style="line-height: 16pt;"><span >{{$t('totalReceivableLabel')}}</span><span style="text-decoration: underline;"></span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('sectionTwo')}}</span></b></p>
     <p style="line-height: 16pt;"><span >{{$t('clause2.1')}}</span></p>
     <p style="line-height: 16pt;"><span >{{$t('clause2.2')}}</span></p>

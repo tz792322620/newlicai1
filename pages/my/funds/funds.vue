@@ -12,7 +12,7 @@
 			</view>
 			<view class="cell_right" :class="Number(item.amount) < 0 ? 'red' : ''">
 				<view>{{item.amount}}</view> 
-				<view>{{ getStatusTranslation(item.change_type) }}</view>
+				<view style="font-size: 13px;">{{ getStatusTranslation(item.change_type) }}</view>
 			</view>
 		</view>
 	</view>

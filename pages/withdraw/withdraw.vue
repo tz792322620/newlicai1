@@ -35,13 +35,13 @@
 				<view class="title">
 					{{$t('withdrawalAmount')}}
 				</view>
-				<view class="select" @click="show = true">
+				<view class="select">
 					<view class="select_value">
 						<u-input type="text" :placeholder="$t('enterWithdrawalAmount')" v-model="data.withdrawal_amount"
-							@confirm="confirm" />
+							 />
 					</view>
-					<view class="right">
-						USDT <text>{{$t('allItem')}}</text>
+					<view class="right" @click="confirms()">
+						USDT <text @click="confirms()">{{$t('allItem')}}</text>
 					</view>
 				</view>
 				<view class="description">
@@ -112,6 +112,10 @@
 			this.getUser()
 		},
 		methods: {
+			async confirms() {
+				console.log(this.data.withdrawal_amount)
+				this.data.withdrawal_amount = this.withdrawable_amount
+			},
 			async confirm(e) {
 				console.log(e)
 				// if (e) {

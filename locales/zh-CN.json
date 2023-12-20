@@ -83,7 +83,7 @@
 	"24Hours": "24小时",
 	"week": "一周",
 	"month": "一月",
-	"inTime": "及时",
+	"inTime": "到期",
 	"zdInterest": "自动结息",
 	"interest": "结息",
 	"tzAmount": "投资金额",
@@ -426,7 +426,7 @@
 	"createStockOrder": "创建股票订单",
 	"signIn": "签到",
 	"withdrawal": "提款",
-	"withdrawFromYuebao": "从余额宝提现",
+	"withdrawFromYuebao": "从余利宝提现",
 	"time": "时间",
 	"Interest": "利息",
 	"CapitalGain": "资本收益",
@@ -434,9 +434,9 @@
 	"Create stock order": "创建股票订单",
 	"Sign in": "签到",
 	"Withdrawal": "提款",
-	"Withdraw from Yuebao": "从余额宝提现",
+	"Withdraw from Yuebao": "从余利宝提现",
 	"Backend recharge": "后台充值",
-	"Create yuebao order": "创建余额宝订单",
+	"Create yuebao order": "创建余利宝订单",
 	 "contractDetails": "合同详情",
 	   "contractTitle": "投资合同书",
 	   "contractNumberLabel": "合同编号：",
@@ -574,5 +574,7 @@
 			  "withdrawable_amount": "可提取金額",
 			   "buildable_amount": "可建倉金額",
 			   "gift_points": "禮品積分",
-			   "Trade cancelled": "交易已取消"
+			   "Trade cancelled": "交易已取消",
+			   "pointsMultiplier": "积分赠送倍数"
+			   
 }

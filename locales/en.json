@@ -570,5 +570,6 @@
 			    "withdrawable_amount": "Withdrawable Amount",
 			    "buildable_amount": "Buildable Amount",
 			    "gift_points": "Gift Points",
-				"Trade cancelled": "Trade cancelled"
+				"Trade cancelled": "Trade cancelled",
+				"pointsMultiplier": "Points Multiplier"
 }

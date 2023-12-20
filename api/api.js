@@ -358,7 +358,7 @@ export function getYuebaoStats() {
 		url: '/user/getYuebaoStats'
 	})
 }
-// 从余额宝转出金额(转出到我的账户)
+// 从余利宝转出金额(转出到我的账户)
 export function withdrawFromYuebao(data) {
 	return request({
 		url: '/user/withdrawFromYuebao',
@@ -366,7 +366,7 @@ export function withdrawFromYuebao(data) {
 		data
 	})
 }
-// 转入余额宝
+// 转入余利宝
 export function createYuebaoOrder(data) {
 	return request({
 		url: '/user/createYuebaoOrder',
@@ -374,7 +374,7 @@ export function createYuebaoOrder(data) {
 		data
 	})
 }
-// 获取用户的余额宝转入和转出资金记录
+// 获取用户的余利宝转入和转出资金记录
 export function getYuebaoTransactions() {
 	return request({
 		url: '/user/getYuebaoTransactions'

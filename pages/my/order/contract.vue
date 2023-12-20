@@ -1,6 +1,7 @@
 <template>
   <view style="margin: .8rem;">
-    <p><b><span >{{$t('contractTitle')}}</span></b></p>
+    <p style="text-align: center;
+    font-size: 20px;"><b><span >{{$t('contractTitle')}}</span></b></p>
     <p><span >{{$t('contractNumberLabel')}}</span><span style="text-decoration: underline;">{{details.contract.contract_number}}</span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('partyA')}}：</span></b><span style="text-decoration: underline;">{{details.user_verification.real_name}}</span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('partyB')}}：</span></b><span style="text-decoration: underline;">{{details.product.manager_company_name}}</span></p>

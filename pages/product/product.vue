@@ -44,6 +44,10 @@
                             style="color: #21BF90;">{{item.total_fundraising}}U</text>
                     </view>
                 </view>
+				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
+				    <view style="width: 300rpx;">{{$t('pointsMultiplier')}}：<text
+				            style="color: #21BF90;">X{{item.point_multiplier}}</text></view>
+				</view>
                 <view style="width:540rpx;margin-top: 6rpx;">
                     <u-line-progress active-color="#6BEEAB" height="22" :percent="Number(item.progress)">
                     </u-line-progress>

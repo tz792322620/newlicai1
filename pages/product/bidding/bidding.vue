@@ -54,11 +54,11 @@
 					</view>{{$t('yuan')}}
 				</view>
 				<u-line color="#F3F3F3"></u-line>
-				<view class="u-flex" style="margin-bottom:30rpx;margin-top:30rpx;">
+				<view  style="margin-bottom:30rpx;margin-top:30rpx;">
 
-					<view class="u-text-right" style="width:560rpx;margin-left:60rpx;color: #333333;">
-						{{$t('minInvest')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.min_purchase_amount}}</text> {{$t('yuan')}}，{{$t('addOne')}}
-						<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.max_purchase_amount}}</text> {{$t('yuan')}}
+					<view class="u-text-right" style="margin-left:60rpx;color: #333333;">
+						<view>{{$t('minInvest')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.min_purchase_amount}}</text> {{$t('yuan')}}</view>
+						<view>{{$t('addOne')}}<text class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.max_purchase_amount}}</text> {{$t('yuan')}}</view>
 					</view>
 				</view>
 				

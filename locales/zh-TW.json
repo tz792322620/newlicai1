@@ -83,7 +83,7 @@
 	"24Hours": "24小時",
 	"week": "一周",
 	"month": "一月",
-	"inTime": "及時",
+	"inTime": "到期",
 	"zdInterest": "自動結息",
 	"interest": "結息",
 	"tzAmount": "投資金額",
@@ -575,5 +575,6 @@
 			   "withdrawable_amount": "可提取金额",
 			   "buildable_amount": "可建仓金额",
 			   "gift_points": "礼品积分",
-			   "Trade cancelled": "交易已取消"
+			   "Trade cancelled": "交易已取消",
+			   "pointsMultiplier": "積分贈送倍數"
 }
