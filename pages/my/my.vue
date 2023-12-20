@@ -186,6 +186,11 @@
 						url: '/pages/my/funds/funds'
 					},
 					{
+						image: '../../static/images/my/d4.png',
+						title: this.$t('integralTitle'),
+						url: '/pages/my/integral/integral'
+					},
+					{
 						image: '../../static/images/my/d5.png',
 						title: this.$t('paymentInformation'),
 						url: '/pages/otc/payment/payment'

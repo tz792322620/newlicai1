@@ -565,5 +565,6 @@
 					  "AuthenticationFailed": "Authentication failed",
 					  "AuthenticationFailedTips": "Feel sorry! Your identity information verification failed, please resubmit the information.",
 			 "AuthenticationFailedButton": "Resubmit information",
-			  "Points for stock order": "Points for Stock Order"
+			  "Points for stock order": "Points for Stock Order",
+			  "integralTitle": "Points details"
 }

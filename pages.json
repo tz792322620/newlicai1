@@ -518,6 +518,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/my/integral/integral",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

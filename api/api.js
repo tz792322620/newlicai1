@@ -422,3 +422,9 @@ export function getAllEarnings() {
 		url: '/user/getAllEarnings'
 	})
 }
+// 获取用户积分资金记录
+export function getGiftPointsRecords() {
+	return request({
+		url: '/user/getGiftPointsRecords'
+	})
+}
