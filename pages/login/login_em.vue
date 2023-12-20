@@ -80,18 +80,18 @@
 			onSuccess:function(verifyId){
 				console.log(verifyId);
 			},
-			async login(){
-				let that=this
-				this.$refs.v5dialog.verify(function(result){
-					if(result.success){
-						var verifyId=result.verifyId;
-						// bar(verifyId);
-						 that.logins();
-					}
-				});
+			// async login(){
+			// 	let that=this
+			// 	this.$refs.v5dialog.verify(function(result){
+			// 		if(result.success){
+			// 			var verifyId=result.verifyId;
+			// 			// bar(verifyId);
+			// 			 that.logins();
+			// 		}
+			// 	});
 				
-			},
-			async logins(){
+			// },
+			async login(){
 				if (this.account == '') {
 					return this.$tools.toast('请输入邮箱');
 				}else if (this.password == '') {

@@ -85,7 +85,7 @@
 		
 		},
 		methods: {
-			async logins(){
+			async login(){
 				console.log('进入登录')
 				if (this.account == '') {
 					return this.$tools.toast('请输入手机号码');
@@ -122,18 +122,18 @@
 							
 				}
 			},
-			async login(){
-				let that=this
-				this.$refs.v5dialog.verify(function(result){
+			// async login(){
+			// 	let that=this
+			// 	this.$refs.v5dialog.verify(function(result){
 					
-					if(result.success){
-						var verifyId=result.verifyId;
-						// bar(verifyId);
-						that.logins();
-					}
-				});
+			// 		if(result.success){
+			// 			var verifyId=result.verifyId;
+			// 			// bar(verifyId);
+			// 			that.logins();
+			// 		}
+			// 	});
 
-			}
+			// }
 		}
 	}
 </script>
