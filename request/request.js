@@ -5,7 +5,6 @@ import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
 
 function request(options = {}) {
-	console.log(options)
 	if (options.method == 'POST') {
 		uni.showLoading({
 			mask: true

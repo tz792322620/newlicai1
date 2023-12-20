@@ -16,8 +16,9 @@
 				</view>
 			</view>
 			<view :style="[{marginTop: `${statusBarHeight*2 + 88}rpx`}]">
-				<u-subsection v-if="forceRefresh" :list="tabList" @change="sectionChange" mode="button"
-					button-color="#E6F9F4" active-color="#35CBA5" bgColor="#ffffff" :current="current"></u-subsection>
+				<!-- <u-subsection v-if="forceRefresh" :list="tabList" @change="sectionChange" mode="button"
+					button-color="#E6F9F4" active-color="#35CBA5" bgColor="#ffffff" :current="current"></u-subsection> -->
+					<uv-subsection :list="tabList" @change="sectionChange" mode="button"				 activeColor="#35CBA5" bgColor="#ffffff" :current="curNow"></uv-subsection>
 			</view>
             <view
                 style="margin-top: 30rpx;background-color: #ffffff;box-shadow: 0px 0px 24rpx 0px rgba(0,0,0,0.05); padding: 30rpx;border-radius: 12rpx;"
