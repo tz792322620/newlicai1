@@ -113,8 +113,18 @@
 			
 		},
 		methods: {
-	
-			async reg(){
+	async reg(){
+		let that=this
+		this.$refs.v5dialog.verify(function(result){
+			if(result.success){
+				var verifyId=result.verifyId;
+				// bar(verifyId);
+				 that.regs();
+			}
+		});
+		
+	},
+			async regs(){
 				if (this.username == '') {
 					return this.$tools.toast('请输入手机号码');
 				}
@@ -191,34 +201,6 @@
 					// this.$tools.toastSwitchTab(res.msg, '../register/register');
 				}
 				console.log(res)
-			// 	this.$Ajax3(
-			// 		'/sms/send', {
-			// 			data
-			// 		},
-			// 		res => {
-			// 			if (res.code == '1') {
-			// 				// 开始倒计时
-			// 				this.$tools.toast('发送成功');
-			// 				this.countdown = 60;
-			// 				const timer = setInterval(() => {
-			// 					if (this.countdown > 0) {
-			// 						this.countdown--;
-			// 					} else {
-			// 						clearInterval(timer);
-			// 					}
-			// 				}, 1000);
-			// 			} else {
-			// 				this.$tools.toast(res.msg)
-			// 				// this.$tools.toastSwitchTab(res.msg, '../register/register');
-			// 			}
-			// 			console.log(res)
-			// 		},
-			// 		fail => {
-			
-			// 		},
-			// 		'POST',
-			// 		'notoken'
-			// 	);
 				uni.hideLoading();
 			
 			},

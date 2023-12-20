@@ -12,15 +12,20 @@
 			<view class="balance">
 				<view class="balance_top">
 					<view class="desc">
+						
 						{{$t('teamBalance')}}
+						<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
+							:src="`../../../static/images/my/v${dataInfo.team_level}.png`" mode=""></image>
 					</view>
 					<view class="date" @click="show = true">
 						{{$t('chooseDate')}}
 					</view>
 				</view>
 				<view class="balance_count">
+					
 					{{dataInfo.available_amount}}
 				</view>
+
 				<view class="balance_bottom">
 					<view class="balance_bottom_item">
 						<text>{{$t('totalTopUp')}}</text>

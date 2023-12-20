@@ -92,8 +92,18 @@
 		
 		},
 		methods: {
-
 			async resetPassword(){
+				let that=this
+				this.$refs.v5dialog.verify(function(result){
+					if(result.success){
+						var verifyId=result.verifyId;
+						// bar(verifyId);
+						 that.resetPasswords();
+					}
+				});
+				
+			},
+			async resetPasswords(){
 				if (this.account == '') {
 					return this.$tools.toast('请输入邮箱');
 				}else if (this.new_password == '') {
