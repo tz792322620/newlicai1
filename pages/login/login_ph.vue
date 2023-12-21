@@ -10,12 +10,13 @@
 				<view style="width: 320rpx;" class="u-text-right col35">{{ $t('phoneLogin') }}</view>
 			</view>
 			<view style="margin-top:60rpx;">
-				<view class="logo_input u-flex">
-					<view style="color: #666666;margin-right: 20rpx;" class="u-flex">
-						<view>+86</view>
+				<view class="logo_input u-flex" style="position: relative;">
+					<view style="color: #666666;margin-right: 20rpx;" class="u-flex" @click="isAbP = !isAbP">
+						<view>{{regionCode}}</view>
 						<view style="margin-left: 10rpx;"><u-icon color="#9E9E9E" size="24"
 								name="arrow-down-fill"></u-icon></view>
 					</view>
+					<area-code-select :isAbP="isAbP" @send="getAreaCode"></area-code-select>
 					<u-input v-model="account" type="number" :placeholder="$t('enterPhoneNumber')" />
 				</view>
 				<view class="logo_input">
@@ -55,6 +56,7 @@
 	export default {
 		data() {
 			return {
+				isAbP: false,
 				customStyle1: {
 					height: '90rpx',
 					margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
@@ -69,6 +71,8 @@
 				lock:true,
 				yptoken:'',
 				ypauthenticate:'',
+				regionCode: '+86', // 区号展示值
+				regionValue: '86', // 区号参数值
 				v5lang:"zh-CN",//en
 				v5host:'accelerate.verify5.com',
 				v5token:'aaa949126c3e48d6a941a482921ed7cf'
@@ -85,6 +89,12 @@
 		
 		},
 		methods: {
+			getAreaCode(item,isAbP) {
+				this.isAbP = isAbP
+				// console.log(item)
+				this.regionCode = item.code
+				this.regionValue = item.value
+			},
 			async login(){
 				console.log('进入登录')
 				if (this.account == '') {
@@ -102,6 +112,7 @@
 					data['password'] = this.password;
 					data['authenticate'] = this.ypauthenticate;
 					data['token'] = this.yptoken; 
+					data['region'] = this.regionValue; 
 					console.log(data);
 					const res = await userLogin(data)
 					console.log(res, '登录======>')
@@ -138,6 +149,6 @@
 	}
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+	
 </style>

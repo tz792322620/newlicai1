@@ -10,11 +10,12 @@
 			</view>
 			
 			<view style="margin-top:60rpx;">
-				<view class="logo_input u-flex">	
-					<view style="color: #666666;margin-right: 20rpx;" class="u-flex">
-						<view>+86</view>
+				<view class="logo_input u-flex" style="position: relative;">	
+					<view style="color: #666666;margin-right: 20rpx;" class="u-flex" @click="isAbP = !isAbP">
+						<view>{{regionCode}}</view>
 						<view style="margin-left: 10rpx;"><u-icon color="#9E9E9E" size="24" name="arrow-down-fill"></u-icon></view>
 					</view>
+					<area-code-select :isAbP="isAbP" @send="getAreaCode"></area-code-select>
 					<u-input v-model="account" type="number" :placeholder="$t('enterPhoneNumber')" />
 				</view>
 				<view class="logo_input">
@@ -58,6 +59,9 @@
 	export default {
 		data() {
 			return {
+				isAbP: false,
+				regionCode: '+86', // 区号展示值
+				regionValue: '86', // 区号参数值
 				customStyle1: {
 					height: '90rpx',
 					margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
@@ -99,6 +103,12 @@
 			
 		},
 		methods: {
+			getAreaCode(item,isAbP) {
+				this.isAbP = isAbP
+				// console.log(item)
+				this.regionCode = item.code
+				this.regionValue = item.value
+			},
 			async resetPassword(){
 				let that=this
 				this.$refs.v5dialog.verify(function(result){
@@ -133,6 +143,7 @@
 					data['code']=this.code
 					data['referrerCode']=this.referrerCode
 					data['authenticate'] = this.ypauthenticate;
+					data['region'] = this.regionValue;
 					const res = await resetPassword(data)
 					if (res.code == "1") {
 						this.$tools.toast('修改成功');
