@@ -571,5 +571,9 @@
 			    "buildable_amount": "Buildable Amount",
 			    "gift_points": "Gift Points",
 				"Trade cancelled": "Trade cancelled",
-				"pointsMultiplier": "Points Multiplier"
+				"pointsMultiplier": "Points Multiplier",
+				  "signingTime": "Signing Time",
+				  "expiryTime": "Expiry Time",
+				  "Referral reward": "Referral Reward",
+				  "Completeds": "Completed"
 }

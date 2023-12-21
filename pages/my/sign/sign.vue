@@ -51,7 +51,7 @@
 						</view>
 					</view>
 					<view class="records_cell_right">
-						+{{item.reward_points}}{{$t('points')}}
+						+{{item.reward_points}}USDT
 					</view>
 				</view>
 			</view>

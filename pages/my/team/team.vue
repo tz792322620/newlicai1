@@ -77,12 +77,12 @@
 									:src="`../../../static/images/my/v${item.referrer.team_level}.png`" mode=""></image>
 									<!-- <text v-if="item.referrer.team_level === 0" style="color: #999999;margin-left: 10rpx;font-size: 20rpx;">普通会员</text> -->
 							</view>
-							<view class="phone" v-if="item.referrer.mobile">
+<!-- 							<view class="phone" v-if="item.referrer.mobile">
 								{{$t('telephone')}}: {{item.referrer.mobile}} <image @click="copy(item.referrer.mobile)" src="../../../static/images/my/team/copy.png" mode=""></image>
-							</view>
-							<view class="date">
+							</view> -->
+<!-- 							<view class="date">
 								{{$t('registerDate')}}:{{item.referrer.createtime | timestampFilter}}
-							</view>
+							</view> -->
 						</view>
 					</view>
 					<view class="data">

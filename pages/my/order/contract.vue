@@ -13,9 +13,16 @@
     <p style="line-height: 16pt;"><span >{{$t('investorIDLabel')}}</span><span style="text-decoration: underline;">：{{details.user_verification.identity_number}}</span></p>
     <p style="line-height: 16pt;"><span >{{$t('investmentAmountLabel')}}</span><span style="text-decoration: underline;">：{{details.order.purchase_amount}}</span></p>
     <p style="line-height: 16pt;"><span >{{$t('earningCycleLabel')}}</span><span style="text-decoration: underline;">：{{details.product.investment_period}}</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('interestRateLabel')}}</span><span style="text-decoration: underline;">：{{details.product.progress}}</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('maturityDateLabel')}}</span><span style="text-decoration: underline;">：{{details.order.purchase_date}}</span></p>
-    <p style="line-height: 16pt;"><span >{{$t('totalReceivableLabel')}}</span><span style="text-decoration: underline;">：{{details.order.purchase_amount}}</span></p>
+    <p style="line-height: 16pt;"><span >{{$t('interestRateLabel')}}</span><span style="text-decoration: underline;">：{{details.product.progress}}%</span></p>
+	  <p style="line-height: 16pt;">
+		<span>{{$t('signingTime')}}</span>
+		<span style="text-decoration: underline;">：{{details.order.purchase_date}}</span>
+	  </p>
+	  <p style="line-height: 16pt;">
+		<span>{{$t('expiryTime')}}</span>
+		<span style="text-decoration: underline;">：{{details.contract.end_date}}</span>
+	  </p>
+    <p style="line-height: 16pt;"><span >{{$t('totalReceivableLabel')}}</span><span style="text-decoration: underline;">：{{details.order.total_amount}}</span></p>
     <p style="line-height: 16pt;"><b><span >{{$t('sectionTwo')}}</span></b></p>
     <p style="line-height: 16pt;"><span >{{$t('clause2.1')}}</span></p> 
     <p style="line-height: 16pt;"><span >{{$t('clause2.2')}}</span></p>

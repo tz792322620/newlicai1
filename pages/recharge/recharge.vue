@@ -183,13 +183,18 @@
 				}
 				const res = await createRecharge(this.data);
 				if (res.code === 1) {
-					uni.showToast({
-						title: res.msg, // 修改为多语言引用
-						icon: 'none'
-					});
-					uni.navigateTo({
-						url: '/pages/recharge/records/records'
-					});
+					 uni.showToast({
+					    title: res.msg, // 修改为多语言引用
+					    icon: 'none',
+					    duration: 1500 // 设置弹窗显示时间
+					  });
+					
+					  // 延时跳转
+					  setTimeout(() => {
+					    uni.navigateTo({
+					      url: '/pages/recharge/records/records'
+					    });
+					  }, 1500); // 延时与弹窗持续时间相同
 				} else {
 					uni.showToast({
 						title: res.msg, // 修改为多语言引用

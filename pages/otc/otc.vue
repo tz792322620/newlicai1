@@ -152,6 +152,7 @@
 		},
 		onShow() {
 			this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
+			this.getOtcList()
 		},
 		computed: {
 			// 币种集合

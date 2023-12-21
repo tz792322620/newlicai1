@@ -16,7 +16,7 @@
 					</view>
 					<view style="margin-top:60rpx;">
 						<view style="font-weight: bold;font-size: 32rpx;display: flex;align-items: center;">
-							{{ userInfo.username }}
+							{{ userInfo.nickname }}
 							<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
 								:src="`../../static/images/my/v${userInfo.level}.png`" mode=""></image>
 								<!-- <text v-if="userInfo.level === 0" style="color: #999999;margin-left: 10rpx;font-size: 20rpx;">普通会员</text> -->
@@ -36,7 +36,7 @@
 					</view>
 				</view>
 				<view style="margin-top: 20rpx;font-size:50rpx;font-weight: bold;">
-					{{ Number(userInfo.buildable_amount + userInfo.gift_points).toFixed(2) }}
+					{{ userInfo.total_amount }}
 				</view>
 				<view style="margin-top: 30rpx;">
 					<u-row gutter="16">
@@ -107,6 +107,10 @@
 				},
 			};
 		},
+		onShow(){
+			let that = this
+			that.getUser()
+		}, 
 		computed: {
 			accountDetails() {
 				return [{
@@ -198,12 +202,7 @@
 				]
 			}
 		},
-		onLoad() {
-			this.getUser()
-		},
-		onShow(){
-			this.getUser()
-		},
+
 		methods: {
 			// 退出登录
 			logout() {

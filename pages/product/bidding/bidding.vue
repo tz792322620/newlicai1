@@ -9,7 +9,7 @@
 					<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">{{$t('investableAmount')}}</view>
 				</view>
 				<view class="u-flex" style="margin-top: 30rpx;font-size: 34rpx;">
-					<view style="width:280rpx;"> {{productInfo.total_units - productInfo.sold_units}}</view>
+					<view style="width:280rpx;">{{ userInfo.total_amount }}</view>
 					<view class="u-text-right" style="width:280rpx;margin-left:60rpx;"> {{productInfo.total_units}}</view>
 					</view>
 		</view>
@@ -79,10 +79,11 @@
 </template>
 
 <script>
-	import { getStockProductById } from '@/api/api.js'
+	import { getUserInfo,getStockProductById } from '@/api/api.js'
 	export default {
 		data() {
 			return {
+				userInfo: '',
 				value: 1,
 				customStyle1: {
 					height: '90rpx',
@@ -100,6 +101,8 @@
 			uni.setNavigationBarTitle({
 				title: this.$t('bidNow')
 			})
+			let that = this
+			that.getUser()
 		},
 		onLoad(params) {
 			this.productId = params.id
@@ -116,6 +119,13 @@
 			}
 		},
 		methods: {
+			async getUser() {
+				const res = await getUserInfo()
+				if (res.code === 1) {
+					this.userInfo = res.data
+				}
+				console.log(this.userInfo)
+			},
 			async getStockProduct() {
 				const res = await getStockProductById(this.productId)
 				if (res.code === 1) {

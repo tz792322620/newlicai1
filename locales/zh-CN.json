@@ -13,6 +13,7 @@
 	  },
 	  "Pending": "待处理",
 	  "Completed": "已完成",
+	  "Completeds": "已成交",
 	  "Cancelled": "已取消",
 	  "Failed": "失败",
 	"greeting": "你好",
@@ -575,6 +576,9 @@
 			   "buildable_amount": "可建倉金額",
 			   "gift_points": "禮品積分",
 			   "Trade cancelled": "交易已取消",
-			   "pointsMultiplier": "积分赠送倍数"
+			   "pointsMultiplier": "积分赠送倍数",
+			     "signingTime": "签约时间",
+			     "expiryTime": "到期时间",
+				 "Referral reward": "推荐奖励"
 			   
 }
