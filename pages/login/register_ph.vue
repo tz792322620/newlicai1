@@ -145,18 +145,18 @@
 				this.regionCode = item.code
 				this.regionValue = item.value
 			},
-			async reg() {
-				let that = this
-				this.$refs.v5dialog.verify(function(result) {
-					if (result.success) {
-						var verifyId = result.verifyId;
-						// bar(verifyId);
-						that.regs();
-					}
-				});
+			// async reg() {
+			// 	let that = this
+			// 	this.$refs.v5dialog.verify(function(result) {
+			// 		if (result.success) {
+			// 			var verifyId = result.verifyId;
+			// 			// bar(verifyId);
+			// 			that.regs();
+			// 		}
+			// 	});
 
-			},
-			async regs() {
+			// },
+			async reg() {
 				if (this.username == '') {
 					return this.$tools.toast('请输入手机号码');
 				}
@@ -168,9 +168,9 @@
 				if (this.password == '') {
 					return this.$tools.toast('请输入登录密码');
 				}
-				if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.password)) {
-					return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
-				}
+				// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.password)) {
+				// 	return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
+				// }
 				if (this.code == '') {
 					return this.$tools.toast('请输入短信验证码');
 				} else if (this.referrerCode == '') {

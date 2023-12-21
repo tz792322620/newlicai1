@@ -9,6 +9,30 @@
 					<uni-icons type="right"></uni-icons>
 				</view>
 			</view>
+			   <view class="order_item_cell">
+				  <view class="order_item_cell_left">
+					{{ $t('receivablePrincipalInterest') }}
+				  </view>
+				  <view class="order_item_cell_right">
+					{{ item.receivable_principal_interest }}
+				  </view>
+				</view>
+				<view class="order_item_cell">
+				  <view class="order_item_cell_left">
+					{{ $t('receivedPrincipalInterest') }}
+				  </view>
+				  <view class="order_item_cell_right">
+					{{ item.received_principal_interest }}
+				  </view>
+				</view>
+				<view class="order_item_cell">
+				  <view class="order_item_cell_left">
+					{{ $t('pendingPrincipalInterest') }}
+				  </view>
+				  <view class="order_item_cell_right">
+					{{ item.pending_principal_interest }}
+				  </view>
+				</view>
 			<view class="order_item_cell">
 				<view class="order_item_cell_left">
 					{{$t('status')}}
@@ -25,6 +49,7 @@
 					{{item.purchase_amount}}
 				</view>
 			</view>
+
 
 			<view class="order_item_cell">
 				<view class="order_item_cell_left">
@@ -127,7 +152,7 @@
 						color: #333333;
 					}
 				}
-				&:nth-child(4) {
+				&:nth-child(7) {
 					.order_item_cell_right {
 						width: 160rpx;
 						height: 56rpx;

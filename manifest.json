@@ -132,7 +132,7 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/api" : {
-                    "target" : "https://xingu.bianceok.info/api", // 测试
+                    "target" : "https://api.broadreachvip.top/api", // 测试
                     "changeOrigin" : true,
                     "secure" : false,
                     "pathRewrite" : {

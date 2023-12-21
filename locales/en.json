@@ -587,5 +587,12 @@
 	"signingTime": "Signing Time",
 	"expiryTime": "Expiry Time",
 	"Referral reward": "Referral Reward",
-	"Completeds": "Completed"
+	"Completeds": "Completed",
+	  "receivablePrincipalInterest": "Receivable Principal and Interest",
+	  "receivedPrincipalInterest": "Received Principal and Interest",
+	  "pendingPrincipalInterest": "Pending Principal and Interest",
+	    "Referral reward": "Referral reward",
+	    "Distribute earnings": "Distribute earnings",
+	    "Return principal": "Return principal",
+		"Yuebao earnings": "Yuebao earnings"
 }

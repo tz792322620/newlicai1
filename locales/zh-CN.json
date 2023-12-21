@@ -591,6 +591,13 @@
 	"pointsMultiplier": "积分赠送倍数",
 	"signingTime": "签约时间",
 	"expiryTime": "到期时间",
-	"Referral reward": "推荐奖励"
+	"Referral reward": "推荐奖励",
+	  "receivablePrincipalInterest": "应收本息",
+	  "receivedPrincipalInterest": "已收本息",
+	  "pendingPrincipalInterest": "待收本息",
+	    "Referral reward": "推荐奖励",
+	    "Distribute earnings": "分配收益",
+	    "Return principal": "返还本金",
+		"Yuebao earnings": "余利宝收益"
 
 }
