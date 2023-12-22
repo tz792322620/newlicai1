@@ -607,5 +607,6 @@
 			  "Deduction": "Deduction",
 			  "Time": "Time",
 			    "Interest Coupon": "Interest Coupon",
-			    "Discount Coupon": "Discount Coupon"
+			    "Discount Coupon": "Discount Coupon",
+				"Coupon Management": "Coupon Management"
 }
