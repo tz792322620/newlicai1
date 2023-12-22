@@ -75,10 +75,10 @@
 						src="../../static/images/p3.png"></image>
 					<view style="width:220rpx;">
 						<view>{{item.product_name_cn}}</view>
-						<view style="color: #999999;font-size: 24rpx;">603809.sz</view>
+						<!-- <view style="color: #999999;font-size: 24rpx;">603809.sz</view> -->
 					</view>
-					<view class="col35 f_bod" style="font-size: 32rpx;">+2.19%</view>
-					<view class="f_bod" style="font-size: 32rpx;margin-left:80rpx;">¥12.06</view>
+					<view class="col35 f_bod" style="font-size: 32rpx;">{{item.interest_rate}}%</view>
+					<view class="f_bod" style="font-size: 32rpx;margin-left:80rpx;">{{item.amount_per_unit}}</view>
 				</view>
 				<view style="margin-top:15rpx;">
 					<u-line color="#F3F3F3"></u-line>
@@ -354,7 +354,8 @@
 				const res = await getStockProductList('Hot')
 				uni.hideLoading()
 				if (res.code === 1) {
-					this.ProductList = res.data
+					this.ProductList = res.data.slice(0, 3);
+					// this.ProductList.slice(0, 3);
 				}
 				// var data = {};
 				// data['area'] = 'Hot'

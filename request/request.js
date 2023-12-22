@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://api.broadreachvip.top/api' // 测试
-const BASE_URL = 'https://api.broadreachvip.top/api' // 正式
+// const BASE_URL = 'https://xingu.bianceok.info/api' // 测试
+const BASE_URL = 'https://xingu.bianceok.info/api' // 正式
 // const BASE_URL = '/api'
 import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
@@ -52,7 +52,7 @@ function request(options = {}) {
 			options.fail = (err) => {
 				console.log(err)
 				uni.showToast({
-					title: '系统错误',
+					title: '网络超时',
 					icon: 'none'
 				})
 				uni.hideLoading()

@@ -25,7 +25,7 @@
 					{{$t('account')}}
 				</view>
 				<view class="cell_right">
-					<text>{{userInfo.mobile}}</text>
+					<text>{{ userInfo.mobile ? userInfo.mobile : userInfo.email }}</text>
 					<image src="@/static/images/otc/order/copy.png" mode="" @click="copy"></image>
 				</view>
 			</view>

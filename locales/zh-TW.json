@@ -599,5 +599,18 @@
 	   "Referral reward": "推薦獎勵",
 	    "Distribute earnings": "分配收益",
 	    "Return principal": "返還本金",
-		"Yuebao earnings": "餘利寶收益"
+		"Yuebao earnings": "餘利寶收益",
+		  "remainingTotalAmountRaised": "剩餘募集總額",
+		  "totalAmountRaised": "募集總額",
+		    "totalReceivablePrincipalInterest": "總應收本息",
+		    "totalReceivedPrincipalInterest": "總已收本息",
+		    "totalPendingPrincipalInterest": "總待收本息",
+			  "Type": "類型",
+			  "Interest Coupon Name": "加息券名稱",
+			  "Discount Coupon Name": "抵扣券名稱",
+			  "Interest Increase": "加息",
+			  "Deduction": "抵扣",
+			  "Time": "時間",
+			    "Interest Coupon": "加息券",
+			    "Discount Coupon": "抵扣券"
 }

@@ -52,6 +52,13 @@ export function getGonggaoLogById(id) {
 	}) 
 }
 
+// 获取用户总的应收本息，已收本息，待收本息
+export function getTotalPrincipalInterest() {
+	return request({
+		url: `/user/getTotalPrincipalInterest`
+	}) 
+}
+
 // id 查询单个新股订单和对应的合同
 export function getStockOrderAndContractById(id) {
 	return request({
@@ -344,6 +351,13 @@ export function withdraw(data) {
 export function getUserWithdrawals() {
 	return request({
 		url: '/user/getUserWithdrawals'
+	})
+}
+
+// 查询用户的加息券和优惠券
+export function getUserCoupons() {
+	return request({
+		url: '/user/getUserCoupons'
 	})
 }
 // 根据充值ID查询提现记录

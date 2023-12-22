@@ -1,5 +1,21 @@
 <template>
 	<view class="order">
+		<view style="display: flex;
+				justify-content: space-between;
+				text-align: center;"  class="order_item">
+			<view>
+			  <view>{{$t('totalReceivablePrincipalInterest')}}</view>
+			  <view>{{total.total_receivable_principal_interest}}</view>
+			</view>
+			<view>
+			  <view>{{$t('totalReceivedPrincipalInterest')}}</view>
+			  <view>{{total.total_received_principal_interest}}</view>
+			</view>
+			<view>
+			  <view>{{$t('totalPendingPrincipalInterest')}}</view>
+			  <view>{{total.total_pending_principal_interest}}</view>
+			</view>
+		</view>
 		<view class="order_item" v-for="(item,index) in list" :key="index">
 			<view class="order_item_cell" @click="toDetails(item)">
 				<view class="order_item_cell_left">
@@ -72,11 +88,12 @@
 </template>
 
 <script>
-	import { currentUserStockOrder } from '@/api/api.js'
+	import { currentUserStockOrder,getTotalPrincipalInterest } from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				list: []
+				list: [],
+				total: {},
 			}
 		},
 		onShow() {
@@ -92,11 +109,18 @@
 				// console.log(status)
 			    return this.$t(status);
 			  },
+			  
 			async getData() {
 				const res = await currentUserStockOrder()
 				console.log(res)
 				if (res.code === 1) {
 					this.list = res.data
+				}
+				
+				const res1 = await getTotalPrincipalInterest()
+				console.log(res1)
+				if (res1.code === 1) {
+					this.total = res1.data
 				}
 			},
 			toDetails(item) {

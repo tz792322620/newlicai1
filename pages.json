@@ -376,6 +376,13 @@
 			}
 
 		}, {
+			"path": "pages/coupon/coupon",
+			"style": {
+				"navigationBarTitleText": "加息优惠劵",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
 			"path": "pages/recharge/records/details",
 			"style": {
 				"navigationBarTitleText": "充值详情",

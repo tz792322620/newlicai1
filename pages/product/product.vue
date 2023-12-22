@@ -38,13 +38,14 @@
                             style="color: #21BF90;">{{item.max_purchase_amount}}U</text>
                     </view>
                 </view>
-                <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
-                    <view style="width: 300rpx;">{{ $t('soldUnits') }}：<text
-                            style="color: #21BF90;">{{item.sold_units}}U</text></view>
-                    <view style="width: 300rpx;" class="u-text-right">{{ $t('totalFundraising') }}：<text
-                            style="color: #21BF90;">{{item.total_fundraising}}U</text>
-                    </view>
-                </view>
+				  <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
+					<view style="width: 300rpx;">
+					  {{ $t('remainingTotalAmountRaised') }}：<text style="color: #21BF90;">{{item.sold_units}}U</text>
+					</view>
+					<view style="width: 300rpx;" class="u-text-right">
+					  {{ $t('totalAmountRaised') }}：<text style="color: #21BF90;">{{item.total_fundraising}}U</text>
+					</view>
+				  </view>
 				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
 				    <view style="width: 300rpx;">{{$t('pointsMultiplier')}}：<text
 				            style="color: #21BF90;">X{{item.point_multiplier}}</text></view>

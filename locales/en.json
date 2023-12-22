@@ -594,5 +594,18 @@
 	    "Referral reward": "Referral reward",
 	    "Distribute earnings": "Distribute earnings",
 	    "Return principal": "Return principal",
-		"Yuebao earnings": "Yuebao earnings"
+		"Yuebao earnings": "Yuebao earnings",
+		  "remainingTotalAmountRaised": "Remaining Total Amount Raised",
+		  "totalAmountRaised": "Total Amount Raised",
+		    "totalReceivablePrincipalInterest": "Total Receivable Principal and Interest",
+		    "totalReceivedPrincipalInterest": "Total Received Principal and Interest",
+		    "totalPendingPrincipalInterest": "Total Pending Principal and Interest",
+			 "Type": "Type",
+			  "Interest Coupon Name": "Interest Coupon Name",
+			  "Discount Coupon Name": "Discount Coupon Name",
+			  "Interest Increase": "Interest Increase",
+			  "Deduction": "Deduction",
+			  "Time": "Time",
+			    "Interest Coupon": "Interest Coupon",
+			    "Discount Coupon": "Discount Coupon"
 }

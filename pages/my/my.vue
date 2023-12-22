@@ -186,6 +186,11 @@
 					},
 					{
 						image: '../../static/images/my/d4.png',
+						title: '加息抵扣劵管理',
+						url: '/pages/coupon/coupon'
+					},
+					{
+						image: '../../static/images/my/d4.png',
 						title: this.$t('fundsDetails'),
 						url: '/pages/my/funds/funds'
 					},
