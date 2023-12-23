@@ -23,6 +23,7 @@
 				<view class="sign_box_list">
 					<view class="sign_box_list_item" v-for="(item,index) in 7" :key="index"
 						:class="{'expired' : index  < signinDays,'active' : index === activeIndex}"
+						:data-attr="content"
 						@click="tabClick(index)">
 						<view class="days">
 							{{$t('the')}}{{index + 1}}{{$t('days')}}
@@ -41,7 +42,8 @@
 				<view class="records_title">
 					{{$t('signRecord')}}
 				</view>
-				<view class="records_cell" v-for="(item,index) in signRecords" :key="index">
+				<u-empty v-if="signRecords.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+				<view v-if="signRecords.length !== 0" class="records_cell" v-for="(item,index) in signRecords" :key="index">
 					<view class="records_cell_left">
 						<view class="records_cell_left_desc">
 							{{$t('signSuccess')}}
@@ -82,6 +84,11 @@
 			this.getSigninDays()
 			this.activeIndex = this.signinDays
 			this.getSignRecords()
+		},
+		computed: {
+			content() {
+				return this.$t('afterContent')
+			}
 		},
 		methods: {
 			// 获取用户连续签到天数
@@ -253,15 +260,19 @@
 							position: relative;
 
 							&::before {
-								content: '';
+								content: attr(data-attr);
 								width: 80rpx;
 								height: 50rpx;
 								position: absolute;
-								left: 50%;
-								top: 50%;
-								transform: translate(-50%, -50%);
-								background: url('../../../static/images/my/sign/expired.png') center center no-repeat;
-								background-size: 100% 100%;
+								// left: 50%;
+								top: 30%;
+								// transform: translate(-50%, -50%);
+								font-size: 24rpx;
+								font-weight: 400;
+								color: #ff3e00;
+								transform: rotate(25deg);
+								// background: url('../../../static/images/my/sign/expired.png') center center no-repeat;
+								// background-size: 100% 100%;
 								z-index: 10;
 							}
 						}

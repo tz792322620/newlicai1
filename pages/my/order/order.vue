@@ -16,7 +16,8 @@
 			  <view>{{total.total_pending_principal_interest}}</view>
 			</view>
 		</view>
-		<view class="order_item" v-for="(item,index) in list" :key="index">
+		<u-empty v-if="list.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+		<view v-if="list.length !== 0" class="order_item" v-for="(item,index) in list" :key="index">
 			<view class="order_item_cell" @click="toDetails(item)">
 				<view class="order_item_cell_left">
 					{{item.product.product_name_cn}}
@@ -111,6 +112,9 @@
 			  },
 			  
 			async getData() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await currentUserStockOrder()
 				console.log(res)
 				if (res.code === 1) {
@@ -119,6 +123,7 @@
 				
 				const res1 = await getTotalPrincipalInterest()
 				console.log(res1)
+				uni.hideLoading()
 				if (res1.code === 1) {
 					this.total = res1.data
 				}

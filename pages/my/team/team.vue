@@ -65,7 +65,8 @@
 				<view class="user-info_title">
 					{{$t('personnelInfo')}}
 				</view>
-				<view class="user-info_item" v-for="(item,index) in list" :key="index">
+				<u-empty v-if="list.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+				<view v-if="list.length !== 0" class="user-info_item" v-for="(item,index) in list" :key="index">
 					<view class="info">
 						<view class="info_avatar">
 							<image :src="item.referrer.avatar" mode=""></image>

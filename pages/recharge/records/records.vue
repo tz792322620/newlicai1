@@ -1,6 +1,7 @@
 <template>
 	<view class="records">
-		<view class="records_item" v-for="(item,index) in recordsList" :key="index" @click="toDetails(item)">
+		<u-empty v-if="recordsList.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+		<view v-if="recordsList.length !== 0" class="records_item" v-for="(item,index) in recordsList" :key="index" @click="toDetails(item)">
 			<view class="records_item_title">
 				<view class="records_item_title_left">
 					{{item.currency_type}}
@@ -74,7 +75,11 @@
 				})
 			},
 			async getData() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getUserRechargeRecords()
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.recordsList = res.data
 				}

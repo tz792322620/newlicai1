@@ -133,6 +133,9 @@
 					success: function(chooseImageRes) {
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						console.log(tempFilePaths[0])
+						uni.showLoading({
+							mask: true
+						})
 						uni.uploadFile({
 							url: that.$url + '/api/user/uploadAvatar',
 							filePath: tempFilePaths[0],
@@ -141,7 +144,8 @@
 								token: uni.getStorageSync('token')
 							},
 							formData: {
-								'avatar': tempFilePaths[0]
+								'avatar': tempFilePaths[0],
+								'Content-Type': 'multipart/form-data'
 							},
 							success: (uploadFileRes) => {
 								const res = JSON.parse(uploadFileRes.data)
@@ -153,6 +157,7 @@
 										icon: 'none'
 									})
 								}
+								uni.hideLoading()
 							}
 						});
 					}

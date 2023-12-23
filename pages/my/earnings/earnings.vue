@@ -1,6 +1,7 @@
 <template>
 	<view class="earnings">
-		<view class="earnings_item" v-for="(item,index) in list" :key="index">
+		<u-empty v-if="list.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+		<view v-if="list.length !== 0" class="earnings_item" v-for="(item,index) in list" :key="index">
 			<view class="title">
 		<!-- 		{{item.earnings_type}} -->
 				{{ getStatusTranslation(item.earnings_type) }}
@@ -55,7 +56,11 @@
 			  return this.$t(status);
 			},
 			async getData() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getAllEarnings()
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.list = res.data
 				}

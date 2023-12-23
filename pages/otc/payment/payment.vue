@@ -7,7 +7,8 @@
 			</view>
 		</view>
 		<view class="content">
-			<view class="content-item" v-for="(item,index) in paymentList" :key="index">
+			<u-empty v-if="paymentList.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+			<view v-if="paymentList.length !== 0" class="content-item" v-for="(item,index) in paymentList" :key="index">
 				<view class="content-item_one">
 					<view class="content-item_one_left" :class="item.payment_type == '支付宝' ? 'zhifu' : item.payment_type == '微信' ? 'weixin' : ''">
 						{{item.payment_type}}

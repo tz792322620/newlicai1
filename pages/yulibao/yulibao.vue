@@ -57,8 +57,8 @@
 		<view class="transaction-list ylb1">
 			<view class="transaction-title" style="font-size: 1rem;
     font-weight: bold;">{{$t('transactionDetail')}}</view>
-
-			<view class="transaction-item" v-for="(item,index) in list" :key="index">
+			<u-empty v-if="list.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+			<view v-if="list.length !== 0" class="transaction-item" v-for="(item,index) in list" :key="index">
 				<view>
 					<view class="transaction-name">{{ getStatusTranslation(item.description) }}</view>
 					<view class="transaction-date">{{item.create_time | timestampFilter}}</view>
@@ -295,6 +295,7 @@
 
 	.transaction-list {
 		margin-top: 20px;
+		padding-bottom: 60rpx;
 	}
 
 	.transaction-title {

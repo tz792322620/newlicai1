@@ -183,7 +183,7 @@
 	"legalTender": "Legal Tender",
 	"adDetails": "Ad Details",
 	"id": "ID",
-	"totalAssets": "Total Assets (¥)",
+	"totalAssets": "Total Assets (USDT)",
 	"signIn": "Sign In",
 	"complianceGuarantee": "Compliance Guarantee",
 	"availableToOpenPosition": "Available(USDT)",
@@ -284,7 +284,7 @@
 	"transfer": "Transfer",
 	"quit": "Quit",
 	"depositAccount": "Deposit Account",
-	"depositEmpty": "No Deposit Records",
+	"depositEmpty": "No Records",
 	"roll-out": "Roll Out",
 	"deposits": "Deposits",
 	"enterDeposit": "Enter Deposit",
@@ -608,5 +608,6 @@
 			  "Time": "Time",
 			    "Interest Coupon": "Interest Coupon",
 			    "Discount Coupon": "Discount Coupon",
-				"Coupon Management": "Coupon Management"
+				"Coupon Management": "Coupon Management",
+				"afterContent": "Signed"
 }

@@ -137,12 +137,16 @@
 					success: (chooseImageRes) => {
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						console.log(tempFilePaths[0])
+						uni.showLoading({
+							mask: true
+						})
 						uni.uploadFile({
 							url: this.$url + '/api/image/upload',
 							filePath: tempFilePaths[0],
 							name: 'image',
 							formData: {
-								'image': tempFilePaths[0]
+								'image': tempFilePaths[0],
+								'Content-Type': 'multipart/form-data'
 							},
 							success: (uploadFileRes) => {
 								const res = JSON.parse(uploadFileRes.data)
@@ -158,6 +162,7 @@
 										icon: 'none'
 									})
 								}
+								uni.hideLoading()
 							}
 						});
 					}

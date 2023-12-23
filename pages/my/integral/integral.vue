@@ -1,6 +1,7 @@
 <template>
 	<view class="funds">
-		<view class="cell" v-for="(item,index) in list" :key="index">
+		<u-empty v-if="list.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+		<view v-if="list.length !== 0" class="cell" v-for="(item,index) in list" :key="index">
 			<view class="cell_left">
 				<view class="description">
 			<!-- 		{{item.description}} -->
@@ -40,7 +41,11 @@
 			  return this.$t(status);
 			},
 			async getData() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getGiftPointsRecords()
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.list = res.data
 				}
