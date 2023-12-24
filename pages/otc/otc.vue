@@ -232,6 +232,7 @@
 						}
 					} else if(res.code === 0) {
 						this.modalShow = true
+						return
 					}
 				}
 				uni.navigateTo({

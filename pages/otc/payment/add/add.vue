@@ -147,6 +147,12 @@
 				console.log(res)
 			},
 			uploadImage() {
+				let header = {}
+				// #ifdef APP-PLUS
+				if (uni.getSystemInfoSync().platform == 'ios') {
+					header['content-type'] = 'multipart/form-data'
+				}
+				// #endif
 				uni.chooseImage({
 					success: (chooseImageRes) => {
 						const tempFilePaths = chooseImageRes.tempFilePaths;
@@ -155,9 +161,10 @@
 							url: this.$url + '/api/image/upload',
 							filePath: tempFilePaths[0],
 							name: 'image',
-							formData: {
-								'image': tempFilePaths[0]
-							},
+							header: header,
+							// formData: {
+							// 	'image': tempFilePaths[0]
+							// },
 							success: (uploadFileRes) => {
 								const res = JSON.parse(uploadFileRes.data)
 								if (res.code === 1) {
