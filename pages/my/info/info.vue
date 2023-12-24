@@ -98,6 +98,15 @@
 			}
 		},
 		onLoad() {
+			uni.getSystemInfo({
+				success(res) {
+					if (res.osName == 'ios') {
+						console.log("我是ios", res)
+					} else {
+						console.log("我是安卓", res)
+					}
+				}
+			})
 			this.getUser()
 		},
 		methods: {
@@ -127,6 +136,13 @@
 			},
 			actionClick(index) {
 				console.log(index, this.$url)
+				let header = {}
+				header['token'] = uni.getStorageSync('token')
+				// #ifdef APP-PLUS
+				if (uni.getSystemInfoSync().platform == 'ios') {
+					header['content-type'] = 'multipart/form-data'
+				}
+				// #endif
 				let that = this
 				uni.chooseImage({
 					sourceType: index === 1 ? ['album'] : ['camera'], //从相册选择
@@ -140,14 +156,12 @@
 							url: that.$url + '/api/user/uploadAvatar',
 							filePath: tempFilePaths[0],
 							name: 'avatar',
-							header: {
-								token: uni.getStorageSync('token')
-							},
-							formData: {
-								'avatar': tempFilePaths[0],
-								'Content-Type': 'multipart/form-data'
-							},
+							header: header,
+							// formData: {
+							// 	name: 'avatar'
+							// },
 							success: (uploadFileRes) => {
+								console.log(uploadFileRes)
 								const res = JSON.parse(uploadFileRes.data)
 								if (res.code === 1) {
 									that.getUser()
