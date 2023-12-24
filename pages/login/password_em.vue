@@ -105,18 +105,18 @@
 			},
 			async resetPasswords(){
 				if (this.account == '') {
-					return this.$tools.toast('请输入邮箱');
+					return this.$tools.toast(this.$t('enterEmail'));
 				}else if (this.new_password == '') {
-					return this.$tools.toast('请输入登录密码');
+					return this.$tools.toast(this.$t('inputPassword'));
 				}
 				if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.new_password)) {
-				    return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
+				    return this.$tools.toast(this.$t('passwordRequirement'));
 				}
 				if(this.new_password != this.new_password1){
-					return this.$tools.toast('两次密码不一致');
+					return this.$tools.toast(this.$t('twoPwdFail'));
 				}
 				if (this.code == '') {
-					return this.$tools.toast('请输入邮箱验证码');
+					return this.$tools.toast(this.$t('enterEmailCode'));
 				}
 				if (this.lock) {
 					this.lock = false
@@ -128,7 +128,7 @@
 					data['authenticate'] = this.ypauthenticate;
 					const res = await resetPassword(data)
 					if (res.code == "1") {
-						this.$tools.toast('修改成功');
+						this.$tools.toast(res.msg);
 						setTimeout(() => {
 							this.$tools.back(1);
 							this.lock = true
@@ -148,10 +148,10 @@
 			
 			async sendCode() {
 				if (this.account == '') {
-					return this.$tools.toast('请输入邮箱');
+					return this.$tools.toast(this.$t('inputEmail'));
 				}
 				uni.showLoading({
-					title: '发送中',
+					title: this.$t('sending'),
 					mask: true
 				});
 				var data = {};
@@ -160,7 +160,7 @@
 				const res = await emsSend(data)
 				if (res.code == '1') {
 					// 开始倒计时
-					this.$tools.toast('发送成功');
+					this.$tools.toast(this.$t('sendSuccessfully'));
 					this.countdown = 60;
 					const timer = setInterval(() => {
 						if (this.countdown > 0) {

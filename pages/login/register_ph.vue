@@ -158,25 +158,25 @@
 			// },
 			async reg() {
 				if (this.username == '') {
-					return this.$tools.toast('请输入手机号码');
+					return this.$tools.toast(this.$t('enterPhoneNumber'));
 				}
 				if (this.username.indexOf("@") < 0) {
 					if (this.username.length != 11 || !/^((1[0-9])+\d{9})$/.test(this.username)) {
-						return this.$tools.toast('请输入正确的手机号码');
+						return this.$tools.toast(this.$t('enterTruePhoneNumber'));
 					}
 				}
 				if (this.password == '') {
-					return this.$tools.toast('请输入登录密码');
+					return this.$tools.toast(this.$t('inputPassword'));
 				}
 				// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.password)) {
 				// 	return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
 				// }
 				if (this.code == '') {
-					return this.$tools.toast('请输入短信验证码');
+					return this.$tools.toast(this.$t('enterSMSCode'));
 				} else if (this.referrerCode == '') {
-					return this.$tools.toast('请输入推荐人ID');
+					return this.$tools.toast(this.$t('enterReferrerID'));
 				} else if (this.tongyi == 0) {
-					return this.$tools.toast('请先阅读并同意协议');
+					return this.$tools.toast(this.$t('enterReadAndAgree'));
 				}
 				if (this.lock) {
 					this.lock = false
@@ -190,7 +190,7 @@
 					data['region'] = this.regionValue;
 					const res = await register(data)
 					if (res.code == "1") {
-						this.$tools.toast('注册成功');
+						this.$tools.toast(res.msg);
 						setTimeout(() => {
 							this.$tools.back(1);
 							this.lock = true
@@ -209,10 +209,10 @@
 
 			async sendCode() {
 				if (this.username == '') {
-					return this.$tools.toast('请输入邮箱');
+					return this.$tools.toast(this.$t('enterPhoneNumber'));
 				}
 				uni.showLoading({
-					title: '发送中',
+					title: this.$t('sending'),
 					mask: true
 				});
 				var data = {};
@@ -220,7 +220,7 @@
 				const res = await smsSend(data)
 				if (res.code == '1') {
 					// 开始倒计时
-					this.$tools.toast('发送成功');
+					this.$tools.toast(this.$t('sendSuccessfully'));
 					this.countdown = 60;
 					const timer = setInterval(() => {
 						if (this.countdown > 0) {

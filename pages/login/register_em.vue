@@ -122,19 +122,19 @@
 			// },
 			async reg(){
 				if (this.username == '') {
-					return this.$tools.toast('请输入邮箱');
+					return this.$tools.toast(this.$t('inputEmail'));
 				}else if (this.password == '') {
-					return this.$tools.toast('请输入登录密码');
+					return this.$tools.toast(this.$t('inputPassword'));
 				}
 				// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.password)) {
 				//     return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
 				// }
 				if (this.code == '') {
-					return this.$tools.toast('请输入邮箱验证码');
+					return this.$tools.toast(this.$t('enterEmailCode'));
 				}else if (this.referrerCode == '') {
-					return this.$tools.toast('请输入推荐人ID');
+					return this.$tools.toast(this.$t('enterReferrerID'));
 				}else if (this.tongyi == 0) {
-					return this.$tools.toast('请先阅读并同意协议');
+					return this.$tools.toast(this.$t('enterReadAndAgree'));
 				}
 				if (this.lock) {
 					this.lock = false
@@ -147,7 +147,7 @@
 					data['token'] = this.yptoken; 
 					const res = await register(data)
 					if (res.code == "1") {
-						this.$tools.toast('注册成功');
+						this.$tools.toast(res.msg);
 						setTimeout(() => {
 							this.$tools.back(1);
 							this.lock = true
@@ -167,10 +167,10 @@
 			
 			async sendCode() {
 				if (this.username == '') {
-					return this.$tools.toast('请输入邮箱');
+					return this.$tools.toast(this.$t('inputEmail'));
 				}
 				uni.showLoading({
-					title: '发送中',
+					title: this.$t('sending'),
 					mask: true
 				});
 				var data = {};
@@ -178,7 +178,7 @@
 				const res = await emsSend(data)
 				if (res.code == '1') {
 					// 开始倒计时
-					this.$tools.toast('发送成功');
+					this.$tools.toast(this.$t('sendSuccessfully'));
 					this.countdown = 60;
 					const timer = setInterval(() => {
 						if (this.countdown > 0) {

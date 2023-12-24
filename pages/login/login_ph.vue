@@ -98,9 +98,9 @@
 			async login(){
 				console.log('进入登录')
 				if (this.account == '') {
-					return this.$tools.toast('请输入手机号码');
+					return this.$tools.toast(this.$t('enterPhoneNumber'));
 				}else if (this.password == '') {
-					return this.$tools.toast('请输入登录密码');
+					return this.$tools.toast(this.$t('inputPassword'));
 				}
 				// else if (this.tongyi == 0) {
 				// 	return this.$tools.toast('请先阅读并同意协议');
@@ -120,7 +120,7 @@
 						uni.setStorageSync('token', res.data.userinfo.token);
 						uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
 						uni.setStorageSync('support_link', JSON.stringify(res.data.support_link))
-						this.$tools.toastSwitchTab('登录成功', '../home/home');
+						this.$tools.toastSwitchTab(res.msg, '../home/home');
 						setTimeout(() => {
 							this.lock = true
 						}, 1000);
