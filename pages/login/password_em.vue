@@ -92,26 +92,26 @@
 		
 		},
 		methods: {
-			async resetPassword(){
-				let that=this
-				this.$refs.v5dialog.verify(function(result){
-					if(result.success){
-						var verifyId=result.verifyId;
-						// bar(verifyId);
-						 that.resetPasswords();
-					}
-				});
+			// async resetPassword(){
+			// 	let that=this
+			// 	this.$refs.v5dialog.verify(function(result){
+			// 		if(result.success){
+			// 			var verifyId=result.verifyId;
+			// 			// bar(verifyId);
+			// 			 that.resetPasswords();
+			// 		}
+			// 	});
 				
-			},
-			async resetPasswords(){
+			// },
+			async resetPassword(){
 				if (this.account == '') {
 					return this.$tools.toast(this.$t('enterEmail'));
 				}else if (this.new_password == '') {
 					return this.$tools.toast(this.$t('inputPassword'));
 				}
-				if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.new_password)) {
-				    return this.$tools.toast(this.$t('passwordRequirement'));
-				}
+				// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.new_password)) {
+				//     return this.$tools.toast(this.$t('passwordRequirement'));
+				// }
 				if(this.new_password != this.new_password1){
 					return this.$tools.toast(this.$t('twoPwdFail'));
 				}

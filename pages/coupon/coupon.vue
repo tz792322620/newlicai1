@@ -42,7 +42,7 @@
 					{{$t('Deduction')}}
 				</view>
 				<view class="records_item_cell_right">
-					{{item.discount_coupon.discount_amount}}
+					{{item.discount_coupon.discount_amount}}USDT
 				</view>
 			</view>
 			<view class="records_item_cell">
@@ -67,7 +67,7 @@
 		},
 		onShow() {
 			uni.setNavigationBarTitle({
-				title: '加息优惠劵管理'
+				title: this.$t('Coupon Management')
 			})
 		},
 		onLoad() {

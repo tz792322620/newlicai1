@@ -33,18 +33,23 @@
                 </view>
                 <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
                     <view style="width: 300rpx;">{{ $t('minPurchase') }}：<text
-                            style="color: #21BF90;">{{item.min_purchase_amount}}U</text></view>
+                            style="color: #21BF90;">{{item.min_purchase_amount}}USDT</text></view>
                     <view style="width: 300rpx;" class="u-text-right">{{ $t('maxPurchase') }}：<text
-                            style="color: #21BF90;">{{item.max_purchase_amount}}U</text>
+                            style="color: #21BF90;">{{item.max_purchase_amount}}USDT</text>
                     </view>
                 </view>
+
 				  <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
-					<view style="width: 300rpx;">
-					  {{ $t('remainingTotalAmountRaised') }}：<text style="color: #21BF90;">{{item.sold_units}}U</text>
+				  		
+					<view style="width: 600rpx;">
+					  {{ $t('totalAmountRaised') }}：<text style="color: #21BF90;">{{item.total_fundraising}}USDT</text>
 					</view>
-					<view style="width: 300rpx;" class="u-text-right">
-					  {{ $t('totalAmountRaised') }}：<text style="color: #21BF90;">{{item.total_fundraising}}U</text>
-					</view>
+				  </view>
+				  <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
+				  					<view style="width: 600rpx;">
+				  					  {{ $t('remainingTotalAmountRaised') }}：<text style="color: #21BF90;">{{item.sold_units}}USDT</text>
+				  					</view>
+				  				
 				  </view>
 				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
 				    <view style="width: 300rpx;">{{$t('pointsMultiplier')}}：<text
@@ -62,7 +67,7 @@
                     </view>
                     <view style="margin-left:200rpx;">
                         <u-button ripple-bg-color="#fff" @click="reg(item)" :ripple="true" style="font-size:28rpx;"
-                            :custom-style="customStyle1" shape="circle" type="primary">{{$t('buyNow')}}</u-button>
+                            :custom-style="customStyle1" shape="circle" type="primary">{{$t('immediateInvestment')}}</u-button>
                     </view>
                 </view>
             </view>

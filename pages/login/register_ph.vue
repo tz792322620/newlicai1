@@ -192,10 +192,11 @@
 					if (res.code == "1") {
 						this.$tools.toast(res.msg);
 						setTimeout(() => {
-							this.$tools.back(1);
+							uni.navigateTo({
+							  url: '/pages/login/login_ph'
+							});
 							this.lock = true
 						}, 1000);
-
 					} else {
 						this.$tools.toast(res.msg)
 						setTimeout(() => {

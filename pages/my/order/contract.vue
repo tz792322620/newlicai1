@@ -46,7 +46,7 @@
     <p style="line-height: 16pt;"><span >{{$t('clause6.3')}}</span></p>
     <p style="line-height: 16pt;"><span >{{$t('clause6.4')}}</span></p>
     <p style="line-height: 16pt;">{{$t('endOfMainContent')}}</p>
-    <p style="line-height: 16pt;">{{$t('partyASignature')}}:
+    <p style="line-height: 16pt;margin-bottom: 25pt;">{{$t('partyASignature')}}:
       <div class="seal-container">
       <!-- <image class="seal-image" :src="details.contract.signature_image_path"></image> -->
 	  
@@ -55,19 +55,19 @@
  
       </div>
     </p>
-    <p style="line-height: 16pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
-    <p style="line-height: 16pt;">{{$t('partyBSignature')}}:
+    <p style="line-height: 16pt;margin-bottom: 30pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
+    <p style="line-height: 16pt;margin-bottom: 25pt;">{{$t('partyBSignature')}}:
       <div class="seal-container">
         <image class="seal-image" :src="fullImagePath(details.product.manager_seal_image)"></image>
       </div>
     </p>
-    <p style="line-height: 16pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
-    <p style="line-height: 16pt;">{{$t('partyCSignature')}}:
+    <p style="line-height: 16pt;margin-bottom: 30pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
+    <p style="line-height: 16pt;margin-bottom: 25pt;">{{$t('partyCSignature')}}:
       <div class="seal-container">
         <image class="seal-image" :src="fullImagePath(details.product.guarantor_seal_image)"></image>
       </div>
     </p>
-    <p style="line-height: 16pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
+    <p style="line-height: 16pt;margin-bottom: 30pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
   </view>
 </template> 
 

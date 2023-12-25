@@ -322,7 +322,7 @@ export function createRecharge(data){
 // 充值记录
 export function getUserRechargeRecords() {
 	return request({
-		url: '/user/getUserRechargeRecords?status=Pending'
+		url: '/user/getUserRechargeRecords'
 	})
 }
 // 根据充值ID查询充值记录

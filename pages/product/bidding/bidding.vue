@@ -10,15 +10,15 @@
 				</view>
 				<view class="u-flex" style="margin-top: 30rpx;font-size: 34rpx;">
 					<view style="width:280rpx;">{{ userInfo.total_amount }}</view>
-					<view class="u-text-right" style="width:280rpx;margin-left:60rpx;"> {{productInfo.total_units}}</view>
+					<view class="u-text-right" style="width:280rpx;margin-left:60rpx;"> {{productInfo.max_purchase_amount * productInfo.remaining_purchase_times}}</view>
 					</view>
 		</view>
 			<view style="background-color: #FFFFFF;border-radius: 12rpx;padding: 30rpx;margin-top: 30rpx;">
-				  <view class="u-flex" style="margin-bottom:30rpx;">
+<!-- 				  <view class="u-flex" style="margin-bottom:30rpx;">
 					<view style="width:200rpx;color: #666666;">{{$t('qtAmount')}}</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;"><text
 						class="col35" style="margin-left:6rpx;margin-right: 6rpx;">{{productInfo.min_purchase_amount}}</text>{{$t('yuan')}}</view>
-				  </view>
+				  </view> -->
 				  <view class="u-flex" style="margin-bottom:30rpx;">
 					<view style="width:200rpx;color: #666666;">{{$t('remainingPurchaseTimes')}}</view>
 					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;"><text
@@ -43,11 +43,11 @@
 				<u-line color="#F3F3F3"></u-line>
 				<view class="u-flex" style="margin-bottom:30rpx;margin-top: 30rpx;">
 					<view style="width:200rpx;color: #666666;">{{$t('tzAmount')}}</view>
-					<view class="u-text-right" style="width:360rpx;margin-left:60rpx;color: #333333;">
+					<view class="u-text-right" style="width:500rpx;margin-left:60rpx;color: #333333;">
 <!-- 						<u-number-box color="#ffffff" :min="parseInt(Number(productInfo.amount_per_unit))" :step="parseInt(Number(productInfo.amount_per_unit))" bg-color="#35CBA5" v-model="value" @change="valChange">
 						</u-number-box> -->
 						<u-field
-							v-model="productInfo.min_purchase_amount"
+							v-model="productInfo.min_purchase_amounts"
 							:placeholder="$t('tzAmount')"
 						>
 						</u-field>
@@ -140,7 +140,7 @@
 			},
 			toInvest() {
 				uni.navigateTo({
-					url: `/pages/product/security/security?id=${this.productId}&amount=${this.productInfo.min_purchase_amount}`
+					url: `/pages/product/security/security?id=${this.productId}&amount=${this.productInfo.min_purchase_amounts}`
 				})
 			}
 		}
