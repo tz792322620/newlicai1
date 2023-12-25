@@ -11,19 +11,19 @@
 				<view style="color: #F75F52;font-size: 44rpx;font-weight: bold;margin-top: 20rpx;">
 					{{Number(productInfo.interest_rate) * 100}}%</view>
 				<view style="margin-top: 20rpx;">{{$t('holdingPeriod')}}<text style="color: #F75F52;margin-right: 40rpx;">{{$t('whenFull')}}</text>
-					{{$t('qtAmount')}}<text style="color: #F75F52;"> {{productInfo.amount_per_unit}}</text>{{$t('yuan')}}
+					{{$t('qtAmount')}}<text style="color: #F75F52;"> {{productInfo.min_purchase_amount}}</text>{{$t('yuan')}}
 					<view style="margin-top: 20rpx;">
 						<u-line-progress active-color="#6BEEAB" height="22" :percent="Number(productInfo.progress)">
 						</u-line-progress>
 					</view>
 					<view class="u-flex" style="margin-top: 20rpx;">
-						<view style="width: 300rpx;">
-							<text style="margin-right: 10rpx;color: #AFAFAF;">{{$t('totalAmount')}}</text>
-							{{productInfo.total_units / 10000}}{{$t('wanyuan')}}
+						<view style="width: 300rpx;text-align: left;">
+							<text style="margin-right: 10rpx;color: #AFAFAF;">{{$t('totalAmount')}}</text><br/>
+							{{productInfo.total_fundraising}}USDT
 						</view>
 						<view style="width: 300rpx;margin-left:200rpx;" class="u-text-right">
-							<text style="margin-right: 10rpx;color: #AFAFAF;">{{$t('residue')}}</text>
-							{{(productInfo.total_units - productInfo.sold_units) / 10000}}{{$t('wanyuan')}}
+							<text style="margin-right: 10rpx;color: #AFAFAF;">{{$t('residue')}}</text><br/>
+							{{productInfo.sold_units}}USDT
 						</view>
 					</view>
 				</view>
@@ -96,7 +96,7 @@
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">{{$t('amountCalculationRule')}}</text>
 				</view>
 				<view style="margin-top:20rpx;color: #666666;">
-					{{$t('dailyDividend')}}{{Number(productInfo.interest_rate) * Number(productInfo.amount_per_unit)}}{{$t('yuan')}}*{{productInfo.investment_period}}{{$t('days')}}={{$t('totalRevenue')}}{{Number(productInfo.interest_rate) * Number(productInfo.amount_per_unit) * productInfo.investment_period}}{{$t('yuan')}}
+					{{$t('dailyDividend')}}{{Number(productInfo.interest_rate) * Number(productInfo.min_purchase_amount)}}{{$t('yuan')}}*{{productInfo.investment_period}}{{$t('days')}}={{$t('totalRevenue')}}{{Number(productInfo.interest_rate) * Number(productInfo.min_purchase_amount) * productInfo.investment_period}}{{$t('yuan')}}
 				</view>
 			</view>
 			<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">

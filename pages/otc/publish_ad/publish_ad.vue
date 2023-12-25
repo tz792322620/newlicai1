@@ -8,7 +8,8 @@
 			<view class="item">
 				<view class="desc">{{ $t('currency') }}</view>
 				<view class="input" @click="isAbP = !isAbP">
-					<text>{{ abName }}</text>
+					<text v-if="abName&&!abName1">{{ abName }}</text>
+					<text v-else>{{ abName1 }}</text>
 					<uni-icons type="bottom"></uni-icons>
 				</view>
 				<view class="u-flex-popup" v-if="isAbP">
@@ -26,7 +27,8 @@
 			<view class="item">
 				<view class="desc">{{ $t('adType') }}</view>
 				<view class="input" @click="isType = !isType">
-					<text>{{ activeType }}</text>
+					<text v-if="activeType&&!activeType1">{{ activeType }}</text>
+					<text v-else>{{ activeType1 }}</text>
 					<uni-icons type="bottom"></uni-icons>
 				</view>
 				<view class="u-flex-popup" v-if="isType">
@@ -74,7 +76,7 @@
 			<view class="item">
 				<view class="desc">{{ $t('paymentMethod') }}</view>
 				<view class="input" @click="isPay = !isPay">
-					<text>{{ data.payment_method }}</text>
+					<text>{{ paymentMethod }}</text>
 					<uni-icons type="bottom"></uni-icons>
 				</view>
 				<view class="u-flex-popup" v-if="isPay">
@@ -165,31 +167,58 @@
 				}, {
 					id: 2,
 					name: '30分钟'
-				}]
+				}],
+				abName1: '', // 币种显示值
+				activeType1: '', // 币种显示值
+				activePay: [],
+				paymentMethod: '', // 支付方式显示值
+				paymentMethodList: '', // 支付方式显示值数组
+			}
+		},
+		watch: {
+			'_i18n.locale': {
+				handler: function(value) {
+					console.log(value)
+					this.activePay = ['微信']
+					this.paymentMethod = this.$t('wechat')
+					this.paymentMethodList = [this.$t('wechat')]
+				},
+				immediate: true
 			}
 		},
 		computed: {
-			abName() {
-				return this.$t('hkd')
+			abName: {
+				get() {
+					return this.$t('hkd')
+				},
+				set(newValue) {
+					console.log(newValue)
+					this.abName1 = newValue
+				}
 			},
 			// 币种集合
 			currencyList() {
 				return [{
-					url: '../../static/images/otc/gangbi.png',
+					url: '../../../static/images/otc/gangbi.png',
 					ab: 'HKD',
 					name: this.$t('hkd')
 				}, {
-					url: '../../static/images/otc/taibi.png',
+					url: '../../../static/images/otc/taibi.png',
 					ab: 'TWD',
 					name: this.$t('twd')
 				}, {
-					url: '../../static/images/otc/renminbi.png',
+					url: '../../../static/images/otc/renminbi.png',
 					ab: 'CNY',
 					name: this.$t('cny')
 				}]
 			},
-			activeType() {
-				return this.$t('buy')
+			activeType: {
+				get() {
+					return this.$t('buy')
+				},
+				set(newValue) {
+					this.activeType1 = newValue
+				}
 			},
 			typeList() {
 				return [{
@@ -200,24 +229,24 @@
 					name: this.$t('sell')
 				}]
 			},
-			activePay(){
-				return [this.$t('wechat')]
-			},
 			payList() {
 				return [{
 					url: '../../../static/images/otc/publish_ad/0.png',
 					id: 0,
 					name: this.$t('wechat'),
+					value: '微信',
 					isTrue: true
 				}, {
 					url: '../../../static/images/otc/publish_ad/1.png',
 					id: 1,
 					name: this.$t('alipay'),
+					value: '支付宝',
 					isTrue: false
 				}, {
 					url: '../../../static/images/otc/publish_ad/2.png',
 					id: 2,
 					name: this.$t('bankCard'),
+					value: '银行卡',
 					isTrue: false
 				}]
 			},
@@ -244,13 +273,14 @@
 			payClick(item) {
 				item.isTrue = !item.isTrue
 				if (item.isTrue) {
-					this.activePay.push(item.name)
+					this.activePay.push(item.value)
+					this.paymentMethodList.push(item.name)
 				} else {
-					this.activePay = this.activePay.filter(item1 => item1 !== item.name)
+					this.activePay = this.activePay.filter(item1 => item1 != item.value)
+					this.paymentMethodList = this.paymentMethodList.filter(item1 => item1 != item.name)
 				}
-				console.log(this.activePay)
 				this.data.payment_method = this.activePay.join()
-				console.log(this.data.payment_method)
+				this.paymentMethod = this.paymentMethodList.join()
 				// this.activePayIndex = item.id
 				// this.data.payment_method = item.name
 				this.isPay = false
@@ -302,6 +332,7 @@
 				if (res.code === 1) {
 					uni.showToast({
 						title: res.msg,
+						icon: 'none',
 						duration: 2000,
 						success: () => {
 							uni.redirectTo({

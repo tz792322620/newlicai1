@@ -4,16 +4,16 @@
 			<view class="desc">{{ $t('choosePaymentMethod') }}</view>
 			<view class="select">
 				<view class="select-c" @click="isShow = !isShow">
-					<view class="select-c_left">{{ data.payment_type }}</view>
+					<view class="select-c_left">{{ activePayment }}</view>
 					<view class="select-c_right">
 						<uni-icons :type="isShow ? 'top' : 'bottom'"></uni-icons>
 					</view>
 				</view>
 				<view class="u-flex-popup" v-if="isShow">
 					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in paymentList" :key="index"
+						<view class="u-flex-popup-content-item" v-for="(item,index) in paymentList" :key="item.id"
 							:class="activeIndex == item.id ? 'active' : ''" @click="payClick(item)">
-							<text>{{ $t(item.name) }}</text>
+							<text>{{ item.name }}</text>
 						</view>
 					</view>
 				</view>
@@ -63,9 +63,9 @@
 		</view>
 		<view class="item" v-if="activeIndex === 2">
 			<view class="desc">{{ $t('BranchBank') }}</view>
-			<view class="input">
+			<text class="input" style="display: block;">
 				<u-input :placeholder="$t('enterBranchBank')" v-model="data.branch_name"></u-input>
-			</view>
+			</text>
 		</view>
 		<view class="item">
 			<view class="desc">{{ $t('remark') }}</view>
@@ -84,13 +84,11 @@
 	</view>
 </template>
 
-
-
 <script>
 	import {
 		addPaymentInfo,
 		getPaymentInfoById
-	} from '@/api/api';
+	} from '@/api/api.js';
 	export default {
 		data() {
 			return {
@@ -105,7 +103,17 @@
 					remark: ''
 				},
 				activeIndex: 0,
+				activePayment: '',
 				isShow: false
+			}
+		},
+		watch: {
+			'_i18n.locale': {
+				handler: function(value) {
+					console.log(value)
+					this.activePayment = this.$t('wechat')
+				},
+				immediate: true
 			}
 		},
 		computed: {
@@ -113,12 +121,15 @@
 			paymentList() {
 				return [{
 					name: this.$t('WeChat'),
+					value: '微信',
 					id: 0
 				}, {
 					name: this.$t('Alipay'),
+					value: '支付宝',
 					id: 1
 				}, {
 					name: this.$t('BankCard'),
+					value: '银行卡',
 					id: 2
 				}]
 			}
@@ -127,7 +138,7 @@
 			console.log(params)
 			if (params.id) {
 				this.getPaymentInfo(params.id)
-			}else {
+			} else {
 				uni.setNavigationBarTitle({
 					title: this.$t('addPaymentMethod')
 				})
@@ -181,11 +192,14 @@
 				})
 			},
 			payClick(item) {
+				console.log(item)
 				this.activeIndex = item.id
-				this.data.payment_type = item.name
+				this.activePayment = item.name
+				this.data.payment_type = item.value
 				this.isShow = false
 			},
 			async save() {
+				console.log(this.data)
 				if (this.data.user_name.trim() == '' || this.data.user_name.length === 0) {
 					return uni.showToast({
 						title: this.$t('enterName'),
@@ -194,7 +208,9 @@
 				}
 				if (this.data.account_number.trim() == '' || this.data.account_number.length === 0) {
 					return uni.showToast({
-						title: this.activeIndex == 0 ? this.$t('enterWeChatAccount') : this.activeIndex == 1 ? this.$t('enterAlipayAccount') : this.activeIndex == 2 ? this.$t('enterBankCardAccount') : '',
+						title: this.activeIndex == 0 ? this.$t('enterWeChatAccount') : this.activeIndex == 1 ?
+							this.$t('enterAlipayAccount') : this.activeIndex == 2 ? this.$t(
+								'enterBankCardAccount') : '',
 						icon: 'none'
 					})
 				}
@@ -220,8 +236,16 @@
 				}
 				const res = await addPaymentInfo(this.data)
 				if (res.code === 1) {
-					uni.navigateTo({
-						url: '/pages/otc/payment/payment'
+					uni.showToast({
+						title: res.msg,
+						icon: 'none',
+						success: () => {
+							setTimeout(() => {
+								uni.navigateTo({
+									url: '/pages/otc/payment/payment'
+								})
+							}, 1000);
+						}
 					})
 				}
 			}
@@ -260,7 +284,13 @@
 			border-radius: 12rpx;
 			padding: 20rpx;
 		}
-
+		.input2 {
+			height: 90rpx;
+			background: #F4F5F7;
+			border-radius: 12rpx;
+			padding: 0 20rpx;
+			padding-top: 10rpx;
+		}
 		.input {
 			height: 90rpx;
 			background: #F4F5F7;

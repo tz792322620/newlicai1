@@ -151,7 +151,7 @@
 					success: function() {
 						uni.showToast({
 							title: that.$t('contentCopied'),
-							icon: 'success'
+							icon: 'none'
 						})
 						// console.log('success');
 					}

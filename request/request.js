@@ -29,7 +29,7 @@ function request(options = {}) {
 				if (res.data.code === 401) {
 					uni.showToast({
 						title: res.data.msg,
-						icon: 'error',
+						icon: 'none',
 						mask: true
 					})
 					uni.removeStorageSync('token')
@@ -42,7 +42,7 @@ function request(options = {}) {
 				if (res.data.code !== 1) {
 					uni.showToast({
 						title: res.data.msg,
-						icon: 'error',
+						icon: 'none',
 						mask: true
 					})
 				}

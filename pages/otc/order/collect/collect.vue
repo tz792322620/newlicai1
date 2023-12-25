@@ -164,6 +164,7 @@
 				if (res.code === 1) {
 					uni.showToast({
 						title: res.msg,
+						icon: 'none',
 						success: () => {
 							setTimeout(() => {
 							  uni.switchTab({
