@@ -616,5 +616,8 @@
 	"Discount Coupon": "Discount Coupon",
 	"Coupon Management": "Coupon Management",
 	"afterContent": "Signed",
-	"Create Yuebao order": "Create Yuebao Order"
+	"Create Yuebao order": "Create Yuebao Order",
+	  "confirmPassword": "Confirm Password",
+	  "passwordMismatch": "Passwords do not match",
+	  "rechargeSuccessful": "Recharge Successful"
 }
