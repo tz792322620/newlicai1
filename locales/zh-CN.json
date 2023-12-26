@@ -455,7 +455,7 @@
 	"Sign in": "签到",
 	"Withdrawal": "提款",
 	"Withdraw from Yuebao": "从余利宝提现",
-	"Backend recharge": "后台充值",
+	"Backend recharge": "充值成功",
 	"Create yuebao order": "创建余利宝订单",
 	"contractDetails": "合同详情",
 	"contractTitle": "投资合同书",
@@ -621,6 +621,9 @@
 	"Discount Coupon": "抵扣券",
 	"Coupon Management": "优惠劵管理",
 	"afterContent": "已签到",
-	"Create Yuebao order": "创建余额宝订单"
+	"Create Yuebao order": "创建余额宝订单",
+	  "confirmPassword": "确认密码",
+	  "passwordMismatch": "两次输入的密码不一致",
+	  "Recharge Successful": "充值成功"
 
 }

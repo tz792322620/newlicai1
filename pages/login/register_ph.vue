@@ -31,6 +31,10 @@
 					</view>
 					<u-input v-model="password" type="password" :placeholder="$t('setLoginPassword')" />
 				</view>
+				<view class="logo_input u-flex">
+				  <view><image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em2.png"></image></view>
+				  <u-input v-model="confirmPassword" type="password" :placeholder="$t('confirmPassword')" />
+				</view>
 				<!-- 				<view class="logo_input u-flex">
 					<view><image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em3.png"></image></view>
 					<u-input type="text" :placeholder="$t('enterCaptcha')" />
@@ -108,6 +112,7 @@
 
 				username: '',
 				password: '',
+				confirmPassword: '',
 				code: '',
 				referrerCode: '',
 
@@ -167,6 +172,10 @@
 				}
 				if (this.password == '') {
 					return this.$tools.toast(this.$t('inputPassword'));
+				}
+				// 检查两次输入的密码是否一致
+				if (this.password !== this.confirmPassword) {
+				  return this.$tools.toast(this.$t('passwordMismatch'));
 				}
 				// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.password)) {
 				// 	return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
