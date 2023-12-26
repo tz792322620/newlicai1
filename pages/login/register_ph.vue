@@ -94,7 +94,7 @@
 		register
 	} from '@/api/api.js'
 	import V5Dialog from '@/components/verify5-ui/V5Dialog'
-	import V5Button from '@/components/verify5-ui/V5Button'
+	import V5Button from '@/components/verify5-ui/V5Button' 
 	export default {
 		data() {
 			return {
