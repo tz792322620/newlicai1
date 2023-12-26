@@ -23,6 +23,12 @@
 		"India": "印度",
 		"Vietnam": "越南"
 	},
+	"bidding": {
+		"tips1": "已達到最高購買次數",
+		"tips2": "可用申購金額不足",
+		"tips3": "低于單次最低申購金額",
+		"tips4": "超過單次最高申購上限"
+	},
 	"Pending": "待處理",
 	"Completed": "已完成",
 	"Completeds": "已成交",
@@ -130,7 +136,7 @@
 	"riskControl": "專業風控",
 	"fundGuarantee": "資金保障",
 	"productName": "項目名稱",
-	"recruitmentCycle": "招募週期",
+	"recruitmentCycle": "投資週期",
 	"residueTime": "剩餘時間",
 	"rule": "規則",
 	"everyday": "按每日",
@@ -592,9 +598,9 @@
 	"AuthenticationFailedButton": "重新提交資料",
 	"Points for stock order": "新股訂單積分",
 	"integralTitle": "積分明細",
-	"withdrawable_amount": "可提取金额",
-	"buildable_amount": "可建仓金额",
-	"gift_points": "礼品积分",
+	"withdrawable_amount": "可提取金額",
+	"buildable_amount": "可建倉金額",
+	"gift_points": "禮品積分",
 	"Trade cancelled": "交易已取消",
 	"pointsMultiplier": "積分贈送倍數",
 	"signingTime": "簽約時間",
@@ -616,7 +622,7 @@
 	"Interest Coupon Name": "加息券名稱",
 	"Discount Coupon Name": "抵扣券名稱",
 	"Interest Increase": "加息",
-	"Deduction": "抵扣金额",
+	"Deduction": "抵扣金額",
 	"Time": "時間",
 	"Interest Coupon": "加息券",
 	"Discount Coupon": "抵扣券",
@@ -625,5 +631,9 @@
 	"Create Yuebao order": "創建餘額寶訂單",
 	  "confirmPassword": "確認密碼",
 	  "passwordMismatch": "兩次輸入的密碼不一致",
-	  "Recharge Successful": "充值成功"
+	  "Recharge Successful": "充值成功",
+	  "dikouChoose": "選擇可用抵扣券",
+	  "dikouEmpty": "暫無可用抵扣券",
+	  "jiaxiChoose": "選擇可用加息券",
+	  "jiaxiEmpty": "暫無可用加息券"
 }

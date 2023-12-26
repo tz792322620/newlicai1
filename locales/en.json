@@ -23,6 +23,12 @@
 		"India": "India",
 		"Vietnam": "Vietnam"
 	},
+	"bidding": {
+		"tips1": "Maximum number of purchases reached",
+		"tips2": "Insufficient available subscription amount",
+		"tips3": "Lower than the single minimum subscription amount",
+		"tips4": "Exceeding the maximum single subscription limit"
+	},
 	"Pending": "Pending",
 	"Completed": "Completed",
 	"Cancelled": "Cancelled",
@@ -130,7 +136,7 @@
 	"riskControl": "Professional Risk Control",
 	"fundGuarantee": "Fund Guarantee",
 	"productName": "Product Name",
-	"recruitmentCycle": "Recruitment Cycle",
+	"recruitmentCycle": "Investment cycle",
 	"residueTime": "Residue Time",
 	"rule": "Rule",
 	"everyday": "Everyday",
@@ -620,5 +626,9 @@
 	"Create Yuebao order": "Create Yuebao Order",
 	  "confirmPassword": "Confirm Password",
 	  "passwordMismatch": "Passwords do not match",
-	  "rechargeSuccessful": "Recharge Successful"
+	  "rechargeSuccessful": "Recharge Successful",
+	  "dikouChoose": "Select available coupons",
+	  "dikouEmpty": "No coupons available yet",
+	  "jiaxiChoose": "Select available interest rate coupons",
+	  "jiaxiEmpty": "No interest rate coupons available yet"
 }

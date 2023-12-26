@@ -23,7 +23,7 @@
 						</view>
 						<view style="width: 300rpx;margin-left:200rpx;" class="u-text-right">
 							<text style="margin-right: 10rpx;color: #AFAFAF;">{{$t('residue')}}</text><br/>
-							{{productInfo.sold_units}}USDT
+							{{Number(productInfo.total_fundraising) - productInfo.sold_units}}USDT
 						</view>
 					</view>
 				</view>

@@ -23,6 +23,12 @@
 		"India": "印度",
 		"Vietnam": "越南"
 	},
+	"bidding": {
+		"tips1": "已达到最高购买次数",
+		"tips2": "可用申购金额不足",
+		"tips3": "低于单次最低申购金额",
+		"tips4": "超过单次最高申购上限"
+	},
 	"Pending": "待处理",
 	"Completed": "已完成",
 	"Completeds": "已成交",
@@ -130,7 +136,7 @@
 	"riskControl": "专业风控",
 	"fundGuarantee": "资金保障",
 	"productName": "项目名称",
-	"recruitmentCycle": "招募周期",
+	"recruitmentCycle": "投资周期",
 	"residueTime": "剩余时间",
 	"rule": "规则",
 	"everyday": "按每日",
@@ -593,7 +599,7 @@
 	"integralTitle": "积分明细",
 	"withdrawable_amount": "可提取金额",
 	"buildable_amount": "可建仓金额",
-	"gift_points": "积分",
+	"gift_points": "礼品积分",
 	"Trade cancelled": "交易已取消",
 	"pointsMultiplier": "积分赠送倍数",
 	"signingTime": "签约时间",
@@ -624,6 +630,10 @@
 	"Create Yuebao order": "创建余额宝订单",
 	  "confirmPassword": "确认密码",
 	  "passwordMismatch": "两次输入的密码不一致",
-	  "Recharge Successful": "充值成功"
+	  "Recharge Successful": "充值成功",
+	  "dikouChoose": "选择可用抵扣券",
+	  "dikouEmpty": "暂无可用抵扣券",
+	  "jiaxiChoose": "选择可用加息券",
+	  "jiaxiEmpty": "暂无可用加息券"
 
 }

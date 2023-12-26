@@ -56,7 +56,9 @@
 					product_id: '',
 					investment_amount: '',
 					signature_image_path: '',
-					pay_password:''
+					pay_password:'',
+					discount_coupon_id: '',
+					interest_coupon_id: ''
 				}
 			}
 		},
@@ -70,6 +72,8 @@
 			if (params) {
 				this.investData.product_id = params.id
 				this.investData.investment_amount = params.amount
+				this.interest_coupon_id = params.interestId
+				this.discount_coupon_id = params.discountId
 			}
 		},
 		methods: {
