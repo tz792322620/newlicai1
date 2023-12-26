@@ -11,7 +11,9 @@
 			</view>
 			<view class="box1_cell">
 				<text class="box1_cell_left">{{$t('unitPrice')}}</text>
-				<text class="box1_cell_right">¥{{dataInfo.price}}</text>
+				<text class="box1_cell_right">
+					{{dataInfo.currency | currencySymbol}}{{dataInfo.price}}
+				</text>
 			</view>
 			<view class="box1_cell">
 				<text class="box1_cell_left">{{$t('quantity')}}</text>
@@ -19,7 +21,7 @@
 			</view>
 			<view class="box1_cell">
 				<text class="box1_cell_left">{{$t('quota')}}</text>
-				<text class="box1_cell_right">¥{{dataInfo.min_amount}}-¥{{dataInfo.max_amount}}</text>
+				<text class="box1_cell_right">{{dataInfo.currency | currencySymbol}}{{dataInfo.min_amount}}-{{dataInfo.currency | currencySymbol}}{{dataInfo.max_amount}}</text>
 			</view>
 		</view>
 		<view class="box2">

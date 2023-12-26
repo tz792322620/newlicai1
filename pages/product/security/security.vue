@@ -165,8 +165,19 @@
 				const res = await createStockOrder(this.investData)
 				uni.hideLoading()
 				if (res.code === 1) {
-					uni.navigateTo({
-						url: '/pages/my/order/order'
+					// uni.reLaunch({
+					// 	url: '/pages/my/order/order'
+					// })
+					uni.showToast({
+						title: res.msg,
+						icon: 'none',
+						success: () => {
+							setTimeout(() => {
+								uni.switchTab({
+									url: '/pages/my/my'
+								})
+							}, 1000)
+						}
 					})
 				}
 			}

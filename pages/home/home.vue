@@ -77,7 +77,7 @@
 						<view>{{item.product_name_cn}}</view>
 						<!-- <view style="color: #999999;font-size: 24rpx;">603809.sz</view> -->
 					</view>
-					<view class="col35 f_bod" style="font-size: 32rpx;">{{item.interest_rate}}%</view>
+					<view class="col35 f_bod" style="font-size: 32rpx;">{{item.interest_rate * 100}}%</view>
 					<view class="f_bod" style="font-size: 32rpx;margin-left:80rpx;">{{item.amount_per_unit}}</view>
 				</view>
 				<view style="margin-top:15rpx;">
@@ -101,7 +101,7 @@
 							<view>{{item.product_name_cn}}<text
 									style="font-size: 24rpx;color:#999999;">{{item.investment_period}}</text></view>
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
-								{{item.interest_rate}}%
+								{{item.interest_rate * 100}}%
 							</view>
 							<view style="margin-top: 20rpx;">{{item.amount_per_unit}}{{$t('yuan')}}{{$t('qitou')}}</view>
 						</view>
@@ -130,7 +130,7 @@
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==1}" @click="getxuan(1,'Newbie')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
-							<view>{{$t('new')}}</view>
+							<view>{{$t('newItem1')}}</view>
 							<view
 								style="width:120rpx;height:8rpx;margin-left: 20rpx; background:linear-gradient(#35CBA5,#FFFFFF)"
 								v-if="xuan==1">
@@ -140,7 +140,7 @@
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==2}" @click="getxuan(2,'Activity')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
-							<view>{{$t('elite')}}</view>
+							<view>{{$t('eliteItem1')}}</view>
 							<view
 								style="width:120rpx;height:8rpx;margin-left: 20rpx; background:linear-gradient(#35CBA5,#FFFFFF)"
 								v-if="xuan==2">
@@ -150,7 +150,7 @@
 					<u-col span="3">
 						<view class="u-text-center" :class="{'xuan':xuan==3}" @click="getxuan(3,'VIP')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
-							<view>{{$t('vip')}}</view>
+							<view>{{$t('vipItem1')}}</view>
 							<view
 								style="width:120rpx;height:8rpx;margin-left: 20rpx; background:linear-gradient(#35CBA5,#FFFFFF)"
 								v-if="xuan==3">
@@ -198,8 +198,8 @@
 										:percent="Number(item.progress)"></u-line-progress>
 								</view>
 								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
-									<view style="width:50rpx;">0</view>
-									<view class="u-text-right" style="width: 220rpx;">2550{{$t('wanyuan')}}</view>
+									<view style="width:50rpx;">{{item.min_purchase_amount}}{{$t('yuan')}}</view>
+									<view class="u-text-right" style="width: 220rpx;">{{item.max_purchase_amount}}{{$t('yuan')}}</view>
 								</view>
 							</view>
 						</u-col>

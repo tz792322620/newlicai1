@@ -96,7 +96,7 @@
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">{{$t('amountCalculationRule')}}</text>
 				</view>
 				<view style="margin-top:20rpx;color: #666666;">
-					{{$t('dailyDividend')}}{{Number(productInfo.interest_rate) * Number(productInfo.min_purchase_amount)}}{{$t('yuan')}}*{{productInfo.investment_period}}{{$t('days')}}={{$t('totalRevenue')}}{{Number(productInfo.interest_rate) * Number(productInfo.min_purchase_amount) * productInfo.investment_period}}{{$t('yuan')}}
+					{{$t('dailyDividend')}}{{Number(productInfo.interest_rate) * Number(productInfo.min_purchase_amount)}}{{$t('yuan')}}*{{productInfo.investment_period}}{{$t('days')}}={{$t('totalRevenue')}}{{(Number(productInfo.interest_rate) * Number(productInfo.min_purchase_amount) * productInfo.investment_period).toFixed(2)}}{{$t('yuan')}}
 				</view>
 			</view>
 			<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">

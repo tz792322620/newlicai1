@@ -37,7 +37,7 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="text" :placeholder="$t('enterAmount')"  v-model="data.recharge_amount" />
+						<u-input type="number" :placeholder="$t('enterAmount')"  v-model="data.recharge_amount" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
@@ -181,6 +181,12 @@
 						icon: "none"
 					});
 				}
+				if (!/^(?=.*[a-zA-Z])(?=.*\d).{30,}$/.test(this.data.recharge_address)) {
+					return uni.showToast({
+						title: this.$t('enterTestWithdrawalAddress'),
+						icon: 'none'
+					})
+				}
 				const res = await createRecharge(this.data);
 				if (res.code === 1) {
 					 uni.showToast({
@@ -188,7 +194,10 @@
 					    icon: 'none',
 					    duration: 1500 // 设置弹窗显示时间
 					  });
-					
+						this.data.recharge_address = ''
+						this.data.recharge_amount = ''
+						this.data.network_type = ''
+						this.activeIndex = -1
 					  // 延时跳转
 					  setTimeout(() => {
 					    uni.navigateTo({

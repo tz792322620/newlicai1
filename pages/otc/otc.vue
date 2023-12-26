@@ -71,7 +71,7 @@
 				</view>
 				<view class="u-flex" style="margin-top: 10rpx;">
 					<view style="color:#AFAFAF;margin-right: 20rpx;">{{$t('quota')}}</view>
-					<view>¥{{item.min_amount}}-{{item.max_amount}} </view>
+					<view>{{item.currency | currencySymbol}}{{item.min_amount}}-{{item.currency | currencySymbol}}{{item.max_amount}} </view>
 				</view>
 				<view class="u-flex" style="margin-top: 10rpx;margin-bottom: 20rpx;">
 					<view class="u-flex" style="width: 520rpx;">

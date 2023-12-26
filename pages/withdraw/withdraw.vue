@@ -37,8 +37,7 @@
 				</view>
 				<view class="select">
 					<view class="select_value">
-						<u-input type="text" :placeholder="$t('enterWithdrawalAmount')" v-model="data.withdrawal_amount"
-							 />
+						<u-input type="number" :placeholder="$t('enterWithdrawalAmount')" v-model="data.withdrawal_amount" />
 					</view>
 					<view class="right" @click="confirms()">
 						USDT <text @click="confirms()">{{$t('allItem')}}</text>
@@ -50,7 +49,7 @@
 			</view>
 			<view class="buttons">
 				<view class="description">
-					{{$t('quantityReceived')}}:<text>{{account_amount}}USDT</text>
+					{{$t('quantityReceived')}}:<text>{{data.withdrawal_amount}}USDT</text>
 				</view>
 				<view class="button" @click="$noMultipleClicks(submit)">
 					{{$t('submit')}}
@@ -168,6 +167,12 @@
 						icon: "none"
 					})
 				}
+				if (!/^(?=.*[a-zA-Z])(?=.*\d).{30,}$/.test(this.data.withdrawal_address)) {
+					return uni.showToast({
+						title: this.$t('enterTestWithdrawalAddress'),
+						icon: 'none'
+					})
+				}
 				if (this.$u.test.isEmpty(this.data.withdrawal_amount)) {
 					return uni.showToast({
 						title: this.$t('enterWithdrawalAmount'),
@@ -176,6 +181,10 @@
 				}
 				const res = await withdraw(this.data)
 				if (res.code === 1) {
+					this.data.network_type = ''
+					this.data.withdrawal_address = ''
+					this.data.withdrawal_amount = ''
+					this.activeIndex = -1
 					uni.showToast({
 						title: res.msg,
 						icon: 'none'

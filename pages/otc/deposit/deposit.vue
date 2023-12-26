@@ -46,7 +46,7 @@
 			<view v-if="list.length !== 0">
 				<view class="transaction-item" v-for="(item,index) in list" :key="index">
 					<view>
-						<view class="transaction-name">{{item.amount > 0 ? $t('roll-out') : item.amount < 0 ? $t('transfer') : ''}}</view>
+						<view class="transaction-name">{{item.amount < 0 ? $t('roll-out') : item.amount > 0 ? $t('transfer') : ''}}</view>
 						<view class="transaction-date">{{item.create_time | timestampFilter}}</view>
 					</view>
 					<view>

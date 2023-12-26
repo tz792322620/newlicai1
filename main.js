@@ -58,6 +58,18 @@ Vue.filter('ellipsis', (value) => {
 		return value
 	}
 })
+// 货币符号
+Vue.filter('currencySymbol', (value) => {
+	if (value) {
+		if (value == 'CNY') {
+			return '¥'
+		} else if (value == 'HKD') {
+			return 'HK$'
+		} else if (value == 'TWD' ) {
+			return 'NT$'
+		}
+	}
+})
 Vue.prototype.$Ajax3 = Ajax3
 Vue.prototype.$tools = tools
 Vue.prototype.$url = 'https://api.broadreachvip.top'
