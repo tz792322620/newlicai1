@@ -2,8 +2,8 @@
 	<view class="buy">
 		<view class="box1">
 			<view class="box1_title">
-				<text class="box1_title_left" :class="dataInfo.listing_type == 'Buy' ? '' : 'red'">
-					{{dataInfo.listing_type == 'Buy' ? $t('buy') : dataInfo.listing_type == 'Sell' ? $t('sell') : ''}}
+				<text class="box1_title_left" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
+					{{dataInfo.listing_type == 'Sell' ? $t('buy') : dataInfo.listing_type == 'Buy' ? $t('sell') : ''}}
 				</text>
 				<text class="box1_title_right">
 					USDT
@@ -29,7 +29,7 @@
 				{{$t('byAmount')}}
 			</view>
 			<view class="box2_input">
-				<input type="text" placeholder="0.00" @confirm="confirm" v-model="data.amount">
+				<input type="number" placeholder="0.00" @input="confirm" v-model="data.amount">
 				<view class="box2_input_right">
 					<view class="box2_input_right_curreny">
 						{{dataInfo.currency}}
@@ -77,8 +77,8 @@
 				<text class="box3_cell_left">{{dataInfo.user_nickname}}</text>
 			</view>
 		</view>
-		<view class="button" @click="$noMultipleClicks(buy)" :class="dataInfo.listing_type == 'Buy' ? '' : 'red'">
-			{{dataInfo.listing_type == 'Buy' ? $t('buyUSDT') : dataInfo.listing_type == 'Sell' ? $t('sellUSDT') : ''}}
+		<view class="button" @click="$noMultipleClicks(buy)" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
+			{{dataInfo.listing_type == 'Sell' ? $t('buyUSDT') : dataInfo.listing_type == 'Buy' ? $t('sellUSDT') : ''}}
 		</view>
 	</view>
 </template>
@@ -103,7 +103,7 @@
 				this.data.listing_id = params.id
 				this.getData(params.id)
 				uni.setNavigationBarTitle({
-					title: this.dataInfo.listing_type == 'Buy' ? this.$t('buy') : this.$t('sell')
+					title: this.dataInfo.listing_type == 'Sell' ? this.$t('buy') : this.$t('sell')
 				})
 			}
 		},
@@ -118,7 +118,7 @@
 				const res = await createTrade(this.data)
 				if(res.code === 1) {
 					this.data.amount = ''
-					if (this.dataInfo.listing_type == 'Buy') {
+					if (this.dataInfo.listing_type == 'Sell') {
 						uni.navigateTo({
 							url: `/pages/otc/order/order?id=${res.data.trade_id}`
 						})						
@@ -131,12 +131,16 @@
 				console.log(res)
 			},
 			async confirm(e) {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getCurrencyRate(this.dataInfo.currency)
 				console.log(res)
 				if (res.code === 1) {
 					this.usdtAmount = (e.detail.value / res.data.rates[0].rate_to_usdt).toFixed(2)
 					this.price = e.detail.value ? e.detail.value : '0.00'
 				}
+				uni.hideLoading()
 				console.log(this.usdtAmount)
 			},
 			async getData(id) {

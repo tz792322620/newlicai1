@@ -226,7 +226,7 @@
 			dikouClick(item,index) {
 				console.log(item)
 				this.dikouName = item.discount_coupon.coupon_name
-				this.discount_coupon_id = item.discount_coupon.coupon_id
+				this.discount_coupon_id = item.id
 				setTimeout(() => {
 					this.isDikouShow = false
 				}, 300)
@@ -240,7 +240,7 @@
 			jiaxiClick(item,index) {
 				console.log(item)
 				this.jiaxiName = item.interest_coupon.name
-				this.interest_coupon_id = item.interest_coupon.id
+				this.interest_coupon_id = item.id
 				setTimeout(() => {
 					this.isJiaxiShow = false
 				}, 300)
