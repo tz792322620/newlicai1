@@ -56,7 +56,7 @@
                     </view>
                 </view> -->
 				<view class="input">
-					<u-input :placeholder="$t('enterPriceUnit')" v-model="data.price"></u-input>
+					<u-input type="number" :placeholder="$t('enterPriceUnit')" v-model="data.price"></u-input>
 				</view>
 			</view>
 		</view>
@@ -68,8 +68,8 @@
 		</view>
 		<view class="item">
 			<view class="desc">{{ $t('maxAmount') }}</view>
-			<view class="input" style="width: 100%;background-color: #f3f5f7;">
-				<u-input type="number" :placeholder="$t('maxAmount')" disabled v-model="data.max_amount"></u-input>
+			<view class="input" style="width: 100%;">
+				<u-input type="number" :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
 			</view>
 		</view>
 		<view class="item1">
@@ -92,7 +92,7 @@
 			<view class="item">
 				<view class="desc" style="display: flex;justify-content: space-between;">{{ $t('quantity') }} <text>{{dataInfo.deposit_amount}}</text> </view>
 				<view class="input">
-					<u-input type="number" @input="changeMax" :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
+					<u-input type="number" :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
 				</view>
 			</view>
 			<!-- <view class="item">
@@ -257,10 +257,6 @@
 			this.getData()
 		},
 		methods: {
-			changeMax(e) {
-				console.log(e)
-				this.data.max_amount = e * this.dataInfo.deposit_amount
-			},
 			// OTC余额
 			async getData() {
 				const res = await getOtcDeposit()
@@ -342,6 +338,12 @@
 				if (this.$u.test.isEmpty(this.data.remark)) {
 					return uni.showToast({
 						title: this.$t('enterRemark'),
+						icon: 'none'
+					})
+				}
+				if (this.data.max_amount > this.data.amount * this.data.price) {
+					return uni.showToast({
+						title: this.$t('maxAmountTips') + this.data.amount * this.data.price,
 						icon: 'none'
 					})
 				}

@@ -26,17 +26,23 @@
 						</view>
 					</view>
 					<view class="content_item_top_right" @click="toOrderStatus(item)">
-						<view class="status" v-if="item.status == 'Pending'&&item.payment_proof_status == 'Pending'">
+						<view class="status" v-if="item.status == 'Pending'&&item.payment_proof_status == 'Pending'&&item.buyer_id === userInfo.user_id">
 							{{$t('paymentScreenshot')}}
 						</view>
 						<view class="status" v-else-if="item.status == 'Pending'">
 							{{$t('unfinished')}}
+						</view>
+						<view class="complete" v-if="item.status == 'Processing'">
+							{{$t('processing')}}
 						</view>
 						<view class="complete" v-if="item.status == 'Completed'">
 							{{$t('completed')}}
 						</view>
 						<view class="status" v-if="item.status == 'Cancelled'">
 							{{$t('cancel')}}
+						</view>
+						<view class="status" v-if="item.status == 'Complained'">
+							{{$t('complained')}}
 						</view>
 						<uni-icons type="right"></uni-icons>
 					</view>
@@ -208,7 +214,8 @@
 				unStatusList: ['待支付', '待放币', '支付中'],
 				statusActiveIndex: 0,
 				statusList: ['交易完成', '交易取消'],
-				typeActiveIndex: -1
+				typeActiveIndex: -1,
+				identity: ''
 			}
 		},
 		computed: {
@@ -269,24 +276,37 @@
 		},
 		methods: {
 			toOrderStatus(item) {
+				console.log(item)
+				// identity(1:卖家,0:买家)
+				let identity = this.userInfo.user_id == item.seller_id ? 1 : this.userInfo.user_id == item.buyer_id ? 0 : ''
+				this.identity = identity
+				console.log(identity)
 				const dateTime = Date.parse(new Date())/1000 // 获取当前时间戳秒级
 				const currentTimestamp = 1200 - (dateTime - item.create_time)
 				console.log(currentTimestamp)
-				if (item.status == 'Pending'&&item.payment_proof_status == 'Pending') {
-					uni.navigateTo({
+				if (item.status == 'Pending'&&item.payment_proof_status == 'Pending'&&identity == 0) {
+					return uni.navigateTo({
 						url: `/pages/otc/order/pay/pay?timestamp=${currentTimestamp}&id=${item.trade_id})}`
 					})
-					return
-				}
-				if (item.status == 'Pending'&&item.payment_proof_status != 'Pending') {
+				} else if (item.status == 'Pending'&&identity == 0) {
+					return uni.navigateTo({
+						url: `/pages/otc/order/pay/pay?timestamp=${currentTimestamp}&id=${item.trade_id})}`
+					})
+				} else if (item.status == 'Processing'&&identity == 0) {
 					return uni.navigateTo({
 						url: `/pages/otc/order/collect/collect?timestamp=${currentTimestamp}&id=${item.trade_id}`
 					})
-					return
-				}
-				if (item.status!= 'Pending') {
-					uni.navigateTo({
+				} else if ((item.status == 'Pending' || item.status == 'Processing')&&identity == 1) {
+					return uni.navigateTo({
+						url: `/pages/otc/order/collect/collect_sell?id=${item.trade_id}`
+					})
+				} else if ((item.status == 'Completed' || item.status == 'Cancelled')&&(identity == 1 || identity == 0)) {
+					return uni.navigateTo({
 						url: `/pages/otc/order/status/status?id=${item.trade_id}`
+					})
+				} else if ((item.status == 'Complained' || item.status == 'Complained')&&(identity == 1 || identity == 0)) {
+					return uni.navigateTo({
+						url: `/pages/otc/order/appeal/appealResult?id=${item.trade_id}`
 					})
 				}
 			},

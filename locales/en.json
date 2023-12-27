@@ -528,6 +528,7 @@
 	"cancelOrder": "cancel order",
 	"toPay": "Go and pay",
 	"waitingBuyers": "Waiting for buyers payment",
+	"waitingCollection": "Waiting for payment confirmation",
 	"waiting30": "Payment will be received from the other party within 30 minutes",
 	"appeal": "Appeal",
 	"confirmPayment": "Confirm payment",
@@ -563,6 +564,7 @@
 	"cancelItem6": "other",
 	"successfullyUSDT": "You have successfully purchased USDT",
 	"buyAgain": "buy again",
+	"sellAgain": "sell again",
 	"buyerAppeal": "Buyer is complaining",
 	"sellerAppeal": "The seller is appealing",
 	"appealWillBeAt": "The appeal will be at",
@@ -631,5 +633,8 @@
 	  "dikouEmpty": "No coupons available yet",
 	  "jiaxiChoose": "Select available interest rate coupons",
 	  "jiaxiEmpty": "No interest rate coupons available yet",
-	  "listEmpty": "No Data"
+	  "listEmpty": "No Data",
+	  "maxAmountTips": "The maximum amount cannot exceed",
+	  "processing": "Waiting",
+	  "complained": "Complaint in progress"
 }

@@ -8,12 +8,12 @@
 			<image src="../../../../static/images/otc/order/successfully.png" mode=""></image>
 			{{$t('completed')}}
 		</view>
-		<view class="sub-title"  v-if="tradeInfo.status == 'Completed'">
+		<view class="sub-title" v-if="tradeInfo.status == 'Completed'">
 			{{$t('successfullyUSDT')}}
 		</view>
 		<view class="deal">
-			<view class="deal_title">
-				{{$t('buy')}}
+			<view class="deal_title" :class="identity == 1 ? 'sell' : ''">
+				{{identity == 0 ? $t('buy') : identity == 1 ? $t('sell') : ''}}
 				<text class="unit">USDT</text>
 			</view>
 			<view class="deal_cell">
@@ -59,21 +59,24 @@
 				</view>
 			</view>
 		</view>
-		<view class="buttons" @click="buyAgain">
-			{{$t('buyAgain')}}
+		<view class="buttons" @click="buyAgain" :class="identity == 1 ? 'sell' : ''">
+			{{identity == 0 ? $t('buyAgain') : identity == 1 ?  $t('sellAgain') : ''}}
 		</view>
-		<view class="tips" @click="toCancelOrder">
+		<view class="tips" :class="identity == 1 ? 'sell' : ''" @click="toCancelOrder">
 			{{$t('questionOrder')}}
 		</view>
 	</view>
 </template>
 
 <script>
-	import { getTradeById } from '@/api/api.js'
+	import {
+		getTradeById
+	} from '@/api/api.js'
 	export default {
 		data() {
 			return {
-				tradeInfo: ''
+				tradeInfo: '',
+				identity: '' // 0: 买,1: 卖
 			}
 		},
 		onShow() {
@@ -93,6 +96,8 @@
 				console.log(res)
 				if (res.code === 1) {
 					this.tradeInfo = res.data
+					const userId = JSON.parse(uni.getStorageSync('userInfo')).user_id
+					this.identity = userId == res.data.seller_id ? 1 : userId == res.data.buyer_id ? 0 : ''
 				}
 			},
 			toCancelOrder() {
@@ -112,41 +117,54 @@
 <style lang="scss" scoped>
 	.status {
 		padding: 40rpx;
+
 		.title {
 			display: flex;
 			align-items: center;
+
 			image {
 				height: 48rpx;
 				width: 48rpx;
 				margin-right: 10rpx;
 			}
+
 			font-size: 36rpx;
 			font-weight: 600;
 			color: #F75F52;
 			margin-bottom: 10rpx;
 		}
+
 		.sub-title {
 			font-size: 24rpx;
 			font-weight: 400;
 			color: #333333;
 			line-height: 34rpx;
 		}
+
 		.deal {
 			margin-top: 40rpx;
 			padding: 30rpx 30rpx 10rpx 30rpx;
 			background-color: #F7F9F9;
 			border-radius: 12rpx;
+
 			&_title {
 				font-size: 32rpx;
 				font-weight: 600;
 				color: #21BF90;
 				line-height: 44rpx;
 				margin-bottom: 38rpx;
+
+				&.sell {
+					color: #F75F52;
+					margin-right: 10rpx;
+				}
+
 				.unit {
 					margin-left: 10rpx;
 					color: #333333;
 				}
 			}
+
 			&_cell {
 				display: flex;
 				align-items: center;
@@ -158,6 +176,7 @@
 				margin-bottom: 20rpx;
 			}
 		}
+
 		.buttons {
 			height: 90rpx;
 			background: #35CBA5;
@@ -168,13 +187,19 @@
 			font-weight: 600;
 			color: #FFFFFF;
 			margin: 80rpx 0 20rpx;
+			&.sell {
+				background: #F75F52;
+			}
 		}
-		
+
 		.tips {
 			font-size: 24rpx;
 			font-weight: 400;
 			color: #35CBA5;
-			line-height: 34rpx
+			line-height: 34rpx;
+			&.sell {
+				color: #F75F52;
+			}
 		}
 	}
 </style>

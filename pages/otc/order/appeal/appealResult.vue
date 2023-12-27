@@ -108,10 +108,10 @@
 			</swiper-item>
 		</swiper>
 		<view class="buttons">
-			<view class="buttons_cancel" v-if="userId == tradeInfo.buyer_id" @click="toCancelOrder">
+			<view class="buttons_cancel" v-if="userId == tradeInfo.complaint.user_id" @click="toCancelOrder">
 				{{$t('cancelOrder')}}
 			</view>
-			<view class="buttons_appeal" v-if="userId == tradeInfo.buyer_id" @click="cancelAppeal">
+			<view class="buttons_appeal" v-if="userId == tradeInfo.complaint.user_id" @click="tradeInfo.complaint.status == 'Pending' ? cancelAppeal : ''">
 				{{tradeInfo.complaint.status == 'Pending' ? $t('cancelAppeal') : $t('appealProcessed')}}
 			</view>
 			<view class="buttons_appeal active" v-else>
@@ -197,6 +197,9 @@
 			font-weight: 400;
 			color: #333333;
 			line-height: 34rpx;
+			text {
+				color: #21BF90;
+			}
 		}
 		.deal {
 			margin-top: 40rpx;

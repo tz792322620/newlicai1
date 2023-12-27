@@ -533,6 +533,7 @@
 	"cancelOrder": "取消订单",
 	"toPay": "去付款",
 	"waitingBuyers": "等待买家付款",
+	"waitingCollection": "等待确认收款",
 	"waiting30": "将在30min内收到对方付款",
 	"appeal": "申诉",
 	"confirmPayment": "确认收款",
@@ -568,6 +569,7 @@
 	"cancelItem6": "其他",
 	"successfullyUSDT": "您已成功购买USDT",
 	"buyAgain": "再次购买",
+	"sellAgain": "再次出售",
 	"buyerAppeal": "买家申诉中",
 	"sellerAppeal": "卖家申诉中",
 	"appealWillBeAt": "申诉会在",
@@ -635,6 +637,9 @@
 	  "dikouEmpty": "暂无可用抵扣券",
 	  "jiaxiChoose": "选择可用加息券",
 	  "jiaxiEmpty": "暂无可用加息券",
-	  "listEmpty": "列表为空"
+	  "listEmpty": "列表为空",
+	  "maxAmountTips": "最大金额能超过",
+	  "processing": "等待中",
+	  "complained": "投诉中"
 
 }

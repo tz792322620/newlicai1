@@ -2,8 +2,11 @@
 	<view class="collect">
 		<view class="collect_top">
 			<view class="collect_top_left">
-				<view class="title">
+				<view class="title" v-if="tradeInfo.status == 'Pending'">
 					{{$t('waitingBuyers')}}
+				</view>
+				<view class="title" v-if="tradeInfo.status == 'Processing'">
+					{{$t('waitingCollection')}}
 				</view>
 				<view class="sub-title">
 					{{$t('waiting30')}}
@@ -71,7 +74,15 @@
 				</text>
 			</view>
 		</view>
-		<view class="buttons">
+		<view class="item" v-if="tradeInfo.status == 'Processing'">
+			<view class="desc">
+				{{$t('paymentVoucher')}}
+			</view>
+			<view class="slot-btn" v-if="tradeInfo.payment_image">
+				<image :src="$url + tradeInfo.payment_image" mode=""></image>
+			</view>
+		</view>
+		<view class="buttons" v-if="tradeInfo.status == 'Processing'">
 			<view class="buttons_appeal" @click="toAppeal">
 				{{$t('appeal')}}
 			</view>
@@ -277,6 +288,26 @@
 					width: 4rpx;
 					height: 20rpx;
 					background: #FFAC00;
+				}
+			}
+		}
+		.item {
+			margin-top: 40rpx;
+			.desc {
+				font-size: 24rpx;
+				font-weight: 500;
+				color: #333333;
+				line-height: 34rpx;
+				margin-bottom: 20rpx;
+			}
+		
+			.slot-btn {
+				width: 280rpx;
+				height: 200rpx;
+				border-radius: 12rpx;
+				image {
+					width: 100%;
+					height: 100%;
 				}
 			}
 		}
