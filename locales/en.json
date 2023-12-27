@@ -630,5 +630,6 @@
 	  "dikouChoose": "Select available coupons",
 	  "dikouEmpty": "No coupons available yet",
 	  "jiaxiChoose": "Select available interest rate coupons",
-	  "jiaxiEmpty": "No interest rate coupons available yet"
+	  "jiaxiEmpty": "No interest rate coupons available yet",
+	  "listEmpty": "No Data"
 }

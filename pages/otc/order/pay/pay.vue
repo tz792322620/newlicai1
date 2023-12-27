@@ -137,6 +137,9 @@
 					success: (chooseImageRes) => {
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						console.log(tempFilePaths[0])
+						uni.showLoading({
+							mask: true
+						})
 						uni.uploadFile({
 							url: this.$url + '/api/image/upload',
 							filePath: tempFilePaths[0],
@@ -156,6 +159,7 @@
 										icon: 'none'
 									})
 								}
+								uni.hideLoading()
 							}
 						});
 					}

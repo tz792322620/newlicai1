@@ -634,6 +634,7 @@
 	  "dikouChoose": "选择可用抵扣券",
 	  "dikouEmpty": "暂无可用抵扣券",
 	  "jiaxiChoose": "选择可用加息券",
-	  "jiaxiEmpty": "暂无可用加息券"
+	  "jiaxiEmpty": "暂无可用加息券",
+	  "listEmpty": "列表为空"
 
 }

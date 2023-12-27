@@ -72,8 +72,8 @@
 			if (params) {
 				this.investData.product_id = params.id
 				this.investData.investment_amount = params.amount
-				this.interest_coupon_id = params.interestId
-				this.discount_coupon_id = params.discountId
+				this.investData.interest_coupon_id = params.interestId
+				this.investData.discount_coupon_id = params.discountId
 			}
 		},
 		methods: {
@@ -154,6 +154,7 @@
 				this.$refs.signatureRef.clear()
 			},
 			async submit() {
+				console.log(this.investData)
 				if (this.investData.pay_password.trim() === '' || this.investData.pay_password.length === 0) {
 					return uni.showToast({
 						title: this.$t('pleaseEnterPwd'),

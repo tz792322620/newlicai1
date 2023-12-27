@@ -43,7 +43,7 @@
 			</view>
 
 		</view>
-		<view class="b_colfff" style="border-radius: 32rpx; 32rpx 0 0;" :style="[{padding: `40rpx 40rpx 40rpx 40rpx`},{marginTop: `${statusBarHeight*2 + 10}rpx`}]">
+		<view class="b_colfff" style="border-radius: 32rpx; 32rpx 0 0;min-height: 400rpx;" :style="[{padding: `40rpx 40rpx 40rpx 40rpx`},{marginTop: `${statusBarHeight*2 + 10}rpx`}]">
 			<view class="u-flex" style="color:#AFAFAF;font-size: 32rpx;font-weight: bold;">
 				<view :class="{'xuan1':but==0}" style="" @click="getbut(0)">{{$t('buyCurrency')}}</view>
 				<view :class="{'xuan2':but==1}" style="margin-left:20rpx;" @click="getbut(1)">{{$t('sellCurrency')}}</view>
@@ -51,8 +51,8 @@
 			<view style="background-color:#E1F7F2;color:#35CBA5;
 				border-radius:12rpx;padding-left:10rpx;width:98rpx;margin-top: 20rpx;">
 				USDT</view>
-
-			<view style="color: #333333;margin-top: 20rpx;" v-for="(item,index) in otcList" :key="index">
+			<u-empty v-if="otcList.length === 0" :text="$t('listEmpty')" mode="list" marginTop="40"></u-empty>
+			<view  v-if="otcList.length !== 0" style="color: #333333;margin-top: 20rpx;" v-for="(item,index) in otcList" :key="index">
 				<view class="u-flex">
 					<view>
 						<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left:10rpx;"
@@ -145,7 +145,7 @@
 					background: '#35CBA5',
 				},
 				but: 0,
-				type: 'Buy',
+				type: 'Sell',
 				otcList: [],
 				statusBarHeight: 0 // 状态栏高度
 			}
@@ -208,6 +208,7 @@
 			// 币种点击事件
 			abClick(item) {
 				this.ab = item.ab
+				this.getOtcList()
 				this.isAbP = false
 			},
 			// 右侧操作台点击事件
@@ -235,6 +236,7 @@
 						return
 					}
 				}
+				this.isTool = false
 				uni.navigateTo({
 					url: item.skipUrl
 				})
@@ -248,14 +250,18 @@
 			getbut(e) {
 				this.but = e;
 				if (e == 0) {
-					this.type = 'Buy'
-				} else if (e == 1) {
 					this.type = 'Sell'
+				} else if (e == 1) {
+					this.type = 'Buy'
 				}
 				this.getOtcList()
 			},
 			async getOtcList() {
-				const res = await otcGetListing(this.type)
+				uni.showLoading({
+					mask: true
+				})
+				const res = await otcGetListing(this.type,this.ab)
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.otcList = res.data
 					this.otcList.forEach(item => {
@@ -284,7 +290,7 @@
 			z-index: 10;
 			width: 250rpx;
 			top: 84rpx;
-			height: 316rpx;
+			min-height: 316rpx;
 			background-color: #fff;
 			box-shadow: 0px 0px 20rpx 0px rgba(0, 0, 0, 0.09);
 			border-radius: 20rpx;
@@ -322,6 +328,7 @@
 					}
 
 					text {
+						width: 60%;
 						font-size: 28rpx;
 						font-weight: 500;
 						color: #333333;
@@ -333,7 +340,7 @@
 
 	.u-flex_right {
 		.u-flex-popup {
-			height: 516rpx;
+			min-height: 516rpx;
 			right: -35rpx;
 			top: 70rpx;
 

@@ -63,13 +63,13 @@
 		<view class="item">
 			<view class="desc">{{ $t('minAmount') }}</view>
 			<view class="input" style="width: 100%;">
-				<u-input :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
+				<u-input type="number" :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
 			</view>
 		</view>
 		<view class="item">
 			<view class="desc">{{ $t('maxAmount') }}</view>
-			<view class="input" style="width: 100%;">
-				<u-input :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
+			<view class="input" style="width: 100%;background-color: #f3f5f7;">
+				<u-input type="number" :placeholder="$t('maxAmount')" disabled v-model="data.max_amount"></u-input>
 			</view>
 		</view>
 		<view class="item1">
@@ -90,9 +90,9 @@
 				</view>
 			</view>
 			<view class="item">
-				<view class="desc">{{ $t('quantity') }}</view>
+				<view class="desc" style="display: flex;justify-content: space-between;">{{ $t('quantity') }} <text>{{dataInfo.deposit_amount}}</text> </view>
 				<view class="input">
-					<u-input :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
+					<u-input type="number" @input="changeMax" :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
 				</view>
 			</view>
 			<!-- <view class="item">
@@ -123,7 +123,8 @@
 
 <script>
 	import {
-		createListing
+		createListing,
+		getOtcDeposit
 	} from '@/api/api.js'
 	export default {
 		data() {
@@ -173,6 +174,7 @@
 				activePay: [],
 				paymentMethod: '', // 支付方式显示值
 				paymentMethodList: '', // 支付方式显示值数组
+				dataInfo: ''
 			}
 		},
 		watch: {
@@ -251,7 +253,22 @@
 				}]
 			},
 		},
+		onShow() {
+			this.getData()
+		},
 		methods: {
+			changeMax(e) {
+				console.log(e)
+				this.data.max_amount = e * this.dataInfo.deposit_amount
+			},
+			// OTC余额
+			async getData() {
+				const res = await getOtcDeposit()
+				console.log(res, '余额')
+				if (res.code === 1) {
+					this.dataInfo = res.data
+				}
+			},
 			// 币种点击事件
 			abClick(item) {
 				this.ab = item.ab

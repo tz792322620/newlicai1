@@ -66,14 +66,35 @@
 					<text style="background-color: #52CABC;
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">{{$t('recruitmentCycle')}}</text>
 				</view>
-				<view style="margin-top:20rpx;color: #666666;">{{$t('residueTime')}}：{{productInfo.investment_period}}</view>
+				<view style="margin-top:20rpx;color: #666666;">{{productInfo.investment_period}}{{$t('days')}}</view>
 			</view>
 			<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
 				<view style="color:#ffffff;">
 					<text style="background-color: #52CABC;
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">{{$t('dailyRate')}}{{$t('rule')}}</text>
 				</view>
-				<view style="margin-top:20rpx;color: #666666;">{{$t('everyday')}}{{Number(productInfo.interest_rate) * 100}}%{{$t('earnings')}}（{{$t('break-evenInterest')}}）
+				<view style="margin-top:20rpx;color: #666666;display: flex;align-items: center;">
+					{{$t('everyday')}}{{Number(productInfo.interest_rate) * 100}}%{{$t('earnings')}}
+					<view class="u-text-right" style="color: #333333;"
+						v-if="productInfo.payment_method == 'Daily'">
+						({{$t('full')}}<text class="col35"
+							style="margin-left:6rpx;margin-right: 6rpx;">{{$t('24Hours')}}</text>{{$t('zdInterest')}})
+					</view>
+					<view class="u-text-right" style="color: #333333;"
+						v-if="productInfo.payment_method == 'Weekly'">
+						({{$t('full')}}<text class="col35"
+							style="margin-left:6rpx;margin-right: 6rpx;">{{$t('week')}}</text>{{$t('zdInterest')}})
+					</view>
+					<view class="u-text-right" style="color: #333333;"
+						v-if="productInfo.payment_method == 'Monthly'">
+						({{$t('full')}}<text class="col35"
+							style="margin-left:6rpx;margin-right: 6rpx;">{{$t('month')}}</text>{{$t('zdInterest')}})
+					</view>
+					<view class="u-text-right" style="color: #333333;"
+						v-if="productInfo.payment_method == 'OnMaturity'">
+						(<text class="col35"
+							style="margin-left:6rpx;margin-right: 6rpx;">{{$t('inTime')}}</text>{{$t('interest')}})
+					</view>
 				</view>
 			</view>
 			<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
@@ -81,7 +102,7 @@
 					<text style="background-color: #52CABC;
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">{{$t('limitNumber')}}</text>
 				</view>
-				<view style="margin-top:20rpx;color: #666666;">{{$t('unlimitedTimes')}}</view>
+				<view style="margin-top:20rpx;color: #666666;">{{productInfo.limit_purchase_times}} {{$t('times')}}</view>
 			</view>
 			<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
 				<view style="color:#ffffff;">

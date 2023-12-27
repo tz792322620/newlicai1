@@ -146,6 +146,13 @@
 				this.getTradeInfo(params.id)
 			}
 		},
+		onBackPress(event) {
+			console.log(event, 'event======>')
+			uni.switchTab({
+				url: '/pages/otc/otc'
+			})
+			return true
+		},
 		methods: {
 			async getTradeInfo(id) {
 				const res = await getTradeById(id)

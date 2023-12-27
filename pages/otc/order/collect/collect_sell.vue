@@ -98,6 +98,13 @@
 				title: this.$t('order')
 			})
 		},
+		onBackPress(event) {
+			console.log(event, 'event======>')
+			uni.switchTab({
+				url: '/pages/otc/otc'
+			})
+			return true
+		},
 		onLoad(params) {
 			if (params.id) {
 				this.getTradeInfo(params.id)

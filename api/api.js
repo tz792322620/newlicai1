@@ -106,9 +106,9 @@ export function uploadImage(data) {
 	})
 }
 // OTC获取所有买or卖挂单列表
-export function otcGetListing(type) {
+export function otcGetListing(type,currency) {
 	return request({
-		url: `/otc/getListing?type=${type}`
+		url: `/otc/getListing?type=${type}&currency=${currency}`
 	})
 }
 // 用户OTC收款信息列表查询

@@ -78,7 +78,7 @@
 						<!-- <view style="color: #999999;font-size: 24rpx;">603809.sz</view> -->
 					</view>
 					<view class="col35 f_bod" style="font-size: 32rpx;">{{item.interest_rate * 100}}%</view>
-					<view class="f_bod" style="font-size: 32rpx;margin-left:80rpx;">{{item.investment_period}}{{$t('days')}}</view>
+					<view class="" style="font-size: 32rpx;color:#999999;margin-left:80rpx;">{{item.investment_period}}{{$t('days')}}</view>
 				</view>
 				<view style="margin-top:15rpx;">
 					<u-line color="#F3F3F3"></u-line>
