@@ -6,17 +6,53 @@
 		<!-- 		{{item.earnings_type}} -->
 				{{ getStatusTranslation(item.earnings_type) }}
 			</view>
-			<!-- <view class="cell">
-				<view class="cell_left">
-					状态
-				</view>
-				<view class="cell_right green">
-					已完成
-				</view>
-			</view> -->
 			<view class="cell">
 				<view class="cell_left">
-					{{$t('payDays')}}
+					{{$t('status')}}
+				</view>
+				<view class="cell_right green">
+					{{getStatusTranslation(item.earnings_status)}}
+					<!-- {{item.earnings_status == 'Pending' ? $t('status.Pending') 
+					: item.earnings_status == 'Completed' ? $t('status.Completed')
+					: item.earnings_status == 'Cancelled' ? $t('status.Cancelled') : ''}} -->
+				</view>
+			</view>
+			<view class="cell">
+				<view class="cell_left">
+					{{$t('productNameLabel')}}
+				</view>
+				<view class="cell_right">
+					{{item.product.product_name_cn}}
+				</view>
+			</view>
+			<view class="cell">
+				<view class="cell_left">
+					{{$t('revenueCycle')}}
+				</view>
+				<view class="cell_right"
+					v-if="item.product.payment_method == 'Daily'">
+					<text class="col35"
+						style="margin-left:6rpx;margin-right: 6rpx;">{{$t('24Hours')}}</text>
+				</view>
+				<view class="cell_right"
+					v-if="item.product.payment_method == 'Weekly'">
+					<text class="col35"
+						style="margin-left:6rpx;margin-right: 6rpx;">{{$t('week')}}</text>
+				</view>
+				<view class="cell_right"
+					v-if="item.product.payment_method == 'Monthly'">
+					<text class="col35"
+						style="margin-left:6rpx;margin-right: 6rpx;">{{$t('month')}}</text>
+				</view>
+				<view class="cell_right"
+					v-if="item.product.payment_method == 'OnMaturity'">
+					<text class="col35"
+						style="margin-left:6rpx;margin-right: 6rpx;">{{$t('inTime')}}</text>
+				</view>
+			</view>
+			<view class="cell">
+				<view class="cell_left">
+					{{$t('time')}}
 				</view>
 				<view class="cell_right">
 					{{item.earnings_date}}
@@ -24,7 +60,7 @@
 			</view>
 			<view class="cell">
 				<view class="cell_left">
-					{{$t('payAmount')}}
+					{{$t('amount')}}
 				</view>
 				<view class="cell_right">
 					{{item.earnings_amount}}

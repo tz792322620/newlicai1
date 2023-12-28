@@ -22,7 +22,7 @@
 					<view class="item_cell">
 						<view class="item_cell_box">
 							<view class="item_cell_box_top">
-								{{$t('tzAmount')}}
+								{{$t('amount')}}
 							</view>
 							<view class="item_cell_box_bottom">
 								{{dataInfo.purchase_amount}}
@@ -30,7 +30,7 @@
 						</view>
 						<view class="item_cell_box" style="text-align: right;">
 							<view class="item_cell_box_top">
-								{{$t('investmentTime')}}
+								{{$t('time')}}
 							</view>
 							<view class="item_cell_box_bottom">
 								{{dataInfo.purchase_date}}
@@ -57,8 +57,11 @@
 					</view> -->
 				</view>
 				<view class="box1">
-					<text>{{$t('incomeMethod')}}</text>
-					<text>{{$t('incomeMethodTips')}}</text>
+					<text>{{$t('revenueCycle')}}</text>
+					<text v-if="dataInfo.product.payment_method == 'Daily'">{{$t('24Hours')}}</text>
+					<text v-if="dataInfo.product.payment_method == 'Weekly'">{{$t('week')}}</text>
+					<text v-if="dataInfo.product.payment_method == 'Monthly'">{{$t('month')}}</text>
+					<text v-if="dataInfo.product.payment_method == 'OnMaturity'">{{$t('inTime')}}</text>
 				</view>
 			</view>
 			<view class="overview_box" v-if="isOverview">
@@ -75,19 +78,29 @@
 				<!-- 		{{item.earnings_type}} -->
 						{{ getStatusTranslation(item.earnings_type) }}
 					</view>
-					<!-- <view class="item_title_right">
-						已完成
-					</view> -->
+					<view class="item_title_right">
+						{{getStatusTranslation(item.earnings_status)}}
+					</view>
 				</view>
 				<view class="item_cell">
 					<view class="item_cell_box">
 						<view class="item_cell_box_top">
-							{{$t('tzAmount')}}
+							{{$t('amount')}}
 						</view>
 						<view class="item_cell_box_bottom">
 							{{item.earnings_amount}}
 						</view>
 					</view>
+					<view class="item_cell_box">
+						<view class="item_cell_box_top" style="text-align: right;">
+							{{$t('time')}}
+						</view>
+						<view class="item_cell_box_bottom">
+							{{item.earnings_date}}
+						</view>
+					</view>
+				</view>
+				<!-- <view class="item_cell">
 					<view class="item_cell_box">
 						<view class="item_cell_box_top">
 							{{$t('expectedBenefit')}}
@@ -96,25 +109,15 @@
 							{{item.accumulated_earnings}}
 						</view>
 					</view>
-				</view>
-				<view class="item_cell">
 					<view class="item_cell_box">
-						<view class="item_cell_box_top">
-							{{$t('investmentTime')}}
-						</view>
-						<view class="item_cell_box_bottom">
-							{{item.earnings_date}}
-						</view>
-					</view>
-					<!-- <view class="item_cell_box">
 						<view class="item_cell_box_top">
 							到期时间
 						</view>
 						<view class="item_cell_box_bottom">
 							2023-02-28 12:30:00
 						</view>
-					</view> -->
-				</view>
+					</view>
+				</view> -->
 			</view>
 		</view>
 	</view>
@@ -125,7 +128,7 @@
 	export default {
 		data() {
 			return {
-				isOverview: false,
+				isOverview: true,
 				list: [],
 				dataInfo: ''
 			}

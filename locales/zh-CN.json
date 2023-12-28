@@ -33,6 +33,7 @@
 	"Completed": "已完成",
 	"Completeds": "已成交",
 	"Cancelled": "已取消",
+	"Distributed": "已分发",
 	"Failed": "失败",
 	"greeting": "你好",
 	"login": "登录",
@@ -641,6 +642,10 @@
 	  "listEmpty": "列表为空",
 	  "maxAmountTips": "最大金额能超过",
 	  "processing": "等待中",
-	  "complained": "投诉中"
-
+	  "complained": "投诉中",
+	  "levelDescriptions": "等级说明",
+		"frozen": "冻结",
+		"thaw": "解冻",
+		"amount": "金额",
+		"revenueCycle": "收益周期"
 }

@@ -41,7 +41,7 @@
 				<view class="u-flex" style="margin-top:30rpx;font-size: 24rpx;">
 					<view style="width: 320rpx;">
 						<u-radio-group v-model="tongyi">
-							<u-radio active-color="#35CBA5" label-size="24" :name="1">{{ $t('readAndAgree') }}<text class="col35">{{ $t('userAgreement') }}</text>{{ $t('and') }}<text class="col35">{{ $t('privacyPolicy') }}</text></u-radio>
+							<u-radio active-color="#35CBA5" label-size="24" :name="1">{{ $t('readAndAgree') }}<text class="col35" @click="toUserAgreement">{{ $t('userAgreement') }}</text>{{ $t('and') }}<text class="col35" @click="toPrivacy">{{ $t('privacyPolicy') }}</text></u-radio>
 						</u-radio-group>
 					</view>
 				</view>
@@ -113,7 +113,16 @@
 	
 		},
 		methods: {
-
+			toUserAgreement() {
+				uni.navigateTo({
+					url: '/pages/userAgreement/userAgreement'
+				})
+			},
+			toPrivacy() {
+				uni.navigateTo({
+					url: '/pages/privacy/privacy'
+				})
+			},
 			// async reg(){
 			// 	let that=this
 			// 	this.$refs.v5dialog.verify(function(result){

@@ -35,7 +35,7 @@
 					</view>
 				</view>
 				<view style="margin-top: 20rpx;font-size:50rpx;font-weight: bold;">
-					{{ userInfo.total_amount }}
+					{{ Number(userInfo.total_amount).toFixed(2)}}
 				</view>
 				<view style="margin-top: 30rpx;">
 					<u-row gutter="16">
@@ -43,7 +43,7 @@
 							<view class="u-text-center" @click="navigateTo(accountDetails.url)">
 								<view style="color: #999999;margin-bottom: 10rpx;font-size: 24rpx;">{{ detail.title }}
 								</view>
-								<view style="font-size: 34rpx;">{{ detail.value }}</view>
+								<view style="font-size: 34rpx;">{{ Number(detail.value).toFixed(2) }}</view>
 							</view>
 						</u-col>
 					</u-row>
@@ -130,15 +130,15 @@
 			accountDetails() {
 				return [{
 						title: this.$t('availableToOpenPosition'),
-						value: '0.0000'
+						value: '0.00'
 					},
 					{
 						title: this.$t('pickableness'),
-						value: '0.0000'
+						value: '0.00'
 					},
 					{
 						title: this.$t('points'),
-						value: '0.0000'
+						value: '0.00'
 					}
 				]
 			},
@@ -213,6 +213,11 @@
 						image: '../../static/images/my/d4.png',
 						title: this.$t('integralTitle'),
 						url: '/pages/my/integral/integral'
+					},
+					{
+						image: '../../static/images/my/5.png',
+						title: this.$t('levelDescriptions'),
+						url: '/pages/my/levelDescription/levelDescription'
 					},
 					{
 						image: '../../static/images/my/d5.png',

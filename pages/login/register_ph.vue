@@ -60,8 +60,8 @@
 					<view style="width: 320rpx;">
 						<u-radio-group v-model="tongyi">
 							<u-radio active-color="#35CBA5" label-size="24" :name="1">{{ $t('readAndAgree') }}<text
-									class="col35">{{ $t('userAgreement') }}</text>{{ $t('and') }}<text
-									class="col35">{{ $t('privacyPolicy') }}</text></u-radio>
+									class="col35" @click="toUserAgreement">{{ $t('userAgreement') }}</text>{{ $t('and') }}<text
+									class="col35" @click="toPrivacy">{{ $t('privacyPolicy') }}</text></u-radio>
 						</u-radio-group>
 					</view>
 				</view>
@@ -144,6 +144,16 @@
 
 		},
 		methods: {
+			toUserAgreement() {
+				uni.navigateTo({
+					url: '/pages/userAgreement/userAgreement'
+				})
+			},
+			toPrivacy() {
+				uni.navigateTo({
+					url: '/pages/privacy/privacy'
+				})
+			},
 			getAreaCode(item, isAbP) {
 				this.isAbP = isAbP
 				// console.log(item)
@@ -165,8 +175,12 @@
 				if (this.username == '') {
 					return this.$tools.toast(this.$t('enterPhoneNumber'));
 				}
-				if (this.username.indexOf("@") < 0) {
-					if (this.username.length != 11 || !/^((1[0-9])+\d{9})$/.test(this.username)) {
+				if (this.regionValue == '86') {
+					if (!/^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/.test(this.username)) {
+						return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+					}
+				} else {
+					if (!/^\d+$/.test(this.username)) {
 						return this.$tools.toast(this.$t('enterTruePhoneNumber'));
 					}
 				}

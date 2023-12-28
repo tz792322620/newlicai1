@@ -130,18 +130,21 @@
 				}
 				console.log(res)
 			},
-			async confirm(e) {
-				uni.showLoading({
-					mask: true
-				})
-				const res = await getCurrencyRate(this.dataInfo.currency)
-				console.log(res)
-				if (res.code === 1) {
-					this.usdtAmount = (e.detail.value / res.data.rates[0].rate_to_usdt).toFixed(2)
-					this.price = e.detail.value ? e.detail.value : '0.00'
-				}
-				uni.hideLoading()
-				console.log(this.usdtAmount)
+			confirm(e) {
+					let newValue = e.detail.value
+					console.log(newValue,this.data.amount)
+					setTimeout(async () => {
+						if (newValue == this.data.amount) {
+							const res = await getCurrencyRate(this.dataInfo.currency)
+							console.log(res)
+							if (res.code === 1) {
+								this.usdtAmount = (e.detail.value / res.data.rates[0].rate_to_usdt).toFixed(2)
+								this.price = e.detail.value ? e.detail.value : '0.00'
+							}
+							console.log(this.usdtAmount)
+						}
+					},2000)						
+					
 			},
 			async getData(id) {
 				const res = await getListingById(id)

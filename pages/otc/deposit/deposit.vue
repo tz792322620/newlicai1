@@ -5,28 +5,25 @@
 			<view class="back-arrow" @click="goBack"></view>
 			<text class="header-title">{{$t('deposit')}}</text>
 		</view> -->
-		<uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('deposit')" :border="false" @clickLeft="goBack"></uni-nav-bar>
+		<uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('deposit')"
+			:border="false" @clickLeft="goBack"></uni-nav-bar>
 
 		<view class="ylb1">
 			<view class="balance-display">
 				<view class="balance-label">{{$t('totalAssets')}}</view>
 				<view class="balance-amount" v-if="!dataInfo">¥0</view>
-				<view class="balance-amount" v-else>¥{{dataInfo.deposit_amount}}</view>
-				<!-- <view class="balance-details">
-		    <view class="detail-item">
-				<view>日收益</view>
-				 <view>0.0000</view>
-			</view>
-		    <view class="detail-item">
-				 <view>累计收益</view>
-				 <view>0.0000</view>
-			</view>
-		    <view class="detail-item">
-				<view>日利率</view>
-				<view>0.00%</view>
-				 
-			</view>
-		  </view> -->
+				<view class="balance-amount" v-else>¥{{Number(dataInfo.deposit_amount).toFixed(2)}}</view>
+				<view class="balance-details">
+					<view class="detail-item">
+						<view>{{$t('usable')}}</view>
+						<view>{{(Number(dataInfo.deposit_amount) - Number(dataInfo.frozen_amount)).toFixed(2)}}</view>
+					</view>
+					<view class="detail-item">
+						<view>{{$t('frozen')}}</view>
+						<view>{{Number(dataInfo.frozen_amount).toFixed(2)}}</view>
+
+					</view>
+				</view>
 			</view>
 
 			<view class="action-buttons">
@@ -46,12 +43,18 @@
 			<view v-if="list.length !== 0">
 				<view class="transaction-item" v-for="(item,index) in list" :key="index">
 					<view>
-						<view class="transaction-name">{{item.amount < 0 ? $t('roll-out') : item.amount > 0 ? $t('transfer') : ''}}</view>
+						<view class="transaction-name" v-if="item.change_type == 'deposit_amount'">
+							{{item.amount < 0 ? $t('frozen') : item.amount > 0 ? $t('thaw') : ''}}
+						</view>
+						<view class="transaction-name" v-else>
+							{{item.amount < 0 ? $t('roll-out') : item.amount > 0 ? $t('transfer') : ''}}
+						</view>
 						<view class="transaction-date">{{item.create_time | timestampFilter}}</view>
 					</view>
 					<view>
 						<view class="transaction-amount" :class="item.amount > 0 ? 'positive' : 'negative'">
-							{{item.amount}}</view>
+							{{item.amount}}
+						</view>
 						<!-- <view class="transaction-balance">100.00</view> -->
 					</view>
 
@@ -161,31 +164,37 @@
 	/deep/.u-icon__icon {
 		color: #333 !important;
 	}
+
 	.popup-content {
 		padding: 70rpx;
+
 		.title {
 			font-size: 28rpx;
 			font-weight: 600;
 			color: #333333;
 			line-height: 40rpx
 		}
+
 		.input {
 			display: flex;
 			align-items: center;
 			margin-top: 40rpx;
 			border-bottom: 2rpx solid #35CBA5;
 			padding-bottom: 20rpx;
+
 			text {
 				font-size: 56rpx;
 				font-weight: 500;
 				color: #333333;
 				margin-right: 10rpx;
 			}
+
 			input {
 				height: 80rpx;
 				font-size: 56rpx;
 			}
 		}
+
 		.button {
 			height: 90rpx;
 			background: #35CBA5;
@@ -198,6 +207,7 @@
 			margin-top: 60rpx;
 		}
 	}
+
 	.ylb1 {
 		background-color: #fff;
 		padding: 0.5rem;
