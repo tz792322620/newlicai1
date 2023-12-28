@@ -93,6 +93,7 @@
 		getUserInfo,
 		getVerificationStatus
 	} from '@/api/api.js'
+	import tx from '@/static/images/my/txlogo.jpg' 
 	export default {
 		data() {
 			return {
@@ -104,6 +105,7 @@
 					width: '670rpx',
 					background: 'linear-gradient(#69EEAB,#21CCBA)',
 				},
+				defaultAvatar:tx
 			};
 		},
 		onShow(){
@@ -117,7 +119,7 @@
 			    if (this.userInfo && this.userInfo.avatar) {
 			      // 检查是否为 Base64 编码的图片
 			      if (this.userInfo.avatar.startsWith('data:image')) {
-			        return this.userInfo.avatar;
+			        return this.defaultAvatar;
 			      }
 			      // 否则，假定它是一个外部链接
 			      return this.$url + this.userInfo.avatar;
