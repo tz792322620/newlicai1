@@ -88,7 +88,7 @@
 				// 		const tempFilePaths = chooseImageRes.tempFilePaths;
 				// 		console.log(tempFilePaths[0])
 				// 		uni.uploadFile({
-				// 			url: 'https://xingu.bianceok.info/api/image/upload', //仅为示例，非真实的接口地址
+				// 			url: 'https://api.broadreachvip.top/api/image/upload', //仅为示例，非真实的接口地址
 				// 			filePath: tempFilePaths[0],
 				// 			name: 'image',
 				// 			formData: {
@@ -122,7 +122,7 @@
 						// let file = this.parseBlob(this.url)
 						// console.log(file)
 						// uni.uploadFile({
-						// 	url: 'https://xingu.bianceok.info/api/image/upload', //仅为示例，非真实的接口地址
+						// 	url: 'https://api.broadreachvip.top/api/image/upload', //仅为示例，非真实的接口地址
 						// 	filePath: file,
 						// 	name: 'image',
 						// 	formData: {
