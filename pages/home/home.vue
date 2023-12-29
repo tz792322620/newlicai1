@@ -103,7 +103,7 @@
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
 								{{item.interest_rate * 100}}%
 							</view>
-							<view style="margin-top: 20rpx;">{{item.amount_per_unit}}{{$t('yuan')}}{{$t('qitou')}}</view>
+							<view style="margin-top: 20rpx;">{{Number(item.amount_per_unit) | tranNumber}}{{$t('yuan')}}{{$t('qitou')}}</view>
 						</view>
 
 					</swiper-item>
@@ -198,8 +198,8 @@
 										:percent="Number(item.progress)"></u-line-progress>
 								</view>
 								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
-									<view style="width:50rpx;">{{item.min_purchase_amount}}{{$t('yuan')}}</view>
-									<view class="u-text-right" style="width: 220rpx;">{{item.max_purchase_amount}}{{$t('yuan')}}</view>
+									<view style="width:50rpx;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</view>
+									<view class="u-text-right" style="width: 220rpx;">{{Number(item.max_purchase_amount) | tranNumber}}{{$t('yuan')}}</view>
 								</view>
 							</view>
 						</u-col>
@@ -213,7 +213,7 @@
 							<view class="u-text-right">
 								<view style="color: #F75F52;">{{Number(item.interest_rate) * 100}}%</view>
 								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
-										style="color: #F75F52;">{{item.min_purchase_amount}}</text></view>
+										style="color: #F75F52;">{{Number(item.min_purchase_amount) | tranNumber}}</text></view>
 							</view>
 						</u-col>
 					</u-row>
