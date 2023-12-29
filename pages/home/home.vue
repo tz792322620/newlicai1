@@ -212,10 +212,8 @@
 						<u-col span="3">
 							<view class="u-text-right">
 								<view style="color: #F75F52;">{{Number(item.interest_rate) * 100}}%</view>
-								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
-										style="color: #F75F52;">{{Number(item.min_purchase_amount) | tranNumber}}</text></view>
 <!-- 								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
-										style="color: #F75F52;">{{item.min_purchase_amount}}</text></view> -->
+										style="color: #F75F52;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</text></view> -->
 							</view>
 						</u-col>
 					</u-row>
