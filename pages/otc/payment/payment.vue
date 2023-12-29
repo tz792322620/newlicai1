@@ -112,6 +112,13 @@
 				},]
 			}
 		},
+		onBackPress(event) {
+			console.log(event, 'event======>')
+			uni.switchTab({
+				url: '/pages/otc/otc'
+			})
+			return true
+		},
 		onLoad() {
 			this.getPaymentList()
 		},
