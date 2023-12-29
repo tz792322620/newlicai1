@@ -56,7 +56,7 @@
 			</view>
 			<view
 				style="background-color: #FFFFFF;border-radius: 12rpx;padding: 13rpx 15rpx 13rpx 15rpx;margin-top:20rpx;"
-				class="u-flex" @click="gotoPage('/pages/home/notice/notice')">
+				class="u-flex" @click="gotoNotice">
 				<image style="width:28rpx;height:28rpx;margin-right: 20rpx;" src="../../static/images/hm7.png"></image>
 				<view class="f_bod" style="width:580rpx;color: #333333;">{{notice}}</view>
 				<u-icon name="close-circle" color="#575B66" size="28"></u-icon>
@@ -333,6 +333,11 @@
 					index: 4,
 					text: this.$t('tabbar.my')
 				});
+			},
+			gotoNotice() {
+				uni.switchTab({
+					url: '/pages/home/notice/notice'
+				})
 			},
 			gotoPage(url) {
 				uni.navigateTo({

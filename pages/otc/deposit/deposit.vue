@@ -127,6 +127,7 @@
 				if (res.code === 1) {
 					uni.showToast({
 						title: res.msg,
+						icon: 'none',
 						success: () => {
 							this.popupShow = false
 							this.data.deposit_amount = ''

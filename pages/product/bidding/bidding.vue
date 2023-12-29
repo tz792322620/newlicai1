@@ -1,7 +1,7 @@
 <template>
 	<view
 		style="background-image: url('../../../static/images/hm_bg.png');background-repeat: no-repeat;background-size: 100% 100%;min-height: 100vh;">
-		<view style="padding:30rpx;">
+		<view style="padding:30rpx;" v-if="productInfo">
 			<view
 				style="background-image: url('../../../static/images/bidd_bg.png');background-repeat: no-repeat;background-size: 100%;height: 190rpx;color: #FFFFFF; padding: 40rpx 30rpx 40rpx 30rpx;">
 				<view class="u-flex">
@@ -267,6 +267,9 @@
 				console.log(this.userInfo)
 			},
 			async getStockProduct() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getStockProductById(this.productId)
 				if (res.code === 1) {
 					this.productInfo = res.data
@@ -274,6 +277,7 @@
 					this.isJiaxi = res.data.userinterestCoupons.length !== 0 ? true : false
 					// this.investmentAmount = parseInt(res.data.amount_per_unit)
 				}
+				uni.hideLoading()
 				console.log(this.productInfo, 'res=======>')
 			},
 			valChange(e) {

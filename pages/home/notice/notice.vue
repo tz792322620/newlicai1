@@ -10,9 +10,9 @@
 				</view>
 				<view class="item_description" v-for="(items,indexs) in item.gonggao_logs" :key="indexs" @click="toDetails(items)">
 					{{items.title}}
+					<uni-icons type="right"></uni-icons>
 				</view>
 			</view>
-			<uni-icons type="right"></uni-icons>
 		</view>
 	</view>
 </template>
@@ -66,9 +66,6 @@
 			border-radius: 20rpx;
 			background-color: #fff;
 			margin-bottom: 30rpx;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
 			&_title {
 				font-size: 28rpx;
 				font-weight: 600;
@@ -76,9 +73,14 @@
 				margin-bottom: 24rpx;
 			}
 			&_description {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
 				font-size: 24rpx;
 				font-weight: 300;
 				color: #a9a9a9;
+				margin-bottom: 20rpx;
 			}
 		}
 	}

@@ -155,6 +155,14 @@ export function createListing(data) {
 		data
 	})
 }
+// 取消挂单
+export function cancelListing(data) {
+	return request({
+		url: '/otc/cancelListing',
+		method: 'POST',
+		data
+	})
+}
 // 获取用户创建的OTC订单记录(我的广告)
 export function getUserListings() {
 	return request({

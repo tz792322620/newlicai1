@@ -180,7 +180,11 @@
 				})
 			},
 			async getStockProduct() {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getStockProductById(this.productId)
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.productInfo = res.data
 				}
