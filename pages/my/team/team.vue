@@ -108,7 +108,7 @@
 								{{$t('referrals')}}
 							</view>
 							<view class="count">
-								{{item.team_stats.stock_order_count}}
+								{{item.team_stats.direct_referrals_count}}
 							</view>
 						</view>
 					</view>
