@@ -32,7 +32,7 @@ const i18n = new VueI18n({
 });
 
 // main.js
-Vue.prototype.$imgPrefix = 'https://api.broadreachvip.top/';
+Vue.prototype.$imgPrefix = 'https://xingu.bianceok.info/';
 
 Vue.config.productionTip = false
 // 时间戳转日期
@@ -72,7 +72,7 @@ Vue.filter('currencySymbol', (value) => {
 })
 Vue.prototype.$Ajax3 = Ajax3
 Vue.prototype.$tools = tools
-Vue.prototype.$url = 'https://api.broadreachvip.top'
+Vue.prototype.$url = 'https://xingu.bianceok.info'
 Vue.prototype._i18n = i18n
 App.mpType = 'app'
 const app = new Vue({
