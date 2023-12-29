@@ -643,5 +643,6 @@
 		"frozen": "frozen",
 		"thaw": "thaw",
 		"amount": "Amount",
-		"revenueCycle": "revenue cycle"
+		"revenueCycle": "revenue cycle",
+		"Trade completed": "Trade completed"
 }
