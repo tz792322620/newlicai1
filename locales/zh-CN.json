@@ -651,5 +651,7 @@
 		"thaw": "解冻",
 		"amount": "金额",
 		"revenueCycle": "收益周期",
-		"Trade completed": "交易完成"
+		"Trade completed": "交易完成",
+		"wanUnits": "万",
+		"yiUnits": "亿"
 }

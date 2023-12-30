@@ -647,5 +647,7 @@
 		"thaw": "thaw",
 		"amount": "Amount",
 		"revenueCycle": "revenue cycle",
-		"Trade completed": "Trade completed"
+		"Trade completed": "Trade completed",
+		"wanUnits": "Ten thousand",
+		"yiUnits": "one hundred million"
 }

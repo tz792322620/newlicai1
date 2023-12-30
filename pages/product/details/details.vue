@@ -17,13 +17,13 @@
 						</u-line-progress>
 					</view>
 					<view class="u-flex" style="margin-top: 20rpx;">
-						<view style="width: 300rpx;text-align: left;">
+						<view style="width: 50%;text-align: left;">
 							<text style="margin-right: 10rpx;color: #AFAFAF;">{{$t('totalAmount')}}</text><br/>
-							{{productInfo.total_fundraising}}USDT
+							{{Number(productInfo.total_fundraising) | tranNumber}}USDT
 						</view>
-						<view style="width: 300rpx;margin-left:200rpx;" class="u-text-right">
+						<view style="width: 50%;" class="u-text-right">
 							<text style="margin-right: 10rpx;color: #AFAFAF;">{{$t('residue')}}</text><br/>
-							{{Number(productInfo.total_fundraising) - productInfo.sold_units}}USDT
+							{{(Number(productInfo.total_fundraising) - productInfo.sold_units) | tranNumber}}USDT
 						</view>
 					</view>
 				</view>

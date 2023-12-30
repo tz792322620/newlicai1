@@ -33,16 +33,16 @@
                 </view>
                 <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
                     <view style="width: 300rpx;">{{ $t('minPurchase') }}：<text
-                            style="color: #21BF90;">{{item.min_purchase_amount}}USDT</text></view>
+                            style="color: #21BF90;">{{Number(item.min_purchase_amount) | tranNumber}}USDT</text></view>
                     <view style="width: 300rpx;" class="u-text-right">{{ $t('maxPurchase') }}：<text
-                            style="color: #21BF90;">{{item.max_purchase_amount}}USDT</text>
+                            style="color: #21BF90;">{{Number(item.max_purchase_amount) | tranNumber}}USDT</text>
                     </view>
                 </view>
 
 				  <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
 				  		
 					<view style="width: 600rpx;">
-					  {{ $t('totalAmountRaised') }}：<text style="color: #21BF90;">{{item.total_fundraising}}USDT</text>
+					  {{ $t('totalAmountRaised') }}：<text style="color: #21BF90;">{{Number(item.total_fundraising) | tranNumber}}USDT</text>
 					</view>
 				  </view>
 				  <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
@@ -66,7 +66,7 @@
                         {{$t('investmentCycle')}}{{item.investment_period}}{{$t('days')}}
                     </view>
                     <view style="margin-left:200rpx;">
-                        <u-button ripple-bg-color="#fff" @click="reg(item)" :ripple="true" style="font-size:28rpx;"
+                        <u-button ripple-bg-color="#fff" @click="toDetails(item)" :ripple="true" style="font-size:28rpx;"
                             :custom-style="customStyle1" shape="circle" type="primary">{{$t('immediateInvestment')}}</u-button>
                     </view>
                 </view>
