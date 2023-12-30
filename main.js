@@ -37,16 +37,22 @@ Vue.prototype.$imgPrefix = 'https://api.broadreachvip.top/';
 Vue.config.productionTip = false
 // 时间戳转日期
 Vue.filter('timestampFilter', (timestamp) => {
-	timestamp = timestamp ? timestamp : null;
-	let date = new Date(timestamp*1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
-	let Y = date.getFullYear() + '-';
-	let M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
-	let D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
-	let h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
-	let m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
-	let s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
-	return Y + M + D + h + m + s;
-})
+    timestamp = timestamp ? timestamp : null;
+    let date = new Date(timestamp * 1000); // 将时间戳转换为 JavaScript Date 对象
+    let offset = 8; // 东八区的偏移量
+    let utc = date.getTime() + (date.getTimezoneOffset() * 60000); // 转换为 UTC 时间
+    let nd = new Date(utc + (3600000 * offset)); // 转换为东八区时间
+
+    let Y = nd.getFullYear() + '-';
+    let M = (nd.getMonth() + 1 < 10 ? '0' + (nd.getMonth() + 1) : nd.getMonth() + 1) + '-';
+    let D = (nd.getDate() < 10 ? '0' + nd.getDate() : nd.getDate()) + ' ';
+    let h = (nd.getHours() < 10 ? '0' + nd.getHours() : nd.getHours()) + ':';
+    let m = (nd.getMinutes() < 10 ? '0' + nd.getMinutes() : nd.getMinutes()) + ':';
+    let s = nd.getSeconds() < 10 ? '0' + nd.getSeconds() : nd.getSeconds();
+
+    return Y + M + D + h + m + s;
+});
+
 // 超出,中间显示省略号
 Vue.filter('ellipsis', (value) => {
 	if (value) {
