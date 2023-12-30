@@ -54,7 +54,7 @@
 						{{item.nickname}}
 					</view>
 					<view class="list_cell_item">
-						¥{{item.stock_investment}}
+						{{item.stock_investment}}USDT
 					</view>
 					<!-- <view class="list_cell_item">
 						+67%

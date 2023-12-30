@@ -31,10 +31,10 @@
 						<text>{{$t('totalTopUp')}}</text>
 						<text class="bold">{{dataInfo.recharge_amount}}</text>
 					</view>
-					<view class="balance_bottom_item">
+<!-- 					<view class="balance_bottom_item">
 						<text>{{$t('teamFlow')}}</text>
 						<text class="bold">{{dataInfo.stock_order_amount}}</text>
-					</view>
+					</view> -->
 				</view>
 			</view>
 			<view class="price">
@@ -108,7 +108,7 @@
 								{{$t('referrals')}}
 							</view>
 							<view class="count">
-								{{item.team_stats.stock_order_count}}
+								{{item.team_stats.direct_referrals_count}}
 							</view>
 						</view>
 					</view>

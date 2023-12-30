@@ -101,18 +101,16 @@
 		</view>
 
 
-		<view class="bottom-float">
+<!-- 		<view class="bottom-float">
 			<view style="display: flex;
     align-items: center;">
 				<view>
 					<u-button style="background-color: #35CBA5;color: #fff;">{{$t('inviteNow')}}</u-button>
 				</view>
-				<!-- <view>
-					<image style="width: 24px;height: 24px;" src="../../static/images/invite/ewm.png"></image>
-				</view> -->
+	
 			</view>
 
-		</view>
+		</view> -->
 
 	</view>
 </template>

@@ -59,7 +59,7 @@
 				class="u-flex" @click="gotoNotice">
 				<image style="width:28rpx;height:28rpx;margin-right: 20rpx;" src="../../static/images/hm7.png"></image>
 				<view class="f_bod" style="width:580rpx;color: #333333;">{{notice}}</view>
-				<u-icon name="close-circle" color="#575B66" size="28"></u-icon>
+		<!-- 		<u-icon name="close-circle" color="#575B66" size="28"></u-icon> -->
 			</view>
 		</view>
 		<view
@@ -103,7 +103,7 @@
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
 								{{item.interest_rate * 100}}%
 							</view>
-							<view style="margin-top: 20rpx;">{{Number(item.amount_per_unit) | tranNumber}}{{$t('yuan')}}{{$t('qitou')}}</view>
+							<view style="margin-top: 20rpx;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}{{$t('qitou')}}</view>
 						</view>
 
 					</swiper-item>
@@ -212,10 +212,8 @@
 						<u-col span="3">
 							<view class="u-text-right">
 								<view style="color: #F75F52;">{{Number(item.interest_rate) * 100}}%</view>
-								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
-										style="color: #F75F52;">{{Number(item.min_purchase_amount) | tranNumber}}</text></view>
 <!-- 								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
-										style="color: #F75F52;">{{item.min_purchase_amount}}</text></view> -->
+										style="color: #F75F52;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</text></view> -->
 							</view>
 						</u-col>
 					</u-row>
