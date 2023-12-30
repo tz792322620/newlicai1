@@ -48,8 +48,8 @@
 						{{$t('realName')}}
 					</view>
 				</view>
-				<u-empty v-if="dataInfo.direct_referrals_list.length === 0" :text="$t('depositEmpty')" margin-top="60"></u-empty>
-				<view v-if="dataInfo.direct_referrals_list.length !== 0" class="list_cell" v-for="(item,index) in dataInfo.direct_referrals_list">
+				<u-empty v-if="dataInfo&&dataInfo.direct_referrals_list.length === 0" :text="$t('depositEmpty')" margin-top="60"></u-empty>
+				<view v-if="dataInfo&&dataInfo.direct_referrals_list.length !== 0" class="list_cell" v-for="(item,index) in dataInfo.direct_referrals_list">
 					<view class="list_cell_item">
 						{{item.nickname}}
 					</view>
