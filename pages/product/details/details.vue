@@ -74,7 +74,7 @@
 				padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">{{$t('dailyRate')}}{{$t('rule')}}</text>
 				</view>
 				<view style="margin-top:20rpx;color: #666666;display: flex;align-items: center;">
-					{{$t('everyday')}}{{Number(productInfo.interest_rate) * 100}}%{{$t('earnings')}}
+					{{$t('everyday')}}{{Number(productInfo.interest_rate * 100).toFixed(2)}}%{{$t('earnings')}}
 					<view class="u-text-right" style="color: #333333;"
 						v-if="productInfo.payment_method == 'Daily'">
 						({{$t('full')}}<text class="col35"

@@ -27,7 +27,7 @@
                 <view>{{item.product_name_cn}}</view>
                 <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
                     <view style="width: 300rpx;">{{ $t('yieldRate') }}：<text
-                            style="color: #21BF90;">{{Number(item.interest_rate * 100)}}%</text></view>
+                            style="color: #21BF90;">{{Number(item.interest_rate * 100).toFixed(2)}}%</text></view>
                     <view style="width: 300rpx;" class="u-text-right">{{ $t('purchaseLimit') }}：<text
                             style="color: #21BF90;">{{item.limit_purchase_times}} {{$t('times')}}</text>
                     </view>
