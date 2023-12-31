@@ -40,11 +40,37 @@
 	// @import url("/components/gaoyia-parse/parse.css");
 	.level-description {
 		padding: 40rpx;
-
-		/deep/table,
-		/deep/table td,
-		/deep/table th {
-			border: 1px solid #c1c1c1;
+		background: url('../../../static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		font-size: 32rpx !important;
+		/* Border styles */
+		/deep/table thead, /deep/table tr {
+		border-top-width: 1px;
+		border-top-style: solid;
+		border-top-color: rgb(235, 242, 224);
+		}
+		/deep/table {
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: rgb(235, 242, 224);
+		}
+		 
+		 
+		/* Padding and font style */
+		/deep/table td, /deep/table th {
+		// padding: 5px 10px;
+		font-size: 28rpx;
+		font-family: Verdana;
+		color: rgb(149, 170, 109);
+		}
+		 
+		 
+		/* Alternating background colors */
+		/deep/table tr:nth-child(even) {
+		background: rgb(230, 238, 214)
+		}
+		/deep/table tr:nth-child(odd) {
+		background: #FFF
 		}
 	}
 </style>

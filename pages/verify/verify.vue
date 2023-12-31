@@ -187,7 +187,7 @@
 						icon: 'none'
 					})
 				}
-				if (!this.$u.test.idCard(this.data.identity_number)) {
+				if (!/^[a-zA-Z0-9]{6,}$/.test(this.data.identity_number)) {
 					return uni.showToast({
 						title: this.$t('enterTrueIDNumber'),
 						icon: 'none'

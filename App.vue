@@ -4,7 +4,7 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
-			console.log(uni.getStorageSync('token'))
+			plus.navigator.setFullscreen(true);
 			if (uni.getStorageSync('token')) {
 				uni.switchTab({
 					url: '/pages/home/home'

@@ -58,7 +58,7 @@
 					<view class="u-text-right" style="width:500rpx;margin-left:60rpx;color: #333333;">
 						<!-- 						<u-number-box color="#ffffff" :min="parseInt(Number(productInfo.amount_per_unit))" :step="parseInt(Number(productInfo.amount_per_unit))" bg-color="#35CBA5" v-model="value" @change="valChange">
 						</u-number-box> -->
-						<u-field type="number" v-model="investmentAmount" :placeholder="$t('tzAmount')">
+						<u-field type="digit" v-model="investmentAmount" :placeholder="$t('tzAmount')">
 						</u-field>
 					</view>{{$t('yuan')}}
 				</view>

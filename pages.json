@@ -562,6 +562,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/my/info/loginPin/loginPin",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

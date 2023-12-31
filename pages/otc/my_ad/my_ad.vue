@@ -33,7 +33,7 @@
 						{{ $t('priceUnit') }}
 					</view>
 					<view class="cell_right">
-						{{ item.price }} USDT
+						{{item.currency | currencySymbol}}{{ item.price }} 
 					</view>
 				</view>
 				<view class="cell">

@@ -21,7 +21,8 @@
 			</view>
 			<view class="box1_cell">
 				<text class="box1_cell_left">{{$t('quota')}}</text>
-				<text class="box1_cell_right">{{dataInfo.currency | currencySymbol}}{{dataInfo.min_amount}}-{{dataInfo.currency | currencySymbol}}{{dataInfo.max_amount}}</text>
+				<text
+					class="box1_cell_right">{{dataInfo.currency | currencySymbol}}{{dataInfo.min_amount}}-{{dataInfo.currency | currencySymbol}}{{dataInfo.max_amount}}</text>
 			</view>
 		</view>
 		<view class="box2">
@@ -29,7 +30,7 @@
 				{{$t('byAmount')}}
 			</view>
 			<view class="box2_input">
-				<input type="number" placeholder="0.00" @input="confirm" v-model="data.amount">
+				<u-input type="digit" placeholder="0.00" :clearable="false" placeholder-style="font-size: 36rpx;" @input="confirm" v-model="amount"></u-input>
 				<view class="box2_input_right">
 					<view class="box2_input_right_curreny">
 						{{dataInfo.currency}}
@@ -84,7 +85,11 @@
 </template>
 
 <script>
-	import { getListingById,getCurrencyRate,createTrade } from "@/api/api.js"
+	import {
+		getListingById,
+		getCurrencyRate,
+		createTrade
+	} from "@/api/api.js"
 	export default {
 		data() {
 			return {
@@ -93,6 +98,7 @@
 					listing_id: '',
 					amount: ''
 				},
+				amount: '', // 输入金额
 				dataInfo: '',
 				usdtAmount: '',
 				price: '--'
@@ -109,19 +115,20 @@
 		},
 		methods: {
 			async buy() {
-				if (this.$u.test.isEmpty(this.data.amount)) {
+				if (this.$u.test.isEmpty(this.amount)) {
 					return uni.showToast({
 						title: this.$t('enterAmount'),
 						icon: "none"
 					})
 				}
+				this.data.amount = this.usdtAmount
 				const res = await createTrade(this.data)
-				if(res.code === 1) {
+				if (res.code === 1) {
 					this.data.amount = ''
 					if (this.dataInfo.listing_type == 'Sell') {
 						uni.navigateTo({
 							url: `/pages/otc/order/order?id=${res.data.trade_id}`
-						})						
+						})
 					} else {
 						uni.navigateTo({
 							url: `/pages/otc/order/collect/collect_sell?id=${res.data.trade_id}`
@@ -131,20 +138,20 @@
 				console.log(res)
 			},
 			confirm(e) {
-					let newValue = e.detail.value
-					console.log(newValue,this.data.amount)
-					setTimeout(async () => {
-						if (newValue == this.data.amount) {
-							const res = await getCurrencyRate(this.dataInfo.currency)
-							console.log(res)
-							if (res.code === 1) {
-								this.usdtAmount = (e.detail.value / res.data.rates[0].rate_to_usdt).toFixed(2)
-								this.price = e.detail.value ? e.detail.value : '0.00'
-							}
-							console.log(this.usdtAmount)
+				let newValue = e
+				console.log(newValue, this.amount)
+				setTimeout(async () => {
+					if (newValue == this.amount) {
+						const res = await getCurrencyRate(this.dataInfo.currency)
+						console.log(res)
+						if (res.code === 1) {
+							this.usdtAmount = (e / res.data.rates[0].rate_to_usdt).toFixed(2)
+							this.price = e ? e : '0.00'
 						}
-					},2000)						
-					
+						console.log(this.usdtAmount)
+					}
+				}, 2000)
+
 			},
 			async getData(id) {
 				const res = await getListingById(id)
@@ -158,54 +165,64 @@
 </script>
 
 <style lang="scss" scoped>
-	page {
-	}
+	page {}
+
 	.buy {
 		background-color: #f5f5f5;
 		min-height: 100vh;
 		padding: 40rpx;
+
 		.box1 {
 			height: 284rpx;
 			background: #FFFFFF;
 			border-radius: 12rpx;
 			padding: 30rpx;
+
 			&_title {
 				font-size: 32rpx;
 				font-weight: 600;
 				line-height: 44rpx;
+
 				&_left {
 					color: #35CBA5;
 					margin-right: 10rpx;
+
 					&.red {
 						color: #F75F52;
 					}
 				}
+
 				&_right {
 					color: #333333;
 				}
 			}
+
 			&_cell {
 				margin-top: 20rpx;
 				font-size: 28rpx;
 				font-weight: 400;
 				color: #333333;
 				line-height: 40rpx;
+
 				&_left {
 					margin-right: 40rpx;
 				}
 			}
 		}
+
 		.box2 {
 			background: #FFFFFF;
 			border-radius: 12rpx;
 			padding: 40rpx 30rpx;
 			margin: 20rpx 0;
+
 			&_title {
 				font-size: 28rpx;
 				font-weight: 600;
 				color: #333;
 				line-height: 40rpx;
 			}
+
 			&_input {
 				margin-top: 40rpx;
 				display: flex;
@@ -213,12 +230,15 @@
 				justify-content: space-between;
 				border-bottom: 2rpx solid #35CBA5;
 				padding-bottom: 20rpx;
+
 				input {
+					// height: 88rpx;
 					font-size: 48rpx;
 					font-weight: 500;
 					color: #333;
 					line-height: 66px;
 				}
+
 				&_right {
 					width: 250rpx;
 					display: flex;
@@ -226,17 +246,20 @@
 					font-size: 32rpx;
 					font-weight: 600;
 					line-height: 44rpx;
+
 					&_curreny {
 						color: #333333;
 						padding-right: 20rpx;
 						border-right: 2rpx solid #EDEDED;
 						margin-right: 20rpx;
 					}
+
 					&_all {
 						color: #35CBA5;
 					}
 				}
 			}
+
 			&_cell {
 				display: flex;
 				align-items: center;
@@ -245,15 +268,19 @@
 				font-weight: 500;
 				line-height: 40rpx;
 				margin-top: 30rpx;
+
 				&_left {
 					color: #999999;
 				}
+
 				&_right {
 					color: #333333;
 				}
 			}
+
 			&_payment {
 				margin-top: 40rpx;
+
 				&_title {
 					font-size: 28rpx;
 					font-weight: 600;
@@ -261,6 +288,7 @@
 					line-height: 40rpx;
 					margin-bottom: 20rpx;
 				}
+
 				&_method {
 					padding-left: 14rpx;
 					font-size: 32rpx;
@@ -268,6 +296,7 @@
 					color: #333333;
 					line-height: 44rpx;
 					position: relative;
+
 					&::before {
 						content: '';
 						position: absolute;
@@ -281,17 +310,20 @@
 				}
 			}
 		}
+
 		.box3 {
 			padding: 30rpx;
 			border-radius: 12rpx;
 			background: #FFFFFF;
 			margin-bottom: 80rpx;
+
 			&_title {
 				font-size: 32rpx;
 				font-weight: 600;
 				color: #333333;
 				line-height: 44rpx;
 			}
+
 			&_cell {
 				display: flex;
 				align-items: center;
@@ -303,6 +335,7 @@
 				line-height: 40rpx;
 			}
 		}
+
 		.button {
 			height: 90rpx;
 			background: #35CBA5;
@@ -312,6 +345,7 @@
 			font-size: 32rpx;
 			font-weight: 600;
 			color: #FFFFFF;
+
 			&.red {
 				background: #f75e52;
 			}

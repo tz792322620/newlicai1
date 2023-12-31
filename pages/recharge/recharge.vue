@@ -37,7 +37,7 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="number" :placeholder="$t('enterAmount')"  v-model="data.recharge_amount" />
+						<u-input type="digit" :placeholder="$t('enterAmount')"  v-model="data.recharge_amount" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>

@@ -240,6 +240,11 @@
 						image: '../../static/images/my/d5.png',
 						title: this.$t('transactionPasswordManagement'),
 						url: '/pages/my/info/transactionPin/transactionPin'
+					},
+					{
+						image: '../../static/images/my/d5.png',
+						title: this.$t('loginPasswordManagement'),
+						url: '/pages/my/info/loginPin/loginPin'
 					}
 				]
 			}

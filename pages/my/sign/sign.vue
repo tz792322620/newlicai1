@@ -10,40 +10,41 @@
 			</view>
 		</view>
 		<view class="content">
+			<youlanSignIn @getData="getSigninDays" :already="data" :signDays="signinDays" type="sign" :supplementary="false" :lang="lang" @change="sign" />
 			<!-- 			<view class="title">
 				20<text>{{$t('points')}}</text>
 			</view> -->
 			<!-- <view class="sub-title">
 				明日签到可得30积分
 			</view>	 -->
-			<view class="sign_box">
+			<!-- <view class="sign_box">
 				<view class="sign_box_title">
 					{{$t('check-in')}} <text>{{signinDays}}</text> {{$t('days')}}
 				</view>
 				<view class="sign_box_list">
 					<view class="sign_box_list_item" v-for="(item,index) in 7" :key="index"
-						:class="{'expired' : index  < signinDays,'active' : index === activeIndex}"
-						:data-attr="content"
+						:class="{'expired' : index  < signinDays,'active' : index === activeIndex}" :data-attr="content"
 						@click="tabClick(index)">
 						<view class="days">
 							{{$t('the')}}{{index + 1}}{{$t('days')}}
 						</view>
 						<image v-if="index < 6" src="../../../static/images/my/sign/unchecked.png" mode=""></image>
-						<!-- <view class="points">
+						<view class="points">
 							{{index + 1}}0积分
-						</view> -->
+						</view>
 					</view>
 				</view>
 				<view class="sign-in" @click="sign">
 					{{$t('punchIn')}}
 				</view>
-			</view>
+			</view> -->
 			<view class="records">
 				<view class="records_title">
 					{{$t('signRecord')}}
 				</view>
 				<u-empty v-if="signRecords.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
-				<view v-if="signRecords.length !== 0" class="records_cell" v-for="(item,index) in signRecords" :key="index">
+				<view v-if="signRecords.length !== 0" class="records_cell" v-for="(item,index) in signRecords"
+					:key="index">
 					<view class="records_cell_left">
 						<view class="records_cell_left_desc">
 							{{$t('signSuccess')}}
@@ -67,13 +68,19 @@
 		signIn,
 		currentUserSignin
 	} from '@/api/api.js'
+	import youlanSignIn from '@/components/youlan-SignIn/youlan-SignIn.vue'
 	export default {
+		components: {
+			youlanSignIn
+		},
 		data() {
 			return {
+				data: [],
 				activeIndex: 0,
 				signinDays: 0,
 				signRecords: [],
-				scrollTop: 0
+				scrollTop: 0,
+				lang: 'zh-CN'
 			}
 		},
 		onPageScroll(res) {
@@ -85,17 +92,34 @@
 			this.activeIndex = this.signinDays
 			this.getSignRecords()
 		},
+		watch: {
+			'_i18n.locale': {
+				handler: function(value) {
+					console.log(value)
+					this.lang = value
+				},
+				immediate: true
+			}
+		},
 		computed: {
 			content() {
 				return this.$t('afterContent')
 			}
 		},
 		methods: {
+			signDate(v) {
+				console.log(v);
+			},
 			// 获取用户连续签到天数
 			async getSigninDays() {
 				const res = await getConsecutiveSigninDay()
 				if (res.code === 1) {
 					this.signinDays = res.data.days
+					// this.data = res.data.dates
+					res.data.dates.forEach(el => {
+						// 需要换成时间戳
+						this.data.push(new Date(el).getTime())
+					})
 				}
 				console.log(res)
 			},
@@ -147,9 +171,11 @@
 				height: 176rpx;
 				z-index: 999;
 				width: 100%;
+
 				&.active {
 					background-color: #f96440;
 				}
+
 				image {
 					width: 48rpx;
 					height: 48rpx;
@@ -166,6 +192,7 @@
 		}
 
 		.content {
+			width: 100%;
 			padding: 0 40rpx;
 			position: absolute;
 			top: 206rpx;

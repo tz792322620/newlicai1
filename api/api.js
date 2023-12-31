@@ -299,6 +299,14 @@ export function setUserPayPassword(data) {
 		data
 	})
 }
+// 用户登录密码修改
+export function changePassword(data) {
+	return request({
+		url: '/user/changePassword',
+		method: 'POST',
+		data
+	})
+}
 // 获取用户连续签到天数
 export function getConsecutiveSigninDay() {
 	return request({

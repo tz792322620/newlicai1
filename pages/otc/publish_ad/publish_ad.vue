@@ -56,20 +56,20 @@
                     </view>
                 </view> -->
 				<view class="input">
-					<u-input type="number" :placeholder="$t('enterPriceUnit')" v-model="data.price"></u-input>
+					<u-input type="digit" :placeholder="$t('enterPriceUnit')" v-model="data.price"></u-input>
 				</view>
 			</view>
 		</view>
 		<view class="item">
 			<view class="desc">{{ $t('minAmount') }}</view>
 			<view class="input" style="width: 100%;">
-				<u-input type="number" :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
+				<u-input type="digit" :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
 			</view>
 		</view>
 		<view class="item">
 			<view class="desc">{{ $t('maxAmount') }}</view>
 			<view class="input" style="width: 100%;">
-				<u-input type="number" :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
+				<u-input type="digit" :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
 			</view>
 		</view>
 		<view class="item1">
@@ -92,7 +92,7 @@
 			<view class="item">
 				<view class="desc" style="display: flex;justify-content: space-between;">{{ $t('quantity') }} <text>{{dataInfo.deposit_amount}}</text> </view>
 				<view class="input">
-					<u-input type="number" :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
+					<u-input type="digit" :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
 				</view>
 			</view>
 			<!-- <view class="item">

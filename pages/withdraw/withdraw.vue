@@ -37,7 +37,7 @@
 				</view>
 				<view class="select">
 					<view class="select_value">
-						<u-input type="number" :placeholder="$t('enterWithdrawalAmount')" v-model="data.withdrawal_amount" />
+						<u-input type="digit" :placeholder="$t('enterWithdrawalAmount')" v-model="data.withdrawal_amount" />
 					</view>
 					<view class="right" @click="confirms()">
 						USDT <text @click="confirms()">{{$t('allItem')}}</text>
