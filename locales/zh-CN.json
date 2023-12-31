@@ -202,7 +202,7 @@
 	"signIn": "签到",
 	"complianceGuarantee": "合规保障",
 	"availableToOpenPosition": "可建仓(USDT)",
-	"pickableness": "可用额度（usdt）",
+	"pickableness": "可用(USDT)",
 	"points": "积分",
 	"recharge": "充值",
 	"withdraw": "提现",
@@ -653,5 +653,6 @@
 		"revenueCycle": "收益周期",
 		"Trade completed": "交易完成",
 		"wanUnits": "万",
-		"yiUnits": "亿"
+		"yiUnits": "亿",
+		"totalEarningsFormula": "总收益=投资额×日利率×天数"
 }

@@ -44,7 +44,7 @@
 		/deep/table,
 		/deep/table td,
 		/deep/table th {
-			border: 1px solid #000000;
+			border: 1px solid #c1c1c1;
 		}
 	}
 </style>
