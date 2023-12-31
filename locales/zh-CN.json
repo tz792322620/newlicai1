@@ -654,5 +654,6 @@
 		"Trade completed": "交易完成",
 		"wanUnits": "万",
 		"yiUnits": "亿",
-		"totalEarningsFormula": "总收益=投资额×日利率×天数"
+		"totalEarningsFormula": "总收益=投资额×日利率×天数",
+		"levelInterestRate": "等级加息"
 }

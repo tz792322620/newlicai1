@@ -74,6 +74,7 @@
 					<image v-if="index==2" style="width:64rpx;height:64rpx;margin-right: 20rpx;"
 						src="../../static/images/p3.png"></image>
 					<view style="width:220rpx;">
+						<view>{{item.product_code}}</view>
 						<view>{{item.product_name_cn}}</view>
 						<!-- <view style="color: #999999;font-size: 24rpx;">603809.sz</view> -->
 					</view>
@@ -98,8 +99,8 @@
 					<swiper-item v-for="(item,index) in stockList" :key="index" @click="toDetails(item)">
 						<view class="u-text-center"
 							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
-							<view>{{item.product_name_cn}}<text
-									style="font-size: 24rpx;color:#999999;">{{item.investment_period}}</text></view>
+							<view>{{item.product_code}}</view>
+							<view>{{item.product_name_cn}}</view>
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
 								{{item.interest_rate * 100}}%
 							</view>
@@ -192,6 +193,7 @@
 
 						<u-col span="5">
 							<view class="">
+								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_code}}</view>
 								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_name_cn}}</view>
 								<view>
 									<u-line-progress active-color="#6BEEAB" height="18"

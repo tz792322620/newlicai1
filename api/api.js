@@ -15,6 +15,7 @@ export function resetPassword(data) {
 		data
 	})
 }
+
 // 找回密码邮箱验证码
 export function emsSend(data) {
 	return request({
@@ -49,6 +50,13 @@ export function getGonggaoTypes() {
 export function getGonggaoLogById(id) {
 	return request({
 		url: `/index/getGonggaoLogById?id=${id}`
+	}) 
+}
+
+// 获取用户等级
+export function getUserLevelInfo() {
+	return request({
+		url: `/user/getUserLevelInfo`
 	}) 
 }
 

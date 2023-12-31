@@ -650,5 +650,6 @@
 		"Trade completed": "Trade completed",
 		"wanUnits": "Ten thousand",
 		"yiUnits": "one hundred million",
-		"totalEarningsFormula": "Total earnings = Investment amount × Daily interest rate × Number of days"
+		"totalEarningsFormula": "Total earnings = Investment amount × Daily interest rate × Number of days",
+		"levelInterestRate": "Level interest rate"
 }

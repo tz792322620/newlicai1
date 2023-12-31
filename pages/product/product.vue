@@ -23,6 +23,7 @@
             <view
                 style="margin-top: 30rpx;background-color: #ffffff;box-shadow: 0px 0px 24rpx 0px rgba(0,0,0,0.05); padding: 30rpx;border-radius: 12rpx;"
                 v-for="(item,index) in stockProductListTab" :key="index" @click="toDetails(item)">
+				<view>{{item.product_code}}</view>
                 <view>{{item.product_name_cn}}</view>
                 <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
                     <view style="width: 300rpx;">{{ $t('yieldRate') }}：<text

@@ -84,17 +84,26 @@
 					{{item.product.investment_period}}{{$t('days')}}
 				</view>
 			</view>
+			<view class="order_item_cell" v-if="userlevel.extra_interest>0">
+				<view class="order_item_cell_left">
+					  {{$t('levelInterestRate')}}
+				</view>
+				<view class="order_item_cell_right">
+					{{userlevel.extra_interest*100}}%
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import { currentUserStockOrder,getTotalPrincipalInterest } from '@/api/api.js'
+	import { currentUserStockOrder,getTotalPrincipalInterest,getUserLevelInfo} from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				list: [],
 				total: {},
+				userlevel:{},
 			}
 		},
 		onShow() {
@@ -115,6 +124,12 @@
 				uni.showLoading({
 					mask: true
 				})
+				const res2 = await getUserLevelInfo()
+				console.log(res)
+				if (res2.code === 1) {
+					this.userlevel = res2.data
+				}
+				
 				const res = await currentUserStockOrder()
 				console.log(res)
 				if (res.code === 1) {

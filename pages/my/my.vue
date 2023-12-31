@@ -112,7 +112,19 @@
 			let that = this
 			that.getUser()
 		}, 
-		
+		onLoad: function (options) {
+			setTimeout(function () {
+				console.log('start pulldown');
+			}, 1000);
+			uni.startPullDownRefresh();
+		},
+		onPullDownRefresh() {
+			this.getUser()
+			console.log('refresh');
+			setTimeout(function () {
+				uni.stopPullDownRefresh();
+			}, 1000);
+		},
 		computed: {
 			 avatarUrl() {
 			    // 检查 userInfo.avatar 是否存在
@@ -234,6 +246,7 @@
 		},
 
 		methods: {
+
 			// 退出登录
 			logout() {
 				// 清除本地存储的用户信息和令牌
