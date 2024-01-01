@@ -658,5 +658,6 @@
 		"yiUnits": "億",
 		"totalEarningsFormula": "總收益=投資額×日利率×天數",
 		"levelInterestRate": "等級加息",
-		"Real name verification reward": "實名認證獎勵"
+		"Real name verification reward": "實名認證獎勵",
+		"from": "來自:"
 }
