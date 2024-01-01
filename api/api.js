@@ -421,13 +421,13 @@ export function getYuebaoTransactions() {
 // 获取团队数据
 export function getTeamStats(data) {
 	return request({
-		url: `/team/getTeamStats?start_date=${data.start_date}&end_date=${data.end_date}`
+		url: `/team/getTeamStats?start_date=${data.start_date}&end_date=${data.end_date}&user_id=${data.user_id}`
 	})
 }
 // 获取团队三级列表
-export function getDirectReferrals() {
+export function getDirectReferrals(userId) {
 	return request({
-		url: '/team/getDirectReferrals'
+		url: `/team/getDirectReferrals?user_id=${userId}`
 	})
 }
 // 邀请人数记录

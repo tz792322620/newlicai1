@@ -340,7 +340,7 @@
 	"enterNewPwd": "输入新密码",
 	"enterConfirmPwd": "确认新密码",
 	"pwdDifferent": "两次输入的密码不一致",
-	"check-in": "已连续签到",
+	"check-in": "已签到",
 	"the": "第",
 	"punchIn": "打卡签到",
 	"signRecord": "签到记录",

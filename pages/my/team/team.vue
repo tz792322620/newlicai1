@@ -5,7 +5,8 @@
 		</view>
 		<view class="navbar">
 			<image src="../../../static/images/hfh.png" mode="" @click="back"></image>
-			<text>{{$t('teamManagement')}}</text>
+			<text v-if="!title">{{$t('teamManagement')}}</text>
+			<text v-else>{{title}}</text>
 		</view>
 			<!-- <uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('teamManagement')" :border="false" @clickLeft="back"></uni-nav-bar> -->
 		<view class="content">
@@ -66,7 +67,7 @@
 					{{$t('personnelInfo')}}
 				</view>
 				<u-empty v-if="list.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
-				<view v-if="list.length !== 0" class="user-info_item" v-for="(item,index) in list" :key="index">
+				<view v-if="list.length !== 0" class="user-info_item" v-for="(item,index) in list" :key="index" @click="toNext(item)">
 					<view class="info">
 						<view class="info_avatar">
 							<image :src="item.referrer.avatar" mode=""></image>
@@ -134,17 +135,35 @@
 				mode: 'range',
 				data: {
 					start_date: '',
-					end_date: ''
+					end_date: '',
+					user_id: ''
 				},
 				dataInfo: '',
-				list: []
+				list: [],
+				title: ''
 			}
 		},
-		onLoad() {
+		onLoad(params) {
+			console.log(params)
+			if (params.id) {
+				this.data.user_id = params.id
+			}
+			if (params.title) {
+				this.title = params.title
+			}
 			this.getData()
 			this.getList()
 		},
+		onShow() {
+			
+		},
 		methods: {
+			toNext(item) {
+				console.log(item)
+				uni.navigateTo({
+					url: `/pages/my/team/team?id=${item.referrer.id}&title=${item.referrer.nickname}`
+				})
+			},
 			copy(phone) {
 				let that = this
 				uni.setClipboardData({
@@ -178,7 +197,7 @@
 				 }
 			},
 			async getList() {
-				const res = await getDirectReferrals()
+				const res = await getDirectReferrals(this.data.user_id)
 				if (res.code === 1) {
 					this.list = res.data.first_level
 				}
