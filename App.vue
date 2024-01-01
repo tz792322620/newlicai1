@@ -3,8 +3,13 @@
 	// import '@/static/js/riddler-sdk-0.2.2.js';
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			console.log('App Launch',plus.navigator.getStatusbarHeight())
+			console.log('App Launch2222',plus.navigator.isImmersedStatusbar())
+			// #ifdef APP-PLUS
+			var t=document.getElementById('header');  
+			t.style.paddingTop=plus.navigator.getStatusbarHeight()+'px';
 			plus.navigator.setFullscreen(true);
+			// #endif
 			if (uni.getStorageSync('token')) {
 				uni.switchTab({
 					url: '/pages/home/home'
@@ -13,12 +18,6 @@
 		},
 		onShow: function() {
 			console.log('App Show')
-			
-			uni.getNetworkType({
-				success: function (res) {
-					console.log(res.networkType);
-				}
-			});
 		},
 		onHide: function() {
 			console.log('App Hide')
