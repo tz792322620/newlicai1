@@ -657,5 +657,6 @@
 		"wanUnits": "萬",
 		"yiUnits": "億",
 		"totalEarningsFormula": "總收益=投資額×日利率×天數",
-		"levelInterestRate": "等級加息"
+		"levelInterestRate": "等級加息",
+		"Real name verification reward": "實名認證獎勵"
 }
