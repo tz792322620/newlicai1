@@ -28,17 +28,17 @@
 					{{item.withdrawal_address | ellipsis}}
 				</view>
 			</view>
-			<view class="records_item_cell">
+<!-- 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
 					TXID
 				</view>
 				<view class="records_item_cell_right">
 					{{item.transaction_hash}}
 				</view>
-			</view>
+			</view> -->
 			<view class="records_item_cell">
 				<view class="records_item_cell_left">
-					{{$t('times')}}
+					{{$t('time')}}
 				</view>
 				<view class="records_item_cell_right">
 					{{item.withdrawal_date}}

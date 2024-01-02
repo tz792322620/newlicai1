@@ -36,7 +36,7 @@
 			</view>
 			<view class="details_content_cell">
 				<view class="left">
-					{{$t('date')}}
+					{{$t('time')}} 
 				</view>
 				<view class="right">
 					{{data.withdrawal_date}}
