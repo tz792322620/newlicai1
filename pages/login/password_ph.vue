@@ -149,15 +149,14 @@
 						this.$tools.toast(res.msg);
 						setTimeout(() => {
 							this.$tools.back(1);
-							this.lock = true
 						}, 1000);
 						
 					} else {
 						this.$tools.toast(res.msg)
-						setTimeout(() => {
-							this.lock = true
-						}, 1000);
 					}
+					setTimeout(() => {
+						this.lock = true
+					}, 1000);
 
 				}
 				

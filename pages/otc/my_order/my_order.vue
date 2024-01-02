@@ -1,191 +1,194 @@
 <template>
 	<view class="order">
-		<view class="tabs">
-			<!-- <view class="tabs_left">
-				<view class="tabs_left_item" :class="activeIndex === index ? 'active' : ''"
-					v-for="(item,index) in tabsList" :key="index" @click="activeIndex = index">
-					{{item}}
-				</view>
-			</view> -->
-			<view class="tabs_right" @click="unShow = true">
-				<image src="../../../static/images/otc/my_order/screen.png" mode=""></image>
-			</view>
-		</view>
-		<view class="content">
-			<view class="content_item" v-for="(item,index) in orderList" :key="index">
-				<view class="content_item_top">
-					<view class="content_item_top_left">
-						<view class="deal" v-if="item.buyer_id === userInfo.user_id">
-							{{$t('buy')}}
-						</view>
-						<view class="sell" v-if="item.seller_id === userInfo.user_id">
-							{{$t('sell')}}
-						</view>
-						<view class="unit">
-							USDT
-						</view>
-					</view>
-					<view class="content_item_top_right" @click="toOrderStatus(item)">
-						<view class="status" v-if="item.status == 'Pending'&&item.payment_proof_status == 'Pending'&&item.buyer_id === userInfo.user_id">
-							{{$t('paymentScreenshot')}}
-						</view>
-						<view class="status" v-else-if="item.status == 'Pending'">
-							{{$t('unfinished')}}
-						</view>
-						<view class="complete" v-if="item.status == 'Processing'">
-							{{$t('processing')}}
-						</view>
-						<view class="complete" v-if="item.status == 'Completed'">
-							{{$t('completed')}}
-						</view>
-						<view class="status" v-if="item.status == 'Cancelled'">
-							{{$t('cancel')}}
-						</view>
-						<view class="status" v-if="item.status == 'Complained'">
-							{{$t('complained')}}
-						</view>
-						<uni-icons type="right"></uni-icons>
-					</view>
-				</view>
-				<view class="content_item_cell">
-					<view class="content_item_cell_left">
-						{{$t('totalAmount')}}
-					</view>
-					<view class="content_item_cell_right">
-						{{item.trade_price * item.trade_amount}} {{item.trade_currency}}
-					</view>
-				</view>
-				<view class="content_item_cell">
-					<view class="content_item_cell_left">
-						{{$t('unitPrice')}}
-					</view>
-					<view class="content_item_cell_right">
-						{{item.trade_price}} {{item.trade_currency}}
-					</view>
-				</view>
-				<view class="content_item_cell">
-					<view class="content_item_cell_left">
-						{{$t('quantity')}}
-					</view>
-					<view class="content_item_cell_right">
-						{{item.trade_amount}} USDT
-					</view>
-				</view>
-				<!-- <view class="content_item_cell">
-					<view class="content_item_cell_left">
-						订单号
-					</view>
-					<view class="content_item_cell_right">
-						20230304123142154
-						<image src="../../../static/images/copy-icon.png" mode="" @click="copy(item)"></image>
+		<nav-bar :title="$t('order')"></nav-bar>
+		<view class="content1">
+			<view class="tabs">
+				<!-- <view class="tabs_left">
+					<view class="tabs_left_item" :class="activeIndex === index ? 'active' : ''"
+						v-for="(item,index) in tabsList" :key="index" @click="activeIndex = index">
+						{{item}}
 					</view>
 				</view> -->
-				<view class="content_item_cell">
-					<view class="content_item_cell_left">
-						{{$t('creationTime')}}
+				<view class="tabs_right" @click="unShow = true">
+					<image src="../../../static/images/otc/my_order/screen.png" mode=""></image>
+				</view>
+			</view>
+			<view class="content">
+				<view class="content_item" v-for="(item,index) in orderList" :key="index">
+					<view class="content_item_top">
+						<view class="content_item_top_left">
+							<view class="deal" v-if="item.buyer_id === userInfo.user_id">
+								{{$t('buy')}}
+							</view>
+							<view class="sell" v-if="item.seller_id === userInfo.user_id">
+								{{$t('sell')}}
+							</view>
+							<view class="unit">
+								USDT
+							</view>
+						</view>
+						<view class="content_item_top_right" @click="toOrderStatus(item)">
+							<view class="status" v-if="item.status == 'Pending'&&item.payment_proof_status == 'Pending'&&item.buyer_id === userInfo.user_id">
+								{{$t('paymentScreenshot')}}
+							</view>
+							<view class="status" v-else-if="item.status == 'Pending'">
+								{{$t('unfinished')}}
+							</view>
+							<view class="complete" v-if="item.status == 'Processing'">
+								{{$t('processing')}}
+							</view>
+							<view class="complete" v-if="item.status == 'Completed'">
+								{{$t('completed')}}
+							</view>
+							<view class="status" v-if="item.status == 'Cancelled'">
+								{{$t('cancel')}}
+							</view>
+							<view class="status" v-if="item.status == 'Complained'">
+								{{$t('complained')}}
+							</view>
+							<uni-icons type="right"></uni-icons>
+						</view>
 					</view>
-					<view class="content_item_cell_right">
-						{{item.created_at}}
+					<view class="content_item_cell">
+						<view class="content_item_cell_left">
+							{{$t('totalAmount')}}
+						</view>
+						<view class="content_item_cell_right">
+							{{item.trade_price * item.trade_amount}} {{item.trade_currency}}
+						</view>
+					</view>
+					<view class="content_item_cell">
+						<view class="content_item_cell_left">
+							{{$t('unitPrice')}}
+						</view>
+						<view class="content_item_cell_right">
+							{{item.trade_price}} {{item.trade_currency}}
+						</view>
+					</view>
+					<view class="content_item_cell">
+						<view class="content_item_cell_left">
+							{{$t('quantity')}}
+						</view>
+						<view class="content_item_cell_right">
+							{{item.trade_amount}} USDT
+						</view>
+					</view>
+					<!-- <view class="content_item_cell">
+						<view class="content_item_cell_left">
+							订单号
+						</view>
+						<view class="content_item_cell_right">
+							20230304123142154
+							<image src="../../../static/images/copy-icon.png" mode="" @click="copy(item)"></image>
+						</view>
+					</view> -->
+					<view class="content_item_cell">
+						<view class="content_item_cell_left">
+							{{$t('creationTime')}}
+						</view>
+						<view class="content_item_cell_right">
+							{{item.created_at}}
+						</view>
 					</view>
 				</view>
 			</view>
+			<u-popup v-model="unShow" mode="bottom" border-radius="30" closeable close-icon-color="#999999">
+				<view class="popup_content">
+					<view class="title">
+						{{$t('orderFilter')}}
+					</view>
+					<view class="popup_body">
+						<view class="popup_body_item">
+							<view class="popup_body_item_title">
+								{{$t('orderStatus')}}
+							</view>
+							<view class="popup_body_item_cell" v-for="(item,index) in orderStatusList" :key="index"
+								@click="orderStatusIndex = index,status = item.status">
+								<view class="popup_body_item_cell_left">
+									{{item.desc}}
+								</view>
+								<view class="popup_body_item_cell_right">
+									<image v-if="orderStatusIndex === index"
+										src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+									<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+								</view>
+							</view>
+							<!-- <view class="popup_body_item_cell" v-if="activeIndex === 0" v-for="(item,index) in unStatusList"
+								:key="index" @click="unStatusActiveIndex = index">
+								<view class="popup_body_item_cell_left">
+									{{item}}
+								</view>
+								<view class="popup_body_item_cell_right">
+									<image v-if="unStatusActiveIndex === index"
+										src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+									<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+								</view>
+							</view>
+							<view class="popup_body_item_cell" v-if="activeIndex === 1" v-for="(item,index) in statusList"
+								:key="index" @click="statusActiveIndex = index">
+								<view class="popup_body_item_cell_left">
+									{{item}}
+								</view>
+								<view class="popup_body_item_cell_right">
+									<image v-if="statusActiveIndex === index"
+										src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+									<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+								</view>
+							</view> -->
+						</view>
+						<view class="popup_body_item">
+							<view class="popup_body_item_title">
+								{{$t('transactionType')}}
+							</view>
+							<view class="popup_body_item_cell" v-for="(item,index) in typeList" :key="index"
+								@click="typeActiveIndex = index,trade_type = item.type">
+								<view class="popup_body_item_cell_left">
+									{{item.desc}}
+								</view>
+								<view class="popup_body_item_cell_right">
+									<image v-if="typeActiveIndex === index"
+										src="../../../static/images/otc/my_order/checked.png" mode=""></image>
+									<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
+								</view>
+							</view>
+						</view>
+						<view class="popup_body_item">
+							<view class="popup_body_item_title">
+								{{$t('orderDate')}}
+							</view>
+							<view class="popup_body_item_time" @click="show = true">
+								<view class="popup_body_item_time_box">{{startDate}}</view>
+								-
+								<view class="popup_body_item_time_box">{{endDate}}</view>
+							</view>
+							<view class="popup_body_item_date">
+								<view class="popup_body_item_date_item"
+									:class="dateRangeActiveIndex === index ? 'active' : ''"
+									v-for="(item,index) in dateRangeList" :key="index" @click="dateRangeChange(index)">
+									{{item.desc}}
+								</view>
+							</view>
+						</view>
+						<view class="buttons">
+							<view class="buttons_left">
+								{{$t('clearConditions')}}
+							</view>
+							<view class="buttons_right" @click="complete">
+								{{$t('complete')}}
+							</view>
+						</view>
+					</view>
+				</view>
+			</u-popup>
+			<u-calendar v-model="show" :min-date="minDate" :mode="mode" @change="change" btn-type="success"
+				active-bg-color="#35CBA5" range-color="#35CBA5" range-bg-color="rgba(53, 203, 165,0.13)">
+				<view slot="tooltip">
+					<view class="title" style="margin: 40rpx;">
+						*{{$t('choose')}}{{dateRangeActiveIndex === 0 ? $t('sevenDays') : dateRangeActiveIndex === 1 ? $t('threeMonths') : dateRangeActiveIndex === 2 ? $t('sixMonths') : dateRangeActiveIndex === 3 ? $t('oneYears') : ''}}{{$t('timeFrame')}}
+					</view>
+				</view>
+			</u-calendar>
 		</view>
-		<u-popup v-model="unShow" mode="bottom" border-radius="30" closeable close-icon-color="#999999">
-			<view class="popup_content">
-				<view class="title">
-					{{$t('orderFilter')}}
-				</view>
-				<view class="popup_body">
-					<view class="popup_body_item">
-						<view class="popup_body_item_title">
-							{{$t('orderStatus')}}
-						</view>
-						<view class="popup_body_item_cell" v-for="(item,index) in orderStatusList" :key="index"
-							@click="orderStatusIndex = index,status = item.status">
-							<view class="popup_body_item_cell_left">
-								{{item.desc}}
-							</view>
-							<view class="popup_body_item_cell_right">
-								<image v-if="orderStatusIndex === index"
-									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
-								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
-							</view>
-						</view>
-						<!-- <view class="popup_body_item_cell" v-if="activeIndex === 0" v-for="(item,index) in unStatusList"
-							:key="index" @click="unStatusActiveIndex = index">
-							<view class="popup_body_item_cell_left">
-								{{item}}
-							</view>
-							<view class="popup_body_item_cell_right">
-								<image v-if="unStatusActiveIndex === index"
-									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
-								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
-							</view>
-						</view>
-						<view class="popup_body_item_cell" v-if="activeIndex === 1" v-for="(item,index) in statusList"
-							:key="index" @click="statusActiveIndex = index">
-							<view class="popup_body_item_cell_left">
-								{{item}}
-							</view>
-							<view class="popup_body_item_cell_right">
-								<image v-if="statusActiveIndex === index"
-									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
-								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
-							</view>
-						</view> -->
-					</view>
-					<view class="popup_body_item">
-						<view class="popup_body_item_title">
-							{{$t('transactionType')}}
-						</view>
-						<view class="popup_body_item_cell" v-for="(item,index) in typeList" :key="index"
-							@click="typeActiveIndex = index,trade_type = item.type">
-							<view class="popup_body_item_cell_left">
-								{{item.desc}}
-							</view>
-							<view class="popup_body_item_cell_right">
-								<image v-if="typeActiveIndex === index"
-									src="../../../static/images/otc/my_order/checked.png" mode=""></image>
-								<image v-else src="../../../static/images/otc/my_order/unchecked.png" mode=""></image>
-							</view>
-						</view>
-					</view>
-					<view class="popup_body_item">
-						<view class="popup_body_item_title">
-							{{$t('orderDate')}}
-						</view>
-						<view class="popup_body_item_time" @click="show = true">
-							<view class="popup_body_item_time_box">{{startDate}}</view>
-							-
-							<view class="popup_body_item_time_box">{{endDate}}</view>
-						</view>
-						<view class="popup_body_item_date">
-							<view class="popup_body_item_date_item"
-								:class="dateRangeActiveIndex === index ? 'active' : ''"
-								v-for="(item,index) in dateRangeList" :key="index" @click="dateRangeChange(index)">
-								{{item.desc}}
-							</view>
-						</view>
-					</view>
-					<view class="buttons">
-						<view class="buttons_left">
-							{{$t('clearConditions')}}
-						</view>
-						<view class="buttons_right" @click="complete">
-							{{$t('complete')}}
-						</view>
-					</view>
-				</view>
-			</view>
-		</u-popup>
-		<u-calendar v-model="show" :min-date="minDate" :mode="mode" @change="change" btn-type="success"
-			active-bg-color="#35CBA5" range-color="#35CBA5" range-bg-color="rgba(53, 203, 165,0.13)">
-			<view slot="tooltip">
-				<view class="title" style="margin: 40rpx;">
-					*{{$t('choose')}}{{dateRangeActiveIndex === 0 ? $t('sevenDays') : dateRangeActiveIndex === 1 ? $t('threeMonths') : dateRangeActiveIndex === 2 ? $t('sixMonths') : dateRangeActiveIndex === 3 ? $t('oneYears') : ''}}{{$t('timeFrame')}}
-				</view>
-			</view>
-		</u-calendar>
 	</view>
 </template>
 
@@ -370,6 +373,9 @@
 	}
 
 	.order {
+		.content1 {
+			padding-top: 188rpx;
+		}
 		/deep/.u-icon__icon {
 			color: #999999 !important;
 		}

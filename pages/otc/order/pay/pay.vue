@@ -1,96 +1,99 @@
 <template>
 	<view class="pay">
-		<view class="title">
-			{{$t('paySeller')}}
-		</view>
-		<view class="sub-title">
-			{{$t('orderWill')}}<u-count-down :timestamp="timestamp" font-size="32" color="#21BF90" separator-color="#21BF90"  @change="change">
-			</u-count-down>{{$t('cancelAfter')}}
-		</view>
-		<view class="price">
-			¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
-		</view>
-		<view class="content">
-			<view class="one">
-				<view class="one_title">
-					{{$t('payTips1')}}
-				</view>
-				<view class="one_sub-title">
-					{{$t('payTips2')}}
-				</view>
-				<swiper class="swiper" circular :indicator-dots="false" :autoplay="false">
-					<swiper-item v-for="(item,index) in tradeInfo.payment_infos" :key="index">
-						<view class="one_item">
-							<view class="one_item_title">
-								{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
-							</view>
-							<view class="one_item_cell">
-								<view class="one_item_cell_left">
-									{{$t('accountName')}}
-								</view>
-								<view class="one_item_cell_right">
-									{{item.user_name}}
-									<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.user_name)"></image>
-								</view>
-							</view>
-							<view class="one_item_cell">
-								<view class="one_item_cell_left" v-if="item.payment_type == '银行卡'">
-									{{$t('BankCardAccount')}}
-								</view>
-								<view class="one_item_cell_left" v-if="item.payment_type == '微信'">
-									{{$t('WeChatAccount')}}
-								</view>
-								<view class="one_item_cell_left" v-if="item.payment_type == '支付宝'">
-									{{$t('AlipayAccount')}}
-								</view>
-								<view class="one_item_cell_right">
-									{{item.account_number}}
-									<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.account_number)"></image>
-								</view>
-							</view>
-							<view class="one_item_cell" v-if="item.payment_type == '银行卡'">
-								<view class="one_item_cell_left">
-									{{$t('BankName')}}
-								</view>
-								<view class="one_item_cell_right">
-									{{item.bank_name}}
-									<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.bank_name)"></image>
-								</view>
-							</view>
-							<view class="one_item_cell" style="margin-top: 20rpx;padding-right: 10rpx;"
-								v-if="item.payment_type != '银行卡'">
-								<view class="one_item_cell_left">
-									{{$t('PaymentQRcode')}}
-								</view>
-								<view class="one_item_cell_right">
-									<image @click="clickImage(item.qr_code_image)" style="width: 60rpx;height: 60rpx;"
-										:src="$url + item.qr_code_image" mode=""></image>
-								</view>
-							</view>
-						</view>
-					</swiper-item>
-				</swiper>
-				<view class="one_bottom">
-					{{$t('payTips3')}}
-				</view>
+		<nav-bar :title="$t('order')"></nav-bar>
+		<view class="content1">
+			<view class="title">
+				{{$t('paySeller')}}
 			</view>
-			<view class="item">
-				<view class="desc">
-					{{$t('paymentVoucher')}}
-				</view>
-				<view class="slot-btn" @click="uploadImage" v-if="!payment_image">
-					<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
-					<text>{{$t('uploadPaymentVoucher')}}</text>
-				</view>
-				<view style="width: 280rpx;height: 200rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
-					<image :src="$url + payment_image" mode="" style="width: 100%;height: 100%;"></image>
-				</view>
+			<view class="sub-title">
+				{{$t('orderWill')}}<u-count-down :timestamp="timestamp" font-size="32" color="#21BF90" separator-color="#21BF90"  @change="change">
+				</u-count-down>{{$t('cancelAfter')}}
 			</view>
-			<view class="buttons" @click="toCollect">
-				{{$t('notifySeller')}}
+			<view class="price">
+				¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
 			</view>
-			<view class="tips" @click="toCancelOrder">
-				{{$t('questionOrder')}}
+			<view class="content">
+				<view class="one">
+					<view class="one_title">
+						{{$t('payTips1')}}
+					</view>
+					<view class="one_sub-title">
+						{{$t('payTips2')}}
+					</view>
+					<swiper class="swiper" circular :indicator-dots="false" :autoplay="false">
+						<swiper-item v-for="(item,index) in tradeInfo.payment_infos" :key="index">
+							<view class="one_item">
+								<view class="one_item_title">
+									{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
+								</view>
+								<view class="one_item_cell">
+									<view class="one_item_cell_left">
+										{{$t('accountName')}}
+									</view>
+									<view class="one_item_cell_right">
+										{{item.user_name}}
+										<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.user_name)"></image>
+									</view>
+								</view>
+								<view class="one_item_cell">
+									<view class="one_item_cell_left" v-if="item.payment_type == '银行卡'">
+										{{$t('BankCardAccount')}}
+									</view>
+									<view class="one_item_cell_left" v-if="item.payment_type == '微信'">
+										{{$t('WeChatAccount')}}
+									</view>
+									<view class="one_item_cell_left" v-if="item.payment_type == '支付宝'">
+										{{$t('AlipayAccount')}}
+									</view>
+									<view class="one_item_cell_right">
+										{{item.account_number}}
+										<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.account_number)"></image>
+									</view>
+								</view>
+								<view class="one_item_cell" v-if="item.payment_type == '银行卡'">
+									<view class="one_item_cell_left">
+										{{$t('BankName')}}
+									</view>
+									<view class="one_item_cell_right">
+										{{item.bank_name}}
+										<image src="../../../../static/images/otc/order/copy.png" mode="" @click="copy(item.bank_name)"></image>
+									</view>
+								</view>
+								<view class="one_item_cell" style="margin-top: 20rpx;padding-right: 10rpx;"
+									v-if="item.payment_type != '银行卡'">
+									<view class="one_item_cell_left">
+										{{$t('PaymentQRcode')}}
+									</view>
+									<view class="one_item_cell_right">
+										<image @click="clickImage(item.qr_code_image)" style="width: 60rpx;height: 60rpx;"
+											:src="$url + item.qr_code_image" mode=""></image>
+									</view>
+								</view>
+							</view>
+						</swiper-item>
+					</swiper>
+					<view class="one_bottom">
+						{{$t('payTips3')}}
+					</view>
+				</view>
+				<view class="item">
+					<view class="desc">
+						{{$t('paymentVoucher')}}
+					</view>
+					<view class="slot-btn" @click="uploadImage" v-if="!payment_image">
+						<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
+						<text>{{$t('uploadPaymentVoucher')}}</text>
+					</view>
+					<view style="width: 280rpx;height: 200rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
+						<image :src="$url + payment_image" mode="" style="width: 100%;height: 100%;"></image>
+					</view>
+				</view>
+				<view class="buttons" @click="toCollect">
+					{{$t('notifySeller')}}
+				</view>
+				<view class="tips" @click="toCancelOrder">
+					{{$t('questionOrder')}}
+				</view>
 			</view>
 		</view>
 	</view>
@@ -222,6 +225,9 @@
 </script>
 
 <style lang="scss" scoped>
+	.content1 {
+		padding-top: 208rpx;
+	}
 	.title {
 		text-align: center;
 		font-size: 36rpx;

@@ -1,86 +1,89 @@
 <template>
 	<view class="add-payment">
-		<view class="payment">
-			<view class="desc">{{ $t('choosePaymentMethod') }}</view>
-			<view class="select">
-				<view class="select-c" @click="isShow = !isShow">
-					<view class="select-c_left">{{ activePayment }}</view>
-					<view class="select-c_right">
-						<uni-icons :type="isShow ? 'top' : 'bottom'"></uni-icons>
+		<nav-bar :title="title"></nav-bar>
+		<view class="content">
+			<view class="payment">
+				<view class="desc">{{ $t('choosePaymentMethod') }}</view>
+				<view class="select">
+					<view class="select-c" @click="isShow = !isShow">
+						<view class="select-c_left">{{ activePayment }}</view>
+						<view class="select-c_right">
+							<uni-icons :type="isShow ? 'top' : 'bottom'"></uni-icons>
+						</view>
 					</view>
-				</view>
-				<view class="u-flex-popup" v-if="isShow">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item,index) in paymentList" :key="item.id"
-							:class="activeIndex == item.id ? 'active' : ''" @click="payClick(item)">
-							<text>{{ item.name }}</text>
+					<view class="u-flex-popup" v-if="isShow">
+						<view class="u-flex-popup-content">
+							<view class="u-flex-popup-content-item" v-for="(item,index) in paymentList" :key="item.id"
+								:class="activeIndex == item.id ? 'active' : ''" @click="payClick(item)">
+								<text>{{ item.name }}</text>
+							</view>
 						</view>
 					</view>
 				</view>
 			</view>
-		</view>
-		<view class="item">
-			<view class="desc">{{ $t('name') }}</view>
-			<view class="input">
-				<u-input :placeholder="$t('enterName')" v-model="data.user_name"></u-input>
+			<view class="item">
+				<view class="desc">{{ $t('name') }}</view>
+				<view class="input">
+					<u-input :placeholder="$t('enterName')" v-model="data.user_name"></u-input>
+				</view>
 			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 0">
-			<view class="desc">{{ $t('WeChatAccount') }}</view>
-			<view class="input">
-				<u-input :placeholder="$t('enterWeChatAccount')" v-model="data.account_number"></u-input>
+			<view class="item" v-if="activeIndex === 0">
+				<view class="desc">{{ $t('WeChatAccount') }}</view>
+				<view class="input">
+					<u-input :placeholder="$t('enterWeChatAccount')" v-model="data.account_number"></u-input>
+				</view>
 			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 1">
-			<view class="desc">{{ $t('AlipayAccount') }}</view>
-			<view class="input">
-				<u-input :placeholder="$t('enterAlipayAccount')" v-model="data.account_number"></u-input>
+			<view class="item" v-if="activeIndex === 1">
+				<view class="desc">{{ $t('AlipayAccount') }}</view>
+				<view class="input">
+					<u-input :placeholder="$t('enterAlipayAccount')" v-model="data.account_number"></u-input>
+				</view>
 			</view>
-		</view>
-		<view class="item" v-if="activeIndex !== 2">
-			<view class="desc">
-				{{$t('QCode')}}
+			<view class="item" v-if="activeIndex !== 2">
+				<view class="desc">
+					{{$t('QCode')}}
+				</view>
+				<view class="slot-btn" @click="uploadImage" v-if="!data.qr_code_image">
+					<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
+					<text>{{$t('enterQCode')}}</text>
+				</view>
+				<view style="width: 280rpx;height: 280rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
+					<image :src="$url + data.qr_code_image" mode="" style="width: 100%;height: 100%;"></image>
+				</view>
 			</view>
-			<view class="slot-btn" @click="uploadImage" v-if="!data.qr_code_image">
-				<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
-				<text>{{$t('enterQCode')}}</text>
+			<view class="item" v-if="activeIndex === 2">
+				<view class="desc">{{ $t('BankCardAccount') }}</view>
+				<view class="input">
+					<u-input :placeholder="$t('enterBankCardAccount')" v-model="data.account_number"></u-input>
+				</view>
 			</view>
-			<view style="width: 280rpx;height: 280rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
-				<image :src="$url + data.qr_code_image" mode="" style="width: 100%;height: 100%;"></image>
+			<view class="item" v-if="activeIndex === 2">
+				<view class="desc">{{ $t('BankName') }}</view>
+				<view class="input">
+					<u-input :placeholder="$t('enterBankName')" v-model="data.bank_name"></u-input>
+				</view>
 			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 2">
-			<view class="desc">{{ $t('BankCardAccount') }}</view>
-			<view class="input">
-				<u-input :placeholder="$t('enterBankCardAccount')" v-model="data.account_number"></u-input>
+			<view class="item" v-if="activeIndex === 2">
+				<view class="desc">{{ $t('BranchBank') }}</view>
+				<text class="input" style="display: block;">
+					<u-input :placeholder="$t('enterBranchBank')" v-model="data.branch_name"></u-input>
+				</text>
 			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 2">
-			<view class="desc">{{ $t('BankName') }}</view>
-			<view class="input">
-				<u-input :placeholder="$t('enterBankName')" v-model="data.bank_name"></u-input>
+			<view class="item">
+				<view class="desc">{{ $t('remark') }}</view>
+				<view class="textarea">
+					<textarea :placeholder="$t('enterRemark')" v-model="data.remark" cols="30" rows="10"></textarea>
+				</view>
 			</view>
-		</view>
-		<view class="item" v-if="activeIndex === 2">
-			<view class="desc">{{ $t('BranchBank') }}</view>
-			<text class="input" style="display: block;">
-				<u-input :placeholder="$t('enterBranchBank')" v-model="data.branch_name"></u-input>
-			</text>
-		</view>
-		<view class="item">
-			<view class="desc">{{ $t('remark') }}</view>
-			<view class="textarea">
-				<textarea :placeholder="$t('enterRemark')" v-model="data.remark" cols="30" rows="10"></textarea>
+			<view class="item">
+				<view class="desc">{{ $t('tips') }}</view>
+				<view class="tips">
+					<view class="text">{{ $t('tip1') }}</view>
+					<view class="text">{{ $t('tip2') }}</view>
+				</view>
 			</view>
+			<view class="button" @click="$noMultipleClicks(save)">{{ $t('save') }}</view>
 		</view>
-		<view class="item">
-			<view class="desc">{{ $t('tips') }}</view>
-			<view class="tips">
-				<view class="text">{{ $t('tip1') }}</view>
-				<view class="text">{{ $t('tip2') }}</view>
-			</view>
-		</view>
-		<view class="button" @click="$noMultipleClicks(save)">{{ $t('save') }}</view>
 	</view>
 </template>
 
@@ -104,7 +107,8 @@
 				},
 				activeIndex: 0,
 				activePayment: '',
-				isShow: false
+				isShow: false,
+				title: ''
 			}
 		},
 		watch: {
@@ -142,6 +146,7 @@
 				uni.setNavigationBarTitle({
 					title: this.$t('addPaymentMethod')
 				})
+				this.title = this.$t('addPaymentMethod')
 			}
 		},
 		methods: {
@@ -154,6 +159,7 @@
 					uni.setNavigationBarTitle({
 						title: this.$t('edit') + this.data.payment_type
 					})
+					this.title = this.$t('edit') + this.data.payment_type
 				}
 				console.log(res)
 			},
@@ -259,8 +265,10 @@
 
 <style lang="scss" scoped>
 	.add-payment {
-		padding: 40rpx;
-
+		.content {
+			padding: 208rpx 40rpx 40rpx;
+			
+		}
 		.desc {
 			font-size: 24rpx;
 			font-weight: 500;

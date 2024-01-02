@@ -655,5 +655,6 @@
 		"totalEarningsFormula": "Total earnings = Investment amount × Daily interest rate × Number of days",
 		"levelInterestRate": "Level interest rate",
 		 "Real name verification reward": "Real name verification reward",
-		"from": "From:"
+		"from": "From:",
+		"details": "Details"
 }

@@ -1,43 +1,46 @@
 <template>
 	<view class="security">
-		<view class="item">
-			<view class="desc">
-				{{$t('password')}}
-			</view>
-			<view class="input">
-				<u-input :placeholder="$t('enterPwd')" type="password" v-model="investData.pay_password"></u-input>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				{{$t('sign')}}
-			</view>
-			<view class="sign">
-				<view class="sign_full">
-					<image src="../../../static/images/product/security/full.png" mode=""></image>
+		<nav-bar :title="$t('security')"></nav-bar>
+		<view class="content">
+			<view class="item">
+				<view class="desc">
+					{{$t('password')}}
 				</view>
-				<view class="sign_box">
-					<jp-signature ref="signatureRef"></jp-signature>
+				<view class="input">
+					<u-input :placeholder="$t('enterPwd')" type="password" v-model="investData.pay_password"></u-input>
 				</view>
-				<view class="sign_btns">
-					<view class="sign_btns_one" @click="$noMultipleClicks(clear)">
-						{{$t('aginSign')}}
+			</view>
+			<view class="item">
+				<view class="desc">
+					{{$t('sign')}}
+				</view>
+				<view class="sign">
+					<view class="sign_full">
+						<image src="../../../static/images/product/security/full.png" mode=""></image>
 					</view>
-					<view class="sign_btns_two" @click="$noMultipleClicks(save)">
-						{{$t('complete')}}
+					<view class="sign_box">
+						<jp-signature ref="signatureRef"></jp-signature>
+					</view>
+					<view class="sign_btns">
+						<view class="sign_btns_one" @click="$noMultipleClicks(clear)">
+							{{$t('aginSign')}}
+						</view>
+						<view class="sign_btns_two" @click="$noMultipleClicks(save)">
+							{{$t('complete')}}
+						</view>
 					</view>
 				</view>
 			</view>
-		</view>
-		<view class="buttons" @click="$noMultipleClicks(submit)">
-			{{$t('agreeAndSubmit')}}
-		</view>
-		<view class="tips">
-			<view class="tip">
-				{{$t('forgotPassword')}}
+			<view class="buttons" @click="$noMultipleClicks(submit)">
+				{{$t('agreeAndSubmit')}}
 			</view>
-			<view class="tip" @click="toContractDetail()">
-				{{$t('contractDetails')}}
+			<view class="tips">
+				<view class="tip">
+					{{$t('forgotPassword')}}
+				</view>
+				<view class="tip" @click="toContractDetail()">
+					{{$t('contractDetails')}}
+				</view>
 			</view>
 		</view>
 	</view>
@@ -192,8 +195,9 @@
 
 <style lang="scss" scoped>
 	.security {
-		padding: 40rpx;
-
+		.content {
+			padding: 208rpx 40rpx 40rpx;
+		}
 		.item {
 			margin-bottom: 40rpx;
 

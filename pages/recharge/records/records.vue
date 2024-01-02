@@ -1,47 +1,50 @@
 <template>
 	<view class="records">
-		<u-empty v-if="recordsList.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
-		<view v-if="recordsList.length !== 0" class="records_item" v-for="(item,index) in recordsList" :key="index" @click="toDetails(item)">
-			<view class="records_item_title">
-				<view class="records_item_title_left">
-					{{item.currency_type}}
+		<nav-bar :title="$t('rechargeRecords')"></nav-bar>
+		<view class="content">
+			<u-empty v-if="recordsList.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+			<view v-if="recordsList.length !== 0" class="records_item" v-for="(item,index) in recordsList" :key="index" @click="toDetails(item)">
+				<view class="records_item_title">
+					<view class="records_item_title_left">
+						{{item.currency_type}}
+					</view>
+					<view class="records_item_title_right" :class="item.recharge_status == 'Failed' ? 'fail' : ''">
+						<!-- {{item.recharge_status == 'Confirmed' ? '充值成功' : item.recharge_status == 'Failed' ? '充值失败' : item.recharge_status == 'Pending' ? '待确认' : ''}} -->
+						<!-- {{item.recharge_status}} -->
+						{{ getStatusTranslation(item.recharge_status) }}
+					</view>
 				</view>
-				<view class="records_item_title_right" :class="item.recharge_status == 'Failed' ? 'fail' : ''">
-					<!-- {{item.recharge_status == 'Confirmed' ? '充值成功' : item.recharge_status == 'Failed' ? '充值失败' : item.recharge_status == 'Pending' ? '待确认' : ''}} -->
-					<!-- {{item.recharge_status}} -->
-					{{ getStatusTranslation(item.recharge_status) }}
+				<view class="records_item_cell">
+					<view class="records_item_cell_left">
+						{{$t('quantityReceived')}}
+					</view>
+					<view class="records_item_cell_right">
+						{{item.recharge_amount}}
+					</view>
 				</view>
-			</view>
-			<view class="records_item_cell">
-				<view class="records_item_cell_left">
-					{{$t('quantityReceived')}}
+				<!-- <view class="records_item_cell">
+					<view class="records_item_cell_left">
+						地址
+					</view>
+					<view class="records_item_cell_right">
+						78dyueyqe12…
+					</view>
+				</view> -->
+				<view class="records_item_cell">
+					<view class="records_item_cell_left">
+						TXID
+					</view>
+					<view class="records_item_cell_right">
+						{{item.transaction_hash}}
+					</view>
 				</view>
-				<view class="records_item_cell_right">
-					{{item.recharge_amount}}
-				</view>
-			</view>
-			<!-- <view class="records_item_cell">
-				<view class="records_item_cell_left">
-					地址
-				</view>
-				<view class="records_item_cell_right">
-					78dyueyqe12…
-				</view>
-			</view> -->
-			<view class="records_item_cell">
-				<view class="records_item_cell_left">
-					TXID
-				</view>
-				<view class="records_item_cell_right">
-					{{item.transaction_hash}}
-				</view>
-			</view>
-			<view class="records_item_cell">
-				<view class="records_item_cell_left">
-					{{$t('time')}}
-				</view>
-				<view class="records_item_cell_right">
-					{{item.recharge_date}}
+				<view class="records_item_cell">
+					<view class="records_item_cell_left">
+						{{$t('time')}}
+					</view>
+					<view class="records_item_cell_right">
+						{{item.recharge_date}}
+					</view>
 				</view>
 			</view>
 		</view>
@@ -57,9 +60,9 @@
 			}
 		},
 		onShow() {
-			uni.setNavigationBarTitle({
-				title: this.$t('rechargeRecords')
-			})
+			// uni.setNavigationBarTitle({
+			// 	title: this.$t('rechargeRecords')
+			// })
 		},
 		onLoad() {
 			this.getData()
@@ -91,10 +94,12 @@
 
 <style lang="scss" scoped>
 	.records {
-		padding: 30rpx 40rpx;
-		background: #e6fbf6 url('../../../static/images/hm_bg.png') center center no-repeat;
-		background-size: 100% 100%;
-		min-height: 100vh;
+		.content {
+			padding: 208rpx 40rpx 30rpx 40rpx;
+			background: #e6fbf6 url('../../../static/images/hm_bg.png') center center no-repeat;
+			background-size: 100% 100%;
+			min-height: 100vh;	
+		}
 		&_item {
 			padding: 30rpx 30rpx;
 			// border-bottom: 2rpx solid #333333;

@@ -1,31 +1,34 @@
 <template>
 	<view class="transaction-pin">
-		<view class="cell">
-			<view class="cell_title">
-				{{$t('oldPwd')}}
+		<nav-bar :title="$t('loginPasswordManagement')"></nav-bar>
+		<view class="content">
+			<view class="cell">
+				<view class="cell_title">
+					{{$t('oldPwd')}}
+				</view>
+				<view class="cell_input">
+					<u-input type="password" :placeholder="$t('enterOldPwd')" v-model="data.old_password"/>
+				</view>
 			</view>
-			<view class="cell_input">
-				<u-input type="password" :placeholder="$t('enterOldPwd')" v-model="data.old_password"/>
+			<view class="cell">
+				<view class="cell_title">
+					{{$t('newPwd')}}
+				</view>
+				<view class="cell_input">
+					<u-input type="password" :placeholder="$t('enterNewPwd')" v-model="data.new_password"/>
+				</view>
 			</view>
-		</view>
-		<view class="cell">
-			<view class="cell_title">
-				{{$t('newPwd')}}
+			<view class="cell">
+				<view class="cell_title">
+					{{$t('confirmPwd')}}
+				</view>
+				<view class="cell_input">
+					<u-input type="password" :placeholder="$t('enterConfirmPwd')" v-model="new_password2"/>
+				</view>
 			</view>
-			<view class="cell_input">
-				<u-input type="password" :placeholder="$t('enterNewPwd')" v-model="data.new_password"/>
+			<view class="button" @click="submit">
+				{{$t('submit')}}
 			</view>
-		</view>
-		<view class="cell">
-			<view class="cell_title">
-				{{$t('confirmPwd')}}
-			</view>
-			<view class="cell_input">
-				<u-input type="password" :placeholder="$t('enterConfirmPwd')" v-model="new_password2"/>
-			</view>
-		</view>
-		<view class="button" @click="submit">
-			{{$t('submit')}}
 		</view>
 	</view>
 </template>
@@ -43,9 +46,9 @@
 			}
 		},
 		onShow() {
-			uni.setNavigationBarTitle({
-				title: this.$t('loginPasswordManagement')
-			})
+			// uni.setNavigationBarTitle({
+			// 	title: this.$t('loginPasswordManagement')
+			// })
 		},
 		methods: {
 			async submit() {
@@ -99,36 +102,38 @@
 
 <style lang="scss" scoped>
 	.transaction-pin {
-		padding: 40rpx;
-		background: url('../../../../static/images/hm_bg.png') center center no-repeat;
-		background-size: 100% 100%;
-		min-height: 100vh;
-		.cell {
-			margin-bottom: 40rpx;
-			&_title {
-				font-size: 24rpx;
-				font-weight: 500;
-				color: #333333;
-				line-height: 34rpx;
-				margin-bottom: 20rpx;
+		.content {
+			padding: 208rpx 40rpx 40rpx 40rpx;
+			background: url('../../../../static/images/hm_bg.png') center center no-repeat;
+			background-size: 100% 100%;
+			min-height: 100vh;
+			.cell {
+				margin-bottom: 40rpx;
+				&_title {
+					font-size: 24rpx;
+					font-weight: 500;
+					color: #333333;
+					line-height: 34rpx;
+					margin-bottom: 20rpx;
+				}
+				&_input {
+					padding: 10rpx 20rpx;
+					height: 90rpx;
+					background: #FFFFFF;
+					border-radius: 10rpx;
+				}
 			}
-			&_input {
-				padding: 10rpx 20rpx;
+			.button {
+				margin-top: 80rpx;
 				height: 90rpx;
-				background: #FFFFFF;
-				border-radius: 10rpx;
+				background: #35CBA5;
+				border-radius: 12rpx;
+				text-align: center;
+				line-height: 90rpx;
+				font-size: 32rpx;
+				font-weight: 600;
+				color: #FFFFFF;
 			}
-		}
-		.button {
-			margin-top: 80rpx;
-			height: 90rpx;
-			background: #35CBA5;
-			border-radius: 12rpx;
-			text-align: center;
-			line-height: 90rpx;
-			font-size: 32rpx;
-			font-weight: 600;
-			color: #FFFFFF;
 		}
 	}
 </style>

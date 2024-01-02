@@ -1,93 +1,96 @@
 <template>
 	<view class="collect">
-		<view class="collect_top">
-			<view class="collect_top_left">
-				<view class="title" v-if="tradeInfo.status == 'Pending'">
-					{{$t('waitingBuyers')}}
+		<nav-bar :title="$t('order')"></nav-bar>
+		<view class="content">
+			<view class="collect_top">
+				<view class="collect_top_left">
+					<view class="title" v-if="tradeInfo.status == 'Pending'">
+						{{$t('waitingBuyers')}}
+					</view>
+					<view class="title" v-if="tradeInfo.status == 'Processing'">
+						{{$t('waitingCollection')}}
+					</view>
+					<view class="sub-title">
+						{{$t('waiting30')}}
+					</view>
 				</view>
-				<view class="title" v-if="tradeInfo.status == 'Processing'">
-					{{$t('waitingCollection')}}
-				</view>
-				<view class="sub-title">
-					{{$t('waiting30')}}
-				</view>
-			</view>
-			<view class="collect_top_right">
-				<u-count-down :show-hours="false" :timestamp="timestamp" font-size="44" color="#21BF90" separator-color="#21BF90"></u-count-down>
-			</view>
-		</view>
-		<view class="deal">
-			<view class="deal_title">
-				{{$t('sell')}}
-				<text class="unit">USDT</text>
-			</view>
-			<view class="deal_cell">
-				<view class="deal_cell_left">
-					{{$t('totalAmount')}}
-				</view>
-				<view class="deal_cell_right">
-					¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
+				<view class="collect_top_right">
+					<u-count-down :show-hours="false" :timestamp="timestamp" font-size="44" color="#21BF90" separator-color="#21BF90"></u-count-down>
 				</view>
 			</view>
-			<view class="deal_cell">
-				<view class="deal_cell_left">
-					{{$t('unitPrice')}}
+			<view class="deal">
+				<view class="deal_title">
+					{{$t('sell')}}
+					<text class="unit">USDT</text>
 				</view>
-				<view class="deal_cell_right">
-					¥{{tradeInfo.trade_price}}
+				<view class="deal_cell">
+					<view class="deal_cell_left">
+						{{$t('totalAmount')}}
+					</view>
+					<view class="deal_cell_right">
+						¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
+					</view>
+				</view>
+				<view class="deal_cell">
+					<view class="deal_cell_left">
+						{{$t('unitPrice')}}
+					</view>
+					<view class="deal_cell_right">
+						¥{{tradeInfo.trade_price}}
+					</view>
+				</view>
+				<view class="deal_cell">
+					<view class="deal_cell_left">
+						{{$t('quantity')}}
+					</view>
+					<view class="deal_cell_right">
+						{{tradeInfo.trade_amount}} USDT
+					</view>
+				</view>
+				<u-line color="#EDEDED" style="margin-top: 30rpx;" />
+				<!-- <view class="deal_cell" style="margin-bottom: 30rpx;margin-top: 30rpx;">
+					<view class="deal_cell_left">
+						订单号
+					</view>
+					<view class="deal_cell_right" style="display: flex;align-items: center;">
+						20230304123142154
+						<image src="../../../static/images/otc/order/copy.png" mode="" style="width: 24rpx;height: 24rpx;margin-left: 20rpx;"></image>
+					</view>
+				</view> -->
+				<view class="deal_cell" style="margin-top: 30rpx;">
+					<view class="deal_cell_left">
+						{{$t('creationTime')}}
+					</view>
+					<view class="deal_cell_right">
+						{{tradeInfo.trade_date}}
+					</view>
 				</view>
 			</view>
-			<view class="deal_cell">
-				<view class="deal_cell_left">
-					{{$t('quantity')}}
+			<view class="payment">
+				<view class="payment_title">
+					{{$t('tradeMethod')}}
 				</view>
-				<view class="deal_cell_right">
-					{{tradeInfo.trade_amount}} USDT
-				</view>
-			</view>
-			<u-line color="#EDEDED" style="margin-top: 30rpx;" />
-			<!-- <view class="deal_cell" style="margin-bottom: 30rpx;margin-top: 30rpx;">
-				<view class="deal_cell_left">
-					订单号
-				</view>
-				<view class="deal_cell_right" style="display: flex;align-items: center;">
-					20230304123142154
-					<image src="../../../static/images/otc/order/copy.png" mode="" style="width: 24rpx;height: 24rpx;margin-left: 20rpx;"></image>
-				</view>
-			</view> -->
-			<view class="deal_cell" style="margin-top: 30rpx;">
-				<view class="deal_cell_left">
-					{{$t('creationTime')}}
-				</view>
-				<view class="deal_cell_right">
-					{{tradeInfo.trade_date}}
+				<view class="payment_desc">
+					<text v-for="(item,index) in tradeInfo.payment_infos" :key="index">
+						{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
+					</text>
 				</view>
 			</view>
-		</view>
-		<view class="payment">
-			<view class="payment_title">
-				{{$t('tradeMethod')}}
+			<view class="item" v-if="tradeInfo.status == 'Processing'">
+				<view class="desc">
+					{{$t('paymentVoucher')}}
+				</view>
+				<view class="slot-btn" v-if="tradeInfo.payment_image">
+					<image :src="$url + tradeInfo.payment_image" mode=""></image>
+				</view>
 			</view>
-			<view class="payment_desc">
-				<text v-for="(item,index) in tradeInfo.payment_infos" :key="index">
-					{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
-				</text>
-			</view>
-		</view>
-		<view class="item" v-if="tradeInfo.status == 'Processing'">
-			<view class="desc">
-				{{$t('paymentVoucher')}}
-			</view>
-			<view class="slot-btn" v-if="tradeInfo.payment_image">
-				<image :src="$url + tradeInfo.payment_image" mode=""></image>
-			</view>
-		</view>
-		<view class="buttons" v-if="tradeInfo.status == 'Processing'">
-			<view class="buttons_appeal" @click="toAppeal">
-				{{$t('appeal')}}
-			</view>
-			<view class="buttons_cancel" @click="confirm">
-				{{$t('confirmPayment')}}
+			<view class="buttons" v-if="tradeInfo.status == 'Processing'">
+				<view class="buttons_appeal" @click="toAppeal">
+					{{$t('appeal')}}
+				</view>
+				<view class="buttons_cancel" @click="confirm">
+					{{$t('confirmPayment')}}
+				</view>
 			</view>
 		</view>
 	</view>
@@ -160,7 +163,10 @@
 
 <style lang="scss" scoped>
 	.collect {
-		padding: 40rpx;
+		.content {
+			padding: 208rpx 40rpx 40rpx;
+			
+		}
 		&_top {
 			display: flex;
 			justify-content: space-between;

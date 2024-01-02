@@ -75,13 +75,22 @@
 						<view class="info_text">
 							<view class="name" style="display: flex;align-items: center;">
 								<text>{{item.referrer.nickname}}</text>
-								<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
-									:src="`../../../static/images/my/v${item.referrer.team_level}.png`" mode=""></image>
+								<!-- <image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
+									:src="`../../../static/images/my/v${item.referrer.team_level}.png`" mode=""></image> -->
 									<!-- <text v-if="item.referrer.team_level === 0" style="color: #999999;margin-left: 10rpx;font-size: 20rpx;">普通会员</text> -->
 							</view>
-<!-- 							<view class="phone" v-if="item.referrer.mobile">
-								{{$t('telephone')}}: {{item.referrer.mobile}} <image @click="copy(item.referrer.mobile)" src="../../../static/images/my/team/copy.png" mode=""></image>
-							</view> -->
+							<view class="phone" style="display: flex;align-items: center;">
+								<view style="display: flex;align-items: center;"> 
+									<text>团队等级:</text>
+									<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
+									:src="`../../../static/images/my/v${item.referrer.team_level}.png`" mode=""></image>
+								</view>
+								<view style="display: flex;align-items: center;margin-left: 40rpx;">
+									<text>个人等级:</text>
+									<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
+									:src="`../../../static/images/my/v${item.referrer.level}.png`" mode=""></image>
+								</view>
+							</view>
 <!-- 							<view class="date">
 								{{$t('registerDate')}}:{{item.referrer.createtime | timestampFilter}}
 							</view> -->

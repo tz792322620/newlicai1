@@ -121,15 +121,12 @@
 						uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
 						uni.setStorageSync('support_link', JSON.stringify(res.data.support_link))
 						this.$tools.toastSwitchTab(res.msg, '../home/home');
-						setTimeout(() => {
-							this.lock = true
-						}, 1000);
 					} else {
 						this.$tools.toast(res.msg)
-						setTimeout(() => {
-							this.lock = true
-						}, 1000);
 					}
+					setTimeout(() => {
+						this.lock = true
+					}, 1000);
 							
 				}
 			},

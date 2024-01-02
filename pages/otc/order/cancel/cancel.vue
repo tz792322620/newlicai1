@@ -1,36 +1,39 @@
 <template>
 	<view class="cancel">
-		<view class="title">
-			{{$t('cancelTips1')}}
-		</view>
-		<view class="sub-title">
-			{{$t('cancelTips2')}}
-		</view>
-		<view class="content">
-			<view class="cell" v-for="(item,index) in list" :key="index" @click="activeIndex = index">
-				<image v-if="activeIndex !== index" src="../../../../static/images/otc/order/cancel/unchecked.png" mode=""></image>
-				<image v-else src="../../../../static/images/otc/order/cancel/checked.png" mode=""></image>
-				{{item}}
+		<nav-bar :title="$t('cancelOrder')"></nav-bar>
+		<view class="content1">
+			<view class="title">
+				{{$t('cancelTips1')}}
 			</view>
-		</view>
-		<view class="tips">
-			<view class="tips_title">
-				{{$t('tips')}}
+			<view class="sub-title">
+				{{$t('cancelTips2')}}
 			</view>
-			<view class="tips_content">
-				<view class="text">
-					{{$t('cancelTips3')}}
-				</view>
-				<view class="text">
-					{{$t('cancelTips4')}}<text>{{$t('cancelTips5')}}</text>；
-				</view>
-				<view class="text">
-					{{$t('cancelTips6')}}<text>{{$t('cancelTips7')}}</text>{{$t('cancelTips8')}}
+			<view class="content">
+				<view class="cell" v-for="(item,index) in list" :key="index" @click="activeIndex = index">
+					<image v-if="activeIndex !== index" src="../../../../static/images/otc/order/cancel/unchecked.png" mode=""></image>
+					<image v-else src="../../../../static/images/otc/order/cancel/checked.png" mode=""></image>
+					{{item}}
 				</view>
 			</view>
-		</view>
-		<view class="button" @click="cancelOrder">
-			{{$t('cancelButton')}}
+			<view class="tips">
+				<view class="tips_title">
+					{{$t('tips')}}
+				</view>
+				<view class="tips_content">
+					<view class="text">
+						{{$t('cancelTips3')}}
+					</view>
+					<view class="text">
+						{{$t('cancelTips4')}}<text>{{$t('cancelTips5')}}</text>；
+					</view>
+					<view class="text">
+						{{$t('cancelTips6')}}<text>{{$t('cancelTips7')}}</text>{{$t('cancelTips8')}}
+					</view>
+				</view>
+			</view>
+			<view class="button" @click="cancelOrder">
+				{{$t('cancelButton')}}
+			</view>
 		</view>
 	</view>
 </template>
@@ -93,7 +96,9 @@
 
 <style lang="scss" scoped>
 	.cancel {
-		padding: 40rpx;
+		.content1 {
+			padding: 208rpx 40rpx 40rpx;
+		}
 		.title {
 			font-size: 32rpx;
 			font-weight: 600;

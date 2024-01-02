@@ -1,5 +1,9 @@
 <template>
-	<view class="privacy" v-html="data.content">
+	<view class="privacy">
+		<nav-bar :title="data.title"></nav-bar>
+		<view class="content" v-html="data.content">
+		
+		</view>
 	</view>
 </template>
 
@@ -19,9 +23,6 @@
 				const res = await getGonggaoLogById(8) 
 				if (res.code == 1) {
 					this.data = res.data
-					uni.setNavigationBarTitle({
-						title: this.data.title
-					})
 				}
 				 console.log(res)
 			}
@@ -31,6 +32,8 @@
 
 <style lang="scss" scoped>
 	.privacy {
-		padding: 40rpx;
+		.content {
+			padding: 168rpx 40rpx 40rpx 40rpx;
+		}
 	}
 </style>

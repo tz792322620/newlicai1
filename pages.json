@@ -326,21 +326,36 @@
 			"path": "pages/verify/submitSuccessfully/submitSuccessfully",
 			"style": {
 				"navigationBarTitleText": "实名认证",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
 			}
 
 		}, {
 			"path": "pages/verify/pending/pending",
 			"style": {
 				"navigationBarTitleText": "实名认证",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
 			}
 
 		}, {
 			"path": "pages/verify/successfully/successfully",
 			"style": {
 				"navigationBarTitleText": "实名认证",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
 			}
 
 		}, {
@@ -522,7 +537,12 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
             }
             
         }
@@ -531,7 +551,12 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
             }
             
         }
@@ -540,7 +565,12 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
             }
             
         }
@@ -549,7 +579,12 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
             }
             
         }
@@ -558,7 +593,12 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
             }
             
         }
@@ -567,7 +607,12 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": false,
+					"scrollIndicator": "none" //当前页面不显示滚动条
+				}
             }
             
         }
@@ -576,7 +621,8 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#ffffff",
-		"backgroundColor": "#FBFBFB"
+		"backgroundColor": "#FBFBFB",
+		"navigationStyle": "custom"
 	},
 	"tabBar": {
 		"color": "#D8D8D8",

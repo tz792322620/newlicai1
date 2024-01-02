@@ -659,5 +659,6 @@
 		"totalEarningsFormula": "总收益=投资额×日利率×天数",
 		"levelInterestRate": "等级加息",
 		"Real name verification reward": "实名认证奖励",
-		"from": "来自:"
+		"from": "来自:",
+		"details": "详情"
 }

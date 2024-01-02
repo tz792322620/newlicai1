@@ -1,85 +1,88 @@
 <template>
 	<view class="buy">
-		<view class="box1">
-			<view class="box1_title">
-				<text class="box1_title_left" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
-					{{dataInfo.listing_type == 'Sell' ? $t('buy') : dataInfo.listing_type == 'Buy' ? $t('sell') : ''}}
-				</text>
-				<text class="box1_title_right">
-					USDT
-				</text>
+		<nav-bar :title="title"></nav-bar>
+		<view class="content">
+			<view class="box1">
+				<view class="box1_title">
+					<text class="box1_title_left" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
+						{{dataInfo.listing_type == 'Sell' ? $t('buy') : dataInfo.listing_type == 'Buy' ? $t('sell') : ''}}
+					</text>
+					<text class="box1_title_right">
+						USDT
+					</text>
+				</view>
+				<view class="box1_cell">
+					<text class="box1_cell_left">{{$t('unitPrice')}}</text>
+					<text class="box1_cell_right">
+						{{dataInfo.currency | currencySymbol}}{{dataInfo.price}}
+					</text>
+				</view>
+				<view class="box1_cell">
+					<text class="box1_cell_left">{{$t('quantity')}}</text>
+					<text class="box1_cell_right">{{dataInfo.amount}} USDT</text>
+				</view>
+				<view class="box1_cell">
+					<text class="box1_cell_left">{{$t('quota')}}</text>
+					<text
+						class="box1_cell_right">{{dataInfo.currency | currencySymbol}}{{dataInfo.min_amount}}-{{dataInfo.currency | currencySymbol}}{{dataInfo.max_amount}}</text>
+				</view>
 			</view>
-			<view class="box1_cell">
-				<text class="box1_cell_left">{{$t('unitPrice')}}</text>
-				<text class="box1_cell_right">
-					{{dataInfo.currency | currencySymbol}}{{dataInfo.price}}
-				</text>
-			</view>
-			<view class="box1_cell">
-				<text class="box1_cell_left">{{$t('quantity')}}</text>
-				<text class="box1_cell_right">{{dataInfo.amount}} USDT</text>
-			</view>
-			<view class="box1_cell">
-				<text class="box1_cell_left">{{$t('quota')}}</text>
-				<text
-					class="box1_cell_right">{{dataInfo.currency | currencySymbol}}{{dataInfo.min_amount}}-{{dataInfo.currency | currencySymbol}}{{dataInfo.max_amount}}</text>
-			</view>
-		</view>
-		<view class="box2">
-			<view class="box2_title">
-				{{$t('byAmount')}}
-			</view>
-			<view class="box2_input">
-				<u-input type="digit" placeholder="0.00" :clearable="false" placeholder-style="font-size: 36rpx;" @input="confirm" v-model="amount"></u-input>
-				<view class="box2_input_right">
-					<view class="box2_input_right_curreny">
-						{{dataInfo.currency}}
+			<view class="box2">
+				<view class="box2_title">
+					{{$t('byAmount')}}
+				</view>
+				<view class="box2_input">
+					<u-input type="digit" placeholder="0.00" :clearable="false" placeholder-style="font-size: 36rpx;" @input="confirm" v-model="amount"></u-input>
+					<view class="box2_input_right">
+						<view class="box2_input_right_curreny">
+							{{dataInfo.currency}}
+						</view>
+						<view class="box2_input_right_all">
+							{{$t('allItem')}}
+						</view>
 					</view>
-					<view class="box2_input_right_all">
-						{{$t('allItem')}}
+				</view>
+				<view class="box2_cell">
+					<view class="box2_cell_left">
+						{{$t('acceptedQuantity')}}
+					</view>
+					<view class="box2_cell_right">
+						{{usdtAmount ? usdtAmount : '--' }} USDT
+					</view>
+				</view>
+				<view class="box2_cell">
+					<view class="box2_cell_left">
+						{{$t('fiatAmount')}}
+					</view>
+					<view class="box2_cell_right">
+						{{price}} {{dataInfo.currency}}
+					</view>
+				</view>
+				<view class="box2_payment">
+					<view class="box2_payment_title">
+						{{$t('payMethod')}}
+					</view>
+					<view class="box2_payment_method">
+						{{dataInfo.payment_method}}
 					</view>
 				</view>
 			</view>
-			<view class="box2_cell">
-				<view class="box2_cell_left">
-					{{$t('acceptedQuantity')}}
+			<view class="box3">
+				<view class="box3_title">
+					{{$t('merchantInfo')}}
 				</view>
-				<view class="box2_cell_right">
-					{{usdtAmount ? usdtAmount : '--' }} USDT
+				<view class="box3_cell">
+					<text class="box3_cell_left">{{$t('paymentTime')}}</text>
+					<text class="box3_cell_left">20{{$t('minutes')}}</text>
 				</view>
-			</view>
-			<view class="box2_cell">
-				<view class="box2_cell_left">
-					{{$t('fiatAmount')}}
-				</view>
-				<view class="box2_cell_right">
-					{{price}} {{dataInfo.currency}}
+				<view class="box3_cell">
+					<text class="box3_cell_left">{{$t('businessNickname')}}</text>
+					<text class="box3_cell_left">{{dataInfo.user_nickname}}</text>
 				</view>
 			</view>
-			<view class="box2_payment">
-				<view class="box2_payment_title">
-					{{$t('payMethod')}}
-				</view>
-				<view class="box2_payment_method">
-					{{dataInfo.payment_method}}
-				</view>
+			<view class="button" @click="$noMultipleClicks(buy)" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
+				{{dataInfo.listing_type == 'Sell' ? $t('buyUSDT') : dataInfo.listing_type == 'Buy' ? $t('sellUSDT') : ''}}
 			</view>
-		</view>
-		<view class="box3">
-			<view class="box3_title">
-				{{$t('merchantInfo')}}
-			</view>
-			<view class="box3_cell">
-				<text class="box3_cell_left">{{$t('paymentTime')}}</text>
-				<text class="box3_cell_left">20{{$t('minutes')}}</text>
-			</view>
-			<view class="box3_cell">
-				<text class="box3_cell_left">{{$t('businessNickname')}}</text>
-				<text class="box3_cell_left">{{dataInfo.user_nickname}}</text>
-			</view>
-		</view>
-		<view class="button" @click="$noMultipleClicks(buy)" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
-			{{dataInfo.listing_type == 'Sell' ? $t('buyUSDT') : dataInfo.listing_type == 'Buy' ? $t('sellUSDT') : ''}}
 		</view>
 	</view>
 </template>
@@ -101,16 +104,18 @@
 				amount: '', // 输入金额
 				dataInfo: '',
 				usdtAmount: '',
-				price: '--'
+				price: '--',
+				title: ''
 			}
 		},
 		onLoad(params) {
 			if (params.id) {
 				this.data.listing_id = params.id
 				this.getData(params.id)
-				uni.setNavigationBarTitle({
-					title: this.dataInfo.listing_type == 'Sell' ? this.$t('buy') : this.$t('sell')
-				})
+				this.title = this.dataInfo.listing_type == 'Sell' ? this.$t('buy') : this.$t('sell')
+				// uni.setNavigationBarTitle({
+				// 	title: this.dataInfo.listing_type == 'Sell' ? this.$t('buy') : this.$t('sell')
+				// })
 			}
 		},
 		methods: {
@@ -168,10 +173,11 @@
 	page {}
 
 	.buy {
-		background-color: #f5f5f5;
-		min-height: 100vh;
-		padding: 40rpx;
-
+		.content {
+			background-color: #f5f5f5;
+			min-height: 100vh;
+			padding: 208rpx 40rpx 40rpx;
+		}
 		.box1 {
 			height: 284rpx;
 			background: #FFFFFF;

@@ -1,31 +1,34 @@
 <template>
 	<view class="transaction-pin">
-		<view class="cell">
-			<view class="cell_title">
-				{{$t('oldPwd')}}
+		<nav-bar :title="$t('transactionPasswordManagement')"></nav-bar>
+		<view class="content">
+			<view class="cell">
+				<view class="cell_title">
+					{{$t('oldPwd')}}
+				</view>
+				<view class="cell_input">
+					<u-input type="password" :placeholder="$t('enterOldPwd')" v-model="data.old_pay_password"/>
+				</view>
 			</view>
-			<view class="cell_input">
-				<u-input type="password" :placeholder="$t('enterOldPwd')" v-model="data.old_pay_password"/>
+			<view class="cell">
+				<view class="cell_title">
+					{{$t('newPwd')}}
+				</view>
+				<view class="cell_input">
+					<u-input type="password" :placeholder="$t('enterNewPwd')" v-model="data.new_pay_password"/>
+				</view>
 			</view>
-		</view>
-		<view class="cell">
-			<view class="cell_title">
-				{{$t('newPwd')}}
+			<view class="cell">
+				<view class="cell_title">
+					{{$t('confirmPwd')}}
+				</view>
+				<view class="cell_input">
+					<u-input type="password" :placeholder="$t('enterConfirmPwd')" v-model="new_pay_password2"/>
+				</view>
 			</view>
-			<view class="cell_input">
-				<u-input type="password" :placeholder="$t('enterNewPwd')" v-model="data.new_pay_password"/>
+			<view class="button" @click="submit">
+				{{$t('submit')}}
 			</view>
-		</view>
-		<view class="cell">
-			<view class="cell_title">
-				{{$t('confirmPwd')}}
-			</view>
-			<view class="cell_input">
-				<u-input type="password" :placeholder="$t('enterConfirmPwd')" v-model="new_pay_password2"/>
-			</view>
-		</view>
-		<view class="button" @click="submit">
-			{{$t('submit')}}
 		</view>
 	</view>
 </template>
@@ -86,10 +89,12 @@
 
 <style lang="scss" scoped>
 	.transaction-pin {
-		padding: 40rpx;
-		background: url('../../../../static/images/hm_bg.png') center center no-repeat;
-		background-size: 100% 100%;
-		min-height: 100vh;
+		.content {
+			padding: 208rpx 40rpx 40rpx;
+			background: url('../../../../static/images/hm_bg.png') center center no-repeat;
+			background-size: 100% 100%;
+			min-height: 100vh;
+		}
 		.cell {
 			margin-bottom: 40rpx;
 			&_title {

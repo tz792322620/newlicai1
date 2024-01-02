@@ -1,10 +1,13 @@
 <template>
 	<view class="details">
-		<view class="title">
-			{{details.title}}
-		</view>
-		<view class="content" v-html="details.content">
-			
+		<nav-bar :title="$t('noticeDetails')"></nav-bar>
+		<view class="content1">
+			<view class="title">
+				{{details.title}}
+			</view>
+			<view class="content" v-html="details.content">
+				
+			</view>
 		</view>
 	</view>
 </template>
@@ -18,9 +21,9 @@
 			}
 		},
 		onShow() {
-			uni.setNavigationBarTitle({
-				title: this.$t('noticeDetails')
-			})
+			// uni.setNavigationBarTitle({
+			// 	title: this.$t('noticeDetails')
+			// })
 		},
 		onLoad(params) {
 			console.log(params)
@@ -41,13 +44,15 @@
 
 <style lang="scss" scoped>
 	.details {
-		padding: 40rpx 30rpx;
-		.title {
-			font-size: 36rpx;
-			font-weight: 600;
-			color: #333333;
-			line-height: 50rpx;
-			margin-bottom: 40rpx;
+		.content1{
+			padding: 188rpx 40rpx 30rpx 40rpx;
+			.title {
+				font-size: 36rpx;
+				font-weight: 600;
+				color: #333333;
+				line-height: 50rpx;
+				margin-bottom: 40rpx;
+			}
 		}
 	}
 </style>

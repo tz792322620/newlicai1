@@ -1,56 +1,59 @@
 <template>
 	<view class="records">
-		<u-empty v-if="recordsList.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
-		<view v-if="recordsList.length !== 0" class="records_item" v-for="(item, index) in recordsList" :key="index" @click="toDetails(item)">
-			  <view class="records_item_cell">
-				<view class="records_item_cell_left">
-				  {{$t('Type')}}
+		<nav-bar :title="$t('Coupon Management')"></nav-bar>
+		<view class="content">
+			<u-empty v-if="recordsList.length === 0" :text="$t('depositEmpty')" margin-top="100"></u-empty>
+			<view v-if="recordsList.length !== 0" class="records_item" v-for="(item, index) in recordsList" :key="index">
+				  <view class="records_item_cell">
+					<view class="records_item_cell_left">
+					  {{$t('Type')}}
+					</view>
+					<view class="records_item_cell_right" v-if="item.type == 'interest'">
+					  {{$t('Interest Coupon')}}
+					</view>
+					<view class="records_item_cell_right" v-if="item.type == 'discount'">
+					  {{$t('Discount Coupon')}}
+					</view>
+				  </view>
+				<view class="records_item_cell" v-if="item.type == 'interest'">
+					<view class="records_item_cell_left">
+						{{$t('Interest Coupon Name')}}
+					</view>
+					<view class="records_item_cell_right">
+						{{item.interest_coupon.name}}
+					</view>
 				</view>
-				<view class="records_item_cell_right" v-if="item.type == 'interest'">
-				  {{$t('Interest Coupon')}}
+				<view class="records_item_cell" v-if="item.type == 'discount'">
+					<view class="records_item_cell_left">
+						{{$t('Discount Coupon Name')}}
+					</view>
+					<view class="records_item_cell_right">
+						{{item.discount_coupon.coupon_name}}
+					</view>
 				</view>
-				<view class="records_item_cell_right" v-if="item.type == 'discount'">
-				  {{$t('Discount Coupon')}}
+				<view class="records_item_cell" v-if="item.type == 'interest'">
+					<view class="records_item_cell_left">
+						{{$t('Interest Increase')}}
+					</view>
+					<view class="records_item_cell_right">
+						{{item.interest_coupon.rate}}%
+					</view>
 				</view>
-			  </view>
-			<view class="records_item_cell" v-if="item.type == 'interest'">
-				<view class="records_item_cell_left">
-					{{$t('Interest Coupon Name')}}
+				<view class="records_item_cell" v-if="item.type == 'discount'">
+					<view class="records_item_cell_left">
+						{{$t('Deduction')}}
+					</view>
+					<view class="records_item_cell_right">
+						{{item.discount_coupon.discount_amount}}USDT
+					</view>
 				</view>
-				<view class="records_item_cell_right">
-					{{item.interest_coupon.name}}
-				</view>
-			</view>
-			<view class="records_item_cell" v-if="item.type == 'discount'">
-				<view class="records_item_cell_left">
-					{{$t('Discount Coupon Name')}}
-				</view>
-				<view class="records_item_cell_right">
-					{{item.discount_coupon.coupon_name}}
-				</view>
-			</view>
-			<view class="records_item_cell" v-if="item.type == 'interest'">
-				<view class="records_item_cell_left">
-					{{$t('Interest Increase')}}
-				</view>
-				<view class="records_item_cell_right">
-					{{item.interest_coupon.rate}}%
-				</view>
-			</view>
-			<view class="records_item_cell" v-if="item.type == 'discount'">
-				<view class="records_item_cell_left">
-					{{$t('Deduction')}}
-				</view>
-				<view class="records_item_cell_right">
-					{{item.discount_coupon.discount_amount}}USDT
-				</view>
-			</view>
-			<view class="records_item_cell">
-				<view class="records_item_cell_left">
-					{{$t('Time')}}
-				</view>
-				<view class="records_item_cell_right">
-					{{item.obtained_date}}
+				<view class="records_item_cell">
+					<view class="records_item_cell_left">
+						{{$t('Time')}}
+					</view>
+					<view class="records_item_cell_right">
+						{{item.obtained_date}}
+					</view>
 				</view>
 			</view>
 		</view>
@@ -101,10 +104,12 @@
 
 <style lang="scss" scoped>
 	.records {
-		padding: 30rpx 40rpx;
-		background: #e6fbf6 url('../../static/images/hm_bg.png') center center no-repeat;
-		background-size: 100% 100%;
-		min-height: 100vh;
+		.content {
+			padding: 208rpx 40rpx 30rpx 40rpx;
+			background: #e6fbf6 url('../../static/images/hm_bg.png') center center no-repeat;
+			background-size: 100% 100%;
+			min-height: 100vh;
+		}
 		&_item {
 			padding: 30rpx;
 			// border-bottom: 2rpx solid #F3F3F3;

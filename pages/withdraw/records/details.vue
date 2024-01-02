@@ -1,45 +1,48 @@
 <template>
 	<view class="details">
-		<view class="details_top">
-			<view class="details_top_desc">
-				{{$t('quantityReceived')}}
-			</view>
-			<view class="details_top_count">
-				+{{data.withdrawal_amount}}
-				<text>{{data.currency_type}}</text>
-			</view>
-		</view>
-		<view class="details_content">
-			<view class="details_content_cell">
-				<view class="left">
-					{{$t('nowStatus')}}
+		<nav-bar :title="$t('withdrawalDetails')"></nav-bar>
+		<view class="content">
+			<view class="details_top">
+				<view class="details_top_desc">
+					{{$t('quantityReceived')}}
 				</view>
-				<view class="right">
-					{{data.withdrawal_status}}
+				<view class="details_top_count">
+					+{{data.withdrawal_amount}}
+					<text>{{data.currency_type}}</text>
 				</view>
 			</view>
-			<view class="details_content_cell">
-				<view class="left">
-					{{$t('verify')}}
+			<view class="details_content">
+				<view class="details_content_cell">
+					<view class="left">
+						{{$t('nowStatus')}}
+					</view>
+					<view class="right">
+						{{data.withdrawal_status}}
+					</view>
 				</view>
-				<view class="right">
-					{{data.audit_status}}
+				<view class="details_content_cell">
+					<view class="left">
+						{{$t('verify')}}
+					</view>
+					<view class="right">
+						{{data.audit_status}}
+					</view>
 				</view>
-			</view>
-			<view class="details_content_cell">
-				<view class="left">
-					{{$t('transferHash')}}
+				<view class="details_content_cell">
+					<view class="left">
+						{{$t('transferHash')}}
+					</view>
+					<view class="right">
+						{{data.transaction_hash}}
+					</view>
 				</view>
-				<view class="right">
-					{{data.transaction_hash}}
-				</view>
-			</view>
-			<view class="details_content_cell">
-				<view class="left">
-					{{$t('date')}}
-				</view>
-				<view class="right">
-					{{data.withdrawal_date}}
+				<view class="details_content_cell">
+					<view class="left">
+						{{$t('date')}}
+					</view>
+					<view class="right">
+						{{data.withdrawal_date}}
+					</view>
 				</view>
 			</view>
 		</view>
@@ -78,6 +81,9 @@
 
 <style lang="scss" scoped>
 	.details {
+		.content {
+			padding-top: 168rpx;
+		}
 		&_top {
 			display: flex;
 			flex-direction: column;

@@ -1,99 +1,102 @@
 <template>
 	<view class="order">
-		<view class="title">
-			{{$t('orderCompleted')}}
-		</view>
-		<view class="sub-title">
-			{{$t('please')}}<u-count-down :timestamp="timestamp" :show-hours="false" font-size="32" color="#21BF90"
-				separator-color="#21BF90" @change="change"></u-count-down>{{$t('payMerchant')}}
-		</view>
-		<view class="user">
-			<view class="info">
-				<view class="info_left">
-					<!-- <view class="avatar">
-						
-					</view> -->
-					<view class="name">
-						{{tradeInfo.seller_nickname}}
+		<nav-bar :title="$t('order')"></nav-bar>
+		<view class="content">
+			<view class="title">
+				{{$t('orderCompleted')}}
+			</view>
+			<view class="sub-title">
+				{{$t('please')}}<u-count-down :timestamp="timestamp" :show-hours="false" font-size="32" color="#21BF90"
+					separator-color="#21BF90" @change="change"></u-count-down>{{$t('payMerchant')}}
+			</view>
+			<view class="user">
+				<view class="info">
+					<view class="info_left">
+						<!-- <view class="avatar">
+							
+						</view> -->
+						<view class="name">
+							{{tradeInfo.seller_nickname}}
+						</view>
+					</view>
+					<view class="info_right">
+						<uni-icons type="right"></uni-icons>
 					</view>
 				</view>
-				<view class="info_right">
-					<uni-icons type="right"></uni-icons>
+				<view class="desc">
+					<image src="../../../static/images/otc/order/checked.png" mode=""></image>
+					{{$t('orderTips1')}}
+				</view>
+				<view class="desc">
+					<image src="../../../static/images/otc/order/checked.png" mode=""></image>
+					{{$t('orderTips2')}}
 				</view>
 			</view>
-			<view class="desc">
-				<image src="../../../static/images/otc/order/checked.png" mode=""></image>
-				{{$t('orderTips1')}}
-			</view>
-			<view class="desc">
-				<image src="../../../static/images/otc/order/checked.png" mode=""></image>
-				{{$t('orderTips2')}}
-			</view>
-		</view>
-		<view class="deal">
-			<view class="deal_title">
-				{{$t('buy')}}
-				<text class="unit">USDT</text>
-			</view>
-			<view class="deal_cell">
-				<view class="deal_cell_left">
-					{{$t('totalAmount')}}
+			<view class="deal">
+				<view class="deal_title">
+					{{$t('buy')}}
+					<text class="unit">USDT</text>
 				</view>
-				<view class="deal_cell_right">
-					¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
+				<view class="deal_cell">
+					<view class="deal_cell_left">
+						{{$t('totalAmount')}}
+					</view>
+					<view class="deal_cell_right">
+						¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
+					</view>
 				</view>
-			</view>
-			<view class="deal_cell">
-				<view class="deal_cell_left">
-					{{$t('unitPrice')}}
+				<view class="deal_cell">
+					<view class="deal_cell_left">
+						{{$t('unitPrice')}}
+					</view>
+					<view class="deal_cell_right">
+						¥{{tradeInfo.trade_price}}
+					</view>
 				</view>
-				<view class="deal_cell_right">
-					¥{{tradeInfo.trade_price}}
+				<view class="deal_cell">
+					<view class="deal_cell_left">
+						{{$t('quantity')}}
+					</view>
+					<view class="deal_cell_right">
+						{{tradeInfo.trade_amount}} USDT
+					</view>
 				</view>
-			</view>
-			<view class="deal_cell">
-				<view class="deal_cell_left">
-					{{$t('quantity')}}
-				</view>
-				<view class="deal_cell_right">
-					{{tradeInfo.trade_amount}} USDT
-				</view>
-			</view>
-			<u-line color="#EDEDED" style="margin-top: 30rpx;" />
-			<!-- <view class="deal_cell" style="margin-bottom: 30rpx;margin-top: 30rpx;">
-				<view class="deal_cell_left">
-					订单号
-				</view>
-				<view class="deal_cell_right" style="display: flex;align-items: center;">
-					20230304123142154
-					<image src="../../../static/images/otc/order/copy.png" mode="" style="width: 24rpx;height: 24rpx;margin-left: 20rpx;"></image>
-				</view>
-			</view> -->
-			<view class="deal_cell" style="margin-top: 30rpx;">
-				<view class="deal_cell_left">
-					{{$t('creationTime')}}
-				</view>
-				<view class="deal_cell_right">
-					{{tradeInfo.trade_date}}
+				<u-line color="#EDEDED" style="margin-top: 30rpx;" />
+				<!-- <view class="deal_cell" style="margin-bottom: 30rpx;margin-top: 30rpx;">
+					<view class="deal_cell_left">
+						订单号
+					</view>
+					<view class="deal_cell_right" style="display: flex;align-items: center;">
+						20230304123142154
+						<image src="../../../static/images/otc/order/copy.png" mode="" style="width: 24rpx;height: 24rpx;margin-left: 20rpx;"></image>
+					</view>
+				</view> -->
+				<view class="deal_cell" style="margin-top: 30rpx;">
+					<view class="deal_cell_left">
+						{{$t('creationTime')}}
+					</view>
+					<view class="deal_cell_right">
+						{{tradeInfo.trade_date}}
+					</view>
 				</view>
 			</view>
-		</view>
-		<view class="payment">
-			<view class="payment_title">
-				{{$t('tradeMethod')}}
+			<view class="payment">
+				<view class="payment_title">
+					{{$t('tradeMethod')}}
+				</view>
+				<view class="payment_desc">
+					<text v-for="(item,index) in tradeInfo.payment_infos" :key="index">
+						{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
+					</text>
+				</view>
 			</view>
-			<view class="payment_desc">
-				<text v-for="(item,index) in tradeInfo.payment_infos" :key="index">
-					{{item.payment_type == '微信' ? $t('wechat') : item.payment_type == '支付宝' ? $t('alipay') : item.payment_type == '银行卡' ? $t('bankCard') : ''}}
-				</text>
-			</view>
-		</view>
-		<view class="buttons">
-			<view class="cancel" @click="cancelOrder">
-				{{$t('cancelOrder')}}
-			</view>
-			<view class="pay" @click="toPay">
-				{{$t('toPay')}}
+			<view class="buttons">
+				<view class="cancel" @click="cancelOrder">
+					{{$t('cancelOrder')}}
+				</view>
+				<view class="pay" @click="toPay">
+					{{$t('toPay')}}
+				</view>
 			</view>
 		</view>
 	</view>
@@ -168,8 +171,10 @@
 
 <style lang="scss" scoped>
 	.order {
-		padding: 40rpx;
-
+		.content {
+			padding: 208rpx 40rpx 40rpx;
+			
+		}
 		.title {
 			font-size: 48rpx;
 			font-weight: 600;

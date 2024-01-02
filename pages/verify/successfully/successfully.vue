@@ -1,9 +1,12 @@
 <template>
 	<view class="successfully">
-		<view class="tips">
-			<image src="../../../static/images/verify/successfully.png" mode=""></image>
-			<text class="title">{{$t('congratulations')}}</text>
-			<text class="sub-title">{{$t('verificationComplete')}}</text>
+		<nav-bar :title="$t('realNameAuthentication')"></nav-bar>
+		<view class="content">
+			<view class="tips">
+				<image src="../../../static/images/verify/successfully.png" mode=""></image>
+				<text class="title">{{$t('congratulations')}}</text>
+				<text class="sub-title">{{$t('verificationComplete')}}</text>
+			</view>
 		</view>
 <!-- 		<view class="info">
 			<view class="info_title">
@@ -52,9 +55,9 @@
 			return true
 		},
 		onShow() {
-			uni.setNavigationBarTitle({
-				title: this.$t('realNameAuthentication')
-			})
+			// uni.setNavigationBarTitle({
+			// 	title: this.$t('realNameAuthentication')
+			// })
 		},
 		methods: {
 			
@@ -64,54 +67,56 @@
 
 <style lang="scss" scoped>
 	.successfully {
-		.tips {
-			padding-top: 140rpx;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			image {
-				width: 360rpx;
-				height: 256rpx;
-				margin-bottom: 30rpx;
-			}
-			text {
-				line-height: 44rpx;
-			}
-			.title {
-				font-size: 32rpx;
-				color: #333333;
-				font-weight: 600;
-				margin-bottom: 12rpx;
-				text-align: center;
-			}
-			.sub-title {
-				font-size: 24rpx;
-				color: #999999;
-				font-weight: 500;
-			}
-		}
-		.info {
-			margin-top: 80rpx;
-			padding: 0 40rpx;
-			&_title {
-				font-size: 32rpx;
-				font-weight: 500;
-				color: #333333;
-				line-height: 44rpx;
-			}
-			&_cell {
-				margin-top: 30rpx;
+		.content {
+			.tips {
+				padding-top: 240rpx;
 				display: flex;
+				flex-direction: column;
 				align-items: center;
-				justify-content: space-between;
-				font-size: 28rpx;
-				font-weight: 500;
-				line-height: 40rpx;
-				&_left {
-					color: #999999;
+				image {
+					width: 360rpx;
+					height: 256rpx;
+					margin-bottom: 30rpx;
 				}
-				&_right {
+				text {
+					line-height: 44rpx;
+				}
+				.title {
+					font-size: 32rpx;
 					color: #333333;
+					font-weight: 600;
+					margin-bottom: 12rpx;
+					text-align: center;
+				}
+				.sub-title {
+					font-size: 24rpx;
+					color: #999999;
+					font-weight: 500;
+				}
+			}
+			.info {
+				margin-top: 80rpx;
+				padding: 0 40rpx;
+				&_title {
+					font-size: 32rpx;
+					font-weight: 500;
+					color: #333333;
+					line-height: 44rpx;
+				}
+				&_cell {
+					margin-top: 30rpx;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					font-size: 28rpx;
+					font-weight: 500;
+					line-height: 40rpx;
+					&_left {
+						color: #999999;
+					}
+					&_right {
+						color: #333333;
+					}
 				}
 			}
 		}

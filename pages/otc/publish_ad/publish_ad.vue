@@ -1,123 +1,126 @@
 <template>
 	<view class="publish_ad">
-		<view class="item1">
-			<view class="item">
-				<view class="desc">{{ $t('currency') }}</view>
-				<view class="input">{{ $t('usdt') }}</view>
-			</view>
-			<view class="item">
-				<view class="desc">{{ $t('currency') }}</view>
-				<view class="input" @click="isAbP = !isAbP">
-					<text v-if="abName&&!abName1">{{ abName }}</text>
-					<text v-else>{{ abName1 }}</text>
-					<uni-icons type="bottom"></uni-icons>
+		<nav-bar :title="$t('publishAd')"></nav-bar>
+		<view class="content">
+			<view class="item1">
+				<view class="item">
+					<view class="desc">{{ $t('currency') }}</view>
+					<view class="input">{{ $t('usdt') }}</view>
 				</view>
-				<view class="u-flex-popup" v-if="isAbP">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item, index) in currencyList" :key="index"
-							:class="ab == item.ab ? 'active' : ''" @click="abClick(item)">
-							<image :src="item.url" mode=""></image>
-							<text>{{ item.name }}</text>
+				<view class="item">
+					<view class="desc">{{ $t('currency') }}</view>
+					<view class="input" @click="isAbP = !isAbP">
+						<text v-if="abName&&!abName1">{{ abName }}</text>
+						<text v-else>{{ abName1 }}</text>
+						<uni-icons type="bottom"></uni-icons>
+					</view>
+					<view class="u-flex-popup" v-if="isAbP">
+						<view class="u-flex-popup-content">
+							<view class="u-flex-popup-content-item" v-for="(item, index) in currencyList" :key="index"
+								:class="ab == item.ab ? 'active' : ''" @click="abClick(item)">
+								<image :src="item.url" mode=""></image>
+								<text>{{ item.name }}</text>
+							</view>
 						</view>
 					</view>
 				</view>
 			</view>
-		</view>
-		<view class="item1">
-			<view class="item">
-				<view class="desc">{{ $t('adType') }}</view>
-				<view class="input" @click="isType = !isType">
-					<text v-if="activeType&&!activeType1">{{ activeType }}</text>
-					<text v-else>{{ activeType1 }}</text>
-					<uni-icons type="bottom"></uni-icons>
-				</view>
-				<view class="u-flex-popup" v-if="isType">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item, index) in typeList" :key="index"
-							:class="activeTypeIndex == index ? 'active' : ''" @click="typeClick(item,index)"
-							style="padding: 30rpx 0;">
-							<text style="width: 100%; text-align: center;">{{ item.name }}</text>
+			<view class="item1">
+				<view class="item">
+					<view class="desc">{{ $t('adType') }}</view>
+					<view class="input" @click="isType = !isType">
+						<text v-if="activeType&&!activeType1">{{ activeType }}</text>
+						<text v-else>{{ activeType1 }}</text>
+						<uni-icons type="bottom"></uni-icons>
+					</view>
+					<view class="u-flex-popup" v-if="isType">
+						<view class="u-flex-popup-content">
+							<view class="u-flex-popup-content-item" v-for="(item, index) in typeList" :key="index"
+								:class="activeTypeIndex == index ? 'active' : ''" @click="typeClick(item,index)"
+								style="padding: 30rpx 0;">
+								<text style="width: 100%; text-align: center;">{{ item.name }}</text>
+							</view>
 						</view>
+					</view>
+				</view>
+				<view class="item">
+					<view class="desc">{{ $t('priceUnit') }}</view>
+					<!-- <view class="input" @click="isPrice = !isPrice">
+			            <text>{{ activePrice }}</text>
+			            <uni-icons type="bottom"></uni-icons>
+			        </view>
+			        <view class="u-flex-popup" v-if="isPrice">
+			            <view class="u-flex-popup-content">
+			                <view class="u-flex-popup-content-item" v-for="(item, index) in priceList" :key="index" 
+			                :class="activePriceIndex == item.id ? 'active' : ''" @click="priceClick(item)" style="padding: 30rpx 0;">
+			                    <text style="width: 100%; text-align: center;">{{ item.name }}</text>
+			                </view>
+			            </view>
+			        </view> -->
+					<view class="input">
+						<u-input type="digit" :placeholder="$t('enterPriceUnit')" v-model="data.price"></u-input>
 					</view>
 				</view>
 			</view>
 			<view class="item">
-				<view class="desc">{{ $t('priceUnit') }}</view>
-				<!-- <view class="input" @click="isPrice = !isPrice">
-                    <text>{{ activePrice }}</text>
-                    <uni-icons type="bottom"></uni-icons>
-                </view>
-                <view class="u-flex-popup" v-if="isPrice">
-                    <view class="u-flex-popup-content">
-                        <view class="u-flex-popup-content-item" v-for="(item, index) in priceList" :key="index" 
-                        :class="activePriceIndex == item.id ? 'active' : ''" @click="priceClick(item)" style="padding: 30rpx 0;">
-                            <text style="width: 100%; text-align: center;">{{ item.name }}</text>
-                        </view>
-                    </view>
-                </view> -->
-				<view class="input">
-					<u-input type="digit" :placeholder="$t('enterPriceUnit')" v-model="data.price"></u-input>
+				<view class="desc">{{ $t('minAmount') }}</view>
+				<view class="input" style="width: 100%;">
+					<u-input type="digit" :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
 				</view>
 			</view>
-		</view>
-		<view class="item">
-			<view class="desc">{{ $t('minAmount') }}</view>
-			<view class="input" style="width: 100%;">
-				<u-input type="digit" :placeholder="$t('enterMinAmount')" v-model="data.min_amount"></u-input>
-			</view>
-		</view>
-		<view class="item">
-			<view class="desc">{{ $t('maxAmount') }}</view>
-			<view class="input" style="width: 100%;">
-				<u-input type="digit" :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
-			</view>
-		</view>
-		<view class="item1">
 			<view class="item">
-				<view class="desc">{{ $t('paymentMethod') }}</view>
-				<view class="input" @click="isPay = !isPay">
-					<text>{{ paymentMethod }}</text>
-					<uni-icons type="bottom"></uni-icons>
+				<view class="desc">{{ $t('maxAmount') }}</view>
+				<view class="input" style="width: 100%;">
+					<u-input type="digit" :placeholder="$t('enterMaxAmount')" v-model="data.max_amount"></u-input>
 				</view>
-				<view class="u-flex-popup" v-if="isPay">
-					<view class="u-flex-popup-content">
-						<view class="u-flex-popup-content-item" v-for="(item, index) in payList" :key="index"
-							:class="item.isTrue ? 'active' : ''" @click="payClick(item)">
-							<image :src="item.url" mode="" style="width: 40rpx; height: 42rpx;"></image>
-							<text>{{ item.name }}</text>
+			</view>
+			<view class="item1">
+				<view class="item">
+					<view class="desc">{{ $t('paymentMethod') }}</view>
+					<view class="input" @click="isPay = !isPay">
+						<text>{{ paymentMethod }}</text>
+						<uni-icons type="bottom"></uni-icons>
+					</view>
+					<view class="u-flex-popup" v-if="isPay">
+						<view class="u-flex-popup-content">
+							<view class="u-flex-popup-content-item" v-for="(item, index) in payList" :key="index"
+								:class="item.isTrue ? 'active' : ''" @click="payClick(item)">
+								<image :src="item.url" mode="" style="width: 40rpx; height: 42rpx;"></image>
+								<text>{{ item.name }}</text>
+							</view>
 						</view>
 					</view>
 				</view>
+				<view class="item">
+					<view class="desc" style="display: flex;justify-content: space-between;">{{ $t('quantity') }} <text>{{dataInfo.deposit_amount}}</text> </view>
+					<view class="input">
+						<u-input type="digit" :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
+					</view>
+				</view>
+				<!-- <view class="item">
+			        <view class="desc">{{ $t('transactionLimit') }}</view>
+			        <view class="input" @click="isTime = !isTime">
+			            <text>{{ activeTime }}</text>
+			            <uni-icons type="bottom"></uni-icons> 
+			        </view>
+			        <view class="u-flex-popup" v-if="isTime">
+			            <view class="u-flex-popup-content">
+			                <view class="u-flex-popup-content-item" v-for="(item, index) in timeList" :key="index" 
+			                :class="activeTimeIndex == item.id ? 'active' : ''" @click="timeClick(item)" style="padding: 30rpx 0;">
+			                    <text style="width: 100%; text-align: center;">{{ item.name }}</text>
+			                </view>
+			            </view>
+			        </view>
+			    </view> -->
 			</view>
 			<view class="item">
-				<view class="desc" style="display: flex;justify-content: space-between;">{{ $t('quantity') }} <text>{{dataInfo.deposit_amount}}</text> </view>
-				<view class="input">
-					<u-input type="digit" :placeholder="$t('enterTransactionQuantity')" v-model="data.amount"></u-input>
+				<view class="desc">{{ $t('note') }}</view>
+				<view class="input" style="width: 100%; height: 240rpx; align-items: flex-start; padding: 26rpx 20rpx">
+					<u-input type="textarea" :placeholder="$t('enterNote')" v-model="data.remark" maxlength="20"></u-input>
 				</view>
 			</view>
-			<!-- <view class="item">
-                <view class="desc">{{ $t('transactionLimit') }}</view>
-                <view class="input" @click="isTime = !isTime">
-                    <text>{{ activeTime }}</text>
-                    <uni-icons type="bottom"></uni-icons> 
-                </view>
-                <view class="u-flex-popup" v-if="isTime">
-                    <view class="u-flex-popup-content">
-                        <view class="u-flex-popup-content-item" v-for="(item, index) in timeList" :key="index" 
-                        :class="activeTimeIndex == item.id ? 'active' : ''" @click="timeClick(item)" style="padding: 30rpx 0;">
-                            <text style="width: 100%; text-align: center;">{{ item.name }}</text>
-                        </view>
-                    </view>
-                </view>
-            </view> -->
+			<view class="button" @click="$noMultipleClicks(submit)">{{ $t('publish') }}</view>
 		</view>
-		<view class="item">
-			<view class="desc">{{ $t('note') }}</view>
-			<view class="input" style="width: 100%; height: 240rpx; align-items: flex-start; padding: 26rpx 20rpx">
-				<u-input type="textarea" :placeholder="$t('enterNote')" v-model="data.remark" maxlength="20"></u-input>
-			</view>
-		</view>
-		<view class="button" @click="$noMultipleClicks(submit)">{{ $t('publish') }}</view>
 	</view>
 </template>
 
@@ -367,10 +370,12 @@
 
 <style lang="scss" scoped>
 	.publish_ad {
-		padding: 40rpx;
-		background: #e6fcf6 url('../../../static/images/hm_bg.png') center center no-repeat;
-		background-size: 100% 100%;
-		min-height: 100vh;
+		.content {
+			padding: 208rpx 40rpx 40rpx;
+			background: #e6fcf6 url('../../../static/images/hm_bg.png') center center no-repeat;
+			background-size: 100% 100%;
+			min-height: 100vh;	
+		}
 		.button {
 			height: 90rpx;
 			background: #35CBA5;

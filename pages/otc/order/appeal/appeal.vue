@@ -16,47 +16,50 @@
 				<u-input placeholder="请输入联系电话" v-model="name"></u-input>
 			</view>
 		</view> -->
-		<view style="margin-bottom: 12rpx;">
-			<view class="item" style="margin-bottom: 0;">
+		<nav-bar :title="$t('appeal')"></nav-bar>
+		<view class="content">
+			<view style="margin-bottom: 12rpx;">
+				<view class="item" style="margin-bottom: 0;">
+					<view class="desc">
+						{{$t('appealReasons')}}
+					</view>
+					<view class="textarea">
+						<textarea style="height: 180rpx;"  :maxlength="500" v-model="data.complaint_content"  :placeholder="$t('appealPlaceholder')"></textarea>
+					</view>
+				</view>
+				<view class="text" style="font-size: 20rpx;font-weight: 400;color: #333333;line-height: 28rpx;text-align: right;">
+					{{data.complaint_content.length}}/500
+				</view>
+			</view>
+			<view class="item">
 				<view class="desc">
-					{{$t('appealReasons')}}
+					{{$t('appealVoucher')}}
 				</view>
-				<view class="textarea">
-					<textarea style="height: 180rpx;"  :maxlength="500" v-model="data.complaint_content"  :placeholder="$t('appealPlaceholder')"></textarea>
+				<view class="slot-btn" @click="uploadImage" v-if="!data.appeal_proof">
+					<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
+					<text>{{$t('uploadVoucher')}}</text>
+				</view>
+				<view style="width: 280rpx;height: 200rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
+					<image :src="$url + data.appeal_proof" mode="" style="width: 100%;height: 100%;"></image>
 				</view>
 			</view>
-			<view class="text" style="font-size: 20rpx;font-weight: 400;color: #333333;line-height: 28rpx;text-align: right;">
-				{{data.complaint_content.length}}/500
+			<view class="tips">
+				<view class="tips_title">
+					{{$t('tips')}}
+				</view>
+				<view class="tips_text">
+					{{$t('appealTips1')}}
+				</view>
+				<view class="tips_text">
+					{{$t('appealTips2')}}
+				</view>
+				<view class="tips_text">
+					{{$t('appealTips3')}}
+				</view>
 			</view>
-		</view>
-		<view class="item">
-			<view class="desc">
-				{{$t('appealVoucher')}}
+			<view class="button" @click="confirm">
+				{{$t('submit')}}
 			</view>
-			<view class="slot-btn" @click="uploadImage" v-if="!data.appeal_proof">
-				<image src="@/static/images/otc/payment/add/upload.png" mode=""></image>
-				<text>{{$t('uploadVoucher')}}</text>
-			</view>
-			<view style="width: 280rpx;height: 200rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
-				<image :src="$url + data.appeal_proof" mode="" style="width: 100%;height: 100%;"></image>
-			</view>
-		</view>
-		<view class="tips">
-			<view class="tips_title">
-				{{$t('tips')}}
-			</view>
-			<view class="tips_text">
-				{{$t('appealTips1')}}
-			</view>
-			<view class="tips_text">
-				{{$t('appealTips2')}}
-			</view>
-			<view class="tips_text">
-				{{$t('appealTips3')}}
-			</view>
-		</view>
-		<view class="button" @click="confirm">
-			{{$t('submit')}}
 		</view>
 	</view>
 </template>
@@ -144,7 +147,9 @@
 
 <style lang="scss" scoped>
 	.appeal {
-		padding: 40rpx;
+		.content {
+			padding: 208rpx 40rpx 40rpx;
+		}
 		.item {
 			margin-bottom: 40rpx;
 			.desc {
