@@ -46,6 +46,14 @@
 				</view>
 				<view class="cell">
 					<view class="cell_left">
+						{{ $t('residueAmount') }}
+					</view>
+					<view class="cell_right">
+						{{item.available_amount}} USDT
+					</view>
+				</view>
+				<view class="cell">
+					<view class="cell_left">
 						{{ $t('note') }}
 					</view>
 					<view class="cell_right">

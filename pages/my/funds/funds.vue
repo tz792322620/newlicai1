@@ -19,7 +19,7 @@
 						<view style="font-size: 13px;">{{ getStatusTranslation(item.change_type) }}</view>
 					</view>
 				</view>
-				<text v-if="item.related_id !== 0&&item.product">{{$t('from')}} {{item.product.product_name_cn}}({{item.product.product_code}})</text>
+				<text v-if="item.related_id !== 0&&item.product">{{$t('from')}} <text v-if="item.from_user_id&&item.from_user_id > 0">{{$t('member')}}--{{item.from_user_nickname}},</text> {{item.product.product_name_cn}}({{item.product.product_code}})</text>
 			</view>
 		</view>
 	</view>

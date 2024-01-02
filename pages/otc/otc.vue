@@ -73,6 +73,10 @@
 					<view style="color:#AFAFAF;margin-right: 20rpx;">{{$t('quota')}}</view>
 					<view>{{item.currency | currencySymbol}}{{item.min_amount}}-{{item.currency | currencySymbol}}{{item.max_amount}} </view>
 				</view>
+				<view class="u-flex" style="margin-top: 10rpx;">
+					<view style="color:#AFAFAF;margin-right: 20rpx;">{{$t('residueAmount')}}</view>
+					<view>{{item.available_amount}} USDT</view>
+				</view>
 				<view class="u-flex" style="margin-top: 10rpx;margin-bottom: 20rpx;">
 					<view class="u-flex" style="width: 520rpx;">
 						<view v-for="(item1,index1) in item.payment_list" :key="index1">

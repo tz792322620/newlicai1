@@ -135,6 +135,7 @@
 	"holdingPeriod": "持仓期限",
 	"whenFull": "满仓即止",
 	"residue": "剩余",
+	"residueAmount": "剩余数量",
 	"wanyuan": "万USDT",
 	"riskControl": "专业风控",
 	"fundGuarantee": "资金保障",
@@ -660,5 +661,7 @@
 		"levelInterestRate": "等级加息",
 		"Real name verification reward": "实名认证奖励",
 		"from": "来自:",
-		"details": "详情"
+		"details": "详情",
+		"member": "会员",
+		"soldOut": "已售罄"
 }

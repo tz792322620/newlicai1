@@ -138,9 +138,12 @@
 				</view>
 			
 				<view style="margin-top:30rpx;">
-					<u-button @click="reg()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
+					<u-button v-if="(Number(productInfo.total_fundraising) - productInfo.sold_units) > 0" @click="reg()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
 						:custom-style="customStyle1" shape="circle" type="primary">
 						{{$t('immediateInvestment')}}</u-button>
+						<u-button v-else :ripple="true" style="font-size: 34rpx;"
+							:custom-style="customStyle2" shape="circle" type="primary">
+							{{$t('soldOut')}}</u-button>
 				</view>
 			</view>
 		</view>
@@ -160,6 +163,12 @@
 					color: '#FFFFFF',
 					width: '670rpx',
 					background: 'linear-gradient(#69EEAB,#21CCBA)'
+				},customStyle2: {
+					height: '90rpx',
+					margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
+					color: '#f0f0f0',
+					width: '670rpx',
+					background: '#888'
 				},
 				productId: '',
 				productInfo: ''

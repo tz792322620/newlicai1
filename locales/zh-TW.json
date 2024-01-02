@@ -135,6 +135,7 @@
 	"holdingPeriod": "持倉期滿",
 	"whenFull": "滿倉即止",
 	"residue": "剩餘",
+	"residueAmount": "剩餘數量",
 	"wanyuan": "萬USDT",
 	"riskControl": "專業風控",
 	"fundGuarantee": "資金保障",
@@ -660,5 +661,7 @@
 		"levelInterestRate": "等級加息",
 		"Real name verification reward": "實名認證獎勵",
 		"from": "來自:",
-		"details": "詳情"
+		"details": "詳情",
+		"member": "會員",
+		"soldOut": "已售罄"
 }

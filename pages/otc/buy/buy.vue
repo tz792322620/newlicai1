@@ -26,6 +26,10 @@
 					<text
 						class="box1_cell_right">{{dataInfo.currency | currencySymbol}}{{dataInfo.min_amount}}-{{dataInfo.currency | currencySymbol}}{{dataInfo.max_amount}}</text>
 				</view>
+				<view class="box1_cell">
+					<text class="box1_cell_left">{{$t('residueAmount')}}</text>
+					<text class="box1_cell_right">{{dataInfo.available_amount}} USDT</text>
+				</view>
 			</view>
 			<view class="box2">
 				<view class="box2_title">
@@ -179,7 +183,7 @@
 			padding: 208rpx 40rpx 40rpx;
 		}
 		.box1 {
-			height: 284rpx;
+			min-height: 284rpx;
 			background: #FFFFFF;
 			border-radius: 12rpx;
 			padding: 30rpx;

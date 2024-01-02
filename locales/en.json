@@ -135,6 +135,7 @@
 	"holdingPeriod": "Holding Period",
 	"whenFull": "Until Full",
 	"residue": "Residue",
+	"residueAmount": "The remaining amount",
 	"wanyuan": "Ten Thousand USDT",
 	"riskControl": "Professional Risk Control",
 	"fundGuarantee": "Fund Guarantee",
@@ -656,5 +657,7 @@
 		"levelInterestRate": "Level interest rate",
 		 "Real name verification reward": "Real name verification reward",
 		"from": "From:",
-		"details": "Details"
+		"details": "Details",
+		"member": "Member",
+		"soldOut": "Sold out"
 }
