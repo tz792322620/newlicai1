@@ -17,6 +17,7 @@
 			}
 		},
 		onShow: function() {
+			// plus.navigator.setFullscreen(true);
 			console.log('App Show')
 		},
 		onHide: function() {

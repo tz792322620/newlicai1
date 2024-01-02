@@ -46,7 +46,7 @@
 							{{$t('totalWithdrawal')}}
 						</view>
 						<view class="count">
-							{{dataInfo.withdrawable_amount}}
+							{{dataInfo.withdrawal_amount}}
 						</view>
 					</view>
 				</view>
@@ -57,7 +57,7 @@
 							{{$t('orderCommission')}}
 						</view>
 						<view class="count">
-							{{dataInfo.withdrawal_amount}}
+							{{dataInfo.stock_order_amount}}
 						</view>
 					</view>
 				</view>

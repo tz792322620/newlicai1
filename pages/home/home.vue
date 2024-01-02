@@ -78,7 +78,7 @@
 						<view>{{item.product_name_cn}}</view>
 						<!-- <view style="color: #999999;font-size: 24rpx;">603809.sz</view> -->
 					</view>
-					<view class="col35 f_bod" style="font-size: 32rpx;">{{item.interest_rate * 100}}%</view>
+					<view class="col35 f_bod" style="font-size: 32rpx;">{{Number(item.interest_rate * 100).toFixed(2)}}%</view>
 					<view class="" style="font-size: 32rpx;color:#999999;margin-left:80rpx;">{{item.investment_period}}{{$t('days')}}</view>
 				</view>
 				<view style="margin-top:15rpx;">
@@ -102,7 +102,7 @@
 							<view>{{item.product_code}}</view>
 							<view>{{item.product_name_cn}}</view>
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
-								{{item.interest_rate * 100}}%
+								{{Number(item.interest_rate * 100).toFixed(2)}}%
 							</view>
 							<view style="margin-top: 20rpx;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}{{$t('qitou')}}</view>
 						</view>
@@ -213,7 +213,7 @@
 						</u-col>
 						<u-col span="3">
 							<view class="u-text-right">
-								<view style="color: #F75F52;">{{Number(item.interest_rate) * 100}}%</view>
+								<view style="color: #F75F52;">{{Number(item.interest_rate * 100).toFixed(2)}}%</view>
 <!-- 								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
 										style="color: #F75F52;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</text></view> -->
 							</view>

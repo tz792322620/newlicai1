@@ -9,7 +9,7 @@
 				style="background-color: #ffffff;padding: 30rpx; border-radius:12rpx;position: relative;margin-top: -300rpx;">
 				<view>{{$t('dailyRate')}}</view>
 				<view style="color: #F75F52;font-size: 44rpx;font-weight: bold;margin-top: 20rpx;">
-					{{Number(productInfo.interest_rate) * 100}}%</view>
+					{{Number(productInfo.interest_rate * 100).toFixed(2)}}%</view>
 				<view style="margin-top: 20rpx;">{{$t('holdingPeriod')}}<text style="color: #F75F52;margin-right: 40rpx;">{{$t('whenFull')}}</text>
 					{{$t('qtAmount')}}<text style="color: #F75F52;"> {{productInfo.min_purchase_amount}}</text>{{$t('yuan')}}
 					<view style="margin-top: 20rpx;">
