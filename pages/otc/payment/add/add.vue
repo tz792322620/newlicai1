@@ -244,19 +244,27 @@
 						icon: 'none'
 					})
 				}
-				const res = await addPaymentInfo(this.data)
-				if (res.code === 1) {
-					uni.showToast({
-						title: res.msg,
-						icon: 'none',
-						success: () => {
-							setTimeout(() => {
-								uni.navigateTo({
-									url: '/pages/otc/payment/payment'
-								})
-							}, 1000);
-						}
-					})
+				try{
+					const res = await addPaymentInfo(this.data)
+					if (res.code === 1) {
+						uni.showToast({
+							title: res.msg,
+							icon: 'none',
+							success: () => {
+								setTimeout(() => {
+									uni.navigateTo({
+										url: '/pages/otc/payment/payment'
+									})
+								}, 1000);
+							}
+						})
+					}
+				}catch(e){
+					//TODO handle the exception
+				}finally{					
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
 			}
 		}

@@ -118,23 +118,31 @@
 						icon: 'none'
 					})
 				}
-				let res = ''
-				if (this.isTransfer) {
-					res = await depositOtc(this.data)
-				} else {
-					res = await exitOtc(this.data)
-				}
-				if (res.code === 1) {
-					uni.showToast({
-						title: res.msg,
-						icon: 'none',
-						success: () => {
-							this.popupShow = false
-							this.data.deposit_amount = ''
-							this.getData()
-							this.getRecords()
-						}
-					})
+				try{
+					let res = ''
+					if (this.isTransfer) {
+						res = await depositOtc(this.data)
+					} else {
+						res = await exitOtc(this.data)
+					}
+					if (res.code === 1) {
+						uni.showToast({
+							title: res.msg,
+							icon: 'none',
+							success: () => {
+								this.popupShow = false
+								this.data.deposit_amount = ''
+								this.getData()
+								this.getRecords()
+							}
+						})
+					}
+				}catch(e){
+					//TODO handle the exception
+				}finally {
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
 			},
 			async getData() {

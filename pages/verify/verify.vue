@@ -62,7 +62,8 @@
 				</view>
 			</view>
 			<view style="margin-top: 3rem;">
-				<u-button  style="background-color: #35CBA5;color: #fff;" @click="$noMultipleClicks(submit)">{{$t('submit')}}</u-button>
+				<!-- :class="noClick ? 'buttons' : 'gray'" -->
+				<view class="buttons" @click="$noMultipleClicks(submit)">{{$t('submit')}}</view>
 			</view>
 			
 		</view>
@@ -205,22 +206,30 @@
 						icon: 'none'
 					})
 				}
-				const res = await submitVerification(this.data)
-				if (res.code === 1) {
-					uni.navigateTo({
-						url: '/pages/verify/submitSuccessfully/submitSuccessfully'
-					})
-				} else if (res.code === 0) {
-					uni.navigateTo({
-						url: '/pages/verify/pending/pending'
-					})
+				try{
+					const res = await submitVerification(this.data)
+					if (res.code === 1) {
+						uni.navigateTo({
+							url: '/pages/verify/submitSuccessfully/submitSuccessfully'
+						})
+					} else if (res.code === 0) {
+						uni.navigateTo({
+							url: '/pages/verify/pending/pending'
+						})
+					}
+				}catch(e){
+					//TODO handle the exception
+				}finally {
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
 			}
 		}
 	};
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 	/deep/.u-input {
 		padding-left: 20rpx;
 	}
@@ -229,6 +238,26 @@
 		background: #F4F5F7;
 		padding: 0 20rpx;
 		border-radius: 0.5rem;
+	}
+	.buttons {
+		height: 90rpx;
+		background: #35CBA5;
+		border-radius: 12rpx;
+		text-align: center;
+		line-height: 90rpx;
+		font-size: 32rpx;
+		font-weight: 600;
+		color: #FFFFFF;
+	}
+	.gray {
+		height: 90rpx;
+		background: #888;
+		border-radius: 12rpx;
+		text-align: center;
+		line-height: 90rpx;
+		font-size: 32rpx;
+		font-weight: 600;
+		color: #FFFFFF;
 	}
 /* /deep/.uni-input-wrapper {
     display: -webkit-box;

@@ -179,20 +179,29 @@
 						icon: "none"
 					})
 				}
-				const res = await withdraw(this.data)
-				if (res.code === 1) {
-					this.data.network_type = ''
-					this.data.withdrawal_address = ''
-					this.data.withdrawal_amount = ''
-					this.activeIndex = -1
-					uni.showToast({
-						title: res.msg,
-						icon: 'none'
-					})
-					uni.navigateTo({
-						url: '/pages/withdraw/records/records'
-					})
+				try{
+					const res = await withdraw(this.data)
+					if (res.code === 1) {
+						this.data.network_type = ''
+						this.data.withdrawal_address = ''
+						this.data.withdrawal_amount = ''
+						this.activeIndex = -1
+						uni.showToast({
+							title: res.msg,
+							icon: 'none'
+						})
+						uni.navigateTo({
+							url: '/pages/withdraw/records/records'
+						})
+					}
+				}catch(e){
+					//TODO handle the exception
+				}finally{					
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
+				
 			}
 		}
 	};

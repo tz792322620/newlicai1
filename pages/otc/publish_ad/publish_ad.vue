@@ -350,18 +350,15 @@
 						icon: 'none'
 					})
 				}
-				const res = await createListing(this.data)
-				if (res.code === 1) {
-					uni.showToast({
-						title: res.msg,
-						icon: 'none',
-						duration: 2000,
-						success: () => {
-							uni.redirectTo({
-								url: '/pages/otc/my_ad/my_ad'
-							})
-						}
-					})
+				
+				try{
+					
+				}catch(e){
+					//TODO handle the exception
+				}finally{					
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
 			}
 		}

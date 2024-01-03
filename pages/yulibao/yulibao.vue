@@ -117,25 +117,35 @@
 						icon: 'none'
 					})
 				}
-				let res = ''
-				if (this.isTransfer) {
-					res = await withdrawFromYuebao(this.data)
-				} else {
-					res = await createYuebaoOrder(this.data)
+				try{
+					let res = ''
+					if (this.isTransfer) {
+						res = await withdrawFromYuebao(this.data)
+					} else {
+						res = await createYuebaoOrder(this.data)
+					}
+					if (res.code === 1) {
+						uni.showToast({
+							title: res.msg,
+							icon: 'none',
+							success: () => {
+								this.popupShow = false
+								this.data.amount = ''
+								this.getData()
+								this.getList()
+								// this.getRecords()
+							}
+						})
+					}
+				}catch(e){
+					//TODO handle the exception
+				}finally{
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
-				if (res.code === 1) {
-					uni.showToast({
-						title: res.msg,
-						icon: 'none',
-						success: () => {
-							this.popupShow = false
-							this.data.amount = ''
-							this.getData()
-							this.getList()
-							// this.getRecords()
-						}
-					})
-				}
+				
+				
 			},
 			async getData() {
 				const res =await getYuebaoStats()

@@ -52,7 +52,7 @@
 			</view>
 			
 			<view style="margin-top: 40rpx;">
-				<u-button @click="reg()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
+				<u-button @click="$noMultipleClicks(reg)" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
 					{{ $t('registerNow') }}
 				</u-button>
 			</view>
@@ -71,6 +71,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				customStyle1: {
 					height: '90rpx',
 					margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
@@ -154,8 +155,8 @@
 				}else if (this.tongyi == 0) {
 					return this.$tools.toast(this.$t('enterReadAndAgree'));
 				}
-				if (this.lock) {
-					this.lock = false
+				// if (this.lock) {
+				// 	this.lock = false
 					var data = {};
 					data['username']=this.username
 					data['password']=this.password
@@ -163,24 +164,32 @@
 					data['referrerCode']=this.referrerCode
 					data['authenticate'] = this.ypauthenticate;
 					data['token'] = this.yptoken; 
-					const res = await register(data)
-					if (res.code == "1") {
-						this.$tools.toast(res.msg);
+					try{
+						const res = await register(data)
+						if (res.code == "1") {
+							this.$tools.toast(res.msg);
+							setTimeout(() => {
+								uni.navigateTo({
+								  url: '/pages/login/login_ph'
+								});
+							}, 1000);
+							
+							
+						} else {
+							this.$tools.toast(res.msg)
+						}
+					}catch(e){
+						//TODO handle the exception
+					}finally{
 						setTimeout(() => {
-							uni.navigateTo({
-							  url: '/pages/login/login_ph'
-							});
-						}, 1000);
-						
-						
-					} else {
-						this.$tools.toast(res.msg)
+							this.noClick = true
+						}, 2000)
 					}
-					setTimeout(() => {
-						this.lock = true
-					}, 1000);
+					// setTimeout(() => {
+					// 	this.lock = true
+					// }, 1000);
 
-				}
+				// }
 				
 			},
 			

@@ -131,18 +131,26 @@
 					})
 				}
 				this.data.amount = this.usdtAmount
-				const res = await createTrade(this.data)
-				if (res.code === 1) {
-					this.data.amount = ''
-					if (this.dataInfo.listing_type == 'Sell') {
-						uni.navigateTo({
-							url: `/pages/otc/order/order?id=${res.data.trade_id}`
-						})
-					} else {
-						uni.navigateTo({
-							url: `/pages/otc/order/collect/collect_sell?id=${res.data.trade_id}`
-						})
+				try{
+					const res = await createTrade(this.data)
+					if (res.code === 1) {
+						this.data.amount = ''
+						if (this.dataInfo.listing_type == 'Sell') {
+							uni.navigateTo({
+								url: `/pages/otc/order/order?id=${res.data.trade_id}`
+							})
+						} else {
+							uni.navigateTo({
+								url: `/pages/otc/order/collect/collect_sell?id=${res.data.trade_id}`
+							})
+						}
 					}
+				}catch(e){
+					//TODO handle the exception
+				}finally{
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
 				console.log(res)
 			},

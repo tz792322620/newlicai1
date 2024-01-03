@@ -170,26 +170,35 @@
 						icon: 'none'
 					})
 				}
-				const res = await createStockOrder(this.investData)
-				uni.hideLoading()
-				if (res.code === 1) {
-					// uni.reLaunch({
-					// 	url: '/pages/my/order/order'
-					// })
-					uni.showToast({
-						title: res.msg,
-						icon: 'none',
-						success: () => {
-							setTimeout(() => {
-								// uni.switchTab({
-								// 	url: '/pages/my/my'
-								// })
-								uni.navigateTo({
-									url: '/pages/my/order/order'
-								})
-							}, 1000)
-						}
-					})
+				
+				try{
+					const res = await createStockOrder(this.investData)
+					uni.hideLoading()
+					if (res.code === 1) {
+						// uni.reLaunch({
+						// 	url: '/pages/my/order/order'
+						// })
+						uni.showToast({
+							title: res.msg,
+							icon: 'none',
+							success: () => {
+								setTimeout(() => {
+									// uni.switchTab({
+									// 	url: '/pages/my/my'
+									// })
+									uni.navigateTo({
+										url: '/pages/my/order/order'
+									})
+								}, 1000)
+							}
+						})
+					}
+				}catch(e){
+					//TODO handle the exception
+				}finally{					
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
 			}
 		}

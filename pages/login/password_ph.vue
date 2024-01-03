@@ -38,7 +38,7 @@
 			</view>
 			
 			<view style="margin-top: 40rpx;">	
-				<u-button @click="resetPassword()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1"
+				<u-button @click="$noMultipleClicks(resetPassword)" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1"
 						shape="circle" type="primary" >
 						{{ $t('resetPassword') }}
 				</u-button>
@@ -59,6 +59,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				isAbP: false,
 				regionCode: '+86', // 区号展示值
 				regionValue: '86', // 区号参数值
@@ -135,8 +136,8 @@
 				if (this.code == '') {
 					return this.$tools.toast(this.$t('enterSMSCode'));
 				}
-				if (this.lock) {
-					this.lock = false
+				// if (this.lock) {
+				// 	this.lock = false
 					var data = {};
 					data['account']=this.account
 					data['new_password']=this.new_password
@@ -144,21 +145,29 @@
 					data['referrerCode']=this.referrerCode
 					data['authenticate'] = this.ypauthenticate;
 					data['region'] = this.regionValue;
-					const res = await resetPassword(data)
-					if (res.code == "1") {
-						this.$tools.toast(res.msg);
+					try{
+						const res = await resetPassword(data)
+						if (res.code == "1") {
+							this.$tools.toast(res.msg);
+							setTimeout(() => {
+								this.$tools.back(1);
+							}, 1000);
+							
+						} else {
+							this.$tools.toast(res.msg)
+						}
+					}catch(e){
+						//TODO handle the exception
+					}finally{
 						setTimeout(() => {
-							this.$tools.back(1);
-						}, 1000);
-						
-					} else {
-						this.$tools.toast(res.msg)
+							this.noClick = true
+						}, 2000)
 					}
-					setTimeout(() => {
-						this.lock = true
-					}, 1000);
+					// setTimeout(() => {
+					// 	this.lock = true
+					// }, 1000);
 
-				}
+				// }
 				
 			},
 			

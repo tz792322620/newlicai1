@@ -29,7 +29,7 @@
 			</view>
 			
 			<view style="margin-top: 40rpx;">
-				<u-button @click="login()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">{{ $t('submitLogin') }}</u-button>
+				<u-button @click="$noMultipleClicks(login)" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">{{ $t('submitLogin') }}</u-button>
 			</view>
 
 			<view class="u-text-center" style="margin-top: 30rpx; font-size: 24rpx;color: #666666;">{{ $t('noAccount') }}<text class="col35" @click="$tools.jump('../login/register_em')">{{ $t('registerNow') }}</text></view>
@@ -46,6 +46,7 @@
 
 		data() {
 			return {
+				noClick: true,
 				customStyle1: {
 					height: '90rpx',
 					margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
@@ -100,28 +101,36 @@
 				// else if (this.tongyi == 0) {
 				// 	return this.$tools.toast('请先阅读并同意协议');
 				// }
-				if (this.lock) {
-					this.lock = false
+				// if (this.lock) {
+				// 	this.lock = false
 					var data = {};
 					data['account'] = this.account;
 					data['password'] = this.password;
 					data['authenticate'] = this.ypauthenticate;
 					data['token'] = this.yptoken;
 					console.log(data);
-					const res = await userLogin(data)
-					console.log(res, '登录======>')
-					if (res.code == 1) {
-						uni.setStorageSync('token', res.data.userinfo.token);
-						uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
-						uni.setStorageSync('support_link', JSON.stringify(res.data.support_link))
-						this.$tools.toastSwitchTab(res.msg, '../home/home');
-					} else {
-						this.$tools.toast(res.msg)
+					try{
+						const res = await userLogin(data)
+						console.log(res, '登录======>')
+						if (res.code == 1) {
+							uni.setStorageSync('token', res.data.userinfo.token);
+							uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
+							uni.setStorageSync('support_link', JSON.stringify(res.data.support_link))
+							this.$tools.toastSwitchTab(res.msg, '../home/home');
+						} else {
+							this.$tools.toast(res.msg)
+						}
+					}catch(e){
+						//TODO handle the exception
+					}finally{
+						setTimeout(() => {
+							this.noClick = true
+						}, 2000)
 					}
-					setTimeout(() => {
-						this.lock = true
-					}, 1000);
-				}
+					// setTimeout(() => {
+					// 	this.lock = true
+					// }, 1000);
+				// }
 			}
 
 		}

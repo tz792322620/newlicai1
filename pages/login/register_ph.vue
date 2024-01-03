@@ -73,7 +73,7 @@
 			</view>
 
 			<view style="margin-top: 40rpx;">
-				<u-button @click="reg()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
+				<u-button @click="$noMultipleClicks(reg)" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
 					:custom-style="customStyle1" shape="circle" type="primary">
 					{{ $t('registerNow') }}
 				</u-button>
@@ -98,6 +98,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				isAbP: false,
 				regionCode: '+86', // 区号展示值
 				regionValue: '86', // 区号参数值
@@ -176,7 +177,10 @@
 					return this.$tools.toast(this.$t('enterPhoneNumber'));
 				}
 				if (this.regionValue == '86') {
-					if (!/^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/.test(this.username)) {
+					// if (!/^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/.test(this.username)) {
+					// 	return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+					// }
+					if (!this.$u.test.mobile(this.username)) {
 						return this.$tools.toast(this.$t('enterTruePhoneNumber'));
 					}
 				} else {
@@ -201,8 +205,8 @@
 				} else if (this.tongyi == 0) {
 					return this.$tools.toast(this.$t('enterReadAndAgree'));
 				}
-				if (this.lock) {
-					this.lock = false
+				// if (this.lock) {
+				// 	this.lock = false
 					var data = {};
 					data['username'] = this.username
 					data['password'] = this.password
@@ -211,21 +215,29 @@
 					data['authenticate'] = this.ypauthenticate;
 					data['token'] = this.yptoken;
 					data['region'] = this.regionValue;
-					const res = await register(data)
-					if (res.code == "1") {
-						this.$tools.toast(res.msg);
+					try{
+						const res = await register(data)
+						if (res.code == "1") {
+							this.$tools.toast(res.msg);
+							setTimeout(() => {
+								uni.navigateTo({
+								  url: '/pages/login/login_ph'
+								});
+							}, 1000);
+						} else {
+							this.$tools.toast(res.msg)
+						}
+					}catch(e){
+						//TODO handle the exception
+					}finally{
 						setTimeout(() => {
-							uni.navigateTo({
-							  url: '/pages/login/login_ph'
-							});
-						}, 1000);
-					} else {
-						this.$tools.toast(res.msg)
+							this.noClick = true
+						}, 2000)
 					}
-					setTimeout(() => {
-						this.lock = true
-					}, 1000);
-				}
+					// setTimeout(() => {
+					// 	this.lock = true
+					// }, 1000);
+				// }
 
 			},
 

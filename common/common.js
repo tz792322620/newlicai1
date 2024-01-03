@@ -11,9 +11,9 @@ function noMultipleClicks(methods, info) {
         } else {
             methods();
         }
-        setTimeout(()=> {
-            that.noClick= true;
-        }, 2000)
+        // setTimeout(()=> {
+        //     that.noClick= true;
+        // }, 2000)
     } else {
         //  这里是重复点击的判断
 		// console.log('重复点击')

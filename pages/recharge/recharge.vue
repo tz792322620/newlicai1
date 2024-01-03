@@ -187,28 +187,37 @@
 						icon: 'none'
 					})
 				}
-				const res = await createRecharge(this.data);
-				if (res.code === 1) {
-					 uni.showToast({
-					    title: res.msg, // 修改为多语言引用
-					    icon: 'none',
-					    duration: 1500 // 设置弹窗显示时间
-					  });
-						this.data.recharge_address = ''
-						this.data.recharge_amount = ''
-						this.data.network_type = ''
-						this.activeIndex = -1
-					  // 延时跳转
-					  setTimeout(() => {
-					    uni.navigateTo({
-					      url: '/pages/recharge/records/records'
-					    });
-					  }, 1500); // 延时与弹窗持续时间相同
-				} else {
-					uni.showToast({
-						title: res.msg, // 修改为多语言引用
-						icon: 'none'
-					});
+				try{
+					const res = await createRecharge(this.data);
+					if (res.code === 1) {
+						 uni.showToast({
+							title: res.msg, // 修改为多语言引用
+							icon: 'none',
+							duration: 1500 // 设置弹窗显示时间
+						  });
+							this.data.recharge_address = ''
+							this.data.recharge_amount = ''
+							this.data.network_type = ''
+							this.activeIndex = -1
+						  // 延时跳转
+						  setTimeout(() => {
+							uni.navigateTo({
+							  url: '/pages/recharge/records/records'
+							});
+						  }, 1500); // 延时与弹窗持续时间相同
+					} else {
+						uni.showToast({
+							title: res.msg, // 修改为多语言引用
+							icon: 'none'
+						});
+					}
+					
+				}catch(e){
+					//TODO handle the exception
+				}finally{					
+					setTimeout(() => {
+						this.noClick = true
+					},2000)
 				}
 			},
 

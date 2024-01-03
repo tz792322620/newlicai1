@@ -36,7 +36,7 @@
 			</view>
 			
 			<view style="margin-top: 40rpx;">
-				<u-button  @click="login()" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
+				<u-button  @click="$noMultipleClicks(login)" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
 					 :custom-style="customStyle1" shape="circle" type="primary">
 						{{ $t('submitLogin') }}
 				</u-button>
@@ -56,6 +56,7 @@
 	export default {
 		data() {
 			return {
+				noClick: true,
 				isAbP: false,
 				customStyle1: {
 					height: '90rpx',
@@ -105,7 +106,8 @@
 				// else if (this.tongyi == 0) {
 				// 	return this.$tools.toast('请先阅读并同意协议');
 				// }
-				if (this.lock) {
+				console.log(this.lock)
+				// if (this.lock) {
 					this.lock = false
 					var data = {};
 					data['account'] = this.account;
@@ -114,21 +116,30 @@
 					data['token'] = this.yptoken; 
 					data['region'] = this.regionValue; 
 					console.log(data);
-					const res = await userLogin(data)
-					console.log(res, '登录======>')
-					if (res.code == 1) {
-						uni.setStorageSync('token', res.data.userinfo.token);
-						uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
-						uni.setStorageSync('support_link', JSON.stringify(res.data.support_link))
-						this.$tools.toastSwitchTab(res.msg, '../home/home');
-					} else {
-						this.$tools.toast(res.msg)
-					}
-					setTimeout(() => {
-						this.lock = true
-					}, 1000);
+					try{
+						const res = await userLogin(data)
+						console.log(res, '登录======>')
+						// setTimeout(() => {
+						// 	this.lock = true
+						// }, 1000);
+						if (res.code == 1) {
+							uni.setStorageSync('token', res.data.userinfo.token);
+							uni.setStorageSync('userInfo', JSON.stringify(res.data.userinfo))
+							uni.setStorageSync('support_link', JSON.stringify(res.data.support_link))
+							this.$tools.toastSwitchTab(res.msg, '../home/home');
+						} else {
+							this.$tools.toast(res.msg)
+						}
 							
-				}
+					}catch(e){
+						//TODO handle the exception
+					}finally {
+						console.log(this.noClick)
+						setTimeout(()=> {
+						    this.noClick= true;
+						}, 2000)
+					}
+				// }
 			},
 			// async login(){
 			// 	let that=this
