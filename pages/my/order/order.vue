@@ -86,12 +86,12 @@
 						{{item.product.investment_period}}{{$t('days')}}
 					</view>
 				</view>
-				<view class="content_item_cell" v-if="userlevel.extra_interest>0">
+				<view class="content_item_cell" v-if="item.user_level.extra_interest>0">
 					<view class="content_item_cell_left">
 						  {{$t('levelInterestRate')}}
 					</view>
 					<view class="content_item_cell_right">
-						{{userlevel.extra_interest*100}}%
+						{{item.user_level.extra_interest*100}}% 
 					</view>
 				</view>
 			</view>
