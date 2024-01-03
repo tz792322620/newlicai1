@@ -9,9 +9,7 @@
 					<view class="records_item_title_left">
 						{{item.currency_type}}
 					</view>
-					<view class="records_item_title_right" :class="item.recharge_status == 'Cancelled' ? 'fail' : ''">
-						<!-- {{item.recharge_status == 'Confirmed' ? '充值成功' : item.recharge_status == 'Failed' ? '充值失败' : item.recharge_status == 'Pending' ? '待确认' : ''}} -->
-						<!-- {{item.recharge_status}} -->
+					<view class="records_item_title_right" :class="item.recharge_status == 'Cancelleds' ? 'fail' : ''">
 						{{ getStatusTranslation(item.recharge_status) }}
 					</view>
 				</view>
@@ -23,7 +21,7 @@
 						{{item.recharge_amount}}
 					</view>
 				</view>
-				<view class="records_item_cell" v-if="item.recharge_status == 'Cancelled'">
+				<view class="records_item_cell" v-if="item.recharge_status == 'Cancelleds'">
 					<view class="records_item_cell_left">
 						{{$t('failReason')}}
 					</view>

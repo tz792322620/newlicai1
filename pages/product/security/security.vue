@@ -86,24 +86,7 @@
 				})
 			},
 			save() {
-				// uni.chooseImage({
-				// 	success: (chooseImageRes) => {
-				// 		const tempFilePaths = chooseImageRes.tempFilePaths;
-				// 		console.log(tempFilePaths[0])
-				// 		uni.uploadFile({
-				// 			url: 'https://api.broadreachvip.top/api/image/upload', //仅为示例，非真实的接口地址
-				// 			filePath: tempFilePaths[0],
-				// 			name: 'image',
-				// 			formData: {
-				// 				'image': tempFilePaths[0]
-				// 			},
-				// 			success: (uploadFileRes) => {
-				// 				console.log(uploadFileRes.data);
-				// 			}
-				// 		});
-				// 	}
-				// })
-				// return
+
 				this.$refs.signatureRef.canvasToTempFilePath({
 					success: (res) => {
 						// 是否为空画板 无签名
@@ -117,26 +100,43 @@
 						// 生成图片的临时路径
 						// H5 生成的是base64
 						this.investData.signature_image_path = res.tempFilePath
+						this.uploadImage(res.tempFilePath); // 调用上传函数
 						uni.showToast({
 							title: this.$t('sign') + this.$t('complete'),
 							icon: 'none'
 						})
-						// console.log(this.url)
-						// let file = this.parseBlob(this.url)
-						// console.log(file)
-						// uni.uploadFile({
-						// 	url: 'https://api.broadreachvip.top/api/image/upload', //仅为示例，非真实的接口地址
-						// 	filePath: file,
-						// 	name: 'image',
-						// 	formData: {
-						// 		'image': file
-						// 	},
-						// 	success: (uploadFileRes) => {
-						// 		console.log(uploadFileRes.data);
-						// 	}
-						// });
+
 					}
 				})
+			},
+			uploadImage(filePath) {
+				let header = {}
+				// #ifdef APP-PLUS
+				if (uni.getSystemInfoSync().platform == 'ios') {
+					header['content-type'] = 'multipart/form-data'
+				}
+				// #endif
+
+				uni.uploadFile({
+					url: this.$url + '/api/image/upload',
+					filePath: filePath,
+					name: 'image',
+					header: header,
+					success: (uploadFileRes) => {
+						const res = JSON.parse(uploadFileRes.data)
+						if (res.code === 1) {
+							this.investData.signature_image_path = res.data.url
+				
+						} else {
+							uni.showToast({
+								title: res.msg,
+								icon: 'none'
+							})
+						}
+					}
+				});
+					
+				
 			},
 			// base64转blob二进制文件流
 			parseBlob(base64) {

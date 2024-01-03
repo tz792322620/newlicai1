@@ -49,13 +49,13 @@
     	<p style="line-height: 16pt;"><span >{{$t('clause6.4')}}</span></p>
     	<p style="line-height: 16pt;">{{$t('endOfMainContent')}}</p>
     	<p style="line-height: 16pt;margin-bottom: 25pt;">{{$t('partyASignature')}}:
-    	  <div class="seal-container">
-    	  <!-- <image class="seal-image" :src="details.contract.signature_image_path"></image> -->
-    	  
-    	   <image class="seal-image" v-if="details.contract.signature_image_path" :src='details.contract.signature_image_path.replace(/[\r\n]/g, "")'></image>
-    	 
-    	 
-    	  </div>
+			  <div class="seal-container">
+				<!-- 如果是base64字符串 -->
+				<image class="seal-image" v-if="isBase64(details.contract.signature_image_path)" :src="details.contract.signature_image_path" />
+
+				<!-- 如果是URL -->
+				<image class="seal-image" v-else :src="fullImagePath(details.contract.signature_image_path)" />
+			  </div>
     	</p>
     	<p style="line-height: 16pt;margin-bottom: 30pt;">{{$t('dateLabel')}}：<span >{{details.order.purchase_date}}</span></p>
     	<p style="line-height: 16pt;margin-bottom: 25pt;">{{$t('partyBSignature')}}:
@@ -94,6 +94,9 @@
 			} 
 		},
 		methods: {
+			isBase64(str) {
+			  return str.startsWith('data:image');
+			},
 			fullImagePath(relativePath) {
 				console.log(this.$imgPrefix + relativePath)
 			  return this.$imgPrefix + relativePath;

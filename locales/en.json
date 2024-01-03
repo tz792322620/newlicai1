@@ -32,6 +32,7 @@
 	"Pending": "Pending",
 	"Completed": "Completed",
 	"Cancelled": "Cancelled",
+	"Cancelleds": "Cancelled",
 	"Distributed": "Distributed",
 	"Active": "Active",
 	"Fulfilled": "Fulfilled",
