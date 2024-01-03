@@ -48,7 +48,7 @@
 				  </view>
 				  <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
 				  					<view style="width: 600rpx;">
-				  					  {{ $t('remainingTotalAmountRaised') }}：<text style="color: #21BF90;">{{Number(item.total_fundraising) - item.sold_units}}USDT</text>
+				  					  {{ $t('remainingTotalAmountRaised') }}：<text style="color: #21BF90;">{{(Number(item.total_fundraising) - item.sold_units) | tranNumber}}USDT</text>
 				  					</view>
 				  				
 				  </view>

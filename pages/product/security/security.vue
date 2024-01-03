@@ -93,7 +93,7 @@
 						console.log(res.isEmpty)
 						if (res.isEmpty) {
 							return uni.showToast({
-								title: this.$t('pleaseEnterPwd'),
+								title: this.$t('pleaseSign'),
 								icon: 'none'
 							})
 						}
@@ -181,8 +181,11 @@
 						icon: 'none',
 						success: () => {
 							setTimeout(() => {
-								uni.switchTab({
-									url: '/pages/my/my'
+								// uni.switchTab({
+								// 	url: '/pages/my/my'
+								// })
+								uni.navigateTo({
+									url: '/pages/my/order/order'
 								})
 							}, 1000)
 						}

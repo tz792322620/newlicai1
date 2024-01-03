@@ -15,7 +15,7 @@
     	<p style="line-height: 16pt;"><span >{{$t('investorIDLabel')}}</span><span style="text-decoration: underline;">：{{details.user_verification.identity_number}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('investmentAmountLabel')}}</span><span style="text-decoration: underline;">：{{Number(details.order.purchase_amount).toFixed(2)}}USDT</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('earningCycleLabel')}}</span><span style="text-decoration: underline;">：{{details.product.investment_period}}</span></p>
-    	<p style="line-height: 16pt;"><span >{{$t('interestRateLabel')}}</span><span style="text-decoration: underline;">：{{details.product.interest_rate * 100}}%</span></p>
+    	<p style="line-height: 16pt;"><span >{{$t('interestRateLabel')}}</span><span style="text-decoration: underline;">：{{(details.product.interest_rate * 100).toFixed(2)}}%</span></p>
     	  <p style="line-height: 16pt;">
     		<span>{{$t('signingTime')}}</span>
     		<span style="text-decoration: underline;">：{{details.order.purchase_date}}</span>
