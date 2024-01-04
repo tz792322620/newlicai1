@@ -22,10 +22,10 @@
 						<jp-signature ref="signatureRef"></jp-signature>
 					</view>
 					<view class="sign_btns">
-						<view class="sign_btns_one" @click="$noMultipleClicks(clear)">
+						<view class="sign_btns_one" @click="clear">
 							{{$t('aginSign')}}
 						</view>
-						<view class="sign_btns_two" @click="$noMultipleClicks(save)">
+						<view class="sign_btns_two" @click="save">
 							{{$t('complete')}}
 						</view>
 					</view>
@@ -86,7 +86,6 @@
 				})
 			},
 			save() {
-
 				this.$refs.signatureRef.canvasToTempFilePath({
 					success: (res) => {
 						// 是否为空画板 无签名
