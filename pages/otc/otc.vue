@@ -55,8 +55,8 @@
 			<view  v-if="otcList.length !== 0" style="color: #333333;margin-top: 20rpx;" v-for="(item,index) in otcList" :key="index">
 				<view class="u-flex">
 					<view>
-						<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left:10rpx;"
-							:src="$url + item.user_avatar"></image>
+						<image style="width:48rpx;height:48rpx;position: relative;margin-top:10rpx;margin-left:10rpx;border-radius: 50%;"
+							:src="avatarUrl(item.user_avatar)"></image>
 					</view>
 					<view style="margin-left: 10rpx;width:300rpx;">{{item.user_nickname}}</view>
 					<!-- <view style="width: 300rpx;color: #AFAFAF;font-size: 24rpx;" class="u-text-right">508订单｜94%</view> -->
@@ -110,9 +110,11 @@
 		otcGetListing,
 		getVerificationStatus
 	} from '@/api/api.js'
+	import tx from '@/static/images/my/txlogo.jpg' 
 	export default {
 		data() {
 			return {
+				defaultAvatar:tx,
 				modalShow: false,
 				isAbP: false, // 控制币种弹出隐藏
 				ab: 'HKD', // 币种缩写
@@ -204,6 +206,20 @@
 			this.getOtcList()
 		},
 		methods: {
+			avatarUrl(avatar) {
+			   // 检查 userInfo.avatar 是否存在
+			   if (avatar) {
+			     // 检查是否为 Base64 编码的图片
+			     if (avatar.startsWith('data:image')) {
+					 // console.log(this.defaultAvatar)
+			       return this.defaultAvatar;
+			     }
+			     // 否则，假定它是一个外部链接
+			     return this.$url + avatar;
+			   }
+			   // 如果 userInfo.avatar 不存在，返回默认头像
+			   return this.defaultAvatar;
+			 },
 			toBuy(item) {
 				uni.navigateTo({
 					url: `/pages/otc/buy/buy?id=${item.listing_id}`

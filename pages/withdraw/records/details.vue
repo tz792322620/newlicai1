@@ -17,34 +17,31 @@
 						{{$t('nowStatus')}}
 					</view>
 					<view class="right">
-						{{data.withdrawal_status}}
+						{{getStatusTranslation(data.withdrawal_status)}}
 					</view>
 				</view>
-				<view class="details_content_cell">
+				<!-- <view class="details_content_cell">
 					<view class="left">
 						{{$t('verify')}}
 					</view>
 					<view class="right">
 						{{data.audit_status}}
 					</view>
-				</view>
-				<view class="details_content_cell">
+				</view> -->
+				<!-- <view class="details_content_cell">
 					<view class="left">
 						{{$t('transferHash')}}
 					</view>
 					<view class="right">
 						{{data.transaction_hash}}
 					</view>
-				</view>
+				</view> -->
 				<view class="details_content_cell">
 					<view class="left">
-						{{$t('date')}}
+						{{$t('address')}}
 					</view>
 					<view class="right">
-						{{data.withdrawal_date}}
-					</view>
-					<view class="right">
-						{{data.transaction_hash}}
+						{{data.withdrawal_address | ellipsis}}
 					</view>
 				</view>
 				<view class="details_content_cell">
@@ -81,6 +78,10 @@
 			}
 		},
 		methods: {
+			getStatusTranslation(status) {
+				// console.log(status)
+				return this.$t(status);
+			},
 			async getData(id) {
 				const res = await getWithdrawalById(id)
 				console.log(res)
@@ -157,11 +158,11 @@
 					}
 				}
 
-				&:nth-child(3) {
-					.right {
-						text-decoration: underline;
-					}
-				}
+				// &:nth-child(3) {
+				// 	.right {
+				// 		text-decoration: underline;
+				// 	}
+				// }
 			}
 		}
 	}

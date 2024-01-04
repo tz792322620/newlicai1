@@ -11,8 +11,11 @@
 						{{$t('collectTips1')}}<text>05</text>{{$t('collectTips2')}}
 					</view>
 				</view>
-				<view class="collect_top_right">
+				<view class="collect_top_right" v-if="timestamp > 0">
 					<u-count-down :show-hours="false" :timestamp="timestamp" font-size="44" color="#21BF90" separator-color="#21BF90"></u-count-down>
+				</view>
+				<view class="red" v-else>
+					{{$t('timeOut')}}
 				</view>
 			</view>
 			<view class="deal">
@@ -132,7 +135,7 @@
 	export default {
 		data() {
 			return {
-				timestamp: 300,
+				timestamp: 1800,
 				tradeInfo: '',
 				identity: ''
 			}
@@ -223,6 +226,11 @@
 			justify-content: space-between;
 			align-items: center;
 			margin-bottom: 30rpx;
+			.red {
+				font-size: 36rpx;
+				font-weight: 600;
+				color: #F75F52;
+			}
 			&_left {
 				.title {
 					font-size: 36rpx;

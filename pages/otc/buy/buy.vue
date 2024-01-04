@@ -85,7 +85,10 @@
 					<text class="box3_cell_left">{{dataInfo.user_nickname}}</text>
 				</view>
 			</view>
-			<view class="button" @click="$noMultipleClicks(buy)" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
+			<view v-if="isSubmit" class="button" @click="$noMultipleClicks(buy)" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
+				{{dataInfo.listing_type == 'Sell' ? $t('buyUSDT') : dataInfo.listing_type == 'Buy' ? $t('sellUSDT') : ''}}
+			</view>
+			<view v-else class="gray" :class="dataInfo.listing_type == 'Sell' ? '' : 'red'">
 				{{dataInfo.listing_type == 'Sell' ? $t('buyUSDT') : dataInfo.listing_type == 'Buy' ? $t('sellUSDT') : ''}}
 			</view>
 		</view>
@@ -110,7 +113,8 @@
 				dataInfo: '',
 				usdtAmount: '',
 				price: '--',
-				title: ''
+				title: '',
+				isSubmit: true
 			}
 		},
 		onLoad(params) {
@@ -130,6 +134,19 @@
 					if (this.$u.test.isEmpty(this.amount)) {
 						return uni.showToast({
 							title: this.$t('enterAmount'),
+							icon: "none"
+						})
+					}
+					console.log(this.amount)
+					if (Number(this.amount) < Number(this.dataInfo.min_amount)) {
+						return uni.showToast({
+							title: this.$t('minLimit'),
+							icon: "none"
+						})
+					}
+					if (Number(this.amount) > Number(this.dataInfo.max_amount)) {
+						return uni.showToast({
+							title: this.$t('maxLimit'),
 							icon: "none"
 						})
 					}
@@ -157,16 +174,20 @@
 				console.log(res)
 			},
 			confirm(e) {
+				this.isSubmit = false
 				let newValue = e
 				console.log(newValue, this.amount)
 				setTimeout(async () => {
 					if (newValue == this.amount) {
-						const res = await getCurrencyRate(this.dataInfo.currency)
-						console.log(res)
-						if (res.code === 1) {
-							this.usdtAmount = (e / res.data.rates[0].rate_to_usdt).toFixed(2)
-							this.price = e ? e : '0.00'
-						}
+						// const res = await getCurrencyRate(this.dataInfo.currency)
+						// console.log(res)
+						// if (res.code === 1) {
+							// this.usdtAmount = (e / res.data.rates[0].rate_to_usdt).toFixed(2)
+							// this.price = e ? e : '0.00'
+						// }
+						this.usdtAmount = (e / Number(this.dataInfo.price)).toFixed(2)
+						this.price = e ? e : '0.00'
+						this.isSubmit = true
 						console.log(this.usdtAmount)
 					}
 				}, 2000)
@@ -367,6 +388,19 @@
 			font-weight: 600;
 			color: #FFFFFF;
 
+			&.red {
+				background: #f75e52;
+			}
+		}
+		.gray {
+			height: 90rpx;
+			background: #888;
+			border-radius: 12rpx;
+			text-align: center;
+			line-height: 90rpx;
+			font-size: 32rpx;
+			font-weight: 600;
+			color: #FFFFFF;
 			&.red {
 				background: #f75e52;
 			}

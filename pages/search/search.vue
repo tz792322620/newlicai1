@@ -6,7 +6,8 @@
 		</view>
 		<view style="padding:30rpx;">
 			<view class="u-flex" style="position: fixed;width: 100%;height: 88rpx;align-items: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
-				<view style="padding: 0 40rpx; width:100%;">
+				<view style="padding: 0 40rpx 0 20rpx; width:100%;display: flex;align-items: center;">
+					<image @click="back" src="../../static/images/hfh.png" mode="" style="width: 48rpx;height: 48rpx;"></image>
 					<u-search bg-color="#FFFFFF" v-model="product_name_cn" :placeholder="$t('search')" :action-text="$t('search')"
 					:disabled="false" :show-action="true" @custom="getStockProductListTab">
 					</u-search>
@@ -97,6 +98,11 @@
 			this.getStockProductListTab()
 		},
 		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
 			toDetails(item) {
 				uni.navigateTo({
 					url: `/pages/product/details/details?id=${item.product_id}`

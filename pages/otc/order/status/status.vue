@@ -6,7 +6,7 @@
 				<image src="../../../../static/images/otc/order/cancel.png" mode=""></image>
 				{{$t('Cancelled')}}
 			</view>
-			<view class="title" v-if="tradeInfo.status == 'Completed'">
+			<view class="title" style="color: #21BF90;" v-if="tradeInfo.status == 'Completed'">
 				<image src="../../../../static/images/otc/order/successfully.png" mode=""></image>
 				{{$t('completed')}}
 			</view>

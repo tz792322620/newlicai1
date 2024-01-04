@@ -110,7 +110,7 @@
 	export default {
 		data() {
 			return {
-				timestamp: 1200,
+				timestamp: 1800,
 				tradeInfo: '',
 				tradeId: '',
 				currentTimestamp: 0

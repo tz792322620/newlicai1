@@ -660,5 +660,13 @@
 		"from": "From:",
 		"details": "Details",
 		"member": "Member",
-		"soldOut": "Sold out"
+		"soldOut": "Sold out",
+		"temeLevel": "Team level",
+		"personalLevel": "Personal level",
+		"maxPrice": "The unit price cannot be higher than",
+		"minPrice": "The unit price cannot be lower than",
+		"uuploadFails": "upload failed",
+		"minLimit": "below minimum",
+		"maxLimit": "Maximum limit exceeded",
+		"timeOut": "Time Out"
 }

@@ -195,9 +195,10 @@
 							<view class="">
 								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_code}}</view>
 								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_name_cn}}</view>
-								<view>
+								<view style="display: flex;align-items: center;">
 									<u-line-progress active-color="#6BEEAB" height="18"
 										:percent="Number(item.progress)"></u-line-progress>
+										<text style="font-size: 24rpx;color: #21BF90;margin-left: 20rpx;">{{Number(item.progress).toFixed(2)}}%</text>
 								</view>
 								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
 									<view style="width:50rpx;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</view>

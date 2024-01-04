@@ -56,9 +56,10 @@
 				    <view style="width: 300rpx;">{{$t('pointsMultiplier')}}：<text
 				            style="color: #21BF90;">X{{item.point_multiplier}}</text></view>
 				</view>
-                <view style="width:540rpx;margin-top: 6rpx;">
+                <view style="margin-top: 6rpx;display: flex;align-items: center;">
                     <u-line-progress active-color="#6BEEAB" height="22" :percent="Number(item.progress)">
                     </u-line-progress>
+					<text style="font-size: 24rpx;color: #21BF90;margin-left: 20rpx;">{{Number(item.progress).toFixed(2)}}%</text>
                 </view>
                 <view class="u-flex" style="margin-top: 20rpx;">
                     <view style="background-color:#E1F7F2;color: #666666;font-size: 24rpx;

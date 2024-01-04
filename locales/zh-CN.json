@@ -664,5 +664,13 @@
 		"from": "来自:",
 		"details": "详情",
 		"member": "会员",
-		"soldOut": "已售罄"
+		"soldOut": "已售罄",
+		"temeLevel": "团队等级",
+		"personalLevel": "个人等级",
+		"maxPrice": "单价不能高于",
+		"minPrice": "单价不能低于",
+		"uuploadFails": "上传失败",
+		"minLimit": "低于最低限额",
+		"maxLimit": "超出最高限额",
+		"timeOut": "已超时"
 }

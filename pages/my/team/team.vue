@@ -9,7 +9,7 @@
 			<text v-else>{{title}}</text>
 		</view>
 			<!-- <uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('teamManagement')" :border="false" @clickLeft="back"></uni-nav-bar> -->
-		<view class="content">
+		<view class="content" v-if="dataInfo">
 			<view class="balance">
 				<view class="balance_top">
 					<view class="desc">
@@ -23,8 +23,7 @@
 					</view>
 				</view>
 				<view class="balance_count">
-					
-					{{dataInfo.available_amount}}
+					{{(dataInfo.available_amount).toFixed(2)}}
 				</view>
 
 				<view class="balance_bottom">
@@ -32,10 +31,10 @@
 						<text>{{$t('totalTopUp')}}</text>
 						<text class="bold">{{dataInfo.recharge_amount}}</text>
 					</view>
-<!-- 					<view class="balance_bottom_item">
-						<text>{{$t('teamFlow')}}</text>
-						<text class="bold">{{dataInfo.stock_order_amount}}</text>
-					</view> -->
+					<view class="balance_bottom_item">
+						<text>{{$t('headcount')}}</text>
+						<text class="bold">{{dataInfo.team_member_count}}</text>
+					</view>
 				</view>
 			</view>
 			<view class="price">
@@ -81,12 +80,12 @@
 							</view>
 							<view class="phone" style="display: flex;align-items: center;">
 								<view style="display: flex;align-items: center;"> 
-									<text>团队等级:</text>
+									<text>{{$t('temeLevel')}}:</text>
 									<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
 									:src="`../../../static/images/my/v${item.referrer.team_level}.png`" mode=""></image>
 								</view>
 								<view style="display: flex;align-items: center;margin-left: 40rpx;">
-									<text>个人等级:</text>
+									<text>{{$t('personalLevel')}}:</text>
 									<image style="width: 36rpx;height: 36rpx;margin-left: 10rpx;"
 									:src="`../../../static/images/my/v${item.referrer.level}.png`" mode=""></image>
 								</view>
@@ -99,7 +98,7 @@
 					<view class="data">
 						<view class="data_item">
 							<view class="desc">
-								{{$t('recharge')}}(¥)
+								{{$t('recharge')}}(USDT)
 							</view>
 							<view class="count">
 								{{item.team_stats.recharge_amount}}
@@ -107,7 +106,7 @@
 						</view>
 						<view class="data_item">
 							<view class="desc">
-								{{$t('withdraw')}}(¥)
+								{{$t('withdraw')}}(USDT)
 							</view>
 							<view class="count">
 								{{item.team_stats.withdrawable_amount}}

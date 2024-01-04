@@ -5,9 +5,12 @@
 			<view class="title">
 				{{$t('paySeller')}}
 			</view>
-			<view class="sub-title">
+			<view class="sub-title" v-if="timestamp > 0">
 				{{$t('orderWill')}}<u-count-down :timestamp="timestamp" font-size="32" color="#21BF90" separator-color="#21BF90"  @change="change">
 				</u-count-down>{{$t('cancelAfter')}}
+			</view>
+			<view class="sub-title red" v-else>
+				{{$t('timeOut')}}
 			</view>
 			<view class="price">
 				¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
@@ -244,6 +247,11 @@
 		font-weight: 400;
 		color: #333333;
 		line-height: 34rpx;
+		&.red {
+			font-size: 36rpx;
+			font-weight: 600;
+			color: #F75F52;
+		}
 	}
 
 	.price {

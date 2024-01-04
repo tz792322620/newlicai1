@@ -14,9 +14,10 @@
 						{{Number(productInfo.interest_rate * 100).toFixed(2)}}%</view>
 					<view style="margin-top: 20rpx;">{{$t('holdingPeriod')}}<text style="color: #F75F52;margin-right: 40rpx;">{{$t('whenFull')}}</text>
 						{{$t('qtAmount')}}<text style="color: #F75F52;"> {{productInfo.min_purchase_amount}}</text>{{$t('yuan')}}
-						<view style="margin-top: 20rpx;">
+						<view style="margin-top: 20rpx;display: flex;align-items: center;">
 							<u-line-progress active-color="#6BEEAB" height="22" :percent="Number(productInfo.progress)">
 							</u-line-progress>
+							<text style="font-size: 24rpx;color: #21BF90;margin-left: 20rpx;">{{Number(productInfo.progress).toFixed(2)}}%</text>
 						</view>
 						<view class="u-flex" style="margin-top: 20rpx;">
 							<view style="width: 50%;text-align: left;">

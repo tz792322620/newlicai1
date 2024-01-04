@@ -17,25 +17,25 @@
 						{{$t('nowStatus')}}
 					</view>
 					<view class="right">
-						{{data.recharge_status}}
+						{{getStatusTranslation(data.recharge_status)}}
 					</view>
 				</view>
-				<view class="details_content_cell">
+				<!-- <view class="details_content_cell">
 					<view class="left">
 						{{$t('verify')}}
 					</view>
 					<view class="right">
-						{{data.confirmation_status}}
+						{{getStatusTranslation(data.confirmation_status)}}
 					</view>
-				</view>
-				<view class="details_content_cell">
+				</view> -->
+				<!-- <view class="details_content_cell">
 					<view class="left">
 						{{$t('transferHash')}}
 					</view>
 					<view class="right">
 						{{data.transaction_hash}}
 					</view>
-				</view>
+				</view> -->
 				<view class="details_content_cell">
 					<view class="left">
 						{{$t('date')}}
@@ -68,6 +68,10 @@
 			}
 		},
 		methods: {
+			getStatusTranslation(status) {
+				// console.log(status)
+				return this.$t(status);
+			},
 			async getData(id) {
 				const res = await getRechargeById(id) 
 				console.log(res)
@@ -134,11 +138,11 @@
 						color: #35CBA5;
 					}
 				}
-				&:nth-child(3) {
-					.right {
-						text-decoration: underline;
-					}
-				}
+				// &:nth-child(3) {
+				// 	.right {
+				// 		text-decoration: underline;
+				// 	}
+				// }
 			}
 		}
 	}

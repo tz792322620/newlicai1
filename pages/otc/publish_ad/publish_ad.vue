@@ -127,7 +127,8 @@
 <script>
 	import {
 		createListing,
-		getOtcDeposit
+		getOtcDeposit,
+		getCurrencyRate
 	} from '@/api/api.js'
 	export default {
 		data() {
@@ -177,7 +178,8 @@
 				activePay: [],
 				paymentMethod: '', // 支付方式显示值
 				paymentMethodList: '', // 支付方式显示值数组
-				dataInfo: ''
+				dataInfo: '',
+				rate: '' // 汇率
 			}
 		},
 		watch: {
@@ -258,8 +260,20 @@
 		},
 		onShow() {
 			this.getData()
+			this.getRate()
 		},
 		methods: {
+			async getRate() {
+				uni.showLoading({
+					mask: true
+				})
+				const res = await getCurrencyRate(this.data.currency)
+				uni.hideLoading()
+				if (res.code == 1) {
+					this.rate = res.data.rates[0].rate_to_usdt
+					console.log(this.rate)
+				}
+			},
 			// OTC余额
 			async getData() {
 				const res = await getOtcDeposit()
@@ -273,6 +287,7 @@
 				this.ab = item.ab
 				this.data.currency = item.ab
 				this.abName = item.name
+				this.getRate()
 				this.isAbP = false
 			},
 			typeClick(item, index) {
@@ -307,9 +322,9 @@
 				this.isTime = false
 			},
 			async submit() {
-				console.log(this.data)
 				
 				try{
+					console.log(this.data)
 					if (this.$u.test.isEmpty(this.data.price)) {
 						return uni.showToast({
 							title: this.$t('enterPriceUnit'),
@@ -343,6 +358,19 @@
 					if (this.$u.test.isEmpty(this.data.remark)) {
 						return uni.showToast({
 							title: this.$t('enterRemark'),
+							icon: 'none'
+						})
+					}
+					// console.log(Number(this.data.price) > (Number(this.rate) + 1).toFixed(4),(Number(this.rate) - 1).toFixed(4))
+					if (Number(this.data.price) > (Number(this.rate) + 1).toFixed(4)) {
+						return uni.showToast({
+							title: this.$t('maxPrice') + ((Number(this.rate) + 1).toFixed(4)),
+							icon: 'none'
+						})
+					}
+					if (Number(this.data.price) < (Number(this.rate) - 1).toFixed(4)) {
+						return uni.showToast({
+							title: this.$t('minPrice') + ((Number(this.rate) - 1).toFixed(4)),
 							icon: 'none'
 						})
 					}

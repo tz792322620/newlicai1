@@ -54,7 +54,7 @@
 							{{$t('totalAmount')}}
 						</view>
 						<view class="content_item_cell_right">
-							{{item.trade_price * item.trade_amount}} {{item.trade_currency}}
+							{{(item.trade_price * item.trade_amount).toFixed(2)}} {{item.trade_currency}}
 						</view>
 					</view>
 					<view class="content_item_cell">
@@ -285,15 +285,15 @@
 				this.identity = identity
 				console.log(identity)
 				const dateTime = Date.parse(new Date())/1000 // 获取当前时间戳秒级
-				const currentTimestamp = 1200 - (dateTime - item.create_time)
+				const currentTimestamp = 1800 - (dateTime - item.update_time)
 				console.log(currentTimestamp)
 				if (item.status == 'Pending'&&item.payment_proof_status == 'Pending'&&identity == 0) {
 					return uni.navigateTo({
-						url: `/pages/otc/order/pay/pay?timestamp=${currentTimestamp}&id=${item.trade_id})}`
+						url: `/pages/otc/order/pay/pay?timestamp=${currentTimestamp}&id=${item.trade_id}`
 					})
 				} else if (item.status == 'Pending'&&identity == 0) {
 					return uni.navigateTo({
-						url: `/pages/otc/order/pay/pay?timestamp=${currentTimestamp}&id=${item.trade_id})}`
+						url: `/pages/otc/order/pay/pay?timestamp=${currentTimestamp}&id=${item.trade_id}`
 					})
 				} else if (item.status == 'Processing'&&identity == 0) {
 					return uni.navigateTo({
@@ -301,7 +301,7 @@
 					})
 				} else if ((item.status == 'Pending' || item.status == 'Processing')&&identity == 1) {
 					return uni.navigateTo({
-						url: `/pages/otc/order/collect/collect_sell?id=${item.trade_id}`
+						url: `/pages/otc/order/collect/collect_sell?timestamp=${currentTimestamp}&id=${item.trade_id}`
 					})
 				} else if ((item.status == 'Completed' || item.status == 'Cancelled')&&(identity == 1 || identity == 0)) {
 					return uni.navigateTo({

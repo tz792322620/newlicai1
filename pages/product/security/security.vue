@@ -98,42 +98,59 @@
 						}
 						// 生成图片的临时路径
 						// H5 生成的是base64
-						this.investData.signature_image_path = res.tempFilePath
+						// this.investData.signature_image_path = res.tempFilePath
 						this.uploadImage(res.tempFilePath); // 调用上传函数
-						uni.showToast({
-							title: this.$t('sign') + this.$t('complete'),
-							icon: 'none'
-						})
 
 					}
 				})
 			},
 			uploadImage(filePath) {
-				let header = {}
-				// #ifdef APP-PLUS
-				if (uni.getSystemInfoSync().platform == 'ios') {
-					header['content-type'] = 'multipart/form-data'
-				}
-				// #endif
-
-				uni.uploadFile({
-					url: this.$url + '/api/image/upload',
-					filePath: filePath,
-					name: 'image',
-					header: header,
-					success: (uploadFileRes) => {
-						const res = JSON.parse(uploadFileRes.data)
-						if (res.code === 1) {
-							this.investData.signature_image_path = res.data.url
-
-						} else {
-							uni.showToast({
-								title: res.msg,
-								icon: 'none'
-							})
-						}
+				try{
+					uni.showLoading({
+						mask: true
+					})
+					let header = {}
+					// #ifdef APP-PLUS
+					if (uni.getSystemInfoSync().platform == 'ios') {
+						header['content-type'] = 'multipart/form-data'
 					}
-				});
+					// #endif
+					
+					uni.uploadFile({
+						url: this.$url + '/api/image/upload',
+						filePath: filePath,
+						name: 'image',
+						header: header,
+						success: (uploadFileRes) => {
+							const res = JSON.parse(uploadFileRes.data)
+							if (res.code === 1) {
+								let str = res.data.url
+								if (str.indexOf('/uploads') != -1) {
+									this.investData.signature_image_path = res.data.url
+									console.log(this.investData.signature_image_path, '图片')
+									uni.showToast({
+										title: this.$t('sign') + this.$t('complete'),
+										icon: 'none'
+									})									
+								} else {
+									uni.showToast({
+										title: this.$t('uuploadFails'),
+										icon: 'none'
+									})
+								}
+							} else {
+								uni.showToast({
+									title: res.msg,
+									icon: 'none'
+								})
+							}
+						}
+					});
+				}catch(e){
+					//TODO handle the exception
+				}finally {
+					// uni.hideLoading()
+				}
 
 
 			},
