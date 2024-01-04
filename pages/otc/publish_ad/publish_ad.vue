@@ -308,51 +308,64 @@
 			},
 			async submit() {
 				console.log(this.data)
-				if (this.$u.test.isEmpty(this.data.price)) {
-					return uni.showToast({
-						title: this.$t('enterPriceUnit'),
-						icon: 'none'
-					})
-				}
-				if (this.$u.test.isEmpty(this.data.min_amount)) {
-					return uni.showToast({
-						title: this.$t('enterMinAmount'),
-						icon: 'none'
-					})
-				}
-				if (this.$u.test.isEmpty(this.data.max_amount)) {
-					return uni.showToast({
-						title: this.$t('enterMaxAmount'),
-						icon: 'none'
-					})
-				}
-				if (this.$u.test.isEmpty(this.data.payment_method)) {
-					return uni.showToast({
-						title: this.$t('enterChoosePayment'),
-						icon: 'none'
-					})
-				}
-				if (this.$u.test.isEmpty(this.data.amount)) {
-					return uni.showToast({
-						title: this.$t('enterTransactionQuantity'),
-						icon: 'none'
-					})
-				}
-				if (this.$u.test.isEmpty(this.data.remark)) {
-					return uni.showToast({
-						title: this.$t('enterRemark'),
-						icon: 'none'
-					})
-				}
-				if (this.data.max_amount > this.data.amount * this.data.price) {
-					return uni.showToast({
-						title: this.$t('maxAmountTips') + this.data.amount * this.data.price,
-						icon: 'none'
-					})
-				}
 				
 				try{
-					
+					if (this.$u.test.isEmpty(this.data.price)) {
+						return uni.showToast({
+							title: this.$t('enterPriceUnit'),
+							icon: 'none'
+						})
+					}
+					if (this.$u.test.isEmpty(this.data.min_amount)) {
+						return uni.showToast({
+							title: this.$t('enterMinAmount'),
+							icon: 'none'
+						})
+					}
+					if (this.$u.test.isEmpty(this.data.max_amount)) {
+						return uni.showToast({
+							title: this.$t('enterMaxAmount'),
+							icon: 'none'
+						})
+					}
+					if (this.$u.test.isEmpty(this.data.payment_method)) {
+						return uni.showToast({
+							title: this.$t('enterChoosePayment'),
+							icon: 'none'
+						})
+					}
+					if (this.$u.test.isEmpty(this.data.amount)) {
+						return uni.showToast({
+							title: this.$t('enterTransactionQuantity'),
+							icon: 'none'
+						})
+					}
+					if (this.$u.test.isEmpty(this.data.remark)) {
+						return uni.showToast({
+							title: this.$t('enterRemark'),
+							icon: 'none'
+						})
+					}
+					if (this.data.max_amount > this.data.amount * this.data.price) {
+						return uni.showToast({
+							title: this.$t('maxAmountTips') + this.data.amount * this.data.price,
+							icon: 'none'
+						})
+					}
+					const res = await createListing(this.data)
+					if (res.code === 1) {
+						uni.showToast({
+							title: res.msg,
+							icon: 'none',
+							success: () => {
+								setTimeout(() => {
+									uni.switchTab({
+										url: '/pages/otc/otc'
+									})
+								}, 1000)
+							}
+						})
+					}
 				}catch(e){
 					//TODO handle the exception
 				}finally{					

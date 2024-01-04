@@ -4,16 +4,21 @@
 			<image class="logo_bg" src="../../static/images/logo_bg.png"></image>
 		</view>
 		<view class="b_colfff logo_bk">
-			<view class="col33 f_s36 f_bod" style="display: flex;justify-content: space-between;">{{ $t('resetPassword') }}<language></language></view>
+			<view class="col33 f_s36 f_bod" style="display: flex;justify-content: space-between;">
+				{{ $t('resetPassword') }}
+				<language></language>
+			</view>
 			<view class="u-flex" style="margin-top:40rpx;">
 				<view class="col35" style="width:320rpx;">{{ $t('phone') }}</view>
 			</view>
-			
+
 			<view style="margin-top:60rpx;">
-				<view class="logo_input u-flex" style="position: relative;">	
+				<view class="logo_input u-flex" style="position: relative;">
 					<view style="color: #666666;margin-right: 20rpx;" class="u-flex" @click="isAbP = !isAbP">
 						<view>{{regionCode}}</view>
-						<view style="margin-left: 10rpx;"><u-icon color="#9E9E9E" size="24" name="arrow-down-fill"></u-icon></view>
+						<view style="margin-left: 10rpx;">
+							<u-icon color="#9E9E9E" size="24" name="arrow-down-fill"></u-icon>
+						</view>
 					</view>
 					<area-code-select :isAbP="isAbP" @send="getAreaCode"></area-code-select>
 					<u-input v-model="account" type="number" :placeholder="$t('enterPhoneNumber')" />
@@ -31,21 +36,23 @@
 					</button>
 				</view>
 			</view>
-			
+
 			<view style="margin-top: 10px;">
-				<V5Dialog :lang="v5lang" :mournful="false" ref="v5dialog" :trustLevel="5" :host="v5host" :token="v5token"/>
-			<!-- 	<V5Button  :trustLevel="5" :mournful="false" @success="onSuccess" :lang="v5lang" name="v5field" ref="v2" :host="v5host" :token="v5token"/> -->
+				<V5Dialog :lang="v5lang" :mournful="false" ref="v5dialog" :trustLevel="5" :host="v5host"
+					:token="v5token" />
+				<!-- 	<V5Button  :trustLevel="5" :mournful="false" @success="onSuccess" :lang="v5lang" name="v5field" ref="v2" :host="v5host" :token="v5token"/> -->
 			</view>
-			
-			<view style="margin-top: 40rpx;">	
-				<u-button @click="$noMultipleClicks(resetPassword)" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;" :custom-style="customStyle1"
-						shape="circle" type="primary" >
-						{{ $t('resetPassword') }}
+
+			<view style="margin-top: 40rpx;">
+				<u-button @click="$noMultipleClicks(resetPassword)" ripple-bg-color="#fff" :ripple="true"
+					style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
+					{{ $t('resetPassword') }}
 				</u-button>
 			</view>
-						
+
 			<view class="u-text-center" style="margin-top: 30rpx; font-size: 24rpx;color: #666666;">
-				{{ $t('alreadyHaveAccount') }}<text class="col35" @click="$tools.jump('../login/login_ph')">{{ $t('loginNow') }}</text>
+				{{ $t('alreadyHaveAccount') }}<text class="col35"
+					@click="$tools.jump('../login/login_ph')">{{ $t('loginNow') }}</text>
 			</view>
 		</view>
 	</view>
@@ -53,7 +60,10 @@
 
 
 <script>
-	import { resetPassword,smsSend } from '@/api/api.js'
+	import {
+		resetPassword,
+		smsSend
+	} from '@/api/api.js'
 	import V5Dialog from '@/components/verify5-ui/V5Dialog'
 	import V5Button from '@/components/verify5-ui/V5Button'
 	export default {
@@ -70,14 +80,14 @@
 					width: '670rpx',
 					background: 'linear-gradient(#69EEAB,#21CCBA)',
 				},
-				
-				account:'',
-				code:'',
-				new_password:'',
-				new_password1:'',
-				lock:true,
-				
-				
+
+				account: '',
+				code: '',
+				new_password: '',
+				new_password1: '',
+				lock: true,
+
+
 				//验证码
 				sms_code: '',
 				remain: '发送',
@@ -85,26 +95,26 @@
 				time: 60,
 				timer: null,
 				countdown: 0,
-				tongyi:0,
-				yptoken:'',
-				ypauthenticate:'',
-				v5lang:"zh-CN",//en
-				v5host:'accelerate.verify5.com',
-				v5token:'aaa949126c3e48d6a941a482921ed7cf'
+				tongyi: 0,
+				yptoken: '',
+				ypauthenticate: '',
+				v5lang: "zh-CN", //en
+				v5host: 'accelerate.verify5.com',
+				v5token: 'aaa949126c3e48d6a941a482921ed7cf'
 			}
 		},
-		components:{
-		    V5Dialog,
-		    V5Button
+		components: {
+			V5Dialog,
+			V5Button
 		},
 		onLoad() {
 
 		},
 		mounted() {
-			
+
 		},
 		methods: {
-			getAreaCode(item,isAbP) {
+			getAreaCode(item, isAbP) {
 				this.isAbP = isAbP
 				// console.log(item)
 				this.regionCode = item.code
@@ -119,59 +129,60 @@
 			// 			 that.resetPasswords();
 			// 		}
 			// 	});
-				
+
 			// },
-			async resetPassword(){
-				if (this.account == '') {
-					return this.$tools.toast(this.$t('enterPhoneNumber'));
-				}else if (this.new_password == '') {
-					return this.$tools.toast(this.$t('inputPassword'));
-				}
-				// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.new_password)) {
-				//     return this.$tools.toast(this.$t('passwordRequirement'));
-				// }
-				if(this.new_password != this.new_password1){
-					return this.$tools.toast(this.$t('twoPwdFail'));
-				}
-				if (this.code == '') {
-					return this.$tools.toast(this.$t('enterSMSCode'));
-				}
-				// if (this.lock) {
-				// 	this.lock = false
+			async resetPassword() {
+
+				try {
+					if (this.account == '') {
+						return this.$tools.toast(this.$t('enterPhoneNumber'));
+					} else if (this.new_password == '') {
+						return this.$tools.toast(this.$t('inputPassword'));
+					}
+					// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.new_password)) {
+					//     return this.$tools.toast(this.$t('passwordRequirement'));
+					// }
+					if (this.new_password != this.new_password1) {
+						return this.$tools.toast(this.$t('twoPwdFail'));
+					}
+					if (this.code == '') {
+						return this.$tools.toast(this.$t('enterSMSCode'));
+					}
+					// if (this.lock) {
+					// 	this.lock = false
 					var data = {};
-					data['account']=this.account
-					data['new_password']=this.new_password
-					data['code']=this.code
-					data['referrerCode']=this.referrerCode
+					data['account'] = this.account
+					data['new_password'] = this.new_password
+					data['code'] = this.code
+					data['referrerCode'] = this.referrerCode
 					data['authenticate'] = this.ypauthenticate;
 					data['region'] = this.regionValue;
-					try{
-						const res = await resetPassword(data)
-						if (res.code == "1") {
-							this.$tools.toast(res.msg);
-							setTimeout(() => {
-								this.$tools.back(1);
-							}, 1000);
-							
-						} else {
-							this.$tools.toast(res.msg)
-						}
-					}catch(e){
-						//TODO handle the exception
-					}finally{
+					const res = await resetPassword(data)
+					if (res.code == "1") {
+						this.$tools.toast(res.msg);
 						setTimeout(() => {
-							this.noClick = true
-						}, 2000)
+							this.$tools.back(1);
+						}, 1000);
+
+					} else {
+						this.$tools.toast(res.msg)
 					}
-					// setTimeout(() => {
-					// 	this.lock = true
-					// }, 1000);
+				} catch (e) {
+					//TODO handle the exception
+				} finally {
+					setTimeout(() => {
+						this.noClick = true
+					}, 2000)
+				}
+				// setTimeout(() => {
+				// 	this.lock = true
+				// }, 1000);
 
 				// }
-				
+
 			},
-			
-			
+
+
 			async sendCode() {
 				if (this.account == '') {
 					return this.$tools.toast(this.$t('enterPhoneNumber'));
@@ -199,11 +210,11 @@
 					this.$tools.toast(res.msg)
 					// this.$tools.toastSwitchTab(res.msg, '../register/register');
 				}
-	
+
 				uni.hideLoading();
-			
+
 			},
-					
+
 		}
 	}
 </script>
@@ -212,8 +223,9 @@
 	button::after {
 		border: none;
 	}
-	button{
-		background-color: #F3F3F3!important;
+
+	button {
+		background-color: #F3F3F3 !important;
 		font-size: 26rpx;
 	}
 </style>

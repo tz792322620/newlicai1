@@ -1,7 +1,8 @@
 <template>
 	<view class="page">
 		<!-- 标题栏 -->
-		<view class="background-container" style="background: url('../../static/images/verify/sfbj.png') center center no-repeat;background-size: 100% 100%;">
+		<view class="background-container"
+			style="background: url('../../static/images/verify/sfbj.png') center center no-repeat;background-size: 100% 100%;">
 			<!-- 这里放置背景图片 -->
 			<!-- <image class="background-image" src="../../static/images/verify/sfbj.png"></image> -->
 			<!-- 这里放置标题内容 -->
@@ -10,7 +11,8 @@
 				<text class="header-title">{{$t('realNameAuthentication')}}</text>
 				<view class="header-camera-icon"></view>
 			</view> -->
-			<uni-nav-bar statusBar fixed left-icon="left" color="#ffffff" backgroundColor="transparent" :title="$t('realNameAuthentication')" :border="false" @clickLeft="goBack"></uni-nav-bar>
+			<uni-nav-bar statusBar fixed left-icon="left" color="#ffffff" backgroundColor="transparent"
+				:title="$t('realNameAuthentication')" :border="false" @clickLeft="goBack"></uni-nav-bar>
 		</view>
 		<view style="background-color: rgb(255, 255, 255);
 					border-radius: 40rpx 40rpx 0px 0px;
@@ -19,25 +21,34 @@
 					top: 5rem;
 					padding: 1rem 1.5rem;">
 			<view class="top1">{{$t('name')}}</view>
-			<view class="top2"><u-input :custom-style="customStyle" :placeholder="$t('enterName')" v-model="data.real_name" /></view>
+			<view class="top2">
+				<u-input :custom-style="customStyle" :placeholder="$t('enterName')" v-model="data.real_name" />
+			</view>
 			<view class="top1">{{$t('IDNumber')}}</view>
-			<view class="top2"><u-input :custom-style="customStyle" :placeholder="$t('enterIDNumber')" v-model="data.identity_number" /></view>
+			<view class="top2">
+				<u-input :custom-style="customStyle" :placeholder="$t('enterIDNumber')"
+					v-model="data.identity_number" />
+			</view>
 			<view class="top1">{{$t('uploadIDPhoto')}}</view>
 			<view class="top1" style="display: flex;justify-content: space-around;">
-				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.front_image" @click="uploadImage(0)">
+				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.front_image"
+					@click="uploadImage(0)">
 					<view>
 						<image style="width: 222rpx;height: 156rpx;" src="../../static/images/verify/sczm.png"></image>
 					</view>
 					<view style="color: #fff;" class="gradient-background">{{$t('uploadFront')}}</view>
 				</view>
-				<image v-else :src="$url + data.front_image" style="width: 320rpx;height: 260rpx;" mode="" @click="uploadImage(0)"></image>
-				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.back_image" @click="uploadImage(1)">
+				<image v-else :src="$url + data.front_image" style="width: 320rpx;height: 260rpx;" mode=""
+					@click="uploadImage(0)"></image>
+				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.back_image"
+					@click="uploadImage(1)">
 					<view>
-						<image style="width: 222rpx;height: 156rpx;"  src="../../static/images/verify/bm.png"></image>
+						<image style="width: 222rpx;height: 156rpx;" src="../../static/images/verify/bm.png"></image>
 					</view>
 					<view style="color: #fff;" class="gradient-background">{{$t('uploadBack')}}</view>
 				</view>
-				<image v-else :src="$url + data.back_image" style="width: 320rpx;height: 260rpx;" mode="" @click="uploadImage(1)"></image>
+				<image v-else :src="$url + data.back_image" style="width: 320rpx;height: 260rpx;" mode=""
+					@click="uploadImage(1)"></image>
 			</view>
 			<view class="top1">{{$t('tokenNotice')}}</view>
 			<view class="top1" style="display: flex;
@@ -65,7 +76,7 @@
 				<!-- :class="noClick ? 'buttons' : 'gray'" -->
 				<view class="buttons" @click="$noMultipleClicks(submit)">{{$t('submit')}}</view>
 			</view>
-			
+
 		</view>
 		<!-- <u-mask :show="show" duration="30000" z-index="1000" :custom-style="{background: 'rgba(0, 0, 0, .8)'}">
 			<view class="" style="height: 100%;display: flex;justify-content: center;align-items: center;">
@@ -77,14 +88,16 @@
 </template>
 
 <script>
-	import { submitVerification,getVerificationStatus } from '@/api/api.js'
+	import {
+		submitVerification,
+		getVerificationStatus
+	} from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				show: false,
 				noClick: true,
-				customStyle: {
-				},
+				customStyle: {},
 				data: {
 					real_name: '',
 					identity_number: '',
@@ -97,7 +110,7 @@
 			// this.getData()
 		},
 		methods: {
-			async getData(){
+			async getData() {
 				this.show = true
 				this.show = false
 				const res = await getVerificationStatus()
@@ -106,24 +119,24 @@
 					if (res.data.verification_status == 'Verified') {
 						uni.navigateTo({
 							url: '/pages/verify/successfully/successfully'
-						})						
+						})
 					} else if (res.data.verification_status == 'Pending') {
 						uni.navigateTo({
 							url: '/pages/verify/pending/pending'
-						})						
+						})
 					} else if (res.data.verification_status == 'Rejected') {
 						uni.navigateTo({
 							url: '/pages/verify/fail/fail'
-						})					
+						})
 					} else if (res.data.verification_status == '') {
 						uni.navigateTo({
 							url: '/pages/verify/fail/fail'
-						})				
+						})
 					}
-				} else if(res.code === 0) {
+				} else if (res.code === 0) {
 					uni.navigateTo({
 						url: '/pages/verify/fail/fail'
-					})	
+					})
 				}
 			},
 			goBack() {
@@ -159,11 +172,11 @@
 								const res = JSON.parse(uploadFileRes.data)
 								if (res.code === 1) {
 									if (type === 0) {
-										this.data.front_image= res.data.url
-									}else if(type === 1) {
-										this.data.back_image= res.data.url
+										this.data.front_image = res.data.url
+									} else if (type === 1) {
+										this.data.back_image = res.data.url
 									}
-								}else {
+								} else {
 									uni.showToast({
 										title: res.msg,
 										icon: 'none'
@@ -176,37 +189,37 @@
 				})
 			},
 			async submit() {
-				if (this.data.real_name.trim() == '' ||this.data.real_name.length === 0) {
-					return uni.showToast({
-						title: this.$t('enterName'),
-						icon: 'none'
-					})
-				}
-				if (this.data.identity_number.trim() == '' ||this.data.identity_number.length === 0) {
-					return uni.showToast({
-						title: this.$t('enterIDNumber'),
-						icon: 'none'
-					})
-				}
-				if (!/^[a-zA-Z0-9]{6,}$/.test(this.data.identity_number)) {
-					return uni.showToast({
-						title: this.$t('enterTrueIDNumber'),
-						icon: 'none'
-					}) 
-				}
-				if (this.data.front_image.trim() == '' ||this.data.front_image.length === 0) {
-					return uni.showToast({
-						title: this.$t('enterUploadFront'),
-						icon: 'none'
-					})
-				}
-				if (this.data.back_image.trim() == '' ||this.data.back_image.length === 0) {
-					return uni.showToast({
-						title: this.$t('enterUploadBack'),
-						icon: 'none'
-					})
-				}
-				try{
+				try {
+					if (this.data.real_name.trim() == '' || this.data.real_name.length === 0) {
+						return uni.showToast({
+							title: this.$t('enterName'),
+							icon: 'none'
+						})
+					}
+					if (this.data.identity_number.trim() == '' || this.data.identity_number.length === 0) {
+						return uni.showToast({
+							title: this.$t('enterIDNumber'),
+							icon: 'none'
+						})
+					}
+					if (!/^[a-zA-Z0-9]{6,}$/.test(this.data.identity_number)) {
+						return uni.showToast({
+							title: this.$t('enterTrueIDNumber'),
+							icon: 'none'
+						})
+					}
+					if (this.data.front_image.trim() == '' || this.data.front_image.length === 0) {
+						return uni.showToast({
+							title: this.$t('enterUploadFront'),
+							icon: 'none'
+						})
+					}
+					if (this.data.back_image.trim() == '' || this.data.back_image.length === 0) {
+						return uni.showToast({
+							title: this.$t('enterUploadBack'),
+							icon: 'none'
+						})
+					}
 					const res = await submitVerification(this.data)
 					if (res.code === 1) {
 						uni.navigateTo({
@@ -217,12 +230,12 @@
 							url: '/pages/verify/pending/pending'
 						})
 					}
-				}catch(e){
+				} catch (e) {
 					//TODO handle the exception
-				}finally {
+				} finally {
 					setTimeout(() => {
 						this.noClick = true
-					},2000)
+					}, 2000)
 				}
 			}
 		}
@@ -233,12 +246,14 @@
 	/deep/.u-input {
 		padding-left: 20rpx;
 	}
+
 	.top2 {
 		margin-top: .5rem;
 		background: #F4F5F7;
 		padding: 0 20rpx;
 		border-radius: 0.5rem;
 	}
+
 	.buttons {
 		height: 90rpx;
 		background: #35CBA5;
@@ -249,6 +264,7 @@
 		font-weight: 600;
 		color: #FFFFFF;
 	}
+
 	.gray {
 		height: 90rpx;
 		background: #888;
@@ -259,7 +275,8 @@
 		font-weight: 600;
 		color: #FFFFFF;
 	}
-/* /deep/.uni-input-wrapper {
+
+	/* /deep/.uni-input-wrapper {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -277,29 +294,32 @@
     border-radius: 0.5rem;
 } */
 	.gradient-background {
-	  background: linear-gradient(to right, #24CCBC, #6BEEAB);
-	  /* 定义渐变的方向和颜色 */
+		background: linear-gradient(to right, #24CCBC, #6BEEAB);
+		/* 定义渐变的方向和颜色 */
 	}
-	.top1{
+
+	.top1 {
 		margin-top: .5rem;
 	}
+
 	.uni-input-input {
-	    position: relative;
-	    display: block;
-	    height: 100%;
-	    background: none;
-	    color: inherit;
-	    opacity: 1;
-	    font: inherit;
-	    line-height: inherit;
-	    letter-spacing: inherit;
-	    text-align: inherit;
-	    text-indent: inherit;
-	    text-transform: inherit;
-	    text-shadow: inherit;
-	    background: #F4F5F7;
-	    border-radius: 0.5rem;
+		position: relative;
+		display: block;
+		height: 100%;
+		background: none;
+		color: inherit;
+		opacity: 1;
+		font: inherit;
+		line-height: inherit;
+		letter-spacing: inherit;
+		text-align: inherit;
+		text-indent: inherit;
+		text-transform: inherit;
+		text-shadow: inherit;
+		background: #F4F5F7;
+		border-radius: 0.5rem;
 	}
+
 	.background-container {
 		position: relative;
 		/* 相对定位，以便内部元素可以相对于此容器定位 */

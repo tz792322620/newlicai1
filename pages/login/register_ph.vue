@@ -9,7 +9,8 @@
 			</view>
 			<view class="u-flex" style="margin-top:40rpx;">
 				<view class="" style="width:320rpx;" @click="$tools.jump('../login/register_em')">
-					{{ $t('emailRegister') }}</view>
+					{{ $t('emailRegister') }}
+				</view>
 				<view style="width: 320rpx;" class="u-text-right col35">{{ $t('phoneRegister') }}</view>
 			</view>
 
@@ -32,8 +33,11 @@
 					<u-input v-model="password" type="password" :placeholder="$t('setLoginPassword')" />
 				</view>
 				<view class="logo_input u-flex">
-				  <view><image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em2.png"></image></view>
-				  <u-input v-model="confirmPassword" type="password" :placeholder="$t('confirmPassword')" />
+					<view>
+						<image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em2.png">
+						</image>
+					</view>
+					<u-input v-model="confirmPassword" type="password" :placeholder="$t('confirmPassword')" />
 				</view>
 				<!-- 				<view class="logo_input u-flex">
 					<view><image style="width: 48rpx;height: 48rpx;margin-top:10rpx;" src="../../static/images/em3.png"></image></view>
@@ -60,7 +64,8 @@
 					<view style="width: 320rpx;">
 						<u-radio-group v-model="tongyi">
 							<u-radio active-color="#35CBA5" label-size="24" :name="1">{{ $t('readAndAgree') }}<text
-									class="col35" @click="toUserAgreement">{{ $t('userAgreement') }}</text>{{ $t('and') }}<text
+									class="col35"
+									@click="toUserAgreement">{{ $t('userAgreement') }}</text>{{ $t('and') }}<text
 									class="col35" @click="toPrivacy">{{ $t('privacyPolicy') }}</text></u-radio>
 						</u-radio-group>
 					</view>
@@ -73,8 +78,8 @@
 			</view>
 
 			<view style="margin-top: 40rpx;">
-				<u-button @click="$noMultipleClicks(reg)" ripple-bg-color="#fff" :ripple="true" style="font-size: 34rpx;"
-					:custom-style="customStyle1" shape="circle" type="primary">
+				<u-button @click="$noMultipleClicks(reg)" ripple-bg-color="#fff" :ripple="true"
+					style="font-size: 34rpx;" :custom-style="customStyle1" shape="circle" type="primary">
 					{{ $t('registerNow') }}
 				</u-button>
 			</view>
@@ -94,7 +99,7 @@
 		register
 	} from '@/api/api.js'
 	import V5Dialog from '@/components/verify5-ui/V5Dialog'
-	import V5Button from '@/components/verify5-ui/V5Button' 
+	import V5Button from '@/components/verify5-ui/V5Button'
 	export default {
 		data() {
 			return {
@@ -173,40 +178,42 @@
 
 			// },
 			async reg() {
-				if (this.username == '') {
-					return this.$tools.toast(this.$t('enterPhoneNumber'));
-				}
-				if (this.regionValue == '86') {
-					// if (!/^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/.test(this.username)) {
-					// 	return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+
+				try {
+					if (this.username == '') {
+						return this.$tools.toast(this.$t('enterPhoneNumber'));
+					}
+					if (this.regionValue == '86') {
+						// if (!/^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/.test(this.username)) {
+						// 	return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+						// }
+						if (!this.$u.test.mobile(this.username)) {
+							return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+						}
+					} else {
+						if (!/^\d+$/.test(this.username)) {
+							return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+						}
+					}
+					if (this.password == '') {
+						return this.$tools.toast(this.$t('inputPassword'));
+					}
+					// 检查两次输入的密码是否一致
+					if (this.password !== this.confirmPassword) {
+						return this.$tools.toast(this.$t('passwordMismatch'));
+					}
+					// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.password)) {
+					// 	return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
 					// }
-					if (!this.$u.test.mobile(this.username)) {
-						return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+					if (this.code == '') {
+						return this.$tools.toast(this.$t('enterSMSCode'));
+					} else if (this.referrerCode == '') {
+						return this.$tools.toast(this.$t('enterReferrerID'));
+					} else if (this.tongyi == 0) {
+						return this.$tools.toast(this.$t('enterReadAndAgree'));
 					}
-				} else {
-					if (!/^\d+$/.test(this.username)) {
-						return this.$tools.toast(this.$t('enterTruePhoneNumber'));
-					}
-				}
-				if (this.password == '') {
-					return this.$tools.toast(this.$t('inputPassword'));
-				}
-				// 检查两次输入的密码是否一致
-				if (this.password !== this.confirmPassword) {
-				  return this.$tools.toast(this.$t('passwordMismatch'));
-				}
-				// if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_]).{8,32}$/.test(this.password)) {
-				// 	return this.$tools.toast('请输入8-32位，两种以上字母/数字/符号组合的登录密码');
-				// }
-				if (this.code == '') {
-					return this.$tools.toast(this.$t('enterSMSCode'));
-				} else if (this.referrerCode == '') {
-					return this.$tools.toast(this.$t('enterReferrerID'));
-				} else if (this.tongyi == 0) {
-					return this.$tools.toast(this.$t('enterReadAndAgree'));
-				}
-				// if (this.lock) {
-				// 	this.lock = false
+					// if (this.lock) {
+					// 	this.lock = false
 					var data = {};
 					data['username'] = this.username
 					data['password'] = this.password
@@ -215,28 +222,27 @@
 					data['authenticate'] = this.ypauthenticate;
 					data['token'] = this.yptoken;
 					data['region'] = this.regionValue;
-					try{
-						const res = await register(data)
-						if (res.code == "1") {
-							this.$tools.toast(res.msg);
-							setTimeout(() => {
-								uni.navigateTo({
-								  url: '/pages/login/login_ph'
-								});
-							}, 1000);
-						} else {
-							this.$tools.toast(res.msg)
-						}
-					}catch(e){
-						//TODO handle the exception
-					}finally{
+					const res = await register(data)
+					if (res.code == "1") {
+						this.$tools.toast(res.msg);
 						setTimeout(() => {
-							this.noClick = true
-						}, 2000)
+							uni.navigateTo({
+								url: '/pages/login/login_ph'
+							});
+						}, 1000);
+					} else {
+						this.$tools.toast(res.msg)
 					}
-					// setTimeout(() => {
-					// 	this.lock = true
-					// }, 1000);
+				} catch (e) {
+					//TODO handle the exception
+				} finally {
+					setTimeout(() => {
+						this.noClick = true
+					}, 2000)
+				}
+				// setTimeout(() => {
+				// 	this.lock = true
+				// }, 1000);
 				// }
 
 			},

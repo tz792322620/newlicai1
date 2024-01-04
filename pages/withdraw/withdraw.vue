@@ -26,7 +26,8 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="text" :placeholder="$t('enterWithdrawalAddress')" v-model="data.withdrawal_address" />
+						<u-input type="text" :placeholder="$t('enterWithdrawalAddress')"
+							v-model="data.withdrawal_address" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
@@ -37,7 +38,8 @@
 				</view>
 				<view class="select">
 					<view class="select_value">
-						<u-input type="digit" :placeholder="$t('enterWithdrawalAmount')" v-model="data.withdrawal_amount" />
+						<u-input type="digit" :placeholder="$t('enterWithdrawalAmount')"
+							v-model="data.withdrawal_amount" />
 					</view>
 					<view class="right" @click="confirms()">
 						USDT <text @click="confirms()">{{$t('allItem')}}</text>
@@ -155,31 +157,31 @@
 				this.show = false
 			},
 			async submit() {
-				if (this.$u.test.isEmpty(this.data.network_type)) {
-					return uni.showToast({
-						title: this.$t('chooseNetwork'),
-						icon: "none"
-					})
-				}
-				if (this.$u.test.isEmpty(this.data.withdrawal_address)) {
-					return uni.showToast({
-						title: this.$t('enterWithdrawalAddress'),
-						icon: "none"
-					})
-				}
-				if (!/^(?=.*[a-zA-Z])(?=.*\d).{30,}$/.test(this.data.withdrawal_address)) {
-					return uni.showToast({
-						title: this.$t('enterTestWithdrawalAddress'),
-						icon: 'none'
-					})
-				}
-				if (this.$u.test.isEmpty(this.data.withdrawal_amount)) {
-					return uni.showToast({
-						title: this.$t('enterWithdrawalAmount'),
-						icon: "none"
-					})
-				}
-				try{
+				try {
+					if (this.$u.test.isEmpty(this.data.network_type)) {
+						return uni.showToast({
+							title: this.$t('chooseNetwork'),
+							icon: "none"
+						})
+					}
+					if (this.$u.test.isEmpty(this.data.withdrawal_address)) {
+						return uni.showToast({
+							title: this.$t('enterWithdrawalAddress'),
+							icon: "none"
+						})
+					}
+					if (!/^(?=.*[a-zA-Z])(?=.*\d).{30,}$/.test(this.data.withdrawal_address)) {
+						return uni.showToast({
+							title: this.$t('enterTestWithdrawalAddress'),
+							icon: 'none'
+						})
+					}
+					if (this.$u.test.isEmpty(this.data.withdrawal_amount)) {
+						return uni.showToast({
+							title: this.$t('enterWithdrawalAmount'),
+							icon: "none"
+						})
+					}
 					const res = await withdraw(this.data)
 					if (res.code === 1) {
 						this.data.network_type = ''
@@ -194,14 +196,14 @@
 							url: '/pages/withdraw/records/records'
 						})
 					}
-				}catch(e){
+				} catch (e) {
 					//TODO handle the exception
-				}finally{					
+				} finally {
 					setTimeout(() => {
 						this.noClick = true
-					},2000)
+					}, 2000)
 				}
-				
+
 			}
 		}
 	};
@@ -212,9 +214,11 @@
 		/deep/.u-iconfont {
 			color: #9a9a9a !important;
 		}
+
 		background: url('../../static/images/hm_bg.png') center center no-repeat;
 		background-size: 100% 100%;
 		min-height: 100vh;
+
 		.status_bar {
 			height: var(--status-bar-height);
 			width: 100%;

@@ -210,41 +210,43 @@
 			},
 			async save() {
 				console.log(this.data)
-				if (this.data.user_name.trim() == '' || this.data.user_name.length === 0) {
-					return uni.showToast({
-						title: this.$t('enterName'),
-						icon: 'none'
-					})
-				}
-				if (this.data.account_number.trim() == '' || this.data.account_number.length === 0) {
-					return uni.showToast({
-						title: this.activeIndex == 0 ? this.$t('enterWeChatAccount') : this.activeIndex == 1 ?
-							this.$t('enterAlipayAccount') : this.activeIndex == 2 ? this.$t(
-								'enterBankCardAccount') : '',
-						icon: 'none'
-					})
-				}
-				if (this.activeIndex == 2) {
-					if (this.data.bank_name.trim() == '' || this.data.bank_name.length === 0) {
+
+				try {
+					if (this.data.user_name.trim() == '' || this.data.user_name.length === 0) {
 						return uni.showToast({
-							title: this.$t('enterBankName'),
+							title: this.$t('enterName'),
 							icon: 'none'
 						})
 					}
-					if (this.data.branch_name.trim() == '' || this.data.branch_name.length === 0) {
+					if (this.data.account_number.trim() == '' || this.data.account_number.length === 0) {
 						return uni.showToast({
-							title: this.$t('enterBranchBank'),
+							title: this.activeIndex == 0 ? this.$t('enterWeChatAccount') : this.activeIndex ==
+								1 ?
+								this.$t('enterAlipayAccount') : this.activeIndex == 2 ? this.$t(
+									'enterBankCardAccount') : '',
 							icon: 'none'
 						})
 					}
-				}
-				if (this.data.remark.trim() == '' || this.data.remark.length === 0) {
-					return uni.showToast({
-						title: this.$t('enterRemark'),
-						icon: 'none'
-					})
-				}
-				try{
+					if (this.activeIndex == 2) {
+						if (this.data.bank_name.trim() == '' || this.data.bank_name.length === 0) {
+							return uni.showToast({
+								title: this.$t('enterBankName'),
+								icon: 'none'
+							})
+						}
+						if (this.data.branch_name.trim() == '' || this.data.branch_name.length === 0) {
+							return uni.showToast({
+								title: this.$t('enterBranchBank'),
+								icon: 'none'
+							})
+						}
+					}
+					if (this.data.remark.trim() == '' || this.data.remark.length === 0) {
+						return uni.showToast({
+							title: this.$t('enterRemark'),
+							icon: 'none'
+						})
+					}
 					const res = await addPaymentInfo(this.data)
 					if (res.code === 1) {
 						uni.showToast({
@@ -259,12 +261,12 @@
 							}
 						})
 					}
-				}catch(e){
+				} catch (e) {
 					//TODO handle the exception
-				}finally{					
+				} finally {
 					setTimeout(() => {
 						this.noClick = true
-					},2000)
+					}, 2000)
 				}
 			}
 		}
@@ -275,8 +277,9 @@
 	.add-payment {
 		.content {
 			padding: 208rpx 40rpx 40rpx;
-			
+
 		}
+
 		.desc {
 			font-size: 24rpx;
 			font-weight: 500;
@@ -304,6 +307,7 @@
 			border-radius: 12rpx;
 			padding: 20rpx;
 		}
+
 		.input2 {
 			height: 90rpx;
 			background: #F4F5F7;
@@ -311,6 +315,7 @@
 			padding: 0 20rpx;
 			padding-top: 10rpx;
 		}
+
 		.input {
 			height: 90rpx;
 			background: #F4F5F7;

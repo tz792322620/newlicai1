@@ -112,13 +112,13 @@
 				this.popupShow = true
 			},
 			async submitBtn() {
-				if (this.$u.test.isEmpty(this.data.deposit_amount)) {
-					return uni.showToast({
-						title: this.$t('enterDeposit'),
-						icon: 'none'
-					})
-				}
 				try{
+					if (this.$u.test.isEmpty(this.data.deposit_amount)) {
+						return uni.showToast({
+							title: this.$t('enterDeposit'),
+							icon: 'none'
+						})
+					}
 					let res = ''
 					if (this.isTransfer) {
 						res = await depositOtc(this.data)

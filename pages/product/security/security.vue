@@ -59,7 +59,7 @@
 					product_id: '',
 					investment_amount: '',
 					signature_image_path: '',
-					pay_password:'',
+					pay_password: '',
 					discount_coupon_id: '',
 					interest_coupon_id: ''
 				}
@@ -125,7 +125,7 @@
 						const res = JSON.parse(uploadFileRes.data)
 						if (res.code === 1) {
 							this.investData.signature_image_path = res.data.url
-				
+
 						} else {
 							uni.showToast({
 								title: res.msg,
@@ -134,8 +134,8 @@
 						}
 					}
 				});
-					
-				
+
+
 			},
 			// base64转blob二进制文件流
 			parseBlob(base64) {
@@ -157,20 +157,19 @@
 			},
 			async submit() {
 				console.log(this.investData)
-				if (this.investData.pay_password.trim() === '' || this.investData.pay_password.length === 0) {
-					return uni.showToast({
-						title: this.$t('pleaseEnterPwd'),
-						icon: 'none'
-					})
-				}
-				if (this.investData.signature_image_path.length === 0) {
-					return uni.showToast({
-						title: this.$t('pleaseSign'),
-						icon: 'none'
-					})
-				}
-				
-				try{
+				try {
+					if (this.investData.pay_password.trim() === '' || this.investData.pay_password.length === 0) {
+						return uni.showToast({
+							title: this.$t('pleaseEnterPwd'),
+							icon: 'none'
+						})
+					}
+					if (this.investData.signature_image_path.length === 0) {
+						return uni.showToast({
+							title: this.$t('pleaseSign'),
+							icon: 'none'
+						})
+					}
 					const res = await createStockOrder(this.investData)
 					uni.hideLoading()
 					if (res.code === 1) {
@@ -192,12 +191,12 @@
 							}
 						})
 					}
-				}catch(e){
+				} catch (e) {
 					//TODO handle the exception
-				}finally{					
+				} finally {
 					setTimeout(() => {
 						this.noClick = true
-					},2000)
+					}, 2000)
 				}
 			}
 		}
@@ -209,6 +208,7 @@
 		.content {
 			padding: 208rpx 40rpx 40rpx;
 		}
+
 		.item {
 			margin-bottom: 40rpx;
 
@@ -293,11 +293,12 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+
 			.tip {
 				font-size: 24rpx;
 				font-weight: 400;
 				color: #35CBA5;
-				line-height: 34rpx;	
+				line-height: 34rpx;
 			}
 		}
 	}

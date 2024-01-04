@@ -13,7 +13,7 @@
 					</image>
 				</view>
 				<view style="margin-left: 10rpx;width:480rpx;">
-					<u-search bg-color="#FFFFFF" :placeholder="$t('search')" :disabled="false" :show-action="false">
+					<u-search bg-color="#FFFFFF" :placeholder="$t('search')" :disabled="true"  @click="toSearch" :show-action="false">
 					</u-search>
 				</view>
 				<view>
@@ -289,6 +289,11 @@
 			}
 		},
 		methods: {
+			toSearch() {
+				uni.navigateTo({
+					url: '/pages/search/search'
+				})
+			},
 			//点击按钮
 			clickBtn() {
 				console.log('按钮被点击了')

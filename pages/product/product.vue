@@ -7,7 +7,7 @@
 		<view style="padding:30rpx;">
 			<view class="u-flex" style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 				<view style="margin-left: 10rpx;width:600rpx;">
-					<u-search bg-color="#FFFFFF" :placeholder="$t('enterFund')" :disabled="false" :show-action="false">
+					<u-search bg-color="#FFFFFF" :placeholder="$t('enterFund')" :disabled="true"  @click="toSearch" :show-action="false">
 					</u-search>
 				</view>
 				<view>
@@ -146,6 +146,11 @@
 			this.getStockProductListTab()
 		},
 		methods: {
+			toSearch() {
+				uni.navigateTo({
+					url: '/pages/search/search'
+				})
+			},
 			toDetails(item) {
 				uni.navigateTo({
 					url: `/pages/product/details/details?id=${item.product_id}`

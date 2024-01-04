@@ -5,7 +5,8 @@
 			<view class="back-arrow" @click="goBack"></view>
 			<text class="header-title">{{$t('yulibao')}}</text>
 		</view> -->
-		<uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('yulibao')" :border="false" @clickLeft="goBack"></uni-nav-bar>
+		<uni-nav-bar statusBar fixed left-icon="left" backgroundColor="transparent" :title="$t('yulibao')"
+			:border="false" @clickLeft="goBack"></uni-nav-bar>
 
 		<view class="ylb1">
 			<view class="balance-display">
@@ -18,7 +19,7 @@
 					</view>
 					<view class="detail-item">
 						<view>{{$t('cumulativeIncome')}}</view>
-					 <view>{{dataInfo.earningsTotal}}</view>
+						<view>{{dataInfo.earningsTotal}}</view>
 					</view>
 					<view class="detail-item">
 						<view>{{$t('dailyRate')}}</view>
@@ -99,8 +100,8 @@
 		},
 		methods: {
 			getStatusTranslation(status) {
-							// console.log(status)
-			  return this.$t(status);
+				// console.log(status)
+				return this.$t(status);
 			},
 			btnClick(item) {
 				if (item === 0) {
@@ -111,13 +112,13 @@
 				this.popupShow = true
 			},
 			async submitBtn() {
-				if (this.$u.test.isEmpty(this.data.amount)) {
-					return uni.showToast({
-						title: this.$t('enterAmount'),
-						icon: 'none'
-					})
-				}
-				try{
+				try {
+					if (this.$u.test.isEmpty(this.data.amount)) {
+						return uni.showToast({
+							title: this.$t('enterAmount'),
+							icon: 'none'
+						})
+					}
 					let res = ''
 					if (this.isTransfer) {
 						res = await withdrawFromYuebao(this.data)
@@ -137,24 +138,28 @@
 							}
 						})
 					}
-				}catch(e){
+				} catch (e) {
 					//TODO handle the exception
-				}finally{
+				} finally {
 					setTimeout(() => {
 						this.noClick = true
-					},2000)
+					}, 2000)
 				}
-				
-				
+
+
 			},
 			async getData() {
-				const res =await getYuebaoStats()
+				uni.showLoading({
+					mask: true
+				})
+				const res = await getYuebaoStats()
+				uni.hideLoading()
 				if (res.code === 1) {
 					this.dataInfo = res.data
 				}
 			},
 			async getList() {
-				const res = await  getYuebaoTransactions()
+				const res = await getYuebaoTransactions()
 				console.log(res)
 				if (res.code === 1) {
 					this.list = res.data
@@ -174,41 +179,49 @@
 	/deep/.u-icon__icon {
 		color: #333 !important;
 	}
+
 	.popup-content {
 		padding: 70rpx;
+
 		.title {
 			font-size: 28rpx;
 			font-weight: 600;
 			color: #333333;
 			line-height: 40rpx
 		}
+
 		.input {
 			display: flex;
 			align-items: center;
 			margin-top: 40rpx;
 			border-bottom: 2rpx solid #35CBA5;
 			padding-bottom: 20rpx;
+
 			text {
 				font-size: 56rpx;
 				font-weight: 500;
 				color: #333333;
 				margin-right: 10rpx;
 			}
+
 			input {
 				height: 80rpx;
 				font-size: 56rpx;
 			}
 		}
+
 		.description {
 			font-size: 24rpx;
 			font-weight: 400;
 			color: #333333;
 			line-height: 34rpx;
 			margin-top: 20rpx;
+
 			text {
 				color: #35CBA5;
 			}
 		}
+
 		.button {
 			height: 90rpx;
 			background: #35CBA5;
@@ -221,6 +234,7 @@
 			margin-top: 60rpx;
 		}
 	}
+
 	.ylb1 {
 		background-color: #fff;
 		padding: 0.5rem;

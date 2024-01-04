@@ -36,7 +36,8 @@
 					{{$t('byAmount')}}
 				</view>
 				<view class="box2_input">
-					<u-input type="digit" placeholder="0.00" :clearable="false" placeholder-style="font-size: 36rpx;" @input="confirm" v-model="amount"></u-input>
+					<u-input type="digit" placeholder="0.00" :clearable="false" placeholder-style="font-size: 36rpx;"
+						@input="confirm" v-model="amount"></u-input>
 					<view class="box2_input_right">
 						<view class="box2_input_right_curreny">
 							{{dataInfo.currency}}
@@ -124,14 +125,15 @@
 		},
 		methods: {
 			async buy() {
-				if (this.$u.test.isEmpty(this.amount)) {
-					return uni.showToast({
-						title: this.$t('enterAmount'),
-						icon: "none"
-					})
-				}
-				this.data.amount = this.usdtAmount
-				try{
+
+				try {
+					if (this.$u.test.isEmpty(this.amount)) {
+						return uni.showToast({
+							title: this.$t('enterAmount'),
+							icon: "none"
+						})
+					}
+					this.data.amount = this.usdtAmount
 					const res = await createTrade(this.data)
 					if (res.code === 1) {
 						this.data.amount = ''
@@ -145,12 +147,12 @@
 							})
 						}
 					}
-				}catch(e){
+				} catch (e) {
 					//TODO handle the exception
-				}finally{
+				} finally {
 					setTimeout(() => {
 						this.noClick = true
-					},2000)
+					}, 2000)
 				}
 				console.log(res)
 			},
@@ -190,6 +192,7 @@
 			min-height: 100vh;
 			padding: 208rpx 40rpx 40rpx;
 		}
+
 		.box1 {
 			min-height: 284rpx;
 			background: #FFFFFF;

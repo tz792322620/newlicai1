@@ -85,6 +85,12 @@ export function getStockProductList(area) {
 		url: `/index/stockProductList?area=${area}`
 	})
 }
+// 查询新股产品列表(按名称查询)
+export function getStockProductListByName(name) {
+	return request({
+		url: `/index/stockProductList?product_name_cn=${name}`
+	})
+}
 // 查询新股产品列表(全部)
 export function getStockProductAllList() {
 	return request({

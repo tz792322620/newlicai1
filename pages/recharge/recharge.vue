@@ -15,7 +15,8 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value">
-						<u-input type="text" :placeholder="$t('chooseRechargeNetwork')" disabled v-model="data.address_type" />
+						<u-input type="text" :placeholder="$t('chooseRechargeNetwork')" disabled
+							v-model="data.address_type" />
 					</view>
 					<uni-icons type="bottom"></uni-icons>
 				</view>
@@ -37,7 +38,7 @@
 				</view>
 				<view class="select" @click="show = true">
 					<view class="select_value" style="width: 100%;">
-						<u-input type="digit" :placeholder="$t('enterAmount')"  v-model="data.recharge_amount" />
+						<u-input type="digit" :placeholder="$t('enterAmount')" v-model="data.recharge_amount" />
 					</view>
 					<!-- <uni-icons type="bottom"></uni-icons> -->
 				</view>
@@ -71,8 +72,8 @@
 				</view>
 			</u-popup>
 		</view>
-	<!-- 	<floating-customer-service></floating-customer-service> -->
-	<liu-drag-button @clickBtn="clickBtn">{{$t('customerService')}}</liu-drag-button>
+		<!-- 	<floating-customer-service></floating-customer-service> -->
+		<liu-drag-button @clickBtn="clickBtn">{{$t('customerService')}}</liu-drag-button>
 	</view>
 </template>
 
@@ -84,7 +85,7 @@
 	import FloatingCustomerService from '@/components/FloatingCustomerService/FloatingCustomerService.vue';
 	export default {
 		components: {
-				FloatingCustomerService
+			FloatingCustomerService
 		},
 		data() {
 			return {
@@ -143,7 +144,7 @@
 					url: '/pages/recharge/records/records'
 				})
 			},
-			copy () {
+			copy() {
 				let that = this
 				uni.setClipboardData({
 					data: that.address,
@@ -169,55 +170,56 @@
 				console.log(res)
 			},
 			async submit() {
-				if (this.$u.test.isEmpty(this.data.recharge_amount)) {
-					return uni.showToast({
-						title: this.$t('enterAmount'), // 修改为多语言引用
-						icon: "none"
-					});
-				}
-				if (this.$u.test.isEmpty(this.data.recharge_address)) {
-					return uni.showToast({
-						title: this.$t('enterAddress'), // 修改为多语言引用
-						icon: "none"
-					});
-				}
-				if (!/^(?=.*[a-zA-Z])(?=.*\d).{30,}$/.test(this.data.recharge_address)) {
-					return uni.showToast({
-						title: this.$t('enterTestWithdrawalAddress'),
-						icon: 'none'
-					})
-				}
-				try{
+
+				try {
+					if (this.$u.test.isEmpty(this.data.recharge_amount)) {
+						return uni.showToast({
+							title: this.$t('enterAmount'), // 修改为多语言引用
+							icon: "none"
+						});
+					}
+					if (this.$u.test.isEmpty(this.data.recharge_address)) {
+						return uni.showToast({
+							title: this.$t('enterAddress'), // 修改为多语言引用
+							icon: "none"
+						});
+					}
+					if (!/^(?=.*[a-zA-Z])(?=.*\d).{30,}$/.test(this.data.recharge_address)) {
+						return uni.showToast({
+							title: this.$t('enterTestWithdrawalAddress'),
+							icon: 'none'
+						})
+					}
 					const res = await createRecharge(this.data);
 					if (res.code === 1) {
-						 uni.showToast({
+						uni.showToast({
 							title: res.msg, // 修改为多语言引用
 							icon: 'none',
 							duration: 1500 // 设置弹窗显示时间
-						  });
-							this.data.recharge_address = ''
-							this.data.recharge_amount = ''
-							this.data.network_type = ''
-							this.activeIndex = -1
-						  // 延时跳转
-						  setTimeout(() => {
+						});
+						this.data.recharge_address = ''
+						this.data.recharge_amount = ''
+						this.data.network_type = ''
+						this.activeIndex = -1
+						// 延时跳转
+						setTimeout(() => {
 							uni.navigateTo({
-							  url: '/pages/recharge/records/records'
+								url: '/pages/recharge/records/records'
 							});
-						  }, 1500); // 延时与弹窗持续时间相同
+						}, 1500); // 延时与弹窗持续时间相同
 					} else {
 						uni.showToast({
 							title: res.msg, // 修改为多语言引用
 							icon: 'none'
 						});
 					}
-					
-				}catch(e){
+
+				} catch (e) {
 					//TODO handle the exception
-				}finally{					
+				} finally {
 					setTimeout(() => {
 						this.noClick = true
-					},2000)
+					}, 2000)
 				}
 			},
 
@@ -237,40 +239,43 @@
 		/deep/.u-iconfont {
 			color: #9a9a9a !important;
 		}
+
 		background: url('../../static/images/hm_bg.png') center center no-repeat;
 		background-size: 100% 100%;
 		min-height: 100vh;
+
 		.status_bar {
 			height: var(--status-bar-height);
 			width: 100%;
 		}
 
-			.buttons {
-				margin-top: 100rpx;
+		.buttons {
+			margin-top: 100rpx;
 
-				.description {
-					font-size: 24rpx;
-					font-weight: 400;
-					color: #333333;
-					line-height: 34rpx;
+			.description {
+				font-size: 24rpx;
+				font-weight: 400;
+				color: #333333;
+				line-height: 34rpx;
 
-					text {
-						color: #35CBA5;
-					}
-				}
-
-				.button {
-					margin-top: 8rpx;
-					height: 90rpx;
-					background: #35CBA5;
-					border-radius: 12rpx;
-					text-align: center;
-					line-height: 90rpx;
-					font-size: 32rpx;
-					font-weight: 600;
-					color: #FFFFFF;
+				text {
+					color: #35CBA5;
 				}
 			}
+
+			.button {
+				margin-top: 8rpx;
+				height: 90rpx;
+				background: #35CBA5;
+				border-radius: 12rpx;
+				text-align: center;
+				line-height: 90rpx;
+				font-size: 32rpx;
+				font-weight: 600;
+				color: #FFFFFF;
+			}
+		}
+
 		.tabbar {
 			display: flex;
 			height: 88rpx;
