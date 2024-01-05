@@ -87,6 +87,9 @@
 					<image :src="$url + tradeInfo.payment_image" mode=""></image>
 				</view>
 			</view>
+			<view class="buttons_appeal" v-if="timestamp < 0" @click="toAppeal">
+				{{$t('appeal')}}
+			</view>
 			<view class="buttons" v-if="tradeInfo.status == 'Processing'">
 				<view class="buttons_appeal" @click="toAppeal">
 					{{$t('appeal')}}

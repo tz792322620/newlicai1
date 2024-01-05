@@ -116,37 +116,37 @@
 			background: #e6fbf6 url('../../../static/images/hm_bg.png') center center no-repeat;
 			background-size: 100% 100%;
 			min-height: 100vh;
-			&_item {
-				padding: 30rpx 30rpx;
-				// border-bottom: 1px solid #d1d1d1;
-				border-radius: 20rpx;
-				background-color: #fff;
-				margin-bottom: 30rpx;
-				.title {
-					font-size: 28rpx;
-					font-weight: 600;
-					color: #333333;
-					line-height: 40rpx;
-					margin-bottom: 10rpx;
+		}
+		&_item {
+			padding: 30rpx 30rpx;
+			// border-bottom: 1px solid #d1d1d1;
+			border-radius: 20rpx;
+			background-color: #fff;
+			margin-bottom: 30rpx;
+			.title {
+				font-size: 28rpx;
+				font-weight: 600;
+				color: #333333;
+				line-height: 40rpx;
+				margin-bottom: 10rpx;
+			}
+			.cell {
+				margin-top: 20rpx;
+				display: flex;
+				justify-content: space-between;
+				font-size: 28rpx;
+				font-weight: 400;
+				line-height: 40rpx;
+				&_left {
+					color: #999999;
 				}
-				.cell {
-					margin-top: 20rpx;
-					display: flex;
-					justify-content: space-between;
-					font-size: 28rpx;
-					font-weight: 400;
-					line-height: 40rpx;
-					&_left {
-						color: #999999;
+				&_right {
+					color: #333333;
+					&.green {
+						color: #35CBA5;
 					}
-					&_right {
-						color: #333333;
-						&.green {
-							color: #35CBA5;
-						}
-						&.red {
-							color: #F75F52;
-						}
+					&.red {
+						color: #F75F52;
 					}
 				}
 			}
