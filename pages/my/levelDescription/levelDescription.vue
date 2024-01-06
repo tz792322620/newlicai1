@@ -1,8 +1,8 @@
 <template>
 	<view class="level-description">
 		<nav-bar :title="data.title"></nav-bar>
-		<view class="content" v-html="data.content">
-			
+		<view class="content" >
+			<img alt="level.jpg" src="https://api.broadreachvip.top/uploads/20240106/e0883aa7cc0474bf5c03252047a67d8a.jpg" width="750" height="2782">
 		</view>
 	</view>
 </template>
@@ -35,10 +35,14 @@
 <style lang="scss" scoped>
 	.level-description {
 		.content {
-			padding: 188rpx 40rpx 40rpx 40rpx;
+			padding-top: 50px;
 			background: url('../../../static/images/hm_bg.png') center center no-repeat;
 			background-size: 100% 100%;
 			font-size: 32rpx !important;
+			img {
+				    max-width: 100%;
+				    height: auto;
+			}
 		}
 		/* Border styles */
 		/deep/table thead, /deep/table tr {
