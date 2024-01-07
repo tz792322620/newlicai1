@@ -2,7 +2,7 @@
 	<view class="level-description">
 		<nav-bar :title="data.title"></nav-bar>
 		<view class="content" >
-			<img alt="level.jpg" src="https://api.broadreachvip.top/uploads/20240106/e0883aa7cc0474bf5c03252047a67d8a.jpg" width="750" height="2782">
+			<img alt="level.jpg" src="@/static/images/my/level.jpg" width="750" height="2782">
 		</view>
 	</view>
 </template>
