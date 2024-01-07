@@ -38,7 +38,7 @@
 					</view>
 					<view style="color: #fff;" class="gradient-background">{{$t('uploadFront')}}</view>
 				</view>
-				<image v-else :src="$url + data.front_image" style="width: 320rpx;height: 260rpx;" mode=""
+				<image v-else :src="data.front_image" style="width: 320rpx;height: 260rpx;" mode=""
 					@click="uploadImage(0)"></image>
 				<view style="background-color: #E1F8F2;padding: 1rem;text-align: center;" v-if="!data.back_image"
 					@click="uploadImage(1)">
@@ -47,7 +47,7 @@
 					</view>
 					<view style="color: #fff;" class="gradient-background">{{$t('uploadBack')}}</view>
 				</view>
-				<image v-else :src="$url + data.back_image" style="width: 320rpx;height: 260rpx;" mode=""
+				<image v-else :src="data.back_image" style="width: 320rpx;height: 260rpx;" mode=""
 					@click="uploadImage(1)"></image>
 			</view>
 			<view class="top1">{{$t('tokenNotice')}}</view>

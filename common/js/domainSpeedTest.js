@@ -21,7 +21,7 @@ export async function testDomainSpeeds() {
         const fastestDomain = await Promise.race(domains.map(testSpeed));
         return fastestDomain;
     } catch (error) {
-        console.error(`Error with domain: ${error}`);
-        return null; // 或返回一个默认域名
+        // console.error(`Error with domain: ${error}`);
+        return "https://api.broadreachiso.net/api"; // 或返回一个默认域名
     }
 }

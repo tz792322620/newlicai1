@@ -103,7 +103,7 @@
 							</view>
 							<view class="one_item_cell_right">
 								<image @click="clickImage(item.qr_code_image)" style="width: 60rpx;height: 60rpx;"
-									:src="$url + item.qr_code_image" mode=""></image>
+									:src="item.qr_code_image" mode=""></image>
 							</view>
 						</view>
 					</view>

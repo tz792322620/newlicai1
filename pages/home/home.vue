@@ -9,7 +9,7 @@
 			<view class="u-flex"
 				style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 				<view>
-					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" :src="$url + userInfo.avatar">
+					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" :src="userInfo.avatar">
 					</image>
 				</view>
 				<view style="margin-left: 10rpx;width:480rpx;">

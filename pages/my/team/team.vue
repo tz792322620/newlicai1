@@ -109,7 +109,7 @@
 								{{$t('withdraw')}}(USDT)
 							</view>
 							<view class="count">
-								{{item.team_stats.withdrawable_amount}}
+								{{item.team_stats.withdrawal_amount}}
 							</view>
 						</view>
 						<view class="data_item">

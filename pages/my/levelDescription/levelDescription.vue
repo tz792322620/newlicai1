@@ -2,7 +2,7 @@
 	<view class="level-description">
 		<nav-bar :title="data.title"></nav-bar>
 		<view class="content" >
-			<img alt="level.jpg" src="@/static/images/my/level.jpg" width="750" height="2782">
+			<image alt="level.jpg" src="../../../static/images/my/level.jpg" mode="widthFix" style="width: 100%;">
 		</view>
 	</view>
 </template>
@@ -39,10 +39,10 @@
 			background: url('../../../static/images/hm_bg.png') center center no-repeat;
 			background-size: 100% 100%;
 			font-size: 32rpx !important;
-			img {
-				    max-width: 100%;
-				    height: auto;
-			}
+			// image {
+			// 	    max-width: 100%;
+			// 	    height: auto;
+			// }
 		}
 		/* Border styles */
 		/deep/table thead, /deep/table tr {

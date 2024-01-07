@@ -65,7 +65,7 @@
 						{{$t('amount')}}
 					</view>
 					<view class="cell_right">
-						{{item.earnings_amount}}
+						{{item.earnings_amount}}USDT
 					</view>
 				</view>
 			</view>
