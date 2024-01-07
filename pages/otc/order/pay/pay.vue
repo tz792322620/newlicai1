@@ -13,7 +13,7 @@
 				{{$t('timeOut')}}
 			</view>
 			<view class="price">
-				¥{{(Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount).toFixed(2))}}
+				¥{{(Number(Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)).toFixed(2))}}
 			</view>
 			<view class="content">
 				<view class="one">
@@ -207,7 +207,7 @@
 			},
 			clickImage(url) {
 				uni.previewImage({
-					urls: [this.$url + url]
+					urls: [url]
 				});
 			},
 			copy(item) {

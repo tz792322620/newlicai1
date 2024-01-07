@@ -17,13 +17,7 @@ function request(options = {}) {
 		//成功
 		options.success = (res) => {
 				uni.hideLoading()
-				// if (options.method === 'POST') {
-				// 	let lang = Vue.prototype.$store.state.lang
-				// 	uni.showToast({
-				// 		title: lang === 1 ? res.data.cn_msg : res.data.msg,
-				// 		icon: 'none'
-				// 	})
-				// }
+
 				if (res.data.code === 401) {
 					uni.showToast({
 						title: res.data.msg,

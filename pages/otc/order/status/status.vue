@@ -23,7 +23,8 @@
 						{{$t('totalAmount')}}
 					</view>
 					<view class="deal_cell_right">
-						¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
+						¥{{Number(Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)).toFixed(2)}}
+						
 					</view>
 				</view>
 				<view class="deal_cell">

@@ -4,7 +4,7 @@
 		<view class="content">
 			<view class="title">
 				<image src="../../../../static/images/otc/order/cancel.png" mode=""></image>
-				{{userId == tradeInfo.seller_id ? $t('sellerAppeal') : tradeInfo.buyer_id ? $t('buyerAppeal') : ''}}
+				{{tradeInfo.complaint.complainant == 'seller' ? $t('sellerAppeal') : $t('buyerAppeal')}}
 			</view>
 			<view class="sub-title">
 				{{$t('appealWillBeAt')}}<text>{{$t('24Hours')}}</text>{{$t('completedWithin')}}
@@ -19,7 +19,7 @@
 						{{$t('totalAmount')}}
 					</view>
 					<view class="deal_cell_right">
-						¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
+						¥{{Number(Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)).toFixed(2)}}
 					</view>
 				</view>
 				<view class="deal_cell">
@@ -113,10 +113,10 @@
 				<view class="buttons_cancel" v-if="userId == tradeInfo.complaint.user_id" @click="toCancelOrder">
 					{{$t('cancelOrder')}}
 				</view>
-				<view class="buttons_appeal" v-if="userId == tradeInfo.complaint.user_id" @click="tradeInfo.complaint.status == 'Pending' ? cancelAppeal : ''">
+				<view class="buttons_appeal"  v-if="userId == tradeInfo.complaint.user_id" @click="cancelAppeal">
 					{{tradeInfo.complaint.status == 'Pending' ? $t('cancelAppeal') : $t('appealProcessed')}}
 				</view>
-				<view class="buttons_appeal active" v-else>
+				<view @click="cancelAppeal" class="buttons_appeal  active"  v-else>
 					{{$t('watingAppealResult')}}
 				</view>
 			</view>
@@ -158,6 +158,7 @@
 				})
 			},
 			async cancelAppeal() {
+				console.log(1111)
 				const res = await cancelComplaint({
 					id: this.tradeInfo.complaint.complaint_id
 				})

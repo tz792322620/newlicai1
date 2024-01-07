@@ -31,7 +31,7 @@
 						{{$t('totalAmount')}}
 					</view>
 					<view class="deal_cell_right">
-						¥{{Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)}}
+						¥{{Number(Number(tradeInfo.trade_price) * Number(tradeInfo.trade_amount)).toFixed(2)}}
 					</view>
 				</view>
 				<view class="deal_cell">
@@ -87,13 +87,11 @@
 					<image :src="tradeInfo.payment_image" mode=""></image>
 				</view>
 			</view>
-			<view class="buttons_appeal" v-if="timestamp < 0" @click="toAppeal">
+
+			<view class="buttons" v-if="tradeInfo.status == 'Processing'">
+			<view class="buttons_appeal"  @click="toAppeal">
 				{{$t('appeal')}}
 			</view>
-			<view class="buttons" v-if="tradeInfo.status == 'Processing'">
-				<view class="buttons_appeal" @click="toAppeal">
-					{{$t('appeal')}}
-				</view>
 				<view class="buttons_cancel" @click="confirm">
 					{{$t('confirmPayment')}}
 				</view>
@@ -144,6 +142,10 @@
 					this.tradeInfo = res.data
 					const userId = JSON.parse(uni.getStorageSync('userInfo')).user_id
 					this.identity = userId == res.data.seller_id ? 'seller' : userId == res.data.buyer_id ? 'buyer' : ''
+					const dateTime = Date.parse(new Date())/1000 // 获取当前时间戳秒级
+					const currentTimestamp = 1800 - (dateTime - res.data.update_time)
+					this.timestamp = currentTimestamp
+					console.log(currentTimestamp)
 				}
 			},
 			async confirm() {
