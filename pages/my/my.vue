@@ -7,12 +7,12 @@
 			</view>
 			<view style="border-radius: 12rpx;background-color: #fff;padding:30rpx;margin-top: 200rpx;">
 				<view class="u-flex" style="position: relative;top: -80rpx;">
-      <view class="avatar"
-        :style="`position: relative;width:188rpx;height:188rpx;border-radius: 50%;background: url(${avatarUrl}) center center no-repeat;background-size: 100% 100%;margin-right: 30rpx;`">
-        <image style="position: absolute;bottom: 0;right: 0;width: 48rpx;height: 48rpx;"
-          src="../../static/images/my/edit.png" mode="" @click="navigateTo('/pages/my/info/info')">
-        </image>
-      </view>
+				  <view class="avatar"
+					:style="`position: relative;width:188rpx;height:188rpx;border-radius: 50%;background: url(${avatarUrl}) center center no-repeat;background-size: 100% 100%;margin-right: 30rpx;`">
+					<image style="position: absolute;bottom: 0;right: 0;width: 48rpx;height: 48rpx;"
+					  src="../../static/images/my/edit.png" mode="" @click="navigateTo('/pages/my/info/info')">
+					</image>
+				  </view>
 					<view style="margin-top:60rpx;">
 						<view style="font-weight: bold;font-size: 32rpx;display: flex;align-items: center;">
 							{{ userInfo.nickname }}
@@ -134,7 +134,7 @@
 			        return this.defaultAvatar;
 			      }
 			      // 否则，假定它是一个外部链接
-			      return this.$url + this.userInfo.avatar;
+			      return this.userInfo.avatar;
 			    }
 			    // 如果 userInfo.avatar 不存在，返回默认头像
 			    return this.defaultAvatar;

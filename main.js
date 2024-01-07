@@ -7,6 +7,7 @@ import VueI18n from 'vue-i18n';
 import en from './locales/en.json';
 import zhCN from './locales/zh-CN.json';
 import zhTW from './locales/zh-TW.json';
+import { testDomainSpeeds } from './common/js/domainSpeedTest' // 引入测速脚本
 // import '@/static/js/polyfill.min.js'
 // import '@/static/js/riddler-sdk-0.2.2.js'
 // 配置防止重复点击公共方法
@@ -31,8 +32,7 @@ const i18n = new VueI18n({
 	}
 });
 
-// main.js
-Vue.prototype.$imgPrefix = 'https://api.broadreachvip.top/';
+
 
 Vue.config.productionTip = false
 // 时间戳转日期
@@ -95,16 +95,34 @@ Vue.filter('tranNumber', (num) => {
 		return parseFloat(parseInt(num/100000000)+'.'+decimal)+'亿'
    }
 })
-Vue.prototype.$Ajax3 = Ajax3
-Vue.prototype.$tools = tools
-Vue.prototype.$url = 'https://api.broadreachvip.top'
-Vue.prototype._i18n = i18n
-App.mpType = 'app'
-const app = new Vue({
-	i18n,
-	...App
-})
-app.$mount()
+
+testDomainSpeeds().then(fastestDomain => {
+    // 设置最快域名为基础 URL
+    Vue.prototype.$url = fastestDomain || 'https://default-domain.com';
+    
+	Vue.prototype.$Ajax3 = Ajax3
+	Vue.prototype.$tools = tools
+	Vue.prototype.$imgPrefix = 'https://api.broadreachvip.top/';
+	Vue.prototype._i18n = i18n
+	App.mpType = 'app'
+	const app = new Vue({
+		i18n,
+		...App
+	})
+	app.$mount()
+});
+
+// Vue.prototype.$Ajax3 = Ajax3
+// Vue.prototype.$tools = tools
+// Vue.prototype.$url = 'https://api.broadreachvip.top/'
+// Vue.prototype.$imgPrefix = 'https://api.broadreachvip.top/';
+// Vue.prototype._i18n = i18n
+// App.mpType = 'app'
+// const app = new Vue({
+// 	i18n,
+// 	...App
+// })
+// app.$mount()
 // #endif
 
 // #ifdef VUE3

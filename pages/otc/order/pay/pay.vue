@@ -88,7 +88,7 @@
 						<text>{{$t('uploadPaymentVoucher')}}</text>
 					</view>
 					<view style="width: 280rpx;height: 200rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
-						<image :src="$url + payment_image" mode="" style="width: 100%;height: 100%;"></image>
+						<image :src="payment_image" mode="" style="width: 100%;height: 100%;"></image>
 					</view>
 				</view>
 				<view class="buttons" @click="toCollect">
@@ -147,7 +147,7 @@
 							mask: true
 						})
 						uni.uploadFile({
-							url: this.$url + '/api/image/upload',
+							url: this.$url + '/image/upload',
 							filePath: tempFilePaths[0],
 							name: 'image',
 							header: header,

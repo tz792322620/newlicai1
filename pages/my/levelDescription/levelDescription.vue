@@ -35,7 +35,7 @@
 <style lang="scss" scoped>
 	.level-description {
 		.content {
-			padding-top: 50px;
+			padding-top: 90px;
 			background: url('../../../static/images/hm_bg.png') center center no-repeat;
 			background-size: 100% 100%;
 			font-size: 32rpx !important;

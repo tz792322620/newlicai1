@@ -7,8 +7,8 @@
 //iospay.wisdomallltd.com
 //openapi.wisdomallltd.com
 // 正式
-const IP = 'api.broadreachvip.top/api'
-const IP1 = 'api.broadreachvip.top/api'
+const IP = ''
+const IP1 = ''
 var ISHTTPS = true;
 var version = "1.0.9";
 

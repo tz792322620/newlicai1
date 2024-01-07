@@ -84,7 +84,7 @@
 					{{$t('paymentVoucher')}}
 				</view>
 				<view class="slot-btn" v-if="tradeInfo.payment_image">
-					<image :src="$url + tradeInfo.payment_image" mode=""></image>
+					<image :src="tradeInfo.payment_image" mode=""></image>
 				</view>
 			</view>
 			<view class="buttons_appeal" v-if="timestamp < 0" @click="toAppeal">

@@ -48,7 +48,7 @@
 					<text>{{$t('enterQCode')}}</text>
 				</view>
 				<view style="width: 280rpx;height: 280rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
-					<image :src="$url + data.qr_code_image" mode="" style="width: 100%;height: 100%;"></image>
+					<image :src="data.qr_code_image" mode="" style="width: 100%;height: 100%;"></image>
 				</view>
 			</view>
 			<view class="item" v-if="activeIndex === 2">
@@ -178,7 +178,7 @@
 							mask: true
 						})
 						uni.uploadFile({
-							url: this.$url + '/api/image/upload',
+							url: this.$url + '/image/upload',
 							filePath: tempFilePaths[0],
 							name: 'image',
 							header: header,

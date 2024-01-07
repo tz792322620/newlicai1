@@ -25,7 +25,7 @@
 				</view>
 				<view class="content-item_four">
 					<view class="content-item_four_left noBank">
-						<image :src="$url + item.qr_code_image" mode=""></image>
+						<image :src="item.qr_code_image" mode=""></image>
 					</view>
 					<view class="content-item_four_right">
 						<!-- <image src="../../../static/images/otc/payment/true.png" mode=""></image> -->

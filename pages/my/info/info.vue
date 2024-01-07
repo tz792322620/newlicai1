@@ -7,7 +7,7 @@
 			</view>
 		</view>
 		<view class="avatar">
-			<image class="avatar_img" :src="$url + userInfo.avatar" mode=""></image>
+			<image class="avatar_img" :src="userInfo.avatar" mode=""></image>
 			<image class="avatar_camera" src="@/static/images/my/info/camera.png" mode="" @click="show = true"></image>
 		</view>
 		<view class="cell-group">
@@ -153,7 +153,7 @@
 							mask: true
 						})
 						uni.uploadFile({
-							url: that.$url + '/api/user/uploadAvatar',
+							url: that.$url + '/user/uploadAvatar',
 							filePath: tempFilePaths[0],
 							name: 'avatar',
 							header: header,

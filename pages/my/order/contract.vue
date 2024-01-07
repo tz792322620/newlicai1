@@ -98,8 +98,8 @@
 			  return str.startsWith('data:image');
 			},
 			fullImagePath(relativePath) {
-				console.log(this.$imgPrefix + relativePath)
-			  return this.$imgPrefix + relativePath;
+				// console.log(this.$imgPrefix + relativePath)
+			  return relativePath;
 			},
 			async getDetails(name) {
 				console.log(name)

@@ -40,7 +40,7 @@
 					<text>{{$t('uploadVoucher')}}</text>
 				</view>
 				<view style="width: 280rpx;height: 200rpx;border-radius: 12rpx;" @click="uploadImage" v-else>
-					<image :src="$url + data.appeal_proof" mode="" style="width: 100%;height: 100%;"></image>
+					<image :src="data.appeal_proof" mode="" style="width: 100%;height: 100%;"></image>
 				</view>
 			</view>
 			<view class="tips">
@@ -118,7 +118,7 @@
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						console.log(tempFilePaths[0])
 						uni.uploadFile({
-							url: this.$url + '/api/image/upload',
+							url: this.$url + '/image/upload',
 							filePath: tempFilePaths[0],
 							name: 'image',
 							header: header,

@@ -117,7 +117,7 @@
 					// #endif
 					
 					uni.uploadFile({
-						url: this.$url + '/api/image/upload',
+						url: this.$url + '/image/upload',
 						filePath: filePath,
 						name: 'image',
 						header: header,

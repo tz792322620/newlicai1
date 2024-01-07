@@ -161,7 +161,7 @@
 							mask: true
 						})
 						uni.uploadFile({
-							url: this.$url + '/api/image/upload',
+							url: this.$url + '/image/upload',
 							filePath: tempFilePaths[0],
 							name: 'image',
 							header: header,

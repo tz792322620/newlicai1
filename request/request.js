@@ -1,7 +1,5 @@
-// const BASE_URL = 'https://api.broadreachvip.top/api' // 测试
-const BASE_URL = 'https://api.broadreachvip.top/api' // 正式
-// const BASE_URL = '/api'
-import webUrl from '@/common/js/url.js'
+// const BASE_URL = 'https://api.broadreachvip.top/api'
+// import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
 
 function request(options = {}) {
@@ -10,7 +8,7 @@ function request(options = {}) {
 			mask: true
 		})
 	}
-	options.url = `${BASE_URL}${options.url}`;
+	options.url = `${Vue.prototype.$url}${options.url}`;
 	options.header = {
 		'token': uni.getStorageSync('token'),
 		'Accept-Language': uni.getStorageSync('language') ? uni.getStorageSync('language') : 'zh-CN'
