@@ -117,9 +117,9 @@
 					// #endif
 					
 					uni.uploadFile({
-						url: this.$url + '/image/upload',
+						url: this.$url + '/common/upload',
 						filePath: filePath,
-						name: 'image',
+						name: 'file',
 						header: header,
 						success: (uploadFileRes) => {
 							const res = JSON.parse(uploadFileRes.data)

@@ -114,7 +114,7 @@ export function createStockOrder(data) {
 // 上传图片
 export function uploadImage(data) {
 	return request({
-		url: '/image/upload',
+		url: '/common/upload',
 		method: 'POST',
 		data
 	})

@@ -118,9 +118,9 @@
 						const tempFilePaths = chooseImageRes.tempFilePaths;
 						console.log(tempFilePaths[0])
 						uni.uploadFile({
-							url: this.$url + '/image/upload',
+							url: this.$url + '/common/upload',
 							filePath: tempFilePaths[0],
-							name: 'image',
+							name: 'file',
 							header: header,
 							// formData: {
 							// 	'image': tempFilePaths[0]
