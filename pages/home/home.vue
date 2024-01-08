@@ -9,7 +9,7 @@
 			<view class="u-flex"
 				style="position: fixed;width: 100%;height: 88rpx;align-items: center;justify-content: center;left: 0;top: var(--status-bar-height);background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);z-index: 999;">
 				<view>
-					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" :src="userInfo.avatar">
+					<image style="width: 60rpx;height: 60rpx;border-radius: 50%;" :src="avatarUrl">
 					</image>
 				</view>
 				<view style="margin-left: 10rpx;width:480rpx;">
@@ -238,13 +238,14 @@
 		getGonggaoTypes
 	} from '@/api/api'
 	import FloatingCustomerService from '@/components/FloatingCustomerService/FloatingCustomerService.vue';
-
+	import tx from '@/static/images/my/txlogo1.jpg'
 	export default {
 		components: {
 			FloatingCustomerService
 		},
 		data() {
 			return {
+				defaultAvatar:tx,
 				config: {
 					title: '我看过的',
 					titlemore: '全部>',
@@ -275,6 +276,21 @@
 			// this.stockProductList()
 			// this.getStockProductListNewbie() // 精选股票
 			// this.getStockProductListTab()
+		},
+		computed: {
+			 avatarUrl() {
+			    // 检查 userInfo.avatar 是否存在
+			    if (this.userInfo && this.userInfo.avatar) {
+			      // 检查是否为 Base64 编码的图片
+			      if (this.userInfo.avatar.startsWith('data:image')) {
+			        return this.defaultAvatar;
+			      }
+			      // 否则，假定它是一个外部链接
+			      return this.userInfo.avatar;
+			    }
+			    // 如果 userInfo.avatar 不存在，返回默认头像
+			    return this.defaultAvatar;
+			  }
 		},
 		watch: {
 			'_i18n.locale': {

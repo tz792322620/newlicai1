@@ -110,7 +110,7 @@
 		otcGetListing,
 		getVerificationStatus
 	} from '@/api/api.js'
-	import tx from '@/static/images/my/txlogo.jpg' 
+	import tx from '@/static/images/my/txlogo1.jpg' 
 	export default {
 		data() {
 			return {
