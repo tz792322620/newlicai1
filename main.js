@@ -98,8 +98,8 @@ Vue.filter('tranNumber', (num) => {
 
 testDomainSpeeds().then(fastestDomain => {
     // 设置最快域名为基础 URL
-    // Vue.prototype.$url = fastestDomain || 'https://default-domain.com'; //正式
-    Vue.prototype.$url = 'https://api.broadreachvip.top'; //测试
+     Vue.prototype.$url = fastestDomain || 'https://default-domain.com'; //正式
+    // Vue.prototype.$url = 'https://api.broadreachvip.top'; //测试
 	Vue.prototype.$Ajax3 = Ajax3
 	Vue.prototype.$tools = tools
 	Vue.prototype.$imgPrefix = 'https://api.broadreachvip.top/';
