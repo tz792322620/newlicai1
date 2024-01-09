@@ -11,7 +11,7 @@
 		<view class="ylb1">
 			<view class="balance-display">
 				<view class="balance-label">{{$t('totalAssets')}}</view>
-				<view class="balance-amount" v-if="!dataInfo">¥0</view>
+				<view class="balance-amount" v-if="!dataInfo">0</view>
 				<view class="balance-amount" v-else>¥{{(Number(dataInfo.deposit_amount) + Number(dataInfo.frozen_amount)).toFixed(2)}}</view>
 				<view class="balance-details">
 					<view class="detail-item">
