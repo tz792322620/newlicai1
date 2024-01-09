@@ -672,5 +672,6 @@
 		"uuploadFails": "上傳失敗",
 		"minLimit": "低於最低限額",
 		"maxLimit": "超出最高限額",
-		"timeOut": "已超時"
+		"timeOut": "已超時",
+		"Distribute appreciation earnings": "分配增值收益"
 }
