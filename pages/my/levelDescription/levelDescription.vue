@@ -1,6 +1,6 @@
 <template>
 	<view class="level-description">
-		<nav-bar :title="data.title"></nav-bar>
+		<nav-bar :title="$t('levelDescriptions')"></nav-bar>
 		<view class="content" >
 			<image alt="level.jpg" src="../../../static/images/my/level.jpg" mode="widthFix" style="width: 100%;">
 		</view>
@@ -18,16 +18,16 @@
 			}
 		},
 		onShow() {
-			this.getData()
+			// this.getData()
 		},
 		methods: {
-			async getData() {
-				const res = await getGonggaoLogById(9)
-				if (res.code == 1) {
-					this.data = res.data
-				}
-				console.log(res)
-			}
+			// async getData() {
+			// 	const res = await getGonggaoLogById(9)
+			// 	if (res.code == 1) {
+			// 		this.data = res.data
+			// 	}
+			// 	console.log(res)
+			// }
 		}
 	}
 </script>
