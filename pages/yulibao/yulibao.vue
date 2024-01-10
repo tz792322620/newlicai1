@@ -11,7 +11,7 @@
 		<view class="ylb1">
 			<view class="balance-display">
 				<view class="balance-label">{{$t('totalAssets')}}</view>
-				<view class="balance-amount">¥{{dataInfo.investmentTotal}}</view>
+				<view class="balance-amount">{{dataInfo.investmentTotal}}</view>
 				<view class="balance-details">
 					<view class="detail-item">
 						<view>{{$t('dailyYield')}}</view>
