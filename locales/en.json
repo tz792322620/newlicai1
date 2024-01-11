@@ -668,5 +668,6 @@
 		"uuploadFails": "upload failed",
 		"minLimit": "below minimum",
 		"maxLimit": "Maximum limit exceeded",
-		"timeOut": "Time Out"
+		"timeOut": "Time Out",
+		"Points Mall": "Points Mall"
 }

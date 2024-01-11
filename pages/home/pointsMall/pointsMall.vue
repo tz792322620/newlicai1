@@ -1,0 +1,328 @@
+<template>
+	<view class="pointsMall">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
+		<view class="tabbar">
+			<image src="@/static/images/hfh.png" mode="" @click="back"></image>
+			<text>{{$t('recharge')}}</text>
+			<image src="@/static/images/home/pointsMall/right-icon.png" mode="" @click="toRecords"></image>
+		</view>
+		<view class="content" :style="[{marginTop: `${statusBarHeight*2 + 88}rpx`}]">
+			<view class="box1">
+				<view class="box1_left">
+					<view class="points">
+						100<text>积分</text>
+					</view>
+					<view class="desc">
+						别小看积分,它可以省大钱
+					</view>
+				</view>
+				<view class="box1_right">
+					<image src="@/static/images/home/pointsMall/currency.png" mode=""></image>
+				</view>
+			</view>
+			<view class="box2">
+				<view class="box2_top">
+					<view class="myOrder">
+						我的订单
+					</view>
+					<view class="more">
+						更多 <view class="img"></view>
+					</view>
+				</view>
+				<view class="box2_bottom">
+					<view class="item">
+						<view class="item_image">
+							<image src="@/static/images/home/pointsMall/ship.png" mode=""></image>
+						</view>
+						<view class="item_text">
+							待发货
+						</view>
+					</view>
+					<view class="item">
+						<view class="item_image">
+							<image src="@/static/images/home/pointsMall/shouhuo.png" mode=""></image>
+						</view>
+						<view class="item_text">
+							待收货
+						</view>
+					</view>
+					<view class="item">
+						<view class="item_image">
+							<image src="@/static/images/home/pointsMall/complete.png" mode=""></image>
+						</view>
+						<view class="item_text">
+							已完成
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="box3">
+				<view class="title">
+					<view class="title_img">
+						<image src="@/static/images/home/pointsMall/exchange-img.png" mode=""></image>
+					</view>
+					<view class="title_text">
+						好物兑换
+					</view>
+					<view class="title_img">
+						<image src="@/static/images/home/pointsMall/exchange-img.png" mode=""></image>
+					</view>
+				</view>
+				<view class="list">
+					<view class="list_item" :class="index === activeIndex ? 'active' : ''" v-for="(item,index) in 4" :key="index" @click="activeIndex = index">
+						<view class="list_item_left">
+							<image src="" mode=""></image>
+						</view>
+						<view class="list_item_right">
+							<view class="list_item_right_title">
+								小天鹅10KG滚筒洗衣机 护衣冷水洗 
+								3D立方内筒TG100VT86WMAD5
+							</view>
+							<view class="list_item_right_desc">
+								限量98件
+							</view>
+							<view class="list_item_right_bottom">
+								<view class="points-count">
+									10000积分
+								</view>
+								<view class="exchange">
+									兑换
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				statusBarHeight: 0, // 状态栏高度
+				activeIndex: 0 // 当前选中兑换下标
+			}
+		},
+		onShow() {
+			this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
+		},
+		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.pointsMall {
+		background: url('@/static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
+		padding-bottom: 30rpx;
+		.tabbar {
+			position: fixed;
+			width: 100%;
+			left: 0;
+			top: var(--status-bar-height);
+			background: linear-gradient(to right, #e3fcf5 0%, #bcf6e7 100%);
+			z-index: 999;
+			display: flex;
+			height: 88rpx;
+			padding: 20rpx 40rpx;
+			justify-content: space-between;
+		
+			image {
+				width: 48rpx;
+				height: 48rpx;
+			}
+		
+			text {
+				font-size: 36rpx;
+				font-weight: 600;
+				color: #333333;
+			}
+		}
+		.content {
+			padding: 0 30rpx;
+			.box1 {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 40rpx 0;
+				&_left {
+					.points {
+						font-size: 64rpx;
+						font-weight: bold;
+						color: #333333;
+						text {
+							font-size: 28rpx;
+							font-weight: 400;
+							margin-left: 10rpx;
+						}
+					}
+					.desc {
+						font-size: 28rpx;
+						font-weight: 400;
+						color: #999999;
+					}
+				}
+				&_right {
+					width: 240rpx;
+					height: 196rpx;
+					image {
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			.box2 {
+				background: #FFFFFF;
+				border-radius: 12rpx;
+				&_top {
+					display: flex;
+					justify-content: space-between;
+					padding: 20rpx;
+					border-bottom: 2rpx solid #F9F9F9;
+					.myOrder {
+						font-size: 28rpx;
+						font-weight: 500;
+						color: #000000;
+					}
+					.more {
+						font-size: 24rpx;
+						font-weight: 400;
+						color: #35CBA5;
+						display: flex;
+						align-items: center;
+						.img {
+							width: 40rpx;
+							height: 40rpx;
+							background-color: #35CBA5;
+							image {
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+				&_bottom {
+					padding: 30rpx 60rpx;
+					display: flex;
+					justify-content: space-between;
+					.item {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						&_image {
+							width: 60rpx;
+							height: 60rpx;
+							margin-bottom: 10rpx;
+							image {
+								width: 100%;
+								height: 100%;
+							}
+						}
+						&_text {
+							font-size: 24rpx;
+							font-weight: 400;
+							color: #333333;
+							line-height: 34rpx;
+						}
+					}
+				}
+			}
+			.box3 {
+				margin-top: 40rpx;
+				.title {
+					display: flex;
+					// align-items: center;
+					justify-content: center;
+					&_img {
+						width: 38rpx;
+						height: 22rpx;
+						image {
+							width: 100%;
+							height: 100%;
+						}
+					}
+					&_text {
+						margin: 0 20rpx;
+						font-size: 32rpx;
+						font-weight: 500;
+						color: #000000;
+					}
+				}
+				.list {
+					&_item {
+						margin-top: 30rpx;
+						display: flex;
+						padding: 20rpx;
+						background: #FFFFFF;
+						border-radius: 12rpx;
+						border: 2rpx solid rgba(53,203,165,0.4);
+						&.active {
+							border-color: #35CBA5;
+						}
+						&_left {
+							width: 180rpx;
+							height: 204rpx;
+							margin-right: 18rpx;
+							background-color: #35CBA5;
+							image {
+								width: 100%;
+								height: 100%;
+							}
+						}
+						&_right {
+							flex: 1;
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
+							&_title {
+								font-size: 28rpx;
+								font-weight: 500;
+								color: #000000;
+								line-height: 40rpx;
+							}
+							&_desc {
+								font-size: 24rpx;
+								font-weight: 500;
+								color: #999999;
+								line-height: 34rpx;
+							}
+							&_bottom {
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+								.points-count {
+									font-size: 28rpx;
+									font-weight: 500;
+									color: #35CBA5;
+									line-height: 40rpx
+								}
+								.exchange {
+									height: 44rpx;
+									font-size: 32rpx;
+									font-weight: 500;
+									color: #FFFFFF;
+									line-height: 44rpx;
+									padding: 0 38rpx;
+									background: linear-gradient(90deg, #69EEAB 0%, #21CCBA 100%);
+									border-radius: 46rpx;
+									filter: blur(0px);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+</style>

@@ -625,6 +625,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/home/pointsMall/pointsMall",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

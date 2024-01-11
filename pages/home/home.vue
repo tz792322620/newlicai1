@@ -27,26 +27,32 @@
 				</view>
 			</view>
 			<view :style="[{marginTop: `${statusBarHeight*2 + 88}rpx`},{color: '#333333'},{fontSize: '24rpx'}]">
-				<u-row gutter="16">
-					<u-col span="3" @click="gotoPage('/pages/yulibao/yulibao')">
+				<u-row gutter="0">
+					<u-col span="2.4" @click="gotoPage('/pages/yulibao/yulibao')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm3.png"></image>
 							<view>{{$t('yulibao')}}</view>
 						</view>
 					</u-col>
-					<u-col span="3" @click="gotoPage('/pages/my/order/order')">
+					<u-col span="2.4" @click="gotoPage('/pages/my/order/order')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm4.png"></image>
 							<view>{{$t('newStockOrders')}}</view>
 						</view>
 					</u-col>
-					<u-col span="3" @click="gotoPage('/pages/recharge/recharge')">
+					<u-col span="2.4" @click="gotoPage('/pages/home/pointsMall/pointsMall')">
+						<view class="u-text-center">
+							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/home/points.png"></image>
+							<view>{{$t('Points Mall')}}</view>
+						</view>
+					</u-col>
+					<u-col span="2.4" @click="gotoPage('/pages/recharge/recharge')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm5.png"></image>
 							<view>{{$t('czrk')}}</view>
 						</view>
 					</u-col>
-					<u-col span="3" @click="gotoPage('/pages/withdraw/withdraw')">
+					<u-col span="2.4" @click="gotoPage('/pages/withdraw/withdraw')">
 						<view class="u-text-center">
 							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/hm6.png"></image>
 							<view>{{$t('txrk')}}</view>
@@ -228,6 +234,8 @@
 		</view>
 		<!-- <floating-customer-service></floating-customer-service> -->
 		<liu-drag-button @clickBtn="clickBtn">{{$t('customerService')}}</liu-drag-button>
+		<!-- 弹窗 -->
+		<Pop-ups :show="showPopup" @closed="closePopup"></Pop-ups>
 	</view>
 </template>
 
@@ -245,6 +253,7 @@
 		},
 		data() {
 			return {
+				showPopup: true,
 				config: {
 					title: '我看过的',
 					titlemore: '全部>',
@@ -290,6 +299,9 @@
 			}
 		},
 		methods: {
+			closePopup(bool) {
+				this.showPopup = bool
+			},
 			toSearch() {
 				uni.navigateTo({
 					url: '/pages/search/search'
@@ -416,6 +428,9 @@
 </script>
 
 <style scoped lang="scss">
+	/deep/.u-row {
+		align-items: flex-start !important;
+	}
 	.status_bar {
 		height: var(--status-bar-height);
 		width: 100%;
