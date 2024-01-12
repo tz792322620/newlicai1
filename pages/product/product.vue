@@ -23,7 +23,12 @@
             <view
                 style="margin-top: 30rpx;background-color: #ffffff;box-shadow: 0px 0px 24rpx 0px rgba(0,0,0,0.05); padding: 30rpx;border-radius: 12rpx;"
                 v-for="(item,index) in stockProductListTab" :key="index" @click="toDetails(item)">
-				<view>{{item.product_code}}</view>
+				
+				<view style="display: flex;justify-content: space-between;align-items: center;" v-if="item.is_gift_red_packet == 1">
+					<view>{{item.product_code}}</view>
+					<image  mode="aspectFit" style="width: 20px;height: 18px;" src="../../static/images/product/hb1.png"></image>
+				</view>
+				<view v-else >{{item.product_code}}</view>
                 <view>{{item.product_name_cn}}</view>
                 <view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
                     <view style="width: 300rpx;">{{ $t('yieldRate') }}：<text

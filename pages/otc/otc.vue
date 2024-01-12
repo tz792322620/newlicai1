@@ -62,7 +62,7 @@
 					<!-- <view style="width: 300rpx;color: #AFAFAF;font-size: 24rpx;" class="u-text-right">508订单｜94%</view> -->
 				</view>
 				<view class="u-flex" style="margin-top: 10rpx;">
-					<view style="font-size: 36rpx;color: #F75F52;width:500rpx;">¥{{item.price}}</view>
+					                    <view style="font-size: 36rpx;color: #F75F52;width:500rpx;">{{item.currency | currencySymbol}}{{item.price}}</view>
 					<!-- <view style="width:160rpx;color: #AFAFAF;" class="u-text-right">在线</view> -->
 				</view>
 				<view class="u-flex" style="margin-top: 10rpx;">
@@ -110,7 +110,7 @@
 		otcGetListing,
 		getVerificationStatus
 	} from '@/api/api.js'
-	import tx from '@/static/images/my/txlogo.jpg' 
+	import tx from '@/static/images/my/txlogo1.jpg' 
 	export default {
 		data() {
 			return {
@@ -215,7 +215,7 @@
 			       return this.defaultAvatar;
 			     }
 			     // 否则，假定它是一个外部链接
-			     return this.$url + avatar;
+			     return avatar;
 			   }
 			   // 如果 userInfo.avatar 不存在，返回默认头像
 			   return this.defaultAvatar;

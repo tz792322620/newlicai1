@@ -15,9 +15,9 @@
 					{{$t('sign')}}
 				</view>
 				<view class="sign">
-					<view class="sign_full">
+<!-- 					<view class="sign_full">
 						<image src="../../../static/images/product/security/full.png" mode=""></image>
-					</view>
+					</view> -->
 					<view class="sign_box">
 						<jp-signature ref="signatureRef"></jp-signature>
 					</view>
@@ -43,6 +43,13 @@
 				</view>
 			</view>
 		</view>
+    <u-popup v-model="popupShow" mode="center" border-radius="30">
+        <view class="popup-content">
+            <image style="width: 300px; height: 300px; position: relative;" mode="aspectFit" src="../../../static/images/product/hb.png">
+                <view style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);    color: rgb(228 21 16);font-size: 24px;font-weight: 700;">0.5USDT</view>
+            </image>
+        </view>
+    </u-popup>
 	</view>
 </template>
 
@@ -54,6 +61,7 @@
 	export default {
 		data() {
 			return {
+				popupShow: false,
 				noClick: true,
 				investData: {
 					product_id: '',
