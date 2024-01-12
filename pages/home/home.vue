@@ -13,7 +13,8 @@
 					</image>
 				</view>
 				<view style="margin-left: 10rpx;width:480rpx;">
-					<u-search bg-color="#FFFFFF" :placeholder="$t('search')" :disabled="true"  @click="toSearch" :show-action="false">
+					<u-search bg-color="#FFFFFF" :placeholder="$t('search')" :disabled="true" @click="toSearch"
+						:show-action="false">
 					</u-search>
 				</view>
 				<view>
@@ -42,7 +43,8 @@
 					</u-col>
 					<u-col span="2.4" @click="gotoPage('/pages/home/pointsMall/pointsMall')">
 						<view class="u-text-center">
-							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/home/points.png"></image>
+							<image style="width: 92rpx;height: 92rpx;" src="../../static/images/home/points.png">
+							</image>
 							<view>{{$t('Points Mall')}}</view>
 						</view>
 					</u-col>
@@ -65,7 +67,7 @@
 				class="u-flex" @click="gotoNotice">
 				<image style="width:28rpx;height:28rpx;margin-right: 20rpx;" src="../../static/images/hm7.png"></image>
 				<view class="f_bod" style="width:580rpx;color: #333333;">{{notice}}</view>
-		<!-- 		<u-icon name="close-circle" color="#575B66" size="28"></u-icon> -->
+				<!-- 		<u-icon name="close-circle" color="#575B66" size="28"></u-icon> -->
 			</view>
 		</view>
 		<view
@@ -84,15 +86,18 @@
 						<view>{{item.product_name_cn}}</view>
 						<!-- <view style="color: #999999;font-size: 24rpx;">603809.sz</view> -->
 					</view>
-					<view class="col35 f_bod" style="font-size: 32rpx;">{{Number(item.interest_rate * 100).toFixed(2)}}%</view>
-					<view class="" style="font-size: 32rpx;color:#999999;margin-left:80rpx;">{{item.investment_period}}{{$t('days')}}</view>
+					<view class="col35 f_bod" style="font-size: 32rpx;">{{Number(item.interest_rate * 100).toFixed(2)}}%
+					</view>
+					<view class="" style="font-size: 32rpx;color:#999999;margin-left:80rpx;">
+						{{item.investment_period}}{{$t('days')}}</view>
 				</view>
 				<view style="margin-top:15rpx;">
 					<u-line color="#F3F3F3"></u-line>
 				</view>
 			</view>
 
-			<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35 u-text-center" @click="toProduct">
+			<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35 u-text-center"
+				@click="toProduct">
 				{{$t('more')}}
 			</view>
 
@@ -110,7 +115,8 @@
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
 								{{Number(item.interest_rate * 100).toFixed(2)}}%
 							</view>
-							<view style="margin-top: 20rpx;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}{{$t('qitou')}}</view>
+							<view style="margin-top: 20rpx;">
+								{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}{{$t('qitou')}}</view>
 						</view>
 
 					</swiper-item>
@@ -204,11 +210,14 @@
 								<view style="display: flex;align-items: center;">
 									<u-line-progress active-color="#6BEEAB" height="18"
 										:percent="Number(item.progress)"></u-line-progress>
-										<text style="font-size: 24rpx;color: #21BF90;margin-left: 20rpx;">{{Number(item.progress).toFixed(2)}}%</text>
+									<text
+										style="font-size: 24rpx;color: #21BF90;margin-left: 20rpx;">{{Number(item.progress).toFixed(2)}}%</text>
 								</view>
 								<view class="u-flex" style="color: #999999;font-size: 20rpx;">
-									<view style="width:50rpx;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</view>
-									<view class="u-text-right" style="width: 220rpx;">{{Number(item.max_purchase_amount) | tranNumber}}{{$t('yuan')}}</view>
+									<view style="width:50rpx;">
+										{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</view>
+									<view class="u-text-right" style="width: 220rpx;">
+										{{Number(item.max_purchase_amount) | tranNumber}}{{$t('yuan')}}</view>
 								</view>
 							</view>
 						</u-col>
@@ -221,7 +230,7 @@
 						<u-col span="3">
 							<view class="u-text-right">
 								<view style="color: #F75F52;">{{Number(item.interest_rate * 100).toFixed(2)}}%</view>
-<!-- 								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
+								<!-- 								<view style="margin-top: 10rpx;">{{$t('qitou')}}:<text
 										style="color: #F75F52;">{{Number(item.min_purchase_amount) | tranNumber}}{{$t('yuan')}}</text></view> -->
 							</view>
 						</u-col>
@@ -247,7 +256,7 @@
 		getLatestPopupGonggao
 	} from '@/api/api'
 	import FloatingCustomerService from '@/components/FloatingCustomerService/FloatingCustomerService.vue';
-    import tx from '@/static/images/my/txlogo1.jpg'
+	import tx from '@/static/images/my/txlogo1.jpg'
 	export default {
 		components: {
 			FloatingCustomerService
@@ -255,7 +264,7 @@
 		data() {
 			return {
 				showPopup: true,
-				defaultAvatar:tx,
+				defaultAvatar: tx,
 				config: {
 					title: '我看过的',
 					titlemore: '全部>',
@@ -303,20 +312,20 @@
 			}
 		},
 		computed: {
-			 avatarUrl() {
-			    // 检查 userInfo.avatar 是否存在
-			    if (this.userInfo && this.userInfo.avatar) {
-			      // 检查是否为 Base64 编码的图片
-			      if (this.userInfo.avatar.startsWith('data:image')) {
-			        return this.defaultAvatar;
-			      }
-			      // 否则，假定它是一个外部链接
-			      return this.userInfo.avatar;
-			    }
-			    // 如果 userInfo.avatar 不存在，返回默认头像
-			    return this.defaultAvatar;
-			  },
+			avatarUrl() {
+				// 检查 userInfo.avatar 是否存在
+				if (this.userInfo && this.userInfo.avatar) {
+					// 检查是否为 Base64 编码的图片
+					if (this.userInfo.avatar.startsWith('data:image')) {
+						return this.defaultAvatar;
+					}
+					// 否则，假定它是一个外部链接
+					return this.userInfo.avatar;
+				}
+				// 如果 userInfo.avatar 不存在，返回默认头像
+				return this.defaultAvatar;
 			},
+		},
 		methods: {
 			async getPopupNotice() {
 				const res = await getLatestPopupGonggao()
@@ -327,18 +336,18 @@
 			closePopup(bool) {
 				this.showPopup = bool
 			},
-			 avatarUrl() {
+			avatarUrl() {
 				// 检查 userInfo.avatar 是否存在
 				if (this.userInfo && this.userInfo.avatar) {
-				  // 检查是否为 Base64 编码的图片
-				  if (this.userInfo.avatar.startsWith('data:image')) {
-					return this.defaultAvatar;
-				  }
-				  // 否则，假定它是一个外部链接
-				  return this.userInfo.avatar;
+					// 检查是否为 Base64 编码的图片
+					if (this.userInfo.avatar.startsWith('data:image')) {
+						return this.defaultAvatar;
+					}
+					// 否则，假定它是一个外部链接
+					return this.userInfo.avatar;
 				}
 				// 如果 userInfo.avatar 不存在，返回默认头像
-				return this.defaultAvatar;    
+				return this.defaultAvatar;
 			},
 			toSearch() {
 				uni.navigateTo({
@@ -469,6 +478,7 @@
 	/deep/.u-row {
 		align-items: flex-start !important;
 	}
+
 	.status_bar {
 		height: var(--status-bar-height);
 		width: 100%;
