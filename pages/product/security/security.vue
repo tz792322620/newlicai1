@@ -43,13 +43,16 @@
 				</view>
 			</view>
 		</view>
-    <u-popup v-model="popupShow" mode="center" border-radius="30">
-        <view class="popup-content">
-            <image style="width: 300px; height: 300px; position: relative;" mode="aspectFit" src="../../../static/images/product/hb.png">
-                <view style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);    color: rgb(228 21 16);font-size: 24px;font-weight: 700;">0.5USDT</view>
-            </image>
-        </view>
-    </u-popup>
+		<u-popup v-model="popupShow" mode="center" border-radius="30" :mask-close-able="false">
+			<view class="popup-content">
+				<image style="width: 300px; height: 300px; position: relative;" mode="aspectFit" src="../../../static/images/product/hb.png">
+					<view style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); color: rgb(228, 21, 16); font-size: 15px; font-weight: 700;">{{$t('congratulations')}}</view>
+					<view style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgb(228 21 16); font-size: 24px; font-weight: 700;">{{investData.red_packet_amount}}USDT</view>
+					<view style="position: absolute; top: 87%; left: 50%; transform: translate(-50%, -50%); color: rgb(228 21 16); font-size: 20px; font-weight: 700;" @click="toSearch">{{$t('checkOrder')}}</view>
+				</image>
+			</view>
+		</u-popup>
+
 	</view>
 </template>
 
@@ -69,7 +72,8 @@
 					signature_image_path: '',
 					pay_password: '',
 					discount_coupon_id: '',
-					interest_coupon_id: ''
+					interest_coupon_id: '',
+					red_packet_amount:0
 				}
 			}
 		},
@@ -85,6 +89,7 @@
 				this.investData.investment_amount = params.amount
 				this.investData.interest_coupon_id = params.interestId
 				this.investData.discount_coupon_id = params.discountId
+				this.investData.red_packet_amount = params.red_packet_amount
 			}
 		},
 		methods: {
@@ -201,20 +206,24 @@
 						// uni.reLaunch({
 						// 	url: '/pages/my/order/order'
 						// })
-						uni.showToast({
-							title: res.msg,
-							icon: 'none',
-							success: () => {
-								setTimeout(() => {
-									// uni.switchTab({
-									// 	url: '/pages/my/my'
-									// })
-									uni.navigateTo({
-										url: '/pages/my/order/order'
-									})
-								}, 1000)
-							}
-						})
+						if(this.investData.red_packet_amount > 0){
+							this.popupShow =true;
+						}else{
+							uni.showToast({
+								title: res.msg,
+								icon: 'none',
+								success: () => {
+									setTimeout(() => {
+										// uni.switchTab({
+										// 	url: '/pages/my/my'
+										// })
+										uni.navigateTo({
+											url: '/pages/my/order/order'
+										})
+									}, 1000)
+								}
+							})
+						}
 					}
 				} catch (e) {
 					//TODO handle the exception
@@ -223,7 +232,12 @@
 						this.noClick = true
 					}, 2000)
 				}
-			}
+			},
+			toSearch() {
+				uni.navigateTo({
+					url: '/pages/my/order/order'
+				})
+			},
 		}
 	}
 </script>

@@ -679,6 +679,8 @@
 		"Team position amount": "团队建仓金额",
 		"To be collected": "待领取",
 		"Received": "已领取",
-		"isReceived": "是否领取"
+		"isReceived": "是否领取",
+		 "congratulations": "恭喜获得红包奖励",
+		  "checkOrder": "查看订单"
 		
 }

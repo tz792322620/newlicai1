@@ -679,5 +679,7 @@
 		"Team position amount": "團隊建倉金額",
 		"To be collected": "待領取",
 		"Received": "已領取",
-		"isReceived": "是否領取"
+		"isReceived": "是否領取",
+		"congratulations": "恭喜獲得紅包獎勵",
+		  "checkOrder": "查看訂單"
 }

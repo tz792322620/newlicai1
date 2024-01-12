@@ -202,6 +202,7 @@
 				isJiaxiShow: false, // 是否显示加息券弹窗
 				jiaxiActiveIndex: -1, // 当前选中加息券下标
 				jiaxiName: '', // 加息券名称
+				red_packet_amount:0
 			}
 		},
 		onShow() {
@@ -278,6 +279,7 @@
 					this.productInfo = res.data
 					this.isDikou = res.data.userdiscountCoupons.length !== 0 ? true : false
 					this.isJiaxi = res.data.userinterestCoupons.length !== 0 ? true : false
+					this.red_packet_amount = res.data.red_packet_amount
 					// this.investmentAmount = parseInt(res.data.amount_per_unit)
 				}
 				uni.hideLoading()
@@ -315,7 +317,7 @@
 					})
 				}
 				uni.navigateTo({
-					url: `/pages/product/security/security?id=${this.productId}&amount=${this.investmentAmount}&discountId=${this.discount_coupon_id}&interestId=${this.interest_coupon_id}`
+					url: `/pages/product/security/security?id=${this.productId}&amount=${this.investmentAmount}&discountId=${this.discount_coupon_id}&interestId=${this.interest_coupon_id}&red_packet_amount=${this.red_packet_amount}`
 				})
 			}
 		}

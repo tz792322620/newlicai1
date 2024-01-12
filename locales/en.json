@@ -675,5 +675,7 @@
 		"Team position amount": "Team position amount",
 		"To be collected": "To be collected",
 		"Received": "Received",
-		"isReceived": "Whether to receive"
+		"isReceived": "Whether to receive",
+		  "congratulations": "Congratulations on Winning a Red Packet Reward",
+		  "checkOrder": "Check Order"
 }
