@@ -235,7 +235,7 @@
 		<!-- <floating-customer-service></floating-customer-service> -->
 		<liu-drag-button @clickBtn="clickBtn">{{$t('customerService')}}</liu-drag-button>
 		<!-- 弹窗 -->
-		<Pop-ups :show="showPopup" @closed="closePopup"></Pop-ups>
+		<Pop-ups :show="showPopup" :image="popupNotice.image" @closed="closePopup"></Pop-ups>
 	</view>
 </template>
 
@@ -243,7 +243,8 @@
 	import {
 		getStockProductList,
 		getStockProductAllList,
-		getGonggaoTypes
+		getGonggaoTypes,
+		getLatestPopupGonggao
 	} from '@/api/api'
 	import FloatingCustomerService from '@/components/FloatingCustomerService/FloatingCustomerService.vue';
 
@@ -274,7 +275,8 @@
 				stockProductListTab: [],
 				notice: '', // 公告
 				statusBarHeight: 0, // 状态栏高度
-				customerServiceUrl: JSON.parse(uni.getStorageSync('support_link')) // 您的客服链接
+				customerServiceUrl: JSON.parse(uni.getStorageSync('support_link')), // 您的客服链接
+				popupNotice: '' // 弹窗公告信息
 			}
 		},
 
@@ -294,11 +296,18 @@
 					this.getStockProductListNewbie() // 精选股票
 					this.getStockProductListTab()
 					this.setTabbar()
+					this.getPopupNotice()
 				},
 				immediate: true
 			}
 		},
 		methods: {
+			async getPopupNotice() {
+				const res = await getLatestPopupGonggao()
+				if (res.code == 1) {
+					this.popupNotice = res.data
+				}
+			},
 			closePopup(bool) {
 				this.showPopup = bool
 			},

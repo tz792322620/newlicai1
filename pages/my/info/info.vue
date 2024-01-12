@@ -7,7 +7,7 @@
 			</view>
 		</view>
 		<view class="avatar">
-			<image class="avatar_img" :src="userInfo.avatar" mode=""></image>
+			<image class="avatar_img" :src="avatarUrl" mode=""></image>
 			<image class="avatar_camera" src="@/static/images/my/info/camera.png" mode="" @click="show = true"></image>
 		</view>
 		<view class="cell-group">
@@ -80,15 +80,30 @@
 		getUserInfo,
 		setNickname
 	} from '@/api/api.js'
+	import tx from '@/static/images/my/txlogo1.jpg' 
 	export default {
 		data() {
 			return {
+				defaultAvatar:tx,
 				show: false,
 				popupShow: false,
 				userInfo: ''
 			}
 		},
 		computed: {
+			avatarUrl() {
+			   // 检查 userInfo.avatar 是否存在
+			   if (this.userInfo && this.userInfo.avatar) {
+			     // 检查是否为 Base64 编码的图片
+			     if (this.userInfo.avatar.startsWith('data:image')) {
+			       return this.defaultAvatar;
+			     }
+			     // 否则，假定它是一个外部链接
+			     return this.userInfo.avatar;
+			   }
+			   // 如果 userInfo.avatar 不存在，返回默认头像
+			   return this.defaultAvatar;
+			 },
 			list() {
 				return [{
 					text: this.$t('camera')
@@ -180,7 +195,7 @@
 			copy() {
 				let that = this
 				uni.setClipboardData({
-					data: that.userInfo.mobile,
+					data: that.userInfo.mobile ? that.userInfo.mobile : that.userInfo.email,
 					showToast: false,
 					success: function() {
 						uni.showToast({

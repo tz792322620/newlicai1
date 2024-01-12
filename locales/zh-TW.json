@@ -673,5 +673,11 @@
 		"minLimit": "低於最低限額",
 		"maxLimit": "超出最高限額",
 		"timeOut": "已超時",
-		"Points Mall": "積分商城"
+		"Points Mall": "積分商城",
+		"mission center": "任務中心",
+		"Assessment team size": "考核團隊人數",
+		"Team position amount": "團隊建倉金額",
+		"To be collected": "待領取",
+		"Received": "已領取",
+		"isReceived": "是否領取"
 }

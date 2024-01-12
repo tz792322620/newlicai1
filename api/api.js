@@ -472,3 +472,91 @@ export function getGiftPointsRecords() {
 		url: '/user/getGiftPointsRecords'
 	})
 }
+// 获取任务列表
+export function getTaskList() {
+	return request({
+		url: '/task/getTaskList'
+	})
+}
+// 获取任务详情
+export function getTaskById(id) {
+	return request({
+		url: `/task/getTaskById?task_id=${id}`
+	})
+}
+// 领取任务奖励
+export function claimTaskReward(data) {
+	return request({
+		url: '/task/claimTaskReward',
+		method: 'POST',
+		data
+	})
+}
+// 获取最新的可弹窗公告
+export function getLatestPopupGonggao() {
+	return request({
+		url: '/index/getLatestPopupGonggao'
+	})
+}
+// 获取用户各种状态的订单数量
+export function getUserOrderStatusCount() {
+	return request({
+		url: '/shop/getUserOrderStatusCount'
+	})
+}
+// 获取商品列表
+export function getGoodsList() {
+	return request({
+		url: '/shop/getGoodsList'
+	})
+}
+// 获取商品详情
+export function getGoodsById(id) {
+	return request({
+		url: `/shop/getGoodsById?goods_id=${id}`
+	})
+}
+// 创建收件人信息
+export function createRecipient(data) {
+	return request({
+		url: '/shop/createRecipient',
+		method: 'POST',
+		data
+	})
+}
+// 获取用户收件人列表
+export function getRecipientList(data) {
+	return request({
+		url: '/shop/getRecipientList'
+	})
+}
+// 创建商品订单
+export function createOrder(data) {
+	return request({
+		url: '/shop/createOrder',
+		method: 'POST',
+		data
+	})
+}
+// 获取用户订单列表
+export function getOrderRecordsList(status) {
+	return request({
+		url: `/shop/getOrderRecordsList?status=${status}`
+	})
+}
+// 物流信息查询
+export function cxexpress(data) {
+	return request({
+		url: '/shop/cxexpress',
+		method: 'POST',
+		data
+	})
+}
+// 确认收货
+export function confirmReceipt(data) {
+	return request({
+		url: '/shop/confirmReceipt',
+		method: 'POST',
+		data
+	})
+}

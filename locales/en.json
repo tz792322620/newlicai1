@@ -669,5 +669,11 @@
 		"minLimit": "below minimum",
 		"maxLimit": "Maximum limit exceeded",
 		"timeOut": "Time Out",
-		"Points Mall": "Points Mall"
+		"Points Mall": "Points Mall",
+		"mission center": "mission center",
+		"Assessment team size": "Assessment team size",
+		"Team position amount": "Team position amount",
+		"To be collected": "To be collected",
+		"Received": "Received",
+		"isReceived": "Whether to receive"
 }

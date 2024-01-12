@@ -83,7 +83,7 @@
 				</view>
 			</view>
 		</view>
-		<u-modal v-model="show" @confirm="confirm" :content="$t('cancelAdButton')" :cacel-text="$t('cancel')"
+		<u-modal v-model="show" @confirm="confirm" :content="$t('cancelAdButton')" :cancel-text="$t('cancel')"
 			:confirm-text="$t('verify')" :show-title="false" show-cancel-button confirm-color="#35CBA5"></u-modal>
 	</view>
 </template>

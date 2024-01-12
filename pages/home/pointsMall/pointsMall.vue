@@ -5,14 +5,14 @@
 		</view>
 		<view class="tabbar">
 			<image src="@/static/images/hfh.png" mode="" @click="back"></image>
-			<text>{{$t('recharge')}}</text>
-			<image src="@/static/images/home/pointsMall/right-icon.png" mode="" @click="toRecords"></image>
+			<text>{{$t('Points Mall')}}</text>
+			<image src="@/static/images/home/pointsMall/right-icon.png" mode=""></image>
 		</view>
 		<view class="content" :style="[{marginTop: `${statusBarHeight*2 + 88}rpx`}]">
 			<view class="box1">
 				<view class="box1_left">
 					<view class="points">
-						100<text>积分</text>
+						{{Number(pointsCount).toFixed(2)}}<text>积分</text>
 					</view>
 					<view class="desc">
 						别小看积分,它可以省大钱
@@ -27,8 +27,8 @@
 					<view class="myOrder">
 						我的订单
 					</view>
-					<view class="more">
-						更多 <view class="img"></view>
+					<view class="more" @click="toOrder">
+						更多 <u-icon name="arrow-right-double" size="24" color="#35cba6"></u-icon>
 					</view>
 				</view>
 				<view class="box2_bottom">
@@ -41,7 +41,7 @@
 						</view>
 					</view>
 					<view class="item">
-						<view class="item_image">
+						<view class="item_image" :data-attr="paid_count">
 							<image src="@/static/images/home/pointsMall/shouhuo.png" mode=""></image>
 						</view>
 						<view class="item_text">
@@ -71,23 +71,22 @@
 					</view>
 				</view>
 				<view class="list">
-					<view class="list_item" :class="index === activeIndex ? 'active' : ''" v-for="(item,index) in 4" :key="index" @click="activeIndex = index">
+					<view class="list_item" :class="index === activeIndex ? 'active' : ''" v-for="(item,index) in goodsList" :key="index" @click="activeIndex = index">
 						<view class="list_item_left">
-							<image src="" mode=""></image>
+							<image :src="item.image_url" mode=""></image>
 						</view>
 						<view class="list_item_right">
 							<view class="list_item_right_title">
-								小天鹅10KG滚筒洗衣机 护衣冷水洗 
-								3D立方内筒TG100VT86WMAD5
+								{{item.goods_name}}
 							</view>
 							<view class="list_item_right_desc">
-								限量98件
+								限量{{item.stock_quantity}}件
 							</view>
 							<view class="list_item_right_bottom">
 								<view class="points-count">
-									10000积分
+									{{item.points_required}}积分
 								</view>
-								<view class="exchange">
+								<view class="exchange" @click="toDetails(item)">
 									兑换
 								</view>
 							</view>
@@ -100,22 +99,58 @@
 </template>
 
 <script>
+	import {getUserInfo,getUserOrderStatusCount,getGoodsList} from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				statusBarHeight: 0, // 状态栏高度
-				activeIndex: 0 // 当前选中兑换下标
+				activeIndex: 0, // 当前选中兑换下标
+				pointsCount: 0, // 积分数量
+				paid_count: 0, // 待收货订单数量
+				goodsList: [] // 商品列表
 			}
 		},
 		onShow() {
 			this.statusBarHeight = uni.getSystemInfoSync().statusBarHeight
+			this.getUserInfo()
+			this.getOrderCount()
+			this.getGoodsList()
 		},
 		methods: {
+			async getUserInfo() {
+				const res = await getUserInfo()
+				if (res.code == 1) {
+					this.pointsCount = res.data.gift_points
+				}
+			},
+			async getOrderCount() {
+				const res = await getUserOrderStatusCount()
+				if (res.code == 1) {
+					this.paid_count = res.data.paid_count
+				}
+			},
+			async getGoodsList() {
+				const res = await getGoodsList()
+				console.log(res, '商品列表')
+				if (res.code == 1) {
+					this.goodsList = res.data
+				}
+			},
+			toOrder() {
+				uni.navigateTo({
+					url: `/pages/home/pointsMall/order/order`
+				})
+			},
 			back() {
 				uni.navigateBack({
 					delta: 1
 				})
 			},
+			toDetails(item) {
+				uni.navigateTo({
+					url: `/pages/home/pointsMall/goodsDetails/goodsDetails?id=${item.id}`
+				})
+			}
 		}
 	}
 </script>
@@ -236,6 +271,25 @@
 							line-height: 34rpx;
 						}
 					}
+					.item:nth-child(2) {
+						.item_image {
+							position: relative;
+							&::after {
+								content: attr(data-attr);
+								position: absolute;
+								top: 0rpx;
+								right: 0rpx;
+								width: 24rpx;
+								height: 24rpx;
+								border-radius: 50%;
+								background-color: #FA4535;
+								text-align: center;
+								line-height: 24rpx;
+								font-size: 16rpx;
+								color: #FFFFFF;
+							}
+						}
+					}
 				}
 			}
 			.box3 {
@@ -274,10 +328,14 @@
 							width: 180rpx;
 							height: 204rpx;
 							margin-right: 18rpx;
-							background-color: #35CBA5;
+							background-color: #f9f9f9;
+							border-radius: 12rpx;
+							display: flex;
+							align-items: center;
+							justify-content: center;
 							image {
-								width: 100%;
-								height: 100%;
+								width: 124rpx;
+								height: 172rpx;
 							}
 						}
 						&_right {

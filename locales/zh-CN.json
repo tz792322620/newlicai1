@@ -673,5 +673,12 @@
 		"minLimit": "低于最低限额",
 		"maxLimit": "超出最高限额",
 		"timeOut": "已超时",
-		"Points Mall": "积分商城"
+		"Points Mall": "积分商城",
+		"mission center": "任务中心",
+		"Assessment team size": "考核团队人数",
+		"Team position amount": "团队建仓金额",
+		"To be collected": "待领取",
+		"Received": "已领取",
+		"isReceived": "是否领取"
+		
 }

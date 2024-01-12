@@ -212,7 +212,7 @@
 						url: '/pages/withdraw/records/records'
 					},
 					{
-						image: '../../static/images/my/d4.png',
+						image: '../../static/images/my/youhuiquan.png',
 						title: this.$t('Coupon Management'), 
 						url: '/pages/coupon/coupon'
 					},
@@ -222,12 +222,12 @@
 						url: '/pages/my/funds/funds'
 					},
 					{
-						image: '../../static/images/my/d4.png',
+						image: '../../static/images/my/jifenmingxxi.png',
 						title: this.$t('integralTitle'),
 						url: '/pages/my/integral/integral'
 					},
 					{
-						image: '../../static/images/my/5.png',
+						image: '../../static/images/my/dengji.png',
 						title: this.$t('levelDescriptions'),
 						url: '/pages/my/levelDescription/levelDescription'
 					},
@@ -237,14 +237,19 @@
 						url: '/pages/otc/payment/payment'
 					},
 					{
-						image: '../../static/images/my/d5.png',
+						image: '../../static/images/my/jiaoyimima.png',
 						title: this.$t('transactionPasswordManagement'),
 						url: '/pages/my/info/transactionPin/transactionPin'
 					},
 					{
-						image: '../../static/images/my/d5.png',
+						image: '../../static/images/my/denglumima.png',
 						title: this.$t('loginPasswordManagement'),
 						url: '/pages/my/info/loginPin/loginPin'
+					},
+					{
+						image: '../../static/images/my/renwuzhongxin.png',
+						title: this.$t('mission center'),
+						url: '/pages/my/missionCenter/missionCenter'
 					}
 				]
 			}

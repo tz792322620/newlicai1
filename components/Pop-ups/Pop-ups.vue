@@ -4,7 +4,7 @@
 			<view class="warp">
 				<view class="warp_content">
 					<view class="warp_content_image">
-						<image src="@/static/images/home/popup/content-img.png" mode=""></image>
+						<image :src="image" mode=""></image>
 					</view>
 					<view class="warp_content_close" @click="close">
 						<image src="@/static/images/home/popup/close.png" mode=""></image>
@@ -16,9 +16,14 @@
 </template>
 
 <script>
+	import {getLatestPopupGonggao} from '@/api/api.js'
 	export default {
 		name: "Pop-ups",
 		props: {
+			image: {
+				type: String,
+				defalut: ''
+			},
 			show: {
 				type: Boolean,
 				default: false
@@ -26,7 +31,7 @@
 		},
 		data() {
 			return {
-
+				
 			};
 		},
 		methods: {
