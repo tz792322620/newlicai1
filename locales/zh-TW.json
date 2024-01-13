@@ -655,7 +655,7 @@
 		"thaw": "解凍",
 		"amount": "金額",
 		"revenueCycle": "收益周期",
-		"Trade completed": "交易完成",
+		"Trade completed": "OTC交易完成",
 		"wanUnits": "萬",
 		"yiUnits": "億",
 		"totalEarningsFormula": "總收益=投資額×日利率×天數",
@@ -713,5 +713,8 @@
 		"actual payment": "實際支付",
 		"Submit Order": "提交訂單",
 		"congratulations": "恭喜獲得紅包獎勵",
-		  "checkOrder": "查看訂單"
+		  "checkOrder": "查看訂單",
+		    "Claim task reward": "任務獎勵",
+		    "Order payment": "商城訂單支付",
+		    "Red packet reward": "紅包獎勵"
 }
