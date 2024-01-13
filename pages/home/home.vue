@@ -336,19 +336,6 @@
 			closePopup(bool) {
 				this.showPopup = bool
 			},
-			avatarUrl() {
-				// 检查 userInfo.avatar 是否存在
-				if (this.userInfo && this.userInfo.avatar) {
-					// 检查是否为 Base64 编码的图片
-					if (this.userInfo.avatar.startsWith('data:image')) {
-						return this.defaultAvatar;
-					}
-					// 否则，假定它是一个外部链接
-					return this.userInfo.avatar;
-				}
-				// 如果 userInfo.avatar 不存在，返回默认头像
-				return this.defaultAvatar;
-			},
 			toSearch() {
 				uni.navigateTo({
 					url: '/pages/search/search'

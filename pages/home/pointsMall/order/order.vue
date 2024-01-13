@@ -13,22 +13,22 @@
 					<view class="list_item_top">
 						<view class="list_item_top_left">
 							<view class="list_item_top_left_image">
-								<image :src="item.goods.image_url" mode=""></image>
+								<image :src="item.goods.image_url[0]" mode=""></image>
 							</view>
 							<view class="list_item_top_left_center">
 								{{item.goods.goods_name}}
 							</view>
 						</view>
 						<view class="list_item_top_right" :class="item.order_status == '已完成' ? 'gray' : ''">
-							{{item.order_status}}
+							{{statusFilters(item.order_status)}}
 						</view>
 					</view>
 					<view class="list_item_bottom" v-if="item.order_status == '已发货'">
 						<view class="select" @click="selectLogistics(item)">
-							查看物流
+							{{$t('check logistics')}}
 						</view>
 						<view class="confirm" @click="confirmGoods(item)">
-							确认收货
+							{{$t('Confirm receipt')}}
 						</view>
 					</view>
 				</view>
@@ -37,7 +37,7 @@
 				<scroll-view style="height: 1000rpx;" :scroll-y="true">
 					<view class="popup-content">
 						<view class="title">
-							物流信息
+							{{$t('Logistics information')}}
 						</view>
 						<view class="expressDelivery-info">
 							<view class="expressDelivery-info_left">
@@ -45,8 +45,8 @@
 									<view class="name">
 										{{currentItem.express_company}}
 									</view>
-									<view class="copy">
-										复制
+									<view class="copy" @click="copy">
+										{{$t('Copy')}}
 									</view>
 								</view>
 								<view class="order-number">
@@ -64,7 +64,7 @@
 					</view>
 				</scroll-view>
 			</u-popup>
-			<u-modal v-model="show" @confirm="confirm" :content="'是否确认收货'" :cancel-text="$t('cancel')"
+			<u-modal v-model="show" @confirm="confirm" :content="$t('Confirm receipt or not?')" :cancel-text="$t('cancel')"
 				:confirm-text="$t('verify')" :show-title="false" show-cancel-button confirm-color="#35CBA5"></u-modal>
 		</view>
 	</view>
@@ -82,7 +82,6 @@
 			return {
 				show: false,
 				currentIndex: 0,
-				tabList: ['全部订单', '待发货', '待收货', '已完成'],
 				status: '',
 				list: [],
 				logisticsShow: false,
@@ -93,10 +92,38 @@
 		components: {
 			timeAxis
 		},
+		computed: {
+			tabList() {
+				return [this.$t('allOrder'),this.$t('Awaiting shipment'),this.$t('Awaiting receipt'),this.$t('Completed')]
+			}
+		},
 		onLoad() {
 			this.getOrderList()
 		},
 		methods: {
+			copy() {
+				let that = this
+				uni.setClipboardData({
+					data: that.currentItem.tracking_number,
+					showToast: false,
+					success: function() {
+						uni.showToast({
+							title: that.$t('contentCopied'),
+							icon: 'none'
+						})
+						// console.log('success');
+					}
+				})
+			},
+			statusFilters(value) {
+				if (value == '已支付') {
+					return this.$t('Awaiting shipment')
+				} else if (value == '已发货') {
+					return this.$t('Awaiting receipt')
+				} else if (value == '已完成') {
+					return this.$t('Completed')
+				}
+			},
 			confirmGoods(item) {
 				this.currentItem = item
 				this.show = true
@@ -129,9 +156,12 @@
 				})
 				const res = await getOrderRecordsList(this.status)
 				uni.hideLoading()
-				console.log(res, '订单列表')
 				if (res.code == 1) {
 					this.list = res.data
+					this.list.forEach((item,index) => {
+						item.goods.image_url = item.goods.image_url.split(',')
+					})
+					console.log(this.list, '订单列表')
 				}
 			},
 			tabClick(index) {
@@ -164,7 +194,7 @@
 		.content {
 			background-color: #fbfbfb;
 			min-height: 100vh;
-			padding: 168rpx 30rpx 0;
+			padding: 188rpx 30rpx 0;
 
 			.popup-content {
 				.title {
@@ -245,12 +275,13 @@
 				align-items: center;
 
 				&_item {
+					flex: 1;
 					font-size: 28rpx;
 					font-weight: 500;
 					color: #999999;
 					line-height: 40rpx;
 					margin-right: 60rpx;
-
+					text-align: center;
 					&.active {
 						color: #35CBA5;
 					}
@@ -264,7 +295,8 @@
 					padding: 20rpx;
 					background-color: #ffffff;
 					border-radius: 12rpx;
-
+					margin-bottom: 40rpx;
+					box-shadow: 0px 4px 4px 0px rgba(240,240,240,0.5);
 					&_top {
 						display: flex;
 

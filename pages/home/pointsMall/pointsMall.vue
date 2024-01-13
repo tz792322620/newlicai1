@@ -12,10 +12,10 @@
 			<view class="box1">
 				<view class="box1_left">
 					<view class="points">
-						{{Number(pointsCount).toFixed(2)}}<text>积分</text>
+						{{Number(pointsCount).toFixed(2)}}<text>{{$t('points')}}</text>
 					</view>
 					<view class="desc">
-						别小看积分,它可以省大钱
+						{{$t('pointsHints')}}
 					</view>
 				</view>
 				<view class="box1_right">
@@ -25,10 +25,10 @@
 			<view class="box2">
 				<view class="box2_top">
 					<view class="myOrder">
-						我的订单
+						{{$t('myOrder')}}
 					</view>
 					<view class="more" @click="toOrder">
-						更多 <u-icon name="arrow-right-double" size="24" color="#35cba6"></u-icon>
+						{{$t('more')}} <u-icon name="arrow-right-double" size="24" color="#35cba6"></u-icon>
 					</view>
 				</view>
 				<view class="box2_bottom">
@@ -37,15 +37,18 @@
 							<image src="@/static/images/home/pointsMall/ship.png" mode=""></image>
 						</view>
 						<view class="item_text">
-							待发货
+							{{$t('Awaiting shipment')}}
 						</view>
 					</view>
 					<view class="item">
-						<view class="item_image" :data-attr="paid_count">
+						<view class="item_image active" :data-attr="shipped_count" v-if="shipped_count != 0">
+							<image src="@/static/images/home/pointsMall/shouhuo.png" mode=""></image>
+						</view>
+						<view class="item_image" v-else>
 							<image src="@/static/images/home/pointsMall/shouhuo.png" mode=""></image>
 						</view>
 						<view class="item_text">
-							待收货
+							{{$t('Awaiting receipt')}}
 						</view>
 					</view>
 					<view class="item">
@@ -53,7 +56,7 @@
 							<image src="@/static/images/home/pointsMall/complete.png" mode=""></image>
 						</view>
 						<view class="item_text">
-							已完成
+							{{$t('Completed')}}
 						</view>
 					</view>
 				</view>
@@ -64,7 +67,7 @@
 						<image src="@/static/images/home/pointsMall/exchange-img.png" mode=""></image>
 					</view>
 					<view class="title_text">
-						好物兑换
+						{{$t('Exchange good things')}}
 					</view>
 					<view class="title_img">
 						<image src="@/static/images/home/pointsMall/exchange-img.png" mode=""></image>
@@ -73,21 +76,21 @@
 				<view class="list">
 					<view class="list_item" :class="index === activeIndex ? 'active' : ''" v-for="(item,index) in goodsList" :key="index" @click="activeIndex = index">
 						<view class="list_item_left">
-							<image :src="item.image_url" mode=""></image>
+							<image :src="item.image_url[0]" mode=""></image>
 						</view>
 						<view class="list_item_right">
 							<view class="list_item_right_title">
 								{{item.goods_name}}
 							</view>
 							<view class="list_item_right_desc">
-								限量{{item.stock_quantity}}件
+								{{$t('limit')}}{{item.stock_quantity}}{{$t('pieces')}}
 							</view>
 							<view class="list_item_right_bottom">
 								<view class="points-count">
-									{{item.points_required}}积分
+									{{item.points_required}}{{$t('points')}}
 								</view>
 								<view class="exchange" @click="toDetails(item)">
-									兑换
+									{{$t('exchange')}}
 								</view>
 							</view>
 						</view>
@@ -106,7 +109,7 @@
 				statusBarHeight: 0, // 状态栏高度
 				activeIndex: 0, // 当前选中兑换下标
 				pointsCount: 0, // 积分数量
-				paid_count: 0, // 待收货订单数量
+				shipped_count: 0, // 待收货订单数量
 				goodsList: [] // 商品列表
 			}
 		},
@@ -126,7 +129,7 @@
 			async getOrderCount() {
 				const res = await getUserOrderStatusCount()
 				if (res.code == 1) {
-					this.paid_count = res.data.paid_count
+					this.shipped_count = res.data.shipped_count
 				}
 			},
 			async getGoodsList() {
@@ -134,6 +137,10 @@
 				console.log(res, '商品列表')
 				if (res.code == 1) {
 					this.goodsList = res.data
+					this.goodsList.forEach((item,index) => {
+						item.image_url = item.image_url.split(',')
+					})
+					console.log(this.goodsList)
 				}
 			},
 			toOrder() {
@@ -271,8 +278,10 @@
 							line-height: 34rpx;
 						}
 					}
-					.item:nth-child(2) {
-						.item_image {
+					// .item:nth-child(2) {
+					// }
+					.item_image {
+						&.active {
 							position: relative;
 							&::after {
 								content: attr(data-attr);

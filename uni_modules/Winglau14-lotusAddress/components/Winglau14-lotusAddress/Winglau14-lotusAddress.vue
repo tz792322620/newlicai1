@@ -4,8 +4,8 @@
 		<view class="lotus-address-mask"></view>
 		<view :class="lotusAddressData.visible?'lotus-address-box':'lotus-address-box lotus-address-box-out'">
 			<view class="lotus-address-action">
-				<text @tap="cancelPicker" class="lotus-address-action-cancel">取消</text>
-				<text @tap="chosedVal" class="lotus-address-action-affirm">确认</text>
+				<text @tap="cancelPicker" class="lotus-address-action-cancel">{{$t('cancel')}}</text>
+				<text @tap="chosedVal" class="lotus-address-action-affirm">{{$t('verify')}}</text>
 			</view>
 			<view class="lotus-address-picker-box">
 				<!--省-->

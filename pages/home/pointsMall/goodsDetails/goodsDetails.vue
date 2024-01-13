@@ -10,10 +10,10 @@
 		<view class="content" v-if="goodsDetails">
 			<view class="box1">
 				<view class="box1_left">
-					所需积分 <text>{{goodsDetails.points_required}}</text>
+					{{$t('Points required')}} <text>{{goodsDetails.points_required}}</text>
 				</view>
 				<view class="box1_right">
-					还剩余{{goodsDetails.stock_quantity}}件
+					{{$t('residue')}}{{goodsDetails.stock_quantity}}{{$t('pieces')}}
 				</view>
 			</view>
 			<view class="box2">
@@ -26,7 +26,7 @@
 		<view class="line"></view>
 		<view class="goods-info">
 			<view class="goods-info_title">
-				商品介绍
+				{{$t('Product desciption')}}
 			</view>
 			<view style="padding: 30rpx;" v-html="formatRichText(goodsDetails.description)">
 
@@ -34,46 +34,46 @@
 		</view>
 		<view class="exchange">
 			<view class="buttons" @click="addressShow = true">
-				立即兑换
+				{{$t('Redeem now')}}
 			</view>
 		</view>
 		<u-popup v-model="addressShow" mode="bottom" border-radius="12" :closeable="true">
 			<view class="popup-content">
 				<view class="title">
-					地址
+					{{$t('address')}}
 				</view>
 				<view class="form">
 					<view class="form_item">
 						<view class="form_item_label">
-							收件人
+							{{$t('recipient')}}
 						</view>
 						<view class="form_item_input">
-							<u-input v-model="data.recipient_name" :placeholder="'请输入收件人'" type="text" />
+							<u-input v-model="data.recipient_name" :placeholder="$t('Please enter recipient')" type="text" />
 						</view>
 					</view>
 					<view class="form_item">
 						<view class="form_item_label">
-							手机号码
+							{{$t('phone')}}
 						</view>
 						<view class="form_item_input">
-							<u-input v-model="data.contact_number" :placeholder="'请输入手机号码'" type="text" />
+							<u-input v-model="data.contact_number" :placeholder="$t('enterPhoneNumber')" type="text" />
 						</view>
 					</view>
 					<view class="form_item">
 						<view class="form_item_label">
-							选择省/市/区
+							{{$t('Select province/city/district')}}
 						</view>
 						<view class="form_item_input" @click="openPicker" style="width: 100%;height: 70rpx;font-size: 28rpx;line-height: 70rpx;">
-							<text v-if="!region" style="color: rgb(192, 196, 204);">请选择省/市/区</text>
+							<text v-if="!region" style="color: rgb(192, 196, 204);">{{$t('Please select province/city/district')}}</text>
 							<text v-else style="color: #000000;">{{region}}</text>
 						</view>
 					</view>
 					<view class="form_item">
 						<view class="form_item_label">
-							详细地址
+							{{$t('Address')}}
 						</view>
 						<view class="form_item_input">
-							<u-input v-model="data.address" :placeholder="'请输入详细地址'" type="text" />
+							<u-input v-model="data.address" :placeholder="$t('Please enter detailed address')" type="text" />
 						</view>
 					</view>
 					<!-- <view class="form_item">
@@ -85,7 +85,7 @@
 						</view>
 					</view> -->
 					<view class="buttons" @click="saveAddress">
-						保存
+						{{$t('save')}}
 					</view>
 				</view>
 			</view>
@@ -93,16 +93,16 @@
 		<u-popup v-model="orderShow" mode="bottom" border-radius="12" :closeable="true">
 			<view class="popup-content1" v-if="addressList.length !== 0">
 				<view class="title">
-					订单确认
+					{{$t('Order Confirmation')}}
 				</view>
 				<view class="info">
 					<view class="info_title">
 						<image src="@/static/images/home/pointsMall/details/address.png" mode=""></image>
-						<text>配送信息</text>
+						<text>{{$t('Delivery Information')}}</text>
 					</view>
 					<view class="address">
 						<view class="address_desc">
-							收货地址
+							{{$t('Shipping address')}}
 						</view>
 						<view class="address_info" @click="addressShow = true">
 							<view class="user-info">
@@ -116,10 +116,10 @@
 					</view>
 					<view class="date">
 						<view class="date_desc">
-							收货时间
+							{{$t('Time of receipt')}}
 						</view>
 						<view class="date_time">
-							任何时间均可
+							{{$t('Any time')}}
 						</view>
 					</view>
 				</view>
@@ -127,7 +127,7 @@
 				<view class="info">
 					<view class="info_title">
 						<image src="@/static/images/home/pointsMall/details/goods.png" mode=""></image>
-						<text>商品信息</text>
+						<text>{{$t('Product information')}}</text>
 					</view>
 					<view class="goods-info">
 						<view class="image">
@@ -139,10 +139,10 @@
 					</view>
 					<view class="goods-price">
 						<view class="goods-price_desc">
-							商品总价
+							{{$t('Total product price')}}
 						</view>
 						<view class="goods-price_count">
-							{{goodsDetails.points_required}}积分
+							{{goodsDetails.points_required}}{{$t('points')}}
 						</view>
 					</view>
 				</view>
@@ -150,21 +150,21 @@
 				<view class="info">
 					<view class="info_title">
 						<image src="@/static/images/home/pointsMall/details/payment.png" mode=""></image>
-						<text>支付方式</text>
+						<text>{{$t('payMethod')}}</text>
 					</view>
 					<view class="payment">
-						支付方式
+						{{$t('full points')}}
 					</view>
 				</view>
 				<view class="line" style="height: 30rpx;"></view>
 				<view class="popup-content1_bottom">
 					<view class="popup-content1_bottom_left">
-						实际支付
-						<text>{{goodsDetails.points_required}}积分</text>
+						{{$t('actual payment')}}
+						<text>{{goodsDetails.points_required}}{{$t('points')}}</text>
 					</view>
 					<view class="popup-content1_bottom_right">
 						<view class="buttons" @click="submitOrder">
-							提交订单
+							{{$t('Submit Order')}}
 						</view>
 					</view>
 				</view>
@@ -247,13 +247,13 @@
 			async saveAddress() {
 				if(this.$u.test.isEmpty(this.data.recipient_name)) {
 					return uni.showToast({
-						title: '请输入收件人',
+						title: this.$t('Please enter recipient'),
 						icon: 'none'
 					})
 				}
 				if(this.$u.test.isEmpty(this.data.contact_number)) {
 					return uni.showToast({
-						title: '请输入手机号',
+						title: this.$t('enterPhoneNumber'),
 						icon: 'none'
 					})
 				}
@@ -262,13 +262,13 @@
 				// }
 				if(this.$u.test.isEmpty(this.data.province) || this.$u.test.isEmpty(this.data.city) || this.$u.test.isEmpty(this.data.district)) {
 					return uni.showToast({
-						title: '请选择省/市/区',
+						title: this.$t('Please select province/city/district'),
 						icon: 'none'
 					})
 				}
 				if(this.$u.test.isEmpty(this.data.address)) {
 					return uni.showToast({
-						title: '请输入详细地址',
+						title: this.$t('Please enter detailed address'),
 						icon: 'none'
 					})
 				}
