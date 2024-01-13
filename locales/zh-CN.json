@@ -711,5 +711,7 @@
 		"Total product price": "商品总价",
 		"full points": "全积分",
 		"actual payment": "实际支付",
-		"Submit Order": "提交订单"
+		"Submit Order": "提交订单",
+		 "congratulations": "恭喜获得红包奖励",
+		  "checkOrder": "查看订单"
 }

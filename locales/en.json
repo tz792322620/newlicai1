@@ -707,5 +707,7 @@
 		"Total product price": "Total product price",
 		"full points": "full points",
 		"actual payment": "actual payment",
-		"Submit Order": "Submit Order"
+		"Submit Order": "Submit Order",
+		  "congratulations": "Congratulations on Winning a Red Packet Reward",
+		  "checkOrder": "Check Order"
 }
