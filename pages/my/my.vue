@@ -202,6 +202,11 @@
 						url: '/pages/my/order/order'
 					},
 					{
+						image: '../../static/images/my/renwuzhongxin.png',
+						title: this.$t('mission center'),
+						url: '/pages/my/missionCenter/missionCenter'
+					},
+					{
 						image: '../../static/images/my/d2.png',
 						title: this.$t('rechargeRecord'),
 						url: '/pages/recharge/records/records'
@@ -245,11 +250,6 @@
 						image: '../../static/images/my/denglumima.png',
 						title: this.$t('loginPasswordManagement'),
 						url: '/pages/my/info/loginPin/loginPin'
-					},
-					{
-						image: '../../static/images/my/renwuzhongxin.png',
-						title: this.$t('mission center'),
-						url: '/pages/my/missionCenter/missionCenter'
 					}
 				]
 			}

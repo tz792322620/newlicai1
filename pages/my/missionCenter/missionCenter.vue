@@ -35,7 +35,7 @@
 							{{$t('Assessment team size')}}(<text>{{data.team_size}}</text>/{{item.team_size_required}})
 						</view>
 						<view class="three">
-							{{$t('Team position amount')}}(<text>{{data.stock_order_amount}}</text>/{{item.team_building_amount}})
+							{{$t('Team position amount')}}(<text>{{data.stock_order_amount}}</text>/{{item.team_building_amount}})USDT
 						</view>
 					</view>
 				</view>

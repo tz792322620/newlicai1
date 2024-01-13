@@ -83,7 +83,8 @@
 						src="../../static/images/p3.png"></image>
 					<view style="width:220rpx;">
 						<view>{{item.product_code}}</view>
-						<view>{{item.product_name_cn}}</view>
+						<view v-if="item.is_gift_red_packet == 1">{{item.product_name_cn}}<image  mode="aspectFit" style="width: 20px;height: 18px;" src="../../static/images/product/hb1.png"></image></view>
+						<view v-else>{{item.product_name_cn}}</view>
 						<!-- <view style="color: #999999;font-size: 24rpx;">603809.sz</view> -->
 					</view>
 					<view class="col35 f_bod" style="font-size: 32rpx;">{{Number(item.interest_rate * 100).toFixed(2)}}%
@@ -111,7 +112,9 @@
 						<view class="u-text-center"
 							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
 							<view>{{item.product_code}}</view>
-							<view>{{item.product_name_cn}}</view>
+							<!-- <view>{{item.product_name_cn}}</view> -->
+							<view v-if="item.is_gift_red_packet == 1">{{item.product_name_cn}}<image  mode="aspectFit" style="width: 20px;height: 18px;" src="../../static/images/product/hb1.png"></image></view>
+							<view v-else>{{item.product_name_cn}}</view>
 							<view style="font-weight: bold;font-size: 32rpx;margin-top: 30rpx;" class="col35">
 								{{Number(item.interest_rate * 100).toFixed(2)}}%
 							</view>
@@ -206,7 +209,9 @@
 						<u-col span="5">
 							<view class="">
 								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_code}}</view>
-								<view style="font-size: 30rpx;font-weight: bold;">{{item.product_name_cn}}</view>
+						<!-- 		<view style="font-size: 30rpx;font-weight: bold;">{{item.product_name_cn}}</view> -->
+								<view style="font-size: 30rpx;font-weight: bold;" v-if="item.is_gift_red_packet == 1">{{item.product_name_cn}}<image  mode="aspectFit" style="width: 20px;height: 18px;" src="../../static/images/product/hb1.png"></image></view>
+								<view style="font-size: 30rpx;font-weight: bold;" v-else>{{item.product_name_cn}}</view>
 								<view style="display: flex;align-items: center;">
 									<u-line-progress active-color="#6BEEAB" height="18"
 										:percent="Number(item.progress)"></u-line-progress>
