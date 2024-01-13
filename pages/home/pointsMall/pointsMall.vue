@@ -27,12 +27,12 @@
 					<view class="myOrder">
 						{{$t('myOrder')}}
 					</view>
-					<view class="more" @click="toOrder">
+					<view class="more" @click="toOrder(0)">
 						{{$t('more')}} <u-icon name="arrow-right-double" size="24" color="#35cba6"></u-icon>
 					</view>
 				</view>
 				<view class="box2_bottom">
-					<view class="item">
+					<view class="item" @click="toOrder(1)">
 						<view class="item_image">
 							<image src="@/static/images/home/pointsMall/ship.png" mode=""></image>
 						</view>
@@ -40,7 +40,7 @@
 							{{$t('Awaiting shipment')}}
 						</view>
 					</view>
-					<view class="item">
+					<view class="item" @click="toOrder(2)">
 						<view class="item_image active" :data-attr="shipped_count" v-if="shipped_count != 0">
 							<image src="@/static/images/home/pointsMall/shouhuo.png" mode=""></image>
 						</view>
@@ -51,7 +51,7 @@
 							{{$t('Awaiting receipt')}}
 						</view>
 					</view>
-					<view class="item">
+					<view class="item" @click="toOrder(3)">
 						<view class="item_image">
 							<image src="@/static/images/home/pointsMall/complete.png" mode=""></image>
 						</view>
@@ -76,7 +76,7 @@
 				<view class="list">
 					<view class="list_item" :class="index === activeIndex ? 'active' : ''" v-for="(item,index) in goodsList" :key="index" @click="activeIndex = index">
 						<view class="list_item_left">
-							<image :src="item.image_url[0]" mode=""></image>
+							<image style="width: 124rpx;" :src="item.image_url[0]" mode="widthFix"></image>
 						</view>
 						<view class="list_item_right">
 							<view class="list_item_right_title">
@@ -143,9 +143,9 @@
 					console.log(this.goodsList)
 				}
 			},
-			toOrder() {
+			toOrder(index) {
 				uni.navigateTo({
-					url: `/pages/home/pointsMall/order/order`
+					url: `/pages/home/pointsMall/order/order?index=${index}`
 				})
 			},
 			back() {
@@ -342,10 +342,6 @@
 							display: flex;
 							align-items: center;
 							justify-content: center;
-							image {
-								width: 124rpx;
-								height: 172rpx;
-							}
 						}
 						&_right {
 							flex: 1;

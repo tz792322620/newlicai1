@@ -13,7 +13,7 @@
 					<view class="list_item_top">
 						<view class="list_item_top_left">
 							<view class="list_item_top_left_image">
-								<image :src="item.goods.image_url[0]" mode=""></image>
+								<image style="width: 86rpx;" :src="item.goods.image_url[0]" mode="widthFix"></image>
 							</view>
 							<view class="list_item_top_left_center">
 								{{item.goods.goods_name}}
@@ -97,8 +97,9 @@
 				return [this.$t('allOrder'),this.$t('Awaiting shipment'),this.$t('Awaiting receipt'),this.$t('Completed')]
 			}
 		},
-		onLoad() {
-			this.getOrderList()
+		onLoad(params) {
+			this.currentIndex = params.index
+			this.tabClick(Number(params.index))
 		},
 		methods: {
 			copy() {
@@ -191,10 +192,13 @@
 
 <style lang="scss" scoped>
 	.order {
+		background: url('@/static/images/hm_bg.png') center center no-repeat;
+		background-size: 100% 100%;
+		min-height: 100vh;
 		.content {
-			background-color: #fbfbfb;
+			// background-color: #fbfbfb;
 			min-height: 100vh;
-			padding: 188rpx 30rpx 0;
+			padding: 208rpx 30rpx 0;
 
 			.popup-content {
 				.title {
@@ -314,11 +318,6 @@
 								display: flex;
 								align-items: center;
 								justify-content: center;
-
-								image {
-									width: 86rpx;
-									height: 120rpx;
-								}
 							}
 
 							&_center {
