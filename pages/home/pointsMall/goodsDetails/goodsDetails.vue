@@ -324,7 +324,9 @@
 					console.log(res, '收件人列表')
 					uni.hideLoading()
 					this.addressList = res.data
-					this.recipient_id = this.addressList[0].id
+					if (this.addressList.length != 0) {
+						this.recipient_id = this.addressList[0].id
+					}
 					this.orderShow = true
 				}
 			},
