@@ -8,7 +8,9 @@ function request(options = {}) {
 			mask: true
 		})
 	}
-	options.url = `${Vue.prototype.$url}${options.url}`;
+    // 获取用户选择的域名，如果没有选择，则使用默认域名
+    const baseDomain = uni.getStorageSync('selectedDomain') || 'https://default-domain.com';
+    options.url = `${baseDomain}${options.url}`;
 	options.header = {
 		'token': uni.getStorageSync('token'),
 		'Accept-Language': uni.getStorageSync('language') ? uni.getStorageSync('language') : 'zh-CN'

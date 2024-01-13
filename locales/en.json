@@ -712,5 +712,8 @@
 		  "checkOrder": "Check Order",
 		    "Claim task reward": "Claim Task Reward",
 		    "Order payment": "Order Payment",
-		    "Red packet reward": "Red Packet Reward"
+		    "Red packet reward": "Red Packet Reward",
+			"switchLine": "Switch Line",
+			"line": "Line",
+			"cancel": "Cancel"
 }

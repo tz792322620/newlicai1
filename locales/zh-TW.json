@@ -716,5 +716,8 @@
 		  "checkOrder": "查看訂單",
 		    "Claim task reward": "任務獎勵",
 		    "Order payment": "商城訂單支付",
-		    "Red packet reward": "紅包獎勵"
+		    "Red packet reward": "紅包獎勵",
+			 "switchLine": "切換線路",
+			 "line": "線路",
+			 "cancel": "取消"
 }

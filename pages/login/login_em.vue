@@ -20,7 +20,10 @@
 					<u-input v-model="password" type="password" :placeholder="$t('enterPassword')" />
 				</view>
 				<view class="u-flex" style="margin-top:30rpx;font-size: 24rpx;">
-					<view style="width: 320rpx;"></view>
+					<view @click="show = true" style="width: 340rpx;"
+						class="col35">
+						{{ $t('switchLine') }}
+					</view>
 					<view @click="$tools.jump('../login/password_em')" style="width: 340rpx;"
 						class="u-text-right col35">
 						{{ $t('forgotPassword') }}
@@ -43,7 +46,9 @@
 				{{ $t('noAccount') }}<text class="col35"
 					@click="$tools.jump('../login/register_em')">{{ $t('registerNow') }}</text></view>
 		</view>
-
+		<view>
+			<u-action-sheet :list="list" v-model="show" @click="xlclick" :cancel-btn="true" :cancel-text="$t('cancel')"></u-action-sheet>
+		</view>
 	</view>
 </template>
 
@@ -57,6 +62,7 @@
 
 		data() {
 			return {
+				show: false,
 				noClick: true,
 				customStyle1: {
 					height: '90rpx',
@@ -87,8 +93,26 @@
 		},
 		mounted() {
 
+
 		},
+		computed: {
+				list() {
+				  return [
+					{
+					  text: this.$t('line') + '1',
+					  color: '#35cba5',
+					  url: 'https://xingu.bianceok.info/api',
+					},
+					// 可以添加更多的线路...
+				  ];
+				},
+		}, 
 		methods: {
+			xlclick(index) {
+				this.list[index].color = '#35cba5'
+				// console.log(`点击了第${index + 1}项，内容为：${this.list[index].url}`)
+				uni.setStorageSync('selectedDomain', this.list[index].url);
+			},
 			onSuccess: function(verifyId) {
 				console.log(verifyId);
 			},

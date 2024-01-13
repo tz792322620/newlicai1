@@ -17,13 +17,15 @@
 //         });
 //     }
 
-//     try {
-//         const fastestDomain = await Promise.race(domains.map(testSpeed));
-//         return fastestDomain;
-//     } catch (error) {
-//         // console.error(`Error with domain: ${error}`);
-//         return "https://api.broadreachiso.net/api"; // 或返回一个默认域名
-//     }
+    // try {
+    //     const fastestDomain = await Promise.race(domains.map(testSpeed));
+    //     uni.setStorageSync('fastestDomain', fastestDomain); // 存储到缓存
+    //     return fastestDomain;
+    // } catch (error) {
+    //     const defaultDomain = "https://xingu.bianceok.info/api";
+    //     uni.setStorageSync('fastestDomain', defaultDomain); // 存储默认域名到缓存
+    //     return defaultDomain;
+    // }
 // }
 export async function testDomainSpeeds() {
     const domains = [
@@ -40,9 +42,11 @@ export async function testDomainSpeeds() {
 
     try {
         const fastestDomain = await Promise.race(domains.map(testSpeed));
+        uni.setStorageSync('fastestDomain', fastestDomain); // 存储到缓存
         return fastestDomain;
     } catch (error) {
-        // console.error(`Error with domain: ${error}`);
-        return "https://xingu.bianceok.info/api"; // 或返回一个默认域名
+        const defaultDomain = "https://xingu.bianceok.info/api";
+        uni.setStorageSync('fastestDomain', defaultDomain); // 存储默认域名到缓存
+        return defaultDomain;
     }
 }
