@@ -6,7 +6,7 @@
 		<view class="tabbar">
 			<image src="@/static/images/hfh.png" mode="" @click="back"></image>
 			<text>{{$t('Points Mall')}}</text>
-			<image src="@/static/images/home/pointsMall/right-icon.png" mode=""></image>
+			<image></image>
 		</view>
 		<view class="content" :style="[{marginTop: `${statusBarHeight*2 + 88}rpx`}]">
 			<view class="box1">
@@ -76,7 +76,7 @@
 				<view class="list">
 					<view class="list_item" :class="index === activeIndex ? 'active' : ''" v-for="(item,index) in goodsList" :key="index" @click="activeIndex = index">
 						<view class="list_item_left">
-							<image style="width: 124rpx;" :src="item.image_url[0]" mode="widthFix"></image>
+							<image style="width: 150rpx;" :src="item.image_url[0]" mode="widthFix"></image>
 						</view>
 						<view class="list_item_right">
 							<view class="list_item_right_title">

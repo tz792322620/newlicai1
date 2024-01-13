@@ -27,7 +27,7 @@
 				<view style="display: flex;justify-content: space-between;align-items: center;" v-if="item.is_gift_red_packet == 1">
 					<view>{{item.product_code}}</view>
 					<view>
-						<image  mode="aspectFit" style="width: 20px;height: 18px;" src="../../static/images/product/hb1.png"></image>{{Number(item.red_packet_amount).toFixed(2)}}USDT
+						<image  mode="aspectFit" style="width: 20px;height: 18px;" src="../../static/images/product/hb1.png"></image><span style="color: rgb(33, 191, 144);font-size: 13px;">{{Number(item.red_packet_amount).toFixed(2)}}USDT</span>
 					</view>
 					
 				</view>
