@@ -33,7 +33,7 @@
 			</view>
 		</view>
 		<view class="exchange">
-			<view class="buttons" @click="addressShow = true">
+			<view class="buttons" @click="getAddressList()">
 				{{$t('Redeem now')}}
 			</view>
 		</view>
@@ -59,13 +59,37 @@
 							<u-input v-model="data.contact_number" :placeholder="$t('enterPhoneNumber')" type="text" />
 						</view>
 					</view>
-					<view class="form_item">
+					<!-- <view class="form_item">
 						<view class="form_item_label">
 							{{$t('Select province/city/district')}}
 						</view>
 						<view class="form_item_input" @click="openPicker" style="width: 100%;height: 70rpx;font-size: 28rpx;line-height: 70rpx;">
 							<text v-if="!region" style="color: rgb(192, 196, 204);">{{$t('Please select province/city/district')}}</text>
 							<text v-else style="color: #000000;">{{region}}</text>
+						</view>
+					</view> -->
+					<view class="form_item">
+						<view class="form_item_label">
+							{{$t('Fill in the province')}}
+						</view>
+						<view class="form_item_input">
+							<u-input v-model="data.province" :placeholder="$t('Please enter province')" type="text" />
+						</view>
+					</view>
+					<view class="form_item">
+						<view class="form_item_label">
+							{{$t('Fill in the city')}}
+						</view>
+						<view class="form_item_input">
+							<u-input v-model="data.city" :placeholder="$t('Please enter city')" type="text" />
+						</view>
+					</view>
+					<view class="form_item">
+						<view class="form_item_label">
+							{{$t('Fill in area')}}
+						</view>
+						<view class="form_item_input">
+							<u-input v-model="data.district" :placeholder="$t('Please enter the area')" type="text" />
 						</view>
 					</view>
 					<view class="form_item">
@@ -91,7 +115,7 @@
 			</view>
 		</u-popup>
 		<u-popup v-model="orderShow" mode="bottom" border-radius="12" :closeable="true">
-			<view class="popup-content1" v-if="addressList.length !== 0">
+			<view class="popup-content1">
 				<view class="title">
 					{{$t('Order Confirmation')}}
 				</view>
@@ -100,19 +124,22 @@
 						<image src="@/static/images/home/pointsMall/details/address.png" mode=""></image>
 						<text>{{$t('Delivery Information')}}</text>
 					</view>
-					<view class="address">
+					<view class="address" v-if="addressList.length !== 0">
 						<view class="address_desc">
 							{{$t('Shipping address')}}
 						</view>
-						<view class="address_info" @click="addressShow = true">
+						<view class="address_info" @click="orderShow = false,chooseShow = true">
 							<view class="user-info">
-								{{addressList[0].recipient_name}} {{addressList[0].contact_number}}
+								{{addressList[useIndex].recipient_name}} {{addressList[useIndex].contact_number}}
 							</view>
 							<view class="address-info">
-								<text>{{addressList[0].province}} {{addressList[0].city}} {{addressList[0].district}} {{addressList[0].address}}</text>
+								<text>{{addressList[useIndex].province}} {{addressList[useIndex].city}} {{addressList[useIndex].district}} {{addressList[useIndex].address}}</text>
 								<image src="@/static/images/home/pointsMall/details/more-right.png" mode=""></image>
 							</view>
 						</view>
+					</view>
+					<view class="no-address" v-else @click="orderShow = false, addressShow = true">
+						{{$t('noAddress')}}
 					</view>
 					<view class="date">
 						<view class="date_desc">
@@ -170,8 +197,41 @@
 				</view>
 			</view>
 		</u-popup>
-		<lotus-address v-on:choseVal="choseValue" :lotusAddressData="lotusAddressData">
-		</lotus-address>
+		<!-- <lotus-address v-on:choseVal="choseValue" :lotusAddressData="lotusAddressData">
+		</lotus-address> -->
+		<u-popup v-model="chooseShow" @close="chooseClose" mode="bottom" border-radius="12" :closeable="true">
+			<view class="choose-popup">
+				<view class="title">
+					{{$t('Select address')}}
+				</view>
+				<scroll-view style="height: 600rpx;" scroll-y="true">
+					<view class="choose-popup_content">
+						<view class="address_item" v-for="(item,index) in addressList" :key="index"
+							:class="addressCurrentIndex == index ? 'active' : ''" @click="addressCurrentIndex = index">
+							<view class="address_info">
+								<view class="user-info">
+									{{item.recipient_name}} {{item.contact_number}}
+								</view>
+								<view class="address-info">
+									{{item.province}} {{item.city}} {{item.district}} {{item.address}}
+								</view>
+							</view>
+							<view class="image" v-if="addressCurrentIndex == index">
+								<image src="@/static/images/my/true.png" mode=""></image>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+				<view class="choose-popup_buttons">
+					<view class="add" @click="chooseShow = false,addressShow = true">
+						{{$t('Add address')}}
+					</view>
+					<view class="choose" @click="useAddress">
+						{{$t('Use address')}}
+					</view>
+				</view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -182,7 +242,7 @@
 		getRecipientList,
 		createOrder
 	} from '@/api/api.js'
-	import lotusAddress from "@/uni_modules/Winglau14-lotusAddress/components/Winglau14-lotusAddress/Winglau14-lotusAddress.vue";
+	// import lotusAddress from "@/uni_modules/Winglau14-lotusAddress/components/Winglau14-lotusAddress/Winglau14-lotusAddress.vue";
 	export default {
 		data() {
 			return {
@@ -204,10 +264,14 @@
 				value: '',
 				addressShow: false,
 				orderShow: false,
+				chooseShow: false,
+				addressCurrentIndex: 0,
 				list: [],
 				goodsId: '',
 				goodsDetails: '',
-				addressList: []
+				addressList: [],
+				recipient_id: '',
+				useIndex: 0
 			}
 		},
 		onLoad(params) {
@@ -216,19 +280,38 @@
 				this.getGoodsDetais()
 			}
 		},
-		components: {
-			"lotus-address": lotusAddress
-		},
+		// components: {
+		// 	"lotus-address": lotusAddress
+		// },
 		methods: {
+			chooseClose() {
+				// this.addressCurrentIndex = 0
+				// this.useIndex = 0
+			},
+			useAddress() {
+				this.orderShow = true
+				this.useIndex = this.addressCurrentIndex
+				this.chooseShow = false
+				this.recipient_id = this.addressList[this.useIndex].id
+			},
 			async submitOrder() {
+				console.log(this.recipient_id)
+				if (!this.recipient_id) {
+					return uni.showToast({
+						title: $t('Please add shipping address'),
+						icon: 'none'
+					})
+				}
 				const res = await createOrder({
 					goods_id: this.goodsDetails.id,
-					recipient_id: this.addressList[0].id
+					recipient_id: this.recipient_id
 				})
 				if (res.code == 1) {
 					this.orderShow = false
+					this.useIndex = 0
+					this.addressCurrentIndex = 0
 					uni.navigateTo({
-						url: '/pages/home/pointsMall/order/order'
+						url: `/pages/home/pointsMall/order/order?index=0`
 					})
 				}
 			},
@@ -241,6 +324,7 @@
 					console.log(res, '收件人列表')
 					uni.hideLoading()
 					this.addressList = res.data
+					this.recipient_id = this.addressList[0].id
 					this.orderShow = true
 				}
 			},
@@ -251,16 +335,34 @@
 						icon: 'none'
 					})
 				}
+				if (!/^[A-Za-z\u4E00-\u9FA5]+$/.test(this.data.recipient_name)) {
+					return uni.showToast({
+						title: this.$t('Please enter the correct recipient'),
+						icon: 'none'
+					})
+				}
 				if(this.$u.test.isEmpty(this.data.contact_number)) {
 					return uni.showToast({
 						title: this.$t('enterPhoneNumber'),
 						icon: 'none'
 					})
 				}
-				// if (!/^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/.test(this.data.contact_number)) {
-				// 	return this.$tools.toast(this.$t('enterTruePhoneNumber'));
-				// }
-				if(this.$u.test.isEmpty(this.data.province) || this.$u.test.isEmpty(this.data.city) || this.$u.test.isEmpty(this.data.district)) {
+				if (!/^\d+$/.test(this.data.contact_number)) {
+					return this.$tools.toast(this.$t('enterTruePhoneNumber'));
+				}
+				if(this.$u.test.isEmpty(this.data.province)) {
+					return uni.showToast({
+						title: this.$t('Please select province/city/district'),
+						icon: 'none'
+					})
+				}
+				if(this.$u.test.isEmpty(this.data.city)) {
+					return uni.showToast({
+						title: this.$t('Please select province/city/district'),
+						icon: 'none'
+					})
+				}
+				if(this.$u.test.isEmpty(this.data.district)) {
 					return uni.showToast({
 						title: this.$t('Please select province/city/district'),
 						icon: 'none'
@@ -279,42 +381,45 @@
 						icon: 'none'
 					})
 					this.addressShow = false
-					this.lotusAddressData.provinceName = '' //省
-					this.lotusAddressData.cityName = '' //市
-					this.lotusAddressData.townName = '' //区
-					this.region = ''
 					this.data.recipient_name = ''
 					this.data.contact_number = ''
 					this.data.address = ''
 					this.data.province = ''
 					this.data.city = ''
 					this.data.district = ''
+					this.addressCurrentIndex = 0
+					this.useIndex = 0
 					this.getAddressList()
+					// this.lotusAddressData.provinceName = '' //省
+					// this.lotusAddressData.cityName = '' //市
+					// this.lotusAddressData.townName = '' //区
+					// this.region = ''
+					
 				}
 			},
 			//打开picker
-			openPicker() {
-				this.lotusAddressData.visible = true;
-				// this.lotusAddressData.provinceName = '广东省';
-				// this.lotusAddressData.cityName = '深圳市';
-				// this.lotusAddressData.townName = '龙华新区';
-			},
-			//回传已选的省市区的值
-			choseValue(res) {
-				//res数据源包括已选省市区与省市区code
-				console.log(res);
-				this.lotusAddressData.visible = res.visible; //visible为显示与关闭组件标识true显示false隐藏
-				//res.isChose = 1省市区已选 res.isChose = 0;未选
-				if (res.isChose) {
-					this.lotusAddressData.provinceName = res.province; //省
-					this.lotusAddressData.cityName = res.city; //市
-					this.lotusAddressData.townName = res.town; //区
-					this.data.province = res.province
-					this.data.city = res.city
-					this.data.district = res.town
-					this.region = `${res.province} ${res.city} ${res.town}`; //region为已选的省市区的值
-				}
-			},
+			// openPicker() {
+			// 	this.lotusAddressData.visible = true;
+			// 	// this.lotusAddressData.provinceName = '广东省';
+			// 	// this.lotusAddressData.cityName = '深圳市';
+			// 	// this.lotusAddressData.townName = '龙华新区';
+			// },
+			// //回传已选的省市区的值
+			// choseValue(res) {
+			// 	//res数据源包括已选省市区与省市区code
+			// 	console.log(res);
+			// 	this.lotusAddressData.visible = res.visible; //visible为显示与关闭组件标识true显示false隐藏
+			// 	//res.isChose = 1省市区已选 res.isChose = 0;未选
+			// 	if (res.isChose) {
+			// 		this.lotusAddressData.provinceName = res.province; //省
+			// 		this.lotusAddressData.cityName = res.city; //市
+			// 		this.lotusAddressData.townName = res.town; //区
+			// 		this.data.province = res.province
+			// 		this.data.city = res.city
+			// 		this.data.district = res.town
+			// 		this.region = `${res.province} ${res.city} ${res.town}`; //region为已选的省市区的值
+			// 	}
+			// },
 			// 富文本处理
 			formatRichText(html) {
 				let newContent = html.replace(/\<img/gi, '<img style="max-width:100%;height:auto;display:block;"');
@@ -350,7 +455,68 @@
 		/deep/.u-indicator-item-round-active {
 			background-color: #35cba5 !important;
 		}
-
+		.choose-popup {
+			.title {
+				padding: 34rpx 40rpx;
+				border-bottom: 2rpx solid #F3F3F3;
+				font-size: 28rpx;
+				font-weight: 600;
+				color: #333333;
+			}
+			.choose-popup_content {
+				padding: 40rpx;
+				.address_item {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					border-radius: 8rpx;
+					border: 2rpx solid #999999;
+					padding: 20rpx;
+					margin-bottom: 20rpx;
+					&.active {
+						border-color: #35CBA5;
+					}
+					.address_info {
+						font-size: 24rpx;
+						font-weight: 400;
+						color: #333333;
+						line-height: 34rpx;
+						.user-info {
+							font-weight: 500;
+						}
+					}
+					.image {
+						width: 48rpx;
+						height: 48rpx;
+						image {
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+			}
+			&_buttons {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 40rpx 40rpx 70rpx 40rpx;
+				.add,.choose {
+					width: 290rpx;
+					height: 90rpx;
+					background: #E2F8F2;
+					border-radius: 12rpx;
+					line-height: 90rpx;
+					font-size: 32rpx;
+					font-weight: 600;
+					color: #35CBA5;
+					text-align: center;
+				}
+				.choose {
+					background: #35CBA5;
+					color: #FFFFFF;
+				}
+			}
+		}
 		.popup-content {
 			padding: 30rpx;
 
@@ -423,7 +589,15 @@
 						color: #333333;
 					}
 				}
-
+				.no-address {
+					text-align: center;
+					height: 80rpx;
+					line-height: 80rpx;
+					border: 2rpx dashed #999999; 
+					border-radius: 8rpx;
+					color: #999999;
+					margin: 40rpx 0;
+				}
 				.address {
 					margin: 30rpx 0;
 					display: flex;

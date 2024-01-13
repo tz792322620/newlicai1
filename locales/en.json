@@ -715,5 +715,17 @@
 		    "Red packet reward": "Red Packet Reward",
 			"switchLine": "Switch Line",
 			"line": "Line",
-			"cancel": "Cancel"
+			"cancel": "Cancel",
+			"noAddress": "There is no delivery information yet, click to add",
+			"Fill in the province": "Fill in the province",
+			"Please enter province": "Please enter province",
+			"Fill in the city": "Fill in the city",
+			"Please enter city": "Please enter city",
+			"Fill in area": "Fill in area",
+			"Please enter the area": "Please enter the area",
+			"Please enter the correct recipient": "Please enter the correct recipient",
+			"Select address": "Select address",
+			"Add address": "Add address",
+			"Use address": "Use address",
+			"Please add shipping address": "Please add shipping address"
 }

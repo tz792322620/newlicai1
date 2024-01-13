@@ -719,5 +719,17 @@
 		    "Red packet reward": "红包奖励",
 			"switchLine": "切换线路",
 			"line": "线路",
-			"cancel": "取消"
+			"cancel": "取消",
+			"noAddress": "暂无配送信息,点击添加",
+			"Fill in the province": "填写省",
+			"Please enter province": "请输入省",
+			"Fill in the city": "填写市",
+			"Please enter city": "请输入市",
+			"Fill in area": "填写区",
+			"Please enter the area": "请输入区",
+			"Please enter the correct recipient": "请输入正确的收件人",
+			"Select address": "选择地址",
+			"Add address": "新增地址",
+			"Use address": "使用地址",
+			"Please add shipping address": "请添加收货地址"
 }
