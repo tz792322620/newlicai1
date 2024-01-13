@@ -48,7 +48,7 @@
 							{{$t('recipient')}}
 						</view>
 						<view class="form_item_input">
-							<u-input v-model="data.recipient_name" :placeholder="$t('Please enter recipient')" type="text" />
+							<u-input @input="nameInput" v-model="data.recipient_name" :placeholder="$t('Please enter recipient')" type="text" />
 						</view>
 					</view>
 					<view class="form_item">
@@ -56,7 +56,7 @@
 							{{$t('phone')}}
 						</view>
 						<view class="form_item_input">
-							<u-input v-model="data.contact_number" :placeholder="$t('enterPhoneNumber')" type="text" />
+							<u-input v-model="data.contact_number" :placeholder="$t('enterPhoneNumber')" type="number" />
 						</view>
 					</view>
 					<!-- <view class="form_item">
@@ -287,6 +287,21 @@
 			chooseClose() {
 				// this.addressCurrentIndex = 0
 				// this.useIndex = 0
+			},
+			nameInput(e) {
+				console.log(e)
+				let newValue = e
+				console.log(newValue, this.data.recipient_name)
+				setTimeout(async () => {
+					if (newValue == this.data.recipient_name) {
+						if (!/^[A-Za-z\u4E00-\u9FA5]+$/.test(this.data.recipient_name)) {
+							return uni.showToast({
+								title: this.$t('Please enter the correct recipient'),
+								icon: 'none'
+							})
+						}
+					}
+				}, 1500)
 			},
 			useAddress() {
 				this.orderShow = true
