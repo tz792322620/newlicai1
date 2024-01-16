@@ -15,9 +15,12 @@
 							<view class="list_item_top_left_image">
 								<image style="width: 86rpx;" :src="item.goods.image_url[0]" mode="widthFix"></image>
 							</view>
+							
 							<view class="list_item_top_left_center">
-								{{item.goods.goods_name}}
+								<view>{{item.order_number}}</view>
+								<view>{{item.goods.goods_name}}</view>
 							</view>
+							
 						</view>
 						<view class="list_item_top_right" :class="item.order_status == '已完成' ? 'gray' : ''">
 							{{statusFilters(item.order_status)}}
@@ -29,6 +32,11 @@
 						</view>
 						<view class="confirm" @click="confirmGoods(item)">
 							{{$t('Confirm receipt')}}
+						</view>
+					</view>
+					<view class="list_item_bottom" v-if="item.order_status == '已完成'">
+						<view class="select" @click="selectLogistics(item)">
+							{{$t('check logistics')}}
 						</view>
 					</view>
 				</view>

@@ -1,6 +1,7 @@
-// const BASE_URL = 'https://api.broadreachvip.top/api'
+// const BASE_URL = 'https://xingu.bianceok.info/api'
 // import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
+import CryptoJS from 'crypto-js'
 
 function request(options = {}) {
 	if (options.method == 'POST') {
@@ -20,27 +21,42 @@ function request(options = {}) {
 		options.success = (res) => {
 				uni.hideLoading()
 
-				if (res.data.code === 401) {
-					uni.showToast({
-						title: res.data.msg,
-						icon: 'none',
-						mask: true
-					})
-					uni.removeStorageSync('token')
-					setTimeout(() => {
-						uni.reLaunch({
-							url: '/pages/login/login_em'
-						})
-					}, 1000);
+
+				// 假设加密的数据在res.data.data中
+				if (res.data && res.data.data) {
+					const encryptionKey = 'xingu8899'; // 您的加密密钥
+					const iv = '473d314febf55e26'; // 初始化向量（如果后端使用了IV）
+					// console.log(res.data.data)
+					// 解密数据
+					// try {
+					const decryptedData = decrypt(res.data.data);
+						// console.log(JSON.parse(decryptedData))
+						res.data.data = JSON.parse(decryptedData);
+						if (res.data.code === 401) {
+							uni.showToast({
+								title: res.data.msg,
+								icon: 'none',
+								mask: true
+							})
+							uni.removeStorageSync('token')
+							setTimeout(() => {
+								uni.reLaunch({
+									url: '/pages/login/login_em'
+								})
+							}, 1000);
+						}
+						if (res.data.code !== 1) {
+							uni.showToast({
+								title: res.data.msg,
+								icon: 'none',
+								mask: true
+							})
+						}
+						resolve(res.data)
+					// } catch (e) {
+					// 	console.error('解密失败', e);
+					// }
 				}
-				if (res.data.code !== 1) {
-					uni.showToast({
-						title: res.data.msg,
-						icon: 'none',
-						mask: true
-					})
-				}
-				resolve(res.data)
 			},
 			//错误
 			options.fail = (err) => {
@@ -58,6 +74,19 @@ function request(options = {}) {
 		uni.request(options)
 	});
 }
+
+function decrypt(encryptedData) {
+    const key = CryptoJS.enc.Utf8.parse('xingu88888999999'); // 与PHP加密使用的密钥相同
+    const iv = CryptoJS.enc.Utf8.parse('473d314febf55e26'); // 与PHP加密使用的IV相同
+
+  const decryptedData = CryptoJS.AES.decrypt(encryptedData, key, {
+    iv,
+    padding: CryptoJS.pad.Pkcs7
+  })
+  return decryptedData.toString(CryptoJS.enc.Utf8)
+} 
+
+
 export {
 	request
 };

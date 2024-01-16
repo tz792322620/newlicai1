@@ -1,6 +1,6 @@
 {
     "name" : "broad",
-    "appid" : "__UNI__8351803",
+    "appid" : "__UNI__545FEF2",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -135,7 +135,7 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/api" : {
-                    "target" : "https://api.broadreachvip.top/api", // 测试
+                    "target" : "https://xingu.bianceok.info/api", // 测试
                     "changeOrigin" : true,
                     "secure" : false,
                     "pathRewrite" : {
@@ -150,5 +150,6 @@
         },
         "template" : "",
         "title" : ""
-    }
+    },
+    "locale" : "auto"
 }

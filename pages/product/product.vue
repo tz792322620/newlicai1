@@ -62,7 +62,13 @@
 				  </view>
 				<view class="u-flex" style="font-size: 24rpx;color: #AFAFAF;margin-top: 10rpx;">
 				    <view style="width: 300rpx;">{{$t('pointsMultiplier')}}：<text
-				            style="color: #21BF90;">X{{item.point_multiplier}}</text></view>
+				            style="color: #21BF90;">X{{item.point_multiplier}}</text>
+					</view>
+					<view style="width: 300rpx;" class="u-text-right">
+					  {{$t('appreciationEarnings')}}:<text style="color: #21BF90;">
+						{{Number(item.appreciation_rate * 100).toFixed(2)}}%
+					  </text>
+					</view>
 				</view>
                 <view style="margin-top: 6rpx;display: flex;align-items: center;">
                     <u-line-progress active-color="#6BEEAB" height="22" :percent="Number(item.progress)">
