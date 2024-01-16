@@ -10,7 +10,7 @@
 						<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">{{$t('investableAmount')}}</view>
 					</view>
 					<view class="u-flex" style="margin-top: 30rpx;font-size: 34rpx;">
-						<view style="width:280rpx;">{{ userInfo.total_amount }}</view>
+						<view style="width:280rpx;">{{ Number(userInfo.total_amount).toFixed(2)  }}</view>
 						<view class="u-text-right" style="width:280rpx;margin-left:60rpx;">
 							{{productInfo.max_purchase_amount * productInfo.remaining_purchase_times}}
 						</view>

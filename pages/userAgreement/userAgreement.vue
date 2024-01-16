@@ -1,6 +1,6 @@
 <template>
 	<view class="user-agreement">
-		<nav-bar :title="data.title"></nav-bar>
+		<nav-bar  :title="data.title"></nav-bar>
 		<view class="content" v-html="data.content">
 
 		</view>
@@ -38,4 +38,5 @@
 			padding: 168rpx 40rpx 40rpx 40rpx;
 		}
 	}
+
 </style>
