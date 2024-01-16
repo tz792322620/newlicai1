@@ -64,7 +64,7 @@
 				    <view style="width: 300rpx;">{{$t('pointsMultiplier')}}：<text
 				            style="color: #21BF90;">X{{item.point_multiplier}}</text>
 					</view>
-					<view style="width: 300rpx;" class="u-text-right">
+					<view style="width: 300rpx;" class="u-text-right" v-if="item.appreciation_rate>0">
 					  {{$t('appreciationEarnings')}}:<text style="color: #21BF90;">
 						{{Number(item.appreciation_rate * 100).toFixed(2)}}%
 					  </text>
