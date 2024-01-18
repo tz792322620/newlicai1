@@ -12,7 +12,10 @@
 			<view class="box1">
 				<view class="box1_left">
 					<view class="points">
-						{{Number(pointsCount).toFixed(2)}}<text>{{$t('points')}}</text>
+					  {{Number(pointsCount).toFixed(2)}}<text>{{$t('totalPoints')}}</text>
+					</view>
+					<view class="points">
+					  {{Number(point).toFixed(2)}}<text>{{$t('availablePoints')}}</text>
 					</view>
 					<view class="desc">
 						{{$t('pointsHints')}}
@@ -108,7 +111,8 @@
 			return {
 				statusBarHeight: 0, // 状态栏高度
 				activeIndex: 0, // 当前选中兑换下标
-				pointsCount: 0, // 积分数量
+				pointsCount: 0, // 总积分数量
+				point: 0, // 积分数量
 				shipped_count: 0, // 待收货订单数量
 				goodsList: [] // 商品列表
 			}
@@ -123,7 +127,8 @@
 			async getUserInfo() {
 				const res = await getUserInfo()
 				if (res.code == 1) {
-					this.pointsCount = res.data.gift_points
+					this.point = res.data.gift_points
+					this.pointsCount = res.data.total_gift_points
 				}
 			},
 			async getOrderCount() {
@@ -200,7 +205,7 @@
 				padding: 40rpx 0;
 				&_left {
 					.points {
-						font-size: 64rpx;
+						font-size: 40rpx;
 						font-weight: bold;
 						color: #333333;
 						text {

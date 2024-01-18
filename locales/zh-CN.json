@@ -734,5 +734,7 @@
 			"Please add shipping address": "请添加收货地址",
 			"appreciationEarnings": "增值收益",
 			"appreciationEarningsFormula": "增值收益 = 总收益*增值收益率(如含增值收益)",
-			"Distribute appreciation earnings": "分配增值收益"
+			"Distribute appreciation earnings": "分配增值收益",
+			  "totalPoints": "总积分",
+			  "availablePoints": "可用积分"
 }
