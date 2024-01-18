@@ -122,6 +122,9 @@
 					<view style="margin-top:20rpx;color: #666666;">
 						{{$t('totalEarningsFormula')}}
 					</view>
+					<view style="margin-top:20rpx;color: #666666;">
+					  {{$t('appreciationEarningsFormula')}}
+					</view>
 				</view>
 				<view class="b_colfff" style="border-radius: 12rpx;margin-top:20rpx;padding: 30rpx;">
 					<view style="color:#ffffff;">

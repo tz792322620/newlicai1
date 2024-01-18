@@ -1,4 +1,4 @@
-// const BASE_URL = 'https://xingu.bianceok.info/api'
+// const BASE_URL = 'https://api.broadreachvip.top/api'
 // import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
 import CryptoJS from 'crypto-js'
@@ -10,7 +10,7 @@ function request(options = {}) {
 		})
 	}
     // 获取用户选择的域名，如果没有选择，则使用默认域名
-    const baseDomain = uni.getStorageSync('selectedDomain') || 'https://xingu.bianceok.info/api';
+    const baseDomain = uni.getStorageSync('selectedDomain') || 'https://api.broadreachvip.top/api';
     options.url = `${baseDomain}${options.url}`;
 	options.header = {
 		'token': uni.getStorageSync('token'),
@@ -20,15 +20,13 @@ function request(options = {}) {
 		//成功
 		options.success = (res) => {
 				uni.hideLoading()
-
-
 				// 假设加密的数据在res.data.data中
 				if (res.data && res.data.data) {
 					const encryptionKey = 'xingu8899'; // 您的加密密钥
 					const iv = '473d314febf55e26'; // 初始化向量（如果后端使用了IV）
 					// console.log(res.data.data)
 					// 解密数据
-					// try {
+					try {
 					const decryptedData = decrypt(res.data.data);
 						// console.log(JSON.parse(decryptedData))
 						res.data.data = JSON.parse(decryptedData);
@@ -53,10 +51,41 @@ function request(options = {}) {
 							})
 						}
 						resolve(res.data)
-					// } catch (e) {
-					// 	console.error('解密失败', e);
-					// }
+					} catch (e) {
+						console.error('解密失败', e);
+						uni.showToast({
+							title: '解密失败',
+							icon: 'none'
+						})
+						uni.hideLoading()
+						uni.switchTab({
+							url: '/pages/index/index'
+						})
+						reject(e); //错误
+					}
 				}
+				
+				if (res.data.code === 401) {
+					uni.showToast({
+						title: res.data.msg,
+						icon: 'none',
+						mask: true
+					})
+					uni.removeStorageSync('token')
+					setTimeout(() => {
+						uni.reLaunch({
+							url: '/pages/login/login_em'
+						})
+					}, 1000);
+				}
+				if (res.data.code !== 1) {
+					uni.showToast({
+						title: res.data.msg,
+						icon: 'none',
+						mask: true
+					})
+				}
+				resolve(res.data)
 			},
 			//错误
 			options.fail = (err) => {

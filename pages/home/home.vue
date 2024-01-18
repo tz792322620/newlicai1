@@ -246,13 +246,14 @@
 				</view>
 			</view>
 		</view>
+<!-- 		<web-view src="@/static/meiqia.html"></web-view> -->
 		<!-- <floating-customer-service></floating-customer-service> -->
 		<liu-drag-button @clickBtn="clickBtn">{{$t('customerService')}}</liu-drag-button>
 		<!-- 弹窗 -->
 		<Pop-ups :show="showPopup" :image="popupNotice.image" @closed="closePopup"></Pop-ups>
+	
 	</view>
 </template>
-
 <script>
 	import {
 		getStockProductList,
@@ -264,7 +265,8 @@
 	import tx from '@/static/images/my/txlogo1.jpg'
 	export default {
 		components: {
-			FloatingCustomerService
+			FloatingCustomerService,
+
 		},
 		data() {
 			return {
@@ -475,4 +477,5 @@
 		height: var(--status-bar-height);
 		width: 100%;
 	}
+	
 </style>

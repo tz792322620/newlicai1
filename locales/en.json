@@ -497,7 +497,7 @@
 	"clause4.3": "4.3 If the repayment date encounters a legal holiday or a public holiday, the repayment date is not affected.",
 	"clause4.4": "4.4 If Party B seriously violates the agreement of this agreement, such as: unable to return Party A's bonus and principal on time, Party B should pay Party A the total investment amount and 10% of the total investment amount as a penalty. Party A must guarantee the legality of its source of funds and must not conceal it, otherwise Party B has the right to freeze its funds and transfer it to the law.",
 	"clause4.5": "4.5 Party A guarantees the authenticity of the information and materials provided, and shall not provide false information or conceal. If Party A provides false information or deliberately conceals, it constitutes a breach of contract, and shall bear the liability for breach of contract, and this agreement is deemed to be terminated in advance.",
-	"clause4.6": "4.6 Any party's occurrence of any of the following one or several situations constitutes a breach of contract",
+	"clause4.6": "4.6 Any party's occurrence of any of the following one or several situations constitutes a breach of contract.",
 	"sectionFive": "V. Confidentiality Obligations",
 	"confidentialityClause": "The three parties strictly keep confidential about the business secrets of each party that they have learned through contact and other channels, and strictly keep all information confidential, and shall not disclose personal information to any other personnel and institutions.",
 	"sectionSix": "VI. Legal Effect of the Contract",
@@ -728,5 +728,6 @@
 			"Add address": "Add address",
 			"Use address": "Use address",
 			"Please add shipping address": "Please add shipping address",
-			"appreciationEarnings": "Appreciation Earnings"
+			"appreciationEarnings": "Appreciation Earnings",
+			"appreciationEarningsFormula": "Appreciation Earnings = Total Earnings * Appreciation Rate (if includes appreciation earnings)"
 }

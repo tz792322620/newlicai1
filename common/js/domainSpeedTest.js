@@ -22,14 +22,14 @@
     //     uni.setStorageSync('fastestDomain', fastestDomain); // 存储到缓存
     //     return fastestDomain;
     // } catch (error) {
-    //     const defaultDomain = "https://xingu.bianceok.info/api";
+    //     const defaultDomain = "https://api.broadreachvip.top/api";
     //     uni.setStorageSync('fastestDomain', defaultDomain); // 存储默认域名到缓存
     //     return defaultDomain;
     // }
 // }
 export async function testDomainSpeeds() {
     const domains = [
-        "https://xingu.bianceok.info/api"
+        "https://api.broadreachvip.top/api"
     ];
 
     function testSpeed(domain) {
@@ -45,7 +45,7 @@ export async function testDomainSpeeds() {
         uni.setStorageSync('fastestDomain', fastestDomain); // 存储到缓存
         return fastestDomain;
     } catch (error) {
-        const defaultDomain = "https://xingu.bianceok.info/api";
+        const defaultDomain = "https://api.broadreachvip.top/api";
         uni.setStorageSync('fastestDomain', defaultDomain); // 存储默认域名到缓存
         return defaultDomain;
     }

@@ -101,7 +101,7 @@
 					{
 					  text: this.$t('line') + '1',
 					  color: '#35cba5',
-					  url: 'https://xingu.bianceok.info/api',
+					  url: 'https://api.broadreachvip.top/api',
 					},
 					// 可以添加更多的线路...
 				  ];

@@ -35,7 +35,7 @@
 				{{$t('agreeAndSubmit')}}
 			</view>
 			<view class="tips">
-				<view class="tip">
+				<view class="tip" @click="toContractDetails()">
 					{{$t('forgotPassword')}}
 				</view>
 				<view class="tip" @click="toContractDetail()">
@@ -96,6 +96,11 @@
 			toContractDetail() {
 				uni.navigateTo({
 					url: '/pages/product/security/contract/contract'
+				})
+			},
+			toContractDetails() {
+				uni.navigateTo({
+					url: '/pages/my/info/transactionPin/transactionPin'
 				})
 			},
 			save() {
