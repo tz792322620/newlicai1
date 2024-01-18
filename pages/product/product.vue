@@ -82,8 +82,11 @@
                         {{$t('investmentCycle')}}{{item.investment_period}}{{$t('days')}}
                     </view>
                     <view style="margin-left:200rpx;">
-                        <u-button ripple-bg-color="#fff" @click="toDetails(item)" :ripple="true" style="font-size:28rpx;"
+                        <u-button v-if="(Number(item.total_fundraising) - item.sold_units) > 0" ripple-bg-color="#fff" @click="toDetails(item)" :ripple="true" style="font-size:28rpx;"
                             :custom-style="customStyle1" shape="circle" type="primary">{{$t('immediateInvestment')}}</u-button>
+							<u-button v-else :ripple="true" style="font-size: 28rpx;"
+								:custom-style="customStyle2" shape="circle" type="primary">
+								{{$t('soldOut')}}</u-button>
                     </view>
                 </view>
             </view>
@@ -109,6 +112,13 @@
 					color: '#FFFFFF',
 					width: '170rpx',
 					background: 'linear-gradient(#69EEAB,#21CCBA)',
+				},
+				customStyle2: {
+					height: '56rpx',
+					margin: 'auto', // 注意驼峰命名，并且值必须用引号包括，因为这是对象
+					color: '#FFFFFF',
+					width: '170rpx',
+					background: '#888'
 				},
 				curNow: 0,
 				tabName: 'Hot',

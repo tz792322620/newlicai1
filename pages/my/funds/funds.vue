@@ -15,8 +15,8 @@
 						</view>
 					</view>
 					<view class="cell_right" :class="Number(item.amount) < 0 ? 'red' : ''">
-						<view>{{item.amount}} USDT</view> 
-						<view style="font-size: 13px;">{{ getStatusTranslation(item.change_type) }}</view>
+						<view>{{item.amount}} <spn v-if="item.change_type != 'gift_points'">USDT</spn><spn v-else>{{$t('points')}}</spn></view> 
+						<view style="font-size: 13px;">{{ getStatusTranslation(item.change_type) }}</view> 
 					</view>
 				</view>
 				<text v-if="item.related_id !== 0&&item.product">{{$t('from')}} <text v-if="item.from_user_id&&item.from_user_id > 0">{{$t('member')}}--{{item.from_user_nickname}},</text> {{item.product.product_name_cn}}({{item.product.product_code}})</text>

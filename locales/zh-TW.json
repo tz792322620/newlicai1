@@ -94,13 +94,13 @@
 	"qitou": "起投",
 	"all": "全部專區",
 	"new": "新手專區",
-	"elite": "精英專區",
+	"elite": "精选專區",
 	"vip": "VIP專區",
 	"enterFund": "請輸入基金",
 	"allItem": "全部",
 	"hotItem": "熱門區",
 	"newItem": "新手區",
-	"eliteItem": "精英區",
+	"eliteItem": "精选區",
 	"vipItem": "VIP區",
 	"buyNow": "立即購買",
 	"bidNow": "立即投標",
@@ -450,7 +450,7 @@
 	"allItem": "全部",
 	"hotItem1": "熱門",
 	"newItem1": "新人",
-	"eliteItem1": "精英",
+	"eliteItem1": "精选",
 	"vipItem1": "VIP",
 	"activityItem1": "活動",
 	"backendRecharge": "後台充值",
@@ -733,5 +733,6 @@
 			"Please add shipping address": "請添加收貨地址",
 			"appreciationEarnings": "增值收益",
 			"appreciationEarningsFormula": "增值收益 = 總收益*增值收益率(如含增值收益)",
-			"Distribute appreciation earnings": "分配增值收益"
+			"Distribute appreciation earnings": "分配增值收益",
+			"points": "積分"
 }

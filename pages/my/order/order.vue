@@ -91,7 +91,7 @@
 						  {{$t('levelInterestRate')}}
 					</view>
 					<view class="content_item_cell_right">
-						{{item.user_level.extra_interest*100}}% 
+						{{Number(item.user_level.extra_interest*100).toFixed(2)}}% 
 					</view>
 				</view>
 			</view>
