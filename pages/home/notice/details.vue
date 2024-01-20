@@ -43,6 +43,10 @@
 </script>
 
 <style lang="scss" scoped>
+	/deep/ .content img {
+	  width: 100%;
+	  height: auto;
+	}
 	.details {
 		.content1{
 			padding: 188rpx 40rpx 30rpx 40rpx;

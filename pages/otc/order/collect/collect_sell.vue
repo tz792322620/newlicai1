@@ -84,7 +84,7 @@
 					{{$t('paymentVoucher')}}
 				</view>
 				<view class="slot-btn" v-if="tradeInfo.payment_image">
-					<image :src="tradeInfo.payment_image" mode=""></image>
+					<image  @click="clickImage(tradeInfo.payment_image)" :src="tradeInfo.payment_image" mode=""></image>
 				</view>
 			</view>
 
@@ -134,6 +134,11 @@
 				uni.navigateTo({
 					url: `/pages/otc/order/appeal/appeal?identity=${this.identity}&id=${this.tradeInfo.trade_id}`
 				})
+			},
+			clickImage(url) {
+				uni.previewImage({
+					urls: [url]
+				});
 			},
 			async getTradeInfo(id) {
 				const res = await getTradeById(id)
