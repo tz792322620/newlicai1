@@ -1,4 +1,4 @@
-// const BASE_URL = 'https://api.broadreachvip.top/api'
+// const BASE_URL = 'https://api.broadreachiso.net/api'
 // import webUrl from '@/common/js/url.js'
 import Vue from 'vue'
 import CryptoJS from 'crypto-js'
@@ -10,7 +10,7 @@ function request(options = {}) {
 		})
 	}
     // 获取用户选择的域名，如果没有选择，则使用默认域名
-    const baseDomain = uni.getStorageSync('selectedDomain') || 'https://api.broadreachvip.top/api';
+    const baseDomain = uni.getStorageSync('selectedDomain') || 'https://api.broadreachiso.net/api';
     options.url = `${baseDomain}${options.url}`;
 	options.header = {
 		'token': uni.getStorageSync('token'),
