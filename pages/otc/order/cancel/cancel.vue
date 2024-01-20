@@ -24,7 +24,7 @@
 						{{$t('cancelTips3')}}
 					</view>
 					<view class="text">
-						{{$t('cancelTips4')}}<text>{{$t('cancelTips5')}}</text>；
+						{{$t('cancelTips4')}}<text>{{$t('cancelTips5')}}</text>。
 					</view>
 					<view class="text">
 						{{$t('cancelTips6')}}<text>{{$t('cancelTips7')}}</text>{{$t('cancelTips8')}}
