@@ -96,17 +96,27 @@
 
 		},
 		computed: {
-				list() {
-				  return [
-					{
-					  text: this.$t('line') + '1',
-					  color: '#35cba5',
-					  url: 'https://api.broadreachvip.top/api',
-					},
-					// 可以添加更多的线路...
-				  ];
-				},
-		}, 
+		  list() {
+			const domains = [
+			  "https://api.roadreachbid.com/api",
+			  "https://api.broadreachbid.org/api",
+			  "https://api.broadreachbid.top/api",
+			  "https://api.broadreachbid.xyz/api",
+			  "https://api.broadreachllc.biz/api",
+			  "https://api.broadreachllc.net/api",
+			  "https://api.broadreachiso.net/api"
+			];
+
+			return domains.map((url, index) => {
+			  return {
+				text: this.$t('line') + (index + 1), // 生成 "线路1", "线路2", 等...
+				color: '#35cba5',
+				url: url
+			  };
+			});
+		  }
+		},
+
 		methods: {
 			xlclick(index) {
 				this.list[index].color = '#35cba5'
