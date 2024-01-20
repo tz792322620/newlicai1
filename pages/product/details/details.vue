@@ -138,7 +138,7 @@
 						<text style="background-color: #52CABC;
 					padding: 12rpx 20rpx 10rpx 20rpx;font-size: 24rpx;">{{$t('safetyPlan')}}</text>
 					</view>
-					<view style="margin-top:20rpx;color: #666666;">{{$t('safetyPlanText')}}</view>
+					<view style="margin-top:20rpx;color: #666666;">{{productInfo.guarantor_company_name}}{{$t('safetyPlanText')}}</view>
 				</view>
 			
 				<view style="margin-top:30rpx;">
