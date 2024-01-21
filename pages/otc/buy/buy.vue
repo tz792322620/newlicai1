@@ -282,7 +282,7 @@
 				}
 
 				&_right {
-					width: 250rpx;
+					// width: 250rpx;
 					display: flex;
 					align-items: center;
 					font-size: 32rpx;
@@ -292,7 +292,7 @@
 					&_curreny {
 						color: #333333;
 						padding-right: 20rpx;
-						border-right: 2rpx solid #EDEDED;
+						// border-right: 2rpx solid #EDEDED;
 						margin-right: 20rpx;
 					}
 

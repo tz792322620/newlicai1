@@ -1,5 +1,5 @@
 <template>
-	<view class="collect">
+	<view class="collect" v-if="tradeInfo">
 		<nav-bar :title="$t('order')"></nav-bar>
 		<view class="content">
 			<view class="collect_top">
@@ -161,7 +161,11 @@
 		},
 		methods: {
 			async getTradeInfo(id) {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getTradeById(id)
+				uni.hideLoading()
 				console.log(res)
 				if (res.code === 1) {
 					this.tradeInfo = res.data

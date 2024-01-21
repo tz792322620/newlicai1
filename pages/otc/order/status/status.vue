@@ -1,5 +1,5 @@
 <template>
-	<view class="status">
+	<view class="status" v-if="tradeInfo">
 		<nav-bar :title="$t('order')"></nav-bar>
 		<view class="content">
 			<view class="title" v-if="tradeInfo.status == 'Cancelled'">
@@ -96,7 +96,11 @@
 		},
 		methods: {
 			async getTradeInfo(id) {
+				uni.showLoading({
+					mask: true
+				})
 				const res = await getTradeById(id)
+				uni.hideLoading()
 				console.log(res)
 				if (res.code === 1) {
 					this.tradeInfo = res.data
