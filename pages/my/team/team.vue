@@ -29,7 +29,7 @@
 				<view class="balance_bottom">
 					<view class="balance_bottom_item">
 						<text>{{$t('totalTopUp')}}</text>
-						<text class="bold">{{dataInfo.recharge_amount}}</text>
+						<text class="bold">{{(dataInfo.recharge_amount).toFixed(2)}}</text>
 					</view>
 					<view class="balance_bottom_item">
 						<text>{{$t('headcount')}}</text>
@@ -45,7 +45,7 @@
 							{{$t('totalWithdrawal')}}
 						</view>
 						<view class="count">
-							{{dataInfo.withdrawal_amount}}
+							{{(dataInfo.withdrawal_amount).toFixed(2)}}
 						</view>
 					</view>
 				</view>
@@ -56,7 +56,7 @@
 							{{$t('orderCommission')}}
 						</view>
 						<view class="count">
-							{{dataInfo.stock_order_amount}}
+							{{(dataInfo.stock_order_amount).toFixed(2)}}
 						</view>
 					</view>
 				</view>
