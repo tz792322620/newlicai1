@@ -29,7 +29,7 @@
 			<view class="action-buttons">
 
 				<button class="action-button1 deposit" @click="btnClick(0)">{{$t('transfer')}}</button>
-				<button class="action-button2 withdraw" @click="btnClick(1)">{{$t('quit')}}</button>
+				<button class="action-button2 withdraw" @click="btnClick(1)">{{$t('roll-out')}}</button>
 			</view>
 		</view>
 

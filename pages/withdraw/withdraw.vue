@@ -42,11 +42,12 @@
 							v-model="data.withdrawal_amount" />
 					</view>
 					<view class="right" @click="confirms()">
-						USDT <text @click="confirms()">{{$t('allItem')}}</text>
+						USDT 
+						<text @click="confirms()">{{$t('allItem')}}</text>
 					</view>
 				</view>
 				<view class="description">
-					{{$t('usable')}}:{{withdrawable_amount}}USDT
+					{{$t('usable')}}:{{withdrawable_amount}}USDT <span style="float: right;">{{$t('noteWithdrawalFrom100')}}</span>
 				</view>
 			</view>
 			<view class="buttons">
@@ -61,6 +62,7 @@
 				<view class="popup-content">
 					<view class="title">
 						{{$t('chooseNetwork')}}
+						
 					</view>
 					<view class="tabs">
 						<view class="tabs_item" v-for="(item,index) in networkList" :key="index"

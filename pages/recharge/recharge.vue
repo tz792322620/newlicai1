@@ -45,7 +45,8 @@
 			</view>
 			<view class="network" style="margin-top: .5rem;">
 				<view class="title">
-					{{$t('rechargeTip')}}
+					<view>{{$t('rechargeTip')}}</view>
+					<view>{{$t('noteRechargeFrom100')}}</view>
 				</view>
 			</view>
 			<view class="buttons">

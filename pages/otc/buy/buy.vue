@@ -42,9 +42,9 @@
 						<view class="box2_input_right_curreny">
 							{{dataInfo.currency}}
 						</view>
-						<view class="box2_input_right_all">
+<!-- 						<view class="box2_input_right_all">
 							{{$t('allItem')}}
-						</view>
+						</view> -->
 					</view>
 				</view>
 				<view class="box2_cell">

@@ -729,5 +729,7 @@
 			"Use address": "Use address",
 			"Please add shipping address": "Please add shipping address",
 			"appreciationEarnings": "Appreciation Earnings",
-			"appreciationEarningsFormula": "Appreciation Earnings = Total Earnings * Appreciation Rate (if includes appreciation earnings)"
+			"appreciationEarningsFormula": "Appreciation Earnings = Total Earnings * Appreciation Rate (if includes appreciation earnings)",
+			"noteRechargeFrom100": "Note: Recharges start from 100 USDT",
+			"noteWithdrawalFrom100": "Note: Withdrawals start from 100 USDT"
 }
