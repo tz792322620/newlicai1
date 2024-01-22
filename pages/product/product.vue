@@ -147,11 +147,12 @@
 						// {
 						// 	name: this.$t('allItem')
 						// },
-						{
-							name: this.$t('hotItem1')
-						},
+
 						{
 							name: this.$t('newItem1')
+						},
+						{
+							name: this.$t('hotItem1')
 						},
 						{
 							name: this.$t('eliteItem1')
@@ -196,10 +197,10 @@
 					// 	this.tabName = ''
 					// 	break;
 					case 0:
-						this.tabName = 'Hot'
+						this.tabName = 'Newbie'
 						break;
 					case 1:
-						this.tabName = 'Newbie'
+						this.tabName = 'Hot'
 						break;
 					case 2:
 						this.tabName = 'Selected'

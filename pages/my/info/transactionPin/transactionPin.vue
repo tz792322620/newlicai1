@@ -78,9 +78,20 @@
 				}
 				const res = await setUserPayPassword(this.data)
 				if (res.code === 1) {
-					uni.redirectTo({
-						url: '/pages/my/info/info'
-					})
+							uni.showToast({
+								title: res.msg,
+								icon: 'none',
+								success: () => {
+									setTimeout(() => {
+										// uni.switchTab({
+										// 	url: '/pages/my/my'
+										// })
+										uni.reLaunch({
+											url: '/pages/my/my'
+										})
+									}, 1000)
+								}
+							})
 				}
 			}
 		}
