@@ -134,24 +134,24 @@
 				uni.showLoading({
 					mask: true
 				})
-				const res2 = await getUserLevelInfo()
-				console.log(res)
-				if (res2.code === 1) {
-					this.userlevel = res2.data
-				}
+				// const res2 = await getUserLevelInfo()
+				// console.log(res)
+				// if (res2.code === 1) {
+				// 	this.userlevel = res2.data
+				// }
 				
+				const res1 = await getTotalPrincipalInterest()
+				console.log(res1)
+				if (res1.code === 1) {
+					this.total = res1.data
+				}
 				const res = await currentUserStockOrder()
 				console.log(res)
 				if (res.code === 1) {
 					this.list = res.data
 				}
-				
-				const res1 = await getTotalPrincipalInterest()
-				console.log(res1)
 				uni.hideLoading()
-				if (res1.code === 1) {
-					this.total = res1.data
-				}
+				
 			},
 			toDetails(item) {
 				uni.navigateTo({

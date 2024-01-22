@@ -19,7 +19,9 @@ function request(options = {}) {
 	return new Promise((resolve, reject) => {
 		//成功
 		options.success = (res) => {
-				uni.hideLoading()
+				if (options.method == 'POST') {
+					uni.hideLoading()
+				}
 				// 假设加密的数据在res.data.data中
 				if (res.data && res.data.data) {
 					const encryptionKey = 'xingu8899'; // 您的加密密钥
