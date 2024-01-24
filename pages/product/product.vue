@@ -121,7 +121,7 @@
 					background: '#888'
 				},
 				curNow: 0,
-				tabName: 'Hot',
+				tabName: 'Newbie',
 				stockProductListTab: [],
 				statusBarHeight: 0 // 状态栏高度
 			}
