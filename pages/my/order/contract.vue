@@ -8,12 +8,12 @@
     	<p style="line-height: 16pt;"><b><span >{{$t('partyA')}}：</span></b><span style="text-decoration: underline;">{{details.user_verification.real_name}}</span></p>
     	<p style="line-height: 16pt;"><b><span >{{$t('partyB')}}：</span></b><span style="text-decoration: underline;">{{details.product.manager_company_name}}</span></p>
     	<p style="line-height: 16pt;"><b><span >{{$t('partyCLabel')}}</span></b><b><span >：</span></b><span style="text-decoration: underline;">{{details.product.guarantor_company_name}}</span></p>
-    	<p style="line-height: 16pt;"><span >{{$t('contractAgreement')}}</span></p>
+    	<p style="line-height: 16pt;"><span >{{$t('agreementIntroduction')}}</span></p>
     	<p style="line-height: 16pt;"><b><span >{{$t('investmentDetails')}}</span></b><b></b></p>
     	<p style="line-height: 16pt;"><span >{{$t('productNameLabel')}}</span><span style="text-decoration: underline;">：{{details.product.product_name_cn}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('investorNameLabel')}}</span><span style="text-decoration: underline;">：{{details.user_verification.real_name}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('investorIDLabel')}}</span><span style="text-decoration: underline;">：{{details.user_verification.identity_number}}</span></p>
-    	<p style="line-height: 16pt;"><span >{{$t('investmentAmountLabel')}}</span><span style="text-decoration: underline;">：{{Number(details.order.purchase_amount).toFixed(2)}}USDT</span></p>
+    	<p style="line-height: 16pt;"><span >{{$t('investmentAmountLabel')}}</span><span style="text-decoration: underline;">：{{Number(details.order.purchase_amount).toFixed(2)}}</span>(USDT)</p>
     	<p style="line-height: 16pt;"><span >{{$t('earningCycleLabel')}}</span><span style="text-decoration: underline;">：{{details.product.investment_period}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('interestRateLabel')}}</span><span style="text-decoration: underline;">：{{(details.product.interest_rate * 100).toFixed(2)}}%</span></p>
     	  <p style="line-height: 16pt;">
@@ -30,16 +30,19 @@
     	<p style="line-height: 16pt;"><span >{{$t('clause2.2')}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('clause2.3')}}</span></p>
     	<p style="line-height: 16pt;"><b><span >{{$t('sectionThree')}}</span></b></p>
-    	<p style="line-height: 16pt;"><span >{{$t('clause3.1')}}</span><span style="text-decoration: underline;">{{details.product.guarantor_company_name}}</span>{{$t('clause3.1.continuation')}}</p>
-    	<p style="line-height: 16pt;"><span >{{$t('clause3.2')}}</span></p>
-    	<p style="line-height: 16pt;"><span >{{$t('clause3.3')}}</span></p>
+    	<p style="line-height: 16pt;"><span >{{$t('3_1_agreementEstablishment')}}<span style="text-decoration: underline;">{{details.product.manager_company_name}}</span>{{$t('financialPlatformRelease')}}</span>{{$t('partyAFollows')}}<span style="text-decoration: underline;">{{details.product.manager_company_name}}</span>{{$t('investmentConfirmationRules')}}</p>
+    	<p style="line-height: 16pt;"><span >{{$t('3_2_investmentFundsFreeze')}}</span></p>
+    	<p style="line-height: 16pt;"><span >{{$t('3_3_wealthManagementTransfer')}}</span></p>
     	<p style="line-height: 16pt;"><b><span >{{$t('sectionFour')}}</span></b></p>
-    	<p style="line-height: 16pt;"><span >{{$t('clause4.1')}}</span></p>
+    	<p style="line-height: 16pt;"><span >{{$t('4_1_investmentLoss')}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('clause4.2')}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('clause4.3')}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('clause4.4')}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('clause4.5')}}</span></p>
     	<p style="line-height: 16pt;"><span >{{$t('clause4.6')}}</span></p>
+		<p style="line-height: 16pt;"><span >{{$t('clauses1')}}</span></p>
+		<p style="line-height: 16pt;"><span >{{$t('clauses2')}}</span></p>
+		<p style="line-height: 16pt;"><span >{{$t('clauses3')}}</span></p>
     	<p style="line-height: 16pt;"><b><span >{{$t('sectionFive')}}</span></b></p>
     	<p style="line-height: 16pt;"><span >{{$t('confidentialityClause')}}</span></p>
     	<p style="line-height: 16pt;"><b><span >{{$t('sectionSix')}}</span></b></p>

@@ -110,7 +110,7 @@
 					:next-margin="config.nextMargin+'rpx'">
 					<swiper-item v-for="(item,index) in stockList" :key="index" @click="toDetails(item)">
 						<view class="u-text-center"
-							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 264rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
+							style="display: inline-block; padding-top:30rpx; background-color:#FFFFFF;width: 284rpx;height: 300rpx;border: 1rpx solid; border-color:rgba(0,90,0,0.1); border-radius: 16rpx;margin-right: 20rpx;">
 							<view>{{item.product_code}}</view>
 							<!-- <view>{{item.product_name_cn}}</view> -->
 							<view v-if="item.is_gift_red_packet == 1">{{item.product_name_cn}}<image  mode="aspectFit" style="width: 20px;height: 18px;" src="../../static/images/product/hb1.png"></image></view>

@@ -157,7 +157,7 @@
 	"fundsWhere": "Funds Destination",
 	"fundsWhereText": "The funds raised in this issue are used for structured PIPE equity long-term direct investment in the domestic A-share market. The company provides fund custody services for investors.",
 	"safetyPlan": "Safety Plan",
-	"safetyPlanText": "We provide 100% principal protection for every investment on the platform. The platform sets up a risk reserve fund and promises to advance the principal in full.",
+	"safetyPlanText": "For every investment on the platform, we provide capital preservation, interest guarantee, and establish a risk reserve fund to fully commit to guaranteeing the principal.",
 	"trading": "Trading",
 	"publishAd": "Publish Ad",
 	"myOrder": "My Order",
@@ -731,5 +731,17 @@
 			"appreciationEarnings": "Appreciation Earnings",
 			"appreciationEarningsFormula": "Appreciation Earnings = Total Earnings * Appreciation Rate (if includes appreciation earnings)",
 			"noteRechargeFrom100": "Note: Recharges start from 100 USDT",
-			"noteWithdrawalFrom100": "Note: Withdrawals start from 100 USDT"
+			"noteWithdrawalFrom100": "Note: Withdrawals start from 100 USDT",
+			  "3_1_agreementEstablishment": "3.1 Establishment of the Agreement: Party B at",
+			  "financialPlatformRelease": "releases related financial products and their returns on the financial platform,",
+			  "partyAFollows": "Party A, in accordance with",
+			  "investmentConfirmationRules": "'s rules, when clicking to confirm investment, the contents agreed upon in this agreement are established, and the signing relationship of this agreement is also established. Simultaneously with the effectiveness of this agreement, Party B cannot revoke the amount invested by Party A, which is equivalent to the principal amount specified in the first article.",
+			  "3_2_investmentFundsFreeze": "3.2 Investment Funds Freeze: When Party A clicks the 'Confirm Investment' button, it is deemed to have issued an irrevocable authorization instruction to Party B, authorizing Party B to fully manage and operate the frozen amount within the investment amount for this agreement. The frozen amount within the current investment is equivalent to the principal amount of the investment in this agreement. The aforementioned freeze will be lifted either when this agreement becomes effective or when it is determined to be invalid (at the end of the project cycle).",
+			  "3_3_wealthManagementTransfer": "3.3 Wealth Management Transfer: The financial funds are transferred from Party A's account to Party B's comprehensive wealth management account for specific wealth management operations. Since Party A fully entrusts Party B with wealth management, the investment risks of equity and fund projects are borne by Party B. Party B prioritizes the security of funds and then considers the profitability of funds. Party A shall not interfere in any form with Party B's wealth management operations. Profits are distributed to Party A's account daily, and when the wealth management investment period ends, Party B shall transfer Party A's principal amount to the deposit account opened with Party B.",
+			  "4_1_investmentLoss": "4.1 If there is a loss in the investment, regardless of the magnitude of the loss, Party B shall bear the entire loss and make payments to Party A as per the contract's commitment. In the event of a breach by Party B, Party C, the guarantor, shall fulfill the commitment and make payments to Party A.",
+			  "agreementIntroduction": "Through friendly negotiations among the parties A, B, and C, based on the principles of mutual respect and mutual benefit, and in accordance with the relevant provisions of the Contract Law of the People's Republic of China, the parties have reached the following agreement regarding Party A's enjoyment of financial investment management services provided by Party B and Party C's provision of guarantees to Party B:",
+			      "clauses1": "(1) In the event of adverse actions, such as confiscation, requisition, sealing, detention, freezing, or any similar measures taken against the properties of Party A or Party B, which may affect their ability to fulfill their obligations, and if effective remedies cannot be promptly provided.",
+			      "clauses2": "(2) Early termination of this agreement.",
+			      "clauses3": "(3) The adoption of remedies beyond legal and regulatory provisions, as well as other remedies not stipulated in this agreement."
+			  
 }
