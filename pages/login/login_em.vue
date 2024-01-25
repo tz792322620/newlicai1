@@ -81,7 +81,8 @@
 				ypauthenticate: '',
 				v5lang: "zh-CN", //en
 				v5host: 'accelerate.verify5.com',
-				v5token: 'aaa949126c3e48d6a941a482921ed7cf'
+				v5token: 'aaa949126c3e48d6a941a482921ed7cf',
+				selectedLineIndex: -1, // 新增属性，用于跟踪当前选中的线路索引
 			}
 		},
 		components: {
@@ -109,8 +110,8 @@
 
 			return domains.map((url, index) => {
 			  return {
-				text: this.$t('line') + (index + 1), // 生成 "线路1", "线路2", 等...
-				color: '#35cba5',
+				text: this.$t('line') + (index + 1),
+				color: this.selectedLineIndex === index ? '#35cba5' : '#000000', // 根据选中状态设置颜色
 				url: url
 			  };
 			});
@@ -119,9 +120,15 @@
 
 		methods: {
 			xlclick(index) {
+				this.selectedLineIndex = index; // 设置当前选中的线路索引
 				this.list[index].color = '#35cba5'
 				// console.log(`点击了第${index + 1}项，内容为：${this.list[index].url}`)
 				uni.setStorageSync('selectedDomain', this.list[index].url);
+				    uni.showToast({
+				      title: this.$t('switchLineSuccess'),
+				      icon: 'success',
+				      duration: 2000
+				    });
 			},
 			onSuccess: function(verifyId) {
 				console.log(verifyId);

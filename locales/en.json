@@ -742,6 +742,7 @@
 			  "agreementIntroduction": "Through friendly negotiations among the parties A, B, and C, based on the principles of mutual respect and mutual benefit, and in accordance with the relevant provisions of the Contract Law of the People's Republic of China, the parties have reached the following agreement regarding Party A's enjoyment of financial investment management services provided by Party B and Party C's provision of guarantees to Party B:",
 			      "clauses1": "(1) In the event of adverse actions, such as confiscation, requisition, sealing, detention, freezing, or any similar measures taken against the properties of Party A or Party B, which may affect their ability to fulfill their obligations, and if effective remedies cannot be promptly provided.",
 			      "clauses2": "(2) Early termination of this agreement.",
-			      "clauses3": "(3) The adoption of remedies beyond legal and regulatory provisions, as well as other remedies not stipulated in this agreement."
+			      "clauses3": "(3) The adoption of remedies beyond legal and regulatory provisions, as well as other remedies not stipulated in this agreement.",
+				  "switchLineSuccess": "Line switched successfully"
 			  
 }

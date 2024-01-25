@@ -750,6 +750,7 @@
 			    "clauses1": "（1）如果甲方或乙方的任何財產遭受沒收、徵用、查封、扣押、凍結等可能影響其履約能力的不利事件，且不能及時提供有效補救措施的。",
 			    "clauses2": "（2）提前終止本協議。",
 			    "clauses3": "（3）採取法律、法規以外以及本協議未約定的其他救濟措施。",
-				"totalReceivableLabel": "應收本息（USDT）"
+				"totalReceivableLabel": "應收本息（USDT）",
+				"switchLineSuccess": "切換線路成功"
 
 }

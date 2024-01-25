@@ -154,7 +154,7 @@
 						</view>
 					</u-col>
 					<u-col span="3">
-						<view class="u-text-center" :class="{'xuan':xuan==2}" @click="getxuan(2,'Activity')"
+						<view class="u-text-center" :class="{'xuan':xuan==2}" @click="getxuan(2,'Selected')"
 							style="color: #999999;font-size: 30rpx;font-weight: bold;">
 							<view>{{$t('eliteItem1')}}</view>
 							<view
