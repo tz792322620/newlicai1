@@ -41,11 +41,11 @@
 					{{isTransfer ? $t('roll-out') : $t('transfer')}}{{$t('amountTo')}}{{isTransfer ? $t('myAccount') : $t('yulibao')}}
 				</view>
 				<view class="input">
-					<text>¥</text>
+					<text>$</text>
 					<input type="text" v-model="data.amount" placeholder="0.00">
 				</view>
 				<view class="description">
-					{{$t('yulibaoBalance')}}<text>¥{{dataInfo.investmentTotal}}</text>
+					{{$t('yulibaoBalance')}}<text>${{dataInfo.investmentTotal}}</text>
 				</view>
 				<view class="button" @click="$noMultipleClicks(submitBtn)">
 					{{$t('verify')}}{{isTransfer ? $t('roll-out') : $t('transfer')}}

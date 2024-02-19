@@ -67,7 +67,7 @@
 					{{isTransfer ? $t('transfer') : $t('quit')}}{{$t('deposits')}}
 				</view>
 				<view class="input">
-					<text>¥</text>
+					<text>$</text>
 					<input type="text" v-model="data.deposit_amount" placeholder="0.00">
 				</view>
 				<view class="button" @click="$noMultipleClicks(submitBtn)">
